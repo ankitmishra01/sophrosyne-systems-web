@@ -78,6 +78,18 @@ export default function SolutionCards() {
                         aspectRatio: "4/3",
                         objectFit: "cover",
                         display: "block",
+                        filter: "brightness(0.78) saturate(0.72)",
+                      }}
+                    />
+                    {/* Dark vignette overlay — ties photos into the dark UI */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        background:
+                          "linear-gradient(to top, rgba(10,15,26,0.55) 0%, transparent 45%), linear-gradient(to bottom, rgba(10,15,26,0.25) 0%, transparent 35%)",
+                        pointerEvents: "none",
+                        zIndex: 1,
                       }}
                     />
                     {/* Solution number badge */}
@@ -91,6 +103,7 @@ export default function SolutionCards() {
                         border: "1px solid rgba(16,185,129,0.25)",
                         borderRadius: 8,
                         padding: "6px 12px",
+                        zIndex: 3,
                       }}
                     >
                       <span

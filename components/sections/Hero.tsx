@@ -232,8 +232,8 @@ export default function Hero() {
               }}
             />
             <Image
-              src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80"
-              alt="Modern campus architecture"
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80"
+              alt="Students working together on campus"
               width={1200}
               height={800}
               style={{
@@ -242,6 +242,7 @@ export default function Hero() {
                 display: "block",
                 aspectRatio: "3/2",
                 objectFit: "cover",
+                filter: "brightness(0.75) saturate(0.65)",
               }}
               priority
             />

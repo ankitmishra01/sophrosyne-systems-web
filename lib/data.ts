@@ -58,8 +58,8 @@ export const SOLUTIONS = [
       "Private cloud deployment — data never leaves your perimeter",
       "Built-in audit logging for every model inference and data query",
     ],
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Technical AI workspace showing development environment",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Developer environment with code on screen",
   },
   {
     id: "curriculum",
@@ -74,8 +74,8 @@ export const SOLUTIONS = [
       "Department-specific tracks: Engineering, Business, Health Sciences, Humanities",
       "Continuous progression dashboards visible to students, faculty, and administration",
     ],
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Students collaborating in a modern learning environment",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Students in a university learning environment",
   },
   {
     id: "foundry",
@@ -90,8 +90,8 @@ export const SOLUTIONS = [
       "Verified employability tracking linked to national consortium employers",
       "Annual inter-campus demo day within the Exchange Network",
     ],
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Students and developers collaborating and coding in a foundry setting",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Students collaborating in a campus workshop environment",
   },
   {
     id: "pulse",
@@ -107,8 +107,8 @@ export const SOLUTIONS = [
       "Employer-verified placement tracking through the national consortium",
       "API-level integration with Canvas, Banner, and Slate for live data pulls",
     ],
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Technical AI analytics workspace showing Sophrosyne Pulse dashboard",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Analytics dashboard showing data visualisation",
   },
 ] as const;
 
