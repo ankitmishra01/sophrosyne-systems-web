@@ -132,10 +132,10 @@ export default function Hero() {
             <span style={{ color: "rgba(248,250,252,0.85)", fontWeight: 500 }}>
               Sophrosyne Studio
             </span>{" "}
-            — our proprietary AI developer platform — with a structured Fluency
-            Matrix and on-campus Foundry incubators. Together, they transform
-            regional campuses into scalable, venture-ready engines of AI
-            innovation.
+            — our campus-deployed AI platform — with a structured Fluency
+            Matrix and on-campus Foundry incubators. Together, they help
+            regional universities produce AI-ready graduates, attract research
+            partnerships, and build programs that compete on a national stage.
           </p>
 
           <div

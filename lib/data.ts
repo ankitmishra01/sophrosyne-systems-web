@@ -19,7 +19,7 @@ export const WHY_ITEMS = [
   {
     icon: "Network",
     title: "Consortium Resource Pooling",
-    body: "Shared GPU compute, cross-campus model deployment, and a federated dataset exchange across all partner institutions. The network compounds in value with every new campus that joins.",
+    body: "Shared GPU compute, cross-campus model deployment, and a federated dataset exchange across all partner institutions. The network grows stronger with every new campus — more compute, more models, more cross-campus student collaboration.",
   },
 ] as const;
 
@@ -28,7 +28,7 @@ export const JOURNEY_STEPS = [
     number: "01",
     title: "The Ecosystem Audit",
     duration: "2 Weeks",
-    body: "We map your existing data silos, LMS integrations, and curriculum gaps. You receive a custom architectural blueprint for Sophrosyne Studio alongside a prioritised AI opportunity matrix.",
+    body: "We map your existing data silos, LMS integrations, and curriculum gaps. You receive a plain-language report: what's possible, what it costs, and what integration looks like with your existing systems.",
   },
   {
     number: "02",
@@ -50,7 +50,7 @@ export const SOLUTIONS = [
     label: "01 — The Developer Component",
     title: "Sophrosyne Studio",
     tagline: "Enterprise-grade AI infrastructure with academic governance.",
-    body: "Sophrosyne Studio is a secure, low-code AI orchestration and development environment designed specifically for campus deployment. Students and faculty gain access to a visual canvas IDE where they can model, test, and host multi-agent workflows that connect directly to legacy academic databases — all under complete FERPA compliance and institutional data sovereignty.",
+    body: "Sophrosyne Studio is a secure, low-code AI orchestration and development environment designed specifically for campus deployment. Students and faculty gain access to a visual canvas IDE where they can model, test, and host multi-agent workflows that connect directly to existing academic systems (Banner, Canvas, Colleague) — all under complete FERPA compliance and institutional data sovereignty.",
     bullets: [
       "Visual pipeline builder with drag-and-drop agent orchestration",
       "Native connectors for Banner, Canvas, Colleague, and Slate",
@@ -82,7 +82,7 @@ export const SOLUTIONS = [
     label: "03 — The Physical Incubator",
     title: "On-Campus AI Foundries",
     tagline: "Where student ideas become production deployments.",
-    body: "The Foundry is Sophrosyne's physical on-campus incubator environment — a purpose-designed collaborative space where students form multi-disciplinary startup teams, iterate on real AI projects using Studio's infrastructure, and build the kind of production-grade portfolios that elite employers and accelerators recruit from directly.",
+    body: "The Foundry is Sophrosyne's physical on-campus incubator environment — a purpose-designed collaborative space where students form multi-disciplinary teams, iterate on real AI projects using Studio's infrastructure, and build production-grade portfolios that leading employers and graduate programs actively recruit from.",
     bullets: [
       "Multi-disciplinary team formation facilitated by programme directors",
       "Direct access to Sophrosyne Studio's full production environment",
@@ -98,7 +98,7 @@ export const SOLUTIONS = [
     label: "04 — The Analytics Engine",
     title: "Sophrosyne Pulse",
     tagline: "Real-time fluency telemetry and verified credential issuance.",
-    body: "Sophrosyne Pulse is the enterprise analytics backbone of the ecosystem. It tracks real-time AI tool adoption, workflow complexity scores, and curriculum progression across every department — giving university leadership verified learning outcome data for accreditation, employers, and venture partners. Every Level 301 completion generates a cryptographic AI Fluency Badge tied to the student's verifiable credential record.",
+    body: "Sophrosyne Pulse is the analytics backbone of the ecosystem. It tracks real-time AI tool adoption, workflow complexity scores, and curriculum progression across every department — giving university leadership verified learning outcome data for accreditation reports, employer partnerships, and board presentations. Every Level 301 completion generates a tamper-proof AI Fluency Badge tied to the student's verifiable credential record.",
     bullets: [
       "Real-time AI tool adoption and workflow complexity dashboards",
       "Department-by-department fluency index with trend analysis",
@@ -229,6 +229,6 @@ export const PHILOSOPHY_BLOCKS = [
     number: "03",
     icon: "Globe",
     title: "Scalable Regional Impact",
-    body: "Tier 2 and Tier 3 institutions anchor their regions economically and socially. The Sophrosyne ecosystem is designed to aggregate and compound the AI capabilities of these campuses — creating a network that rivals flagship institutions in innovation output.",
+    body: "Regional and teaching-focused universities anchor their communities economically and socially. The Sophrosyne ecosystem is designed to grow and compound the AI capabilities of these campuses — creating a network that rivals flagship institutions in innovation output.",
   },
 ] as const;

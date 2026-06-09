@@ -1,11 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { LayoutGrid, Shield, BarChart2, Network } from "lucide-react";
 
 const KPI_TILES = [
   { label: "Active Students", value: "2,847", delta: "+12% this semester" },
   { label: "Pipelines Deployed", value: "341", delta: "+28 this week" },
   { label: "Compute Credits Used", value: "94.2k", delta: "Consortium pool" },
+];
+
+const PLATFORM_STATS = [
+  { value: "2,847", label: "Active Students" },
+  { value: "341", label: "AI Pipelines Deployed" },
+  { value: "94.2k", label: "Compute Credits Used" },
+];
+
+const FEATURE_HIGHLIGHTS = [
+  { icon: LayoutGrid, title: "Visual Pipeline Builder", body: "Drag-and-drop agent orchestration — no code required" },
+  { icon: Shield, title: "FERPA-Compliant by Design", body: "Data never leaves your institution's infrastructure perimeter" },
+  { icon: BarChart2, title: "Real-Time Fluency Analytics", body: "Live dashboards for faculty, administration, and accreditors" },
+  { icon: Network, title: "Consortium Compute Access", body: "Shared GPU pool and cross-campus model deployment" },
 ];
 
 export default function ShowreelSection() {
@@ -46,7 +60,7 @@ export default function ShowreelSection() {
               margin: 0,
             }}
           >
-            The institutional developer environment
+            The AI platform your campus will actually use
           </h2>
           <p
             style={{
@@ -56,9 +70,61 @@ export default function ShowreelSection() {
               maxWidth: 520,
             }}
           >
-            A secure, low-code AI orchestration platform built for campus
-            infrastructure — with full FERPA compliance and data sovereignty.
+            Low-code AI development for students and faculty. Runs within your
+            existing campus infrastructure — FERPA-compliant, institutionally
+            governed, and ready from day one.
           </p>
+        </motion.div>
+
+        {/* Platform stat strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          style={{ display: "flex", gap: 12, marginBottom: 28, flexWrap: "wrap" }}
+          className="stats-strip"
+        >
+          {PLATFORM_STATS.map((stat) => (
+            <div
+              key={stat.label}
+              style={{
+                background: "rgba(16,185,129,0.06)",
+                border: "1px solid rgba(16,185,129,0.15)",
+                borderRadius: "var(--radius-card)",
+                padding: "14px 28px",
+                textAlign: "center",
+                flex: 1,
+                minWidth: 160,
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 22,
+                  fontWeight: 700,
+                  color: "#f4f5f8",
+                  margin: "0 0 4px",
+                  letterSpacing: "-0.04em",
+                  fontFamily: "var(--font-geist-mono), monospace",
+                  fontVariantNumeric: "tabular-nums",
+                }}
+              >
+                {stat.value}
+              </p>
+              <p
+                style={{
+                  fontSize: 11,
+                  color: "#10b981",
+                  margin: 0,
+                  fontWeight: 500,
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                }}
+              >
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </motion.div>
 
         {/* Browser mockup */}
@@ -390,6 +456,64 @@ export default function ShowreelSection() {
             </div>
           </div>
         </motion.div>
+
+        {/* Feature-highlight strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            marginTop: 24,
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "var(--radius-card)",
+            overflow: "hidden",
+          }}
+          className="feature-strip"
+        >
+          {FEATURE_HIGHLIGHTS.map((item, i) => {
+            const IconComp = item.icon;
+            return (
+              <div
+                key={item.title}
+                style={{
+                  padding: "20px 24px",
+                  borderRight:
+                    i < FEATURE_HIGHLIGHTS.length - 1
+                      ? "1px solid rgba(255,255,255,0.08)"
+                      : "none",
+                }}
+              >
+                <div style={{ marginBottom: 10 }}>
+                  <IconComp size={18} color="#10b981" strokeWidth={1.8} />
+                </div>
+                <p
+                  style={{
+                    fontSize: 13,
+                    fontWeight: 600,
+                    color: "#f4f5f8",
+                    margin: "0 0 6px",
+                    letterSpacing: "-0.01em",
+                  }}
+                >
+                  {item.title}
+                </p>
+                <p
+                  style={{
+                    fontSize: 12,
+                    lineHeight: 1.55,
+                    color: "rgba(244,245,248,0.55)",
+                    margin: 0,
+                  }}
+                >
+                  {item.body}
+                </p>
+              </div>
+            );
+          })}
+        </motion.div>
       </div>
 
       <style>{`
@@ -397,6 +521,11 @@ export default function ShowreelSection() {
           .studio-layout { grid-template-columns: 1fr !important; }
           .studio-layout > *:first-child { display: none; }
           .kpi-row { display: none !important; }
+          .feature-strip { grid-template-columns: repeat(2, 1fr) !important; }
+          .feature-strip > *:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08) !important; }
+          .feature-strip > *:nth-child(1),
+          .feature-strip > *:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+          .stats-strip > * { min-width: 130px !important; }
         }
       `}</style>
     </section>

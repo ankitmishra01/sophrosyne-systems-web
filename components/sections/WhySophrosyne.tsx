@@ -34,7 +34,7 @@ export default function WhySophrosyne() {
               margin: "0 0 14px",
             }}
           >
-            The Venture-Backed Campus
+            Built for Higher Education
           </p>
           <h2
             style={{
@@ -57,9 +57,7 @@ export default function WhySophrosyne() {
               margin: 0,
             }}
           >
-            Three integrated pillars that turn a regional campus into a
-            nationally connected AI innovation engine — backed by enterprise
-            infrastructure, not slide decks.
+            Three integrated pillars that give regional universities a genuine AI program — one that graduates AI-fluent students, equips faculty with real tools, and gives leadership the verified data their accreditors expect.
           </p>
         </motion.div>
 

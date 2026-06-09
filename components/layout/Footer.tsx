@@ -54,9 +54,9 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              Treat AI like a language. Build with enterprise infrastructure.
-              Empowering Tier 2 and Tier 3 universities to become scalable
-              engines of AI innovation.
+              Treat AI like a language. Built for campus infrastructure.
+              Helping regional universities produce AI-fluent graduates
+              and build programs that last.
             </p>
           </div>
 
