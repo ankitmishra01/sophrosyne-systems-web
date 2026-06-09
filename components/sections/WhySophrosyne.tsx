@@ -95,7 +95,7 @@ export default function WhySophrosyne() {
                     style={{
                       width: 44,
                       height: 44,
-                      borderRadius: 10,
+                      borderRadius: "var(--radius-card)",
                       background: "rgba(16,185,129,0.1)",
                       border: "1px solid rgba(16,185,129,0.2)",
                       display: "flex",

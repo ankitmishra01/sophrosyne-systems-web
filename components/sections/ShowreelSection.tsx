@@ -70,17 +70,16 @@ export default function ShowreelSection() {
           style={{
             borderRadius: 16,
             overflow: "hidden",
-            border: "1px solid rgba(248,250,252,0.09)",
-            boxShadow:
-              "0 0 0 1px rgba(16,185,129,0.06), 0 40px 100px rgba(0,0,0,0.6), 0 0 80px rgba(16,185,129,0.04)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            boxShadow: "var(--shadow-emerald)",
           }}
         >
           {/* Window chrome */}
           <div
             style={{
-              background: "#161e2e",
+              background: "#111318",
               padding: "12px 16px",
-              borderBottom: "1px solid rgba(248,250,252,0.06)",
+              borderBottom: "1px solid rgba(255,255,255,0.06)",
               display: "flex",
               alignItems: "center",
               gap: 12,
@@ -142,8 +141,8 @@ export default function ShowreelSection() {
               <span
                 style={{
                   fontSize: 11,
-                  color: "rgba(248,250,252,0.4)",
-                  fontFamily: "monospace",
+                  color: "rgba(244,245,248,0.35)",
+                  fontFamily: "var(--font-geist-mono), monospace",
                 }}
               >
                 studio.sophrosynesystems.com · Secure
@@ -167,7 +166,7 @@ export default function ShowreelSection() {
           {/* Studio UI sidebar + main canvas */}
           <div
             style={{
-              background: "#0d1421",
+              background: "#0d1117",
               display: "grid",
               gridTemplateColumns: "200px 1fr",
               minHeight: 480,
@@ -177,9 +176,9 @@ export default function ShowreelSection() {
             {/* Left sidebar */}
             <div
               style={{
-                borderRight: "1px solid rgba(248,250,252,0.05)",
+                borderRight: "1px solid rgba(255,255,255,0.06)",
                 padding: "16px 0",
-                background: "#0a1020",
+                background: "#222326",
               }}
             >
               <div style={{ padding: "0 14px 12px" }}>
@@ -245,7 +244,7 @@ export default function ShowreelSection() {
               <div
                 style={{
                   height: 1,
-                  background: "rgba(248,250,252,0.05)",
+                  background: "rgba(255,255,255,0.06)",
                   margin: "16px 0",
                 }}
               />
@@ -345,8 +344,8 @@ export default function ShowreelSection() {
                     style={{
                       background: "rgba(10,15,26,0.88)",
                       backdropFilter: "blur(16px)",
-                      border: "1px solid rgba(248,250,252,0.08)",
-                      borderRadius: 10,
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      borderRadius: "var(--radius-card)",
                       padding: "10px 14px",
                     }}
                   >
@@ -364,11 +363,13 @@ export default function ShowreelSection() {
                     </p>
                     <p
                       style={{
-                        fontSize: 18,
-                        fontWeight: 800,
-                        color: "#f8fafc",
+                        fontSize: 17,
+                        fontWeight: 700,
+                        color: "#f4f5f8",
                         margin: "0 0 2px",
-                        letterSpacing: "-0.03em",
+                        letterSpacing: "-0.04em",
+                        fontFamily: "var(--font-geist-mono), monospace",
+                        fontVariantNumeric: "tabular-nums",
                       }}
                     >
                       {tile.value}

@@ -19,25 +19,28 @@ export default function Card({
 }: CardProps) {
   const [hovered, setHovered] = useState(false);
 
+  // Vercel-spec borders + Linear Nordic Gray bg
   const base: CSSProperties = {
-    background: highlight
-      ? "rgba(16,185,129,0.04)"
-      : "rgba(248,250,252,0.025)",
+    background: highlight ? "rgba(16,185,129,0.04)" : "rgba(255,255,255,0.02)",
     border: highlight
-      ? "1.5px solid rgba(16,185,129,0.32)"
-      : "1px solid rgba(248,250,252,0.07)",
+      ? "1.5px solid rgba(16,185,129,0.28)"
+      : "1px solid rgba(255,255,255,0.08)",
     borderRadius: "var(--radius-card)",
-    transition: "border-color 220ms, background 220ms, transform 220ms, box-shadow 220ms",
+    boxShadow: highlight ? "var(--shadow-emerald)" : "var(--shadow-card)",
+    transition:
+      "border-color 200ms, background 200ms, transform 200ms, box-shadow 200ms",
     ...(hoverable && hovered
       ? {
           borderColor: highlight
-            ? "rgba(16,185,129,0.55)"
-            : "rgba(16,185,129,0.28)",
+            ? "rgba(16,185,129,0.50)"
+            : "rgba(255,255,255,0.15)",
           background: highlight
             ? "rgba(16,185,129,0.07)"
-            : "rgba(248,250,252,0.04)",
+            : "rgba(255,255,255,0.035)",
           transform: "translateY(-3px)",
-          boxShadow: "0 16px 48px rgba(0,0,0,0.35)",
+          boxShadow: highlight
+            ? "var(--shadow-emerald)"
+            : "var(--shadow-card-lg)",
         }
       : {}),
     ...style,

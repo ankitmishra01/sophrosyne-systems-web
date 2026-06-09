@@ -212,11 +212,10 @@ export default function Hero() {
           <div
             style={{
               position: "relative",
-              borderRadius: 16,
+              borderRadius: "var(--radius-card)",
               overflow: "hidden",
-              border: "1.5px solid rgba(248,250,252,0.09)",
-              boxShadow:
-                "0 0 0 1px rgba(16,185,129,0.08), 0 40px 80px rgba(0,0,0,0.55), 0 0 120px rgba(16,185,129,0.06)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              boxShadow: "var(--shadow-emerald)",
             }}
           >
             {/* Emerald top accent line */}
@@ -226,9 +225,9 @@ export default function Hero() {
                 top: 0,
                 left: 0,
                 right: 0,
-                height: 2,
+                height: 1,
                 background:
-                  "linear-gradient(90deg, transparent, rgba(16,185,129,0.7) 40%, rgba(16,185,129,0.7) 60%, transparent)",
+                  "linear-gradient(90deg, transparent, rgba(16,185,129,0.65) 40%, rgba(16,185,129,0.65) 60%, transparent)",
                 zIndex: 2,
               }}
             />
@@ -295,11 +294,12 @@ export default function Hero() {
               marginRight: 28,
               marginLeft: "auto",
               width: "fit-content",
-              background: "rgba(10,15,26,0.92)",
+              background: "#222326",
               backdropFilter: "blur(16px)",
               border: "1px solid rgba(16,185,129,0.2)",
-              borderRadius: 10,
+              borderRadius: "var(--radius-card)",
               padding: "14px 18px",
+              boxShadow: "var(--shadow-card)",
             }}
           >
             <p
@@ -318,9 +318,11 @@ export default function Hero() {
               style={{
                 fontSize: 22,
                 fontWeight: 800,
-                color: "#f8fafc",
+                color: "#f4f5f8",
                 margin: 0,
-                letterSpacing: "-0.03em",
+                letterSpacing: "-0.04em",
+                fontFamily: "var(--font-geist-mono), monospace",
+                fontVariantNumeric: "tabular-nums",
               }}
             >
               +340%{" "}
@@ -328,8 +330,9 @@ export default function Hero() {
                 style={{
                   fontSize: 11,
                   fontWeight: 400,
-                  color: "rgba(248,250,252,0.45)",
+                  color: "rgba(244,245,248,0.42)",
                   letterSpacing: 0,
+                  fontFamily: "var(--font-geist-sans), sans-serif",
                 }}
               >
                 student deployment velocity

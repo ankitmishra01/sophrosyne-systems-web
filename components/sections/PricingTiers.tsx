@@ -147,24 +147,27 @@ export default function PricingTiers() {
                   {tier.name}
                 </h3>
 
-                {/* Price */}
+                {/* Price — Geist Mono + tabular-nums */}
                 <div style={{ marginBottom: 20 }}>
                   <span
                     style={{
-                      fontSize: "clamp(32px, 4vw, 46px)",
-                      fontWeight: 800,
-                      color: tier.highlighted ? "#10b981" : "#f8fafc",
+                      fontSize: "clamp(28px, 3.8vw, 44px)",
+                      fontWeight: 700,
+                      color: tier.highlighted ? "#10b981" : "#f4f5f8",
                       letterSpacing: "-0.04em",
                       lineHeight: 1,
+                      fontFamily: "var(--font-geist-mono), monospace",
+                      fontVariantNumeric: "tabular-nums",
                     }}
                   >
                     {tier.price}
                   </span>
                   <span
                     style={{
-                      fontSize: 13,
-                      color: "rgba(248,250,252,0.38)",
+                      fontSize: 12,
+                      color: "rgba(244,245,248,0.35)",
                       marginLeft: 6,
+                      fontFamily: "var(--font-geist-sans), sans-serif",
                     }}
                   >
                     {tier.suffix}
@@ -174,9 +177,9 @@ export default function PricingTiers() {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: 5,
-                      background: "rgba(248,250,252,0.04)",
-                      border: "1px solid rgba(248,250,252,0.07)",
-                      borderRadius: 20,
+                      background: "rgba(255,255,255,0.04)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      borderRadius: "var(--radius-sm)",
                       padding: "3px 10px",
                       marginLeft: 10,
                     }}
@@ -184,7 +187,7 @@ export default function PricingTiers() {
                     <span
                       style={{
                         fontSize: 10,
-                        color: "rgba(248,250,252,0.45)",
+                        color: "rgba(244,245,248,0.42)",
                         fontWeight: 500,
                       }}
                     >

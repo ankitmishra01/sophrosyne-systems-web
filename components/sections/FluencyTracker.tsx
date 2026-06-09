@@ -101,7 +101,7 @@ function Bar({ pct, colour, delay = 0 }: { pct: number; colour: string; delay?: 
   }, [pct, delay]);
 
   return (
-    <div style={{ height: 5, background: "rgba(248,250,252,0.06)", borderRadius: 99, overflow: "hidden" }}>
+    <div style={{ height: 5, background: "rgba(255,255,255,0.06)", borderRadius: 99, overflow: "hidden" }}>
       <div
         style={{
           height: "100%",
@@ -126,15 +126,17 @@ function ScoreBadge({ score }: { score: number }) {
         display: "inline-flex",
         alignItems: "center",
         justifyContent: "center",
-        width: 42,
-        height: 24,
-        borderRadius: 6,
+        width: 40,
+        height: 22,
+        borderRadius: "var(--radius-sm)",
         fontSize: 11,
-        fontWeight: 800,
+        fontWeight: 700,
         color: colour,
-        background: `${colour}18`,
-        border: `1px solid ${colour}35`,
+        background: `${colour}14`,
+        border: `1px solid ${colour}30`,
         flexShrink: 0,
+        fontFamily: "var(--font-geist-mono), monospace",
+        fontVariantNumeric: "tabular-nums",
       }}
     >
       {score}
@@ -163,19 +165,19 @@ function OverviewTab() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              background: "rgba(248,250,252,0.025)",
-              border: "1px solid rgba(248,250,252,0.07)",
-              borderRadius: 10,
+              background: "rgba(255,255,255,0.02)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              borderRadius: "var(--radius-card)",
               padding: "14px 16px",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 8 }}>
               <Icon size={13} color={colour} strokeWidth={2} />
-              <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(248,250,252,0.38)" }}>
+              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(244,245,248,0.35)" }}>
                 {label}
               </span>
             </div>
-            <p style={{ fontSize: 22, fontWeight: 800, color: "#f8fafc", margin: "0 0 3px", letterSpacing: "-0.03em" }}>{value}</p>
+            <p style={{ fontSize: 20, fontWeight: 700, color: "#f4f5f8", margin: "0 0 3px", letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>{value}</p>
             <p style={{ fontSize: 11, color: colour, margin: 0, fontWeight: 500 }}>{sub}</p>
           </motion.div>
         ))}
@@ -187,9 +189,9 @@ function OverviewTab() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
         style={{
-          background: "rgba(248,250,252,0.02)",
-          border: "1px solid rgba(248,250,252,0.06)",
-          borderRadius: 10,
+          background: "rgba(255,255,255,0.02)",
+          border: "1px solid rgba(255,255,255,0.08)",
+          borderRadius: "var(--radius-card)",
           padding: "18px 20px",
         }}
       >
@@ -198,20 +200,20 @@ function OverviewTab() {
             <p style={{ fontSize: 12, fontWeight: 600, color: "rgba(248,250,252,0.45)", margin: "0 0 2px", letterSpacing: "0.06em", textTransform: "uppercase" }}>
               AI Fluency Index — 12-Month Trend
             </p>
-            <p style={{ fontSize: 20, fontWeight: 800, color: "#10b981", margin: 0, letterSpacing: "-0.03em" }}>
+            <p style={{ fontSize: 20, fontWeight: 700, color: "#10b981", margin: 0, letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
               81{" "}
-              <span style={{ fontSize: 12, fontWeight: 500, color: "rgba(248,250,252,0.4)" }}>/ 100</span>
+              <span style={{ fontSize: 12, fontWeight: 400, color: "rgba(244,245,248,0.35)", fontFamily: "var(--font-geist-sans), sans-serif" }}>/ 100</span>
             </p>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 5, background: "rgba(16,185,129,0.1)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: 20, padding: "4px 10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 5, background: "rgba(16,185,129,0.1)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: "var(--radius-sm)", padding: "4px 10px" }}>
             <ChevronUp size={12} color="#10b981" strokeWidth={2.5} />
-            <span style={{ fontSize: 11, fontWeight: 700, color: "#10b981" }}>+43 pts YoY</span>
+            <span style={{ fontSize: 11, fontWeight: 700, color: "#10b981", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>+43 pts YoY</span>
           </div>
         </div>
         <Sparkline data={TREND_POINTS} height={64} />
         <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6 }}>
           {["Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun"].map((m) => (
-            <span key={m} style={{ fontSize: 9, color: "rgba(248,250,252,0.25)", letterSpacing: "0.04em" }}>{m}</span>
+            <span key={m} style={{ fontSize: 9, color: "rgba(244,245,248,0.25)", letterSpacing: "0.04em", fontFamily: "var(--font-geist-mono), monospace" }}>{m}</span>
           ))}
         </div>
       </motion.div>
@@ -235,10 +237,10 @@ function DepartmentsTab() {
           onMouseEnter={() => setHovered(i)}
           onMouseLeave={() => setHovered(null)}
           style={{
-            background: hovered === i ? "rgba(16,185,129,0.04)" : "rgba(248,250,252,0.02)",
+            background: hovered === i ? "rgba(16,185,129,0.04)" : "rgba(255,255,255,0.02)",
             border: "1px solid",
-            borderColor: hovered === i ? "rgba(16,185,129,0.2)" : "rgba(248,250,252,0.06)",
-            borderRadius: 10,
+            borderColor: hovered === i ? "rgba(16,185,129,0.2)" : "rgba(255,255,255,0.08)",
+            borderRadius: "var(--radius-card)",
             padding: "14px 16px",
             transition: "all 180ms",
             cursor: "default",
@@ -282,9 +284,9 @@ function ProgressionTab() {
             >
               <div
                 style={{
-                  background: "rgba(248,250,252,0.02)",
-                  border: "1px solid rgba(248,250,252,0.07)",
-                  borderRadius: 12,
+                  background: "rgba(255,255,255,0.02)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: "var(--radius-card)",
                   padding: "20px 20px 18px",
                   position: "relative",
                   overflow: "hidden",
@@ -310,14 +312,16 @@ function ProgressionTab() {
                         <span
                           style={{
                             fontSize: 10,
-                            fontWeight: 800,
+                            fontWeight: 700,
                             letterSpacing: "0.12em",
                             background: "rgba(16,185,129,0.12)",
                             border: "1px solid rgba(16,185,129,0.25)",
                             color: "#10b981",
                             padding: "2px 8px",
-                            borderRadius: 4,
+                            borderRadius: "var(--radius-sm)",
                             textTransform: "uppercase",
+                            fontFamily: "var(--font-geist-mono), monospace",
+                            fontVariantNumeric: "tabular-nums",
                           }}
                         >
                           Level {level.code}
@@ -329,7 +333,7 @@ function ProgressionTab() {
                       <p style={{ fontSize: 12, color: "rgba(248,250,252,0.4)", margin: 0 }}>{level.desc}</p>
                     </div>
                     <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      <p style={{ fontSize: 22, fontWeight: 800, color: "#10b981", margin: "0 0 1px", letterSpacing: "-0.03em" }}>
+                      <p style={{ fontSize: 20, fontWeight: 700, color: "#10b981", margin: "0 0 1px", letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
                         {parseFloat(rate).toFixed(0)}%
                       </p>
                       <p style={{ fontSize: 10, color: "rgba(248,250,252,0.3)", margin: 0, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.06em" }}>
@@ -345,7 +349,7 @@ function ProgressionTab() {
                         <Bar pct={parseFloat(rate)} colour="#10b981" delay={i * 100} />
                       </div>
                     </div>
-                    <span style={{ fontSize: 11, color: "rgba(248,250,252,0.35)", whiteSpace: "nowrap", flexShrink: 0 }}>
+                    <span style={{ fontSize: 11, color: "rgba(244,245,248,0.35)", whiteSpace: "nowrap", flexShrink: 0, fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
                       {level.completed.toLocaleString()} / {level.enrolled.toLocaleString()}
                     </span>
                   </div>
@@ -463,16 +467,16 @@ export default function FluencyTracker() {
           style={{
             borderRadius: 16,
             overflow: "hidden",
-            border: "1px solid rgba(248,250,252,0.08)",
-            boxShadow: "0 0 0 1px rgba(16,185,129,0.06), 0 40px 100px rgba(0,0,0,0.55)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            boxShadow: "var(--shadow-emerald)",
           }}
         >
           {/* Chrome bar */}
           <div
             style={{
-              background: "#0d1421",
+              background: "#111318",
               padding: "12px 16px",
-              borderBottom: "1px solid rgba(248,250,252,0.05)",
+              borderBottom: "1px solid rgba(255,255,255,0.06)",
               display: "flex",
               alignItems: "center",
               gap: 12,
@@ -496,7 +500,7 @@ export default function FluencyTracker() {
               }}
             >
               <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#10b981", flexShrink: 0 }} />
-              <span style={{ fontSize: 11, color: "rgba(248,250,252,0.35)", fontFamily: "monospace" }}>
+              <span style={{ fontSize: 11, color: "rgba(244,245,248,0.35)", fontFamily: "var(--font-geist-mono), monospace" }}>
                 index.sophrosynesystems.com/fluency
               </span>
             </div>
@@ -509,9 +513,9 @@ export default function FluencyTracker() {
           </div>
 
           {/* Dashboard body */}
-          <div style={{ background: "#0a1020", display: "grid", gridTemplateColumns: "220px 1fr" }} className="dash-layout">
+          <div style={{ background: "#0d1117", display: "grid", gridTemplateColumns: "220px 1fr" }} className="dash-layout">
             {/* Left sidebar */}
-            <div style={{ borderRight: "1px solid rgba(248,250,252,0.04)", padding: "20px 0", background: "#080d18" }}>
+            <div style={{ borderRight: "1px solid rgba(255,255,255,0.06)", padding: "20px 0", background: "#222326" }}>
               <div style={{ padding: "0 16px 14px" }}>
                 <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.25)", margin: 0 }}>
                   Analytics
@@ -546,7 +550,7 @@ export default function FluencyTracker() {
                 );
               })}
 
-              <div style={{ height: 1, background: "rgba(248,250,252,0.04)", margin: "16px 0" }} />
+              <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "16px 0" }} />
               <div style={{ padding: "0 16px" }}>
                 <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.25)", margin: "0 0 10px" }}>
                   Institution
@@ -556,7 +560,7 @@ export default function FluencyTracker() {
                 ))}
               </div>
 
-              <div style={{ height: 1, background: "rgba(248,250,252,0.04)", margin: "16px 0" }} />
+              <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "16px 0" }} />
               <div style={{ padding: "0 16px" }}>
                 <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.25)", margin: "0 0 10px" }}>
                   Data Integrations

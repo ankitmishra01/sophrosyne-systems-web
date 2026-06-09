@@ -1,30 +1,56 @@
 @import "tailwindcss";
 
 @theme {
-  --color-slate-950: #0a0f1a;
-  --color-slate-900: #0f172a;
-  --color-slate-800: #1e293b;
-  --color-slate-700: #334155;
-  --color-zinc-400: #a1a1aa;
-  --color-emerald: #10b981;
-  --color-emerald-dim: #059669;
-  --color-sage: #6b8c6e;
-  --color-ivory: #f8fafc;
+  /* ── Vercel Gray Ramp (neutral, no undertones) ── */
+  --color-gray-950: #0a0a0a;
+  --color-gray-900: #171717;
+  --color-gray-800: #262626;
+  --color-gray-700: #404040;
+  --color-gray-600: #525252;
+  --color-gray-500: #737373;
+  --color-gray-400: #a3a3a3;
+  --color-gray-200: #e5e5e5;
 
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  /* ── Linear surface palette ── */
+  --color-surface-nordic: #222326;   /* Linear Nordic Gray — warm card/sidebar bg */
+  --color-surface-raised: #262626;   /* Vercel Gray-800 — elevated card bg */
+  --color-text-primary:   #f4f5f8;   /* Linear Mercury White */
+  --color-text-secondary: #a3a3a3;   /* Vercel Gray-400 */
+  --color-text-muted:     #525252;   /* Vercel Gray-600 */
+
+  /* ── Brand ── */
+  --color-emerald:     #10b981;
+  --color-emerald-dim: #059669;
+  --color-sage:        #6b8c6e;
+
+  /* ── Fonts ── */
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: var(--font-geist-mono), "Fira Code", "Cascadia Code", monospace;
 }
 
 :root {
   --pad-h: 80px;
   --max-w: 1280px;
   --section-py: 96px;
-  --radius-card: 12px;
-  --radius-btn: 6px;
+
+  /* ── Border radius (Vercel tighter system) ── */
+  --radius-card: 8px;
+  --radius-btn:  6px;
+  --radius-sm:   4px;
+
+  /* ── Borders (Vercel spec) ── */
+  --border-subtle:  rgba(255, 255, 255, 0.08);
+  --border-strong:  rgba(255, 255, 255, 0.15);
+  --border-emerald: rgba(16, 185, 129, 0.28);
+
+  /* ── Shadows (Vercel two-layer: ambient + direct) ── */
+  --shadow-card:    0 1px 3px rgba(0,0,0,0.35), 0 8px 32px rgba(0,0,0,0.45);
+  --shadow-card-lg: 0 1px 3px rgba(0,0,0,0.4),  0 24px 64px rgba(0,0,0,0.6);
+  --shadow-emerald: 0 0 0 1px rgba(16,185,129,0.12), 0 24px 64px rgba(0,0,0,0.55);
+
+  /* ── Legacy ── */
   --bg-base: #0f172a;
-  --bg-mid: #1e293b;
-  --bg-overlay: rgba(16, 185, 129, 0.05);
-  --border-subtle: rgba(248, 250, 252, 0.08);
-  --border-emerald: rgba(16, 185, 129, 0.3);
+  --bg-mid:  #222326;
 }
 
 @media (max-width: 1024px) { :root { --pad-h: 48px; } }
@@ -33,21 +59,33 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
 
 body {
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-geist-sans), var(--font-sans), -apple-system, sans-serif;
   font-weight: 400;
   background: #0f172a;
-  color: #f8fafc;
+  color: #f4f5f8;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
-h1 { letter-spacing: -0.03em; line-height: 1.02; }
+/* ── Geist typography scale (Vercel spec) ── */
+h1 { letter-spacing: -0.04em;  line-height: 1.02; }
 h2 { letter-spacing: -0.025em; line-height: 1.08; }
 h3 { letter-spacing: -0.015em; }
+
+/* ── Tabular numerics on mono spans ── */
+.mono,
+[data-mono] {
+  font-family: var(--font-geist-mono), var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
 
 :focus-visible {
   outline: 2px solid #10b981;
@@ -56,11 +94,14 @@ h3 { letter-spacing: -0.015em; }
 }
 
 img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
+a  { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; }
 
-/* Scrollbar */
-::-webkit-scrollbar { width: 6px; }
+/* ── Scrollbar (dark, Vercel-tinted) ── */
+::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: #0f172a; }
-::-webkit-scrollbar-thumb { background: rgba(248,250,252,0.12); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(248,250,252,0.2); }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.10);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }

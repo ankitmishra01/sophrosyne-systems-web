@@ -93,11 +93,11 @@ export default function JourneyTimeline() {
               {/* Step number circle */}
               <div
                 style={{
-                  width: 72,
-                  height: 72,
+                  width: 64,
+                  height: 64,
                   borderRadius: "50%",
-                  background: "rgba(16,185,129,0.08)",
-                  border: "1.5px solid rgba(16,185,129,0.28)",
+                  background: "rgba(16,185,129,0.07)",
+                  border: "1px solid rgba(16,185,129,0.25)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -106,10 +106,13 @@ export default function JourneyTimeline() {
               >
                 <span
                   style={{
-                    fontSize: 20,
-                    fontWeight: 800,
+                    fontSize: 18,
+                    fontWeight: 700,
                     color: "#10b981",
-                    letterSpacing: "-0.03em",
+                    letterSpacing: "-0.02em",
+                    /* Geist Mono for step numbers */
+                    fontFamily: "var(--font-geist-mono), monospace",
+                    fontVariantNumeric: "tabular-nums",
                   }}
                 >
                   {step.number}
@@ -121,9 +124,9 @@ export default function JourneyTimeline() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 6,
-                  background: "rgba(16,185,129,0.08)",
-                  border: "1px solid rgba(16,185,129,0.15)",
-                  borderRadius: 20,
+                  background: "rgba(16,185,129,0.07)",
+                  border: "1px solid rgba(16,185,129,0.14)",
+                  borderRadius: "var(--radius-sm)",
                   padding: "3px 10px",
                   marginBottom: 14,
                 }}

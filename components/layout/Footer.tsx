@@ -3,18 +3,19 @@
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "Home", href: "/" },
+  { label: "Home",      href: "/"          },
   { label: "Solutions", href: "/solutions" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
+  { label: "Pricing",   href: "/pricing"   },
+  { label: "About",     href: "/about"     },
 ];
 
 export default function Footer() {
   return (
     <footer
       style={{
-        borderTop: "1px solid rgba(248,250,252,0.06)",
-        background: "#0a0f1a",
+        /* Vercel spec border-top */
+        borderTop: "1px solid rgba(255,255,255,0.08)",
+        background: "#0a0a0a",
       }}
     >
       <div
@@ -25,6 +26,7 @@ export default function Footer() {
         }}
       >
         <div
+          className="footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr",
@@ -36,31 +38,18 @@ export default function Footer() {
           <div>
             <div style={{ marginBottom: 14 }}>
               <span
-                style={{
-                  fontSize: 16,
-                  fontWeight: 700,
-                  color: "#f8fafc",
-                  letterSpacing: "-0.03em",
-                }}
+                translate="no"
+                style={{ fontSize: 15, fontWeight: 700, color: "#f4f5f8", letterSpacing: "-0.04em" }}
               >
-                Sophrosyne
-              </span>
-              <span
-                style={{
-                  fontSize: 16,
-                  fontWeight: 400,
-                  color: "#10b981",
-                  letterSpacing: "-0.03em",
-                }}
-              >
-                {" "}Systems
+                Sophrosyne{" "}
+                <span style={{ color: "#10b981", fontWeight: 400 }}>Systems</span>
               </span>
             </div>
             <p
               style={{
                 fontSize: 13,
                 lineHeight: 1.65,
-                color: "rgba(248,250,252,0.45)",
+                color: "rgba(244,245,248,0.4)",
                 maxWidth: 260,
                 margin: 0,
               }}
@@ -75,12 +64,11 @@ export default function Footer() {
           <div>
             <p
               style={{
-                fontSize: 11,
+                fontSize: 10,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "rgba(248,250,252,0.35)",
-                marginBottom: 16,
+                color: "rgba(244,245,248,0.28)",
                 margin: "0 0 16px",
               }}
             >
@@ -92,18 +80,16 @@ export default function Footer() {
                   key={l.href}
                   href={l.href}
                   style={{
-                    fontSize: 14,
-                    color: "rgba(248,250,252,0.55)",
+                    fontSize: 13,
+                    color: "rgba(244,245,248,0.48)",
                     textDecoration: "none",
-                    transition: "color 200ms",
+                    transition: "color 180ms",
                   }}
                   onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLAnchorElement).style.color =
-                      "#f8fafc")
+                    ((e.currentTarget as HTMLAnchorElement).style.color = "#f4f5f8")
                   }
                   onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLAnchorElement).style.color =
-                      "rgba(248,250,252,0.55)")
+                    ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(244,245,248,0.48)")
                   }
                 >
                   {l.label}
@@ -116,11 +102,11 @@ export default function Footer() {
           <div>
             <p
               style={{
-                fontSize: 11,
+                fontSize: 10,
                 fontWeight: 600,
                 letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "rgba(248,250,252,0.35)",
+                color: "rgba(244,245,248,0.28)",
                 margin: "0 0 16px",
               }}
             >
@@ -129,10 +115,10 @@ export default function Footer() {
             <a
               href="mailto:hello@sophrosynesystems.com"
               style={{
-                fontSize: 14,
-                color: "rgba(248,250,252,0.55)",
+                fontSize: 13,
+                color: "rgba(244,245,248,0.48)",
                 textDecoration: "none",
-                transition: "color 200ms",
+                transition: "color 180ms",
                 display: "block",
                 marginBottom: 8,
               }}
@@ -140,19 +126,12 @@ export default function Footer() {
                 ((e.currentTarget as HTMLAnchorElement).style.color = "#10b981")
               }
               onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color =
-                  "rgba(248,250,252,0.55)")
+                ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(244,245,248,0.48)")
               }
             >
               hello@sophrosynesystems.com
             </a>
-            <p
-              style={{
-                fontSize: 13,
-                color: "rgba(248,250,252,0.35)",
-                margin: 0,
-              }}
-            >
+            <p style={{ fontSize: 12, color: "rgba(244,245,248,0.28)", margin: 0 }}>
               Western Accelerator Partner
             </p>
           </div>
@@ -160,8 +139,8 @@ export default function Footer() {
 
         <div
           style={{
-            borderTop: "1px solid rgba(248,250,252,0.06)",
-            paddingTop: 28,
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            paddingTop: 24,
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
@@ -169,22 +148,11 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <p
-            style={{
-              fontSize: 12,
-              color: "rgba(248,250,252,0.28)",
-              margin: 0,
-            }}
-          >
-            © 2026 Sophrosyne Systems Inc. All rights reserved.
+          <p style={{ fontSize: 11, color: "rgba(244,245,248,0.22)", margin: 0 }}>
+            © 2026{" "}
+            <span translate="no">Sophrosyne Systems Inc.</span> All rights reserved.
           </p>
-          <p
-            style={{
-              fontSize: 12,
-              color: "rgba(248,250,252,0.22)",
-              margin: 0,
-            }}
-          >
+          <p style={{ fontSize: 11, color: "rgba(244,245,248,0.18)", margin: 0 }}>
             FERPA Compliant · Student IP Protected · Data Sovereign
           </p>
         </div>
