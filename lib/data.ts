@@ -1,8 +1,8 @@
 export const TRUST_METRICS = [
-  { value: "Proprietary", label: "AI Sandbox Architecture" },
+  { value: "Proprietary", label: "Studio & Pulse Architecture" },
   { value: "100%", label: "Student-Owned IP" },
-  { value: "National", label: "Knowledge Consortium Access" },
-  { value: "Verified", label: "Employability Tracking" },
+  { value: "Real-Time", label: "Fluency Telemetry via Pulse" },
+  { value: "Cryptographic", label: "Verified Employability Badges" },
 ] as const;
 
 export const WHY_ITEMS = [
@@ -13,8 +13,8 @@ export const WHY_ITEMS = [
   },
   {
     icon: "Code2",
-    title: "Sophrosyne Studio",
-    body: "Students get an institutional developer environment with a visual canvas IDE, live FERPA-compliant data connectors, and a multi-agent orchestration layer — purpose-built for academic infrastructure.",
+    title: "Sophrosyne Studio & Pulse",
+    body: "Studio gives students a FERPA-compliant developer environment with a visual canvas IDE and multi-agent orchestration. Pulse gives administrators real-time fluency telemetry, department-level dashboards, and cryptographic badge issuance — both running on the same institutional infrastructure.",
   },
   {
     icon: "Network",
@@ -94,20 +94,21 @@ export const SOLUTIONS = [
     imageAlt: "Students and developers collaborating and coding in a foundry setting",
   },
   {
-    id: "exchange",
-    label: "04 — The Network Effect",
-    title: "Intercollegiate AI Exchange Network",
-    tagline: "A federated intelligence layer that compounds with every campus.",
-    body: "Every institution that joins the Sophrosyne ecosystem adds to a shared, federated resource pool. Cross-campus model deployment pipelines, pooled GPU compute credits, anonymised dataset exchange agreements, and a joint intellectual property governance framework make the network exponentially more valuable as it scales — turning regional colleges into a distributed AI research consortium.",
+    id: "pulse",
+    label: "04 — The Analytics Engine",
+    title: "Sophrosyne Pulse",
+    tagline: "Real-time fluency telemetry and verified credential issuance.",
+    body: "Sophrosyne Pulse is the enterprise analytics backbone of the ecosystem. It tracks real-time AI tool adoption, workflow complexity scores, and curriculum progression across every department — giving university leadership verified learning outcome data for accreditation, employers, and venture partners. Every Level 301 completion generates a cryptographic AI Fluency Badge tied to the student's verifiable credential record.",
     bullets: [
-      "Federated dataset exchange with full FERPA anonymisation protocols",
-      "Pooled cloud compute credits across all partner institutions",
-      "Cross-campus model deployment and version control",
-      "Joint IP governance framework protecting all contributing institutions",
-      "National consortium access to employer partnerships and placement pipelines",
+      "Real-time AI tool adoption and workflow complexity dashboards",
+      "Department-by-department fluency index with trend analysis",
+      "Cryptographic 'AI Fluency Badge' issuance for student resumes",
+      "Accreditation-ready learning outcome reports for institutional leadership",
+      "Employer-verified placement tracking through the national consortium",
+      "API-level integration with Canvas, Banner, and Slate for live data pulls",
     ],
-    image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Modern campus architecture representing networked institutions",
+    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Technical AI analytics workspace showing Sophrosyne Pulse dashboard",
   },
 ] as const;
 
