@@ -90,7 +90,7 @@ export default function Hero() {
           <h1
             style={{
               fontSize: "clamp(38px, 5.2vw, 72px)",
-              fontWeight: 800,
+              fontWeight: 700,
               color: "#f8fafc",
               margin: "0 0 24px",
               lineHeight: 1.02,

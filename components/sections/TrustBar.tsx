@@ -36,7 +36,7 @@ export default function TrustBar() {
               style={{
                 fontSize: "clamp(15px, 2.2vw, 20px)",
                 fontWeight: 700,
-                color: i % 2 === 0 ? "#10b981" : "#6b8c6e",
+                color: "#10b981",
                 margin: "0 0 5px",
                 letterSpacing: "-0.02em",
                 fontFamily: "var(--font-geist-mono), monospace",

@@ -51,7 +51,7 @@ export default function ShowreelSection() {
           <p
             style={{
               fontSize: 15,
-              color: "rgba(248,250,252,0.5)",
+              color: "rgba(248,250,252,0.62)",
               margin: "14px auto 0",
               maxWidth: 520,
             }}

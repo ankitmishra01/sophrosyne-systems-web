@@ -52,7 +52,7 @@ export default function WhySophrosyne() {
             style={{
               fontSize: 16,
               lineHeight: 1.65,
-              color: "rgba(248,250,252,0.52)",
+              color: "rgba(248,250,252,0.62)",
               maxWidth: 560,
               margin: 0,
             }}
@@ -63,61 +63,110 @@ export default function WhySophrosyne() {
           </p>
         </motion.div>
 
-        {/* Cards */}
+        {/* Cards — asymmetric: hero card left (Studio & Pulse), two supporting cards stacked right */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: "3fr 2fr",
+            gridTemplateRows: "auto auto",
             gap: 20,
           }}
           className="why-grid"
         >
-          {WHY_ITEMS.map((item, i) => {
+          {/* Hero card — Sophrosyne Studio & Pulse (index 1) spans both rows on the left */}
+          {(() => {
+            const item = WHY_ITEMS[1];
             const IconComp = ICONS[item.icon as keyof typeof ICONS];
             return (
               <motion.div
-                key={i}
+                key={1}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                style={{ gridColumn: 1, gridRow: "1 / 3" }}
+              >
+                <Card highlight hoverable style={{ padding: "48px 40px", height: "100%" }}>
+                  <div
+                    style={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: "var(--radius-card)",
+                      background: "rgba(16,185,129,0.12)",
+                      border: "1px solid rgba(16,185,129,0.25)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginBottom: 28,
+                    }}
+                  >
+                    {IconComp && <IconComp size={22} color="#10b981" strokeWidth={1.7} />}
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: 22,
+                      fontWeight: 700,
+                      color: "#f8fafc",
+                      margin: "0 0 16px",
+                      letterSpacing: "-0.02em",
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: 16,
+                      lineHeight: 1.72,
+                      color: "rgba(248,250,252,0.62)",
+                      margin: 0,
+                    }}
+                  >
+                    {item.body}
+                  </p>
+                </Card>
+              </motion.div>
+            );
+          })()}
+
+          {/* Supporting cards stacked vertically on the right — index 0 and 2 */}
+          {[0, 2].map((idx, pos) => {
+            const item = WHY_ITEMS[idx];
+            const IconComp = ICONS[item.icon as keyof typeof ICONS];
+            return (
+              <motion.div
+                key={idx}
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{
                   duration: 0.65,
-                  delay: i * 0.1,
+                  delay: pos === 0 ? 0 : 0.2,
                   ease: [0.22, 1, 0.36, 1],
                 }}
+                style={{ gridColumn: 2, gridRow: pos + 1 }}
               >
-                <Card
-                  highlight={i === 1}
-                  hoverable
-                  style={{ padding: "32px 28px", height: "100%" }}
-                >
+                <Card hoverable style={{ padding: "28px 26px", height: "100%" }}>
                   <div
                     style={{
-                      width: 44,
-                      height: 44,
+                      width: 40,
+                      height: 40,
                       borderRadius: "var(--radius-card)",
-                      background: "rgba(16,185,129,0.1)",
-                      border: "1px solid rgba(16,185,129,0.2)",
+                      background: "rgba(16,185,129,0.08)",
+                      border: "1px solid rgba(16,185,129,0.18)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      marginBottom: 20,
+                      marginBottom: 18,
                     }}
                   >
-                    {IconComp && (
-                      <IconComp
-                        size={20}
-                        color="#10b981"
-                        strokeWidth={1.8}
-                      />
-                    )}
+                    {IconComp && <IconComp size={18} color="#10b981" strokeWidth={1.8} />}
                   </div>
                   <h3
                     style={{
-                      fontSize: 17,
+                      fontSize: 16,
                       fontWeight: 700,
                       color: "#f8fafc",
-                      margin: "0 0 12px",
+                      margin: "0 0 10px",
                       letterSpacing: "-0.015em",
                     }}
                   >
@@ -125,9 +174,9 @@ export default function WhySophrosyne() {
                   </h3>
                   <p
                     style={{
-                      fontSize: 14,
-                      lineHeight: 1.7,
-                      color: "rgba(248,250,252,0.55)",
+                      fontSize: 15,
+                      lineHeight: 1.68,
+                      color: "rgba(248,250,252,0.62)",
                       margin: 0,
                     }}
                   >
@@ -142,10 +191,14 @@ export default function WhySophrosyne() {
 
       <style>{`
         @media (max-width: 900px) {
-          .why-grid { grid-template-columns: 1fr !important; }
-        }
-        @media (min-width: 640px) and (max-width: 900px) {
-          .why-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .why-grid {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: auto !important;
+          }
+          .why-grid > * {
+            grid-column: 1 !important;
+            grid-row: auto !important;
+          }
         }
       `}</style>
     </section>

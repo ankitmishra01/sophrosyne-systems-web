@@ -683,7 +683,7 @@ export default function FluencyTracker() {
             onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
           >
             <BarChart3 size={15} strokeWidth={2} />
-            See Pricing & Get Access
+            Request a Live Demo
           </a>
         </motion.div>
       </div>
