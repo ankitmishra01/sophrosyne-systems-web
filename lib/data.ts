@@ -2,7 +2,7 @@ export const TRUST_METRICS = [
   { value: "Proprietary", label: "Studio & Pulse Architecture" },
   { value: "100%", label: "Student-Owned IP" },
   { value: "Real-Time", label: "Fluency Telemetry via Pulse" },
-  { value: "Cryptographic", label: "Verified Employability Badges" },
+  { value: "Tamper-Proof", label: "Verified Employability Badges" },
 ] as const;
 
 export const WHY_ITEMS = [
@@ -32,7 +32,7 @@ export const JOURNEY_STEPS = [
   },
   {
     number: "02",
-    title: "Studio Provisioning & Foundry Launch",
+    title: "Platform Setup & Foundry Launch",
     duration: "4–8 Weeks",
     body: "Sophrosyne Studio is provisioned campus-wide. The Foundry incubator space is established and the Level 101 Curriculum Matrix goes live. Faculty onboarding begins in week two.",
   },
@@ -49,7 +49,7 @@ export const SOLUTIONS = [
     id: "studio",
     label: "01 — The Developer Component",
     title: "Sophrosyne Studio",
-    tagline: "Enterprise-grade AI infrastructure with academic governance.",
+    tagline: "Campus-deployed AI development platform. Institutional governance built in.",
     body: "Sophrosyne Studio is a secure, low-code AI orchestration and development environment designed specifically for campus deployment. Students and faculty gain access to a visual canvas IDE where they can model, test, and host multi-agent workflows that connect directly to existing academic systems (Banner, Canvas, Colleague) — all under complete FERPA compliance and institutional data sovereignty.",
     bullets: [
       "Visual pipeline builder with drag-and-drop agent orchestration",
@@ -201,7 +201,7 @@ export const TEAM_MEMBERS = [
   {
     name: "Marcus Thorn",
     title: "Director of Academic Transformation",
-    bio: "15 years driving AI curriculum strategy at Tier 1 institutions. Architect of the AI Fluency Matrix. Former Director of Institutional Research and the primary voice on the national consortium governance board.",
+    bio: "15 years driving AI curriculum strategy at leading research universities. Architect of the AI Fluency Matrix. Former Director of Institutional Research and the primary voice on the national consortium governance board.",
     photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
   },
   {

@@ -33,7 +33,7 @@ function SolutionsHero() {
         <h1
           style={{
             fontSize: "clamp(32px, 5vw, 68px)",
-            fontWeight: 800,
+            fontWeight: 700,
             color: "#f8fafc",
             margin: "0 0 20px",
             letterSpacing: "-0.03em",
@@ -41,7 +41,7 @@ function SolutionsHero() {
             lineHeight: 1.04,
           }}
         >
-          Scalable software infrastructure for the regional campus.
+          Four integrated products. One complete campus AI program.
         </h1>
         <p
           style={{
@@ -52,10 +52,11 @@ function SolutionsHero() {
             margin: 0,
           }}
         >
-          The enrollment crisis is a data and infrastructure crisis. Sophrosyne
-          addresses it at the root — replacing institutional software debt with
-          a proprietary, interoperable AI ecosystem designed specifically for
-          academic governance.
+          Sophrosyne is an end-to-end AI program for regional universities —
+          built on production software, not course bundles. Each of the four
+          pillars works independently and compounds together: AI-fluent
+          graduates, faculty equipped with real tools, and verified outcome data
+          for accreditation and employer partnerships.
         </p>
       </div>
     </section>

@@ -35,7 +35,7 @@ function PricingHero() {
         <h1
           style={{
             fontSize: "clamp(32px, 5vw, 68px)",
-            fontWeight: 800,
+            fontWeight: 700,
             color: "#f8fafc",
             margin: "0 0 20px",
             letterSpacing: "-0.03em",
@@ -55,8 +55,8 @@ function PricingHero() {
           }}
         >
           Every engagement model is structured so your CFO can forecast
-          accurately and your board can present a compelling ROI narrative to
-          accelerators and institutional investors.
+          accurately and your leadership can present verified student outcomes
+          to your board, accreditors, and employer partners.
         </p>
       </div>
     </section>
