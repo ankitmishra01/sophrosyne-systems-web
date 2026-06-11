@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { SOLUTIONS } from "@/lib/data";
 
@@ -191,6 +192,24 @@ export default function SolutionCards() {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    href={`/solutions/${sol.id}`}
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6,
+                      marginTop: 24,
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: "#10b981",
+                      textDecoration: "none",
+                      letterSpacing: "0.02em",
+                    }}
+                    onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.72")}
+                    onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
+                  >
+                    Learn more →
+                  </Link>
                 </div>
               </div>
             </motion.div>

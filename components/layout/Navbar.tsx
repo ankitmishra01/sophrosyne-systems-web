@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import Logo from "@/components/ui/Logo";
 
 const NAV_LINKS = [
   { label: "Solutions", href: "/solutions" },
@@ -60,31 +61,8 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <Link href="/" style={{ display: "flex", flexDirection: "column", gap: 1, textDecoration: "none" }}>
-          <span
-            translate="no"
-            style={{
-              fontSize: 15,
-              fontWeight: 700,
-              color: "#f4f5f8",
-              letterSpacing: "-0.04em",
-              lineHeight: 1.1,
-            }}
-          >
-            Sophrosyne{" "}
-            <span style={{ color: "#10b981", fontWeight: 400 }}>Systems</span>
-          </span>
-          <span
-            style={{
-              fontSize: 9,
-              fontWeight: 500,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              color: "rgba(244,245,248,0.35)",
-            }}
-          >
-            Higher Education · AI Infrastructure
-          </span>
+        <Link href="/" style={{ textDecoration: "none" }}>
+          <Logo variant="full" size={28} />
         </Link>
 
         {/* Desktop nav */}
@@ -117,7 +95,7 @@ export default function Navbar() {
           })}
 
           <Link
-            href="/pricing"
+            href="/get-started"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -134,7 +112,7 @@ export default function Navbar() {
             onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.82")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
           >
-            Request a Demo
+            Get Started
           </Link>
         </div>
 
@@ -193,7 +171,7 @@ export default function Navbar() {
           ))}
           <div style={{ height: 1, background: "rgba(255,255,255,0.08)", margin: "12px 0" }} />
           <Link
-            href="/pricing"
+            href="/get-started"
             onClick={() => setOpen(false)}
             style={{
               display: "block",
@@ -208,7 +186,7 @@ export default function Navbar() {
               marginTop: 4,
             }}
           >
-            Request a Demo
+            Get Started
           </Link>
         </div>
       )}

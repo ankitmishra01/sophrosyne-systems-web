@@ -7,6 +7,9 @@ import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 
 export default function PricingTiers() {
+  const ctaLabels = ["Book the Audit", "Start the Build", "Get Started"];
+  const ctaHrefs = ["/get-started", "/get-started", "/get-started"];
+
   return (
     <section
       style={{
@@ -33,7 +36,7 @@ export default function PricingTiers() {
               margin: "0 0 14px",
             }}
           >
-            Transparent Pricing
+            Pricing for Institutions Under Pressure
           </p>
           <h2
             style={{
@@ -55,8 +58,8 @@ export default function PricingTiers() {
               lineHeight: 1.6,
             }}
           >
-            No opaque contracts. No licensing traps. Every engagement model is
-            designed around predictable budgeting and total IP ownership.
+            No opaque contracts. No licensing traps. Every engagement model is designed
+            around predictable budgeting and total IP ownership.
           </p>
         </motion.div>
 
@@ -91,8 +94,9 @@ export default function PricingTiers() {
                     top: -14,
                     left: "50%",
                     transform: "translateX(-50%)",
-                    background: "#10b981",
-                    color: "#0a0f1a",
+                    background: tier.highlighted ? "#10b981" : "rgba(16,185,129,0.15)",
+                    color: tier.highlighted ? "#0a0f1a" : "#10b981",
+                    border: tier.highlighted ? "none" : "1px solid rgba(16,185,129,0.3)",
                     fontSize: 10,
                     fontWeight: 700,
                     letterSpacing: "0.08em",
@@ -101,7 +105,7 @@ export default function PricingTiers() {
                     borderRadius: 20,
                     whiteSpace: "nowrap",
                     zIndex: 2,
-                    boxShadow: "0 0 20px rgba(16,185,129,0.4)",
+                    boxShadow: tier.highlighted ? "0 0 20px rgba(16,185,129,0.4)" : "none",
                   }}
                 >
                   {tier.badge}
@@ -124,9 +128,7 @@ export default function PricingTiers() {
                     fontWeight: 600,
                     letterSpacing: "0.14em",
                     textTransform: "uppercase",
-                    color: tier.highlighted
-                      ? "#10b981"
-                      : "rgba(248,250,252,0.38)",
+                    color: tier.highlighted ? "#10b981" : "rgba(248,250,252,0.38)",
                     margin: "0 0 20px",
                   }}
                 >
@@ -147,8 +149,8 @@ export default function PricingTiers() {
                   {tier.name}
                 </h3>
 
-                {/* Price — Geist Mono + tabular-nums */}
-                <div style={{ marginBottom: 20 }}>
+                {/* Price */}
+                <div style={{ marginBottom: 8 }}>
                   <span
                     style={{
                       fontSize: "clamp(28px, 3.8vw, 44px)",
@@ -195,6 +197,46 @@ export default function PricingTiers() {
                     </span>
                   </div>
                 </div>
+
+                {/* Per-student framing */}
+                <p
+                  style={{
+                    fontSize: 11,
+                    color: "rgba(16,185,129,0.7)",
+                    margin: "0 0 14px",
+                    fontFamily: "var(--font-geist-mono), monospace",
+                  }}
+                >
+                  {tier.perStudentNote}
+                </p>
+
+                {/* Grant eligible badge — Tier 1 only */}
+                {tier.grantEligible && (
+                  <div
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 5,
+                      background: "rgba(16,185,129,0.08)",
+                      border: "1px solid rgba(16,185,129,0.22)",
+                      borderRadius: 20,
+                      padding: "3px 10px",
+                      marginBottom: 14,
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: 9,
+                        fontWeight: 700,
+                        color: "#10b981",
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Title III / HECAP Eligible
+                    </span>
+                  </div>
+                )}
 
                 {/* Divider */}
                 <div
@@ -256,10 +298,10 @@ export default function PricingTiers() {
                 <Button
                   variant={tier.highlighted ? "primary" : "secondary"}
                   size="md"
-                  href="/about"
+                  href={ctaHrefs[i]}
                   style={{ width: "100%", justifyContent: "center" } as React.CSSProperties}
                 >
-                  {i === 0 ? "Book the Audit" : i === 1 ? "Start the Build" : "Get Started"}
+                  {ctaLabels[i]}
                 </Button>
               </Card>
             </motion.div>
@@ -279,8 +321,8 @@ export default function PricingTiers() {
             margin: "40px 0 0",
           }}
         >
-          All engagements begin with the AI Readiness & Ecosystem Audit. Custom
-          scopes available for multi-campus deployments.
+          Audit fee credited toward Platform Launch. Split-pay available on all tiers.
+          Title III, HECAP, and SNAP grant language available on request.
         </motion.p>
       </div>
 

@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Logo from "@/components/ui/Logo";
 
 const NAV_LINKS = [
-  { label: "Home",      href: "/"          },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Pricing",   href: "/pricing"   },
-  { label: "About",     href: "/about"     },
+  { label: "Home",        href: "/"            },
+  { label: "Solutions",   href: "/solutions"   },
+  { label: "Pricing",     href: "/pricing"     },
+  { label: "About",       href: "/about"       },
+  { label: "Get Started", href: "/get-started" },
 ];
 
 export default function Footer() {
@@ -37,13 +39,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ marginBottom: 14 }}>
-              <span
-                translate="no"
-                style={{ fontSize: 15, fontWeight: 700, color: "#f4f5f8", letterSpacing: "-0.04em" }}
-              >
-                Sophrosyne{" "}
-                <span style={{ color: "#10b981", fontWeight: 400 }}>Systems</span>
-              </span>
+              <Logo variant="full" size={24} />
             </div>
             <p
               style={{

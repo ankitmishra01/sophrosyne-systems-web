@@ -101,7 +101,7 @@ export default function Hero() {
                 "opacity 0.75s 0.1s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.1s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            Treat AI Like a Language.{" "}
+            Reduce Costs. Build Fluency.{" "}
             <span
               style={{
                 background:
@@ -111,7 +111,7 @@ export default function Hero() {
                 backgroundClip: "text",
               }}
             >
-              Build with Enterprise Infrastructure.
+              Transform Your University for the AI Era.
             </span>
           </h1>
 
@@ -128,14 +128,11 @@ export default function Hero() {
                 "opacity 0.75s 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.2s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            Sophrosyne pairs{" "}
-            <span style={{ color: "rgba(248,250,252,0.85)", fontWeight: 500 }}>
-              Sophrosyne Studio
-            </span>{" "}
-            — our campus-deployed AI platform — with a structured Fluency
-            Matrix and on-campus Foundry incubators. Together, they help
-            regional universities produce AI-ready graduates, attract research
-            partnerships, and build programs that compete on a national stage.
+            Sophrosyne Systems helps small and mid-sized universities identify
+            operational cost savings, embed AI fluency into every academic
+            programme, and build an entrepreneurial ecosystem that prepares
+            graduates for what comes next — with human dignity and
+            institutional integrity at the centre.
           </p>
 
           <div
@@ -153,7 +150,7 @@ export default function Hero() {
               Request a Platform Demo
             </Button>
             <Button variant="secondary" size="lg" href="/solutions">
-              See All Four Products
+              Explore Our Solutions
             </Button>
           </div>
 
@@ -169,7 +166,7 @@ export default function Hero() {
               flexWrap: "wrap",
             }}
           >
-            {["FERPA Compliant", "100% Student IP", "Western Accelerator Partner"].map(
+            {["Human-Centered Design", "100% Student IP", "Reduces Operating Costs", "FERPA Compliant"].map(
               (t, i) => (
                 <span
                   key={i}

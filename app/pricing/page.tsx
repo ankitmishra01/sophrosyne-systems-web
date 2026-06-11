@@ -54,9 +54,11 @@ function PricingHero() {
             margin: 0,
           }}
         >
-          Every engagement model is structured so your CFO can forecast
-          accurately and your leadership can present verified student outcomes
-          to your board, accreditors, and employer partners.
+          Sophrosyne's engagement models are structured around three pillars of
+          value: operational cost reduction, AI fluency programme deployment,
+          and entrepreneurial ecosystem development. Every tier is designed so
+          your CFO can forecast accurately and your leadership can present
+          verified outcomes to your board, accreditors, and employer partners.
         </p>
       </div>
     </section>

@@ -1,11 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Code2, Network } from "lucide-react";
+import { GraduationCap, TrendingDown, Rocket } from "lucide-react";
 import { WHY_ITEMS } from "@/lib/data";
 import Card from "@/components/ui/Card";
 
-const ICONS = { GraduationCap, Code2, Network } as const;
+const ICONS = { GraduationCap, TrendingDown, Rocket } as const;
 
 export default function WhySophrosyne() {
   return (
@@ -34,7 +34,7 @@ export default function WhySophrosyne() {
               margin: "0 0 14px",
             }}
           >
-            Built for Higher Education
+            Three Pillars of Transformation
           </p>
           <h2
             style={{
@@ -46,7 +46,7 @@ export default function WhySophrosyne() {
               maxWidth: 700,
             }}
           >
-            Why Sophrosyne?
+            Built for Small and Mid-Sized Universities.
           </h2>
           <p
             style={{
@@ -57,7 +57,7 @@ export default function WhySophrosyne() {
               margin: 0,
             }}
           >
-            Three integrated pillars that give regional universities a genuine AI program — one that graduates AI-fluent students, equips faculty with real tools, and gives leadership the verified data their accreditors expect.
+            Three integrated pillars that help small and mid-sized universities reduce costs sustainably, develop genuinely AI-fluent graduates, and build entrepreneurial ecosystems that anchor their communities in the AI era.
           </p>
         </motion.div>
 

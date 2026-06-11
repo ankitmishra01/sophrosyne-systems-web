@@ -454,8 +454,10 @@ export default function FluencyTracker() {
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(248,250,252,0.52)", maxWidth: 560, margin: 0 }}>
             The Sophrosyne AI Fluency Index Dashboard gives administrators,
             faculty, and department leads a live view of how AI competency
-            is developing across your campus — with the verified data your
-            accreditors and employer partners expect.
+            is developing across every department — from first-week enrolment
+            to Level 301 completion. See who is progressing, where gaps are
+            forming, and what your accreditation report will look like next
+            quarter. No manual data collection required.
           </p>
         </motion.div>
 

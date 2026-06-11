@@ -4,7 +4,7 @@ import SolutionCards from "@/components/sections/SolutionCards";
 export const metadata: Metadata = {
   title: "Solutions — Sophrosyne Systems",
   description:
-    "The four pillars of the Sophrosyne ecosystem: Sophrosyne Studio, the AI Fluency Curriculum Matrix, On-Campus AI Foundries, and the Intercollegiate AI Exchange Network.",
+    "The three pillars of the Sophrosyne transformation system: operational cost reduction, AI fluency for every student, and an entrepreneurial ecosystem — built for small and mid-sized universities.",
 };
 
 function SolutionsHero() {
@@ -28,7 +28,7 @@ function SolutionsHero() {
             margin: "0 0 18px",
           }}
         >
-          The Four Pillars
+          Three Pillars of Transformation
         </p>
         <h1
           style={{
@@ -41,7 +41,7 @@ function SolutionsHero() {
             lineHeight: 1.04,
           }}
         >
-          Four integrated products. One complete campus AI program.
+          Three pillars. One complete campus transformation.
         </h1>
         <p
           style={{
@@ -52,11 +52,11 @@ function SolutionsHero() {
             margin: 0,
           }}
         >
-          Sophrosyne is an end-to-end AI program for regional universities —
-          built on production software, not course bundles. Each of the four
-          pillars works independently and compounds together: AI-fluent
-          graduates, faculty equipped with real tools, and verified outcome data
-          for accreditation and employer partnerships.
+          Sophrosyne is a three-pillar transformation system for small and
+          mid-sized universities — built on production software, not consulting
+          decks. Each pillar works independently and compounds together: reduced
+          operating costs, AI-fluent graduates, and an entrepreneurial ecosystem
+          that prepares students for the world they're actually entering.
         </p>
       </div>
     </section>
