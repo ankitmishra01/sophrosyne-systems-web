@@ -17,9 +17,9 @@ const PROCESS_STEPS = [
   },
   {
     number: "02",
-    title: "AI Readiness Audit",
-    duration: "10 business days",
-    body: "We analyse your data infrastructure, curriculum gaps, and operational costs. You receive a board-ready findings deck with a prioritised savings roadmap.",
+    title: "AI & OpEx Readiness Audit",
+    duration: "4–6 weeks",
+    body: "We audit all 9 operational cost domains, your data infrastructure, and curriculum readiness — including stakeholder interviews across leadership, IT, and faculty. You receive a board-ready findings deck with a prioritised savings roadmap.",
   },
   {
     number: "03",

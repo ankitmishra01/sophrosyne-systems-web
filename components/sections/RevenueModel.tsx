@@ -17,7 +17,7 @@ const PILLARS = [
   {
     Icon: TrendingUp,
     title: "Predictable, Venture-Ready Budgeting",
-    body: "A fixed audit fee, a one-time capital build, and a transparent monthly platform retainer. Clean line items for your CFO and a story your board can present to accelerators.",
+    body: "Two engagement tracks — consulting-first or full-stack — each with clean line items for your CFO. Start with an OpEx audit to identify savings, then decide how far to go. No lock-in at any stage.",
   },
 ];
 

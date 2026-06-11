@@ -54,11 +54,12 @@ function PricingHero() {
             margin: 0,
           }}
         >
-          Sophrosyne's engagement models are structured around three pillars of
-          value: operational cost reduction, AI fluency programme deployment,
-          and entrepreneurial ecosystem development. Every tier is designed so
-          your CFO can forecast accurately and your leadership can present
-          verified outcomes to your board, accreditors, and employer partners.
+          Sophrosyne operates on two tracks: a consulting track — audit and
+          operational advisory — for institutions that need to prove ROI before
+          committing to technology; and a technology platform track for
+          institutions ready to deploy. Both tracks are structured around
+          predictable budgeting, total IP ownership, and verified outcomes for
+          your board, accreditors, and employer partners.
         </p>
       </div>
     </section>
