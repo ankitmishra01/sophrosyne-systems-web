@@ -367,9 +367,9 @@ export const TEAM_MEMBERS = [
     name: "Ankit Mishra",
     title: "Senior Advisor, AI Fluency & Foundries",
     bio: "Venture capital and cleantech operator with 13+ years building toward a more innovative, productive economy, and a Forbes contributor with 50+ published articles. He advises on the AI fluency curriculum and the Foundry ecosystem.",
-    photo: "/team/ankit.png",
-    imgSize: "300%",
-    imgPos: "50% 8%",
+    photo: "/team/ankit.jpg",
+    imgSize: "cover",
+    imgPos: "center 15%",
   },
   {
     name: "Amelia Frederking",
