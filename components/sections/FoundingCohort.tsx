@@ -50,9 +50,10 @@ export default function FoundingCohort() {
             Join the Founding Cohort.
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.72, color: "#9FBFAD", margin: "0 0 28px", maxWidth: 460 }}>
-            We&apos;re partnering with a small group of regional universities to
-            prove the model together — at founding terms, with a real say in where
-            the platform and the consortium go next. Early conviction, rewarded.
+            We are building Sophrosyne with our first five institutions, not
+            for them. Founding partners lock in pricing below standard rates,
+            co-author the reference case study, and hold an advisory seat on
+            the product roadmap and consortium charter. Five spots.
           </p>
           <Link
             href="/get-started"

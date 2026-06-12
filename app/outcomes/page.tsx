@@ -34,11 +34,12 @@ function OutcomesHero() {
             color: "#1B2A21", margin: "0 0 20px", letterSpacing: "-0.015em", maxWidth: 760, lineHeight: 1.07,
           }}
         >
-          What transformation looks like, by the people who feel it.
+          The outcomes we are designing toward — mapped by role and pillar.
         </h1>
         <p style={{ fontSize: 17, lineHeight: 1.72, color: "#4A584E", maxWidth: 580, margin: "0 0 28px" }}>
-          Outcomes mapped to the roles that own them — CFOs, provosts, IR
-          directors, presidents — across all four pillars of the platform.
+          Modelled scenarios for CFOs, provosts, IR directors, and presidents
+          — across all four pillars of the platform. Built from the real
+          constraints of regional universities, not hypothetical ones.
         </p>
 
         {/* Honesty banner */}

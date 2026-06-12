@@ -33,7 +33,8 @@ export default function RoiCalculator() {
   const high = annual * 1.25;
   const perStudent = annual / enrollment;
   const paybackWeeks = annual > 0 ? AUDIT_FEE / (annual / 52) : 0;
-  const paybackLabel = paybackWeeks < 1 ? "Under 1 week" : `~${Math.round(paybackWeeks)} weeks`;
+  const paybackWeeksRounded = Math.round(paybackWeeks);
+  const paybackLabel = paybackWeeks < 1 ? "Under 1 week" : `~${paybackWeeksRounded} ${paybackWeeksRounded === 1 ? "week" : "weeks"}`;
   const maxPct = Math.max(...SAVINGS_MODEL.map((d) => d.pct));
 
   const mailto = () => {
