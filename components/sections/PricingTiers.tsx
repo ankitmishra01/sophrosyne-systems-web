@@ -159,7 +159,7 @@ export default function PricingTiers() {
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: 24,
-            alignItems: "start",
+            alignItems: "stretch",
             padding: "48px 0",
           }}
         >
@@ -169,6 +169,7 @@ export default function PricingTiers() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.65, delay: 0, ease: [0.22, 1, 0.36, 1] }}
+            style={{ display: "flex" }}
           >
             <div style={CARD}>
               <Eyebrow>Platform License</Eyebrow>
@@ -248,6 +249,7 @@ export default function PricingTiers() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            style={{ display: "flex" }}
           >
             <div style={CARD}>
               <Eyebrow>Consulting Engagement</Eyebrow>
