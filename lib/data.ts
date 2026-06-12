@@ -356,22 +356,36 @@ export const FAQ_ITEMS = [
 
 export const TEAM_MEMBERS = [
   {
-    name: "Dr. Amara Osei-Bonsu",
-    title: "Principal Software Architect",
-    bio: "Former Principal ML Engineer at a major research university. Designed FERPA-compliant data pipeline architecture for 50,000+ student record systems. Leads all Sophrosyne Studio infrastructure development.",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    name: "Dr. Lauretta Conklin Frederking",
+    title: "Co-Founder & Academic Lead",
+    bio: "Former President of Brescia University College and Senior Executive Advisor for Strategic Initiatives at Western University. Twenty-five years across comparative politics and political economy; PhD from Washington University in St. Louis. She keeps Sophrosyne grounded in how institutions actually decide, fund, and change.",
+    photo: "/team/lauretta.jpg",
+    imgSize: "cover",
+    imgPos: "center 22%",
   },
   {
-    name: "Marcus Thorn",
-    title: "Director of Academic Transformation",
-    bio: "15 years driving AI curriculum strategy at leading research universities. Architect of the AI Fluency Matrix. Former Director of Institutional Research and the primary voice on the national consortium governance board.",
-    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    name: "Ankit Mishra",
+    title: "Senior Advisor, AI Fluency & Foundries",
+    bio: "Venture capital and cleantech operator with 13+ years building toward a more innovative, productive economy, and a Forbes contributor with 50+ published articles. He advises on the AI fluency curriculum and the Foundry ecosystem.",
+    photo: "/team/ankit.png",
+    imgSize: "300%",
+    imgPos: "47% 5%",
   },
   {
-    name: "Leila Nazari",
-    title: "Consortium Ecosystem Lead",
-    bio: "Builds and manages the Intercollegiate AI Exchange Network. Former Deputy Provost specialising in inter-institutional partnerships. Oversees all Foundry launches and ensures platform adoption across each new partner campus.",
-    photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80",
+    name: "Amelia Frederking",
+    title: "Research & Strategy",
+    bio: "PhD candidate in Political Science at MIT specialising in security studies, and a former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics from Washington University in St. Louis.",
+    photo: "/team/amelia.jpg",
+    imgSize: "cover",
+    imgPos: "center 32%",
+  },
+  {
+    name: "Nathanael Frederking",
+    title: "Growth & Analytics",
+    bio: "Business Analytics student at Boston College and an NCAA Division I baseball player. He brings a data-and-performance discipline to growth, measurement, and the institutional analytics behind Sophrosyne.",
+    photo: "/team/nathanael.webp",
+    imgSize: "cover",
+    imgPos: "center 18%",
   },
 ] as const;
 

@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { TEAM_MEMBERS } from "@/lib/data";
 import Card from "@/components/ui/Card";
 
@@ -43,22 +42,23 @@ export default function TeamGrid() {
               color: "#1B2A21",
               margin: "0 0 16px",
               letterSpacing: "-0.012em",
-              maxWidth: 640,
+              maxWidth: 680,
             }}
           >
-            Practitioners, Engineers, and Higher-Ed Strategists.
+            Higher-ed leaders, researchers, and operators.
           </h2>
           <p
             style={{
               fontSize: 16,
               color: "#4A584E",
-              maxWidth: 500,
+              maxWidth: 540,
               margin: 0,
               lineHeight: 1.6,
             }}
           >
-            We ship infrastructure, not slide decks. Every person on this team
-            has delivered production systems inside academic institutions.
+            A team that spans university leadership, AI and security research,
+            venture, and analytics — the disciplines a real campus transformation
+            actually requires.
           </p>
         </motion.div>
 
@@ -66,7 +66,7 @@ export default function TeamGrid() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: "repeat(4, 1fr)",
             gap: 24,
           }}
           className="team-grid"
@@ -83,32 +83,25 @@ export default function TeamGrid() {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <Card hoverable style={{ padding: "28px 24px" }}>
+              <Card hoverable style={{ padding: "28px 24px", height: "100%" }}>
                 {/* Avatar */}
                 <div
+                  role="img"
+                  aria-label={member.name}
                   style={{
-                    width: 68,
-                    height: 68,
+                    width: 84,
+                    height: 84,
                     borderRadius: "50%",
-                    overflow: "hidden",
                     border: "2px solid rgba(30,77,56,0.22)",
                     marginBottom: 18,
                     flexShrink: 0,
+                    backgroundColor: "#1E4D38",
+                    backgroundImage: `url(${member.photo})`,
+                    backgroundSize: member.imgSize,
+                    backgroundPosition: member.imgPos,
+                    backgroundRepeat: "no-repeat",
                   }}
-                >
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    width={200}
-                    height={200}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                    }}
-                  />
-                </div>
+                />
 
                 <h3
                   style={{
@@ -152,11 +145,11 @@ export default function TeamGrid() {
       </div>
 
       <style>{`
-        @media (max-width: 900px) {
-          .team-grid { grid-template-columns: 1fr !important; max-width: 480px; margin: 0 auto; }
+        @media (max-width: 1100px) {
+          .team-grid { grid-template-columns: repeat(2, 1fr) !important; max-width: 720px; margin: 0 auto; }
         }
-        @media (min-width: 600px) and (max-width: 900px) {
-          .team-grid { grid-template-columns: repeat(2, 1fr) !important; max-width: unset; }
+        @media (max-width: 600px) {
+          .team-grid { grid-template-columns: 1fr !important; max-width: 360px; }
         }
       `}</style>
     </section>
