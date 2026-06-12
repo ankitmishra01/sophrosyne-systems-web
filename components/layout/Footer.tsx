@@ -7,6 +7,8 @@ const NAV_LINKS = [
   { label: "Home",        href: "/"            },
   { label: "Solutions",   href: "/solutions"   },
   { label: "Pricing",     href: "/pricing"     },
+  { label: "ROI Calculator", href: "/roi"      },
+  { label: "Outcomes",    href: "/outcomes"    },
   { label: "About",       href: "/about"       },
   { label: "Get Started", href: "/get-started" },
 ];

@@ -273,6 +273,64 @@ export const GRANT_SOURCES = [
   { name: "State AI & Economic Development", body: "A growing number of states fund regional AI hubs and university-anchored innovation directly." },
 ] as const;
 
+// Sophrosyne vs the alternatives. tone drives cell color: good / bad / neutral.
+export const COMPARISON_ROWS = [
+  {
+    dimension: "Total cost",
+    sophrosyne: { v: "$45K – $450K", tone: "good" },
+    mbb: { v: "$400K – $2M+", tone: "bad" },
+    diy: { v: "Hidden headcount", tone: "neutral" },
+  },
+  {
+    dimension: "Time to value",
+    sophrosyne: { v: "4 – 8 weeks", tone: "good" },
+    mbb: { v: "6 – 12 months", tone: "bad" },
+    diy: { v: "12 – 24 months", tone: "bad" },
+  },
+  {
+    dimension: "What you walk away with",
+    sophrosyne: { v: "Software, curriculum & a roadmap", tone: "good" },
+    mbb: { v: "A slide deck", tone: "bad" },
+    diy: { v: "Whatever you can staff", tone: "neutral" },
+  },
+  {
+    dimension: "IP & data ownership",
+    sophrosyne: { v: "100% yours", tone: "good" },
+    mbb: { v: "Their licensed frameworks", tone: "bad" },
+    diy: { v: "Yours — if you finish", tone: "neutral" },
+  },
+  {
+    dimension: "Ongoing platform",
+    sophrosyne: { v: "Studio & Pulse, live", tone: "good" },
+    mbb: { v: "None", tone: "bad" },
+    diy: { v: "You build and maintain it", tone: "bad" },
+  },
+  {
+    dimension: "Built for higher-ed",
+    sophrosyne: { v: "Exclusively", tone: "good" },
+    mbb: { v: "Cross-industry", tone: "neutral" },
+    diy: { v: "In-house knowledge only", tone: "neutral" },
+  },
+  {
+    dimension: "Grant-fundable",
+    sophrosyne: { v: "Yes — language provided", tone: "good" },
+    mbb: { v: "Rarely", tone: "bad" },
+    diy: { v: "Sometimes", tone: "neutral" },
+  },
+] as const;
+
+export const FOUNDING_COHORT = {
+  spots: 5,
+  benefits: [
+    { title: "Founding pricing", body: "Locked-in rates for the life of the partnership — well below standard." },
+    { title: "Co-developed case study", body: "We build the reference story together and you own how it's told." },
+    { title: "Advisory seat", body: "Shape the product roadmap and the consortium charter from the inside." },
+    { title: "Priority access", body: "First to new pillars and to the Intercollegiate AI Exchange Network." },
+  ],
+} as const;
+
+export const ACCREDITORS = ["HLC", "SACSCOC", "MSCHE", "NWCCU", "WSCUC", "ABET", "AACSB"] as const;
+
 export const FAQ_ITEMS = [
   {
     question: "Who owns the AI tools and models students build on Sophrosyne Studio?",

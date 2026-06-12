@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import TeamGrid from "@/components/sections/TeamGrid";
 import PhilosophyBlocks from "@/components/sections/PhilosophyBlocks";
+import FoundingCohort from "@/components/sections/FoundingCohort";
 
 export const metadata: Metadata = {
   title: "About — Sophrosyne Systems",
@@ -106,6 +107,7 @@ export default function AboutPage() {
       <AboutHero />
       <TeamGrid />
       <PhilosophyBlocks />
+      <FoundingCohort />
     </>
   );
 }

@@ -4,6 +4,7 @@ import PricingTiers from "@/components/sections/PricingTiers";
 import EnrollmentBands from "@/components/sections/EnrollmentBands";
 import SavingsGuarantee from "@/components/sections/SavingsGuarantee";
 import GrantFunding from "@/components/sections/GrantFunding";
+import ComparisonTable from "@/components/sections/ComparisonTable";
 import Accordion from "@/components/ui/Accordion";
 import { FAQ_ITEMS } from "@/lib/data";
 
@@ -120,6 +121,7 @@ export default function PricingPage() {
       <PricingTiers />
       <EnrollmentBands />
       <SavingsGuarantee />
+      <ComparisonTable />
       <GrantFunding />
       <FaqSection />
     </>
