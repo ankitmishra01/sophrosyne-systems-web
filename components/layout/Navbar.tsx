@@ -9,6 +9,7 @@ import Logo from "@/components/ui/Logo";
 const NAV_LINKS = [
   { label: "Solutions", href: "/solutions" },
   { label: "Pricing",   href: "/pricing"   },
+  { label: "ROI",       href: "/roi"       },
   { label: "About",     href: "/about"     },
 ];
 

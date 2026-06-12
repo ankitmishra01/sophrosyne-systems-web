@@ -173,6 +173,22 @@ export default function CallToAction() {
           No obligation · Grant language available · Response within one business
           day
         </p>
+
+        <p style={{ marginTop: 18, fontSize: 13 }}>
+          <Link
+            href="/roi"
+            style={{
+              color: "#E9C77B",
+              textDecoration: "none",
+              fontWeight: 600,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
+              borderBottom: "1px solid rgba(233,199,123,0.4)",
+              paddingBottom: 1,
+            }}
+          >
+            Or model your savings first →
+          </Link>
+        </p>
       </motion.div>
     </section>
   );

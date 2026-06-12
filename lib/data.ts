@@ -35,6 +35,20 @@ export const OPEX_AREAS = [
   { icon: "Zap",          title: "Energy Efficiency",             body: "Real-time consumption monitoring with predictive savings modelling." },
 ] as const;
 
+// Conservative modeled annual savings per OpEx domain, expressed as a % of total
+// operating budget. Sum ≈ 3.7% — deliberately understated. Used by the ROI calculator.
+export const SAVINGS_MODEL = [
+  { icon: "FileCheck",    domain: "Compliance Reporting",          pct: 0.30 },
+  { icon: "Users",        domain: "HR Processes",                  pct: 0.55 },
+  { icon: "BookOpen",     domain: "Governance Policies",           pct: 0.15 },
+  { icon: "Presentation", domain: "Board Reporting",               pct: 0.15 },
+  { icon: "ShoppingCart", domain: "Purchase Coordination",         pct: 0.70 },
+  { icon: "Leaf",         domain: "Food Waste Management",         pct: 0.15 },
+  { icon: "BarChart2",    domain: "Academic Program Optimization", pct: 0.85 },
+  { icon: "Map",          domain: "Land Use Optimization",         pct: 0.30 },
+  { icon: "Zap",          domain: "Energy Efficiency",             pct: 0.55 },
+] as const;
+
 export const JOURNEY_STEPS = [
   {
     number: "01",
