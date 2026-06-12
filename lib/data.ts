@@ -366,15 +366,15 @@ export const TEAM_MEMBERS = [
   {
     name: "Ankit Mishra",
     title: "Senior Advisor, AI Fluency & Foundries",
-    bio: "Venture capital and startup operator with 13+ years; Forbes contributor with 50+ published articles. Advises on AI fluency and the Foundry ecosystem. MBA, Ivey Business School; MSc International Economics, Sciences Po Paris; BSc Mathematics, York University.",
+    bio: "Venture capital and startup operator, 13+ years; Forbes contributor, 50+ articles. Advises on AI fluency and the Foundry ecosystem. MBA, Ivey; MSc International Economics, Sciences Po Paris; BSc Mathematics, York University.",
     photo: "/team/ankit.jpg",
     imgSize: "220%",
-    imgPos: "center 12%",
+    imgPos: "center 25%",
   },
   {
     name: "Amelia Frederking",
     title: "Research & Strategy Lead",
-    bio: "PhD candidate in Political Science at MIT specialising in security studies, and a former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics from Washington University in St. Louis.",
+    bio: "PhD candidate in Political Science at MIT specialising in security studies, and former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics, Washington University in St. Louis.",
     photo: "/team/amelia.jpg",
     imgSize: "cover",
     imgPos: "center top",
@@ -382,7 +382,7 @@ export const TEAM_MEMBERS = [
   {
     name: "Nathanael Frederking",
     title: "Growth & Analytics",
-    bio: "Business Analytics student at Boston College and an NCAA Division I baseball player. He brings a data-and-performance discipline to growth, measurement, and the institutional analytics behind Sophrosyne.",
+    bio: "Business Analytics student at Boston College and an NCAA Division I baseball player. Applies a data-and-performance discipline to growth, institutional measurement, and the analytics behind Sophrosyne's partnerships and expansion.",
     photo: "/team/nathanael.webp",
     imgSize: "cover",
     imgPos: "center top",
