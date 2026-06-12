@@ -79,7 +79,7 @@ export default function RevenueModel() {
                 }}
               >
                 Software-enabled services.{" "}
-                <em style={{ fontStyle: "italic", color: "#8A968C" }}>
+                <em style={{ fontStyle: "italic", color: "#6E7B71" }}>
                   Not a SaaS subscription.
                 </em>
               </h2>

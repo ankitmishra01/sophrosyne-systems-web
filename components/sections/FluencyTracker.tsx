@@ -21,7 +21,7 @@ const DEPARTMENTS = [
   { name: "Natural Sciences",               score: 71, students: 234, delta: "+4.9%", colour: "#3A7A5C" },
   { name: "Social Sciences",                score: 68, students: 412, delta: "+7.8%", colour: "#C7A14A" },
   { name: "Health Sciences",                score: 61, students: 527, delta: "+14.3%", colour: "#B5862E" },
-  { name: "Humanities & Arts",              score: 52, students: 298, delta: "+11.5%", colour: "#8A968C" },
+  { name: "Humanities & Arts",              score: 52, students: 298, delta: "+11.5%", colour: "#6E7B71" },
 ] as const;
 
 const LEVELS = [

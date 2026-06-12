@@ -88,7 +88,7 @@ export default async function RolePage({
             <p
               style={{
                 fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif",
-                letterSpacing: "0.14em", textTransform: "uppercase", color: "#8A968C", margin: "0 0 18px",
+                letterSpacing: "0.14em", textTransform: "uppercase", color: "#6E7B71", margin: "0 0 18px",
               }}
             >
               The reality today

@@ -6,7 +6,7 @@ type Tone = "good" | "bad" | "neutral";
 const TONE: Record<Tone, { color: string; Icon: React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }> }> = {
   good: { color: "#1E4D38", Icon: Check },
   bad: { color: "#B0726A", Icon: X },
-  neutral: { color: "#8A968C", Icon: Minus },
+  neutral: { color: "#6E7B71", Icon: Minus },
 };
 
 function Cell({ v, tone, emphasis }: { v: string; tone: Tone; emphasis?: boolean }) {
@@ -94,12 +94,12 @@ export default function ComparisonTable() {
                   </span>
                 </th>
                 <th style={{ padding: "16px 20px", textAlign: "center" }}>
-                  <span style={{ fontSize: 11, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", color: "#8A968C" }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6E7B71" }}>
                     McKinsey · Bain · BCG
                   </span>
                 </th>
                 <th style={{ padding: "16px 20px", textAlign: "center" }}>
-                  <span style={{ fontSize: 11, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", color: "#8A968C" }}>
+                  <span style={{ fontSize: 11, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", color: "#6E7B71" }}>
                     DIY / In-house
                   </span>
                 </th>

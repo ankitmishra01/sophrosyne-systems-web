@@ -7,7 +7,7 @@ export default function AccreditorStrip({
   background?: string;
   reversed?: boolean;
 }) {
-  const labelColor = reversed ? "#9FBFAD" : "#8A968C";
+  const labelColor = reversed ? "#9FBFAD" : "#6E7B71";
   const markColor = reversed ? "#C9D9CE" : "#415146";
   const borderTop = reversed ? "1px solid rgba(241,238,226,0.08)" : "1px solid rgba(27,42,33,0.07)";
 

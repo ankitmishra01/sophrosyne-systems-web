@@ -83,9 +83,9 @@ export default function InsightsPage() {
                     >
                       {a.category}
                     </span>
-                    <span style={{ fontSize: 12, color: "#8A968C" }}>{a.readTime}</span>
+                    <span style={{ fontSize: 12, color: "#6E7B71" }}>{a.readTime}</span>
                     {!live && (
-                      <span style={{ fontSize: 11, fontStyle: "italic", color: "#8A968C", marginLeft: "auto", fontFamily: "var(--font-newsreader), serif" }}>
+                      <span style={{ fontSize: 11, fontStyle: "italic", color: "#6E7B71", marginLeft: "auto", fontFamily: "var(--font-newsreader), serif" }}>
                         Coming soon
                       </span>
                     )}

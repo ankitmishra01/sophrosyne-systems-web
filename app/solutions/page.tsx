@@ -305,7 +305,7 @@ function MaturityFramework() {
                     fontFamily: "var(--font-libre-franklin), sans-serif",
                     letterSpacing: "0.12em",
                     textTransform: "uppercase",
-                    color: "#8A968C",
+                    color: "#6E7B71",
                     background: "rgba(27,42,33,0.05)",
                     padding: "3px 8px",
                     borderRadius: 4,

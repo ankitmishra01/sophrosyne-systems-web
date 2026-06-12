@@ -42,7 +42,7 @@ export default async function InsightArticlePage({
           <Link
             href="/insights"
             style={{
-              display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#8A968C",
+              display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#6E7B71",
               textDecoration: "none", fontFamily: "var(--font-libre-franklin), sans-serif", marginBottom: 28,
             }}
           >
@@ -60,7 +60,7 @@ export default async function InsightArticlePage({
             >
               {a.category}
             </span>
-            <span style={{ fontSize: 12, color: "#8A968C" }}>{a.readTime}</span>
+            <span style={{ fontSize: 12, color: "#6E7B71" }}>{a.readTime}</span>
           </div>
 
           <h1

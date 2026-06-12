@@ -74,7 +74,7 @@ export default function GrantFunding() {
           ))}
         </div>
 
-        <p style={{ fontSize: 13, color: "#8A968C", margin: "28px 0 0", fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>
+        <p style={{ fontSize: 13, color: "#6E7B71", margin: "28px 0 0", fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>
           Grant eligibility varies by institution type and cycle. We help you map the right program — not legal or financial advice.
         </p>
       </div>

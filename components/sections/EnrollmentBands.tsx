@@ -76,7 +76,7 @@ export default function EnrollmentBands() {
                       {v}
                     </td>
                   ))}
-                  <td style={{ padding: "16px 20px", textAlign: "center", fontSize: 12, fontStyle: "italic", color: "#8A968C", fontFamily: "var(--font-newsreader), serif" }}>
+                  <td style={{ padding: "16px 20px", textAlign: "center", fontSize: 12, fontStyle: "italic", color: "#6E7B71", fontFamily: "var(--font-newsreader), serif" }}>
                     {b.note}
                   </td>
                 </tr>

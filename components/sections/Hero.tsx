@@ -313,7 +313,7 @@ export default function Hero() {
                 style={{
                   fontSize: 11,
                   fontWeight: 400,
-                  color: "#8A968C",
+                  color: "#6E7B71",
                   letterSpacing: 0,
                   fontFamily: "var(--font-libre-franklin), sans-serif",
                 }}

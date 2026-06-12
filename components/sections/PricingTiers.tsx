@@ -68,6 +68,8 @@ function TierCard({
             : "var(--shadow-card)",
           padding: "36px 28px",
           height: "100%",
+          display: "flex",
+          flexDirection: "column",
           transition: "border-color 200ms",
         }}
       >
@@ -115,7 +117,7 @@ function TierCard({
           <span
             style={{
               fontSize: 12,
-              color: isPine ? "#9FBFAD" : "#8A968C",
+              color: isPine ? "#9FBFAD" : "#6E7B71",
               marginLeft: 6,
               fontFamily: "var(--font-libre-franklin), sans-serif",
             }}
@@ -133,7 +135,7 @@ function TierCard({
               marginLeft: 10,
             }}
           >
-            <span style={{ fontSize: 10, color: isPine ? "rgba(241,238,226,0.55)" : "#8A968C", fontWeight: 500, fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+            <span style={{ fontSize: 10, color: isPine ? "rgba(241,238,226,0.55)" : "#6E7B71", fontWeight: 500, fontFamily: "var(--font-libre-franklin), sans-serif" }}>
               {tier.duration}
             </span>
           </div>
@@ -147,7 +149,7 @@ function TierCard({
             fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.10em",
             textTransform: "uppercase",
-            color: isPine ? "rgba(201,217,206,0.50)" : "#A9B3AC",
+            color: isPine ? "rgba(201,217,206,0.50)" : "#7E8A80",
             margin: "0 0 6px",
           }}
         >
@@ -166,7 +168,7 @@ function TierCard({
             style={{
               fontSize: 18,
               fontFamily: "var(--font-newsreader), serif",
-              color: isPine ? "rgba(201,217,206,0.65)" : "#8A968C",
+              color: isPine ? "rgba(201,217,206,0.65)" : "#6E7B71",
               textDecoration: "line-through",
               textDecorationColor: isPine
                 ? "rgba(199,161,74,0.65)"
@@ -295,6 +297,7 @@ function TierCard({
           style={{
             width: "100%",
             justifyContent: "center",
+            marginTop: "auto",
             ...(isPine
               ? { background: "rgba(244,240,230,0.10)", color: "#F1EEE2", border: "1px solid rgba(241,238,226,0.22)" }
               : {}),
@@ -419,7 +422,7 @@ export default function PricingTiers() {
                     fontSize: 13,
                     fontStyle: "italic",
                     fontFamily: "var(--font-newsreader), serif",
-                    color: "#8A968C",
+                    color: "#6E7B71",
                   }}
                 >
                   {group.sublabel}
@@ -432,7 +435,7 @@ export default function PricingTiers() {
                   display: "grid",
                   gridTemplateColumns: `repeat(${group.cols}, 1fr)`,
                   gap: 20,
-                  alignItems: "start",
+                  alignItems: "stretch",
                 }}
                 className="pricing-group-grid"
               >
@@ -453,7 +456,7 @@ export default function PricingTiers() {
           style={{
             textAlign: "center",
             fontSize: 13,
-            color: "#8A968C",
+            color: "#6E7B71",
             margin: "48px 0 0",
           }}
         >

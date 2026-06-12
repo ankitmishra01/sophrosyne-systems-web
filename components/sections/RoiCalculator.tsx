@@ -107,8 +107,8 @@ export default function RoiCalculator() {
                 aria-label="Enrollment"
               />
               <div style={{ display: "flex", justifyContent: "space-between", marginTop: 4 }}>
-                <span style={{ fontSize: 10, color: "#A9B3AC" }}>500</span>
-                <span style={{ fontSize: 10, color: "#A9B3AC" }}>40,000</span>
+                <span style={{ fontSize: 10, color: "#7E8A80" }}>500</span>
+                <span style={{ fontSize: 10, color: "#7E8A80" }}>40,000</span>
               </div>
             </div>
 
@@ -126,12 +126,12 @@ export default function RoiCalculator() {
                 aria-label="Annual operating budget"
               />
               <div style={{ display: "flex", justifyContent: "space-between", marginTop: 4 }}>
-                <span style={{ fontSize: 10, color: "#A9B3AC" }}>$5M</span>
-                <span style={{ fontSize: 10, color: "#A9B3AC" }}>$500M</span>
+                <span style={{ fontSize: 10, color: "#7E8A80" }}>$5M</span>
+                <span style={{ fontSize: 10, color: "#7E8A80" }}>$500M</span>
               </div>
             </div>
 
-            <p style={{ fontSize: 12, lineHeight: 1.6, color: "#8A968C", margin: "26px 0 0" }}>
+            <p style={{ fontSize: 12, lineHeight: 1.6, color: "#6E7B71", margin: "26px 0 0" }}>
               Modeled on a conservative {(totalPct * 100).toFixed(1)}% of operating budget across nine
               operational domains. Illustrative — your audit produces the validated, line-item figure.
             </p>
@@ -226,7 +226,7 @@ export default function RoiCalculator() {
               <p
                 style={{
                   fontSize: 26, fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
-                  color: i === 0 ? "#8A968C" : "#1E4D38", margin: "0 0 5px", letterSpacing: "-0.015em",
+                  color: i === 0 ? "#6E7B71" : "#1E4D38", margin: "0 0 5px", letterSpacing: "-0.015em",
                   textDecoration: i === 0 ? "line-through" : "none",
                   textDecorationColor: "rgba(181,134,46,0.6)",
                 }}

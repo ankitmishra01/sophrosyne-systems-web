@@ -85,7 +85,7 @@ function AboutHero() {
               <p
                 style={{
                   fontSize: 12,
-                  color: "#8A968C",
+                  color: "#6E7B71",
                   margin: 0,
                   fontWeight: 500,
                   fontFamily: "var(--font-libre-franklin), sans-serif",

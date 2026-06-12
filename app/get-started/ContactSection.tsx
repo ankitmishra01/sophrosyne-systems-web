@@ -240,7 +240,7 @@ export default function ContactSection() {
               <p
                 style={{
                   fontSize: 13,
-                  color: "#8A968C",
+                  color: "#6E7B71",
                   margin: "0 0 28px",
                 }}
               >
@@ -421,7 +421,7 @@ export default function ContactSection() {
                 <p
                   style={{
                     fontSize: 11,
-                    color: "#8A968C",
+                    color: "#6E7B71",
                     textAlign: "center",
                     margin: 0,
                   }}

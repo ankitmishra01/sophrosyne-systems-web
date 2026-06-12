@@ -76,7 +76,7 @@ export default function Accordion({ items }: AccordionProps) {
                   borderColor: isOpen
                     ? "rgba(30,77,56,0.40)"
                     : "rgba(27,42,33,0.16)",
-                  color: isOpen ? "#1E4D38" : "#8A968C",
+                  color: isOpen ? "#1E4D38" : "#6E7B71",
                   transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
                   transition: "transform 240ms cubic-bezier(0.22,1,0.36,1), color 200ms, border-color 200ms",
                 }}

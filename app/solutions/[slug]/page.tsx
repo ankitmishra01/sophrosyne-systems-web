@@ -212,7 +212,7 @@ function SlugHero({
               href="/solutions"
               style={{
                 fontSize: 13,
-                color: "#8A968C",
+                color: "#6E7B71",
                 textDecoration: "none",
                 letterSpacing: "0.02em",
                 fontFamily: "var(--font-libre-franklin), sans-serif",
@@ -491,7 +491,7 @@ function PersonaStrip({ detail }: { detail: SolutionDetail }) {
                     fontFamily: "var(--font-libre-franklin), sans-serif",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: "#8A968C",
+                    color: "#6E7B71",
                     margin: "0 0 6px",
                   }}
                 >
