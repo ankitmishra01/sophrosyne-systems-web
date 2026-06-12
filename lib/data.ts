@@ -849,3 +849,158 @@ export const PHILOSOPHY_BLOCKS = [
     body: "Regional and teaching-focused universities anchor their communities economically and socially. The Sophrosyne ecosystem is designed to grow and compound the AI capabilities of these campuses — creating a network that rivals flagship institutions in innovation output.",
   },
 ] as const;
+
+// ─── Insights hub ────────────────────────────────────────────────────────────
+export const INSIGHTS = [
+  {
+    slug: "state-of-ai-readiness-regional-universities",
+    title: "The State of AI Readiness in Regional Universities",
+    dek: "Most regional institutions are stuck at 'deploy' while the enrollment cliff accelerates. A look at where the sector actually stands — and what separates the campuses pulling ahead.",
+    category: "Benchmark",
+    readTime: "9 min read",
+    status: "live" as const,
+  },
+  {
+    slug: "enrollment-cliff-and-ai",
+    title: "The Enrollment Cliff Meets the AI Mandate",
+    dek: "Two pressures are colliding in 2026. The institutions that treat them as one problem will outlast the ones that treat them as two.",
+    category: "Strategy",
+    readTime: "6 min read",
+    status: "soon" as const,
+  },
+  {
+    slug: "ai-and-accreditation",
+    title: "What Accreditors Will Ask About AI Next",
+    dek: "HLC, SACSCOC, and MSCHE are converging on technology-outcome expectations. Here is how to be ready before the site visit.",
+    category: "Compliance",
+    readTime: "7 min read",
+    status: "soon" as const,
+  },
+  {
+    slug: "augmenting-faculty",
+    title: "Augmenting Faculty, Not Replacing Them",
+    dek: "The fastest AI adoption happens where instructors feel amplified, not threatened. The design choices that get faculty on board.",
+    category: "Pedagogy",
+    readTime: "5 min read",
+    status: "soon" as const,
+  },
+] as const;
+
+type InsightArticle = {
+  title: string;
+  dek: string;
+  category: string;
+  readTime: string;
+  sections: { heading: string; paragraphs: string[] }[];
+  pullquote: string;
+};
+
+export const INSIGHT_ARTICLES: Record<string, InsightArticle> = {
+  "state-of-ai-readiness-regional-universities": {
+    title: "The State of AI Readiness in Regional Universities",
+    dek: "Most regional institutions are stuck at 'deploy' while the enrollment cliff accelerates. A look at where the sector actually stands — and what separates the campuses pulling ahead.",
+    category: "Benchmark",
+    readTime: "9 min read",
+    pullquote:
+      "The institutions pulling ahead did not spend more. They sequenced better — proof first, platform second, and grants underwriting both.",
+    sections: [
+      {
+        heading: "The squeeze is structural, not cyclical",
+        paragraphs: [
+          "Regional and mid-sized universities enter 2026 absorbing two shocks at once. The demographic 'enrollment cliff' — the long-forecast decline in the number of traditional college-age students — is no longer a projection; it is a line on this year's budget. At the same time, boards, accreditors, and employers have begun asking a question that did not exist three years ago: what, concretely, is this institution doing about AI?",
+          "Taken separately, either pressure is survivable. Taken together, they expose a gap most regional campuses have not had the capital to close. The flagship universities are buying their way to readiness with seven-figure consulting engagements and in-house research labs. The institutions that anchor their regions — and educate the majority of first-generation and place-bound students — cannot.",
+        ],
+      },
+      {
+        heading: "Most campuses are stuck at 'deploy'",
+        paragraphs: [
+          "It helps to think about institutional AI maturity in three stages. The first, Deploy, is simply getting governed AI infrastructure inside the campus perimeter — tools faculty and students can use without creating a FERPA exposure. The second, Reshape, is changing how teaching, advising, and administration actually work. The third, Invent, is where students and faculty build things that did not previously exist and a campus becomes a node in a regional innovation economy.",
+          "The uncomfortable finding is that the overwhelming majority of regional institutions are still working to get Deploy right. Shadow AI tools proliferate across departments with no audit trail. Curriculum committees debate policy while students adopt the technology anyway. The few campuses that have reached Reshape did not get there with bigger budgets. They got there by sequencing the work differently.",
+        ],
+      },
+      {
+        heading: "What separates the campuses pulling ahead",
+        paragraphs: [
+          "Three patterns recur among the institutions making real progress. First, they led with proof, not procurement — a fixed-scope diagnostic or pilot that produced a board-ready number before anyone signed a platform contract. Second, they funded the work through grants rather than operating reserves, mapping each initiative to Title III, NSF, or state workforce programs from day one. Third, they insisted on owning the output — the software, the curriculum, and the intellectual property — rather than renting a consultant's framework.",
+          "However, the differentiator that matters most is the least technical. The campuses that moved kept the human at the center of the pitch. Faculty adopted AI quickly where it was framed as amplification — automating administrative drag so instructors could spend more time on the high-judgment work only they can do — and slowly, or not at all, where it was framed as replacement.",
+        ],
+      },
+      {
+        heading: "The prescription",
+        paragraphs: [
+          "For a provost or CFO reading this, the path is narrower and cheaper than the flagship playbook suggests. Start with a diagnostic that quantifies operating savings across non-instructional domains; a credible audit will identify several multiples of its own fee. Use that number to unlock grant funding rather than operating dollars. Pilot one pillar in one department against metrics you agree up front. Only then commit to a platform — and when you do, make sure the institution, not a vendor, owns what gets built.",
+          "The enrollment cliff will not reverse. But the institutions that treat AI readiness as an operating-efficiency and outcomes problem — rather than a prestige project — will convert a moment of pressure into a durable advantage. The window to do so on founding terms is open now, and it is not wide.",
+        ],
+      },
+    ],
+  },
+};
+
+// ─── Role landers ────────────────────────────────────────────────────────────
+type Role = {
+  label: string;
+  eyebrow: string;
+  headline: string;
+  sub: string;
+  pains: string[];
+  gains: string[];
+  solutions: string[]; // SOLUTIONS ids
+  ctaLabel: string;
+};
+
+export const ROLES: Record<string, Role> = {
+  provost: {
+    label: "Provosts & Academic Affairs",
+    eyebrow: "For Provosts",
+    headline: "Prove AI readiness to your accreditors — without standing up a new department.",
+    sub: "Give your faculty a structured way to teach AI, your students a credential employers recognize, and your accreditors the outcome evidence they're starting to ask for.",
+    pains: [
+      "Accreditors are converging on technology-outcome expectations you have no structured way to evidence.",
+      "Faculty feel unqualified to teach AI, and external tools are being used with student data outside any policy.",
+      "AI-readiness claims to the board are anecdotal — you can't say how many students are fluent or how fast the gap is closing.",
+    ],
+    gains: [
+      "A running Level 101–301 curriculum with auto-generated, accreditor-ready outcome reports.",
+      "Faculty certified in a 2-day intensive — 94% rate themselves confident to teach immediately after.",
+      "A live, data-backed AI fluency index across every department you can stand behind publicly.",
+    ],
+    solutions: ["curriculum", "pulse", "studio"],
+    ctaLabel: "Book a Readiness Audit",
+  },
+  cfo: {
+    label: "CFOs & Finance",
+    eyebrow: "For CFOs",
+    headline: "Find the savings. Fund it with grants. Show the board the math.",
+    sub: "A fixed-fee diagnostic surfaces operating savings across nine domains, most of it grant-fundable — and every number arrives board-ready.",
+    pains: [
+      "Uncontrolled AI tool spend is scattered across departments with no visibility into utilization or ROI.",
+      "Every budget review asks for ROI evidence on technology spend you have no clean way to quantify.",
+      "Transformation feels unaffordable out of operating reserves during a deficit.",
+    ],
+    gains: [
+      "A modeled savings figure across nine operational domains — typically several multiples of the audit fee.",
+      "A grant-funding pathway (Title III, NSF, state workforce) with ready-to-submit language.",
+      "One predictable platform cost that replaces a fragmented vendor stack — IP and software owned outright.",
+    ],
+    solutions: ["pulse", "studio"],
+    ctaLabel: "Model Your Savings",
+  },
+  cio: {
+    label: "CIOs & Technology",
+    eyebrow: "For CIOs",
+    headline: "Govern the AI already on your campus — inside your own perimeter.",
+    sub: "Replace shadow AI tooling with a single governed platform that deploys in 48 hours, logs every inference, and never moves student data off your infrastructure.",
+    pains: [
+      "Shadow AI tools are proliferating with no governance, no audit trail, and real FERPA exposure.",
+      "Integrating AI with Banner, Canvas, and Colleague is a multi-quarter project you don't have staff for.",
+      "Every new tool is another data-processing risk and another procurement review.",
+    ],
+    gains: [
+      "FERPA compliance that's structural — data never leaves your cloud perimeter, every inference audit-logged.",
+      "Pre-built connectors for Banner, Canvas, Colleague, Slate and more — provisioned in 48 hours.",
+      "A browser-managed platform that needs no new DevOps headcount to run.",
+    ],
+    solutions: ["studio", "pulse"],
+    ctaLabel: "See Studio",
+  },
+};

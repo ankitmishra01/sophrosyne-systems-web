@@ -9,8 +9,15 @@ const NAV_LINKS = [
   { label: "Pricing",     href: "/pricing"     },
   { label: "ROI Calculator", href: "/roi"      },
   { label: "Outcomes",    href: "/outcomes"    },
+  { label: "Insights",    href: "/insights"    },
   { label: "About",       href: "/about"       },
   { label: "Get Started", href: "/get-started" },
+];
+
+const ROLE_LINKS = [
+  { label: "For Provosts", href: "/for/provost" },
+  { label: "For CFOs",     href: "/for/cfo"     },
+  { label: "For CIOs",     href: "/for/cio"     },
 ];
 
 export default function Footer() {
@@ -32,8 +39,8 @@ export default function Footer() {
           className="footer-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr 1fr",
-            gap: 48,
+            gridTemplateColumns: "1.5fr 1fr 1fr 1fr",
+            gap: 40,
             marginBottom: 48,
           }}
         >
@@ -89,6 +96,36 @@ export default function Footer() {
                   onMouseLeave={(e) =>
                     ((e.currentTarget as HTMLAnchorElement).style.color = "#9FBFAD")
                   }
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* By Role */}
+          <div>
+            <p
+              style={{
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "rgba(201,217,206,0.45)",
+                margin: "0 0 16px",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+              }}
+            >
+              By Role
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {ROLE_LINKS.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  style={{ fontSize: 13, color: "#9FBFAD", textDecoration: "none", transition: "color 180ms" }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#C9D9CE")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#9FBFAD")}
                 >
                   {l.label}
                 </Link>
