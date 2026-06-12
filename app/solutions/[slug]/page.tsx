@@ -257,7 +257,7 @@ function SlugHero({
                 aspectRatio: "4/3",
                 objectFit: "cover",
                 display: "block",
-                filter: "brightness(0.88) saturate(0.8)",
+                filter: "saturate(0.96) brightness(0.95) sepia(0.08)",
               }}
               priority
             />

@@ -70,8 +70,8 @@ export const SOLUTIONS = [
       "Private cloud deployment — data never leaves your perimeter",
       "Built-in audit logging for every model inference and data query",
     ],
-    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Developer environment with code on screen",
+    image: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Warm, light-filled university library with curved shelves of books",
   },
   {
     id: "curriculum",
@@ -86,8 +86,8 @@ export const SOLUTIONS = [
       "Department-specific tracks: Engineering, Business, Health Sciences, Humanities",
       "Continuous progression dashboards visible to students, faculty, and administration",
     ],
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Students in a university learning environment",
+    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Diverse group of university students together outdoors on campus",
   },
   {
     id: "foundry",
@@ -102,8 +102,8 @@ export const SOLUTIONS = [
       "Verified employability tracking linked to national consortium employers",
       "Annual inter-campus demo day within the Exchange Network",
     ],
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Students collaborating in a campus workshop environment",
+    image: "https://images.unsplash.com/photo-1576495199011-eb94736d05d6?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Students walking toward a modern campus innovation building",
   },
   {
     id: "pulse",
@@ -119,8 +119,8 @@ export const SOLUTIONS = [
       "Employer-verified placement tracking through the national consortium",
       "API-level integration with Canvas, Banner, and Slate for live data pulls",
     ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Analytics dashboard showing data visualisation",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Classic university hall overlooking a green campus quad",
   },
 ] as const;
 

@@ -226,7 +226,7 @@ export default function Hero() {
                 display: "block",
                 aspectRatio: "3/2",
                 objectFit: "cover",
-                filter: "brightness(0.88) saturate(0.75)",
+                filter: "saturate(0.96) brightness(0.95) sepia(0.08)",
               }}
               priority
             />
