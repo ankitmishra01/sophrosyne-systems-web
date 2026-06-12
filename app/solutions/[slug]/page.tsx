@@ -50,6 +50,7 @@ export default async function SolutionSlugPage({
     <>
       <SlugHero sol={sol} detail={detail} />
       <HowItWorks detail={detail} />
+      <PersonaStrip detail={detail} />
       <OutcomesStrip detail={detail} />
       <FeatureDetail detail={detail} />
       <UseCases detail={detail} />
@@ -135,12 +136,58 @@ function SlugHero({
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#4A584E",
-              margin: "0 0 20px",
+              margin: "0 0 16px",
               fontStyle: "italic",
             }}
           >
             {sol.tagline}
           </p>
+
+          {/* Maturity badge */}
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "rgba(30,77,56,0.07)",
+              border: "1px solid rgba(30,77,56,0.18)",
+              borderRadius: 6,
+              padding: "6px 12px",
+              marginBottom: 20,
+            }}
+          >
+            <span
+              style={{
+                width: 6,
+                height: 6,
+                borderRadius: "50%",
+                background: "#1E4D38",
+                flexShrink: 0,
+              }}
+            />
+            <span
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                color: "#1E4D38",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+              }}
+            >
+              {detail.maturityStage.stage}
+            </span>
+            <span
+              style={{
+                fontSize: 12,
+                color: "#5A6B60",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+              }}
+            >
+              — {detail.maturityStage.description}
+            </span>
+          </div>
+
           <p
             style={{
               fontSize: 16,
@@ -356,6 +403,146 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
         @media (max-width: 768px) {
           .hiw-grid { grid-template-columns: 1fr !important; }
           .hiw-connector { display: none; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+/* ─── Persona Strip ──────────────────────────────────────────────────────── */
+function PersonaStrip({ detail }: { detail: SolutionDetail }) {
+  return (
+    <section
+      style={{
+        padding: "var(--section-py) var(--pad-h)",
+        background: "#F4F0E6",
+        borderTop: "1px solid rgba(27,42,33,0.06)",
+      }}
+    >
+      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
+        <p
+          style={{
+            fontSize: 11,
+            fontWeight: 600,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
+            letterSpacing: "0.16em",
+            textTransform: "uppercase",
+            color: "#B5862E",
+            margin: "0 0 14px",
+          }}
+        >
+          Who This Is For
+        </p>
+        <h2
+          style={{
+            fontSize: "clamp(22px, 3vw, 36px)",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21",
+            margin: "0 0 40px",
+            letterSpacing: "-0.012em",
+          }}
+        >
+          Identify your situation.
+        </h2>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 20,
+          }}
+          className="persona-grid"
+        >
+          {detail.personas.map((p, i) => (
+            <div
+              key={i}
+              style={{
+                background: "#FFFFFF",
+                border: "1px solid rgba(27,42,33,0.10)",
+                borderRadius: "var(--radius-card)",
+                padding: "28px 24px",
+                boxShadow: "var(--shadow-card)",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 10,
+                  fontWeight: 600,
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "#B5862E",
+                  margin: "0 0 10px",
+                }}
+              >
+                {p.role}
+              </p>
+              <div
+                style={{
+                  marginBottom: 16,
+                  paddingBottom: 16,
+                  borderBottom: "1px solid rgba(27,42,33,0.07)",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 600,
+                    fontFamily: "var(--font-libre-franklin), sans-serif",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: "#8A968C",
+                    margin: "0 0 6px",
+                  }}
+                >
+                  The pain
+                </p>
+                <p
+                  style={{
+                    fontSize: 13,
+                    lineHeight: 1.65,
+                    color: "#4A584E",
+                    margin: 0,
+                    fontStyle: "italic",
+                    fontFamily: "var(--font-newsreader), serif",
+                  }}
+                >
+                  &ldquo;{p.pain}&rdquo;
+                </p>
+              </div>
+              <div>
+                <p
+                  style={{
+                    fontSize: 10,
+                    fontWeight: 600,
+                    fontFamily: "var(--font-libre-franklin), sans-serif",
+                    letterSpacing: "0.08em",
+                    textTransform: "uppercase",
+                    color: "#1E4D38",
+                    margin: "0 0 6px",
+                  }}
+                >
+                  What you gain
+                </p>
+                <p
+                  style={{
+                    fontSize: 13,
+                    lineHeight: 1.65,
+                    color: "#1B2A21",
+                    margin: 0,
+                  }}
+                >
+                  {p.gain}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .persona-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

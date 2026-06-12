@@ -258,6 +258,8 @@ export const TEAM_MEMBERS = [
 export type SolutionDetail = {
   slug: string;
   heroDescription: string;
+  maturityStage: { stage: string; description: string };
+  personas: { role: string; pain: string; gain: string }[];
   howItWorks: { number: string; title: string; body: string }[];
   outcomes: { value: string; label: string }[];
   features: { icon: string; title: string; body: string }[];
@@ -270,6 +272,27 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
     slug: "studio",
     heroDescription:
       "Sophrosyne Studio deploys inside your existing infrastructure in 48 hours — connecting natively to Banner, Canvas, and Colleague — and gives every student and faculty member a production-grade AI workspace that never leaves your data perimeter. No lengthy IT procurement. No third-party cloud risk. No FERPA exceptions needed.",
+    maturityStage: {
+      stage: "Deploy",
+      description: "Gets governed AI infrastructure inside your perimeter in 48 hours — the foundation every other capability is built on.",
+    },
+    personas: [
+      {
+        role: "CIO / VP Technology",
+        pain: "Shadow AI tools are proliferating across departments with no governance, no audit trail, and significant FERPA exposure.",
+        gain: "A single governed platform replaces the sprawl — every inference logged, every model versioned, full audit access from day one.",
+      },
+      {
+        role: "CFO / VP Finance",
+        pain: "Uncontrolled AI licence spend is scattered across 10–20 departmental subscriptions with no visibility into utilisation or ROI.",
+        gain: "One predictable infrastructure cost replaces the fragmented stack, typically reducing AI-related software spend by 40–65%.",
+      },
+      {
+        role: "Provost / VP Academic Affairs",
+        pain: "Faculty and students are using external AI tools with student data, creating FERPA risk that existing policy cannot address.",
+        gain: "FERPA compliance is structural — data never leaves your perimeter, and accreditors see a documented governance framework.",
+      },
+    ],
     howItWorks: [
       {
         number: "01",
@@ -320,6 +343,16 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
         title: "Streamlining compliance reporting",
         body: "A rural community college automated its accreditation reporting pipeline in Studio, cutting quarterly report preparation from 3 weeks to under 2 days.",
       },
+      {
+        institution: "Finance Office — 6,500-Student University",
+        title: "Rationalising AI tool sprawl across departments",
+        body: "A CFO discovered 14 separate AI tool subscriptions running across departments with no central oversight. Studio replaced all of them with a single governed platform, cutting AI-related software spend by 62% while giving IT complete audit visibility.",
+      },
+      {
+        institution: "Provost's Office — Regional Comprehensive University",
+        title: "Resolving a FERPA audit finding before reaffirmation",
+        body: "Following a FERPA inquiry into AI tool usage, the provost required documented audit trails on every AI interaction with student data. Studio's structural compliance architecture resolved the finding entirely — and became a positive evidence exhibit in the institution's accreditation self-study.",
+      },
     ],
     faq: [
       {
@@ -349,6 +382,27 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
     slug: "curriculum",
     heroDescription:
       "The AI Fluency Curriculum Matrix is a fully-deployed, turnkey programme — not a course bundle you configure yourself. Within 4–8 weeks your institution moves from zero AI curriculum to a running Level 101–301 programme, with faculty certified, Studio lab environments embedded in every module, and student progression tracked automatically.",
+    maturityStage: {
+      stage: "Reshape",
+      description: "Transforms how every student and faculty member engages with AI — across every department, not just Computer Science.",
+    },
+    personas: [
+      {
+        role: "Provost / VP Academic Affairs",
+        pain: "Accreditors are asking for evidence of technology learning outcomes and the institution has no structured AI curriculum to point to.",
+        gain: "A running Level 101–301 programme with auto-generated outcome reports that satisfy accreditor evidence requirements in every review cycle.",
+      },
+      {
+        role: "Department Chair",
+        pain: "Faculty feel unqualified to teach AI and are resistant to adding it to syllabi — but the pressure from leadership and students is mounting.",
+        gain: "Every participating instructor completes a 2-day certification and receives 4 weeks of instructional support. 94% rate themselves confident to teach immediately after.",
+      },
+      {
+        role: "VP of Student Affairs / Employer Relations",
+        pain: "Employers tell you graduates lack applied AI skills, but you have no verified credential to offer them.",
+        gain: "Every Level 301 completer receives a tamper-proof AI Fluency Badge that consortium employers actively recognise in hiring screening.",
+      },
+    ],
     howItWorks: [
       {
         number: "01",
@@ -399,6 +453,16 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
         title: "Accelerated STEM AI track for engineering students",
         body: "An engineering-focused institution used the Level 201 and 301 tracks to give third and fourth-year students production AI credentials before graduation, increasing employer placement rates.",
       },
+      {
+        institution: "Provost's Office — HLC Reaffirmation",
+        title: "Converting an accreditation weakness into a programme strength",
+        body: "A provost facing technology learning outcome questions in HLC reaffirmation deployed the Curriculum Matrix and submitted its auto-generated outcome reports as positive evidence. The review team cited the programme as a model for peer institutions — converting what had been a cited weakness into a documented strength.",
+      },
+      {
+        institution: "Business School — Regional University",
+        title: "Launching AI instruction without adding a technology faculty line",
+        body: "A Business school dean deployed the Matrix across four departments without a single new technology hire. Sophrosyne's faculty certification upskilled existing instructors in 2 days. The dean presented the programme to the board as a curriculum innovation delivered within existing budget.",
+      },
     ],
     faq: [
       {
@@ -428,6 +492,27 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
     slug: "foundry",
     heroDescription:
       "The AI Foundry is Sophrosyne's physical on-campus incubator environment — a purpose-designed collaborative space where students form multi-disciplinary teams, build production AI projects using Studio's infrastructure, and graduate into a regional employer network that actively recruits from the programme. Your institution designates the space; we build the rest.",
+    maturityStage: {
+      stage: "Invent / Innovate",
+      description: "The stage most institutions haven't reached yet — where students build what doesn't exist, and employers show up to recruit them.",
+    },
+    personas: [
+      {
+        role: "President / Chancellor",
+        pain: "Regional economic development mandates require visible innovation infrastructure, but the institution has no physical proof point to show legislators, donors, or employers.",
+        gain: "A physical AI Foundry becomes the campus's most tangible innovation asset — an anchor for state funding, donor campaigns, and employer partnership conversations.",
+      },
+      {
+        role: "VP of Enrollment Management",
+        pain: "Prospective students are choosing flagship and for-profit competitors because they perceive the institution as lacking real-world opportunities.",
+        gain: "A concrete differentiator: 'build production AI projects by sophomore year.' Early adopters report measurable increases in engineering and business applications.",
+      },
+      {
+        role: "CFO / VP Finance",
+        pain: "The institution needs new revenue and grant sources, but entrepreneurship programmes have historically been cost centres without measurable ROI.",
+        gain: "The Foundry creates a documented pipeline for state economic development grants, employer sponsorship, and alumni giving — with Demo Day as the public proof point.",
+      },
+    ],
     howItWorks: [
       {
         number: "01",
@@ -476,7 +561,17 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         institution: "Engineering College",
         title: "Creating a direct industry recruitment pipeline",
-        body: "A STEM-focused college used the Foundry to formalize its industry partnership programme. Employers now recruit directly from Foundry Demo Days rather than traditional career fairs.",
+        body: "A STEM-focused college used the Foundry to formalise its industry partnership programme. Employers now recruit directly from Foundry Demo Days rather than traditional career fairs.",
+      },
+      {
+        institution: "President's Office — Tri-County AI Initiative",
+        title: "Anchoring regional economic development on campus",
+        body: "A president facing a state mandate for regional tech economic development used the Foundry as the physical anchor for a tri-county AI initiative. The Foundry's Demo Day served as the public launch event, and the institution secured $1.4M in state economic development funding in the first grant cycle.",
+      },
+      {
+        institution: "VP Enrollment — Regional University",
+        title: "Winning admits from flagship competitors",
+        body: "A regional university positioned the Foundry as a core recruiting differentiator: students build production AI projects by their sophomore year. In the first full admissions cycle after launch, engineering-interested applications increased 23% — with several admits citing the Foundry specifically over a flagship offer.",
       },
     ],
     faq: [
@@ -507,6 +602,27 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
     slug: "pulse",
     heroDescription:
       "Sophrosyne Pulse gives your administrators, faculty, and IR team a live view of AI competency development across every department — from first-week enrollment through Level 301 completion. It generates accreditation-ready outcome reports automatically, issues tamper-proof AI Fluency Badges for every qualifying student, and integrates with Canvas, Banner, and Slate so your data is always current.",
+    maturityStage: {
+      stage: "Deploy + Reshape",
+      description: "Live data that tells you where AI adoption stands — and reshapes how leadership allocates resources and responds to accreditors.",
+    },
+    personas: [
+      {
+        role: "Director of Institutional Research",
+        pain: "Every accreditation cycle requires 60–120 hours of manual data assembly across spreadsheets, LMS exports, and system reports that are never quite current.",
+        gain: "Pulse generates the completed report automatically. Your IR team reviews and submits — zero assembly, current data, every format your accreditor requires.",
+      },
+      {
+        role: "CFO / VP Finance",
+        pain: "The board asks for ROI evidence on the Sophrosyne engagement at every budget review, and there is no clean way to quantify AI competency progress in dollar terms.",
+        gain: "The fluency index provides a measurable, board-presentable metric — competency gain per academic year, tied to employer placement and credential issuance data.",
+      },
+      {
+        role: "Provost / VP Academic Affairs",
+        pain: "Claims about AI adoption on campus are anecdotal. You can't tell the board, accreditors, or the public how many students are AI-fluent, or how fast the gap is closing.",
+        gain: "A live, data-backed AI fluency index across every department — with trend analysis, peer benchmarks, and a credential issuance trail your leadership can stand behind publicly.",
+      },
+    ],
     howItWorks: [
       {
         number: "01",
@@ -556,6 +672,16 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
         institution: "Multi-Campus State System",
         title: "Unified analytics across four campuses",
         body: "A state system with four campuses used Pulse to create a unified AI fluency dashboard across 22,000 students — giving system-level leadership visibility to allocate resources where competency gaps were forming fastest.",
+      },
+      {
+        institution: "CFO Office — Annual Budget Review",
+        title: "Demonstrating AI programme ROI to the board",
+        body: "A CFO facing a board challenge on the Sophrosyne engagement used Pulse's fluency index data to show a measurable 34-point competency gain across the student body in one academic year — alongside credential issuance and employer placement rates. The engagement was continued and expanded at the next budget cycle.",
+      },
+      {
+        institution: "IR Office — SACSCOC Reaffirmation",
+        title: "Eliminating six weeks of manual accreditation assembly",
+        body: "An IR Director entering SACSCOC reaffirmation used Pulse to generate the complete technology learning outcomes section automatically. Her team's assembly time dropped from 6 weeks to 3 days — and the submitted evidence was more current and more granular than anything previously filed.",
       },
     ],
     faq: [
