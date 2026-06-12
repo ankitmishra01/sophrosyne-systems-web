@@ -29,7 +29,7 @@ function PricingHero() {
             margin: "0 0 18px",
           }}
         >
-          Engagement Fees
+          How We Work With You
         </p>
         <h1
           style={{
@@ -43,9 +43,9 @@ function PricingHero() {
             lineHeight: 1.06,
           }}
         >
-          Predictable fees. Defined scope.{" "}
+          Two ways to work with Sophrosyne.{" "}
           <em style={{ fontStyle: "italic", color: "#1E4D38" }}>
-            Your institution keeps everything.
+            One conversation to start.
           </em>
         </h1>
         <p
@@ -53,14 +53,14 @@ function PricingHero() {
             fontSize: 17,
             lineHeight: 1.72,
             color: "#4A584E",
-            maxWidth: 580,
+            maxWidth: 560,
             margin: 0,
           }}
         >
-          Half the cost of a Big Three engagement — with a fixed fee, a defined
-          scope, and 100% of the IP and software staying with your institution.
-          Two tracks: a consulting track to prove ROI first, and a platform
-          track when you are ready to deploy at scale.
+          License the platform to track and build AI fluency across your
+          institution, or engage us for a custom transformation — audit, pilot,
+          or full deployment. Every engagement is scoped to your institution.
+          Book a call to discuss which path fits.
         </p>
       </div>
     </section>
