@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { PRICING_TIERS } from "@/lib/data";
-import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 
 const CTA_MAP: Record<string, string> = {
@@ -21,6 +20,7 @@ function TierCard({
   index: number;
 }) {
   const ctaLabel = CTA_MAP[tier.name] ?? "Get Started";
+  const isPine = tier.highlighted;
 
   return (
     <motion.div
@@ -37,41 +37,47 @@ function TierCard({
             top: -14,
             left: "50%",
             transform: "translateX(-50%)",
-            background: tier.highlighted ? "#10b981" : "rgba(16,185,129,0.15)",
-            color: tier.highlighted ? "#0a0f1a" : "#10b981",
-            border: tier.highlighted ? "none" : "1px solid rgba(16,185,129,0.3)",
+            background: isPine ? "#C7A14A" : "rgba(199,161,74,0.12)",
+            color: isPine ? "#21271F" : "#B5862E",
+            border: isPine ? "none" : "1px solid rgba(181,134,46,0.30)",
             fontSize: 10,
             fontWeight: 700,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.08em",
             textTransform: "uppercase",
             padding: "4px 14px",
             borderRadius: 20,
             whiteSpace: "nowrap",
             zIndex: 2,
-            boxShadow: tier.highlighted ? "0 0 20px rgba(16,185,129,0.4)" : "none",
           }}
         >
           {tier.badge}
         </div>
       )}
 
-      <Card
-        highlight={tier.highlighted}
+      <div
         style={{
+          background: isPine ? "#1E4D38" : "#FFFFFF",
+          border: isPine
+            ? "1.5px solid rgba(30,77,56,0.40)"
+            : "1px solid rgba(27,42,33,0.10)",
+          borderRadius: "var(--radius-card)",
+          boxShadow: isPine
+            ? "var(--shadow-pine)"
+            : "var(--shadow-card)",
           padding: "36px 28px",
           height: "100%",
-          ...(tier.highlighted
-            ? { boxShadow: "0 0 0 1px rgba(16,185,129,0.15), 0 32px 80px rgba(0,0,0,0.4)" }
-            : {}),
+          transition: "border-color 200ms",
         }}
       >
         <p
           style={{
             fontSize: 10,
             fontWeight: 600,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.14em",
             textTransform: "uppercase",
-            color: tier.highlighted ? "#10b981" : "rgba(248,250,252,0.38)",
+            color: isPine ? "#9FBFAD" : "#B5862E",
             margin: "0 0 20px",
           }}
         >
@@ -81,10 +87,11 @@ function TierCard({
         <h3
           style={{
             fontSize: 17,
-            fontWeight: 700,
-            color: "#f8fafc",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: isPine ? "#F1EEE2" : "#1B2A21",
             margin: "0 0 20px",
-            letterSpacing: "-0.02em",
+            letterSpacing: "-0.01em",
             lineHeight: 1.3,
           }}
         >
@@ -95,12 +102,11 @@ function TierCard({
           <span
             style={{
               fontSize: "clamp(28px, 3.8vw, 44px)",
-              fontWeight: 700,
-              color: tier.highlighted ? "#10b981" : "#f4f5f8",
-              letterSpacing: "-0.04em",
+              fontWeight: 500,
+              fontFamily: "var(--font-newsreader), serif",
+              color: isPine ? "#C7A14A" : "#1E4D38",
+              letterSpacing: "-0.015em",
               lineHeight: 1,
-              fontFamily: "var(--font-geist-mono), monospace",
-              fontVariantNumeric: "tabular-nums",
             }}
           >
             {tier.price}
@@ -108,9 +114,9 @@ function TierCard({
           <span
             style={{
               fontSize: 12,
-              color: "rgba(244,245,248,0.35)",
+              color: isPine ? "#9FBFAD" : "#8A968C",
               marginLeft: 6,
-              fontFamily: "var(--font-geist-sans), sans-serif",
+              fontFamily: "var(--font-libre-franklin), sans-serif",
             }}
           >
             {tier.suffix}
@@ -119,14 +125,14 @@ function TierCard({
             style={{
               display: "inline-flex",
               alignItems: "center",
-              background: "rgba(255,255,255,0.04)",
-              border: "1px solid rgba(255,255,255,0.08)",
+              background: isPine ? "rgba(241,238,226,0.10)" : "rgba(27,42,33,0.05)",
+              border: `1px solid ${isPine ? "rgba(241,238,226,0.15)" : "rgba(27,42,33,0.10)"}`,
               borderRadius: "var(--radius-sm, 4px)",
               padding: "3px 10px",
               marginLeft: 10,
             }}
           >
-            <span style={{ fontSize: 10, color: "rgba(244,245,248,0.42)", fontWeight: 500 }}>
+            <span style={{ fontSize: 10, color: isPine ? "rgba(241,238,226,0.55)" : "#8A968C", fontWeight: 500, fontFamily: "var(--font-libre-franklin), sans-serif" }}>
               {tier.duration}
             </span>
           </div>
@@ -135,9 +141,10 @@ function TierCard({
         <p
           style={{
             fontSize: 11,
-            color: "rgba(16,185,129,0.7)",
+            color: isPine ? "rgba(199,161,74,0.80)" : "#B5862E",
             margin: "0 0 14px",
-            fontFamily: "var(--font-geist-mono), monospace",
+            fontFamily: "var(--font-libre-franklin), sans-serif",
+            fontStyle: "italic",
           }}
         >
           {tier.perStudentNote}
@@ -149,8 +156,8 @@ function TierCard({
               display: "inline-flex",
               alignItems: "center",
               gap: 5,
-              background: "rgba(16,185,129,0.08)",
-              border: "1px solid rgba(16,185,129,0.22)",
+              background: isPine ? "rgba(199,161,74,0.12)" : "rgba(30,77,56,0.06)",
+              border: `1px solid ${isPine ? "rgba(199,161,74,0.28)" : "rgba(30,77,56,0.18)"}`,
               borderRadius: 20,
               padding: "3px 10px",
               marginBottom: 14,
@@ -160,7 +167,8 @@ function TierCard({
               style={{
                 fontSize: 9,
                 fontWeight: 700,
-                color: "#10b981",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                color: isPine ? "#C7A14A" : "#1E4D38",
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
               }}
@@ -173,7 +181,7 @@ function TierCard({
         <div
           style={{
             height: 1,
-            background: tier.highlighted ? "rgba(16,185,129,0.15)" : "rgba(248,250,252,0.06)",
+            background: isPine ? "rgba(241,238,226,0.12)" : "rgba(27,42,33,0.08)",
             marginBottom: 20,
           }}
         />
@@ -182,7 +190,7 @@ function TierCard({
           style={{
             fontSize: 13,
             lineHeight: 1.65,
-            color: "rgba(248,250,252,0.52)",
+            color: isPine ? "#9FBFAD" : "#4A584E",
             margin: "0 0 24px",
           }}
         >
@@ -207,13 +215,13 @@ function TierCard({
                 alignItems: "flex-start",
                 gap: 9,
                 fontSize: 13,
-                color: "rgba(248,250,252,0.65)",
+                color: isPine ? "rgba(201,217,206,0.80)" : "#4A584E",
                 lineHeight: 1.5,
               }}
             >
               <CheckCircle2
                 size={14}
-                color="#10b981"
+                color={isPine ? "#9FBFAD" : "#1E4D38"}
                 strokeWidth={2}
                 style={{ flexShrink: 0, marginTop: 1 }}
               />
@@ -223,14 +231,20 @@ function TierCard({
         </ul>
 
         <Button
-          variant={tier.highlighted ? "primary" : "secondary"}
+          variant={isPine ? "secondary" : "primary"}
           size="md"
           href="/get-started"
-          style={{ width: "100%", justifyContent: "center" } as React.CSSProperties}
+          style={{
+            width: "100%",
+            justifyContent: "center",
+            ...(isPine
+              ? { background: "rgba(244,240,230,0.10)", color: "#F1EEE2", border: "1px solid rgba(241,238,226,0.22)" }
+              : {}),
+          } as React.CSSProperties}
         >
           {ctaLabel}
         </Button>
-      </Card>
+      </div>
     </motion.div>
   );
 }
@@ -248,7 +262,7 @@ export default function PricingTiers() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0a0f1a",
+        background: "#F4F0E6",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -264,9 +278,10 @@ export default function PricingTiers() {
             style={{
               fontSize: 11,
               fontWeight: 600,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "#10b981",
+              color: "#B5862E",
               margin: "0 0 14px",
             }}
           >
@@ -275,10 +290,11 @@ export default function PricingTiers() {
           <h2
             style={{
               fontSize: "clamp(28px, 4vw, 52px)",
-              fontWeight: 700,
-              color: "#f8fafc",
+              fontWeight: 500,
+              fontFamily: "var(--font-newsreader), serif",
+              color: "#1B2A21",
               margin: "0 0 16px",
-              letterSpacing: "-0.025em",
+              letterSpacing: "-0.012em",
             }}
           >
             Four ways to engage.
@@ -286,7 +302,7 @@ export default function PricingTiers() {
           <p
             style={{
               fontSize: 16,
-              color: "rgba(248,250,252,0.5)",
+              color: "#4A584E",
               maxWidth: 560,
               margin: 0,
               lineHeight: 1.6,
@@ -312,8 +328,8 @@ export default function PricingTiers() {
               >
                 <div
                   style={{
-                    background: "rgba(16,185,129,0.08)",
-                    border: "1px solid rgba(16,185,129,0.2)",
+                    background: "rgba(30,77,56,0.07)",
+                    border: "1px solid rgba(30,77,56,0.16)",
                     borderRadius: 20,
                     padding: "5px 14px",
                     display: "inline-flex",
@@ -325,9 +341,10 @@ export default function PricingTiers() {
                     style={{
                       fontSize: 10,
                       fontWeight: 700,
+                      fontFamily: "var(--font-libre-franklin), sans-serif",
                       letterSpacing: "0.12em",
                       textTransform: "uppercase",
-                      color: "#10b981",
+                      color: "#1E4D38",
                     }}
                   >
                     {group.label}
@@ -336,8 +353,9 @@ export default function PricingTiers() {
                 <span
                   style={{
                     fontSize: 13,
-                    color: "rgba(248,250,252,0.35)",
                     fontStyle: "italic",
+                    fontFamily: "var(--font-newsreader), serif",
+                    color: "#8A968C",
                   }}
                 >
                   {group.sublabel}
@@ -371,7 +389,7 @@ export default function PricingTiers() {
           style={{
             textAlign: "center",
             fontSize: 13,
-            color: "rgba(248,250,252,0.28)",
+            color: "#8A968C",
             margin: "48px 0 0",
           }}
         >

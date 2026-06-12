@@ -1,56 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Vercel Gray Ramp (neutral, no undertones) ── */
-  --color-gray-950: #0a0a0a;
-  --color-gray-900: #171717;
-  --color-gray-800: #262626;
-  --color-gray-700: #404040;
-  --color-gray-600: #525252;
-  --color-gray-500: #737373;
-  --color-gray-400: #a3a3a3;
-  --color-gray-200: #e5e5e5;
-
-  /* ── Linear surface palette ── */
-  --color-surface-nordic: #222326;   /* Linear Nordic Gray — warm card/sidebar bg */
-  --color-surface-raised: #262626;   /* Vercel Gray-800 — elevated card bg */
-  --color-text-primary:   #f4f5f8;   /* Linear Mercury White */
-  --color-text-secondary: #a3a3a3;   /* Vercel Gray-400 */
-  --color-text-muted:     #525252;   /* Vercel Gray-600 */
-
-  /* ── Brand ── */
-  --color-emerald:     #10b981;
-  --color-emerald-dim: #059669;
-  --color-sage:        #6b8c6e;
+  /* ── Academic palette ── */
+  --color-parchment:   #F4F0E6;
+  --color-sage:        #ECF1EC;
+  --color-ink:         #1B2A21;
+  --color-pine:        #1E4D38;
+  --color-pine-deep:   #173A2A;
+  --color-gold:        #C7A14A;
+  --color-gold-dim:    #B5862E;
+  --color-forest-muted:#4A584E;
+  --color-forest-soft: #5A6B60;
+  --color-muted:       #8A968C;
+  --color-on-dark:     #9FBFAD;
+  --color-on-dark-mid: #C9D9CE;
+  --color-on-dark-bright:#F1EEE2;
+  --color-ink-olive:   #21271F;
 
   /* ── Fonts ── */
-  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: var(--font-geist-mono), "Fira Code", "Cascadia Code", monospace;
+  --font-serif: var(--font-newsreader), "Georgia", serif;
+  --font-sans:  var(--font-libre-franklin), -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 :root {
   --pad-h: 80px;
-  --max-w: 1280px;
+  --max-w: 1200px;
   --section-py: 96px;
 
-  /* ── Border radius (Vercel tighter system) ── */
-  --radius-card: 8px;
+  --radius-card: 14px;
   --radius-btn:  6px;
   --radius-sm:   4px;
 
-  /* ── Borders (Vercel spec) ── */
-  --border-subtle:  rgba(255, 255, 255, 0.08);
-  --border-strong:  rgba(255, 255, 255, 0.15);
-  --border-emerald: rgba(16, 185, 129, 0.28);
+  --border-subtle:  rgba(27, 42, 33, 0.10);
+  --border-strong:  rgba(27, 42, 33, 0.20);
+  --border-pine:    rgba(30, 77, 56, 0.28);
 
-  /* ── Shadows (Vercel two-layer: ambient + direct) ── */
-  --shadow-card:    0 1px 3px rgba(0,0,0,0.35), 0 8px 32px rgba(0,0,0,0.45);
-  --shadow-card-lg: 0 1px 3px rgba(0,0,0,0.4),  0 24px 64px rgba(0,0,0,0.6);
-  --shadow-emerald: 0 0 0 1px rgba(16,185,129,0.12), 0 24px 64px rgba(0,0,0,0.55);
-
-  /* ── Legacy ── */
-  --bg-base: #0f172a;
-  --bg-mid:  #222326;
+  --shadow-card:    0 1px 2px rgba(27,42,33,0.05), 0 18px 44px rgba(27,42,33,0.08);
+  --shadow-card-lg: 0 1px 2px rgba(27,42,33,0.06), 0 32px 72px rgba(27,42,33,0.12);
+  --shadow-pine:    0 0 0 1px rgba(30,77,56,0.12), 0 24px 64px rgba(27,42,33,0.10);
 }
 
 @media (max-width: 1024px) { :root { --pad-h: 48px; } }
@@ -61,34 +48,30 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  font-family: var(--font-geist-sans), var(--font-sans), -apple-system, sans-serif;
+  font-family: var(--font-libre-franklin), var(--font-sans), -apple-system, sans-serif;
   font-weight: 400;
-  background: #0f172a;
-  color: #f4f5f8;
+  background: #F4F0E6;
+  color: #1B2A21;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
-/* ── Geist typography scale (Vercel spec) ── */
-h1 { letter-spacing: -0.04em;  line-height: 1.02; }
-h2 { letter-spacing: -0.025em; line-height: 1.08; }
-h3 { letter-spacing: -0.015em; }
+h1 { letter-spacing: -0.015em; line-height: 1.06; font-family: var(--font-newsreader), serif; }
+h2 { letter-spacing: -0.012em; line-height: 1.1;  font-family: var(--font-newsreader), serif; }
+h3 { letter-spacing: -0.01em;  font-family: var(--font-newsreader), serif; }
 
-/* ── Tabular numerics on mono spans ── */
-.mono,
-[data-mono] {
-  font-family: var(--font-geist-mono), var(--font-mono);
-  font-variant-numeric: tabular-nums;
-  font-feature-settings: "tnum" 1;
+::selection {
+  background: #C7A14A;
+  color: #1B2A21;
 }
 
 :focus-visible {
-  outline: 2px solid #10b981;
+  outline: 2px solid #1E4D38;
   outline-offset: 2px;
   border-radius: 2px;
 }
@@ -97,11 +80,11 @@ img { max-width: 100%; display: block; }
 a  { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; }
 
-/* ── Scrollbar (dark, Vercel-tinted) ── */
+/* ── Scrollbar (light academic) ── */
 ::-webkit-scrollbar       { width: 6px; }
-::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-track { background: #F4F0E6; }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.10);
+  background: rgba(30,77,56,0.22);
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
+::-webkit-scrollbar-thumb:hover { background: rgba(30,77,56,0.38); }

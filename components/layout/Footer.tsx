@@ -15,9 +15,8 @@ export default function Footer() {
   return (
     <footer
       style={{
-        /* Vercel spec border-top */
-        borderTop: "1px solid rgba(255,255,255,0.08)",
-        background: "#0a0a0a",
+        borderTop: "1px solid rgba(27,42,33,0.14)",
+        background: "#21271F",
       }}
     >
       <div
@@ -38,14 +37,14 @@ export default function Footer() {
         >
           {/* Brand */}
           <div>
-            <div style={{ marginBottom: 14 }}>
-              <Logo variant="full" size={24} />
+            <div style={{ marginBottom: 16 }}>
+              <Logo variant="full" size={26} reversed />
             </div>
             <p
               style={{
                 fontSize: 13,
                 lineHeight: 1.65,
-                color: "rgba(244,245,248,0.4)",
+                color: "#9FBFAD",
                 maxWidth: 260,
                 margin: 0,
               }}
@@ -62,10 +61,11 @@ export default function Footer() {
               style={{
                 fontSize: 10,
                 fontWeight: 600,
-                letterSpacing: "0.12em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "rgba(244,245,248,0.28)",
+                color: "rgba(201,217,206,0.45)",
                 margin: "0 0 16px",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
               }}
             >
               Navigation
@@ -77,15 +77,15 @@ export default function Footer() {
                   href={l.href}
                   style={{
                     fontSize: 13,
-                    color: "rgba(244,245,248,0.48)",
+                    color: "#9FBFAD",
                     textDecoration: "none",
                     transition: "color 180ms",
                   }}
                   onMouseEnter={(e) =>
-                    ((e.currentTarget as HTMLAnchorElement).style.color = "#f4f5f8")
+                    ((e.currentTarget as HTMLAnchorElement).style.color = "#C9D9CE")
                   }
                   onMouseLeave={(e) =>
-                    ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(244,245,248,0.48)")
+                    ((e.currentTarget as HTMLAnchorElement).style.color = "#9FBFAD")
                   }
                 >
                   {l.label}
@@ -100,10 +100,11 @@ export default function Footer() {
               style={{
                 fontSize: 10,
                 fontWeight: 600,
-                letterSpacing: "0.12em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "rgba(244,245,248,0.28)",
+                color: "rgba(201,217,206,0.45)",
                 margin: "0 0 16px",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
               }}
             >
               Contact
@@ -112,22 +113,22 @@ export default function Footer() {
               href="mailto:hello@sophrosynesystems.com"
               style={{
                 fontSize: 13,
-                color: "rgba(244,245,248,0.48)",
+                color: "#9FBFAD",
                 textDecoration: "none",
                 transition: "color 180ms",
                 display: "block",
                 marginBottom: 8,
               }}
               onMouseEnter={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "#10b981")
+                ((e.currentTarget as HTMLAnchorElement).style.color = "#C7A14A")
               }
               onMouseLeave={(e) =>
-                ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(244,245,248,0.48)")
+                ((e.currentTarget as HTMLAnchorElement).style.color = "#9FBFAD")
               }
             >
               hello@sophrosynesystems.com
             </a>
-            <p style={{ fontSize: 12, color: "rgba(244,245,248,0.28)", margin: 0 }}>
+            <p style={{ fontSize: 12, color: "rgba(201,217,206,0.45)", margin: 0 }}>
               Western Accelerator Partner
             </p>
           </div>
@@ -135,7 +136,7 @@ export default function Footer() {
 
         <div
           style={{
-            borderTop: "1px solid rgba(255,255,255,0.08)",
+            borderTop: "1px solid rgba(201,217,206,0.12)",
             paddingTop: 24,
             display: "flex",
             alignItems: "center",
@@ -144,11 +145,11 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <p style={{ fontSize: 11, color: "rgba(244,245,248,0.22)", margin: 0 }}>
+          <p style={{ fontSize: 11, color: "rgba(201,217,206,0.35)", margin: 0 }}>
             © 2026{" "}
             <span translate="no">Sophrosyne Systems Inc.</span> All rights reserved.
           </p>
-          <p style={{ fontSize: 11, color: "rgba(244,245,248,0.18)", margin: 0 }}>
+          <p style={{ fontSize: 11, color: "rgba(201,217,206,0.30)", margin: 0 }}>
             FERPA Compliant · Student IP Protected · Data Sovereign
           </p>
         </div>

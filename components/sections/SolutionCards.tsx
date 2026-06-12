@@ -11,7 +11,7 @@ export default function SolutionCards() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0f172a",
+        background: "#ECF1EC",
       }}
     >
       <div
@@ -51,8 +51,8 @@ export default function SolutionCards() {
                     style={{
                       borderRadius: 14,
                       overflow: "hidden",
-                      border: "1px solid rgba(248,250,252,0.07)",
-                      boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
+                      border: "1px solid rgba(27,42,33,0.10)",
+                      boxShadow: "var(--shadow-card-lg)",
                       position: "relative",
                     }}
                   >
@@ -64,7 +64,7 @@ export default function SolutionCards() {
                         right: 0,
                         height: 2,
                         background:
-                          "linear-gradient(90deg, transparent, rgba(16,185,129,0.5) 50%, transparent)",
+                          "linear-gradient(90deg, transparent, rgba(30,77,56,0.45) 50%, transparent)",
                         zIndex: 2,
                       }}
                     />
@@ -79,29 +79,28 @@ export default function SolutionCards() {
                         aspectRatio: "4/3",
                         objectFit: "cover",
                         display: "block",
-                        filter: "brightness(0.78) saturate(0.72)",
+                        filter: "brightness(0.88) saturate(0.80)",
                       }}
                     />
-                    {/* Dark vignette overlay — ties photos into the dark UI */}
                     <div
                       style={{
                         position: "absolute",
                         inset: 0,
                         background:
-                          "linear-gradient(to top, rgba(10,15,26,0.55) 0%, transparent 45%), linear-gradient(to bottom, rgba(10,15,26,0.25) 0%, transparent 35%)",
+                          "linear-gradient(to top, rgba(27,42,33,0.30) 0%, transparent 45%)",
                         pointerEvents: "none",
                         zIndex: 1,
                       }}
                     />
-                    {/* Solution number badge */}
+                    {/* Solution label badge */}
                     <div
                       style={{
                         position: "absolute",
                         top: 16,
                         left: 16,
-                        background: "rgba(10,15,26,0.88)",
+                        background: "rgba(33,39,31,0.85)",
                         backdropFilter: "blur(12px)",
-                        border: "1px solid rgba(16,185,129,0.25)",
+                        border: "1px solid rgba(199,161,74,0.30)",
                         borderRadius: 8,
                         padding: "6px 12px",
                         zIndex: 3,
@@ -110,10 +109,11 @@ export default function SolutionCards() {
                       <span
                         style={{
                           fontSize: 10,
-                          fontWeight: 700,
-                          color: "#10b981",
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
+                          fontWeight: 500,
+                          fontStyle: "italic",
+                          fontFamily: "var(--font-newsreader), serif",
+                          color: "#C7A14A",
+                          letterSpacing: "0.04em",
                         }}
                       >
                         {sol.label}
@@ -128,9 +128,10 @@ export default function SolutionCards() {
                     style={{
                       fontSize: 11,
                       fontWeight: 600,
+                      fontFamily: "var(--font-libre-franklin), sans-serif",
                       letterSpacing: "0.14em",
                       textTransform: "uppercase",
-                      color: "#10b981",
+                      color: "#B5862E",
                       margin: "0 0 14px",
                     }}
                   >
@@ -139,10 +140,11 @@ export default function SolutionCards() {
                   <h2
                     style={{
                       fontSize: "clamp(26px, 3.2vw, 40px)",
-                      fontWeight: 700,
-                      color: "#f8fafc",
+                      fontWeight: 500,
+                      fontFamily: "var(--font-newsreader), serif",
+                      color: "#1B2A21",
                       margin: "0 0 10px",
-                      letterSpacing: "-0.025em",
+                      letterSpacing: "-0.01em",
                     }}
                   >
                     {sol.title}
@@ -150,10 +152,11 @@ export default function SolutionCards() {
                   <p
                     style={{
                       fontSize: 15,
-                      fontWeight: 500,
-                      color: "rgba(248,250,252,0.55)",
-                      margin: "0 0 20px",
+                      fontWeight: 400,
                       fontStyle: "italic",
+                      fontFamily: "var(--font-newsreader), serif",
+                      color: "#5A6B60",
+                      margin: "0 0 20px",
                     }}
                   >
                     {sol.tagline}
@@ -162,7 +165,7 @@ export default function SolutionCards() {
                     style={{
                       fontSize: 15,
                       lineHeight: 1.72,
-                      color: "rgba(248,250,252,0.58)",
+                      color: "#4A584E",
                       margin: "0 0 28px",
                     }}
                   >
@@ -178,13 +181,13 @@ export default function SolutionCards() {
                           alignItems: "flex-start",
                           gap: 10,
                           fontSize: 13,
-                          color: "rgba(248,250,252,0.65)",
+                          color: "#4A584E",
                           lineHeight: 1.55,
                         }}
                       >
                         <CheckCircle2
                           size={15}
-                          color="#10b981"
+                          color="#1E4D38"
                           strokeWidth={2}
                           style={{ flexShrink: 0, marginTop: 1 }}
                         />
@@ -201,7 +204,8 @@ export default function SolutionCards() {
                       marginTop: 24,
                       fontSize: 13,
                       fontWeight: 600,
-                      color: "#10b981",
+                      fontFamily: "var(--font-libre-franklin), sans-serif",
+                      color: "#1E4D38",
                       textDecoration: "none",
                       letterSpacing: "0.02em",
                     }}

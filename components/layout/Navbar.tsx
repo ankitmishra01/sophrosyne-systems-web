@@ -29,8 +29,8 @@ export default function Navbar() {
   useEffect(() => { setOpen(false); }, [pathname]);
 
   const bg = scrolled
-    ? "rgba(15,23,42,0.97)"
-    : "linear-gradient(180deg, rgba(15,23,42,0.72) 0%, rgba(15,23,42,0) 100%)";
+    ? "rgba(244,240,230,0.92)"
+    : "linear-gradient(180deg, rgba(244,240,230,0.80) 0%, rgba(244,240,230,0) 100%)";
 
   return (
     <nav
@@ -41,10 +41,9 @@ export default function Navbar() {
         right: 0,
         zIndex: 200,
         background: bg,
-        backdropFilter: scrolled ? "blur(20px) saturate(180%)" : "none",
-        /* Vercel spec border */
+        backdropFilter: scrolled ? "blur(14px) saturate(160%)" : "none",
         borderBottom: scrolled
-          ? "1px solid rgba(255,255,255,0.08)"
+          ? "1px solid rgba(27,42,33,0.10)"
           : "1px solid transparent",
         transition: "all 350ms cubic-bezier(0.22,1,0.36,1)",
       }}
@@ -60,7 +59,6 @@ export default function Navbar() {
           height: 64,
         }}
       >
-        {/* Logo */}
         <Link href="/" style={{ textDecoration: "none" }}>
           <Logo variant="full" size={28} />
         </Link>
@@ -76,17 +74,18 @@ export default function Navbar() {
                 style={{
                   fontSize: 13,
                   fontWeight: 500,
-                  letterSpacing: "-0.01em",
-                  color: active ? "#10b981" : "rgba(244,245,248,0.72)",
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  letterSpacing: "0.01em",
+                  color: active ? "#1E4D38" : "#415146",
                   textDecoration: active ? "underline" : "none",
                   textUnderlineOffset: "4px",
                   transition: "color 180ms",
                 }}
                 onMouseEnter={(e) =>
-                  !active && ((e.currentTarget as HTMLAnchorElement).style.color = "#f4f5f8")
+                  !active && ((e.currentTarget as HTMLAnchorElement).style.color = "#1E4D38")
                 }
                 onMouseLeave={(e) =>
-                  !active && ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(244,245,248,0.72)")
+                  !active && ((e.currentTarget as HTMLAnchorElement).style.color = "#415146")
                 }
               >
                 {l.label}
@@ -99,20 +98,22 @@ export default function Navbar() {
             style={{
               display: "inline-flex",
               alignItems: "center",
-              padding: "8px 16px",
+              padding: "8px 18px",
               borderRadius: "var(--radius-btn)",
               fontSize: 12,
               fontWeight: 700,
-              letterSpacing: "0.01em",
-              background: "#10b981",
-              color: "#0a0a0a",
+              fontFamily: "var(--font-libre-franklin), sans-serif",
+              letterSpacing: "0.02em",
+              background: "#1E4D38",
+              color: "#F4F0E6",
               textDecoration: "none",
               transition: "opacity 180ms",
+              whiteSpace: "nowrap",
             }}
             onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.82")}
             onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
           >
-            Get Started
+            Book an Audit
           </Link>
         </div>
 
@@ -120,7 +121,7 @@ export default function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           className="nav-mob"
-          style={{ display: "none", background: "none", border: "none", color: "#f4f5f8", cursor: "pointer", padding: 8 }}
+          style={{ display: "none", background: "none", border: "none", color: "#1B2A21", cursor: "pointer", padding: 8 }}
           aria-label="Toggle menu"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
@@ -131,13 +132,13 @@ export default function Navbar() {
       {open && (
         <div
           style={{
-            background: "rgba(15,23,42,0.99)",
-            borderTop: "1px solid rgba(255,255,255,0.08)",
+            background: "rgba(244,240,230,0.98)",
+            borderTop: "1px solid rgba(27,42,33,0.10)",
             padding: "20px var(--pad-h) 28px",
             display: "flex",
             flexDirection: "column",
             gap: 4,
-            backdropFilter: "blur(20px)",
+            backdropFilter: "blur(14px)",
           }}
         >
           <Link
@@ -146,7 +147,7 @@ export default function Navbar() {
             style={{
               fontSize: 15,
               fontWeight: 500,
-              color: pathname === "/" ? "#10b981" : "rgba(244,245,248,0.72)",
+              color: pathname === "/" ? "#1E4D38" : "#415146",
               textDecoration: "none",
               padding: "10px 0",
             }}
@@ -161,7 +162,7 @@ export default function Navbar() {
               style={{
                 fontSize: 15,
                 fontWeight: 500,
-                color: pathname === l.href ? "#10b981" : "rgba(244,245,248,0.72)",
+                color: pathname === l.href ? "#1E4D38" : "#415146",
                 textDecoration: "none",
                 padding: "10px 0",
               }}
@@ -169,7 +170,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <div style={{ height: 1, background: "rgba(255,255,255,0.08)", margin: "12px 0" }} />
+          <div style={{ height: 1, background: "rgba(27,42,33,0.10)", margin: "12px 0" }} />
           <Link
             href="/get-started"
             onClick={() => setOpen(false)}
@@ -178,15 +179,15 @@ export default function Navbar() {
               textAlign: "center",
               padding: "12px 20px",
               borderRadius: "var(--radius-btn)",
-              background: "#10b981",
-              color: "#0a0a0a",
+              background: "#1E4D38",
+              color: "#F4F0E6",
               fontWeight: 700,
               fontSize: 13,
               textDecoration: "none",
               marginTop: 4,
             }}
           >
-            Get Started
+            Book an Audit
           </Link>
         </div>
       )}

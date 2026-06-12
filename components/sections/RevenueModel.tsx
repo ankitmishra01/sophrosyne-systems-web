@@ -26,7 +26,7 @@ export default function RevenueModel() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h) 0",
-        background: "#0a0f1a",
+        background: "#F4F0E6",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -36,11 +36,12 @@ export default function RevenueModel() {
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
           style={{
-            background: "rgba(16,185,129,0.04)",
-            border: "1.5px solid rgba(16,185,129,0.2)",
+            background: "#FFFFFF",
+            border: "1.5px solid rgba(27,42,33,0.10)",
             borderRadius: 16,
             padding: "48px 56px",
             marginBottom: 64,
+            boxShadow: "var(--shadow-card)",
           }}
         >
           <div
@@ -57,9 +58,10 @@ export default function RevenueModel() {
                 style={{
                   fontSize: 11,
                   fontWeight: 600,
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
                   letterSpacing: "0.16em",
                   textTransform: "uppercase",
-                  color: "#10b981",
+                  color: "#B5862E",
                   margin: "0 0 14px",
                 }}
               >
@@ -68,17 +70,18 @@ export default function RevenueModel() {
               <h2
                 style={{
                   fontSize: "clamp(24px, 3.2vw, 40px)",
-                  fontWeight: 700,
-                  color: "#f8fafc",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: "#1B2A21",
                   margin: "0 0 20px",
-                  letterSpacing: "-0.025em",
+                  letterSpacing: "-0.012em",
                   lineHeight: 1.1,
                 }}
               >
                 Software-enabled services.{" "}
-                <span style={{ color: "rgba(248,250,252,0.45)" }}>
+                <em style={{ fontStyle: "italic", color: "#8A968C" }}>
                   Not a SaaS subscription.
-                </span>
+                </em>
               </h2>
             </div>
 
@@ -87,7 +90,7 @@ export default function RevenueModel() {
                 style={{
                   fontSize: 16,
                   lineHeight: 1.72,
-                  color: "rgba(248,250,252,0.65)",
+                  color: "#4A584E",
                   margin: "0 0 20px",
                 }}
               >
@@ -100,14 +103,14 @@ export default function RevenueModel() {
                 style={{
                   fontSize: 16,
                   lineHeight: 1.72,
-                  color: "rgba(248,250,252,0.65)",
+                  color: "#4A584E",
                   margin: 0,
                 }}
               >
                 The university owns{" "}
                 <span
                   style={{
-                    color: "#10b981",
+                    color: "#1E4D38",
                     fontWeight: 600,
                   }}
                 >
@@ -123,7 +126,7 @@ export default function RevenueModel() {
           <div
             style={{
               height: 1,
-              background: "rgba(16,185,129,0.12)",
+              background: "rgba(27,42,33,0.08)",
               margin: "40px 0",
             }}
           />
@@ -144,20 +147,21 @@ export default function RevenueModel() {
                     width: 36,
                     height: 36,
                     borderRadius: 8,
-                    background: "rgba(16,185,129,0.1)",
+                    background: "rgba(30,77,56,0.07)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     marginBottom: 12,
                   }}
                 >
-                  <p.Icon size={17} color="#10b981" strokeWidth={1.8} />
+                  <p.Icon size={17} color="#1E4D38" strokeWidth={1.8} />
                 </div>
                 <h3
                   style={{
                     fontSize: 14,
-                    fontWeight: 700,
-                    color: "#f8fafc",
+                    fontWeight: 600,
+                    fontFamily: "var(--font-libre-franklin), sans-serif",
+                    color: "#1B2A21",
                     margin: "0 0 8px",
                     letterSpacing: "-0.01em",
                   }}
@@ -168,7 +172,7 @@ export default function RevenueModel() {
                   style={{
                     fontSize: 13,
                     lineHeight: 1.65,
-                    color: "rgba(248,250,252,0.5)",
+                    color: "#5A6B60",
                     margin: 0,
                   }}
                 >

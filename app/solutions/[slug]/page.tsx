@@ -72,18 +72,19 @@ function SlugHero({
       style={{
         padding: "140px var(--pad-h) 80px",
         background:
-          "radial-gradient(ellipse 65% 55% at 75% 30%, rgba(16,185,129,0.07) 0%, transparent 65%) #0f172a",
+          "radial-gradient(ellipse 65% 55% at 75% 30%, #ECF1EC 0%, #F4F0E6 60%)",
         position: "relative",
         overflow: "hidden",
+        borderBottom: "1px solid rgba(27,42,33,0.08)",
       }}
     >
+      {/* Diagonal hatch texture */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           backgroundImage:
-            "linear-gradient(rgba(248,250,252,0.016) 1px, transparent 1px), linear-gradient(90deg, rgba(248,250,252,0.016) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
+            "repeating-linear-gradient(135deg, rgba(30,77,56,0.025) 0px, rgba(30,77,56,0.025) 1px, transparent 1px, transparent 12px)",
           pointerEvents: "none",
         }}
       />
@@ -106,9 +107,10 @@ function SlugHero({
             style={{
               fontSize: 11,
               fontWeight: 600,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#10b981",
+              color: "#B5862E",
               margin: "0 0 18px",
             }}
           >
@@ -117,11 +119,12 @@ function SlugHero({
           <h1
             style={{
               fontSize: "clamp(32px, 4.5vw, 60px)",
-              fontWeight: 700,
-              color: "#f8fafc",
+              fontWeight: 500,
+              fontFamily: "var(--font-newsreader), serif",
+              color: "#1B2A21",
               margin: "0 0 14px",
-              lineHeight: 1.04,
-              letterSpacing: "-0.03em",
+              lineHeight: 1.06,
+              letterSpacing: "-0.015em",
             }}
           >
             {sol.title}
@@ -130,7 +133,8 @@ function SlugHero({
             style={{
               fontSize: 16,
               fontWeight: 500,
-              color: "rgba(248,250,252,0.5)",
+              fontFamily: "var(--font-newsreader), serif",
+              color: "#4A584E",
               margin: "0 0 20px",
               fontStyle: "italic",
             }}
@@ -141,7 +145,7 @@ function SlugHero({
             style={{
               fontSize: 16,
               lineHeight: 1.72,
-              color: "rgba(248,250,252,0.62)",
+              color: "#5A6B60",
               margin: "0 0 36px",
               maxWidth: 500,
             }}
@@ -161,9 +165,10 @@ function SlugHero({
               href="/solutions"
               style={{
                 fontSize: 13,
-                color: "rgba(248,250,252,0.38)",
+                color: "#8A968C",
                 textDecoration: "none",
                 letterSpacing: "0.02em",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
               }}
             >
               ← All Solutions
@@ -177,8 +182,8 @@ function SlugHero({
             style={{
               borderRadius: 14,
               overflow: "hidden",
-              border: "1px solid rgba(248,250,252,0.07)",
-              boxShadow: "0 32px 80px rgba(0,0,0,0.5)",
+              border: "1px solid rgba(27,42,33,0.12)",
+              boxShadow: "0 2px 4px rgba(27,42,33,0.06), 0 32px 72px rgba(27,42,33,0.14)",
               position: "relative",
             }}
           >
@@ -190,7 +195,7 @@ function SlugHero({
                 right: 0,
                 height: 2,
                 background:
-                  "linear-gradient(90deg, transparent, rgba(16,185,129,0.5) 50%, transparent)",
+                  "linear-gradient(90deg, transparent, rgba(30,77,56,0.4) 50%, transparent)",
                 zIndex: 2,
               }}
             />
@@ -205,7 +210,7 @@ function SlugHero({
                 aspectRatio: "4/3",
                 objectFit: "cover",
                 display: "block",
-                filter: "brightness(0.75) saturate(0.68)",
+                filter: "brightness(0.88) saturate(0.8)",
               }}
               priority
             />
@@ -214,7 +219,7 @@ function SlugHero({
                 position: "absolute",
                 inset: 0,
                 background:
-                  "linear-gradient(to top, rgba(10,15,26,0.5) 0%, transparent 50%)",
+                  "linear-gradient(to top, rgba(27,42,33,0.18) 0%, transparent 50%)",
                 pointerEvents: "none",
                 zIndex: 1,
               }}
@@ -238,8 +243,8 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0a0f1a",
-        borderTop: "1px solid rgba(248,250,252,0.04)",
+        background: "#ECF1EC",
+        borderTop: "1px solid rgba(27,42,33,0.06)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -247,9 +252,10 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
-            color: "#10b981",
+            color: "#B5862E",
             margin: "0 0 14px",
           }}
         >
@@ -258,10 +264,11 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
         <h2
           style={{
             fontSize: "clamp(24px, 3.5vw, 44px)",
-            fontWeight: 700,
-            color: "#f8fafc",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21",
             margin: "0 0 56px",
-            letterSpacing: "-0.025em",
+            letterSpacing: "-0.012em",
           }}
         >
           Three steps to live.
@@ -284,7 +291,7 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
               right: "calc(16.5% + 4px)",
               height: 1,
               background:
-                "linear-gradient(90deg, rgba(16,185,129,0.3) 0%, rgba(16,185,129,0.1) 50%, rgba(16,185,129,0.3) 100%)",
+                "linear-gradient(90deg, rgba(30,77,56,0.28) 0%, rgba(199,161,74,0.35) 50%, rgba(30,77,56,0.28) 100%)",
               pointerEvents: "none",
             }}
             className="hiw-connector"
@@ -296,22 +303,23 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
                   width: 44,
                   height: 44,
                   borderRadius: "50%",
-                  background: "rgba(16,185,129,0.1)",
-                  border: "1.5px solid rgba(16,185,129,0.35)",
+                  background: "#FFFFFF",
+                  border: "1.5px solid rgba(30,77,56,0.28)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: 20,
                   position: "relative",
                   zIndex: 1,
+                  boxShadow: "0 1px 4px rgba(27,42,33,0.08)",
                 }}
               >
                 <span
                   style={{
-                    fontSize: 13,
-                    fontWeight: 700,
-                    color: "#10b981",
-                    fontFamily: "var(--font-geist-mono), monospace",
+                    fontSize: 14,
+                    fontWeight: 500,
+                    fontFamily: "var(--font-newsreader), serif",
+                    color: "#1E4D38",
                   }}
                 >
                   {step.number}
@@ -320,10 +328,11 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
               <h3
                 style={{
                   fontSize: 16,
-                  fontWeight: 700,
-                  color: "#f8fafc",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: "#1B2A21",
                   margin: "0 0 10px",
-                  letterSpacing: "-0.015em",
+                  letterSpacing: "-0.01em",
                 }}
               >
                 {step.title}
@@ -332,7 +341,7 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
                 style={{
                   fontSize: 14,
                   lineHeight: 1.7,
-                  color: "rgba(248,250,252,0.55)",
+                  color: "#4A584E",
                   margin: 0,
                 }}
               >
@@ -359,9 +368,9 @@ function OutcomesStrip({ detail }: { detail: SolutionDetail }) {
     <section
       style={{
         padding: "48px var(--pad-h)",
-        background: "#0f172a",
-        borderTop: "1px solid rgba(248,250,252,0.04)",
-        borderBottom: "1px solid rgba(248,250,252,0.04)",
+        background: "#1E4D38",
+        borderTop: "1px solid rgba(27,42,33,0.08)",
+        borderBottom: "1px solid rgba(27,42,33,0.08)",
       }}
     >
       <div
@@ -378,8 +387,8 @@ function OutcomesStrip({ detail }: { detail: SolutionDetail }) {
           <div
             key={i}
             style={{
-              background: "rgba(16,185,129,0.05)",
-              border: "1px solid rgba(16,185,129,0.15)",
+              background: "rgba(255,255,255,0.07)",
+              border: "1px solid rgba(255,255,255,0.12)",
               borderRadius: "var(--radius-card)",
               padding: "28px 24px",
               textAlign: "center",
@@ -388,11 +397,11 @@ function OutcomesStrip({ detail }: { detail: SolutionDetail }) {
             <p
               style={{
                 fontSize: "clamp(28px, 3.5vw, 44px)",
-                fontWeight: 700,
-                color: "#10b981",
+                fontWeight: 500,
+                fontFamily: "var(--font-newsreader), serif",
+                color: "#C7A14A",
                 margin: "0 0 6px",
                 letterSpacing: "-0.04em",
-                fontFamily: "var(--font-geist-mono), monospace",
                 fontVariantNumeric: "tabular-nums",
               }}
             >
@@ -402,7 +411,8 @@ function OutcomesStrip({ detail }: { detail: SolutionDetail }) {
               style={{
                 fontSize: 11,
                 fontWeight: 600,
-                color: "rgba(248,250,252,0.45)",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                color: "#9FBFAD",
                 margin: 0,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
@@ -428,8 +438,8 @@ function FeatureDetail({ detail }: { detail: SolutionDetail }) {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0a0f1a",
-        borderTop: "1px solid rgba(248,250,252,0.04)",
+        background: "#F4F0E6",
+        borderTop: "1px solid rgba(27,42,33,0.06)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -437,21 +447,23 @@ function FeatureDetail({ detail }: { detail: SolutionDetail }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
-            color: "#10b981",
+            color: "#B5862E",
             margin: "0 0 14px",
           }}
         >
-          What's Included
+          What&apos;s Included
         </p>
         <h2
           style={{
             fontSize: "clamp(24px, 3.5vw, 44px)",
-            fontWeight: 700,
-            color: "#f8fafc",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21",
             margin: "0 0 48px",
-            letterSpacing: "-0.025em",
+            letterSpacing: "-0.012em",
           }}
         >
           Core capabilities.
@@ -474,24 +486,25 @@ function FeatureDetail({ detail }: { detail: SolutionDetail }) {
                       width: 40,
                       height: 40,
                       borderRadius: "var(--radius-card)",
-                      background: "rgba(16,185,129,0.1)",
-                      border: "1px solid rgba(16,185,129,0.2)",
+                      background: "rgba(30,77,56,0.08)",
+                      border: "1px solid rgba(30,77,56,0.16)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       marginBottom: 16,
                     }}
                   >
-                    <IconComp size={18} color="#10b981" strokeWidth={1.8} />
+                    <IconComp size={18} color="#1E4D38" strokeWidth={1.8} />
                   </div>
                 )}
                 <h3
                   style={{
                     fontSize: 15,
-                    fontWeight: 700,
-                    color: "#f8fafc",
+                    fontWeight: 500,
+                    fontFamily: "var(--font-newsreader), serif",
+                    color: "#1B2A21",
                     margin: "0 0 10px",
-                    letterSpacing: "-0.015em",
+                    letterSpacing: "-0.01em",
                   }}
                 >
                   {feat.title}
@@ -500,7 +513,7 @@ function FeatureDetail({ detail }: { detail: SolutionDetail }) {
                   style={{
                     fontSize: 14,
                     lineHeight: 1.68,
-                    color: "rgba(248,250,252,0.55)",
+                    color: "#4A584E",
                     margin: 0,
                   }}
                 >
@@ -526,8 +539,8 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0f172a",
-        borderTop: "1px solid rgba(248,250,252,0.04)",
+        background: "#ECF1EC",
+        borderTop: "1px solid rgba(27,42,33,0.06)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -535,9 +548,10 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
-            color: "#10b981",
+            color: "#B5862E",
             margin: "0 0 14px",
           }}
         >
@@ -546,10 +560,11 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
         <h2
           style={{
             fontSize: "clamp(24px, 3.5vw, 44px)",
-            fontWeight: 700,
-            color: "#f8fafc",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21",
             margin: "0 0 48px",
-            letterSpacing: "-0.025em",
+            letterSpacing: "-0.012em",
           }}
         >
           Built for institutions like yours.
@@ -568,8 +583,8 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
-                  background: "rgba(16,185,129,0.08)",
-                  border: "1px solid rgba(16,185,129,0.18)",
+                  background: "rgba(30,77,56,0.07)",
+                  border: "1px solid rgba(30,77,56,0.16)",
                   borderRadius: 20,
                   padding: "3px 12px",
                   marginBottom: 16,
@@ -579,7 +594,8 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
                   style={{
                     fontSize: 10,
                     fontWeight: 600,
-                    color: "#10b981",
+                    fontFamily: "var(--font-libre-franklin), sans-serif",
+                    color: "#1E4D38",
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                   }}
@@ -590,10 +606,11 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
               <h3
                 style={{
                   fontSize: 17,
-                  fontWeight: 700,
-                  color: "#f8fafc",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: "#1B2A21",
                   margin: "0 0 12px",
-                  letterSpacing: "-0.02em",
+                  letterSpacing: "-0.01em",
                   lineHeight: 1.3,
                 }}
               >
@@ -603,7 +620,7 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
                 style={{
                   fontSize: 14,
                   lineHeight: 1.68,
-                  color: "rgba(248,250,252,0.55)",
+                  color: "#4A584E",
                   margin: 0,
                 }}
               >
@@ -628,8 +645,8 @@ function ProductFaq({ detail }: { detail: SolutionDetail }) {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0a0f1a",
-        borderTop: "1px solid rgba(248,250,252,0.04)",
+        background: "#F4F0E6",
+        borderTop: "1px solid rgba(27,42,33,0.06)",
       }}
     >
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
@@ -637,9 +654,10 @@ function ProductFaq({ detail }: { detail: SolutionDetail }) {
           style={{
             fontSize: 11,
             fontWeight: 600,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
-            color: "#10b981",
+            color: "#B5862E",
             margin: "0 0 14px",
           }}
         >
@@ -648,10 +666,11 @@ function ProductFaq({ detail }: { detail: SolutionDetail }) {
         <h2
           style={{
             fontSize: "clamp(24px, 3.5vw, 40px)",
-            fontWeight: 700,
-            color: "#f8fafc",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21",
             margin: "0 0 40px",
-            letterSpacing: "-0.025em",
+            letterSpacing: "-0.012em",
           }}
         >
           Frequently asked questions.
@@ -669,8 +688,8 @@ function ProductCTA({ sol }: { sol: (typeof SOLUTIONS)[number] }) {
       style={{
         padding: "var(--section-py) var(--pad-h)",
         background:
-          "radial-gradient(ellipse 60% 80% at 50% 50%, rgba(16,185,129,0.07) 0%, transparent 70%) #0f172a",
-        borderTop: "1px solid rgba(16,185,129,0.12)",
+          "radial-gradient(ellipse 60% 80% at 50% 50%, #ECF1EC 0%, #F4F0E6 70%)",
+        borderTop: "1px solid rgba(27,42,33,0.08)",
         textAlign: "center",
       }}
     >
@@ -678,30 +697,24 @@ function ProductCTA({ sol }: { sol: (typeof SOLUTIONS)[number] }) {
         <h2
           style={{
             fontSize: "clamp(26px, 4vw, 48px)",
-            fontWeight: 700,
-            color: "#f8fafc",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21",
             margin: "0 0 16px",
-            letterSpacing: "-0.03em",
+            letterSpacing: "-0.015em",
           }}
         >
           Ready to deploy{" "}
-          <span
-            style={{
-              background: "linear-gradient(135deg, #10b981 0%, #6ee7b7 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
+          <em style={{ color: "#1E4D38", fontStyle: "italic" }}>
             {sol.title}
-          </span>
+          </em>
           ?
         </h2>
         <p
           style={{
             fontSize: 16,
             lineHeight: 1.68,
-            color: "rgba(248,250,252,0.55)",
+            color: "#4A584E",
             margin: "0 0 36px",
           }}
         >

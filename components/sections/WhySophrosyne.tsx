@@ -12,7 +12,7 @@ export default function WhySophrosyne() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0f172a",
+        background: "#F4F0E6",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -28,9 +28,10 @@ export default function WhySophrosyne() {
             style={{
               fontSize: 11,
               fontWeight: 600,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "#10b981",
+              color: "#B5862E",
               margin: "0 0 14px",
             }}
           >
@@ -39,10 +40,11 @@ export default function WhySophrosyne() {
           <h2
             style={{
               fontSize: "clamp(28px, 4vw, 52px)",
-              fontWeight: 700,
-              color: "#f8fafc",
+              fontWeight: 500,
+              fontFamily: "var(--font-newsreader), serif",
+              color: "#1B2A21",
               margin: "0 0 16px",
-              letterSpacing: "-0.025em",
+              letterSpacing: "-0.012em",
               maxWidth: 700,
             }}
           >
@@ -51,8 +53,8 @@ export default function WhySophrosyne() {
           <p
             style={{
               fontSize: 16,
-              lineHeight: 1.65,
-              color: "rgba(248,250,252,0.62)",
+              lineHeight: 1.68,
+              color: "#4A584E",
               maxWidth: 560,
               margin: 0,
             }}
@@ -61,7 +63,7 @@ export default function WhySophrosyne() {
           </p>
         </motion.div>
 
-        {/* Cards — asymmetric: hero card left (Studio & Pulse), two supporting cards stacked right */}
+        {/* Cards — asymmetric: hero card left, two supporting cards stacked right */}
         <div
           style={{
             display: "grid",
@@ -71,7 +73,7 @@ export default function WhySophrosyne() {
           }}
           className="why-grid"
         >
-          {/* Hero card — Sophrosyne Studio & Pulse (index 1) spans both rows on the left */}
+          {/* Hero card — spans both rows on the left (index 1) */}
           {(() => {
             const item = WHY_ITEMS[1];
             const IconComp = ICONS[item.icon as keyof typeof ICONS];
@@ -90,23 +92,24 @@ export default function WhySophrosyne() {
                       width: 48,
                       height: 48,
                       borderRadius: "var(--radius-card)",
-                      background: "rgba(16,185,129,0.12)",
-                      border: "1px solid rgba(16,185,129,0.25)",
+                      background: "rgba(241,238,226,0.15)",
+                      border: "1px solid rgba(241,238,226,0.22)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       marginBottom: 28,
                     }}
                   >
-                    {IconComp && <IconComp size={22} color="#10b981" strokeWidth={1.7} />}
+                    {IconComp && <IconComp size={22} color="#9FBFAD" strokeWidth={1.7} />}
                   </div>
                   <h3
                     style={{
                       fontSize: 22,
-                      fontWeight: 700,
-                      color: "#f8fafc",
+                      fontWeight: 500,
+                      fontFamily: "var(--font-newsreader), serif",
+                      color: "#F1EEE2",
                       margin: "0 0 16px",
-                      letterSpacing: "-0.02em",
+                      letterSpacing: "-0.01em",
                     }}
                   >
                     {item.title}
@@ -115,7 +118,7 @@ export default function WhySophrosyne() {
                     style={{
                       fontSize: 16,
                       lineHeight: 1.72,
-                      color: "rgba(248,250,252,0.62)",
+                      color: "#9FBFAD",
                       margin: 0,
                     }}
                   >
@@ -149,23 +152,24 @@ export default function WhySophrosyne() {
                       width: 40,
                       height: 40,
                       borderRadius: "var(--radius-card)",
-                      background: "rgba(16,185,129,0.08)",
-                      border: "1px solid rgba(16,185,129,0.18)",
+                      background: "rgba(30,77,56,0.07)",
+                      border: "1px solid rgba(30,77,56,0.14)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       marginBottom: 18,
                     }}
                   >
-                    {IconComp && <IconComp size={18} color="#10b981" strokeWidth={1.8} />}
+                    {IconComp && <IconComp size={18} color="#1E4D38" strokeWidth={1.8} />}
                   </div>
                   <h3
                     style={{
                       fontSize: 16,
-                      fontWeight: 700,
-                      color: "#f8fafc",
+                      fontWeight: 500,
+                      fontFamily: "var(--font-newsreader), serif",
+                      color: "#1B2A21",
                       margin: "0 0 10px",
-                      letterSpacing: "-0.015em",
+                      letterSpacing: "-0.01em",
                     }}
                   >
                     {item.title}
@@ -174,7 +178,7 @@ export default function WhySophrosyne() {
                     style={{
                       fontSize: 15,
                       lineHeight: 1.68,
-                      color: "rgba(248,250,252,0.62)",
+                      color: "#4A584E",
                       margin: 0,
                     }}
                   >

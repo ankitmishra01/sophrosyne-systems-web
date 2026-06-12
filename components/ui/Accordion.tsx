@@ -26,14 +26,13 @@ export default function Accordion({ items }: AccordionProps) {
             style={{
               border: "1px solid",
               borderColor: isOpen
-                ? "rgba(16,185,129,0.3)"
-                : "rgba(248,250,252,0.07)",
+                ? "rgba(30,77,56,0.28)"
+                : "rgba(27,42,33,0.10)",
               borderRadius: "var(--radius-card)",
-              background: isOpen
-                ? "rgba(16,185,129,0.03)"
-                : "rgba(248,250,252,0.02)",
+              background: isOpen ? "rgba(30,77,56,0.04)" : "#FFFFFF",
               transition: "border-color 200ms, background 200ms",
               overflow: "hidden",
+              boxShadow: isOpen ? "none" : "var(--shadow-card)",
             }}
           >
             <button
@@ -54,8 +53,9 @@ export default function Accordion({ items }: AccordionProps) {
               <span
                 style={{
                   fontSize: 15,
-                  fontWeight: 600,
-                  color: isOpen ? "#f8fafc" : "rgba(248,250,252,0.88)",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: isOpen ? "#1B2A21" : "#1B2A21",
                   lineHeight: 1.45,
                   letterSpacing: "-0.01em",
                   transition: "color 200ms",
@@ -74,9 +74,9 @@ export default function Accordion({ items }: AccordionProps) {
                   borderRadius: "50%",
                   border: "1px solid",
                   borderColor: isOpen
-                    ? "rgba(16,185,129,0.5)"
-                    : "rgba(248,250,252,0.14)",
-                  color: isOpen ? "#10b981" : "rgba(248,250,252,0.55)",
+                    ? "rgba(30,77,56,0.40)"
+                    : "rgba(27,42,33,0.16)",
+                  color: isOpen ? "#1E4D38" : "#8A968C",
                   transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
                   transition: "transform 240ms cubic-bezier(0.22,1,0.36,1), color 200ms, border-color 200ms",
                 }}
@@ -100,7 +100,7 @@ export default function Accordion({ items }: AccordionProps) {
                       padding: "0 24px 22px",
                       fontSize: 14,
                       lineHeight: 1.7,
-                      color: "rgba(248,250,252,0.65)",
+                      color: "#4A584E",
                       margin: 0,
                     }}
                   >

@@ -27,7 +27,7 @@ export default function ShowreelSection() {
     <section
       style={{
         padding: "0 var(--pad-h) var(--section-py)",
-        background: "#0f172a",
+        background: "#F4F0E6",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -43,9 +43,10 @@ export default function ShowreelSection() {
             style={{
               fontSize: 11,
               fontWeight: 600,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "#10b981",
+              color: "#B5862E",
               margin: "0 0 12px",
             }}
           >
@@ -54,9 +55,10 @@ export default function ShowreelSection() {
           <h2
             style={{
               fontSize: "clamp(26px, 3.5vw, 44px)",
-              fontWeight: 700,
-              color: "#f8fafc",
-              letterSpacing: "-0.025em",
+              fontWeight: 500,
+              fontFamily: "var(--font-newsreader), serif",
+              color: "#1B2A21",
+              letterSpacing: "-0.012em",
               margin: 0,
             }}
           >
@@ -65,7 +67,7 @@ export default function ShowreelSection() {
           <p
             style={{
               fontSize: 15,
-              color: "rgba(248,250,252,0.62)",
+              color: "#4A584E",
               margin: "14px auto 0",
               maxWidth: 520,
             }}
@@ -89,24 +91,24 @@ export default function ShowreelSection() {
             <div
               key={stat.label}
               style={{
-                background: "rgba(16,185,129,0.06)",
-                border: "1px solid rgba(16,185,129,0.15)",
+                background: "#FFFFFF",
+                border: "1px solid rgba(27,42,33,0.10)",
                 borderRadius: "var(--radius-card)",
                 padding: "14px 28px",
                 textAlign: "center",
                 flex: 1,
                 minWidth: 160,
+                boxShadow: "var(--shadow-card)",
               }}
             >
               <p
                 style={{
                   fontSize: 22,
-                  fontWeight: 700,
-                  color: "#f4f5f8",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: "#1B2A21",
                   margin: "0 0 4px",
-                  letterSpacing: "-0.04em",
-                  fontFamily: "var(--font-geist-mono), monospace",
-                  fontVariantNumeric: "tabular-nums",
+                  letterSpacing: "-0.012em",
                 }}
               >
                 {stat.value}
@@ -114,10 +116,11 @@ export default function ShowreelSection() {
               <p
                 style={{
                   fontSize: 11,
-                  color: "#10b981",
+                  color: "#B5862E",
                   margin: 0,
-                  fontWeight: 500,
-                  letterSpacing: "0.04em",
+                  fontWeight: 600,
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  letterSpacing: "0.06em",
                   textTransform: "uppercase",
                 }}
               >
@@ -127,7 +130,7 @@ export default function ShowreelSection() {
           ))}
         </motion.div>
 
-        {/* Browser mockup */}
+        {/* Browser mockup — product UI stays dark (that is the actual product) */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -136,8 +139,8 @@ export default function ShowreelSection() {
           style={{
             borderRadius: 16,
             overflow: "hidden",
-            border: "1px solid rgba(255,255,255,0.08)",
-            boxShadow: "var(--shadow-emerald)",
+            border: "1px solid rgba(27,42,33,0.12)",
+            boxShadow: "var(--shadow-card-lg)",
           }}
         >
           {/* Window chrome */}
@@ -153,33 +156,9 @@ export default function ShowreelSection() {
           >
             {/* Mac-style traffic lights */}
             <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
-              <div
-                style={{
-                  width: 11,
-                  height: 11,
-                  borderRadius: "50%",
-                  background: "#ff5f57",
-                  border: "1px solid rgba(0,0,0,0.2)",
-                }}
-              />
-              <div
-                style={{
-                  width: 11,
-                  height: 11,
-                  borderRadius: "50%",
-                  background: "#febc2e",
-                  border: "1px solid rgba(0,0,0,0.2)",
-                }}
-              />
-              <div
-                style={{
-                  width: 11,
-                  height: 11,
-                  borderRadius: "50%",
-                  background: "#28c840",
-                  border: "1px solid rgba(0,0,0,0.2)",
-                }}
-              />
+              <div style={{ width: 11, height: 11, borderRadius: "50%", background: "#ff5f57", border: "1px solid rgba(0,0,0,0.2)" }} />
+              <div style={{ width: 11, height: 11, borderRadius: "50%", background: "#febc2e", border: "1px solid rgba(0,0,0,0.2)" }} />
+              <div style={{ width: 11, height: 11, borderRadius: "50%", background: "#28c840", border: "1px solid rgba(0,0,0,0.2)" }} />
             </div>
 
             {/* Address bar */}
@@ -195,41 +174,18 @@ export default function ShowreelSection() {
                 gap: 8,
               }}
             >
-              <span
-                style={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: "50%",
-                  background: "#10b981",
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  fontSize: 11,
-                  color: "rgba(244,245,248,0.35)",
-                  fontFamily: "var(--font-geist-mono), monospace",
-                }}
-              >
+              <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#C7A14A", flexShrink: 0 }} />
+              <span style={{ fontSize: 11, color: "rgba(244,245,248,0.35)", fontFamily: "monospace" }}>
                 studio.sophrosynesystems.com · Secure
               </span>
             </div>
 
-            {/* Right-side window title */}
-            <span
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                color: "rgba(248,250,252,0.4)",
-                letterSpacing: "0.06em",
-                textTransform: "uppercase",
-              }}
-            >
+            <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(248,250,252,0.4)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
               Sophrosyne Studio
             </span>
           </div>
 
-          {/* Studio UI sidebar + main canvas */}
+          {/* Studio UI sidebar + main canvas — dark product UI intentionally preserved */}
           <div
             style={{
               background: "#0d1117",
@@ -240,24 +196,9 @@ export default function ShowreelSection() {
             className="studio-layout"
           >
             {/* Left sidebar */}
-            <div
-              style={{
-                borderRight: "1px solid rgba(255,255,255,0.06)",
-                padding: "16px 0",
-                background: "#222326",
-              }}
-            >
+            <div style={{ borderRight: "1px solid rgba(255,255,255,0.06)", padding: "16px 0", background: "#222326" }}>
               <div style={{ padding: "0 14px 12px" }}>
-                <p
-                  style={{
-                    fontSize: 9,
-                    fontWeight: 600,
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                    color: "rgba(248,250,252,0.28)",
-                    margin: 0,
-                  }}
-                >
+                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.28)", margin: 0 }}>
                   Workspace
                 </p>
               </div>
@@ -275,85 +216,28 @@ export default function ShowreelSection() {
                     display: "flex",
                     alignItems: "center",
                     gap: 8,
-                    background: item.active
-                      ? "rgba(16,185,129,0.08)"
-                      : "transparent",
-                    borderLeft: item.active
-                      ? "2px solid #10b981"
-                      : "2px solid transparent",
+                    background: item.active ? "rgba(199,161,74,0.10)" : "transparent",
+                    borderLeft: item.active ? "2px solid #C7A14A" : "2px solid transparent",
                   }}
                 >
-                  <span
-                    style={{
-                      fontSize: 12,
-                      color: item.active
-                        ? "#10b981"
-                        : "rgba(248,250,252,0.28)",
-                    }}
-                  >
+                  <span style={{ fontSize: 12, color: item.active ? "#C7A14A" : "rgba(248,250,252,0.28)" }}>
                     {item.icon}
                   </span>
-                  <span
-                    style={{
-                      fontSize: 12,
-                      color: item.active
-                        ? "rgba(248,250,252,0.85)"
-                        : "rgba(248,250,252,0.38)",
-                      fontWeight: item.active ? 600 : 400,
-                    }}
-                  >
+                  <span style={{ fontSize: 12, color: item.active ? "rgba(248,250,252,0.85)" : "rgba(248,250,252,0.38)", fontWeight: item.active ? 600 : 400 }}>
                     {item.label}
                   </span>
                 </div>
               ))}
 
-              <div
-                style={{
-                  height: 1,
-                  background: "rgba(255,255,255,0.06)",
-                  margin: "16px 0",
-                }}
-              />
+              <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "16px 0" }} />
               <div style={{ padding: "0 14px" }}>
-                <p
-                  style={{
-                    fontSize: 9,
-                    fontWeight: 600,
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                    color: "rgba(248,250,252,0.28)",
-                    margin: "0 0 8px",
-                  }}
-                >
+                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.28)", margin: "0 0 8px" }}>
                   Integrations
                 </p>
                 {["Canvas LMS", "Banner SIS", "Slate CRM"].map((s) => (
-                  <div
-                    key={s}
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 6,
-                      padding: "6px 0",
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: 6,
-                        height: 6,
-                        borderRadius: "50%",
-                        background: "#10b981",
-                        flexShrink: 0,
-                      }}
-                    />
-                    <span
-                      style={{
-                        fontSize: 11,
-                        color: "rgba(248,250,252,0.38)",
-                      }}
-                    >
-                      {s}
-                    </span>
+                  <div key={s} style={{ display: "flex", alignItems: "center", gap: 6, padding: "6px 0" }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#9FBFAD", flexShrink: 0 }} />
+                    <span style={{ fontSize: 11, color: "rgba(248,250,252,0.38)" }}>{s}</span>
                   </div>
                 ))}
               </div>
@@ -366,13 +250,7 @@ export default function ShowreelSection() {
                 muted
                 loop
                 playsInline
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                  minHeight: 480,
-                }}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", minHeight: 480 }}
               >
                 <source
                   src="https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c054f4d8237c30eabf31945f896400ec&profile_id=165&oauth2_token_id=57447761"
@@ -380,28 +258,18 @@ export default function ShowreelSection() {
                 />
               </video>
 
-              {/* Video overlay gradient to blend with UI */}
               <div
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background:
-                    "linear-gradient(135deg, rgba(10,15,26,0.55) 0%, rgba(10,15,26,0.2) 50%, rgba(10,15,26,0.45) 100%)",
+                  background: "linear-gradient(135deg, rgba(10,15,26,0.55) 0%, rgba(10,15,26,0.2) 50%, rgba(10,15,26,0.45) 100%)",
                   pointerEvents: "none",
                 }}
               />
 
               {/* Floating KPI overlay */}
               <div
-                style={{
-                  position: "absolute",
-                  bottom: 20,
-                  right: 20,
-                  display: "flex",
-                  gap: 10,
-                  flexWrap: "wrap",
-                  justifyContent: "flex-end",
-                }}
+                style={{ position: "absolute", bottom: 20, right: 20, display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "flex-end" }}
                 className="kpi-row"
               >
                 {KPI_TILES.map((tile) => (
@@ -415,39 +283,13 @@ export default function ShowreelSection() {
                       padding: "10px 14px",
                     }}
                   >
-                    <p
-                      style={{
-                        fontSize: 9,
-                        fontWeight: 600,
-                        letterSpacing: "0.1em",
-                        textTransform: "uppercase",
-                        color: "rgba(248,250,252,0.38)",
-                        margin: "0 0 3px",
-                      }}
-                    >
+                    <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(248,250,252,0.38)", margin: "0 0 3px" }}>
                       {tile.label}
                     </p>
-                    <p
-                      style={{
-                        fontSize: 17,
-                        fontWeight: 700,
-                        color: "#f4f5f8",
-                        margin: "0 0 2px",
-                        letterSpacing: "-0.04em",
-                        fontFamily: "var(--font-geist-mono), monospace",
-                        fontVariantNumeric: "tabular-nums",
-                      }}
-                    >
+                    <p style={{ fontSize: 17, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#f4f5f8", margin: "0 0 2px", letterSpacing: "-0.01em" }}>
                       {tile.value}
                     </p>
-                    <p
-                      style={{
-                        fontSize: 10,
-                        color: "#10b981",
-                        margin: 0,
-                        fontWeight: 500,
-                      }}
-                    >
+                    <p style={{ fontSize: 10, color: "#C7A14A", margin: 0, fontWeight: 500 }}>
                       {tile.delta}
                     </p>
                   </div>
@@ -467,9 +309,11 @@ export default function ShowreelSection() {
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             marginTop: 24,
-            border: "1px solid rgba(255,255,255,0.08)",
+            border: "1px solid rgba(27,42,33,0.10)",
             borderRadius: "var(--radius-card)",
             overflow: "hidden",
+            background: "#FFFFFF",
+            boxShadow: "var(--shadow-card)",
           }}
           className="feature-strip"
         >
@@ -480,34 +324,16 @@ export default function ShowreelSection() {
                 key={item.title}
                 style={{
                   padding: "20px 24px",
-                  borderRight:
-                    i < FEATURE_HIGHLIGHTS.length - 1
-                      ? "1px solid rgba(255,255,255,0.08)"
-                      : "none",
+                  borderRight: i < FEATURE_HIGHLIGHTS.length - 1 ? "1px solid rgba(27,42,33,0.08)" : "none",
                 }}
               >
                 <div style={{ marginBottom: 10 }}>
-                  <IconComp size={18} color="#10b981" strokeWidth={1.8} />
+                  <IconComp size={18} color="#1E4D38" strokeWidth={1.8} />
                 </div>
-                <p
-                  style={{
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: "#f4f5f8",
-                    margin: "0 0 6px",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
+                <p style={{ fontSize: 13, fontWeight: 600, color: "#1B2A21", margin: "0 0 6px", letterSpacing: "-0.01em" }}>
                   {item.title}
                 </p>
-                <p
-                  style={{
-                    fontSize: 12,
-                    lineHeight: 1.55,
-                    color: "rgba(244,245,248,0.55)",
-                    margin: 0,
-                  }}
-                >
+                <p style={{ fontSize: 12, lineHeight: 1.55, color: "#5A6B60", margin: 0 }}>
                   {item.body}
                 </p>
               </div>
@@ -522,9 +348,9 @@ export default function ShowreelSection() {
           .studio-layout > *:first-child { display: none; }
           .kpi-row { display: none !important; }
           .feature-strip { grid-template-columns: repeat(2, 1fr) !important; }
-          .feature-strip > *:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08) !important; }
+          .feature-strip > *:nth-child(odd) { border-right: 1px solid rgba(27,42,33,0.08) !important; }
           .feature-strip > *:nth-child(1),
-          .feature-strip > *:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+          .feature-strip > *:nth-child(2) { border-bottom: 1px solid rgba(27,42,33,0.08); }
           .stats-strip > * { min-width: 130px !important; }
         }
       `}</style>

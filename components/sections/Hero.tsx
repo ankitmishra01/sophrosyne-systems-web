@@ -10,10 +10,8 @@ export default function Hero() {
 
   useEffect(() => {
     const t = setTimeout(() => setReady(true), 100);
-
     let startTime: number | null = null;
     let rafId = 0;
-
     const tick = (ts: number) => {
       if (!startTime) startTime = ts;
       const elapsed = (ts - startTime) / 1000;
@@ -23,12 +21,8 @@ export default function Hero() {
       }
       rafId = requestAnimationFrame(tick);
     };
-
     rafId = requestAnimationFrame(tick);
-    return () => {
-      clearTimeout(t);
-      cancelAnimationFrame(rafId);
-    };
+    return () => { clearTimeout(t); cancelAnimationFrame(rafId); };
   }, []);
 
   return (
@@ -39,19 +33,18 @@ export default function Hero() {
         alignItems: "center",
         padding: "120px var(--pad-h) 80px",
         background:
-          "radial-gradient(ellipse 65% 55% at 75% 30%, rgba(16,185,129,0.07) 0%, transparent 65%) #0f172a",
+          "radial-gradient(ellipse 120% 90% at 85% 0%, #ECF1EC 0%, #F4F0E6 55%)",
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* Subtle grid texture overlay */}
+      {/* Subtle diagonal-hatch texture */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           backgroundImage:
-            "linear-gradient(rgba(248,250,252,0.018) 1px, transparent 1px), linear-gradient(90deg, rgba(248,250,252,0.018) 1px, transparent 1px)",
-          backgroundSize: "64px 64px",
+            "repeating-linear-gradient(45deg, rgba(30,77,56,0.03) 0px, rgba(30,77,56,0.03) 1px, transparent 1px, transparent 16px)",
           pointerEvents: "none",
         }}
       />
@@ -76,25 +69,27 @@ export default function Hero() {
             style={{
               fontSize: 11,
               fontWeight: 600,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#10b981",
+              color: "#B5862E",
               marginBottom: 20,
               opacity: ready ? 1 : 0,
               transition: "opacity 0.7s 0.05s",
             }}
           >
-            Sophrosyne Systems · Higher Education
+            For Small &amp; Mid-Sized Universities
           </p>
 
           <h1
             style={{
-              fontSize: "clamp(38px, 5.2vw, 72px)",
-              fontWeight: 700,
-              color: "#f8fafc",
+              fontSize: "clamp(38px, 5.2vw, 68px)",
+              fontWeight: 500,
+              fontFamily: "var(--font-newsreader), serif",
+              color: "#1B2A21",
               margin: "0 0 24px",
-              lineHeight: 1.02,
-              letterSpacing: "-0.03em",
+              lineHeight: 1.06,
+              letterSpacing: "-0.015em",
               opacity: ready ? 1 : 0,
               transform: ready ? "none" : "translateY(24px)",
               transition:
@@ -102,24 +97,16 @@ export default function Hero() {
             }}
           >
             Reduce Costs. Build Fluency.{" "}
-            <span
-              style={{
-                background:
-                  "linear-gradient(135deg, #10b981 0%, #6ee7b7 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
+            <em style={{ fontStyle: "italic", color: "#1E4D38" }}>
               Transform Your University for the AI Era.
-            </span>
+            </em>
           </h1>
 
           <p
             style={{
               fontSize: 17,
-              lineHeight: 1.68,
-              color: "rgba(248,250,252,0.62)",
+              lineHeight: 1.72,
+              color: "#4A584E",
               margin: "0 0 36px",
               maxWidth: 480,
               opacity: ready ? 1 : 0,
@@ -146,8 +133,8 @@ export default function Hero() {
                 "opacity 0.75s 0.32s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.32s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            <Button variant="primary" size="lg" href="/pricing">
-              Request a Platform Demo
+            <Button variant="primary" size="lg" href="/get-started">
+              Book an Audit
             </Button>
             <Button variant="secondary" size="lg" href="/solutions">
               Explore Our Solutions
@@ -167,13 +154,13 @@ export default function Hero() {
             }}
           >
             {["Human-Centered Design", "100% Student IP", "Reduces Operating Costs", "FERPA Compliant"].map(
-              (t, i) => (
+              (label, i) => (
                 <span
                   key={i}
                   style={{
                     fontSize: 11,
                     fontWeight: 500,
-                    color: "rgba(248,250,252,0.38)",
+                    color: "#5A6B60",
                     letterSpacing: "0.04em",
                     display: "flex",
                     alignItems: "center",
@@ -185,12 +172,12 @@ export default function Hero() {
                       width: 5,
                       height: 5,
                       borderRadius: "50%",
-                      background: "rgba(16,185,129,0.6)",
+                      background: "#1E4D38",
                       display: "inline-block",
                       flexShrink: 0,
                     }}
                   />
-                  {t}
+                  {label}
                 </span>
               )
             )}
@@ -211,20 +198,20 @@ export default function Hero() {
               position: "relative",
               borderRadius: "var(--radius-card)",
               overflow: "hidden",
-              border: "1px solid rgba(255,255,255,0.08)",
-              boxShadow: "var(--shadow-emerald)",
+              border: "1px solid rgba(27,42,33,0.10)",
+              boxShadow: "var(--shadow-card-lg)",
             }}
           >
-            {/* Emerald top accent line */}
+            {/* Pine top accent line */}
             <div
               style={{
                 position: "absolute",
                 top: 0,
                 left: 0,
                 right: 0,
-                height: 1,
+                height: 2,
                 background:
-                  "linear-gradient(90deg, transparent, rgba(16,185,129,0.65) 40%, rgba(16,185,129,0.65) 60%, transparent)",
+                  "linear-gradient(90deg, transparent, rgba(30,77,56,0.55) 40%, rgba(199,161,74,0.65) 60%, transparent)",
                 zIndex: 2,
               }}
             />
@@ -239,7 +226,7 @@ export default function Hero() {
                 display: "block",
                 aspectRatio: "3/2",
                 objectFit: "cover",
-                filter: "brightness(0.75) saturate(0.65)",
+                filter: "brightness(0.88) saturate(0.75)",
               }}
               priority
             />
@@ -249,9 +236,9 @@ export default function Hero() {
                 position: "absolute",
                 bottom: 20,
                 left: 20,
-                background: "rgba(10,15,26,0.88)",
+                background: "rgba(33,39,31,0.88)",
                 backdropFilter: "blur(12px)",
-                border: "1px solid rgba(248,250,252,0.1)",
+                border: "1px solid rgba(201,217,206,0.15)",
                 borderRadius: 10,
                 padding: "10px 14px",
                 display: "flex",
@@ -261,29 +248,28 @@ export default function Hero() {
             >
               <span
                 style={{
-                  width: 8,
-                  height: 8,
+                  width: 7,
+                  height: 7,
                   borderRadius: "50%",
-                  background: "#10b981",
-                  boxShadow: "0 0 8px #10b981",
+                  background: "#C7A14A",
                   flexShrink: 0,
-                  animation: "pulse 2s infinite",
                 }}
               />
               <span
                 style={{
                   fontSize: 11,
                   fontWeight: 600,
-                  color: "rgba(248,250,252,0.85)",
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  color: "#F1EEE2",
                   letterSpacing: "0.04em",
                 }}
               >
-                Sophrosyne Studio · Live
+                Sophrosyne Studio · Ready
               </span>
             </div>
           </div>
 
-          {/* Decorative stat card */}
+          {/* Decorative scorecard chip */}
           <div
             style={{
               position: "relative",
@@ -292,9 +278,9 @@ export default function Hero() {
               marginRight: 28,
               marginLeft: "auto",
               width: "fit-content",
-              background: "#222326",
+              background: "#FFFFFF",
               backdropFilter: "blur(16px)",
-              border: "1px solid rgba(16,185,129,0.2)",
+              border: "1px solid rgba(27,42,33,0.10)",
               borderRadius: "var(--radius-card)",
               padding: "14px 18px",
               boxShadow: "var(--shadow-card)",
@@ -304,38 +290,55 @@ export default function Hero() {
               style={{
                 fontSize: 10,
                 fontWeight: 600,
-                letterSpacing: "0.1em",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                letterSpacing: "0.10em",
                 textTransform: "uppercase",
-                color: "#10b981",
+                color: "#B5862E",
                 margin: "0 0 4px",
               }}
             >
-              Consortium Growth
+              OpEx Savings Identified
             </p>
             <p
               style={{
                 fontSize: 22,
-                fontWeight: 800,
-                color: "#f4f5f8",
-                margin: 0,
-                letterSpacing: "-0.04em",
-                fontFamily: "var(--font-geist-mono), monospace",
-                fontVariantNumeric: "tabular-nums",
+                fontWeight: 500,
+                fontFamily: "var(--font-newsreader), serif",
+                color: "#1B2A21",
+                margin: "0 0 8px",
+                letterSpacing: "-0.015em",
               }}
             >
-              +340%{" "}
+              $1.2M{" "}
               <span
                 style={{
                   fontSize: 11,
                   fontWeight: 400,
-                  color: "rgba(244,245,248,0.42)",
+                  color: "#8A968C",
                   letterSpacing: 0,
-                  fontFamily: "var(--font-geist-sans), sans-serif",
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
                 }}
               >
-                student deployment velocity
+                first year
               </span>
             </p>
+            <div
+              style={{
+                height: 4,
+                borderRadius: 2,
+                background: "#ECF1EC",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  width: "72%",
+                  height: "100%",
+                  background: "#1E4D38",
+                  borderRadius: 2,
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -346,10 +349,6 @@ export default function Hero() {
             grid-template-columns: 1fr !important;
             gap: 48px !important;
           }
-        }
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.4; }
         }
       `}</style>
     </section>

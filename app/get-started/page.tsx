@@ -41,8 +41,8 @@ function GetStartedHero() {
       style={{
         padding: "140px var(--pad-h) 72px",
         background:
-          "radial-gradient(ellipse 60% 60% at 20% 40%, rgba(16,185,129,0.06) 0%, transparent 65%) #0f172a",
-        borderBottom: "1px solid rgba(248,250,252,0.05)",
+          "radial-gradient(ellipse 80% 60% at 20% 40%, #ECF1EC 0%, #F4F0E6 60%)",
+        borderBottom: "1px solid rgba(27,42,33,0.08)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -50,9 +50,10 @@ function GetStartedHero() {
           style={{
             fontSize: 11,
             fontWeight: 600,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#10b981",
+            color: "#B5862E",
             margin: "0 0 18px",
           }}
         >
@@ -61,12 +62,13 @@ function GetStartedHero() {
         <h1
           style={{
             fontSize: "clamp(32px, 5vw, 64px)",
-            fontWeight: 700,
-            color: "#f8fafc",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21",
             margin: "0 0 20px",
-            letterSpacing: "-0.03em",
+            letterSpacing: "-0.015em",
             maxWidth: 720,
-            lineHeight: 1.04,
+            lineHeight: 1.06,
           }}
         >
           Tell us about your institution.
@@ -74,8 +76,8 @@ function GetStartedHero() {
         <p
           style={{
             fontSize: 17,
-            lineHeight: 1.68,
-            color: "rgba(248,250,252,0.55)",
+            lineHeight: 1.72,
+            color: "#4A584E",
             maxWidth: 520,
             margin: 0,
           }}
@@ -93,8 +95,8 @@ function ProcessSteps() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0a0f1a",
-        borderBottom: "1px solid rgba(248,250,252,0.04)",
+        background: "#ECF1EC",
+        borderBottom: "1px solid rgba(27,42,33,0.07)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -102,9 +104,10 @@ function ProcessSteps() {
           style={{
             fontSize: 11,
             fontWeight: 600,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.16em",
             textTransform: "uppercase",
-            color: "#10b981",
+            color: "#B5862E",
             margin: "0 0 14px",
           }}
         >
@@ -113,10 +116,11 @@ function ProcessSteps() {
         <h2
           style={{
             fontSize: "clamp(24px, 3.5vw, 40px)",
-            fontWeight: 700,
-            color: "#f8fafc",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21",
             margin: "0 0 48px",
-            letterSpacing: "-0.025em",
+            letterSpacing: "-0.012em",
           }}
         >
           From first contact to go-live.
@@ -139,7 +143,7 @@ function ProcessSteps() {
               right: "calc(12.5% + 4px)",
               height: 1,
               background:
-                "linear-gradient(90deg, rgba(16,185,129,0.3) 0%, rgba(16,185,129,0.1) 50%, rgba(16,185,129,0.3) 100%)",
+                "linear-gradient(90deg, rgba(30,77,56,0.25) 0%, rgba(199,161,74,0.40) 50%, rgba(30,77,56,0.25) 100%)",
               pointerEvents: "none",
             }}
             className="process-connector"
@@ -151,22 +155,23 @@ function ProcessSteps() {
                   width: 44,
                   height: 44,
                   borderRadius: "50%",
-                  background: "rgba(16,185,129,0.1)",
-                  border: "1.5px solid rgba(16,185,129,0.35)",
+                  background: "#FFFFFF",
+                  border: "1.5px solid rgba(27,42,33,0.14)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: 18,
                   position: "relative",
                   zIndex: 1,
+                  boxShadow: "var(--shadow-card)",
                 }}
               >
                 <span
                   style={{
-                    fontSize: 13,
-                    fontWeight: 700,
-                    color: "#10b981",
-                    fontFamily: "var(--font-geist-mono), monospace",
+                    fontSize: 14,
+                    fontWeight: 400,
+                    fontFamily: "var(--font-newsreader), serif",
+                    color: "#1E4D38",
                   }}
                 >
                   {step.number}
@@ -176,9 +181,10 @@ function ProcessSteps() {
                 style={{
                   fontSize: 9,
                   fontWeight: 600,
-                  letterSpacing: "0.1em",
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  letterSpacing: "0.10em",
                   textTransform: "uppercase",
-                  color: "rgba(248,250,252,0.35)",
+                  color: "#8A968C",
                   margin: "0 0 6px",
                 }}
               >
@@ -187,10 +193,11 @@ function ProcessSteps() {
               <h3
                 style={{
                   fontSize: 15,
-                  fontWeight: 700,
-                  color: "#f8fafc",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: "#1B2A21",
                   margin: "0 0 8px",
-                  letterSpacing: "-0.015em",
+                  letterSpacing: "-0.01em",
                 }}
               >
                 {step.title}
@@ -199,7 +206,7 @@ function ProcessSteps() {
                 style={{
                   fontSize: 13,
                   lineHeight: 1.65,
-                  color: "rgba(248,250,252,0.5)",
+                  color: "#4A584E",
                   margin: 0,
                 }}
               >

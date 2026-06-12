@@ -8,8 +8,8 @@ export default function JourneyTimeline() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0a0f1a",
-        borderTop: "1px solid rgba(248,250,252,0.04)",
+        background: "#ECF1EC",
+        borderTop: "1px solid rgba(27,42,33,0.07)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -25,9 +25,10 @@ export default function JourneyTimeline() {
             style={{
               fontSize: 11,
               fontWeight: 600,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "#10b981",
+              color: "#B5862E",
               margin: "0 0 14px",
             }}
           >
@@ -36,14 +37,15 @@ export default function JourneyTimeline() {
           <h2
             style={{
               fontSize: "clamp(28px, 4vw, 48px)",
-              fontWeight: 700,
-              color: "#f8fafc",
+              fontWeight: 500,
+              fontFamily: "var(--font-newsreader), serif",
+              color: "#1B2A21",
               margin: 0,
-              letterSpacing: "-0.025em",
+              letterSpacing: "-0.012em",
             }}
           >
             From audit to consortium —{" "}
-            <span style={{ color: "rgba(248,250,252,0.45)" }}>in three phases.</span>
+            <em style={{ fontStyle: "italic", color: "#5A6B60" }}>in three phases.</em>
           </h2>
         </motion.div>
 
@@ -66,7 +68,7 @@ export default function JourneyTimeline() {
               right: "calc(16.66% + 20px)",
               height: 1,
               background:
-                "linear-gradient(90deg, transparent, rgba(16,185,129,0.3) 20%, rgba(16,185,129,0.3) 80%, transparent)",
+                "linear-gradient(90deg, transparent, rgba(30,77,56,0.25) 20%, rgba(199,161,74,0.40) 50%, rgba(30,77,56,0.25) 80%, transparent)",
               zIndex: 0,
               pointerEvents: "none",
             }}
@@ -96,23 +98,22 @@ export default function JourneyTimeline() {
                   width: 64,
                   height: 64,
                   borderRadius: "50%",
-                  background: "rgba(16,185,129,0.07)",
-                  border: "1px solid rgba(16,185,129,0.25)",
+                  background: "#FFFFFF",
+                  border: "1.5px solid rgba(27,42,33,0.14)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: 24,
+                  boxShadow: "var(--shadow-card)",
                 }}
               >
                 <span
                   style={{
-                    fontSize: 18,
-                    fontWeight: 700,
-                    color: "#10b981",
-                    letterSpacing: "-0.02em",
-                    /* Geist Mono for step numbers */
-                    fontFamily: "var(--font-geist-mono), monospace",
-                    fontVariantNumeric: "tabular-nums",
+                    fontSize: 20,
+                    fontWeight: 400,
+                    fontFamily: "var(--font-newsreader), serif",
+                    color: "#1E4D38",
+                    letterSpacing: "-0.01em",
                   }}
                 >
                   {step.number}
@@ -124,8 +125,8 @@ export default function JourneyTimeline() {
                   display: "inline-flex",
                   alignItems: "center",
                   gap: 6,
-                  background: "rgba(16,185,129,0.07)",
-                  border: "1px solid rgba(16,185,129,0.14)",
+                  background: "rgba(30,77,56,0.07)",
+                  border: "1px solid rgba(30,77,56,0.14)",
                   borderRadius: "var(--radius-sm)",
                   padding: "3px 10px",
                   marginBottom: 14,
@@ -135,7 +136,8 @@ export default function JourneyTimeline() {
                   style={{
                     fontSize: 10,
                     fontWeight: 600,
-                    color: "#10b981",
+                    fontFamily: "var(--font-libre-franklin), sans-serif",
+                    color: "#1E4D38",
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
                   }}
@@ -147,10 +149,11 @@ export default function JourneyTimeline() {
               <h3
                 style={{
                   fontSize: 19,
-                  fontWeight: 700,
-                  color: "#f8fafc",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: "#1B2A21",
                   margin: "0 0 12px",
-                  letterSpacing: "-0.02em",
+                  letterSpacing: "-0.01em",
                 }}
               >
                 {step.title}
@@ -159,7 +162,7 @@ export default function JourneyTimeline() {
                 style={{
                   fontSize: 14,
                   lineHeight: 1.7,
-                  color: "rgba(248,250,252,0.52)",
+                  color: "#4A584E",
                   margin: 0,
                 }}
               >

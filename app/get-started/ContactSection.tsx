@@ -8,14 +8,14 @@ import Button from "@/components/ui/Button";
 
 const inputStyle: React.CSSProperties = {
   width: "100%",
-  background: "rgba(255,255,255,0.04)",
-  border: "1px solid rgba(255,255,255,0.08)",
+  background: "#F9F7F2",
+  border: "1px solid rgba(27,42,33,0.14)",
   borderRadius: "var(--radius-card)",
   padding: "12px 14px",
   fontSize: 14,
-  color: "#f8fafc",
+  color: "#1B2A21",
   outline: "none",
-  fontFamily: "var(--font-geist-sans), sans-serif",
+  fontFamily: "var(--font-libre-franklin), sans-serif",
   boxSizing: "border-box" as const,
   transition: "border-color 180ms",
 };
@@ -24,7 +24,8 @@ const labelStyle: React.CSSProperties = {
   display: "block",
   fontSize: 12,
   fontWeight: 600,
-  color: "rgba(248,250,252,0.55)",
+  fontFamily: "var(--font-libre-franklin), sans-serif",
+  color: "#5A6B60",
   letterSpacing: "0.06em",
   textTransform: "uppercase",
   marginBottom: 8,
@@ -39,8 +40,8 @@ export default function ContactSection() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0f172a",
-        borderTop: "1px solid rgba(248,250,252,0.04)",
+        background: "#F4F0E6",
+        borderTop: "1px solid rgba(27,42,33,0.07)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -59,9 +60,10 @@ export default function ContactSection() {
               style={{
                 fontSize: 11,
                 fontWeight: 600,
+                fontFamily: "var(--font-libre-franklin), sans-serif",
                 letterSpacing: "0.16em",
                 textTransform: "uppercase",
-                color: "#10b981",
+                color: "#B5862E",
                 margin: "0 0 14px",
               }}
             >
@@ -70,10 +72,11 @@ export default function ContactSection() {
             <h2
               style={{
                 fontSize: "clamp(22px, 3vw, 32px)",
-                fontWeight: 700,
-                color: "#f8fafc",
+                fontWeight: 500,
+                fontFamily: "var(--font-newsreader), serif",
+                color: "#1B2A21",
                 margin: "0 0 8px",
-                letterSpacing: "-0.025em",
+                letterSpacing: "-0.01em",
               }}
             >
               What are you interested in?
@@ -81,7 +84,7 @@ export default function ContactSection() {
             <p
               style={{
                 fontSize: 14,
-                color: "rgba(248,250,252,0.45)",
+                color: "#5A6B60",
                 margin: "0 0 28px",
                 lineHeight: 1.6,
               }}
@@ -105,18 +108,17 @@ export default function ContactSection() {
                       gap: 14,
                       padding: "16px 18px",
                       borderRadius: "var(--radius-card)",
-                      background: active
-                        ? "rgba(16,185,129,0.08)"
-                        : "rgba(255,255,255,0.02)",
+                      background: active ? "rgba(30,77,56,0.06)" : "#FFFFFF",
                       border: `1px solid ${
                         active
-                          ? "rgba(16,185,129,0.35)"
-                          : "rgba(255,255,255,0.07)"
+                          ? "rgba(30,77,56,0.28)"
+                          : "rgba(27,42,33,0.10)"
                       }`,
                       cursor: "pointer",
                       textAlign: "left",
                       transition: "background 180ms, border-color 180ms",
                       width: "100%",
+                      boxShadow: "var(--shadow-card)",
                     }}
                   >
                     <div
@@ -125,7 +127,7 @@ export default function ContactSection() {
                         height: 20,
                         borderRadius: "50%",
                         border: `1.5px solid ${
-                          active ? "#10b981" : "rgba(248,250,252,0.2)"
+                          active ? "#1E4D38" : "rgba(27,42,33,0.22)"
                         }`,
                         display: "flex",
                         alignItems: "center",
@@ -141,7 +143,7 @@ export default function ContactSection() {
                             width: 10,
                             height: 10,
                             borderRadius: "50%",
-                            background: "#10b981",
+                            background: "#1E4D38",
                           }}
                         />
                       )}
@@ -151,7 +153,8 @@ export default function ContactSection() {
                         style={{
                           fontSize: 9,
                           fontWeight: 600,
-                          color: "#10b981",
+                          fontFamily: "var(--font-libre-franklin), sans-serif",
+                          color: "#B5862E",
                           letterSpacing: "0.1em",
                           textTransform: "uppercase",
                           margin: "0 0 3px",
@@ -162,8 +165,9 @@ export default function ContactSection() {
                       <p
                         style={{
                           fontSize: 14,
-                          fontWeight: 700,
-                          color: "#f8fafc",
+                          fontWeight: 500,
+                          fontFamily: "var(--font-newsreader), serif",
+                          color: "#1B2A21",
                           margin: "0 0 4px",
                           letterSpacing: "-0.01em",
                         }}
@@ -173,7 +177,7 @@ export default function ContactSection() {
                       <p
                         style={{
                           fontSize: 12,
-                          color: "rgba(248,250,252,0.45)",
+                          color: "#5A6B60",
                           margin: 0,
                           lineHeight: 1.5,
                         }}
@@ -200,10 +204,10 @@ export default function ContactSection() {
                     alignItems: "center",
                     gap: 8,
                     fontSize: 13,
-                    color: "rgba(248,250,252,0.45)",
+                    color: "#5A6B60",
                   }}
                 >
-                  <CheckCircle2 size={14} color="#10b981" strokeWidth={2} />
+                  <CheckCircle2 size={14} color="#1E4D38" strokeWidth={2} />
                   {t}
                 </div>
               ))}
@@ -214,19 +218,21 @@ export default function ContactSection() {
           <div>
             <div
               style={{
-                background: "rgba(255,255,255,0.02)",
-                border: "1px solid rgba(255,255,255,0.07)",
+                background: "#FFFFFF",
+                border: "1px solid rgba(27,42,33,0.10)",
                 borderRadius: 12,
                 padding: "36px 32px",
+                boxShadow: "var(--shadow-card)",
               }}
             >
               <h3
                 style={{
                   fontSize: 20,
-                  fontWeight: 700,
-                  color: "#f8fafc",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: "#1B2A21",
                   margin: "0 0 6px",
-                  letterSpacing: "-0.02em",
+                  letterSpacing: "-0.01em",
                 }}
               >
                 Send us a message
@@ -234,7 +240,7 @@ export default function ContactSection() {
               <p
                 style={{
                   fontSize: 13,
-                  color: "rgba(248,250,252,0.4)",
+                  color: "#8A968C",
                   margin: "0 0 28px",
                 }}
               >
@@ -266,10 +272,10 @@ export default function ContactSection() {
                       placeholder="State University of…"
                       style={inputStyle}
                       onFocus={(e) =>
-                        (e.currentTarget.style.borderColor = "rgba(16,185,129,0.5)")
+                        (e.currentTarget.style.borderColor = "rgba(30,77,56,0.45)")
                       }
                       onBlur={(e) =>
-                        (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")
+                        (e.currentTarget.style.borderColor = "rgba(27,42,33,0.14)")
                       }
                     />
                   </div>
@@ -287,27 +293,17 @@ export default function ContactSection() {
                         appearance: "none" as const,
                       }}
                       onFocus={(e) =>
-                        (e.currentTarget.style.borderColor = "rgba(16,185,129,0.5)")
+                        (e.currentTarget.style.borderColor = "rgba(30,77,56,0.45)")
                       }
                       onBlur={(e) =>
-                        (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")
+                        (e.currentTarget.style.borderColor = "rgba(27,42,33,0.14)")
                       }
                     >
-                      <option value="" style={{ background: "#0f172a" }}>
-                        Select size
-                      </option>
-                      <option value="under-1000" style={{ background: "#0f172a" }}>
-                        Under 1,000 students
-                      </option>
-                      <option value="1000-5000" style={{ background: "#0f172a" }}>
-                        1,000 – 5,000 students
-                      </option>
-                      <option value="5000-15000" style={{ background: "#0f172a" }}>
-                        5,000 – 15,000 students
-                      </option>
-                      <option value="15000-plus" style={{ background: "#0f172a" }}>
-                        15,000+ students
-                      </option>
+                      <option value="">Select size</option>
+                      <option value="under-1000">Under 1,000 students</option>
+                      <option value="1000-5000">1,000 – 5,000 students</option>
+                      <option value="5000-15000">5,000 – 15,000 students</option>
+                      <option value="15000-plus">15,000+ students</option>
                     </select>
                   </div>
                 </div>
@@ -326,36 +322,20 @@ export default function ContactSection() {
                         appearance: "none" as const,
                       }}
                       onFocus={(e) =>
-                        (e.currentTarget.style.borderColor = "rgba(16,185,129,0.5)")
+                        (e.currentTarget.style.borderColor = "rgba(30,77,56,0.45)")
                       }
                       onBlur={(e) =>
-                        (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")
+                        (e.currentTarget.style.borderColor = "rgba(27,42,33,0.14)")
                       }
                     >
-                      <option value="" style={{ background: "#0f172a" }}>
-                        Select role
-                      </option>
-                      <option value="president-provost" style={{ background: "#0f172a" }}>
-                        President / Provost
-                      </option>
-                      <option value="vp-academic" style={{ background: "#0f172a" }}>
-                        VP Academic Affairs
-                      </option>
-                      <option value="cio" style={{ background: "#0f172a" }}>
-                        CIO / VP Technology
-                      </option>
-                      <option value="cfo" style={{ background: "#0f172a" }}>
-                        CFO / VP Finance
-                      </option>
-                      <option value="dean" style={{ background: "#0f172a" }}>
-                        Dean / Department Chair
-                      </option>
-                      <option value="faculty" style={{ background: "#0f172a" }}>
-                        Faculty
-                      </option>
-                      <option value="other" style={{ background: "#0f172a" }}>
-                        Other
-                      </option>
+                      <option value="">Select role</option>
+                      <option value="president-provost">President / Provost</option>
+                      <option value="vp-academic">VP Academic Affairs</option>
+                      <option value="cio">CIO / VP Technology</option>
+                      <option value="cfo">CFO / VP Finance</option>
+                      <option value="dean">Dean / Department Chair</option>
+                      <option value="faculty">Faculty</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
                   <div>
@@ -371,30 +351,18 @@ export default function ContactSection() {
                         appearance: "none" as const,
                       }}
                       onFocus={(e) =>
-                        (e.currentTarget.style.borderColor = "rgba(16,185,129,0.5)")
+                        (e.currentTarget.style.borderColor = "rgba(30,77,56,0.45)")
                       }
                       onBlur={(e) =>
-                        (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")
+                        (e.currentTarget.style.borderColor = "rgba(27,42,33,0.14)")
                       }
                     >
-                      <option value="" style={{ background: "#0f172a" }}>
-                        Select challenge
-                      </option>
-                      <option value="enrollment-decline" style={{ background: "#0f172a" }}>
-                        Enrollment Decline
-                      </option>
-                      <option value="budget-deficit" style={{ background: "#0f172a" }}>
-                        Budget Deficit
-                      </option>
-                      <option value="accreditation" style={{ background: "#0f172a" }}>
-                        Accreditation Pressure
-                      </option>
-                      <option value="curriculum" style={{ background: "#0f172a" }}>
-                        Curriculum Modernization
-                      </option>
-                      <option value="multiple" style={{ background: "#0f172a" }}>
-                        Multiple of the above
-                      </option>
+                      <option value="">Select challenge</option>
+                      <option value="enrollment-decline">Enrollment Decline</option>
+                      <option value="budget-deficit">Budget Deficit</option>
+                      <option value="accreditation">Accreditation Pressure</option>
+                      <option value="curriculum">Curriculum Modernization</option>
+                      <option value="multiple">Multiple of the above</option>
                     </select>
                   </div>
                 </div>
@@ -411,10 +379,10 @@ export default function ContactSection() {
                     placeholder="you@university.edu"
                     style={inputStyle}
                     onFocus={(e) =>
-                      (e.currentTarget.style.borderColor = "rgba(16,185,129,0.5)")
+                      (e.currentTarget.style.borderColor = "rgba(30,77,56,0.45)")
                     }
                     onBlur={(e) =>
-                      (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")
+                      (e.currentTarget.style.borderColor = "rgba(27,42,33,0.14)")
                     }
                   />
                 </div>
@@ -434,10 +402,10 @@ export default function ContactSection() {
                       minHeight: 100,
                     }}
                     onFocus={(e) =>
-                      (e.currentTarget.style.borderColor = "rgba(16,185,129,0.5)")
+                      (e.currentTarget.style.borderColor = "rgba(30,77,56,0.45)")
                     }
                     onBlur={(e) =>
-                      (e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)")
+                      (e.currentTarget.style.borderColor = "rgba(27,42,33,0.14)")
                     }
                   />
                 </div>
@@ -453,7 +421,7 @@ export default function ContactSection() {
                 <p
                   style={{
                     fontSize: 11,
-                    color: "rgba(248,250,252,0.25)",
+                    color: "#8A968C",
                     textAlign: "center",
                     margin: 0,
                   }}

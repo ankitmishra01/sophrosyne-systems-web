@@ -37,8 +37,8 @@ export default function OpExSection() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0a0f1a",
-        borderTop: "1px solid rgba(248,250,252,0.04)",
+        background: "#ECF1EC",
+        borderTop: "1px solid rgba(27,42,33,0.07)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -54,23 +54,26 @@ export default function OpExSection() {
             style={{
               fontSize: 11,
               fontWeight: 600,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.18em",
               textTransform: "uppercase",
-              color: "#10b981",
+              color: "#B5862E",
               margin: "0 0 16px",
             }}
           >
-            Pillar One — Operational Sustainability
+            <em style={{ fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>Pillar I</em>
+            {" "}— Operational Sustainability
           </p>
           <h2
             style={{
               fontSize: "clamp(28px, 4vw, 52px)",
-              fontWeight: 700,
-              color: "#f8fafc",
+              fontWeight: 500,
+              fontFamily: "var(--font-newsreader), serif",
+              color: "#1B2A21",
               margin: "0 0 16px",
-              letterSpacing: "-0.028em",
+              letterSpacing: "-0.012em",
               maxWidth: 620,
-              lineHeight: 1.06,
+              lineHeight: 1.1,
             }}
           >
             Reduce what costs. Preserve what matters.
@@ -79,7 +82,7 @@ export default function OpExSection() {
             style={{
               fontSize: 16,
               lineHeight: 1.65,
-              color: "rgba(248,250,252,0.55)",
+              color: "#4A584E",
               maxWidth: 560,
               margin: 0,
             }}
@@ -101,8 +104,8 @@ export default function OpExSection() {
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
             gap: 1,
-            background: "rgba(255,255,255,0.06)",
-            border: "1px solid rgba(255,255,255,0.08)",
+            background: "rgba(27,42,33,0.08)",
+            border: "1px solid rgba(27,42,33,0.10)",
             borderRadius: "var(--radius-card)",
             overflow: "hidden",
             marginBottom: 24,
@@ -115,7 +118,7 @@ export default function OpExSection() {
               <div
                 key={area.title}
                 style={{
-                  background: "#0a0f1a",
+                  background: "#FFFFFF",
                   padding: "24px 26px",
                 }}
               >
@@ -124,8 +127,8 @@ export default function OpExSection() {
                     width: 40,
                     height: 40,
                     borderRadius: 10,
-                    background: "rgba(16,185,129,0.08)",
-                    border: "1px solid rgba(16,185,129,0.14)",
+                    background: "rgba(30,77,56,0.07)",
+                    border: "1px solid rgba(30,77,56,0.14)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
@@ -133,13 +136,13 @@ export default function OpExSection() {
                     flexShrink: 0,
                   }}
                 >
-                  <IconComp size={18} color="#10b981" strokeWidth={1.8} />
+                  <IconComp size={18} color="#1E4D38" strokeWidth={1.8} />
                 </div>
                 <p
                   style={{
                     fontSize: 13,
                     fontWeight: 600,
-                    color: "#f4f5f8",
+                    color: "#1B2A21",
                     margin: "0 0 6px",
                     letterSpacing: "-0.01em",
                   }}
@@ -150,7 +153,7 @@ export default function OpExSection() {
                   style={{
                     fontSize: 12,
                     lineHeight: 1.55,
-                    color: "rgba(244,245,248,0.52)",
+                    color: "#5A6B60",
                     margin: 0,
                   }}
                 >
@@ -174,24 +177,24 @@ export default function OpExSection() {
             <div
               key={stat.label}
               style={{
-                background: "rgba(16,185,129,0.06)",
-                border: "1px solid rgba(16,185,129,0.15)",
+                background: "#FFFFFF",
+                border: "1px solid rgba(27,42,33,0.10)",
                 borderRadius: "var(--radius-card)",
                 padding: "14px 28px",
                 textAlign: "center",
                 flex: 1,
                 minWidth: 160,
+                boxShadow: "var(--shadow-card)",
               }}
             >
               <p
                 style={{
                   fontSize: 20,
-                  fontWeight: 700,
-                  color: "#f4f5f8",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: "#1B2A21",
                   margin: "0 0 4px",
-                  letterSpacing: "-0.03em",
-                  fontFamily: "var(--font-geist-mono), monospace",
-                  fontVariantNumeric: "tabular-nums",
+                  letterSpacing: "-0.012em",
                 }}
               >
                 {stat.value}
@@ -199,10 +202,11 @@ export default function OpExSection() {
               <p
                 style={{
                   fontSize: 11,
-                  color: "#10b981",
+                  color: "#B5862E",
                   margin: 0,
-                  fontWeight: 500,
-                  letterSpacing: "0.04em",
+                  fontWeight: 600,
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  letterSpacing: "0.06em",
                   textTransform: "uppercase",
                 }}
               >

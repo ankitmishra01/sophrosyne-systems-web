@@ -16,12 +16,12 @@ import {
 // ─── Static data ────────────────────────────────────────────────────────────
 
 const DEPARTMENTS = [
-  { name: "Computer Science & Engineering", score: 87, students: 342, delta: "+6.2%", colour: "#10b981" },
-  { name: "Business & Economics",           score: 74, students: 891, delta: "+9.1%", colour: "#6ee7b7" },
-  { name: "Natural Sciences",               score: 71, students: 234, delta: "+4.9%", colour: "#34d399" },
-  { name: "Social Sciences",                score: 68, students: 412, delta: "+7.8%", colour: "#6b8c6e" },
-  { name: "Health Sciences",                score: 61, students: 527, delta: "+14.3%", colour: "#4ade80" },
-  { name: "Humanities & Arts",              score: 52, students: 298, delta: "+11.5%", colour: "#86efac" },
+  { name: "Computer Science & Engineering", score: 87, students: 342, delta: "+6.2%", colour: "#1E4D38" },
+  { name: "Business & Economics",           score: 74, students: 891, delta: "+9.1%", colour: "#2E6B50" },
+  { name: "Natural Sciences",               score: 71, students: 234, delta: "+4.9%", colour: "#3A7A5C" },
+  { name: "Social Sciences",                score: 68, students: 412, delta: "+7.8%", colour: "#C7A14A" },
+  { name: "Health Sciences",                score: 61, students: 527, delta: "+14.3%", colour: "#B5862E" },
+  { name: "Humanities & Arts",              score: 52, students: 298, delta: "+11.5%", colour: "#8A968C" },
 ] as const;
 
 const LEVELS = [
@@ -416,8 +416,8 @@ export default function FluencyTracker() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0a0f1a",
-        borderTop: "1px solid rgba(248,250,252,0.04)",
+        background: "#ECF1EC",
+        borderTop: "1px solid rgba(27,42,33,0.07)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -430,7 +430,7 @@ export default function FluencyTracker() {
           style={{ marginBottom: 48 }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14, flexWrap: "wrap" }}>
-            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#10b981", margin: 0 }}>
+            <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.16em", textTransform: "uppercase", color: "#B5862E", margin: 0 }}>
               Sophrosyne AI Fluency Index
             </p>
             <span
@@ -438,20 +438,20 @@ export default function FluencyTracker() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 5,
-                background: "rgba(16,185,129,0.1)",
-                border: "1px solid rgba(16,185,129,0.22)",
+                background: "rgba(30,77,56,0.07)",
+                border: "1px solid rgba(30,77,56,0.18)",
                 borderRadius: 20,
                 padding: "3px 10px",
               }}
             >
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#10b981", animation: "pulse 2s infinite", display: "inline-block" }} />
-              <span style={{ fontSize: 10, fontWeight: 600, color: "#10b981", letterSpacing: "0.06em", textTransform: "uppercase" }}>Live Dashboard</span>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#1E4D38", display: "inline-block" }} />
+              <span style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#1E4D38", letterSpacing: "0.06em", textTransform: "uppercase" }}>Live Dashboard</span>
             </span>
           </div>
-          <h2 style={{ fontSize: "clamp(26px, 3.8vw, 48px)", fontWeight: 700, color: "#f8fafc", margin: "0 0 14px", letterSpacing: "-0.025em", maxWidth: 680 }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.8vw, 48px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 14px", letterSpacing: "-0.012em", maxWidth: 680 }}>
             Track AI fluency across every department — in real time.
           </h2>
-          <p style={{ fontSize: 16, lineHeight: 1.65, color: "rgba(248,250,252,0.52)", maxWidth: 560, margin: 0 }}>
+          <p style={{ fontSize: 16, lineHeight: 1.65, color: "#4A584E", maxWidth: 560, margin: 0 }}>
             The Sophrosyne AI Fluency Index Dashboard gives administrators,
             faculty, and department leads a live view of how AI competency
             is developing across every department — from first-week enrolment
@@ -470,8 +470,8 @@ export default function FluencyTracker() {
           style={{
             borderRadius: 16,
             overflow: "hidden",
-            border: "1px solid rgba(255,255,255,0.08)",
-            boxShadow: "var(--shadow-emerald)",
+            border: "1px solid rgba(27,42,33,0.12)",
+            boxShadow: "var(--shadow-card-lg)",
           }}
         >
           {/* Chrome bar */}
@@ -663,9 +663,9 @@ export default function FluencyTracker() {
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{ textAlign: "center", marginTop: 40 }}
         >
-          <p style={{ fontSize: 14, color: "rgba(248,250,252,0.38)", margin: "0 0 16px" }}>
+          <p style={{ fontSize: 14, color: "#5A6B60", margin: "0 0 16px" }}>
             Your institution's Fluency Index Dashboard is provisioned as part of the{" "}
-            <span style={{ color: "rgba(248,250,252,0.65)" }}>Foundry & Platform Launch</span> engagement.
+            <span style={{ color: "#1B2A21", fontWeight: 600 }}>Foundry & Platform Launch</span> engagement.
           </p>
           <a
             href="/pricing"
@@ -675,10 +675,11 @@ export default function FluencyTracker() {
               gap: 8,
               padding: "11px 22px",
               borderRadius: "var(--radius-btn)",
-              background: "#10b981",
-              color: "#0a0f1a",
+              background: "#1E4D38",
+              color: "#F4F0E6",
               fontSize: 13,
               fontWeight: 700,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
               textDecoration: "none",
               transition: "opacity 200ms",
             }}

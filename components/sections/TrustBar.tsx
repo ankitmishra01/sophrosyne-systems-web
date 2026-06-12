@@ -4,9 +4,9 @@ export default function TrustBar() {
   return (
     <section
       style={{
-        borderTop: "1px solid rgba(255,255,255,0.08)",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
-        background: "rgba(16,185,129,0.025)",
+        borderTop: "1px solid rgba(27,42,33,0.12)",
+        borderBottom: "1px solid rgba(27,42,33,0.12)",
+        background: "#1E4D38",
         padding: "0 var(--pad-h)",
       }}
     >
@@ -27,20 +27,18 @@ export default function TrustBar() {
               textAlign: "center",
               borderRight:
                 i < TRUST_METRICS.length - 1
-                  ? "1px solid rgba(255,255,255,0.06)"
+                  ? "1px solid rgba(201,217,206,0.15)"
                   : "none",
             }}
           >
-            {/* Geist Mono for all metric values */}
             <p
               style={{
                 fontSize: "clamp(15px, 2.2vw, 20px)",
-                fontWeight: 700,
-                color: "#10b981",
+                fontWeight: 500,
+                fontFamily: "var(--font-newsreader), serif",
+                color: "#F1EEE2",
                 margin: "0 0 5px",
-                letterSpacing: "-0.02em",
-                fontFamily: "var(--font-geist-mono), monospace",
-                fontVariantNumeric: "tabular-nums",
+                letterSpacing: "-0.01em",
               }}
             >
               {m.value}
@@ -48,9 +46,11 @@ export default function TrustBar() {
             <p
               style={{
                 fontSize: 11,
-                color: "rgba(244,245,248,0.42)",
+                color: "#9FBFAD",
                 margin: 0,
                 fontWeight: 500,
+                fontStyle: "italic",
+                fontFamily: "var(--font-newsreader), serif",
                 lineHeight: 1.4,
                 letterSpacing: "0.01em",
               }}
@@ -67,7 +67,7 @@ export default function TrustBar() {
           .trust-grid > *:nth-child(2) { border-right: none !important; }
           .trust-grid > *:nth-child(1),
           .trust-grid > *:nth-child(2) {
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(201,217,206,0.15);
           }
         }
       `}</style>

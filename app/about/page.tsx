@@ -14,8 +14,8 @@ function AboutHero() {
       style={{
         padding: "140px var(--pad-h) 72px",
         background:
-          "radial-gradient(ellipse 55% 65% at 85% 30%, rgba(16,185,129,0.055) 0%, transparent 65%) #0f172a",
-        borderBottom: "1px solid rgba(248,250,252,0.05)",
+          "radial-gradient(ellipse 80% 65% at 85% 30%, #ECF1EC 0%, #F4F0E6 60%)",
+        borderBottom: "1px solid rgba(27,42,33,0.08)",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -23,9 +23,10 @@ function AboutHero() {
           style={{
             fontSize: 11,
             fontWeight: 600,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
-            color: "#10b981",
+            color: "#B5862E",
             margin: "0 0 18px",
           }}
         >
@@ -34,12 +35,13 @@ function AboutHero() {
         <h1
           style={{
             fontSize: "clamp(28px, 4.5vw, 62px)",
-            fontWeight: 700,
-            color: "#f8fafc",
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21",
             margin: "0 0 20px",
-            letterSpacing: "-0.03em",
+            letterSpacing: "-0.015em",
             maxWidth: 740,
-            lineHeight: 1.06,
+            lineHeight: 1.08,
           }}
         >
           Practitioners, Engineers, and Higher-Ed Strategists. We ship
@@ -48,8 +50,8 @@ function AboutHero() {
         <p
           style={{
             fontSize: 17,
-            lineHeight: 1.68,
-            color: "rgba(248,250,252,0.55)",
+            lineHeight: 1.72,
+            color: "#4A584E",
             maxWidth: 560,
             margin: "0 0 32px",
           }}
@@ -70,10 +72,11 @@ function AboutHero() {
               <p
                 style={{
                   fontSize: 22,
-                  fontWeight: 800,
-                  color: "#10b981",
+                  fontWeight: 500,
+                  fontFamily: "var(--font-newsreader), serif",
+                  color: "#1E4D38",
                   margin: "0 0 4px",
-                  letterSpacing: "-0.03em",
+                  letterSpacing: "-0.012em",
                 }}
               >
                 {stat.value}
@@ -81,9 +84,10 @@ function AboutHero() {
               <p
                 style={{
                   fontSize: 12,
-                  color: "rgba(248,250,252,0.42)",
+                  color: "#8A968C",
                   margin: 0,
                   fontWeight: 500,
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
                 }}
               >
                 {stat.label}

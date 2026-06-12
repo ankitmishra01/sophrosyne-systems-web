@@ -1,27 +1,41 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Newsreader, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
+  display: "swap",
+});
+
+const libreFranklin = Libre_Franklin({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-libre-franklin",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Sophrosyne Systems — AI Infrastructure for Universities",
   description:
-    "Sophrosyne Systems partners with Tier 2 and Tier 3 universities to deploy Sophrosyne Studio, the AI Fluency Curriculum Matrix, and on-campus Foundry incubators — transforming regional campuses into venture-ready AI innovation engines.",
+    "Sophrosyne Systems partners with small and mid-sized universities to reduce operating costs, embed AI fluency into every academic program, and build entrepreneurial ecosystems that prepare graduates for what comes next.",
   keywords: [
     "AI university",
     "higher education AI platform",
-    "Sophrosyne Studio",
+    "university operational savings",
     "AI fluency curriculum",
     "campus AI infrastructure",
     "FERPA compliant AI",
-    "fractional AI engineering",
+    "university cost reduction",
   ],
   openGraph: {
-    title: "Sophrosyne Systems — Treat AI Like a Language",
+    title: "Sophrosyne Systems — A Measured Path Through the AI Transition",
     description:
-      "Enterprise AI infrastructure and curriculum deployment for regional universities. FERPA-compliant. Student IP protected. Venture-ready.",
+      "Operational renewal, AI fluency, and entrepreneurial ecosystems for regional universities. FERPA-compliant. Student IP protected. Audit-first engagement.",
     type: "website",
   },
 };
@@ -34,11 +48,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
-      style={{ colorScheme: "dark" }}
+      className={`${newsreader.variable} ${libreFranklin.variable}`}
     >
       <head>
-        <meta name="theme-color" content="#0f172a" />
+        <meta name="theme-color" content="#F4F0E6" />
       </head>
       <body>
         <Navbar />

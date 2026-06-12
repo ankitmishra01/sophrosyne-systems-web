@@ -10,7 +10,7 @@ export default function TeamGrid() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#0f172a",
+        background: "#F4F0E6",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -26,9 +26,10 @@ export default function TeamGrid() {
             style={{
               fontSize: 11,
               fontWeight: 600,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "#10b981",
+              color: "#B5862E",
               margin: "0 0 14px",
             }}
           >
@@ -37,10 +38,11 @@ export default function TeamGrid() {
           <h2
             style={{
               fontSize: "clamp(26px, 3.8vw, 48px)",
-              fontWeight: 700,
-              color: "#f8fafc",
+              fontWeight: 500,
+              fontFamily: "var(--font-newsreader), serif",
+              color: "#1B2A21",
               margin: "0 0 16px",
-              letterSpacing: "-0.025em",
+              letterSpacing: "-0.012em",
               maxWidth: 640,
             }}
           >
@@ -49,7 +51,7 @@ export default function TeamGrid() {
           <p
             style={{
               fontSize: 16,
-              color: "rgba(248,250,252,0.5)",
+              color: "#4A584E",
               maxWidth: 500,
               margin: 0,
               lineHeight: 1.6,
@@ -89,7 +91,7 @@ export default function TeamGrid() {
                     height: 68,
                     borderRadius: "50%",
                     overflow: "hidden",
-                    border: "2px solid rgba(16,185,129,0.3)",
+                    border: "2px solid rgba(30,77,56,0.22)",
                     marginBottom: 18,
                     flexShrink: 0,
                   }}
@@ -111,21 +113,23 @@ export default function TeamGrid() {
                 <h3
                   style={{
                     fontSize: 17,
-                    fontWeight: 700,
-                    color: "#f8fafc",
+                    fontWeight: 500,
+                    fontFamily: "var(--font-newsreader), serif",
+                    color: "#1B2A21",
                     margin: "0 0 4px",
-                    letterSpacing: "-0.015em",
+                    letterSpacing: "-0.01em",
                   }}
                 >
                   {member.name}
                 </h3>
                 <p
                   style={{
-                    fontSize: 12,
+                    fontSize: 11,
                     fontWeight: 600,
-                    color: "#10b981",
+                    fontFamily: "var(--font-libre-franklin), sans-serif",
+                    color: "#B5862E",
                     margin: "0 0 16px",
-                    letterSpacing: "0.04em",
+                    letterSpacing: "0.06em",
                     textTransform: "uppercase",
                   }}
                 >
@@ -135,7 +139,7 @@ export default function TeamGrid() {
                   style={{
                     fontSize: 13,
                     lineHeight: 1.7,
-                    color: "rgba(248,250,252,0.52)",
+                    color: "#5A6B60",
                     margin: 0,
                   }}
                 >

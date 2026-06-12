@@ -25,7 +25,7 @@ const BASE: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  fontFamily: "inherit",
+  fontFamily: "var(--font-libre-franklin), sans-serif",
   fontWeight: 600,
   borderRadius: "var(--radius-btn)",
   textDecoration: "none",
@@ -37,19 +37,19 @@ const BASE: CSSProperties = {
 
 const VARIANTS: Record<NonNullable<ButtonProps["variant"]>, { style: CSSProperties; hover: CSSProperties }> = {
   primary: {
-    style: { background: "#10b981", color: "#0a0f1a" },
+    style: { background: "#1E4D38", color: "#F4F0E6" },
     hover: { opacity: 0.85 },
   },
   secondary: {
     style: {
-      background: "transparent",
-      color: "#f8fafc",
-      border: "1.5px solid rgba(248,250,252,0.22)",
+      background: "#FFFFFF",
+      color: "#1B2A21",
+      border: "1px solid rgba(27,42,33,0.16)",
     },
-    hover: { borderColor: "rgba(248,250,252,0.55)" },
+    hover: { background: "#ECF1EC" } as CSSProperties,
   },
   ghost: {
-    style: { background: "transparent", color: "#10b981" },
+    style: { background: "transparent", color: "#1E4D38" },
     hover: { opacity: 0.75 },
   },
 };
@@ -77,7 +77,9 @@ export default function Button({
     const el = e.currentTarget as HTMLElement;
     if (variant === "primary") el.style.opacity = "1";
     if (variant === "ghost") el.style.opacity = "1";
-    if (variant === "secondary") el.style.borderColor = "rgba(248,250,252,0.22)";
+    if (variant === "secondary") {
+      el.style.background = "#FFFFFF";
+    }
   };
 
   if (href) {
