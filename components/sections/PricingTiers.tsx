@@ -138,6 +138,63 @@ function TierCard({
           </div>
         </div>
 
+        {/* Big Three anchor */}
+        <p
+          style={{
+            fontSize: 9,
+            fontWeight: 700,
+            fontFamily: "var(--font-libre-franklin), sans-serif",
+            letterSpacing: "0.10em",
+            textTransform: "uppercase",
+            color: isPine ? "rgba(201,217,206,0.50)" : "#A9B3AC",
+            margin: "0 0 6px",
+          }}
+        >
+          McKinsey · Bain · BCG equivalent
+        </p>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 10,
+            flexWrap: "wrap",
+            margin: "0 0 16px",
+          }}
+        >
+          <span
+            style={{
+              fontSize: 18,
+              fontFamily: "var(--font-newsreader), serif",
+              color: isPine ? "rgba(201,217,206,0.65)" : "#8A968C",
+              textDecoration: "line-through",
+              textDecorationColor: isPine
+                ? "rgba(199,161,74,0.65)"
+                : "rgba(181,134,46,0.65)",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            {tier.mbbEquivalent}
+          </span>
+          <span
+            style={{
+              fontSize: 9.5,
+              fontWeight: 700,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              color: isPine ? "#21271F" : "#1E4D38",
+              background: isPine ? "#C7A14A" : "rgba(30,77,56,0.08)",
+              border: `1px solid ${
+                isPine ? "transparent" : "rgba(30,77,56,0.18)"
+              }`,
+              borderRadius: 20,
+              padding: "3px 10px",
+            }}
+          >
+            {tier.savingsLabel}
+          </span>
+        </div>
+
         <p
           style={{
             fontSize: 11,
@@ -285,7 +342,7 @@ export default function PricingTiers() {
               margin: "0 0 14px",
             }}
           >
-            Pricing for Institutions Under Pressure
+            Big-Three Transformation, Without the Big-Three Invoice
           </p>
           <h2
             style={{
@@ -297,19 +354,25 @@ export default function PricingTiers() {
               letterSpacing: "-0.012em",
             }}
           >
-            Four ways to engage.
+            Half the cost. All the software.{" "}
+            <em style={{ fontStyle: "italic", color: "#1E4D38" }}>
+              The IP stays yours.
+            </em>
           </h2>
           <p
             style={{
               fontSize: 16,
               color: "#4A584E",
-              maxWidth: 560,
+              maxWidth: 580,
               margin: 0,
               lineHeight: 1.6,
             }}
           >
-            Two tracks: start with consulting to identify and prove savings, or
-            deploy the full platform from day one. No lock-in at any stage.
+            A McKinsey or Bain transformation runs into the millions and leaves
+            you a slide deck. Sophrosyne delivers the diagnostic, the platform,
+            and the curriculum for roughly half the cost — and your institution
+            keeps 100% of the software and IP. Two tracks: prove savings with
+            consulting first, or deploy the full platform from day one.
           </p>
         </motion.div>
 

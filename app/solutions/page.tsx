@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ChevronRight } from "lucide-react";
 import SolutionCards from "@/components/sections/SolutionCards";
 
 export const metadata: Metadata = {
@@ -221,20 +222,36 @@ function MaturityFramework() {
           }}
           className="maturity-grid"
         >
-          {/* Connector */}
-          <div
-            style={{
-              position: "absolute",
-              top: 28,
-              left: "calc(16.5% + 16px)",
-              right: "calc(16.5% + 16px)",
-              height: 1,
-              background:
-                "linear-gradient(90deg, rgba(30,77,56,0.3) 0%, rgba(199,161,74,0.5) 50%, rgba(30,77,56,0.3) 100%)",
-              pointerEvents: "none",
-            }}
-            className="maturity-connector"
-          />
+          {/* Progression chevrons — sit in the gaps between cards, desktop only */}
+          {[0, 1].map((g) => (
+            <div
+              key={g}
+              aria-hidden
+              className="maturity-arrow"
+              style={{
+                position: "absolute",
+                top: 50,
+                left:
+                  g === 0
+                    ? "calc((100% - 48px) / 3 + 12px)"
+                    : "calc((100% - 48px) / 3 * 2 + 36px)",
+                transform: "translate(-50%, -50%)",
+                zIndex: 2,
+                width: 26,
+                height: 26,
+                borderRadius: "50%",
+                background: "#FFFFFF",
+                border: "1px solid rgba(30,77,56,0.18)",
+                boxShadow: "0 1px 4px rgba(27,42,33,0.10)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                pointerEvents: "none",
+              }}
+            >
+              <ChevronRight size={14} color="#B5862E" strokeWidth={2.4} />
+            </div>
+          ))}
 
           {MATURITY_STAGES.map((s, i) => (
             <div
@@ -366,7 +383,7 @@ function MaturityFramework() {
       <style>{`
         @media (max-width: 768px) {
           .maturity-grid { grid-template-columns: 1fr !important; }
-          .maturity-connector { display: none; }
+          .maturity-arrow { display: none !important; }
         }
       `}</style>
     </section>

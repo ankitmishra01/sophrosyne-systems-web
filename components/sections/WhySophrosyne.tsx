@@ -1,11 +1,23 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { GraduationCap, TrendingDown, Rocket } from "lucide-react";
+import { GraduationCap, TrendingDown, Rocket, ArrowRight } from "lucide-react";
 import { WHY_ITEMS } from "@/lib/data";
-import Card from "@/components/ui/Card";
 
 const ICONS = { GraduationCap, TrendingDown, Rocket } as const;
+
+// Pillar order + per-pillar links (maps onto WHY_ITEMS by index)
+const PILLARS = [
+  { idx: 1, numeral: "I", tag: "Operational Cost", href: "/solutions/pulse" },
+  { idx: 0, numeral: "II", tag: "AI Fluency", href: "/solutions/curriculum" },
+  {
+    idx: 2,
+    numeral: "III",
+    tag: "Entrepreneurial Ecosystem",
+    href: "/solutions/foundry",
+  },
+] as const;
 
 export default function WhySophrosyne() {
   return (
@@ -22,7 +34,7 @@ export default function WhySophrosyne() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: 56 }}
+          style={{ marginBottom: 56, maxWidth: 680 }}
         >
           <p
             style={{
@@ -45,7 +57,6 @@ export default function WhySophrosyne() {
               color: "#1B2A21",
               margin: "0 0 16px",
               letterSpacing: "-0.012em",
-              maxWidth: 700,
             }}
           >
             Built for Small and Mid-Sized Universities.
@@ -55,120 +66,141 @@ export default function WhySophrosyne() {
               fontSize: 16,
               lineHeight: 1.68,
               color: "#4A584E",
-              maxWidth: 560,
               margin: 0,
             }}
           >
-            Three integrated pillars that help small and mid-sized universities reduce costs sustainably, develop genuinely AI-fluent graduates, and build entrepreneurial ecosystems that anchor their communities in the AI era.
+            Three integrated pillars that help small and mid-sized universities
+            reduce costs sustainably, develop genuinely AI-fluent graduates, and
+            build entrepreneurial ecosystems that anchor their communities in
+            the AI era.
           </p>
         </motion.div>
 
-        {/* Cards — asymmetric: hero card left, two supporting cards stacked right */}
+        {/* Pillar cards */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "3fr 2fr",
-            gridTemplateRows: "auto auto",
+            gridTemplateColumns: "repeat(3, 1fr)",
             gap: 20,
           }}
-          className="why-grid"
+          className="pillar-grid"
         >
-          {/* Hero card — spans both rows on the left (index 1) */}
-          {(() => {
-            const item = WHY_ITEMS[1];
+          {PILLARS.map((p, pos) => {
+            const item = WHY_ITEMS[p.idx];
             const IconComp = ICONS[item.icon as keyof typeof ICONS];
             return (
               <motion.div
-                key={1}
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                style={{ gridColumn: 1, gridRow: "1 / 3" }}
-              >
-                <Card highlight hoverable style={{ padding: "48px 40px", height: "100%" }}>
-                  <div
-                    style={{
-                      width: 48,
-                      height: 48,
-                      borderRadius: "var(--radius-card)",
-                      background: "rgba(241,238,226,0.15)",
-                      border: "1px solid rgba(241,238,226,0.22)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      marginBottom: 28,
-                    }}
-                  >
-                    {IconComp && <IconComp size={22} color="#9FBFAD" strokeWidth={1.7} />}
-                  </div>
-                  <h3
-                    style={{
-                      fontSize: 22,
-                      fontWeight: 500,
-                      fontFamily: "var(--font-newsreader), serif",
-                      color: "#F1EEE2",
-                      margin: "0 0 16px",
-                      letterSpacing: "-0.01em",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 16,
-                      lineHeight: 1.72,
-                      color: "#9FBFAD",
-                      margin: 0,
-                    }}
-                  >
-                    {item.body}
-                  </p>
-                </Card>
-              </motion.div>
-            );
-          })()}
-
-          {/* Supporting cards stacked vertically on the right — index 0 and 2 */}
-          {[0, 2].map((idx, pos) => {
-            const item = WHY_ITEMS[idx];
-            const IconComp = ICONS[item.icon as keyof typeof ICONS];
-            return (
-              <motion.div
-                key={idx}
+                key={p.tag}
                 initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{
-                  duration: 0.65,
-                  delay: pos === 0 ? 0 : 0.2,
+                  duration: 0.6,
+                  delay: pos * 0.12,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                style={{ gridColumn: 2, gridRow: pos + 1 }}
               >
-                <Card hoverable style={{ padding: "28px 26px", height: "100%" }}>
+                <Link
+                  href={p.href}
+                  style={{
+                    position: "relative",
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                    textDecoration: "none",
+                    background: "#FFFFFF",
+                    border: "1px solid rgba(27,42,33,0.10)",
+                    borderRadius: "var(--radius-card)",
+                    padding: "32px 28px 26px",
+                    overflow: "hidden",
+                    boxShadow: "var(--shadow-card)",
+                    transition:
+                      "transform 220ms cubic-bezier(0.22,1,0.36,1), box-shadow 220ms, border-color 220ms",
+                  }}
+                  onMouseEnter={(e) => {
+                    const el = e.currentTarget;
+                    el.style.transform = "translateY(-4px)";
+                    el.style.boxShadow = "var(--shadow-card-lg)";
+                    el.style.borderColor = "rgba(30,77,56,0.28)";
+                  }}
+                  onMouseLeave={(e) => {
+                    const el = e.currentTarget;
+                    el.style.transform = "none";
+                    el.style.boxShadow = "var(--shadow-card)";
+                    el.style.borderColor = "rgba(27,42,33,0.10)";
+                  }}
+                >
+                  {/* Top accent rule */}
                   <div
                     style={{
-                      width: 40,
-                      height: 40,
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: 3,
+                      background:
+                        "linear-gradient(90deg, #1E4D38 0%, #C7A14A 100%)",
+                    }}
+                  />
+
+                  {/* Faint serif numeral */}
+                  <span
+                    style={{
+                      position: "absolute",
+                      top: 14,
+                      right: 22,
+                      fontSize: 60,
+                      lineHeight: 1,
+                      fontFamily: "var(--font-newsreader), serif",
+                      fontStyle: "italic",
+                      color: "rgba(199,161,74,0.16)",
+                      pointerEvents: "none",
+                    }}
+                  >
+                    {p.numeral}
+                  </span>
+
+                  {/* Icon chip */}
+                  <div
+                    style={{
+                      width: 46,
+                      height: 46,
                       borderRadius: "var(--radius-card)",
                       background: "rgba(30,77,56,0.07)",
-                      border: "1px solid rgba(30,77,56,0.14)",
+                      border: "1px solid rgba(30,77,56,0.16)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      marginBottom: 18,
+                      marginBottom: 22,
                     }}
                   >
-                    {IconComp && <IconComp size={18} color="#1E4D38" strokeWidth={1.8} />}
+                    {IconComp && (
+                      <IconComp size={22} color="#1E4D38" strokeWidth={1.7} />
+                    )}
                   </div>
+
+                  {/* Pillar tag */}
+                  <p
+                    style={{
+                      fontSize: 10,
+                      fontWeight: 600,
+                      fontFamily: "var(--font-libre-franklin), sans-serif",
+                      letterSpacing: "0.12em",
+                      textTransform: "uppercase",
+                      color: "#B5862E",
+                      margin: "0 0 8px",
+                    }}
+                  >
+                    Pillar {p.numeral} · {p.tag}
+                  </p>
+
                   <h3
                     style={{
-                      fontSize: 16,
+                      fontSize: 20,
                       fontWeight: 500,
                       fontFamily: "var(--font-newsreader), serif",
                       color: "#1B2A21",
-                      margin: "0 0 10px",
+                      margin: "0 0 12px",
                       letterSpacing: "-0.01em",
                     }}
                   >
@@ -176,15 +208,33 @@ export default function WhySophrosyne() {
                   </h3>
                   <p
                     style={{
-                      fontSize: 15,
+                      fontSize: 14.5,
                       lineHeight: 1.68,
                       color: "#4A584E",
-                      margin: 0,
+                      margin: "0 0 24px",
                     }}
                   >
                     {item.body}
                   </p>
-                </Card>
+
+                  {/* Explore link */}
+                  <span
+                    style={{
+                      marginTop: "auto",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 6,
+                      fontSize: 13,
+                      fontWeight: 600,
+                      fontFamily: "var(--font-libre-franklin), sans-serif",
+                      color: "#1E4D38",
+                      letterSpacing: "0.02em",
+                    }}
+                  >
+                    Explore
+                    <ArrowRight size={14} strokeWidth={2.2} />
+                  </span>
+                </Link>
               </motion.div>
             );
           })}
@@ -193,14 +243,7 @@ export default function WhySophrosyne() {
 
       <style>{`
         @media (max-width: 900px) {
-          .why-grid {
-            grid-template-columns: 1fr !important;
-            grid-template-rows: auto !important;
-          }
-          .why-grid > * {
-            grid-column: 1 !important;
-            grid-row: auto !important;
-          }
+          .pillar-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>
