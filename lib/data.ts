@@ -366,7 +366,7 @@ export const TEAM_MEMBERS = [
   {
     name: "Ankit Mishra",
     title: "Senior Advisor, AI Fluency & Foundries",
-    bio: "Venture capital and cleantech operator with 13+ years building toward a more innovative, productive economy, and a Forbes contributor with 50+ published articles. He advises on the AI fluency curriculum and the Foundry ecosystem.",
+    bio: "Venture capital and startup operator with 13+ years; Forbes contributor with 50+ published articles. Advises on AI fluency and the Foundry ecosystem. MBA, Ivey Business School; MSc International Economics, Sciences Po Paris; BSc Mathematics, York University.",
     photo: "/team/ankit.jpg",
     imgSize: "220%",
     imgPos: "center 12%",
