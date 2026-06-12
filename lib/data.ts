@@ -368,8 +368,8 @@ export const TEAM_MEMBERS = [
     title: "Senior Advisor, AI Fluency & Foundries",
     bio: "Venture capital and cleantech operator with 13+ years building toward a more innovative, productive economy, and a Forbes contributor with 50+ published articles. He advises on the AI fluency curriculum and the Foundry ecosystem.",
     photo: "/team/ankit.jpg",
-    imgSize: "cover",
-    imgPos: "center 15%",
+    imgSize: "220%",
+    imgPos: "center 12%",
   },
   {
     name: "Amelia Frederking",
