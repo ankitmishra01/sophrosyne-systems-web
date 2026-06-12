@@ -6,7 +6,7 @@ import FoundingCohort from "@/components/sections/FoundingCohort";
 export const metadata: Metadata = {
   title: "About — Sophrosyne Systems",
   description:
-    "Practitioners, engineers, and higher-ed strategists. The team behind Sophrosyne Systems ships infrastructure, not slide decks.",
+    "Academic leaders, researchers, and operators. The team behind Sophrosyne Systems is built from inside the university, not around it.",
 };
 
 function AboutHero() {
@@ -45,8 +45,8 @@ function AboutHero() {
             lineHeight: 1.08,
           }}
         >
-          Practitioners, Engineers, and Higher-Ed Strategists. We ship
-          infrastructure, not slide decks.
+          Academic Leaders, Researchers, and Operators. Built from inside
+          the university, not around it.
         </h1>
         <p
           style={{
@@ -67,7 +67,7 @@ function AboutHero() {
           {[
             { value: "Western Accelerator", label: "Programme Partner" },
             { value: "FERPA", label: "Compliance Architecture" },
-            { value: "100%", label: "Student & Faculty IP Ownership" },
+            { value: "100%", label: "Institution IP Ownership" },
           ].map((stat, i) => (
             <div key={i}>
               <p

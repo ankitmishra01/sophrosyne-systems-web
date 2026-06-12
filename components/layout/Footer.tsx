@@ -58,9 +58,9 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              Treat AI like a language. Built for campus infrastructure.
-              Helping regional universities produce AI-fluent graduates
-              and build programs that last.
+              AI transformation for regional universities — reduce operating
+              costs, build genuine AI fluency, and keep 100% of the IP
+              your institution creates.
             </p>
           </div>
 

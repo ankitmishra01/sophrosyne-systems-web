@@ -152,7 +152,7 @@ export default function Hero() {
               flexWrap: "wrap",
             }}
           >
-            {["Human-Centered Design", "100% Student IP", "Reduces Operating Costs", "FERPA Compliant"].map(
+            {["Human-Centered Design", "Institution Keeps All IP", "Reduces Operating Costs", "FERPA Compliant"].map(
               (label, i) => (
                 <span
                   key={i}
