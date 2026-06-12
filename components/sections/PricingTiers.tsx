@@ -7,12 +7,12 @@ import Button from "@/components/ui/Button";
 const CTA_MAP: Record<string, string> = {
   "AI & OpEx Readiness Audit": "Book the Audit",
   "90-Day Pillar Pilot": "Start a Pilot",
-  "OpEx Transformation Advisory": "Start Advisory",
   "Foundry & Platform Launch": "Start the Build",
+  "OpEx Transformation Advisory": "Start Advisory",
   "Institutional Scale Retainer & Platform License": "Get Started",
 };
 
-function TierCard({
+function EngagementRow({
   tier,
   index,
 }: {
@@ -20,159 +20,101 @@ function TierCard({
   index: number;
 }) {
   const ctaLabel = CTA_MAP[tier.name] ?? "Get Started";
-  const isPine = tier.highlighted;
+  const durationLine = [tier.suffix, tier.duration].filter(Boolean).join(" · ");
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 32 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.65, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-      style={{ position: "relative" }}
+      transition={{ duration: 0.6, delay: index * 0.07, ease: [0.22, 1, 0.36, 1] }}
+      className="engagement-row"
+      style={{
+        display: "flex",
+        gap: 48,
+        padding: "36px 0",
+        borderTop: "1px solid rgba(27,42,33,0.10)",
+      }}
     >
-      {tier.badge && (
-        <div
-          style={{
-            position: "absolute",
-            top: -14,
-            left: "50%",
-            transform: "translateX(-50%)",
-            background: isPine ? "#C7A14A" : "rgba(199,161,74,0.12)",
-            color: isPine ? "#21271F" : "#B5862E",
-            border: isPine ? "none" : "1px solid rgba(181,134,46,0.30)",
-            fontSize: 10,
-            fontWeight: 700,
-            fontFamily: "var(--font-libre-franklin), sans-serif",
-            letterSpacing: "0.08em",
-            textTransform: "uppercase",
-            padding: "4px 14px",
-            borderRadius: 20,
-            whiteSpace: "nowrap",
-            zIndex: 2,
-          }}
-        >
-          {tier.badge}
-        </div>
-      )}
-
-      <div
-        style={{
-          background: isPine ? "#1E4D38" : "#FFFFFF",
-          border: isPine
-            ? "1.5px solid rgba(30,77,56,0.40)"
-            : "1px solid rgba(27,42,33,0.10)",
-          borderRadius: "var(--radius-card)",
-          boxShadow: isPine ? "var(--shadow-pine)" : "var(--shadow-card)",
-          padding: "36px 28px",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          transition: "border-color 200ms",
-        }}
-      >
-        {/* Model label */}
+      {/* Left: model label, name, description */}
+      <div style={{ flex: "1 1 0", minWidth: 0 }}>
         <p
           style={{
             fontSize: 10,
-            fontWeight: 600,
+            fontWeight: 700,
             fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.14em",
             textTransform: "uppercase",
-            color: isPine ? "#9FBFAD" : "#B5862E",
-            margin: "0 0 20px",
+            color: "#B5862E",
+            margin: "0 0 10px",
           }}
         >
           {tier.model}
         </p>
-
-        {/* Name */}
         <h3
           style={{
-            fontSize: 17,
+            fontSize: 22,
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
-            color: isPine ? "#F1EEE2" : "#1B2A21",
-            margin: "0 0 20px",
+            color: "#1B2A21",
+            margin: "0 0 14px",
             letterSpacing: "-0.01em",
-            lineHeight: 1.3,
+            lineHeight: 1.25,
           }}
         >
           {tier.name}
         </h3>
-
-        {/* Price + duration */}
-        <div style={{ display: "flex", alignItems: "baseline", gap: 10, flexWrap: "wrap", marginBottom: 24 }}>
-          <span
-            style={{
-              fontSize: "clamp(28px, 3.8vw, 44px)",
-              fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
-              color: isPine ? "#C7A14A" : "#1E4D38",
-              letterSpacing: "-0.015em",
-              lineHeight: 1,
-            }}
-          >
-            {tier.price}
-          </span>
-          <span
-            style={{
-              fontSize: 12,
-              color: isPine ? "#9FBFAD" : "#6E7B71",
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-            }}
-          >
-            {tier.suffix}
-          </span>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              background: isPine ? "rgba(241,238,226,0.10)" : "rgba(27,42,33,0.05)",
-              border: `1px solid ${isPine ? "rgba(241,238,226,0.15)" : "rgba(27,42,33,0.10)"}`,
-              borderRadius: "var(--radius-sm, 4px)",
-              padding: "3px 10px",
-            }}
-          >
-            <span style={{
-              fontSize: 10,
-              color: isPine ? "rgba(241,238,226,0.55)" : "#6E7B71",
-              fontWeight: 500,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-            }}>
-              {tier.duration}
-            </span>
-          </div>
-        </div>
-
-        {/* Description */}
         <p
           style={{
-            fontSize: 14,
-            lineHeight: 1.65,
-            color: isPine ? "#9FBFAD" : "#4A584E",
-            margin: "0 0 28px",
-            flex: 1,
+            fontSize: 15,
+            lineHeight: 1.7,
+            color: "#4A584E",
+            margin: 0,
           }}
         >
           {tier.description}
         </p>
+      </div>
 
-        {/* CTA */}
-        <Button
-          variant={isPine ? "secondary" : "primary"}
-          size="md"
-          href="/get-started"
+      {/* Right: price, duration, CTA */}
+      <div
+        className="engagement-row-aside"
+        style={{
+          flex: "0 0 220px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-end",
+          gap: 6,
+        }}
+      >
+        <p
           style={{
-            width: "100%",
-            justifyContent: "center",
-            marginTop: "auto",
-            ...(isPine
-              ? { background: "rgba(244,240,230,0.10)", color: "#F1EEE2", border: "1px solid rgba(241,238,226,0.22)" }
-              : {}),
-          } as React.CSSProperties}
+            fontSize: 34,
+            fontWeight: 500,
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#1E4D38",
+            letterSpacing: "-0.02em",
+            margin: 0,
+            lineHeight: 1,
+          }}
         >
-          {ctaLabel}
-        </Button>
+          {tier.price}
+        </p>
+        <p
+          style={{
+            fontSize: 12,
+            color: "#6E7B71",
+            fontFamily: "var(--font-libre-franklin), sans-serif",
+            margin: 0,
+          }}
+        >
+          {durationLine}
+        </p>
+        <div style={{ marginTop: 12 }}>
+          <Button variant="primary" size="sm" href="/get-started">
+            {ctaLabel}
+          </Button>
+        </div>
       </div>
     </motion.div>
   );
@@ -183,8 +125,8 @@ export default function PricingTiers() {
   const ongoing = PRICING_TIERS.filter((t) => t.suffix.includes("month"));
 
   const groups = [
-    { label: "One-Time Engagements", sublabel: "Diagnose, pilot, or deploy — pick your entry point", tiers: oneTime, cols: 3 },
-    { label: "Ongoing Partnership", sublabel: "Sustained advisory and platform, billed monthly", tiers: ongoing, cols: 2 },
+    { label: "One-Time Engagements", tiers: oneTime, offset: 0 },
+    { label: "Ongoing Partnership", tiers: ongoing, offset: oneTime.length },
   ];
 
   return (
@@ -195,83 +137,52 @@ export default function PricingTiers() {
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        {/* Two groups */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 48 }}>
-          {groups.map((group, gi) => (
+        <div style={{ display: "flex", flexDirection: "column", gap: 56 }}>
+          {groups.map((group) => (
             <div key={group.label}>
-              {/* Group label bar */}
-              <div
+              {/* Group heading — plain text, no pill */}
+              <p
                 style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 16,
-                  marginBottom: 24,
+                  fontSize: 11,
+                  fontWeight: 700,
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  letterSpacing: "0.14em",
+                  textTransform: "uppercase",
+                  color: "#6E7B71",
+                  margin: "0 0 0",
                 }}
               >
-                <div
-                  style={{
-                    background: "rgba(30,77,56,0.07)",
-                    border: "1px solid rgba(30,77,56,0.16)",
-                    borderRadius: 20,
-                    padding: "5px 14px",
-                    display: "inline-flex",
-                    alignItems: "center",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: 10,
-                      fontWeight: 700,
-                      fontFamily: "var(--font-libre-franklin), sans-serif",
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                      color: "#1E4D38",
-                    }}
-                  >
-                    {group.label}
-                  </span>
-                </div>
-                <span
-                  style={{
-                    fontSize: 13,
-                    fontStyle: "italic",
-                    fontFamily: "var(--font-newsreader), serif",
-                    color: "#6E7B71",
-                  }}
-                >
-                  {group.sublabel}
-                </span>
-              </div>
+                {group.label}
+              </p>
 
-              {/* Tier grid */}
+              {/* Engagement rows */}
+              {group.tiers.map((tier, i) => (
+                <EngagementRow
+                  key={tier.name}
+                  tier={tier}
+                  index={group.offset + i}
+                />
+              ))}
+
+              {/* Closing rule */}
               <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: `repeat(${group.cols}, 1fr)`,
-                  gap: 20,
-                  alignItems: "stretch",
-                }}
-                className="pricing-group-grid"
-              >
-                {group.tiers.map((tier, ti) => (
-                  <TierCard key={tier.name} tier={tier} index={gi * 2 + ti} />
-                ))}
-              </div>
+                style={{ borderBottom: "1px solid rgba(27,42,33,0.10)" }}
+              />
             </div>
           ))}
         </div>
 
-        {/* Single footnote */}
+        {/* Footnote */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{
-            textAlign: "center",
             fontSize: 13,
             color: "#6E7B71",
             margin: "48px 0 0",
+            fontFamily: "var(--font-libre-franklin), sans-serif",
           }}
         >
           Audit fee credited toward Platform Launch within 90 days. Title III,
@@ -280,8 +191,15 @@ export default function PricingTiers() {
       </div>
 
       <style>{`
-        @media (max-width: 820px) {
-          .pricing-group-grid { grid-template-columns: 1fr !important; max-width: 500px; margin: 0 auto; }
+        @media (max-width: 640px) {
+          .engagement-row {
+            flex-direction: column !important;
+            gap: 20px !important;
+          }
+          .engagement-row-aside {
+            align-items: flex-start !important;
+            flex: unset !important;
+          }
         }
       `}</style>
     </section>
