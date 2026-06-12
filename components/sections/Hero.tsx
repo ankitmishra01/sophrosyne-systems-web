@@ -115,11 +115,10 @@ export default function Hero() {
                 "opacity 0.75s 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.2s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            Sophrosyne Systems helps small and mid-sized universities identify
-            operational cost savings, embed AI fluency into every academic
-            programme, and build an entrepreneurial ecosystem that prepares
-            graduates for what comes next — with human dignity and
-            institutional integrity at the centre.
+            Sophrosyne Systems helps small and mid-sized universities cut
+            operating costs, make every graduate genuinely AI-fluent, and build
+            an entrepreneurial ecosystem for the AI era — with human judgment,
+            not just technology, at the centre.
           </p>
 
           <div

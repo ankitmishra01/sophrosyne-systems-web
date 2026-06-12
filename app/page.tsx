@@ -5,6 +5,8 @@ import WhySophrosyne from "@/components/sections/WhySophrosyne";
 import OpExSection from "@/components/sections/OpExSection";
 import FluencyTracker from "@/components/sections/FluencyTracker";
 import JourneyTimeline from "@/components/sections/JourneyTimeline";
+import SolutionsOverview from "@/components/sections/SolutionsOverview";
+import CallToAction from "@/components/sections/CallToAction";
 
 export default function HomePage() {
   return (
@@ -16,6 +18,8 @@ export default function HomePage() {
       <OpExSection />
       <FluencyTracker />
       <JourneyTimeline />
+      <SolutionsOverview />
+      <CallToAction />
     </>
   );
 }

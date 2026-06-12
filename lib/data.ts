@@ -1,8 +1,8 @@
 export const TRUST_METRICS = [
-  { value: "Proprietary", label: "Studio & Pulse Architecture" },
-  { value: "100%", label: "Student-Owned IP" },
-  { value: "Real-Time", label: "Fluency Telemetry via Pulse" },
-  { value: "Tamper-Proof", label: "Verified Employability Badges" },
+  { value: "9 Domains", label: "Operational savings, audited end-to-end" },
+  { value: "100%", label: "Student & faculty IP ownership" },
+  { value: "FERPA", label: "Compliant by architecture, not policy" },
+  { value: "48 Hours", label: "From contract to deployed platform" },
 ] as const;
 
 export const WHY_ITEMS = [
