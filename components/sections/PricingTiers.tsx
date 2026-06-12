@@ -7,6 +7,7 @@ import Button from "@/components/ui/Button";
 
 const CTA_MAP: Record<string, string> = {
   "AI & OpEx Readiness Audit": "Book the Audit",
+  "90-Day Pillar Pilot": "Start a Pilot",
   "OpEx Transformation Advisory": "Start Advisory",
   "Foundry & Platform Launch": "Start the Build",
   "Institutional Scale Retainer & Platform License": "Get Started",
@@ -307,12 +308,12 @@ function TierCard({
 }
 
 export default function PricingTiers() {
-  const consultingTiers = PRICING_TIERS.filter((t) => t.group === "consulting");
-  const techTiers = PRICING_TIERS.filter((t) => t.group === "technology");
+  const oneTime = PRICING_TIERS.filter((t) => !t.suffix.includes("month"));
+  const ongoing = PRICING_TIERS.filter((t) => t.suffix.includes("month"));
 
   const groups = [
-    { label: "Consulting", sublabel: "Identify savings before you commit to technology", tiers: consultingTiers },
-    { label: "Technology Platform", sublabel: "Full campus deployment with embedded advisory", tiers: techTiers },
+    { label: "One-Time Engagements", sublabel: "Diagnose, pilot, or deploy — pick your entry point", tiers: oneTime, cols: 3 },
+    { label: "Ongoing Partnership", sublabel: "Sustained advisory and platform, billed monthly", tiers: ongoing, cols: 2 },
   ];
 
   return (
@@ -429,7 +430,7 @@ export default function PricingTiers() {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
+                  gridTemplateColumns: `repeat(${group.cols}, 1fr)`,
                   gap: 20,
                   alignItems: "start",
                 }}

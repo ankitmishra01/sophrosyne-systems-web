@@ -187,6 +187,29 @@ export const PRICING_TIERS = [
   },
   {
     group: "technology" as const,
+    name: "90-Day Pillar Pilot",
+    price: "$120,000",
+    suffix: "one-time",
+    mbbEquivalent: "~$300,000",
+    savingsLabel: "≈ 60% less",
+    duration: "90 Days",
+    model: "Fixed-Scope Pilot",
+    description: "The lowest-risk way to prove Sophrosyne on your campus. We deploy one pillar — Studio, the Curriculum Matrix, or Pulse — in a single department, against success metrics agreed up front. The full fee is credited toward a Platform Launch within six months.",
+    features: [
+      "One pillar deployed in one department",
+      "Fixed scope, fixed fee, 90-day timeline",
+      "Success metrics defined and agreed up front",
+      "Faculty and staff enablement for the pilot team",
+      "Board-ready results readout at completion",
+      "100% of fee credited toward Platform Launch",
+    ],
+    highlighted: false,
+    badge: "Lowest-risk start",
+    grantEligible: true,
+    perStudentNote: "~$24/student, one-time · at 5,000 enrollment",
+  },
+  {
+    group: "technology" as const,
     name: "Foundry & Platform Launch",
     price: "$450,000",
     suffix: "one-time",
@@ -231,6 +254,23 @@ export const PRICING_TIERS = [
     grantEligible: false,
     perStudentNote: "~$84/student/yr · at 5,000 enrollment",
   },
+] as const;
+
+// Indicative price bands by enrollment, so a CFO can self-qualify at a glance.
+export const ENROLLMENT_BANDS = [
+  { size: "Under 2,000", audit: "$28K", pilot: "$85K", launch: "$240K", note: "Foundry Lite footprint" },
+  { size: "2,000 – 5,000", audit: "$38K", pilot: "$110K", launch: "$360K", note: "Single-college rollout" },
+  { size: "5,000 – 15,000", audit: "$45K", pilot: "$120K", launch: "$450K", note: "Standard campus deployment" },
+  { size: "15,000+", audit: "Custom", pilot: "$150K+", launch: "Custom", note: "Multi-campus / system pricing" },
+] as const;
+
+// How institutions actually pay — grant pathways we provide ready-to-submit language for.
+export const GRANT_SOURCES = [
+  { name: "Title III / Title V", body: "Strengthening Institutions and HSI/MSI programs — eligible for technology, curriculum, and capacity-building." },
+  { name: "HEERF Successor & State Workforce", body: "State workforce-development and economic-recovery funds increasingly earmark AI and digital-skills initiatives." },
+  { name: "NSF (IUSE, ATE)", body: "Improving Undergraduate STEM Education and Advanced Technological Education grants fund AI curriculum and labs." },
+  { name: "IES & Dept. of Education", body: "Institute of Education Sciences and discretionary ED grants support measurable learning-outcome programs." },
+  { name: "State AI & Economic Development", body: "A growing number of states fund regional AI hubs and university-anchored innovation directly." },
 ] as const;
 
 export const FAQ_ITEMS = [

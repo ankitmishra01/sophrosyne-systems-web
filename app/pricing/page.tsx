@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import RevenueModel from "@/components/sections/RevenueModel";
 import PricingTiers from "@/components/sections/PricingTiers";
+import EnrollmentBands from "@/components/sections/EnrollmentBands";
+import SavingsGuarantee from "@/components/sections/SavingsGuarantee";
+import GrantFunding from "@/components/sections/GrantFunding";
 import Accordion from "@/components/ui/Accordion";
 import { FAQ_ITEMS } from "@/lib/data";
 
@@ -115,6 +118,9 @@ export default function PricingPage() {
       <PricingHero />
       <RevenueModel />
       <PricingTiers />
+      <EnrollmentBands />
+      <SavingsGuarantee />
+      <GrantFunding />
       <FaqSection />
     </>
   );
