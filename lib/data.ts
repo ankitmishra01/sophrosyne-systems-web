@@ -358,7 +358,7 @@ export const TEAM_MEMBERS = [
   {
     name: "Dr. Lauretta Conklin Frederking",
     title: "Founder & Academic Lead",
-    bio: "Former President of Brescia University College and Senior Executive Advisor for Strategic Initiatives at Western University. Twenty-five years across comparative politics and political economy; PhD from Washington University in St. Louis. She keeps Sophrosyne grounded in how institutions actually decide, fund, and change.",
+    bio: "Former President of Brescia University College and Senior Executive Advisor for Strategic Initiatives at Western University. Twenty-five years across comparative politics and political economy; PhD from Washington University in St. Louis.",
     photo: "/team/lauretta.jpg",
     imgSize: "cover",
     imgPos: "center top",
@@ -369,7 +369,7 @@ export const TEAM_MEMBERS = [
     bio: "Venture capital and cleantech operator with 13+ years building toward a more innovative, productive economy, and a Forbes contributor with 50+ published articles. He advises on the AI fluency curriculum and the Foundry ecosystem.",
     photo: "/team/ankit.png",
     imgSize: "300%",
-    imgPos: "47% 5%",
+    imgPos: "50% 8%",
   },
   {
     name: "Amelia Frederking",
