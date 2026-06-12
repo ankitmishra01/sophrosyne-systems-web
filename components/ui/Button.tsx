@@ -13,6 +13,7 @@ interface ButtonProps {
   onClick?: () => void;
   target?: string;
   rel?: string;
+  type?: "submit" | "button" | "reset";
 }
 
 const SIZES: Record<NonNullable<ButtonProps["size"]>, CSSProperties> = {
@@ -64,6 +65,7 @@ export default function Button({
   onClick,
   target,
   rel,
+  type,
 }: ButtonProps) {
   const v = VARIANTS[variant];
   const s = SIZES[size];
@@ -100,6 +102,7 @@ export default function Button({
 
   return (
     <button
+      type={type}
       style={style}
       className={className}
       onClick={onClick}

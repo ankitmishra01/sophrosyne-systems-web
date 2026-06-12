@@ -18,7 +18,7 @@ const ICON_MAP: Record<string, React.ComponentType<{ size?: number; color?: stri
   Building2, Users, Network, BarChart2, FileCheck, Award,
 };
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return SOLUTIONS.map((s) => ({ slug: s.id }));
 }
 

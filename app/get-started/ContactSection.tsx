@@ -36,6 +36,29 @@ export default function ContactSection() {
   const initialProduct = searchParams.get("product") ?? "";
   const [selectedProduct, setSelectedProduct] = useState(initialProduct);
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const get = (k: string) => (data.get(k) as string) || "";
+    const productLabel =
+      SOLUTIONS.find((s) => s.id === selectedProduct)?.title ||
+      selectedProduct ||
+      "Not specified";
+    const subject = encodeURIComponent(
+      `Sophrosyne inquiry — ${get("institution") || "a university"}`
+    );
+    const body = encodeURIComponent(
+      `Institution: ${get("institution") || "Not provided"}\n` +
+      `Enrollment: ${get("enrollment") || "Not specified"}\n` +
+      `Role: ${get("role") || "Not specified"}\n` +
+      `Primary Challenge: ${get("challenge") || "Not specified"}\n` +
+      `Product Interest: ${productLabel}\n\n` +
+      `Message:\n${get("message") || "(no message)"}\n\n` +
+      `Reply to: ${get("email")}`
+    );
+    window.location.href = `mailto:hello@sophrosynesystems.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section
       style={{
@@ -248,9 +271,7 @@ export default function ContactSection() {
               </p>
 
               <form
-                action="mailto:hello@sophrosynesystems.com"
-                method="post"
-                encType="text/plain"
+                onSubmit={handleSubmit}
                 style={{ display: "flex", flexDirection: "column", gap: 20 }}
               >
                 <input
@@ -413,6 +434,7 @@ export default function ContactSection() {
                 <Button
                   variant="primary"
                   size="lg"
+                  type="submit"
                   style={{ width: "100%", justifyContent: "center" } as React.CSSProperties}
                 >
                   Send Request →
