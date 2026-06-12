@@ -357,11 +357,11 @@ export const FAQ_ITEMS = [
 export const TEAM_MEMBERS = [
   {
     name: "Dr. Lauretta Conklin Frederking",
-    title: "Co-Founder & Academic Lead",
+    title: "Founder & Academic Lead",
     bio: "Former President of Brescia University College and Senior Executive Advisor for Strategic Initiatives at Western University. Twenty-five years across comparative politics and political economy; PhD from Washington University in St. Louis. She keeps Sophrosyne grounded in how institutions actually decide, fund, and change.",
     photo: "/team/lauretta.jpg",
     imgSize: "cover",
-    imgPos: "center 22%",
+    imgPos: "center top",
   },
   {
     name: "Ankit Mishra",
@@ -373,11 +373,11 @@ export const TEAM_MEMBERS = [
   },
   {
     name: "Amelia Frederking",
-    title: "Research & Strategy",
+    title: "Research & Strategy Lead",
     bio: "PhD candidate in Political Science at MIT specialising in security studies, and a former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics from Washington University in St. Louis.",
     photo: "/team/amelia.jpg",
     imgSize: "cover",
-    imgPos: "center 32%",
+    imgPos: "center top",
   },
   {
     name: "Nathanael Frederking",
@@ -385,7 +385,7 @@ export const TEAM_MEMBERS = [
     bio: "Business Analytics student at Boston College and an NCAA Division I baseball player. He brings a data-and-performance discipline to growth, measurement, and the institutional analytics behind Sophrosyne.",
     photo: "/team/nathanael.webp",
     imgSize: "cover",
-    imgPos: "center 18%",
+    imgPos: "center top",
   },
 ] as const;
 
