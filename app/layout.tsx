@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Newsreader, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
@@ -19,23 +19,29 @@ const libreFranklin = Libre_Franklin({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#F4F0E6",
+};
+
 export const metadata: Metadata = {
   title: "Sophrosyne Systems — AI Infrastructure for Universities",
   description:
-    "Sophrosyne Systems partners with small and mid-sized universities to reduce operating costs, embed AI fluency into every academic program, and build entrepreneurial ecosystems that prepare graduates for what comes next.",
+    "Sophrosyne Systems helps small and mid-sized universities embed AI fluency across every academic programme, prove AI readiness to accreditors, and build entrepreneurial ecosystems that differentiate their enrolment proposition.",
   keywords: [
     "AI university",
     "higher education AI platform",
-    "university operational savings",
+    "university accreditation AI",
     "AI fluency curriculum",
     "campus AI infrastructure",
     "FERPA compliant AI",
-    "university cost reduction",
+    "enrollment cliff higher education",
   ],
   openGraph: {
     title: "Sophrosyne Systems — A Measured Path Through the AI Transition",
     description:
-      "Operational renewal, AI fluency, and entrepreneurial ecosystems for regional universities. FERPA-compliant. Student IP protected. Audit-first engagement.",
+      "AI fluency, accreditation readiness, and entrepreneurial ecosystems for regional universities. FERPA-compliant. Student IP protected. Audit-first engagement.",
     type: "website",
   },
 };
@@ -50,9 +56,6 @@ export default function RootLayout({
       lang="en"
       className={`${newsreader.variable} ${libreFranklin.variable}`}
     >
-      <head>
-        <meta name="theme-color" content="#F4F0E6" />
-      </head>
       <body>
         <Navbar />
         <main>{children}</main>

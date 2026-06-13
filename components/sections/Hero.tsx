@@ -96,9 +96,9 @@ export default function Hero() {
                 "opacity 0.75s 0.1s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.1s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            Reduce Costs. Build Fluency.{" "}
+            Build AI Fluency.{" "}
             <em style={{ fontStyle: "italic", color: "#1E4D38" }}>
-              Transform Your University for the AI Era.
+              Survive the Enrollment Cliff. Lead on Accreditation.
             </em>
           </h1>
 
@@ -115,10 +115,11 @@ export default function Hero() {
                 "opacity 0.75s 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.2s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            Sophrosyne Systems helps small and mid-sized universities cut
-            operating costs, make every graduate genuinely AI-fluent, and build
-            an entrepreneurial ecosystem for the AI era — with human judgment,
-            not just technology, at the centre.
+            Sophrosyne Systems helps small and mid-sized universities embed AI
+            fluency across every academic programme, generate accreditor-ready
+            outcome evidence automatically, and build an entrepreneurial
+            ecosystem that differentiates your institution — with human
+            judgment, not just technology, at the centre.
           </p>
 
           <div
@@ -152,7 +153,7 @@ export default function Hero() {
               flexWrap: "wrap",
             }}
           >
-            {["Human-Centered Design", "Institution Keeps All IP", "Reduces Operating Costs", "FERPA Compliant"].map(
+            {["Human-Centered Design", "Institution Keeps All IP", "Accreditation-Ready Outcomes", "FERPA Compliant"].map(
               (label, i) => (
                 <span
                   key={i}
@@ -270,6 +271,7 @@ export default function Hero() {
 
           {/* Decorative scorecard chip */}
           <div
+            className="hero-chip"
             style={{
               position: "relative",
               zIndex: 2,
@@ -296,7 +298,7 @@ export default function Hero() {
                 margin: "0 0 4px",
               }}
             >
-              OpEx Savings Identified
+              Accreditation-Ready in
             </p>
             <p
               style={{
@@ -308,7 +310,7 @@ export default function Hero() {
                 letterSpacing: "-0.015em",
               }}
             >
-              $1.2M{" "}
+              90 Days{" "}
               <span
                 style={{
                   fontSize: 11,
@@ -318,7 +320,7 @@ export default function Hero() {
                   fontFamily: "var(--font-libre-franklin), sans-serif",
                 }}
               >
-                first year
+                or less
               </span>
             </p>
             <div
@@ -331,13 +333,24 @@ export default function Hero() {
             >
               <div
                 style={{
-                  width: "72%",
+                  width: "88%",
                   height: "100%",
                   background: "#1E4D38",
                   borderRadius: 2,
                 }}
               />
             </div>
+            <p
+              style={{
+                fontSize: 9,
+                color: "#9FBFAD",
+                margin: "6px 0 0",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                letterSpacing: "0.03em",
+              }}
+            >
+              Curriculum live · outcome tracking active · evidence auto-generated
+            </p>
           </div>
         </div>
       </div>
@@ -347,6 +360,11 @@ export default function Hero() {
           .hero-grid {
             grid-template-columns: 1fr !important;
             gap: 48px !important;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-chip {
+            margin-right: 12px !important;
           }
         }
       `}</style>

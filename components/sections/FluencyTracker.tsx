@@ -198,7 +198,7 @@ function OverviewTab() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
           <div>
             <p style={{ fontSize: 12, fontWeight: 600, color: "rgba(248,250,252,0.45)", margin: "0 0 2px", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              AI Fluency Index — 12-Month Trend
+              AI Fluency Index — 12-Month Trend (Illustrative)
             </p>
             <p style={{ fontSize: 20, fontWeight: 700, color: "#10b981", margin: 0, letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
               81{" "}
@@ -389,7 +389,7 @@ function ProgressionTab() {
         <TrendingUp size={16} color="#10b981" strokeWidth={2} style={{ flexShrink: 0 }} />
         <p style={{ fontSize: 13, color: "rgba(248,250,252,0.65)", margin: 0, lineHeight: 1.5 }}>
           <span style={{ color: "#f8fafc", fontWeight: 600 }}>63.5%</span> of Level 201 completions advance to Level 301 within one semester —{" "}
-          <span style={{ color: "#10b981", fontWeight: 600 }}>18% above the national benchmark</span> for AI curriculum progression rates.
+          <span style={{ color: "#10b981", fontWeight: 600 }}>significantly above typical digital-literacy programme completion rates</span>.
         </p>
       </motion.div>
     </div>
@@ -445,7 +445,7 @@ export default function FluencyTracker() {
               }}
             >
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#1E4D38", display: "inline-block" }} />
-              <span style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#1E4D38", letterSpacing: "0.06em", textTransform: "uppercase" }}>Live Dashboard</span>
+              <span style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#1E4D38", letterSpacing: "0.06em", textTransform: "uppercase" }}>Dashboard Preview</span>
             </span>
           </div>
           <h2 style={{ fontSize: "clamp(26px, 3.8vw, 48px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 14px", letterSpacing: "-0.012em", maxWidth: 680 }}>
@@ -558,7 +558,7 @@ export default function FluencyTracker() {
                 <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.25)", margin: "0 0 10px" }}>
                   Institution
                 </p>
-                {["Western University", "Cohort 2025–26", "6 Departments"].map((s) => (
+                {["Sample University", "Cohort 2025–26", "6 Departments"].map((s) => (
                   <p key={s} style={{ fontSize: 12, color: "rgba(248,250,252,0.32)", margin: "0 0 5px", lineHeight: 1.5 }}>{s}</p>
                 ))}
               </div>

@@ -17,7 +17,7 @@ const PILLARS = [
   {
     Icon: TrendingUp,
     title: "Predictable, Venture-Ready Budgeting",
-    body: "Two engagement tracks — consulting-first or full-stack — each with clean line items for your CFO. Start with an OpEx audit to identify savings, then decide how far to go. No lock-in at any stage.",
+    body: "Two engagement tracks — consulting-first or full-stack — each with clean line items for your CFO. Start with an accreditation readiness audit to identify gaps and savings, then decide how far to go. No lock-in at any stage.",
   },
 ];
 

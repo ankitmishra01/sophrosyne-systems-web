@@ -56,10 +56,10 @@ export default function InsightsPage() {
             style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }}
             className="insights-grid"
           >
-            {INSIGHTS.map((a) => {
-              const live = a.status === "live";
-              const inner = (
+            {INSIGHTS.filter((a) => a.status === "live").map((a) => (
+              <Link key={a.slug} href={`/insights/${a.slug}`} style={{ textDecoration: "none", display: "block" }} className="insight-card-link">
                 <div
+                  className="insight-card"
                   style={{
                     height: "100%",
                     background: "#FFFFFF",
@@ -67,9 +67,9 @@ export default function InsightsPage() {
                     borderRadius: "var(--radius-card)",
                     padding: "30px 30px 26px",
                     boxShadow: "var(--shadow-card)",
-                    opacity: live ? 1 : 0.72,
                     display: "flex",
                     flexDirection: "column",
+                    transition: "border-color 200ms, box-shadow 200ms",
                   }}
                 >
                   <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
@@ -84,11 +84,6 @@ export default function InsightsPage() {
                       {a.category}
                     </span>
                     <span style={{ fontSize: 12, color: "#6E7B71" }}>{a.readTime}</span>
-                    {!live && (
-                      <span style={{ fontSize: 11, fontStyle: "italic", color: "#6E7B71", marginLeft: "auto", fontFamily: "var(--font-newsreader), serif" }}>
-                        Coming soon
-                      </span>
-                    )}
                   </div>
                   <h2
                     style={{
@@ -101,35 +96,73 @@ export default function InsightsPage() {
                   <p style={{ fontSize: 14.5, lineHeight: 1.66, color: "#4A584E", margin: "0 0 20px" }}>
                     {a.dek}
                   </p>
-                  {live && (
-                    <span
-                      style={{
-                        marginTop: "auto", display: "inline-flex", alignItems: "center", gap: 6,
-                        fontSize: 13, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif",
-                        color: "#1E4D38", letterSpacing: "0.02em",
-                      }}
-                    >
-                      Read the analysis
-                      <ArrowRight size={14} strokeWidth={2.2} />
-                    </span>
-                  )}
+                  <span
+                    style={{
+                      marginTop: "auto", display: "inline-flex", alignItems: "center", gap: 6,
+                      fontSize: 13, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif",
+                      color: "#1E4D38", letterSpacing: "0.02em",
+                    }}
+                  >
+                    Read the analysis
+                    <ArrowRight size={14} strokeWidth={2.2} />
+                  </span>
                 </div>
-              );
+              </Link>
+            ))}
+          </div>
 
-              return live ? (
-                <Link key={a.slug} href={`/insights/${a.slug}`} style={{ textDecoration: "none", display: "block" }}>
-                  {inner}
-                </Link>
-              ) : (
-                <div key={a.slug}>{inner}</div>
-              );
-            })}
+          {/* Upcoming signal — shows intent without half-baked cards */}
+          <div
+            style={{
+              marginTop: 40,
+              padding: "24px 28px",
+              background: "#FFFFFF",
+              border: "1px solid rgba(27,42,33,0.10)",
+              borderRadius: "var(--radius-card)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: 16,
+              boxShadow: "var(--shadow-card)",
+            }}
+          >
+            <div>
+              <p style={{ fontSize: 13, fontWeight: 600, color: "#1B2A21", margin: "0 0 4px", fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "-0.01em" }}>
+                More analysis coming Summer &amp; Fall 2026
+              </p>
+              <p style={{ fontSize: 13, color: "#6E7B71", margin: 0 }}>
+                The enrollment cliff and AI accreditation — plus a deep-dive on faculty adoption curves.
+              </p>
+            </div>
+            <a
+              href="mailto:hello@sophrosynesystems.com?subject=Sophrosyne Insights — notify me"
+              className="insight-notify-btn"
+              style={{
+                display: "inline-flex", alignItems: "center", gap: 6,
+                fontSize: 13, fontWeight: 600, color: "#1E4D38",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                textDecoration: "none", whiteSpace: "nowrap",
+                border: "1px solid rgba(30,77,56,0.22)", borderRadius: "var(--radius-btn)",
+                padding: "9px 16px", transition: "background 180ms",
+              }}
+            >
+              Notify me
+              <ArrowRight size={13} strokeWidth={2.2} />
+            </a>
           </div>
         </div>
 
         <style>{`
           @media (max-width: 760px) {
             .insights-grid { grid-template-columns: 1fr !important; }
+          }
+          .insight-card-link:hover .insight-card {
+            border-color: rgba(30,77,56,0.24);
+            box-shadow: var(--shadow-card-lg);
+          }
+          .insight-notify-btn:hover {
+            background: rgba(30,77,56,0.05);
           }
         `}</style>
       </section>

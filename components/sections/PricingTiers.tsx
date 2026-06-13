@@ -17,7 +17,7 @@ const SOFTWARE_DETAILS = [
 ];
 
 const CONSULTING_DETAILS = [
-  "AI & OpEx readiness diagnostic",
+  "AI & Accreditation Readiness Audit",
   "Pillar pilots with fixed scope and IP",
   "Full foundry and platform deployment",
   "Retainer advisory and ongoing strategy",

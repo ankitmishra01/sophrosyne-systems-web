@@ -72,9 +72,9 @@ export default function CallToAction() {
             lineHeight: 1.08,
           }}
         >
-          See what your campus could save —{" "}
+          Prove AI readiness to your accreditors.{" "}
           <em style={{ fontStyle: "italic", color: "#E9C77B" }}>
-            and build.
+            Fund it with the savings.
           </em>
         </h2>
         <p
@@ -86,10 +86,10 @@ export default function CallToAction() {
             maxWidth: 560,
           }}
         >
-          Every engagement begins with a fixed-fee AI &amp; OpEx Readiness Audit.
-          You walk away with a board-ready findings deck and a dollar-figure
-          savings roadmap — credited in full toward any platform engagement
-          within 90 days.
+          Every engagement begins with a fixed-fee AI &amp; Accreditation Readiness Audit.
+          You walk away with a board-ready accreditation gap analysis, fluency
+          roadmap, and savings estimate — credited in full toward any platform
+          engagement within 90 days.
         </p>
 
         <div

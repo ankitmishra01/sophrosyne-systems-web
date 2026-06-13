@@ -1,25 +1,25 @@
 export const TRUST_METRICS = [
-  { value: "9 Domains", label: "Operational savings, audited end-to-end" },
+  { value: "7 Accreditors", label: "Supported — HLC, SACSCOC, MSCHE & more" },
   { value: "100%", label: "Student & faculty IP ownership" },
   { value: "FERPA", label: "Compliant by architecture, not policy" },
-  { value: "48 Hours", label: "From contract to deployed platform" },
+  { value: "48 Hours", label: "Studio provisioned & live" },
 ] as const;
 
 export const WHY_ITEMS = [
   {
     icon: "GraduationCap",
-    title: "AI Fluency for Every Student",
-    body: "AI modules embedded into every academic programme, discipline-specific fluency tracks, and an AI tutor system that gives every student personalised support — from Level 101 foundations to production AI deployment.",
-  },
-  {
-    icon: "TrendingDown",
-    title: "Operational Cost Reduction",
-    body: "Sophrosyne identifies savings across every operational domain — compliance, HR, procurement, energy, and more — and delivers a real-time snapshot scorecard with predictive analytics so your leadership team knows exactly where to act and what it's worth.",
+    title: "AI Fluency — Accreditor-Ready",
+    body: "AI modules embedded into every academic programme with auto-generated, accreditor-ready outcome evidence. When HLC, SACSCOC, or MSCHE asks for AI competency data, your institution produces it instantly — no manual assembly, no gaps.",
   },
   {
     icon: "Rocket",
-    title: "Entrepreneurial Ecosystem",
-    body: "Every academic programme tied to real entrepreneurship pathways. On-campus AI Foundries run incubator and accelerator programming with direct AI support — turning student projects into ventures that attract regional employers and partnerships.",
+    title: "Enrollment Differentiation",
+    body: "Every programme tied to real employability outcomes. On-campus AI Foundries give prospective students a reason to choose your institution — and give graduating students verifiable AI credentials that regional employers actively recruit from.",
+  },
+  {
+    icon: "TrendingDown",
+    title: "Operational Efficiency",
+    body: "Sophrosyne identifies savings across compliance, HR, procurement, energy, and more — delivering a real-time scorecard so your leadership team knows exactly where to act and what it's worth.",
   },
 ] as const;
 
@@ -141,49 +141,26 @@ export const SOLUTIONS = [
 export const PRICING_TIERS = [
   {
     group: "consulting" as const,
-    name: "AI & OpEx Readiness Audit",
+    name: "AI & Accreditation Readiness Audit",
     price: "$45,000",
     suffix: "fixed fee",
     mbbEquivalent: "~$400,000",
     savingsLabel: "Big-Three diagnostic fee",
     duration: "4–6 Weeks",
     model: "Consulting Engagement",
-    description: "A campus-wide audit spanning all 9 operational cost domains plus AI and curriculum readiness. Includes stakeholder interviews with leadership, IT, finance, and faculty — culminating in a board-ready findings deck and a $ savings roadmap. Audit fee credited toward any subsequent engagement within 90 days.",
+    description: "A campus-wide audit covering accreditation gap analysis, AI curriculum readiness, and operational savings opportunities across all 9 domains. Includes stakeholder interviews with leadership, IT, finance, and faculty — culminating in a board-ready findings deck and a prioritised roadmap. Audit fee credited toward any subsequent engagement within 90 days.",
     features: [
-      "Audit of all 9 operational cost domains (compliance → energy)",
+      "Accreditation gap analysis — HLC, SACSCOC, MSCHE, and others",
       "AI curriculum and technology readiness assessment",
       "Stakeholder interviews: leadership, IT, finance, faculty",
-      "Regulatory and accreditation compliance gap analysis",
-      "Cost savings opportunity matrix with $ estimates per domain",
-      "Board-ready findings deck and implementation roadmap",
+      "Operational savings opportunity matrix across all 9 domains",
+      "Fluency baseline and 12-month progression roadmap",
+      "Board-ready findings deck and grant-funding pathway",
     ],
     highlighted: false,
     badge: null,
     grantEligible: true,
     perStudentNote: "~$9/student, one-time · at 5,000 enrollment",
-  },
-  {
-    group: "consulting" as const,
-    name: "OpEx Transformation Advisory",
-    price: "$25,000",
-    suffix: "/month",
-    mbbEquivalent: "~$50,000/mo",
-    savingsLabel: "≈ 50% less",
-    duration: "Ongoing",
-    model: "Advisory Retainer",
-    description: "Monthly operational consulting for institutions that want demonstrable cost reduction without a full platform commitment. An embedded Sophrosyne strategist works across all 9 domains, delivering a live scorecard, predictive savings modeling, and board-ready reporting every quarter.",
-    features: [
-      "Monthly OpEx scorecard across all 9 operational domains",
-      "Predictive savings modeling and priority recommendations",
-      "AI-assisted policy and process improvement briefs",
-      "Board-ready cost reduction reporting (quarterly)",
-      "Dedicated OpEx strategist — one point of contact",
-      "Implementation support for approved savings initiatives",
-    ],
-    highlighted: false,
-    badge: null,
-    grantEligible: false,
-    perStudentNote: "~$60/student/yr · at 5,000 enrollment",
   },
   {
     group: "technology" as const,
@@ -210,14 +187,14 @@ export const PRICING_TIERS = [
   },
   {
     group: "technology" as const,
-    name: "Foundry & Platform Launch",
+    name: "AI Fluency Platform Launch",
     price: "$450,000",
     suffix: "one-time",
     mbbEquivalent: "~$900K–$2M",
     savingsLabel: "≈ 50–75% less",
     duration: "4–8 Weeks",
     model: "Capital Expenditure",
-    description: "Complete physical Foundry incubator setup, full Sophrosyne Studio infrastructure provisioning, Level 101–301 Curriculum Matrix deployment, and initial faculty onboarding. Split payment: 50% at kickoff / 50% at go-live.",
+    description: "Full deployment of the integrated stack: Studio, the Level 101–301 Curriculum Matrix, Pulse analytics, and physical Foundry incubator setup — with faculty certified and accreditation-ready outcome tracking live from day one. A Big-4 firm gives you a deck; this gives you running software and a live curriculum in your academic catalogue. Split payment: 50% at kickoff / 50% at go-live.",
     features: [
       "Sophrosyne Studio provisioned campus-wide",
       "Physical Foundry incubator space design and setup",
@@ -240,7 +217,7 @@ export const PRICING_TIERS = [
     savingsLabel: "≈ 50% less",
     duration: "Ongoing",
     model: "Software License + Strategy",
-    description: "One predictable monthly investment that consolidates platform licensing, curriculum updates, AI fluency tracking, and consortium compute — including the full OpEx Transformation Advisory — replacing the fragmented vendor stack most universities currently run.",
+    description: "One predictable monthly investment that consolidates platform licensing, curriculum updates, AI fluency tracking, accreditation evidence generation, and consortium compute — replacing the fragmented vendor stack most universities currently run.",
     features: [
       "Replaces LMS analytics add-ons, standalone AI tools, and separate training subscriptions",
       "Monthly OpEx scorecard and domain-specific savings recommendations",
@@ -276,6 +253,24 @@ export const GRANT_SOURCES = [
 // Sophrosyne vs the alternatives. tone drives cell color: good / bad / neutral.
 export const COMPARISON_ROWS = [
   {
+    dimension: "What you walk away with",
+    sophrosyne: { v: "Software, curriculum & a roadmap", tone: "good" },
+    mbb: { v: "A slide deck", tone: "bad" },
+    diy: { v: "Whatever you can staff", tone: "neutral" },
+  },
+  {
+    dimension: "Accreditation evidence",
+    sophrosyne: { v: "Auto-generated, always current", tone: "good" },
+    mbb: { v: "Manual — your team assembles it", tone: "bad" },
+    diy: { v: "None out of the box", tone: "bad" },
+  },
+  {
+    dimension: "Ongoing platform",
+    sophrosyne: { v: "Studio & Pulse, live", tone: "good" },
+    mbb: { v: "None", tone: "bad" },
+    diy: { v: "You build and maintain it", tone: "bad" },
+  },
+  {
     dimension: "Total cost",
     sophrosyne: { v: "$45K – $450K", tone: "good" },
     mbb: { v: "$400K – $2M+", tone: "bad" },
@@ -288,22 +283,10 @@ export const COMPARISON_ROWS = [
     diy: { v: "12 – 24 months", tone: "bad" },
   },
   {
-    dimension: "What you walk away with",
-    sophrosyne: { v: "Software, curriculum & a roadmap", tone: "good" },
-    mbb: { v: "A slide deck", tone: "bad" },
-    diy: { v: "Whatever you can staff", tone: "neutral" },
-  },
-  {
     dimension: "IP & data ownership",
     sophrosyne: { v: "100% yours", tone: "good" },
     mbb: { v: "Their licensed frameworks", tone: "bad" },
     diy: { v: "Yours — if you finish", tone: "neutral" },
-  },
-  {
-    dimension: "Ongoing platform",
-    sophrosyne: { v: "Studio & Pulse, live", tone: "good" },
-    mbb: { v: "None", tone: "bad" },
-    diy: { v: "You build and maintain it", tone: "bad" },
   },
   {
     dimension: "Built for higher-ed",
@@ -529,7 +512,7 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         role: "Department Chair",
         pain: "Faculty feel unqualified to teach AI and are resistant to adding it to syllabi — but the pressure from leadership and students is mounting.",
-        gain: "Every participating instructor completes a 2-day certification and receives 4 weeks of instructional support. 94% rate themselves confident to teach immediately after.",
+        gain: "Every participating instructor completes a 2-day certification and receives 4 weeks of instructional support. 94% rate themselves confident to teach immediately after (based on early programme feedback).",
       },
       {
         role: "VP of Student Affairs / Employer Relations",
@@ -541,7 +524,7 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         number: "01",
         title: "Faculty Certification First",
-        body: "Before any student cohort begins, Sophrosyne certifies all participating faculty in the Level 101–301 Fluency Framework. A 2-day intensive followed by 4 weeks of ongoing instructional support. 94% of faculty rate themselves 'confident to teach' immediately after.",
+        body: "Before any student cohort begins, Sophrosyne certifies all participating faculty in the Level 101–301 Fluency Framework. A 2-day intensive followed by 4 weeks of ongoing instructional support. 94% of faculty rate themselves 'confident to teach' immediately after (based on early programme feedback).",
       },
       {
         number: "02",
@@ -557,7 +540,7 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
     outcomes: [
       { value: "4–8 wks", label: "from zero to live programme" },
       { value: "3 levels", label: "deployed across every department" },
-      { value: "18%", label: "above national completion benchmark" },
+      { value: "100%", label: "institution retains curriculum IP" },
     ],
     features: [
       {
@@ -602,7 +585,7 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         question: "Does our faculty need a computer science background?",
         answer:
-          "No. Faculty certification covers everything from foundations up. The 2-day intensive is designed for instructors with zero prior AI experience. 94% of certified faculty rate themselves confident to teach immediately after completing the programme.",
+          "No. Faculty certification covers everything from foundations up. The 2-day intensive is designed for instructors with zero prior AI experience. 94% of certified faculty rate themselves confident to teach immediately after completing the programme (based on early programme feedback).",
       },
       {
         question: "Who owns the curriculum content?",
@@ -666,7 +649,7 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
     ],
     outcomes: [
       { value: "6–8 wks", label: "from approval to operational Foundry" },
-      { value: "40+", label: "consortium employer connections at launch" },
+      { value: "40+", label: "target employer connections at programme launch" },
       { value: "2×/yr", label: "inter-campus Demo Day frequency" },
     ],
     features: [
@@ -881,6 +864,7 @@ export const INSIGHTS = [
     category: "Strategy",
     readTime: "6 min read",
     status: "soon" as const,
+    comingDate: "Summer 2026",
   },
   {
     slug: "ai-and-accreditation",
@@ -889,6 +873,7 @@ export const INSIGHTS = [
     category: "Compliance",
     readTime: "7 min read",
     status: "soon" as const,
+    comingDate: "Summer 2026",
   },
   {
     slug: "augmenting-faculty",
@@ -897,6 +882,7 @@ export const INSIGHTS = [
     category: "Pedagogy",
     readTime: "5 min read",
     status: "soon" as const,
+    comingDate: "Fall 2026",
   },
 ] as const;
 
@@ -975,7 +961,7 @@ export const ROLES: Record<string, Role> = {
     ],
     gains: [
       "A running Level 101–301 curriculum with auto-generated, accreditor-ready outcome reports.",
-      "Faculty certified in a 2-day intensive — 94% rate themselves confident to teach immediately after.",
+      "Faculty certified in a 2-day intensive — 94% rate themselves confident to teach immediately after (based on early programme feedback).",
       "A live, data-backed AI fluency index across every department you can stand behind publicly.",
     ],
     solutions: ["curriculum", "pulse", "studio"],
@@ -984,15 +970,15 @@ export const ROLES: Record<string, Role> = {
   cfo: {
     label: "CFOs & Finance",
     eyebrow: "For CFOs",
-    headline: "Find the savings. Fund it with grants. Show the board the math.",
-    sub: "A fixed-fee diagnostic surfaces operating savings across nine domains, most of it grant-fundable — and every number arrives board-ready.",
+    headline: "Reduce costs, fund it with grants, and prove AI readiness before your next site visit.",
+    sub: "A fixed-fee audit surfaces accreditation gaps and operating savings across nine domains — most of it grant-fundable — and every number arrives board-ready.",
     pains: [
       "Uncontrolled AI tool spend is scattered across departments with no visibility into utilization or ROI.",
       "Every budget review asks for ROI evidence on technology spend you have no clean way to quantify.",
       "Transformation feels unaffordable out of operating reserves during a deficit.",
     ],
     gains: [
-      "A modeled savings figure across nine operational domains — typically several multiples of the audit fee.",
+      "A modeled savings figure across nine operational domains — conservatively 3–5× the audit fee at a $40M–$80M operating budget.",
       "A grant-funding pathway (Title III, NSF, state workforce) with ready-to-submit language.",
       "One predictable platform cost that replaces a fragmented vendor stack — IP and software owned outright.",
     ],

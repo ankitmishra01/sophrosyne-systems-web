@@ -5,7 +5,7 @@ import SolutionCards from "@/components/sections/SolutionCards";
 export const metadata: Metadata = {
   title: "Solutions — Sophrosyne Systems",
   description:
-    "The three pillars of the Sophrosyne transformation system: operational cost reduction, AI fluency for every student, and an entrepreneurial ecosystem — built for small and mid-sized universities.",
+    "The three pillars of the Sophrosyne transformation system: AI fluency and accreditation readiness, enrollment differentiation through the Foundry, and operational efficiency — built for small and mid-sized universities.",
 };
 
 function SolutionsHero() {
@@ -57,9 +57,10 @@ function SolutionsHero() {
         >
           Sophrosyne is a three-pillar transformation system for small and
           mid-sized universities — built on production software, not consulting
-          decks. Each pillar works independently and compounds together: reduced
-          operating costs, AI-fluent graduates, and an entrepreneurial ecosystem
-          that prepares students for the world they&apos;re actually entering.
+          decks. Each pillar works independently and compounds together:
+          accreditor-ready AI fluency evidence, an entrepreneurial ecosystem
+          that differentiates your enrolment proposition, and operational
+          efficiency that funds the work.
         </p>
       </div>
     </section>

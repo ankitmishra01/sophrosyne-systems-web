@@ -9,14 +9,14 @@ const ICONS = { GraduationCap, TrendingDown, Rocket } as const;
 
 // Pillar order + per-pillar links (maps onto WHY_ITEMS by index)
 const PILLARS = [
-  { idx: 1, numeral: "I", tag: "Operational Cost", href: "/solutions/pulse" },
-  { idx: 0, numeral: "II", tag: "AI Fluency", href: "/solutions/curriculum" },
+  { idx: 0, numeral: "I", tag: "AI Fluency", href: "/solutions/curriculum" },
   {
-    idx: 2,
-    numeral: "III",
-    tag: "Entrepreneurial Ecosystem",
+    idx: 1,
+    numeral: "II",
+    tag: "Enrollment Differentiation",
     href: "/solutions/foundry",
   },
+  { idx: 2, numeral: "III", tag: "Operational Efficiency", href: "/solutions/pulse" },
 ] as const;
 
 export default function WhySophrosyne() {
@@ -70,9 +70,8 @@ export default function WhySophrosyne() {
             }}
           >
             Three integrated pillars that help small and mid-sized universities
-            reduce costs sustainably, develop genuinely AI-fluent graduates, and
-            build entrepreneurial ecosystems that anchor their communities in
-            the AI era.
+            prove AI readiness to accreditors, differentiate their enrolment
+            proposition, and operate more efficiently — in one engagement.
           </p>
         </motion.div>
 

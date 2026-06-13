@@ -61,8 +61,8 @@ export default function OpExSection() {
               margin: "0 0 16px",
             }}
           >
-            <em style={{ fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>Pillar I</em>
-            {" "}— Operational Sustainability
+            <em style={{ fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>Pillar III</em>
+            {" "}— Operational Efficiency
           </p>
           <h2
             style={{

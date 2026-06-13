@@ -4,18 +4,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { LayoutGrid, Shield, BarChart2, Network } from "lucide-react";
 
-const PLATFORM_STATS = [
-  { value: "2,847", label: "Active Students" },
-  { value: "341", label: "AI Pipelines Deployed" },
-  { value: "94.2k", label: "Compute Credits Used" },
-];
-
-const KPI_TILES = [
-  { label: "Active Students", value: "2,847", delta: "+12% this semester" },
-  { label: "Pipelines Deployed", value: "341", delta: "+28 this week" },
-  { label: "Compute Credits Used", value: "94.2k", delta: "Consortium pool" },
-];
-
 const FEATURE_HIGHLIGHTS = [
   { icon: LayoutGrid, title: "Visual Pipeline Builder", body: "Drag-and-drop agent orchestration — no code required" },
   { icon: Shield, title: "FERPA-Compliant by Design", body: "Data never leaves your institution's infrastructure perimeter" },
@@ -122,31 +110,6 @@ function ViewPanel({ view }: { view: ViewId }) {
             pointerEvents: "none",
           }}
         />
-        <div
-          style={{ position: "absolute", bottom: 20, right: 20, display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "flex-end" }}
-          className="kpi-row"
-        >
-          {KPI_TILES.map((tile) => (
-            <div
-              key={tile.label}
-              style={{
-                background: "rgba(10,15,26,0.88)",
-                backdropFilter: "blur(16px)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "var(--radius-card)",
-                padding: "10px 14px",
-              }}
-            >
-              <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(248,250,252,0.38)", margin: "0 0 3px" }}>
-                {tile.label}
-              </p>
-              <p style={{ fontSize: 17, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#f4f5f8", margin: "0 0 2px", letterSpacing: "-0.01em" }}>
-                {tile.value}
-              </p>
-              <p style={{ fontSize: 10, color: "#C7A14A", margin: 0, fontWeight: 500 }}>{tile.delta}</p>
-            </div>
-          ))}
-        </div>
       </div>
     );
   }
@@ -361,58 +324,6 @@ export default function ShowreelSection() {
               Click through the workspace below.
             </span>
           </p>
-        </motion.div>
-
-        {/* Platform stat strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          style={{ display: "flex", gap: 12, marginBottom: 28, flexWrap: "wrap" }}
-          className="stats-strip"
-        >
-          {PLATFORM_STATS.map((stat) => (
-            <div
-              key={stat.label}
-              style={{
-                background: "#FFFFFF",
-                border: "1px solid rgba(27,42,33,0.10)",
-                borderRadius: "var(--radius-card)",
-                padding: "14px 28px",
-                textAlign: "center",
-                flex: 1,
-                minWidth: 160,
-                boxShadow: "var(--shadow-card)",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: 22,
-                  fontWeight: 500,
-                  fontFamily: "var(--font-newsreader), serif",
-                  color: "#1B2A21",
-                  margin: "0 0 4px",
-                  letterSpacing: "-0.012em",
-                }}
-              >
-                {stat.value}
-              </p>
-              <p
-                style={{
-                  fontSize: 11,
-                  color: "#B5862E",
-                  margin: 0,
-                  fontWeight: 600,
-                  fontFamily: "var(--font-libre-franklin), sans-serif",
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                }}
-              >
-                {stat.label}
-              </p>
-            </div>
-          ))}
         </motion.div>
 
         {/* Browser mockup — interactive product UI (stays dark) */}
@@ -636,12 +547,11 @@ export default function ShowreelSection() {
             border-bottom: 1px solid rgba(255,255,255,0.06);
           }
           .studio-cards { grid-template-columns: 1fr !important; }
-          .kpi-row { display: none !important; }
           .feature-strip { grid-template-columns: repeat(2, 1fr) !important; }
           .feature-strip > *:nth-child(odd) { border-right: 1px solid rgba(27,42,33,0.08) !important; }
           .feature-strip > *:nth-child(1),
           .feature-strip > *:nth-child(2) { border-bottom: 1px solid rgba(27,42,33,0.08); }
-          .stats-strip > * { min-width: 130px !important; }
+
         }
       `}</style>
     </section>

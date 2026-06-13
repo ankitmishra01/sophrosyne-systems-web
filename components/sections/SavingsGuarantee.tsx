@@ -54,7 +54,7 @@ export default function SavingsGuarantee() {
               <em style={{ fontStyle: "italic", color: "#E9C77B" }}>or the audit is on us.</em>
             </h2>
             <p style={{ fontSize: 14, lineHeight: 1.65, color: "#9FBFAD", margin: 0, maxWidth: 620 }}>
-              If our AI &amp; OpEx Readiness Audit doesn&apos;t surface a credible
+              If our AI &amp; Accreditation Readiness Audit doesn&apos;t surface a credible
               roadmap to at least three times its fee in annual operating savings,
               we refund it in full. The risk is ours, not your board&apos;s.
             </p>

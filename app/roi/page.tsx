@@ -4,7 +4,7 @@ import RoiCalculator from "@/components/sections/RoiCalculator";
 export const metadata: Metadata = {
   title: "ROI Calculator — Sophrosyne Systems",
   description:
-    "Model the operating-cost savings AI could unlock across your campus — across nine operational domains, with per-student economics and audit payback.",
+    "See your accreditation gaps, your AI fluency baseline, and what the savings could be — across nine operational domains, with per-student economics and audit payback.",
 };
 
 function RoiHero() {
@@ -43,7 +43,7 @@ function RoiHero() {
             lineHeight: 1.06,
           }}
         >
-          See what AI could save your campus —{" "}
+          See your accreditation gaps, your fluency baseline, and what AI could save —{" "}
           <em style={{ fontStyle: "italic", color: "#1E4D38" }}>
             before you spend a dollar.
           </em>
@@ -58,9 +58,9 @@ function RoiHero() {
           }}
         >
           Move the two sliders to your institution&apos;s size and budget. We
-          model conservative operating savings across all nine domains a
-          Sophrosyne audit examines — the same analysis a Big-Three firm would
-          charge ~$400,000 to produce.
+          model conservative operating savings across all nine domains — including
+          accreditation evidence automation and compliance reporting — the same
+          analysis a Big-Three firm would charge ~$400,000 to produce.
         </p>
       </div>
     </section>

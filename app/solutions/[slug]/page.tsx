@@ -750,12 +750,23 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21",
-            margin: "0 0 48px",
+            margin: "0 0 12px",
             letterSpacing: "-0.012em",
           }}
         >
           Built for institutions like yours.
         </h2>
+        <p
+          style={{
+            fontSize: 13,
+            fontStyle: "italic",
+            fontFamily: "var(--font-newsreader), serif",
+            color: "#6E7B71",
+            margin: "0 0 40px",
+          }}
+        >
+          Illustrative scenarios based on expected engagement outcomes.
+        </p>
         <div
           style={{
             display: "grid",
@@ -910,10 +921,10 @@ function ProductCTA({ sol }: { sol: (typeof SOLUTIONS)[number] }) {
         </p>
         <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
           <Button variant="primary" size="lg" href={`/get-started?product=${sol.id}`}>
-            Get Started
+            Book an Audit
           </Button>
-          <Button variant="secondary" size="lg" href="mailto:hello@sophrosynesystems.com">
-            Talk to a Strategist
+          <Button variant="secondary" size="lg" href="/pricing">
+            View Pricing
           </Button>
         </div>
       </div>

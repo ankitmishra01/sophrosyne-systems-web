@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "Outcomes",    href: "/outcomes"    },
   { label: "Insights",    href: "/insights"    },
   { label: "About",       href: "/about"       },
-  { label: "Get Started", href: "/get-started" },
+  { label: "Book an Audit", href: "/get-started" },
 ];
 
 const ROLE_LINKS = [
@@ -58,9 +58,9 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              AI transformation for regional universities — reduce operating
-              costs, build genuine AI fluency, and keep 100% of the IP
-              your institution creates.
+              AI fluency, accreditation readiness, and enrollment
+              differentiation for regional universities — built on software,
+              not slide decks.
             </p>
           </div>
 

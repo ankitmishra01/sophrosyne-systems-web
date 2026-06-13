@@ -46,7 +46,7 @@ export default function RoiCalculator() {
       `Modeled annual savings: ${fmtUSD(low)} – ${fmtUSD(high)} (midpoint ${fmtUSD(annual)})\n` +
       `Per student / year: ${fmtUSD(perStudent)}\n` +
       `Audit fee: ${fmtUSD(AUDIT_FEE)} · Payback: ${paybackLabel}\n\n` +
-      `I'd like to book an AI & OpEx Readiness Audit to validate these numbers.`
+      `I'd like to book an AI & Accreditation Readiness Audit to validate these numbers.`
     );
     return `mailto:hello@sophrosynesystems.com?subject=${subject}&body=${body}`;
   };
@@ -220,7 +220,7 @@ export default function RoiCalculator() {
         >
           {[
             { v: "~$400K", l: "Big-Three diagnostic to find these savings" },
-            { v: fmtUSD(AUDIT_FEE), l: "Sophrosyne AI & OpEx Readiness Audit" },
+            { v: fmtUSD(AUDIT_FEE), l: "Sophrosyne AI & Accreditation Readiness Audit" },
             { v: paybackLabel, l: "Until the audit pays for itself" },
           ].map((s, i) => (
             <div key={i} style={{ background: "#FFFFFF", padding: "22px 24px", textAlign: "center" }}>

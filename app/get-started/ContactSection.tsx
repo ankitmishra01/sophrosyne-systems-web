@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Mail } from "lucide-react";
 import { SOLUTIONS } from "@/lib/data";
 import Button from "@/components/ui/Button";
 
@@ -35,11 +35,15 @@ export default function ContactSection() {
   const searchParams = useSearchParams();
   const initialProduct = searchParams.get("product") ?? "";
   const [selectedProduct, setSelectedProduct] = useState(initialProduct);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const get = (k: string) => (data.get(k) as string) || "";
+    const email = get("email");
     const productLabel =
       SOLUTIONS.find((s) => s.id === selectedProduct)?.title ||
       selectedProduct ||
@@ -54,9 +58,21 @@ export default function ContactSection() {
       `Primary Challenge: ${get("challenge") || "Not specified"}\n` +
       `Product Interest: ${productLabel}\n\n` +
       `Message:\n${get("message") || "(no message)"}\n\n` +
-      `Reply to: ${get("email")}`
+      `Reply to: ${email}`
     );
-    window.location.href = `mailto:hello@sophrosynesystems.com?subject=${subject}&body=${body}`;
+
+    setSubmitting(true);
+    // Open mailto in a new tab so the user stays on this page
+    window.open(
+      `mailto:hello@sophrosynesystems.com?subject=${subject}&body=${body}`,
+      "_blank"
+    );
+    // Small delay so the button state is visible before transitioning
+    setTimeout(() => {
+      setSubmittedEmail(email);
+      setSubmitted(true);
+      setSubmitting(false);
+    }, 600);
   };
 
   return (
@@ -237,7 +253,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Right — form */}
+          {/* Right — form or success state */}
           <div>
             <div
               style={{
@@ -248,6 +264,80 @@ export default function ContactSection() {
                 boxShadow: "var(--shadow-card)",
               }}
             >
+              {submitted ? (
+                <div style={{ textAlign: "center", padding: "24px 0" }}>
+                  <div
+                    style={{
+                      width: 56,
+                      height: 56,
+                      borderRadius: "50%",
+                      background: "rgba(30,77,56,0.08)",
+                      border: "1px solid rgba(30,77,56,0.18)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      margin: "0 auto 20px",
+                    }}
+                  >
+                    <CheckCircle2 size={26} color="#1E4D38" strokeWidth={1.8} />
+                  </div>
+                  <h3
+                    style={{
+                      fontSize: 22,
+                      fontWeight: 500,
+                      fontFamily: "var(--font-newsreader), serif",
+                      color: "#1B2A21",
+                      margin: "0 0 10px",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    Request sent.
+                  </h3>
+                  <p style={{ fontSize: 14, lineHeight: 1.65, color: "#5A6B60", margin: "0 0 24px", maxWidth: 340, marginLeft: "auto", marginRight: "auto" }}>
+                    Your email client should have opened with the details pre-filled.
+                    We&apos;ll reply to <strong style={{ color: "#1B2A21" }}>{submittedEmail}</strong> within one business day.
+                  </p>
+                  <div
+                    style={{
+                      background: "rgba(199,161,74,0.08)",
+                      border: "1px solid rgba(181,134,46,0.20)",
+                      borderRadius: "var(--radius-card)",
+                      padding: "14px 18px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 10,
+                      justifyContent: "center",
+                      marginBottom: 20,
+                    }}
+                  >
+                    <Mail size={14} color="#B5862E" strokeWidth={2} />
+                    <span style={{ fontSize: 13, color: "#5A6B60" }}>
+                      Or email us directly:{" "}
+                      <a
+                        href="mailto:hello@sophrosynesystems.com"
+                        style={{ color: "#1E4D38", fontWeight: 600, textDecoration: "none" }}
+                      >
+                        hello@sophrosynesystems.com
+                      </a>
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => { setSubmitted(false); setSubmittedEmail(""); }}
+                    style={{
+                      background: "none",
+                      border: "none",
+                      fontSize: 13,
+                      color: "#6E7B71",
+                      cursor: "pointer",
+                      textDecoration: "underline",
+                      fontFamily: "var(--font-libre-franklin), sans-serif",
+                    }}
+                  >
+                    Submit another request
+                  </button>
+                </div>
+              ) : (
+                <>
               <h3
                 style={{
                   fontSize: 20,
@@ -435,9 +525,9 @@ export default function ContactSection() {
                   variant="primary"
                   size="lg"
                   type="submit"
-                  style={{ width: "100%", justifyContent: "center" } as React.CSSProperties}
+                  style={{ width: "100%", justifyContent: "center", opacity: submitting ? 0.7 : 1 } as React.CSSProperties}
                 >
-                  Send Request →
+                  {submitting ? "Opening email…" : "Send Request →"}
                 </Button>
 
                 <p
@@ -451,6 +541,8 @@ export default function ContactSection() {
                   Your information is never sold or shared with third parties.
                 </p>
               </form>
+                </>
+              )}
             </div>
           </div>
         </div>
