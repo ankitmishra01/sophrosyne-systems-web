@@ -47,7 +47,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ marginBottom: 16 }}>
-              <Logo variant="full" size={26} reversed />
+              <Logo variant="full" size={28} reversed />
             </div>
             <p
               style={{

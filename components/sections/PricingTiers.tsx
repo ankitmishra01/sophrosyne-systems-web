@@ -236,7 +236,7 @@ export default function PricingTiers() {
 
               <DetailList items={SOFTWARE_DETAILS} />
 
-              <Button variant="primary" size="md" href="/get-started"
+              <Button variant="primary" size="lg" href="/get-started"
                 style={{ width: "100%", justifyContent: "center" }}>
                 Book a call to discuss licensing
               </Button>
@@ -279,7 +279,7 @@ export default function PricingTiers() {
 
               <DetailList items={CONSULTING_DETAILS} />
 
-              <Button variant="primary" size="md" href="/get-started"
+              <Button variant="primary" size="lg" href="/get-started"
                 style={{ width: "100%", justifyContent: "center" }}>
                 Book a call to discuss your engagement
               </Button>

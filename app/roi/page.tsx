@@ -33,7 +33,7 @@ function RoiHero() {
         </p>
         <h1
           style={{
-            fontSize: "clamp(32px, 5vw, 64px)",
+            fontSize: "clamp(32px, 5vw, 68px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21",

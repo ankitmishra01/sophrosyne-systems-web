@@ -35,7 +35,7 @@ function AboutHero() {
         </p>
         <h1
           style={{
-            fontSize: "clamp(28px, 4.5vw, 62px)",
+            fontSize: "clamp(32px, 5vw, 68px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21",

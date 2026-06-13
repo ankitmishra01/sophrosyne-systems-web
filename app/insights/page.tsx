@@ -30,7 +30,7 @@ function InsightsHero() {
         </p>
         <h1
           style={{
-            fontSize: "clamp(32px, 5vw, 62px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
+            fontSize: "clamp(32px, 5vw, 68px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21", margin: "0 0 20px", letterSpacing: "-0.015em", maxWidth: 740, lineHeight: 1.07,
           }}
         >
