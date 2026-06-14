@@ -388,7 +388,7 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
   studio: {
     slug: "studio",
     heroDescription:
-      "Sophrosyne Studio deploys inside your existing infrastructure in 48 hours — connecting natively to Banner, Canvas, and Colleague — and gives every student and faculty member a production-grade AI workspace that never leaves your data perimeter. No lengthy IT procurement. No third-party cloud risk. No FERPA exceptions needed.",
+      "Sophrosyne Studio deploys inside your existing infrastructure with a base environment live in 48 hours — pre-built connectors for Banner, Canvas, and Colleague configure within days — giving every student and faculty member a production-grade AI workspace that never leaves your data perimeter. No lengthy IT procurement. No third-party cloud risk. No FERPA exceptions needed.",
     maturityStage: {
       stage: "Deploy",
       description: "Gets governed AI infrastructure inside your perimeter in 48 hours — the foundation every other capability is built on.",
@@ -402,7 +402,7 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         role: "CFO / VP Finance",
         pain: "Uncontrolled AI licence spend is scattered across 10–20 departmental subscriptions with no visibility into utilisation or ROI.",
-        gain: "One predictable infrastructure cost replaces the fragmented stack, typically reducing AI-related software spend by 40–65%.",
+        gain: "One predictable infrastructure cost replaces the fragmented stack — institutions running multiple departmental AI tools typically see meaningful consolidation savings.",
       },
       {
         role: "Provost / VP Academic Affairs",
@@ -743,8 +743,8 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
     howItWorks: [
       {
         number: "01",
-        title: "Data Integration in 48 Hours",
-        body: "Pulse connects to Canvas, Banner, and Slate via API. Student progress data begins flowing within 48 hours of provisioning. No manual imports, no spreadsheets, no IT tickets required.",
+        title: "Data Integration in Days",
+        body: "Pulse connects to Canvas, Banner, and Slate via pre-built APIs. Student progress data begins flowing within days of provisioning. No manual imports, no spreadsheets, no IT tickets required.",
       },
       {
         number: "02",
@@ -978,7 +978,7 @@ export const ROLES: Record<string, Role> = {
       "Transformation feels unaffordable out of operating reserves during a deficit.",
     ],
     gains: [
-      "A modeled savings figure across nine operational domains — conservatively 3–5× the audit fee at a $40M–$80M operating budget.",
+      "A modeled savings figure across nine operational domains — conservatively in the $1M–$3M range for institutions with $40M–$80M operating budgets, typically well above the engagement cost.",
       "A grant-funding pathway (Title III, NSF, state workforce) with ready-to-submit language.",
       "One predictable platform cost that replaces a fragmented vendor stack — IP and software owned outright.",
     ],
@@ -989,7 +989,7 @@ export const ROLES: Record<string, Role> = {
     label: "CIOs & Technology",
     eyebrow: "For CIOs",
     headline: "Govern the AI already on your campus — inside your own perimeter.",
-    sub: "Replace shadow AI tooling with a single governed platform that deploys in 48 hours, logs every inference, and never moves student data off your infrastructure.",
+    sub: "Replace shadow AI tooling with a single governed platform that is live within days, logs every inference, and never moves student data off your infrastructure.",
     pains: [
       "Shadow AI tools are proliferating with no governance, no audit trail, and real FERPA exposure.",
       "Integrating AI with Banner, Canvas, and Colleague is a multi-quarter project you don't have staff for.",
@@ -997,7 +997,7 @@ export const ROLES: Record<string, Role> = {
     ],
     gains: [
       "FERPA compliance that's structural — data never leaves your cloud perimeter, every inference audit-logged.",
-      "Pre-built connectors for Banner, Canvas, Colleague, Slate and more — provisioned in 48 hours.",
+      "Pre-built connectors for Banner, Canvas, Colleague, Slate and more — configured within days of kickoff.",
       "A browser-managed platform that needs no new DevOps headcount to run.",
     ],
     solutions: ["studio", "pulse"],

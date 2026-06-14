@@ -4,7 +4,7 @@ import RoiCalculator from "@/components/sections/RoiCalculator";
 export const metadata: Metadata = {
   title: "ROI Calculator — Sophrosyne Systems",
   description:
-    "See your accreditation gaps, your AI fluency baseline, and what the savings could be — across nine operational domains, with per-student economics and audit payback.",
+    "See your accreditation gaps, your AI fluency baseline, and what the savings could be — across nine operational domains, with per-student economics and platform payback.",
 };
 
 function RoiHero() {
