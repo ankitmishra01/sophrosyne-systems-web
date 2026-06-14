@@ -23,6 +23,13 @@ const fmtCompact = (n: number) => {
   return fmtUSD(n);
 };
 
+// Platform Launch price by enrollment band (from ENROLLMENT_BANDS)
+function platformLaunchPrice(enrollment: number): number {
+  if (enrollment < 2000) return 240_000;
+  if (enrollment < 5000) return 360_000;
+  return 450_000;
+}
+
 export default function RoiCalculator() {
   const [enrollment, setEnrollment] = useState(5000);
   const [budget, setBudget] = useState(60_000_000);
@@ -32,9 +39,13 @@ export default function RoiCalculator() {
   const low = annual * 0.75;
   const high = annual * 1.25;
   const perStudent = annual / enrollment;
-  const paybackWeeks = annual > 0 ? AUDIT_FEE / (annual / 52) : 0;
-  const paybackWeeksRounded = Math.round(paybackWeeks);
-  const paybackLabel = paybackWeeks < 1 ? "Under 1 week" : `~${paybackWeeksRounded} ${paybackWeeksRounded === 1 ? "week" : "weeks"}`;
+  const launchPrice = platformLaunchPrice(enrollment);
+  const paybackMonths = annual > 0 ? launchPrice / (annual / 12) : 0;
+  const paybackLabel = paybackMonths < 1
+    ? "Under 1 month"
+    : paybackMonths < 12
+    ? `~${Math.ceil(paybackMonths * 2) / 2} months`
+    : `~${(paybackMonths / 12).toFixed(1)} years`;
   const maxPct = Math.max(...SAVINGS_MODEL.map((d) => d.pct));
 
   const mailto = () => {
@@ -43,9 +54,9 @@ export default function RoiCalculator() {
       `Here is the modeled operating-savings analysis I ran:\n\n` +
       `Enrollment: ${enrollment.toLocaleString()} students\n` +
       `Annual operating budget: ${fmtUSD(budget)}\n\n` +
-      `Modeled annual savings: ${fmtUSD(low)} – ${fmtUSD(high)} (midpoint ${fmtUSD(annual)})\n` +
+      `Modeled savings potential: ${fmtUSD(low)} – ${fmtUSD(high)} (midpoint ${fmtUSD(annual)})\n` +
       `Per student / year: ${fmtUSD(perStudent)}\n` +
-      `Audit fee: ${fmtUSD(AUDIT_FEE)} · Payback: ${paybackLabel}\n\n` +
+      `Platform investment: ${fmtUSD(launchPrice)} · Est. payback: ${paybackLabel}\n\n` +
       `I'd like to book an AI & Accreditation Readiness Audit to validate these numbers.`
     );
     return `mailto:hello@sophrosynesystems.com?subject=${subject}&body=${body}`;
@@ -166,7 +177,7 @@ export default function RoiCalculator() {
                   letterSpacing: "0.16em", textTransform: "uppercase", color: "#C7A14A", margin: "0 0 14px",
                 }}
               >
-                Modeled Annual Savings
+                Modeled Savings Potential
               </p>
               <p
                 style={{
@@ -176,14 +187,17 @@ export default function RoiCalculator() {
               >
                 {fmtCompact(low)} – {fmtCompact(high)}
               </p>
-              <p style={{ fontSize: 13, color: "#9FBFAD", margin: "0 0 28px" }}>
+              <p style={{ fontSize: 13, color: "#9FBFAD", margin: "0 0 6px" }}>
                 midpoint {fmtUSD(annual)} / year
+              </p>
+              <p style={{ fontSize: 11, color: "rgba(159,191,173,0.7)", margin: "0 0 24px", lineHeight: 1.5 }}>
+                Savings accumulate as each domain is optimized — typically 2–3 years to full realization.
               </p>
 
               <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
                 {[
                   { v: fmtUSD(perStudent), l: "per student / year" },
-                  { v: paybackLabel, l: "audit payback" },
+                  { v: paybackLabel, l: "platform payback" },
                 ].map((s, i) => (
                   <div key={i}>
                     <p
@@ -219,9 +233,9 @@ export default function RoiCalculator() {
           className="roi-mbb"
         >
           {[
-            { v: "~$400K", l: "Big-Three diagnostic to find these savings" },
+            { v: "~$200K–$400K", l: "Big-Three diagnostic — if they serve your size" },
             { v: fmtUSD(AUDIT_FEE), l: "Sophrosyne AI & Accreditation Readiness Audit" },
-            { v: paybackLabel, l: "Until the audit pays for itself" },
+            { v: paybackLabel, l: "Full platform investment pays back" },
           ].map((s, i) => (
             <div key={i} style={{ background: "#FFFFFF", padding: "22px 24px", textAlign: "center" }}>
               <p

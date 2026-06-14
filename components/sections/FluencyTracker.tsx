@@ -388,8 +388,7 @@ function ProgressionTab() {
       >
         <TrendingUp size={16} color="#10b981" strokeWidth={2} style={{ flexShrink: 0 }} />
         <p style={{ fontSize: 13, color: "rgba(248,250,252,0.65)", margin: 0, lineHeight: 1.5 }}>
-          <span style={{ color: "#f8fafc", fontWeight: 600 }}>63.5%</span> of Level 201 completions advance to Level 301 within one semester —{" "}
-          <span style={{ color: "#10b981", fontWeight: 600 }}>significantly above typical digital-literacy programme completion rates</span>.
+          <span style={{ color: "#f8fafc", fontWeight: 600 }}>63.5%</span> of Level 201 completions advance to Level 301 within one semester.
         </p>
       </motion.div>
     </div>

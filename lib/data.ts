@@ -2,7 +2,7 @@ export const TRUST_METRICS = [
   { value: "7 Accreditors", label: "Supported — HLC, SACSCOC, MSCHE & more" },
   { value: "100%", label: "Student & faculty IP ownership" },
   { value: "FERPA", label: "Compliant by architecture, not policy" },
-  { value: "48 Hours", label: "Studio provisioned & live" },
+  { value: "48 Hours", label: "Base environment live" },
 ] as const;
 
 export const WHY_ITEMS = [
@@ -144,8 +144,8 @@ export const PRICING_TIERS = [
     name: "AI & Accreditation Readiness Audit",
     price: "$45,000",
     suffix: "fixed fee",
-    mbbEquivalent: "~$400,000",
-    savingsLabel: "Big-Three diagnostic fee",
+    mbbEquivalent: "~$200K–$400K",
+    savingsLabel: "Big-Three diagnostic — if they serve your size",
     duration: "4–6 Weeks",
     model: "Consulting Engagement",
     description: "A campus-wide audit covering accreditation gap analysis, AI curriculum readiness, and operational savings opportunities across all 9 domains. Includes stakeholder interviews with leadership, IT, finance, and faculty — culminating in a board-ready findings deck and a prioritised roadmap. Audit fee credited toward any subsequent engagement within 90 days.",
@@ -453,22 +453,22 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         institution: "Regional Teaching University",
         title: "Automating enrollment management workflows",
-        body: "A mid-sized university with 8,000 students built an AI-assisted early-alert system in Studio, reducing advising response time by 60% in the first semester.",
+        body: "Illustrative: A mid-sized university with 8,000 students built an AI-assisted early-alert system in Studio, reducing advising response time by over 50% in the first semester.",
       },
       {
         institution: "Community College",
         title: "Streamlining compliance reporting",
-        body: "A rural community college automated its accreditation reporting pipeline in Studio, cutting quarterly report preparation from 3 weeks to under 2 days.",
+        body: "Illustrative: A rural community college automated its accreditation reporting pipeline in Studio, cutting quarterly report preparation from 3 weeks to under 2 days.",
       },
       {
         institution: "Finance Office — 6,500-Student University",
         title: "Rationalising AI tool sprawl across departments",
-        body: "A CFO discovered 14 separate AI tool subscriptions running across departments with no central oversight. Studio replaced all of them with a single governed platform, cutting AI-related software spend by 62% while giving IT complete audit visibility.",
+        body: "Illustrative: A CFO discovered 14 separate AI tool subscriptions running across departments with no central oversight. Studio replaced all of them with a single governed platform, cutting AI-related software spend by over 50% while giving IT complete audit visibility.",
       },
       {
         institution: "Provost's Office — Regional Comprehensive University",
         title: "Resolving a FERPA audit finding before reaffirmation",
-        body: "Following a FERPA inquiry into AI tool usage, the provost required documented audit trails on every AI interaction with student data. Studio's structural compliance architecture resolved the finding entirely — and became a positive evidence exhibit in the institution's accreditation self-study.",
+        body: "Illustrative: Following a FERPA inquiry into AI tool usage, the provost required documented audit trails on every AI interaction with student data. Studio's structural compliance architecture resolved the finding entirely — and became a positive evidence exhibit in the institution's accreditation self-study.",
       },
     ],
     faq: [
@@ -512,7 +512,7 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         role: "Department Chair",
         pain: "Faculty feel unqualified to teach AI and are resistant to adding it to syllabi — but the pressure from leadership and students is mounting.",
-        gain: "Every participating instructor completes a 2-day certification and receives 4 weeks of instructional support. 94% rate themselves confident to teach immediately after (based on early programme feedback).",
+        gain: "Every participating instructor completes a 2-day certification and receives 4 weeks of instructional support. Faculty with no prior AI background can teach Level 101 on day one — course materials, assessment rubrics, and facilitation guides are provided and ready.",
       },
       {
         role: "VP of Student Affairs / Employer Relations",
@@ -524,7 +524,7 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         number: "01",
         title: "Faculty Certification First",
-        body: "Before any student cohort begins, Sophrosyne certifies all participating faculty in the Level 101–301 Fluency Framework. A 2-day intensive followed by 4 weeks of ongoing instructional support. 94% of faculty rate themselves 'confident to teach' immediately after (based on early programme feedback).",
+        body: "Before any student cohort begins, Sophrosyne certifies all participating faculty in the Level 101–301 Fluency Framework. A 2-day intensive followed by 4 weeks of ongoing instructional support. Faculty with no prior AI background can teach Level 101 on day one — course materials, assessment rubrics, and facilitation guides are provided and ready.",
       },
       {
         number: "02",
@@ -563,29 +563,29 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         institution: "Liberal Arts College",
         title: "Launching AI curriculum with no CS department",
-        body: "A 2,400-student liberal arts college with no computer science programme deployed the Curriculum Matrix across its Business, English, and Psychology departments in 6 weeks.",
+        body: "Illustrative: A 2,400-student liberal arts college with no computer science programme deployed the Curriculum Matrix across its Business, English, and Psychology departments in 6 weeks.",
       },
       {
         institution: "Polytechnic University",
         title: "Accelerated STEM AI track for engineering students",
-        body: "An engineering-focused institution used the Level 201 and 301 tracks to give third and fourth-year students production AI credentials before graduation, increasing employer placement rates.",
+        body: "Illustrative: An engineering-focused institution used the Level 201 and 301 tracks to give third and fourth-year students production AI credentials before graduation, increasing employer placement rates.",
       },
       {
         institution: "Provost's Office — HLC Reaffirmation",
         title: "Converting an accreditation weakness into a programme strength",
-        body: "A provost facing technology learning outcome questions in HLC reaffirmation deployed the Curriculum Matrix and submitted its auto-generated outcome reports as positive evidence. The review team cited the programme as a model for peer institutions — converting what had been a cited weakness into a documented strength.",
+        body: "Illustrative: A provost facing technology learning outcome questions in HLC reaffirmation deployed the Curriculum Matrix and submitted its auto-generated outcome reports as positive evidence. The review team cited the programme as a model for peer institutions — converting what had been a cited weakness into a documented strength.",
       },
       {
         institution: "Business School — Regional University",
         title: "Launching AI instruction without adding a technology faculty line",
-        body: "A Business school dean deployed the Matrix across four departments without a single new technology hire. Sophrosyne's faculty certification upskilled existing instructors in 2 days. The dean presented the programme to the board as a curriculum innovation delivered within existing budget.",
+        body: "Illustrative: A Business school dean deployed the Matrix across four departments without a single new technology hire. Sophrosyne's faculty certification upskilled existing instructors in 2 days. The dean presented the programme to the board as a curriculum innovation delivered within existing budget.",
       },
     ],
     faq: [
       {
         question: "Does our faculty need a computer science background?",
         answer:
-          "No. Faculty certification covers everything from foundations up. The 2-day intensive is designed for instructors with zero prior AI experience. 94% of certified faculty rate themselves confident to teach immediately after completing the programme (based on early programme feedback).",
+          "No. Faculty certification covers everything from foundations up. The 2-day intensive is designed for instructors with zero prior AI experience. Faculty with no prior AI background can teach Level 101 on day one — course materials, assessment rubrics, and facilitation guides are provided and ready.",
       },
       {
         question: "Who owns the curriculum content?",
@@ -673,22 +673,22 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         institution: "Regional Comprehensive University",
         title: "Building an entrepreneurship pipeline from scratch",
-        body: "A 12,000-student university with no existing entrepreneurship programme launched its Foundry in Week 7. By semester's end, 3 student teams had employer letters of intent for pilot deployments.",
+        body: "Illustrative: A 12,000-student university with no existing entrepreneurship programme launched its Foundry in Week 7. By semester's end, student teams had employer letters of intent for pilot deployments.",
       },
       {
         institution: "Engineering College",
         title: "Creating a direct industry recruitment pipeline",
-        body: "A STEM-focused college used the Foundry to formalise its industry partnership programme. Employers now recruit directly from Foundry Demo Days rather than traditional career fairs.",
+        body: "Illustrative: A STEM-focused college used the Foundry to formalise its industry partnership programme. Employers now recruit directly from Foundry Demo Days rather than traditional career fairs.",
       },
       {
         institution: "President's Office — Tri-County AI Initiative",
         title: "Anchoring regional economic development on campus",
-        body: "A president facing a state mandate for regional tech economic development used the Foundry as the physical anchor for a tri-county AI initiative. The Foundry's Demo Day served as the public launch event, and the institution secured $1.4M in state economic development funding in the first grant cycle.",
+        body: "Illustrative: A president facing a state mandate for regional tech economic development used the Foundry as the physical anchor for a tri-county AI initiative. The Foundry's Demo Day served as the public launch event, and the institution secured over $1M in state economic development funding in the first grant cycle.",
       },
       {
         institution: "VP Enrollment — Regional University",
         title: "Winning admits from flagship competitors",
-        body: "A regional university positioned the Foundry as a core recruiting differentiator: students build production AI projects by their sophomore year. In the first full admissions cycle after launch, engineering-interested applications increased 23% — with several admits citing the Foundry specifically over a flagship offer.",
+        body: "Illustrative: A regional university positioned the Foundry as a core recruiting differentiator — students build production AI projects by their sophomore year. In the first full admissions cycle after launch, engineering-interested applications increased meaningfully, with several admits citing the Foundry specifically over a flagship offer.",
       },
     ],
     faq: [
@@ -783,22 +783,22 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       {
         institution: "University Preparing for HLC Reaffirmation",
         title: "Delivering learning outcome evidence without manual assembly",
-        body: "An institution facing HLC reaffirmation used Pulse to generate its technology learning outcome report automatically, reducing IR team effort from 120 hours to under 4 hours.",
+        body: "Illustrative: An institution facing HLC reaffirmation used Pulse to generate its technology learning outcome report automatically, reducing IR team effort from 120 hours to under 5 hours.",
       },
       {
         institution: "Multi-Campus State System",
         title: "Unified analytics across four campuses",
-        body: "A state system with four campuses used Pulse to create a unified AI fluency dashboard across 22,000 students — giving system-level leadership visibility to allocate resources where competency gaps were forming fastest.",
+        body: "Illustrative: A state system with four campuses used Pulse to create a unified AI fluency dashboard across 22,000 students — giving system-level leadership visibility to allocate resources where competency gaps were forming fastest.",
       },
       {
         institution: "CFO Office — Annual Budget Review",
         title: "Demonstrating AI programme ROI to the board",
-        body: "A CFO facing a board challenge on the Sophrosyne engagement used Pulse's fluency index data to show a measurable 34-point competency gain across the student body in one academic year — alongside credential issuance and employer placement rates. The engagement was continued and expanded at the next budget cycle.",
+        body: "Illustrative: A CFO facing a board challenge on the Sophrosyne engagement used Pulse's fluency index data to show a measurable competency gain across the student body in one academic year — alongside credential issuance and employer placement rates. The engagement was continued and expanded at the next budget cycle.",
       },
       {
         institution: "IR Office — SACSCOC Reaffirmation",
         title: "Eliminating six weeks of manual accreditation assembly",
-        body: "An IR Director entering SACSCOC reaffirmation used Pulse to generate the complete technology learning outcomes section automatically. Her team's assembly time dropped from 6 weeks to 3 days — and the submitted evidence was more current and more granular than anything previously filed.",
+        body: "Illustrative: An IR Director entering SACSCOC reaffirmation used Pulse to generate the complete technology learning outcomes section automatically. Assembly time dropped from 6 weeks to a matter of days — and the submitted evidence was more current and more granular than anything previously filed.",
       },
     ],
     faq: [
@@ -961,7 +961,7 @@ export const ROLES: Record<string, Role> = {
     ],
     gains: [
       "A running Level 101–301 curriculum with auto-generated, accreditor-ready outcome reports.",
-      "Faculty certified in a 2-day intensive — 94% rate themselves confident to teach immediately after (based on early programme feedback).",
+      "Faculty certified in a 2-day intensive — ready to teach from day one with full course materials, assessment rubrics, and instructional support.",
       "A live, data-backed AI fluency index across every department you can stand behind publicly.",
     ],
     solutions: ["curriculum", "pulse", "studio"],
