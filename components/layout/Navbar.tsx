@@ -82,6 +82,7 @@ export default function Navbar() {
                   textDecoration: active ? "underline" : "none",
                   textUnderlineOffset: "4px",
                   transition: "color 180ms",
+                  padding: "12px 0",
                 }}
                 onMouseEnter={(e) =>
                   !active && ((e.currentTarget as HTMLAnchorElement).style.color = "#1E4D38")
@@ -161,7 +162,7 @@ export default function Navbar() {
                 fontWeight: 500,
                 color: pathname === l.href ? "#1E4D38" : "#415146",
                 textDecoration: "none",
-                padding: "10px 0",
+                padding: "12px 0",
               }}
             >
               {l.label}
