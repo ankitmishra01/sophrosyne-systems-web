@@ -163,9 +163,9 @@ export default function TeamGrid() {
               lineHeight: 1.6,
             }}
           >
-            A team that spans university leadership, AI and security research,
-            venture, and analytics — the disciplines a real campus transformation
-            actually requires.
+            A team that spans university leadership, higher-ed finance, AI
+            advisory and venture, and research — the disciplines a real campus
+            transformation actually requires.
           </p>
         </motion.div>
 

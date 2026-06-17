@@ -337,7 +337,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Dr. Lauretta Conklin Frederking",
     title: "Founder & CEO",
-    bio: "Former President of Brescia University College and Senior Advisor for Strategic Initiatives at Western University. MBA, Ivey; PhD in Political Economy, Washington University in St. Louis.",
+    bio: "Former President of Brescia University College; Senior Advisor for Strategic Initiatives at Western University. MBA, Ivey; PhD, Political Economy.",
     photo: "/team/lauretta.jpg",
     imgSize: "cover",
     imgPos: "center top",
@@ -364,7 +364,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Amelia Frederking",
     title: "Research & Strategy Lead",
-    bio: "PhD candidate in Political Science at MIT and former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics, Washington University in St. Louis.",
+    bio: "PhD candidate in Political Science at MIT; former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics.",
     photo: "/team/amelia.jpg",
     imgSize: "cover",
     imgPos: "center top",
