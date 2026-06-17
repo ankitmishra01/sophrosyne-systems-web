@@ -19,19 +19,20 @@ const PROCESS_STEPS = [
     number: "02",
     title: "AI & Accreditation Readiness Audit",
     duration: "4–6 weeks",
-    body: "We audit your accreditation gaps, AI curriculum readiness, and operational savings opportunities across all 9 domains — including stakeholder interviews across leadership, IT, and faculty. You receive a board-ready findings deck with a prioritised roadmap and grant-funding pathway.",
+    price: "$45K · Fixed fee",
+    body: "We audit your accreditation gaps, AI curriculum readiness, and operational savings opportunities across all 9 domains — including stakeholder interviews across leadership, IT, and faculty. You receive a board-ready findings deck with a prioritized roadmap and grant-funding pathway. Not ready for the full program? Ask about our targeted 90-Day Pillar Pilot on your discovery call.",
   },
   {
     number: "03",
-    title: "Platform Launch",
-    duration: "4–8 weeks",
-    body: "Studio deploys campus-wide, the Curriculum Matrix launches across departments, faculty are certified, and the Foundry opens for its first cohort.",
+    title: "Programme Launch",
+    duration: "One Semester",
+    body: "The AI Fluency Programme goes live: faculty certified, first cohort active, GitHub portfolios started. Operational efficiency work begins in parallel. The Foundry opens for its inaugural intake.",
   },
   {
     number: "04",
-    title: "Go Live",
-    duration: "Ongoing",
-    body: "Your institution joins the Intercollegiate AI Exchange Network. Students build, employers hire, and your fluency data feeds accreditation reports automatically.",
+    title: "Ongoing Engagement",
+    duration: "6–12 Months",
+    body: "Expert teams remain embedded — delivering each new AI course, advancing OPEX implementation, mentoring Foundry cohorts. Students leave with GitHub portfolios that travel across every industry. Employment outcomes are tracked and reported.",
   },
 ];
 
@@ -61,14 +62,14 @@ function GetStartedHero() {
         </p>
         <h1
           style={{
-            fontSize: "clamp(32px, 5vw, 68px)",
+            fontSize: "clamp(26px, 3.6vw, 50px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21",
             margin: "0 0 20px",
             letterSpacing: "-0.015em",
             maxWidth: 720,
-            lineHeight: 1.06,
+            lineHeight: 1.1,
           }}
         >
           Tell us about your institution.
@@ -115,7 +116,7 @@ function ProcessSteps() {
         </p>
         <h2
           style={{
-            fontSize: "clamp(24px, 3.5vw, 40px)",
+            fontSize: "clamp(22px, 2.6vw, 36px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21",
@@ -177,19 +178,36 @@ function ProcessSteps() {
                   {step.number}
                 </span>
               </div>
-              <p
-                style={{
-                  fontSize: 9,
-                  fontWeight: 600,
-                  fontFamily: "var(--font-libre-franklin), sans-serif",
-                  letterSpacing: "0.10em",
-                  textTransform: "uppercase",
-                  color: "#6E7B71",
-                  margin: "0 0 6px",
-                }}
-              >
-                {step.duration}
-              </p>
+              <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "0 0 6px", flexWrap: "wrap" }}>
+                <p
+                  style={{
+                    fontSize: 9,
+                    fontWeight: 600,
+                    fontFamily: "var(--font-libre-franklin), sans-serif",
+                    letterSpacing: "0.10em",
+                    textTransform: "uppercase",
+                    color: "#4A584E",
+                    margin: 0,
+                  }}
+                >
+                  {step.duration}
+                </p>
+                {"price" in step && (
+                  <p
+                    style={{
+                      fontSize: 9,
+                      fontWeight: 700,
+                      fontFamily: "var(--font-libre-franklin), sans-serif",
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                      color: "#B5862E",
+                      margin: 0,
+                    }}
+                  >
+                    {(step as typeof step & { price: string }).price}
+                  </p>
+                )}
+              </div>
               <h3
                 style={{
                   fontSize: 15,

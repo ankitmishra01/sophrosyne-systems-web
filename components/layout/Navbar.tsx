@@ -5,11 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Logo from "@/components/ui/Logo";
+import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
   { label: "Solutions", href: "/solutions" },
   { label: "Pricing",   href: "/pricing"   },
-  { label: "ROI",       href: "/roi"       },
   { label: "Insights",  href: "/insights"  },
   { label: "About",     href: "/about"     },
 ];
@@ -95,28 +95,23 @@ export default function Navbar() {
             );
           })}
 
-          <Link
-            href="/get-started"
+          <Button
+            variant="secondary"
+            size="sm"
+            href="https://sophrosyne-platform.vercel.app/login"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              display: "inline-flex",
-              alignItems: "center",
-              padding: "8px 18px",
-              borderRadius: "var(--radius-btn)",
-              fontSize: 12,
-              fontWeight: 700,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              letterSpacing: "0.02em",
-              background: "#1E4D38",
-              color: "#F4F0E6",
-              textDecoration: "none",
-              transition: "opacity 180ms",
-              whiteSpace: "nowrap",
+              background: "rgba(30,77,56,0.08)",
+              border: "1px solid rgba(30,77,56,0.28)",
+              color: "#1E4D38",
             }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.82")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
           >
-            Book an Audit
-          </Link>
+            Platform login →
+          </Button>
+          <Button variant="primary" size="sm" href="/get-started">
+            Talk to Us
+          </Button>
         </div>
 
         {/* Mobile hamburger */}
@@ -173,24 +168,25 @@ export default function Navbar() {
             </Link>
           ))}
           <div style={{ height: 1, background: "rgba(27,42,33,0.10)", margin: "12px 0" }} />
-          <Link
-            href="/get-started"
-            onClick={() => setOpen(false)}
+          <Button
+            variant="secondary"
+            size="sm"
+            href="https://sophrosyne-platform.vercel.app/login"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              display: "block",
-              textAlign: "center",
-              padding: "12px 20px",
-              borderRadius: "var(--radius-btn)",
-              background: "#1E4D38",
-              color: "#F4F0E6",
-              fontWeight: 700,
-              fontSize: 13,
-              textDecoration: "none",
-              marginTop: 4,
+              marginBottom: 8,
+              display: "flex",
+              background: "rgba(30,77,56,0.08)",
+              border: "1px solid rgba(30,77,56,0.28)",
+              color: "#1E4D38",
             }}
           >
-            Book an Audit
-          </Link>
+            Platform login →
+          </Button>
+          <Button variant="primary" size="sm" href="/get-started" style={{ marginTop: 4, display: "flex" }}>
+            Talk to Us
+          </Button>
         </div>
       )}
 

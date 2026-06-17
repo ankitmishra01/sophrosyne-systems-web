@@ -61,18 +61,19 @@ export default function OpExSection() {
               margin: "0 0 16px",
             }}
           >
-            <em style={{ fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>Pillar III</em>
+            <em style={{ fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>
+              Pillar III
+            </em>
             {" "}— Operational Efficiency
           </p>
           <h2
             style={{
-              fontSize: "clamp(28px, 4vw, 52px)",
+              fontSize: "clamp(22px, 2.8vw, 38px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",
               margin: "0 0 16px",
               letterSpacing: "-0.012em",
-              maxWidth: 620,
               lineHeight: 1.1,
             }}
           >
@@ -83,7 +84,6 @@ export default function OpExSection() {
               fontSize: 16,
               lineHeight: 1.65,
               color: "#4A584E",
-              maxWidth: 560,
               margin: 0,
             }}
           >
@@ -94,12 +94,8 @@ export default function OpExSection() {
           </p>
         </motion.div>
 
-        {/* 9-area grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.65, delay: 0.1 }}
+        {/* 9-area grid — each cell animates individually */}
+        <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -112,17 +108,29 @@ export default function OpExSection() {
           }}
           className="opex-grid"
         >
-          {OPEX_AREAS.map((area) => {
+          {OPEX_AREAS.map((area, i) => {
             const IconComp = ICONS[area.icon as keyof typeof ICONS];
             return (
-              <div
+              <motion.div
                 key={area.title}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-30px" }}
+                transition={{
+                  duration: 0.45,
+                  delay: i * 0.05,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+                whileHover={{ backgroundColor: "#F4FAF6" }}
                 style={{
                   background: "#FFFFFF",
                   padding: "24px 26px",
+                  cursor: "default",
                 }}
               >
-                <div
+                <motion.div
+                  whileHover={{ scale: 1.08, rotate: 4 }}
+                  transition={{ type: "spring", stiffness: 350, damping: 22 }}
                   style={{
                     width: 40,
                     height: 40,
@@ -137,7 +145,7 @@ export default function OpExSection() {
                   }}
                 >
                   <IconComp size={18} color="#1E4D38" strokeWidth={1.8} />
-                </div>
+                </motion.div>
                 <p
                   style={{
                     fontSize: 13,
@@ -159,10 +167,10 @@ export default function OpExSection() {
                 >
                   {area.body}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </motion.div>
+        </div>
 
         {/* Scorecard stat strip */}
         <motion.div
@@ -174,8 +182,10 @@ export default function OpExSection() {
           className="scorecard-strip"
         >
           {SCORECARD_STATS.map((stat) => (
-            <div
+            <motion.div
               key={stat.label}
+              whileHover={{ y: -2, boxShadow: "0 6px 20px rgba(30,77,56,0.10)" }}
+              transition={{ type: "spring", stiffness: 400, damping: 25 }}
               style={{
                 background: "#FFFFFF",
                 border: "1px solid rgba(27,42,33,0.10)",
@@ -185,6 +195,7 @@ export default function OpExSection() {
                 flex: 1,
                 minWidth: 160,
                 boxShadow: "var(--shadow-card)",
+                cursor: "default",
               }}
             >
               <p
@@ -212,7 +223,7 @@ export default function OpExSection() {
               >
                 {stat.label}
               </p>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>

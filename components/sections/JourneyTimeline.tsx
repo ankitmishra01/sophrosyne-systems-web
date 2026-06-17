@@ -8,7 +8,7 @@ export default function JourneyTimeline() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#ECF1EC",
+        background: "#F4F0E6",
         borderTop: "1px solid rgba(27,42,33,0.07)",
       }}
     >
@@ -45,7 +45,7 @@ export default function JourneyTimeline() {
             }}
           >
             From audit to consortium —{" "}
-            <em style={{ fontStyle: "italic", color: "#5A6B60" }}>in three phases.</em>
+            <em style={{ fontStyle: "italic", color: "#4A584E" }}>in three phases.</em>
           </h2>
         </motion.div>
 

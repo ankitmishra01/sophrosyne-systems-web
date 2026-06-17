@@ -38,8 +38,9 @@ export default function ContactSection() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submittedEmail, setSubmittedEmail] = useState("");
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const get = (k: string) => (data.get(k) as string) || "";
@@ -48,31 +49,47 @@ export default function ContactSection() {
       SOLUTIONS.find((s) => s.id === selectedProduct)?.title ||
       selectedProduct ||
       "Not specified";
-    const subject = encodeURIComponent(
-      `Sophrosyne inquiry — ${get("institution") || "a university"}`
-    );
-    const body = encodeURIComponent(
-      `Institution: ${get("institution") || "Not provided"}\n` +
-      `Enrollment: ${get("enrollment") || "Not specified"}\n` +
-      `Role: ${get("role") || "Not specified"}\n` +
-      `Primary Challenge: ${get("challenge") || "Not specified"}\n` +
-      `Product Interest: ${productLabel}\n\n` +
-      `Message:\n${get("message") || "(no message)"}\n\n` +
-      `Reply to: ${email}`
-    );
 
     setSubmitting(true);
-    // Open mailto in a new tab so the user stays on this page
-    window.open(
-      `mailto:hello@sophrosynesystems.com?subject=${subject}&body=${body}`,
-      "_blank"
-    );
-    // Small delay so the button state is visible before transitioning
-    setTimeout(() => {
+    setSubmitError("");
+
+    const controller = new AbortController();
+    const tid = setTimeout(() => controller.abort(), 12000);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        signal: controller.signal,
+        body: JSON.stringify({
+          institution: get("institution"),
+          enrollment: get("enrollment"),
+          role: get("role"),
+          challenge: get("challenge"),
+          product: productLabel,
+          email,
+          message: get("message"),
+        }),
+      });
+      clearTimeout(tid);
+
+      const json = await res.json();
+
+      if (!res.ok || !json.ok) {
+        throw new Error(json.error || "Something went wrong");
+      }
+
       setSubmittedEmail(email);
       setSubmitted(true);
+    } catch (err) {
+      clearTimeout(tid);
+      const msg = err instanceof Error && err.name === "AbortError"
+        ? "Request timed out — please try again."
+        : err instanceof Error ? err.message : "Something went wrong — please email us directly.";
+      setSubmitError(msg);
+    } finally {
       setSubmitting(false);
-    }, 600);
+    }
   };
 
   return (
@@ -294,7 +311,7 @@ export default function ContactSection() {
                     Request sent.
                   </h3>
                   <p style={{ fontSize: 14, lineHeight: 1.65, color: "#5A6B60", margin: "0 0 24px", maxWidth: 340, marginLeft: "auto", marginRight: "auto" }}>
-                    Your email client should have opened with the details pre-filled.
+                    Your message has been delivered.
                     We&apos;ll reply to <strong style={{ color: "#1B2A21" }}>{submittedEmail}</strong> within one business day.
                   </p>
                   <div
@@ -327,7 +344,7 @@ export default function ContactSection() {
                       background: "none",
                       border: "none",
                       fontSize: 13,
-                      color: "#6E7B71",
+                      color: "#4A584E",
                       cursor: "pointer",
                       textDecoration: "underline",
                       fontFamily: "var(--font-libre-franklin), sans-serif",
@@ -353,7 +370,7 @@ export default function ContactSection() {
               <p
                 style={{
                   fontSize: 13,
-                  color: "#6E7B71",
+                  color: "#4A584E",
                   margin: "0 0 28px",
                 }}
               >
@@ -521,19 +538,25 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {submitError && (
+                  <p style={{ fontSize: 13, color: "#B04040", margin: 0, textAlign: "center" }}>
+                    {submitError}
+                  </p>
+                )}
+
                 <Button
                   variant="primary"
                   size="lg"
                   type="submit"
                   style={{ width: "100%", justifyContent: "center", opacity: submitting ? 0.7 : 1 } as React.CSSProperties}
                 >
-                  {submitting ? "Opening email…" : "Send Request →"}
+                  {submitting ? "Sending…" : "Send Request →"}
                 </Button>
 
                 <p
                   style={{
                     fontSize: 11,
-                    color: "#6E7B71",
+                    color: "#4A584E",
                     textAlign: "center",
                     margin: 0,
                   }}

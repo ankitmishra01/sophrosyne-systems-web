@@ -28,7 +28,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Sophrosyne Systems — AI Infrastructure for Universities",
   description:
-    "Sophrosyne Systems helps small and mid-sized universities embed AI fluency across every academic programme, prove AI readiness to accreditors, and build entrepreneurial ecosystems that differentiate their enrolment proposition.",
+    "Sophrosyne Systems helps small and mid-sized universities embed AI fluency across every academic program, prove AI readiness to accreditors, and build entrepreneurial ecosystems that differentiate their enrollment proposition.",
   keywords: [
     "AI university",
     "higher education AI platform",

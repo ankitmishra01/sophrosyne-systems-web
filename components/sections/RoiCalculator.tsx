@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Button from "@/components/ui/Button";
 import {
   FileCheck, Users, BookOpen, Presentation, ShoppingCart,
   Leaf, BarChart2, Map, Zap, ArrowRight,
@@ -79,7 +79,7 @@ export default function RoiCalculator() {
   };
 
   return (
-    <section style={{ padding: "0 var(--pad-h) var(--section-py)", background: "#F4F0E6" }}>
+    <section style={{ padding: "var(--section-py) var(--pad-h)", background: "#F4F0E6" }}>
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
         {/* Inputs + headline results */}
         <div
@@ -143,7 +143,7 @@ export default function RoiCalculator() {
               </div>
             </div>
 
-            <p style={{ fontSize: 12, lineHeight: 1.6, color: "#6E7B71", margin: "26px 0 0" }}>
+            <p style={{ fontSize: 12, lineHeight: 1.6, color: "#4A584E", margin: "26px 0 0" }}>
               Modeled on a conservative {(totalPct * 100).toFixed(1)}% of operating budget across nine
               operational domains. Illustrative — your audit produces the validated, line-item figure.
             </p>
@@ -181,7 +181,7 @@ export default function RoiCalculator() {
               </p>
               <p
                 style={{
-                  fontSize: "clamp(34px, 5vw, 52px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
+                  fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
                   color: "#F1EEE2", margin: "0 0 4px", letterSpacing: "-0.02em", lineHeight: 1,
                 }}
               >
@@ -241,7 +241,7 @@ export default function RoiCalculator() {
               <p
                 style={{
                   fontSize: 26, fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
-                  color: i === 0 ? "#6E7B71" : "#1E4D38", margin: "0 0 5px", letterSpacing: "-0.015em",
+                  color: i === 0 ? "#4A584E" : "#1E4D38", margin: "0 0 5px", letterSpacing: "-0.015em",
                   textDecoration: i === 0 ? "line-through" : "none",
                   textDecorationColor: "rgba(181,134,46,0.6)",
                 }}
@@ -313,17 +313,9 @@ export default function RoiCalculator() {
             Email me this analysis
             <ArrowRight size={15} strokeWidth={2.2} />
           </a>
-          <Link
-            href="/get-started"
-            style={{
-              display: "inline-flex", alignItems: "center", justifyContent: "center", background: "#FFFFFF",
-              color: "#1B2A21", fontFamily: "var(--font-libre-franklin), sans-serif", fontWeight: 600, fontSize: 14,
-              letterSpacing: "0.02em", padding: "14px 28px", borderRadius: "var(--radius-btn)",
-              border: "1px solid rgba(27,42,33,0.16)", textDecoration: "none",
-            }}
-          >
+          <Button variant="secondary" size="lg" href="/get-started">
             Book an Audit
-          </Link>
+          </Button>
         </div>
       </div>
 

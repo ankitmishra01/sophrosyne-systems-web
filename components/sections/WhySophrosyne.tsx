@@ -1,7 +1,8 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, TrendingDown, Rocket, ArrowRight } from "lucide-react";
 import { WHY_ITEMS } from "@/lib/data";
 
@@ -13,11 +14,210 @@ const PILLARS = [
   {
     idx: 1,
     numeral: "II",
-    tag: "Enrollment Differentiation",
+    tag: "Student Innovation",
     href: "/solutions/foundry",
   },
-  { idx: 2, numeral: "III", tag: "Operational Efficiency", href: "/solutions/pulse" },
+  { idx: 2, numeral: "III", tag: "Operational Efficiency", href: "/solutions/opex" },
 ] as const;
+
+const LEVEL_COLORS: Record<string, { fg: string; bg: string; border: string }> = {
+  A1: { fg: "rgba(159,191,173,0.50)", bg: "rgba(159,191,173,0.06)", border: "rgba(159,191,173,0.14)" },
+  A2: { fg: "#9FBFAD",               bg: "rgba(159,191,173,0.10)", border: "rgba(159,191,173,0.22)" },
+  B1: { fg: "#C7A14A",               bg: "rgba(199,161,74,0.10)",  border: "rgba(199,161,74,0.22)"  },
+  B2: { fg: "#7FBF9A",               bg: "rgba(127,191,154,0.10)", border: "rgba(127,191,154,0.24)" },
+};
+
+const STUDENTS = [
+  { initials: "SM", name: "S. Mensah",  level: "B2", pct: 88, status: "Portfolio submitted" },
+  { initials: "AK", name: "A. Kim",     level: "B1", pct: 65, status: "Module 4 in progress" },
+  { initials: "PL", name: "P. Luca",    level: "A2", pct: 42, status: "Assessment due" },
+  { initials: "TN", name: "T. Nwosu",   level: "B2", pct: 91, status: "Certified ✓" },
+  { initials: "RO", name: "R. Osei",    level: "A1", pct: 22, status: "Module 2 started" },
+];
+
+const MODULES = [
+  { name: "Foundations of AI",    completion: 94, enrolled: 47 },
+  { name: "Prompt Engineering",   completion: 78, enrolled: 44 },
+  { name: "AI in Research",       completion: 61, enrolled: 38 },
+  { name: "Ethics & Governance",  completion: 45, enrolled: 29 },
+];
+
+const OUTCOMES = [
+  { label: "Students at B1+",    value: "74%", delta: "+18% vs intake" },
+  { label: "GitHub portfolios",  value: "31",  delta: "of 47 active" },
+  { label: "Employer interviews",value: "12",  delta: "this semester" },
+];
+
+type DashTab = "cohort" | "modules" | "outcomes";
+
+function CohortDashboard() {
+  const [tab, setTab] = useState<DashTab>("cohort");
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) setInView(true); },
+      { threshold: 0.2 }
+    );
+    if (ref.current) obs.observe(ref.current);
+    return () => obs.disconnect();
+  }, []);
+
+  const TAB_LABELS: Record<DashTab, string> = { cohort: "Cohort", modules: "Modules", outcomes: "Outcomes" };
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        background: "#141F17",
+        border: "1px solid rgba(199,161,74,0.18)",
+        borderRadius: 16,
+        overflow: "hidden",
+        fontFamily: "var(--font-libre-franklin), sans-serif",
+      }}
+    >
+      {/* Title bar */}
+      <div style={{ padding: "13px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)", background: "#0d1510", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(241,238,226,0.72)" }}>
+          Cohort Dashboard · Fall 2026
+        </span>
+        <span style={{ display: "flex", alignItems: "center", gap: 5, fontSize: 10, fontWeight: 600, color: "#9FBFAD", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#9FBFAD", boxShadow: "0 0 6px rgba(159,191,173,0.55)" }} />
+          Live
+        </span>
+      </div>
+
+      {/* Stat pills */}
+      <div style={{ display: "flex", gap: 6, padding: "12px 20px 10px" }}>
+        {[
+          { label: "Students", value: "47" },
+          { label: "Avg Level", value: "B1+" },
+          { label: "Progress", value: "+12% ↑" },
+        ].map((s) => (
+          <div key={s.label} style={{ flex: 1, background: "rgba(255,255,255,0.04)", borderRadius: 7, padding: "7px 8px", textAlign: "center" }}>
+            <div style={{ fontSize: 13, fontWeight: 500, color: "#F1EEE2", fontFamily: "var(--font-newsreader), serif", letterSpacing: "-0.01em" }}>{s.value}</div>
+            <div style={{ fontSize: 8, color: "rgba(241,238,226,0.62)", letterSpacing: "0.07em", textTransform: "uppercase", marginTop: 2 }}>{s.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Tab bar */}
+      <div style={{ display: "flex", gap: 4, padding: "2px 20px 10px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+        {(["cohort", "modules", "outcomes"] as DashTab[]).map((t) => (
+          <button
+            key={t}
+            onClick={() => setTab(t)}
+            style={{
+              background: tab === t ? "rgba(30,77,56,0.35)" : "transparent",
+              border: tab === t ? "1px solid rgba(30,77,56,0.55)" : "1px solid transparent",
+              borderRadius: 6,
+              padding: "4px 10px",
+              fontSize: 10,
+              fontWeight: 600,
+              letterSpacing: "0.05em",
+              color: tab === t ? "#9FBFAD" : "rgba(241,238,226,0.62)",
+              cursor: "pointer",
+              transition: "all 180ms",
+            }}
+          >
+            {TAB_LABELS[t]}
+          </button>
+        ))}
+      </div>
+
+      {/* Tab content */}
+      <AnimatePresence mode="wait">
+        {tab === "cohort" && (
+          <motion.div
+            key="cohort"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.16 }}
+            style={{ padding: "8px 20px 16px" }}
+          >
+            {STUDENTS.map((s, i) => {
+              const lc = LEVEL_COLORS[s.level];
+              return (
+                <div
+                  key={s.initials}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 10,
+                    padding: "8px 0",
+                    borderBottom: i < STUDENTS.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
+                  }}
+                >
+                  {/* Avatar */}
+                  <div style={{ width: 26, height: 26, borderRadius: "50%", background: "rgba(30,77,56,0.35)", border: "1px solid rgba(30,77,56,0.55)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 8, fontWeight: 700, color: "#9FBFAD", flexShrink: 0 }}>
+                    {s.initials}
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 4 }}>
+                      <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(241,238,226,0.80)" }}>{s.name}</span>
+                      <span style={{ fontSize: 9, fontWeight: 700, color: lc.fg, background: lc.bg, border: `1px solid ${lc.border}`, borderRadius: 3, padding: "1px 5px", letterSpacing: "0.04em" }}>{s.level}</span>
+                    </div>
+                    <div style={{ height: 3, borderRadius: 2, background: "rgba(255,255,255,0.06)", overflow: "hidden", marginBottom: 3 }}>
+                      <div style={{ height: "100%", width: inView ? `${s.pct}%` : "0%", background: lc.fg, borderRadius: 2, transition: `width 1.0s ${i * 0.1}s cubic-bezier(0.34,1.56,0.64,1)` }} />
+                    </div>
+                    <div style={{ fontSize: 9, color: "rgba(159,191,173,0.75)" }}>{s.status}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </motion.div>
+        )}
+
+        {tab === "modules" && (
+          <motion.div
+            key="modules"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.16 }}
+            style={{ padding: "14px 20px 18px", display: "flex", flexDirection: "column", gap: 14 }}
+          >
+            {MODULES.map((m, i) => (
+              <div key={m.name}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
+                  <span style={{ fontSize: 11, color: "rgba(241,238,226,0.75)" }}>{m.name}</span>
+                  <span style={{ fontSize: 11, color: "#9FBFAD", fontWeight: 600 }}>{inView ? m.completion : 0}%</span>
+                </div>
+                <div style={{ height: 4, borderRadius: 2, background: "rgba(255,255,255,0.06)", overflow: "hidden", marginBottom: 4 }}>
+                  <div style={{ height: "100%", width: inView ? `${m.completion}%` : "0%", background: "linear-gradient(90deg, #1E4D38, #9FBFAD)", borderRadius: 2, transition: `width 1.0s ${i * 0.12}s cubic-bezier(0.34,1.56,0.64,1)` }} />
+                </div>
+                <div style={{ fontSize: 9, color: "rgba(159,191,173,0.75)" }}>{m.enrolled} students enrolled</div>
+              </div>
+            ))}
+          </motion.div>
+        )}
+
+        {tab === "outcomes" && (
+          <motion.div
+            key="outcomes"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -4 }}
+            transition={{ duration: 0.16 }}
+            style={{ padding: "12px 20px 18px", display: "flex", flexDirection: "column", gap: 8 }}
+          >
+            {OUTCOMES.map((o) => (
+              <div key={o.label} style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 9, padding: "11px 14px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <div>
+                  <div style={{ fontSize: 9, color: "rgba(241,238,226,0.65)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 4 }}>{o.label}</div>
+                  <div style={{ fontSize: 20, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", letterSpacing: "-0.01em" }}>{o.value}</div>
+                </div>
+                <div style={{ fontSize: 9, color: "#9FBFAD", background: "rgba(30,77,56,0.25)", border: "1px solid rgba(30,77,56,0.40)", borderRadius: 4, padding: "3px 8px", letterSpacing: "0.04em" }}>{o.delta}</div>
+              </div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function WhySophrosyne() {
   return (
@@ -28,52 +228,64 @@ export default function WhySophrosyne() {
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6 }}
-          style={{ marginBottom: 56, maxWidth: 680 }}
+        {/* Header — two column */}
+        <div
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center", marginBottom: 64 }}
+          className="why-header-grid"
         >
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "#B5862E",
-              margin: "0 0 14px",
-            }}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6 }}
           >
-            Three Pillars of Transformation
-          </p>
-          <h2
-            style={{
-              fontSize: "clamp(28px, 4vw, 52px)",
-              fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21",
-              margin: "0 0 16px",
-              letterSpacing: "-0.012em",
-            }}
+            <p
+              style={{
+                fontSize: 11,
+                fontWeight: 600,
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: "#B5862E",
+                margin: "0 0 14px",
+              }}
+            >
+              The Sophrosyne Model
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(22px, 2.8vw, 38px)",
+                fontWeight: 500,
+                fontFamily: "var(--font-newsreader), serif",
+                color: "#1B2A21",
+                margin: "0 0 16px",
+                letterSpacing: "-0.012em",
+                lineHeight: 1.1,
+              }}
+            >
+              Three pillars. One complete campus transformation.
+            </h2>
+            <p
+              style={{
+                fontSize: 15,
+                lineHeight: 1.72,
+                color: "#4A584E",
+                margin: 0,
+              }}
+            >
+              Sophrosyne is a three-pillar consulting program for private universities ready to move — each pillar delivered by an expert team, not handed off as a self-serve toolkit. Each pillar works independently and compounds together: AI competency that makes graduates employable, operational savings that fund the work, and an innovation culture that makes your institution worth choosing.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            Built for Small and Mid-Sized Universities.
-          </h2>
-          <p
-            style={{
-              fontSize: 16,
-              lineHeight: 1.68,
-              color: "#4A584E",
-              margin: 0,
-            }}
-          >
-            Three integrated pillars that help small and mid-sized universities
-            prove AI readiness to accreditors, differentiate their enrolment
-            proposition, and operate more efficiently — in one engagement.
-          </p>
-        </motion.div>
+            <CohortDashboard />
+          </motion.div>
+        </div>
 
         {/* Pillar cards */}
         <div
@@ -242,6 +454,7 @@ export default function WhySophrosyne() {
 
       <style>{`
         @media (max-width: 900px) {
+          .why-header-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .pillar-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>

@@ -63,7 +63,7 @@ export default function CallToAction() {
         </p>
         <h2
           style={{
-            fontSize: "clamp(30px, 4.4vw, 52px)",
+            fontSize: "clamp(24px, 3.0vw, 42px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#F1EEE2",
@@ -176,7 +176,7 @@ export default function CallToAction() {
 
         <p style={{ marginTop: 18, fontSize: 13 }}>
           <Link
-            href="/roi"
+            href="/pricing"
             style={{
               color: "#E9C77B",
               textDecoration: "none",
@@ -186,7 +186,7 @@ export default function CallToAction() {
               paddingBottom: 1,
             }}
           >
-            Or model your savings first →
+            Explore pricing →
           </Link>
         </p>
       </motion.div>

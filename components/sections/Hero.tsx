@@ -31,7 +31,7 @@ export default function Hero() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        padding: "120px var(--pad-h) 80px",
+        padding: "140px var(--pad-h) 80px",
         background:
           "radial-gradient(ellipse 120% 90% at 85% 0%, #ECF1EC 0%, #F4F0E6 55%)",
         position: "relative",
@@ -65,30 +65,14 @@ export default function Hero() {
       >
         {/* Left column */}
         <div>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#B5862E",
-              marginBottom: 20,
-              opacity: ready ? 1 : 0,
-              transition: "opacity 0.7s 0.05s",
-            }}
-          >
-            For Small &amp; Mid-Sized Universities
-          </p>
-
           <h1
             style={{
-              fontSize: "clamp(38px, 5.2vw, 68px)",
+              fontSize: "clamp(24px, 2.6vw, 38px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",
               margin: "0 0 24px",
-              lineHeight: 1.06,
+              lineHeight: 1.12,
               letterSpacing: "-0.015em",
               opacity: ready ? 1 : 0,
               transform: ready ? "none" : "translateY(24px)",
@@ -96,9 +80,9 @@ export default function Hero() {
                 "opacity 0.75s 0.1s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.1s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            Build AI Fluency.{" "}
+            The graduates employers actually want.{" "}
             <em style={{ fontStyle: "italic", color: "#1E4D38" }}>
-              Survive the Enrollment Cliff. Lead on Accreditation.
+              Build AI fluency, operational efficiency, and an innovation culture — in one academic year.
             </em>
           </h1>
 
@@ -115,11 +99,10 @@ export default function Hero() {
                 "opacity 0.75s 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.2s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            Sophrosyne Systems helps small and mid-sized universities embed AI
-            fluency across every academic programme, generate accreditor-ready
-            outcome evidence automatically, and build an entrepreneurial
-            ecosystem that differentiates your institution — with human
-            judgment, not just technology, at the centre.
+            We place expert teams inside your institution — not a platform. In
+            one academic year, your students build verifiable AI fluency, your
+            administration finds operational savings, and your campus launches
+            an innovation culture that makes you worth choosing.
           </p>
 
           <div
@@ -153,14 +136,14 @@ export default function Hero() {
               flexWrap: "wrap",
             }}
           >
-            {["Human-Centered Design", "Institution Keeps All IP", "Accreditation-Ready Outcomes", "FERPA Compliant"].map(
+            {["Human-Centered Design", "Institution Keeps All IP", "Expert Teams — Not Platforms", "6–12 Month Engagements"].map(
               (label, i) => (
                 <span
                   key={i}
                   style={{
                     fontSize: 11,
                     fontWeight: 500,
-                    color: "#5A6B60",
+                    color: "#4A584E",
                     letterSpacing: "0.04em",
                     display: "flex",
                     alignItems: "center",
@@ -264,7 +247,7 @@ export default function Hero() {
                   letterSpacing: "0.04em",
                 }}
               >
-                Sophrosyne Studio · Ready
+                AI Fluency Programme · Active
               </span>
             </div>
           </div>
@@ -298,7 +281,7 @@ export default function Hero() {
                 margin: "0 0 4px",
               }}
             >
-              Accreditation-Ready in
+              Programme Live In
             </p>
             <p
               style={{
@@ -310,17 +293,17 @@ export default function Hero() {
                 letterSpacing: "-0.015em",
               }}
             >
-              90 Days{" "}
+              One Semester{" "}
               <span
                 style={{
                   fontSize: 11,
                   fontWeight: 400,
-                  color: "#6E7B71",
+                  color: "#4A584E",
                   letterSpacing: 0,
                   fontFamily: "var(--font-libre-franklin), sans-serif",
                 }}
               >
-                or less
+                from kickoff
               </span>
             </p>
             <div
@@ -333,26 +316,58 @@ export default function Hero() {
             >
               <div
                 style={{
-                  width: "88%",
+                  width: ready ? "88%" : "0%",
                   height: "100%",
                   background: "#1E4D38",
                   borderRadius: 2,
+                  transition: "width 1.4s 1.1s cubic-bezier(0.34, 1.56, 0.64, 1)",
                 }}
               />
             </div>
             <p
               style={{
                 fontSize: 9,
-                color: "#9FBFAD",
+                color: "#3D5A49",
                 margin: "6px 0 0",
                 fontFamily: "var(--font-libre-franklin), sans-serif",
                 letterSpacing: "0.03em",
               }}
             >
-              Curriculum live · outcome tracking active · evidence auto-generated
+              Faculty certified · first cohort active · GitHub portfolios started
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 32,
+          left: "50%",
+          transform: "translateX(-50%)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: 8,
+          opacity: ready ? 0.7 : 0,
+          transition: "opacity 0.8s 1.6s",
+          pointerEvents: "none",
+          zIndex: 2,
+        }}
+      >
+        <span
+          style={{
+            fontSize: 9,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            color: "#4A584E",
+            fontFamily: "var(--font-libre-franklin), sans-serif",
+          }}
+        >
+          Scroll
+        </span>
+        <div className="scroll-dot" />
       </div>
 
       <style>{`
@@ -366,6 +381,17 @@ export default function Hero() {
           .hero-chip {
             margin-right: 12px !important;
           }
+        }
+        @keyframes scrollBounce {
+          0%, 100% { transform: translateY(0); opacity: 0.9; }
+          50% { transform: translateY(9px); opacity: 0.3; }
+        }
+        .scroll-dot {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: #8A9B91;
+          animation: scrollBounce 2s ease-in-out infinite;
         }
       `}</style>
     </section>

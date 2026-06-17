@@ -3,34 +3,22 @@
 import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 
-const SOFTWARE_TIERS = [
-  { band: "Under 5,000 students",    price: "$18,000", unit: "/ year" },
-  { band: "5,000 – 10,000 students", price: "$32,000", unit: "/ year" },
-  { band: "10,000+ students",        price: "Let's talk", unit: "" },
-];
-
-const SOFTWARE_DETAILS = [
-  "Sophrosyne Studio & fluency dashboard",
-  "Curriculum modules and faculty tools",
-  "Institutional reporting and benchmarking",
-  "Annual licence includes all platform updates",
-];
-
 const CONSULTING_DETAILS = [
-  "AI & Accreditation Readiness Audit",
-  "Pillar pilots with fixed scope and IP",
-  "Full foundry and platform deployment",
-  "Retainer advisory and ongoing strategy",
+  "AI & Accreditation Readiness Audit — $45K fixed fee",
+  "Pillar pilots with fixed scope and full IP transfer",
+  "Full program and Foundry deployment",
+  "Retainer advisory and ongoing strategic support",
 ];
 
 const CARD: React.CSSProperties = {
   background: "#FFFFFF",
   border: "1px solid rgba(27,42,33,0.10)",
   borderRadius: 12,
-  padding: "40px 36px",
+  padding: "48px 44px",
   display: "flex",
   flexDirection: "column",
-  height: "100%",
+  maxWidth: 600,
+  width: "100%",
 };
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
@@ -38,7 +26,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
     <p
       style={{
         fontSize: 10,
-        fontWeight: 700,
+        fontWeight: 600,
         fontFamily: "var(--font-libre-franklin), sans-serif",
         letterSpacing: "0.18em",
         textTransform: "uppercase",
@@ -127,7 +115,7 @@ function DetailList({ items }: { items: string[] }) {
           <span
             style={{
               color: "#B5862E",
-              fontWeight: 700,
+              fontWeight: 600,
               flexShrink: 0,
               lineHeight: 1.5,
             }}
@@ -154,126 +142,43 @@ export default function PricingTiers() {
         <div style={{ borderTop: "1px solid rgba(27,42,33,0.10)" }} />
 
         <div
-          className="pricing-tracks"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 24,
-            alignItems: "stretch",
+            display: "flex",
+            justifyContent: "center",
             padding: "48px 0",
           }}
         >
-          {/* ── Software track ── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.65, delay: 0, ease: [0.22, 1, 0.36, 1] }}
-            style={{ display: "flex" }}
-          >
-            <div style={CARD}>
-              <Eyebrow>Platform License</Eyebrow>
-              <TrackName>AI Fluency Software</TrackName>
-              <Description>
-                License the Sophrosyne platform to measure, build, and report on
-                AI fluency across your institution. Includes the Studio
-                environment, fluency dashboard, curriculum modules, and ongoing
-                updates.
-              </Description>
-
-              {/* Pricing ledger */}
-              <AnchorBlock>
-                {SOFTWARE_TIERS.map((tier, i) => (
-                  <div
-                    key={tier.band}
-                    style={{
-                      display: "flex",
-                      alignItems: "baseline",
-                      justifyContent: "space-between",
-                      gap: 16,
-                      padding: "11px 0",
-                      borderTop: i > 0 ? "1px solid rgba(27,42,33,0.07)" : "none",
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: 12,
-                        color: "#6E7B71",
-                        fontFamily: "var(--font-libre-franklin), sans-serif",
-                        fontWeight: 500,
-                      }}
-                    >
-                      {tier.band}
-                    </span>
-                    <span style={{ display: "flex", alignItems: "baseline", gap: 4 }}>
-                      <span
-                        style={{
-                          fontSize: 18,
-                          fontWeight: 500,
-                          fontFamily: "var(--font-newsreader), serif",
-                          color: "#1E4D38",
-                          letterSpacing: "-0.01em",
-                          lineHeight: 1,
-                        }}
-                      >
-                        {tier.price}
-                      </span>
-                      {tier.unit && (
-                        <span
-                          style={{
-                            fontSize: 11,
-                            color: "#6E7B71",
-                            fontFamily: "var(--font-libre-franklin), sans-serif",
-                          }}
-                        >
-                          {tier.unit}
-                        </span>
-                      )}
-                    </span>
-                  </div>
-                ))}
-              </AnchorBlock>
-
-              <DetailList items={SOFTWARE_DETAILS} />
-
-              <Button variant="primary" size="lg" href="/get-started"
-                style={{ width: "100%", justifyContent: "center" }}>
-                Book a call to discuss licensing
-              </Button>
-            </div>
-          </motion.div>
-
-          {/* ── Consulting track ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             style={{ display: "flex" }}
           >
             <div style={CARD}>
               <Eyebrow>Consulting Engagement</Eyebrow>
-              <TrackName>Custom Transformation</TrackName>
+              <TrackName>Fixed-Fee Engagements</TrackName>
               <Description>
-                A scoped engagement to audit, pilot, or deploy AI transformation
-                across your institution — designed around your budget, timeline,
-                and strategic priorities.
+                Every engagement is scoped to your institution&apos;s specific
+                context — audit, pilot, or full program build. You keep 100%
+                of the IP.
               </Description>
 
-              {/* Context quote — same anchor-block position as pricing ledger */}
               <AnchorBlock>
                 <p
                   style={{
                     fontSize: 14,
                     lineHeight: 1.68,
-                    color: "#6E7B71",
+                    color: "#4A584E",
                     fontStyle: "italic",
                     fontFamily: "var(--font-newsreader), serif",
                     margin: "11px 0",
                   }}
                 >
-                  From a readiness audit to a full platform build — every
-                  engagement is scoped to your institution's specific context.
+                  Starts at a $45,000 fixed-fee AI &amp; Accreditation
+                  Readiness Audit — the same analysis a Big-Three firm would
+                  charge $200K–$400K to produce, if they engage institutions
+                  your size.
                 </p>
               </AnchorBlock>
 
@@ -281,7 +186,7 @@ export default function PricingTiers() {
 
               <Button variant="primary" size="lg" href="/get-started"
                 style={{ width: "100%", justifyContent: "center" }}>
-                Book a call to discuss your engagement
+                Book an Audit
               </Button>
             </div>
           </motion.div>
@@ -298,7 +203,7 @@ export default function PricingTiers() {
           transition={{ duration: 0.6, delay: 0.3 }}
           style={{
             fontSize: 13,
-            color: "#6E7B71",
+            color: "#4A584E",
             margin: "32px 0 0",
             fontFamily: "var(--font-libre-franklin), sans-serif",
           }}
@@ -307,14 +212,6 @@ export default function PricingTiers() {
           HECAP, and state AI-fund grant language available on request.
         </motion.p>
       </div>
-
-      <style>{`
-        @media (max-width: 720px) {
-          .pricing-tracks {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

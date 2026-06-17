@@ -30,8 +30,8 @@ function InsightsHero() {
         </p>
         <h1
           style={{
-            fontSize: "clamp(32px, 5vw, 68px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
-            color: "#1B2A21", margin: "0 0 20px", letterSpacing: "-0.015em", maxWidth: 740, lineHeight: 1.07,
+            fontSize: "clamp(26px, 3.6vw, 50px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
+            color: "#1B2A21", margin: "0 0 20px", letterSpacing: "-0.015em", maxWidth: 740, lineHeight: 1.1,
           }}
         >
           Analysis for the institutions doing the hard part of higher ed.
@@ -83,7 +83,7 @@ export default function InsightsPage() {
                     >
                       {a.category}
                     </span>
-                    <span style={{ fontSize: 12, color: "#6E7B71" }}>{a.readTime}</span>
+                    <span style={{ fontSize: 12, color: "#4A584E" }}>{a.readTime}</span>
                   </div>
                   <h2
                     style={{
@@ -129,10 +129,10 @@ export default function InsightsPage() {
           >
             <div>
               <p style={{ fontSize: 13, fontWeight: 600, color: "#1B2A21", margin: "0 0 4px", fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "-0.01em" }}>
-                More analysis coming Summer &amp; Fall 2026
+                In the pipeline
               </p>
-              <p style={{ fontSize: 13, color: "#6E7B71", margin: 0 }}>
-                The enrollment cliff and AI accreditation — plus a deep-dive on faculty adoption curves.
+              <p style={{ fontSize: 13, color: "#4A584E", margin: 0 }}>
+                The enrollment cliff, AI accreditation standards, and a deep-dive on faculty adoption curves. Get notified when they publish.
               </p>
             </div>
             <a

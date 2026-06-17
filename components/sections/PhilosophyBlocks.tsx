@@ -22,7 +22,7 @@ export default function PhilosophyBlocks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: 56 }}
+          style={{ marginBottom: 56, textAlign: "center" }}
         >
           <p
             style={{
@@ -39,11 +39,11 @@ export default function PhilosophyBlocks() {
           </p>
           <h2
             style={{
-              fontSize: "clamp(26px, 3.8vw, 48px)",
+              fontSize: "clamp(22px, 2.8vw, 38px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#F1EEE2",
-              margin: 0,
+              margin: "0 auto",
               letterSpacing: "-0.012em",
               maxWidth: 560,
             }}
@@ -104,7 +104,7 @@ export default function PhilosophyBlocks() {
                       fontSize: 40,
                       fontWeight: 400,
                       fontFamily: "var(--font-newsreader), serif",
-                      color: "rgba(199,161,74,0.35)",
+                      color: "rgba(199,161,74,0.70)",
                       lineHeight: 1,
                       letterSpacing: "-0.02em",
                     }}

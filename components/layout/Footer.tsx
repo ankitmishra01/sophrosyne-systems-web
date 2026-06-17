@@ -7,8 +7,6 @@ const NAV_LINKS = [
   { label: "Home",        href: "/"            },
   { label: "Solutions",   href: "/solutions"   },
   { label: "Pricing",     href: "/pricing"     },
-  { label: "ROI Calculator", href: "/roi"      },
-  { label: "Outcomes",    href: "/outcomes"    },
   { label: "Insights",    href: "/insights"    },
   { label: "About",       href: "/about"       },
   { label: "Book an Audit", href: "/get-started" },
@@ -72,7 +70,7 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "rgba(201,217,206,0.45)",
+                color: "rgba(241,238,226,0.62)",
                 margin: "0 0 16px",
                 fontFamily: "var(--font-libre-franklin), sans-serif",
               }}
@@ -111,7 +109,7 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "rgba(201,217,206,0.45)",
+                color: "rgba(241,238,226,0.62)",
                 margin: "0 0 16px",
                 fontFamily: "var(--font-libre-franklin), sans-serif",
               }}
@@ -141,7 +139,7 @@ export default function Footer() {
                 fontWeight: 600,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "rgba(201,217,206,0.45)",
+                color: "rgba(241,238,226,0.62)",
                 margin: "0 0 16px",
                 fontFamily: "var(--font-libre-franklin), sans-serif",
               }}
@@ -167,7 +165,7 @@ export default function Footer() {
             >
               hello@sophrosynesystems.com
             </a>
-            <p style={{ fontSize: 12, color: "rgba(201,217,206,0.45)", margin: 0 }}>
+            <p style={{ fontSize: 12, color: "rgba(241,238,226,0.62)", margin: 0 }}>
               Western Accelerator Partner
             </p>
           </div>
@@ -184,11 +182,11 @@ export default function Footer() {
             gap: 12,
           }}
         >
-          <p style={{ fontSize: 11, color: "rgba(201,217,206,0.35)", margin: 0 }}>
+          <p style={{ fontSize: 11, color: "rgba(241,238,226,0.48)", margin: 0 }}>
             © 2026{" "}
             <span translate="no">Sophrosyne Systems Inc.</span> All rights reserved.
           </p>
-          <p style={{ fontSize: 11, color: "rgba(201,217,206,0.30)", margin: 0 }}>
+          <p style={{ fontSize: 11, color: "rgba(241,238,226,0.42)", margin: 0 }}>
             FERPA Compliant · Student IP Protected · Data Sovereign
           </p>
         </div>

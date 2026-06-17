@@ -42,7 +42,7 @@ export default async function InsightArticlePage({
           <Link
             href="/insights"
             style={{
-              display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#6E7B71",
+              display: "inline-flex", alignItems: "center", gap: 6, fontSize: 13, color: "#4A584E",
               textDecoration: "none", fontFamily: "var(--font-libre-franklin), sans-serif", marginBottom: 28,
             }}
           >
@@ -60,13 +60,13 @@ export default async function InsightArticlePage({
             >
               {a.category}
             </span>
-            <span style={{ fontSize: 12, color: "#6E7B71" }}>{a.readTime}</span>
+            <span style={{ fontSize: 12, color: "#4A584E" }}>{a.readTime}</span>
           </div>
 
           <h1
             style={{
-              fontSize: "clamp(30px, 4.6vw, 56px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21", margin: "0 0 20px", letterSpacing: "-0.015em", lineHeight: 1.08,
+              fontSize: "clamp(24px, 3.2vw, 46px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
+              color: "#1B2A21", margin: "0 0 20px", letterSpacing: "-0.015em", lineHeight: 1.1,
             }}
           >
             {a.title}

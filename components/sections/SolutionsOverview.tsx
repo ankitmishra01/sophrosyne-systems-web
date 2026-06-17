@@ -38,7 +38,7 @@ export default function SolutionsOverview() {
           </p>
           <h2
             style={{
-              fontSize: "clamp(28px, 4vw, 50px)",
+              fontSize: "clamp(22px, 2.8vw, 38px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",
@@ -46,9 +46,9 @@ export default function SolutionsOverview() {
               letterSpacing: "-0.012em",
             }}
           >
-            Four integrated solutions.{" "}
+            Three pillars.{" "}
             <em style={{ fontStyle: "italic", color: "#1E4D38" }}>
-              One ecosystem.
+              One academic year.
             </em>
           </h2>
           <p
@@ -59,9 +59,9 @@ export default function SolutionsOverview() {
               margin: 0,
             }}
           >
-            Each solution stands on its own and compounds with the others — from
-            the platform your campus deploys, to the curriculum that builds
-            fluency, to the incubator where students invent what comes next.
+            Each pillar stands on its own and compounds with the others — from
+            the fluency program that certifies faculty, to the finance advisory
+            that funds it, to the incubator where students build what comes next.
           </p>
         </motion.div>
 
@@ -69,7 +69,7 @@ export default function SolutionsOverview() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
+            gridTemplateColumns: "repeat(3, 1fr)",
             gap: 20,
           }}
           className="overview-grid"
@@ -169,7 +169,7 @@ export default function SolutionsOverview() {
       </div>
 
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
           .overview-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>

@@ -12,7 +12,7 @@ const PILLARS = [
   {
     Icon: Shield,
     title: "100% IP and Data Ownership",
-    body: "Every model, dataset, and application built on Sophrosyne Studio belongs to your institution. We hold zero licence rights over student or faculty-generated work.",
+    body: "Every curriculum asset, student project, GitHub portfolio, and applied work product belongs to your institution. We hold zero license rights over anything produced during the engagement.",
   },
   {
     Icon: TrendingUp,
@@ -79,7 +79,7 @@ export default function RevenueModel() {
                 }}
               >
                 Software-enabled services.{" "}
-                <em style={{ fontStyle: "italic", color: "#6E7B71" }}>
+                <em style={{ fontStyle: "italic", color: "#4A584E" }}>
                   Not a SaaS subscription.
                 </em>
               </h2>
@@ -97,7 +97,7 @@ export default function RevenueModel() {
                 We combine ecosystem engineering with proprietary
                 infrastructure. We deploy our secure developer sandbox
                 campus-wide, meaning your students and faculty build on a
-                standardised cloud foundation.
+                standardized cloud foundation.
               </p>
               <p
                 style={{

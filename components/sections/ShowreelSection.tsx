@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { LayoutGrid, Shield, BarChart2, Network } from "lucide-react";
 
 const FEATURE_HIGHLIGHTS = [
-  { icon: LayoutGrid, title: "Visual Pipeline Builder", body: "Drag-and-drop agent orchestration — no code required" },
+  { icon: LayoutGrid, title: "Student-Level Tracking", body: "Progression from baseline to portfolio-ready, visible by cohort and department" },
   { icon: Shield, title: "FERPA-Compliant by Design", body: "Data never leaves your institution's infrastructure perimeter" },
-  { icon: BarChart2, title: "Real-Time Fluency Analytics", body: "Live dashboards for faculty, administration, and accreditors" },
-  { icon: Network, title: "Consortium Compute Access", body: "Shared GPU pool and cross-campus model deployment" },
+  { icon: BarChart2, title: "Accreditor-Ready Reports", body: "Live dashboards and auto-exported evidence for HLC, SACSCOC, and NECHE" },
+  { icon: Network, title: "GitHub Portfolio Integration", body: "Real commit history and deployed projects linked to each student's record" },
 ];
 
 // ─── Interactive views ───────────────────────────────────────────────────────
@@ -16,20 +16,20 @@ const FEATURE_HIGHLIGHTS = [
 type ViewId = "canvas" | "agents" | "connectors" | "deploy" | "audit";
 
 const NAV: { id: ViewId; label: string; icon: string }[] = [
-  { id: "canvas", label: "Pipeline Canvas", icon: "⬡" },
-  { id: "agents", label: "Agent Library", icon: "⊞" },
+  { id: "canvas", label: "Fluency Index", icon: "⬡" },
+  { id: "agents", label: "Programme Agents", icon: "⊞" },
   { id: "connectors", label: "Data Connectors", icon: "⌗" },
-  { id: "deploy", label: "Deployment", icon: "⬆" },
+  { id: "deploy", label: "Data Pipeline", icon: "⬆" },
   { id: "audit", label: "Audit Log", icon: "☰" },
 ];
 
 const AGENTS = [
-  { name: "Enrollment-Triage Agent", desc: "Flags at-risk students from Banner + Canvas signals", status: "Live" },
-  { name: "Advising Copilot", desc: "Drafts personalised advising outreach for each student", status: "Live" },
-  { name: "Compliance Reporter", desc: "Auto-assembles accreditation evidence on demand", status: "Live" },
-  { name: "Course Demand Forecaster", desc: "Models section fill-rates term over term", status: "Live" },
-  { name: "Energy Optimizer", desc: "Predictive HVAC scheduling across campus buildings", status: "Beta" },
-  { name: "Grant Language Drafter", desc: "Title III / HECAP narrative drafts from live data", status: "Beta" },
+  { name: "AI Fluency Assessor", desc: "Measures student competency progression by level and department", status: "Live" },
+  { name: "Faculty Certification Tracker", desc: "Monitors faculty readiness and certification status", status: "Live" },
+  { name: "Portfolio Builder", desc: "Tracks GitHub portfolio completions per student cohort", status: "Live" },
+  { name: "Outcome Reporter", desc: "Auto-assembles employment outcome evidence for accreditors", status: "Live" },
+  { name: "OPEX Savings Modeler", desc: "Models cost savings across 9 operational domains in real time", status: "Beta" },
+  { name: "Demo Day Coordinator", desc: "Manages Foundry project submissions and employer recruitment pipeline", status: "Beta" },
 ];
 
 const CONNECTORS = [
@@ -40,17 +40,17 @@ const CONNECTORS = [
 ];
 
 const DEPLOY_STAGES = [
-  { env: "Build", status: "Passed", meta: "2m 14s · 0 errors" },
-  { env: "Staging", status: "Live", meta: "v4.2.1" },
-  { env: "Production", status: "Live", meta: "us-gov-east · last deploy 6m ago" },
+  { env: "Data Sync", status: "Passed", meta: "Canvas · Banner · GitHub · 0 errors" },
+  { env: "Index Update", status: "Live", meta: "v4.2.1 · 284 students indexed" },
+  { env: "Reporting", status: "Live", meta: "HLC-ready · last export 6m ago" },
 ];
 
 const AUDIT_ROWS = [
-  { time: "14:32", user: "a.osei", action: "Deployed pipeline 'enrollment-triage' to production" },
-  { time: "14:18", user: "m.thorn", action: "Queried Banner SIS · 1,204 records (FERPA-scoped)" },
-  { time: "13:55", user: "system", action: "Model 'advising-copilot' v3 versioned + signed" },
-  { time: "13:40", user: "l.nazari", action: "Granted CS-301 cohort access to Agent Library" },
-  { time: "13:02", user: "system", action: "Nightly compliance export → accreditation vault" },
+  { time: "14:32", user: "system", action: "AI Fluency Index updated — Cohort A: 62 students at Level 201" },
+  { time: "14:18", user: "r.sharma", action: "Exported HLC outcome evidence · 3 programs (FERPA-scoped)" },
+  { time: "13:55", user: "system", action: "GitHub portfolio sync complete — 47 new commits logged" },
+  { time: "13:40", user: "l.nazari", action: "Faculty certification updated — 8 instructors at L3 status" },
+  { time: "13:02", user: "system", action: "Nightly accreditation evidence export → compliance vault" },
 ];
 
 const panelLabelStyle: React.CSSProperties = {
@@ -58,13 +58,13 @@ const panelLabelStyle: React.CSSProperties = {
   fontWeight: 600,
   letterSpacing: "0.14em",
   textTransform: "uppercase",
-  color: "rgba(248,250,252,0.30)",
+  color: "rgba(248,250,252,0.62)",
   margin: "0 0 16px",
 };
 
 function StatusChip({ status }: { status: string }) {
   const warm = status === "Syncing" || status === "Beta";
-  const colour = warm ? "#C7A14A" : "#28c840";
+  const color = warm ? "#C7A14A" : "#9FBFAD";
   return (
     <span
       style={{
@@ -80,7 +80,7 @@ function StatusChip({ status }: { status: string }) {
         flexShrink: 0,
       }}
     >
-      <span style={{ width: 7, height: 7, borderRadius: "50%", background: colour, flexShrink: 0 }} />
+      <span style={{ width: 7, height: 7, borderRadius: "50%", background: color, flexShrink: 0 }} />
       {status}
     </span>
   );
@@ -117,7 +117,7 @@ function ViewPanel({ view }: { view: ViewId }) {
   if (view === "agents") {
     return (
       <div style={{ padding: "26px 28px", minHeight: 480 }}>
-        <p style={panelLabelStyle}>Agent Library · 6 deployed</p>
+        <p style={panelLabelStyle}>Programme Agents · 6 active</p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 12 }} className="studio-cards">
           {AGENTS.map((a) => (
             <div
@@ -135,7 +135,7 @@ function ViewPanel({ view }: { view: ViewId }) {
                 </span>
                 <StatusChip status={a.status} />
               </div>
-              <p style={{ fontSize: 12, lineHeight: 1.55, color: "rgba(248,250,252,0.42)", margin: 0 }}>{a.desc}</p>
+              <p style={{ fontSize: 12, lineHeight: 1.55, color: "rgba(248,250,252,0.68)", margin: 0 }}>{a.desc}</p>
             </div>
           ))}
         </div>
@@ -166,14 +166,14 @@ function ViewPanel({ view }: { view: ViewId }) {
                 <p style={{ fontSize: 13, fontWeight: 600, color: "rgba(248,250,252,0.88)", margin: "0 0 3px", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
                   {c.name}
                 </p>
-                <p style={{ fontSize: 12, color: "rgba(248,250,252,0.42)", margin: 0 }}>{c.detail}</p>
+                <p style={{ fontSize: 12, color: "rgba(248,250,252,0.68)", margin: 0 }}>{c.detail}</p>
               </div>
               <StatusChip status={c.status} />
             </div>
           ))}
         </div>
-        <p style={{ fontSize: 11, color: "rgba(248,250,252,0.30)", margin: "18px 0 0", display: "flex", alignItems: "center", gap: 7 }}>
-          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#28c840" }} />
+        <p style={{ fontSize: 11, color: "rgba(248,250,252,0.62)", margin: "18px 0 0", display: "flex", alignItems: "center", gap: 7 }}>
+          <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#9FBFAD" }} />
           All connectors operate inside your cloud perimeter — no data leaves the institution.
         </p>
       </div>
@@ -183,7 +183,7 @@ function ViewPanel({ view }: { view: ViewId }) {
   if (view === "deploy") {
     return (
       <div style={{ padding: "26px 28px", minHeight: 480 }}>
-        <p style={panelLabelStyle}>Deployment · enrollment-triage</p>
+        <p style={panelLabelStyle}>Data Pipeline · fluency-index</p>
         <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 24 }}>
           {DEPLOY_STAGES.map((d) => (
             <div
@@ -200,24 +200,24 @@ function ViewPanel({ view }: { view: ViewId }) {
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <span style={{ fontSize: 13, color: "#28c840" }}>✓</span>
+                <span style={{ fontSize: 13, color: "#9FBFAD" }}>✓</span>
                 <span style={{ fontSize: 13, fontWeight: 600, color: "rgba(248,250,252,0.88)", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
                   {d.env}
                 </span>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                <span style={{ fontSize: 11, color: "rgba(248,250,252,0.42)", fontFamily: "monospace" }}>{d.meta}</span>
+                <span style={{ fontSize: 11, color: "rgba(248,250,252,0.68)", fontFamily: "monospace" }}>{d.meta}</span>
                 <StatusChip status={d.status} />
               </div>
             </div>
           ))}
         </div>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-          <span style={{ fontSize: 11, color: "rgba(248,250,252,0.42)", letterSpacing: "0.04em", textTransform: "uppercase" }}>Rollout</span>
+          <span style={{ fontSize: 11, color: "rgba(248,250,252,0.68)", letterSpacing: "0.04em", textTransform: "uppercase" }}>Rollout</span>
           <span style={{ fontSize: 11, color: "#9FBFAD", fontWeight: 600 }}>100%</span>
         </div>
         <div style={{ height: 6, borderRadius: 3, background: "rgba(255,255,255,0.07)", overflow: "hidden" }}>
-          <div style={{ width: "100%", height: "100%", background: "linear-gradient(90deg, #1E4D38, #28c840)", borderRadius: 3 }} />
+          <div style={{ width: "100%", height: "100%", background: "linear-gradient(90deg, #1E4D38, #9FBFAD)", borderRadius: 3 }} />
         </div>
       </div>
     );
@@ -239,7 +239,7 @@ function ViewPanel({ view }: { view: ViewId }) {
               borderBottom: i < AUDIT_ROWS.length - 1 ? "1px solid rgba(255,255,255,0.06)" : "none",
             }}
           >
-            <span style={{ fontSize: 11, color: "rgba(248,250,252,0.35)", fontFamily: "monospace", flexShrink: 0, marginTop: 1 }}>{r.time}</span>
+            <span style={{ fontSize: 11, color: "rgba(248,250,252,0.65)", fontFamily: "monospace", flexShrink: 0, marginTop: 1 }}>{r.time}</span>
             <span
               style={{
                 fontSize: 11,
@@ -257,7 +257,7 @@ function ViewPanel({ view }: { view: ViewId }) {
           </div>
         ))}
       </div>
-      <p style={{ fontSize: 11, color: "rgba(248,250,252,0.30)", margin: "18px 0 0", display: "flex", alignItems: "center", gap: 7 }}>
+      <p style={{ fontSize: 11, color: "rgba(248,250,252,0.62)", margin: "18px 0 0", display: "flex", alignItems: "center", gap: 7 }}>
         <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#C7A14A" }} />
         Immutable log — exportable for FERPA, HLC, and SACSCOC review.
       </p>
@@ -271,8 +271,8 @@ export default function ShowreelSection() {
   return (
     <section
       style={{
-        padding: "0 var(--pad-h) var(--section-py)",
-        background: "#F4F0E6",
+        padding: "var(--section-py) var(--pad-h)",
+        background: "#21271F",
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
@@ -295,33 +295,33 @@ export default function ShowreelSection() {
               margin: "0 0 12px",
             }}
           >
-            Sophrosyne Studio · Platform Preview
+            AI Fluency Tracker · In Development
           </p>
           <h2
             style={{
-              fontSize: "clamp(26px, 3.5vw, 44px)",
+              fontSize: "clamp(22px, 2.8vw, 38px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21",
+              color: "#F1EEE2",
               letterSpacing: "-0.012em",
               margin: 0,
             }}
           >
-            The AI platform your campus will actually use
+            Real-time visibility into your institution&apos;s AI competency
           </h2>
           <p
             style={{
               fontSize: 15,
-              color: "#4A584E",
+              color: "rgba(241,238,226,0.78)",
               margin: "14px auto 0",
               maxWidth: 520,
             }}
           >
-            Low-code AI development for students and faculty. Runs within your
-            existing campus infrastructure — FERPA-compliant, institutionally
-            governed, and ready from day one.{" "}
-            <span style={{ color: "#1E4D38", fontWeight: 600 }}>
-              Click through the workspace below.
+            The AI Fluency Tracker gives faculty, administration, and accreditors
+            a live view of student progression — from baseline to portfolio-ready.
+            Available to Founding Cohort institutions.{" "}
+            <span style={{ color: "#B5862E", fontWeight: 600 }}>
+              Currently in development.
             </span>
           </p>
         </motion.div>
@@ -369,13 +369,13 @@ export default function ShowreelSection() {
               }}
             >
               <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#C7A14A", flexShrink: 0 }} />
-              <span style={{ fontSize: 11, color: "rgba(244,245,248,0.35)", fontFamily: "monospace" }}>
-                studio.sophrosynesystems.com · Secure
+              <span style={{ fontSize: 11, color: "rgba(244,245,248,0.68)", fontFamily: "monospace" }}>
+                tracker.sophrosynesystems.com · Secure
               </span>
             </div>
 
-            <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(248,250,252,0.4)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              Sophrosyne Studio
+            <span style={{ fontSize: 11, fontWeight: 600, color: "rgba(248,250,252,0.68)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+              Sophrosyne Tracker
             </span>
           </div>
 
@@ -400,8 +400,8 @@ export default function ShowreelSection() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  <span style={{ fontSize: 12, color: active ? "#C7A14A" : "rgba(248,250,252,0.40)" }}>{item.icon}</span>
-                  <span style={{ fontSize: 12, fontWeight: active ? 600 : 400, color: active ? "rgba(248,250,252,0.88)" : "rgba(248,250,252,0.45)" }}>
+                  <span style={{ fontSize: 12, color: active ? "#C7A14A" : "rgba(248,250,252,0.68)" }}>{item.icon}</span>
+                  <span style={{ fontSize: 12, fontWeight: active ? 600 : 400, color: active ? "rgba(248,250,252,0.88)" : "rgba(248,250,252,0.72)" }}>
                     {item.label}
                   </span>
                 </button>
@@ -422,7 +422,7 @@ export default function ShowreelSection() {
             {/* Left sidebar */}
             <div className="studio-sidebar" style={{ borderRight: "1px solid rgba(255,255,255,0.06)", padding: "16px 0", background: "#222326" }}>
               <div style={{ padding: "0 14px 12px" }}>
-                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.28)", margin: 0 }}>
+                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.55)", margin: 0 }}>
                   Workspace
                 </p>
               </div>
@@ -454,8 +454,8 @@ export default function ShowreelSection() {
                       if (!active) e.currentTarget.style.background = "transparent";
                     }}
                   >
-                    <span style={{ fontSize: 12, color: active ? "#C7A14A" : "rgba(248,250,252,0.28)" }}>{item.icon}</span>
-                    <span style={{ fontSize: 12, color: active ? "rgba(248,250,252,0.85)" : "rgba(248,250,252,0.38)", fontWeight: active ? 600 : 400 }}>
+                    <span style={{ fontSize: 12, color: active ? "#C7A14A" : "rgba(248,250,252,0.55)" }}>{item.icon}</span>
+                    <span style={{ fontSize: 12, color: active ? "rgba(248,250,252,0.85)" : "rgba(248,250,252,0.62)", fontWeight: active ? 600 : 400 }}>
                       {item.label}
                     </span>
                   </button>
@@ -464,13 +464,13 @@ export default function ShowreelSection() {
 
               <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "16px 0" }} />
               <div style={{ padding: "0 14px" }}>
-                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.28)", margin: "0 0 8px" }}>
+                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.55)", margin: "0 0 8px" }}>
                   Integrations
                 </p>
                 {["Canvas LMS", "Banner SIS", "Slate CRM"].map((s) => (
                   <div key={s} style={{ display: "flex", alignItems: "center", gap: 6, padding: "6px 0" }}>
                     <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#9FBFAD", flexShrink: 0 }} />
-                    <span style={{ fontSize: 11, color: "rgba(248,250,252,0.38)" }}>{s}</span>
+                    <span style={{ fontSize: 11, color: "rgba(248,250,252,0.62)" }}>{s}</span>
                   </div>
                 ))}
               </div>
@@ -503,7 +503,7 @@ export default function ShowreelSection() {
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             marginTop: 24,
-            border: "1px solid rgba(27,42,33,0.10)",
+            border: "1px solid rgba(241,238,226,0.12)",
             borderRadius: "var(--radius-card)",
             overflow: "hidden",
             background: "#FFFFFF",
@@ -550,7 +550,7 @@ export default function ShowreelSection() {
           .feature-strip { grid-template-columns: repeat(2, 1fr) !important; }
           .feature-strip > *:nth-child(odd) { border-right: 1px solid rgba(27,42,33,0.08) !important; }
           .feature-strip > *:nth-child(1),
-          .feature-strip > *:nth-child(2) { border-bottom: 1px solid rgba(27,42,33,0.08); }
+          .feature-strip > *:nth-child(2) { border-bottom: 1px solid rgba(27,42,33,0.08) !important; }
 
         }
       `}</style>

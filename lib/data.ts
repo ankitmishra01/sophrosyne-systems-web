@@ -2,24 +2,24 @@ export const TRUST_METRICS = [
   { value: "7 Accreditors", label: "Supported — HLC, SACSCOC, MSCHE & more" },
   { value: "100%", label: "Student & faculty IP ownership" },
   { value: "FERPA", label: "Compliant by architecture, not policy" },
-  { value: "48 Hours", label: "Base environment live" },
+  { value: "$45K", label: "Fixed-fee AI & Accreditation Readiness Audit" },
 ] as const;
 
 export const WHY_ITEMS = [
   {
     icon: "GraduationCap",
-    title: "AI Fluency — Accreditor-Ready",
-    body: "AI modules embedded into every academic programme with auto-generated, accreditor-ready outcome evidence. When HLC, SACSCOC, or MSCHE asks for AI competency data, your institution produces it instantly — no manual assembly, no gaps.",
-  },
-  {
-    icon: "Rocket",
-    title: "Enrollment Differentiation",
-    body: "Every programme tied to real employability outcomes. On-campus AI Foundries give prospective students a reason to choose your institution — and give graduating students verifiable AI credentials that regional employers actively recruit from.",
+    title: "AI Fluency Programme",
+    body: "A senior AI advisor, academic specialist, and practitioner work alongside your faculty for 6–12 months. One AI course per semester, integrated into existing degree structures. Students graduate with a documented portfolio of applied work — and employers notice.",
   },
   {
     icon: "TrendingDown",
     title: "Operational Efficiency",
-    body: "Sophrosyne identifies savings across compliance, HR, procurement, energy, and more — delivering a real-time scorecard so your leadership team knows exactly where to act and what it's worth.",
+    body: "A senior finance lead and graduate analyst identify, model, and prioritize savings across nine operational domains. You receive a board-ready savings report with an implementation roadmap — no dependency on your internal finance or IR team capacity.",
+  },
+  {
+    icon: "Rocket",
+    title: "AI Foundry",
+    body: "Students build real products — applications, tools, and games — that go onto their GitHub portfolio. Foundry graduates leave with a public record of what they can build, not just a credential that says they attended. Every industry is hiring AI builders — banking, tech, insurance, healthcare — and the GitHub portfolio travels to all of them.",
   },
 ] as const;
 
@@ -30,8 +30,8 @@ export const OPEX_AREAS = [
   { icon: "Presentation", title: "Board Reporting",               body: "AI shadow board and leadership team for faster, better-informed strategic decisions." },
   { icon: "ShoppingCart", title: "Purchase Coordination",         body: "Real-time supply optimisation across procurement, facilities, and food services." },
   { icon: "Leaf",         title: "Food Waste Management",         body: "Real-time waste tracking and predictive ordering to reduce campus food loss." },
-  { icon: "BarChart2",    title: "Academic Program Optimization", body: "Live data to identify high-value programmes and rationalise the portfolio in real time." },
-  { icon: "Map",          title: "Land Use Optimization",         body: "Strategic campus space analysis aligned to enrolment, mission, and revenue goals." },
+  { icon: "BarChart2",    title: "Academic Program Optimization", body: "Live data to identify high-value programs and rationalise the portfolio in real time." },
+  { icon: "Map",          title: "Land Use Optimization",         body: "Strategic campus space analysis aligned to enrollment, mission, and revenue goals." },
   { icon: "Zap",          title: "Energy Efficiency",             body: "Real-time consumption monitoring with predictive savings modelling." },
 ] as const;
 
@@ -58,83 +58,69 @@ export const JOURNEY_STEPS = [
   },
   {
     number: "02",
-    title: "Platform Setup & Foundry Launch",
-    duration: "4–8 Weeks",
-    body: "Sophrosyne handles the full technical build. Studio is provisioned campus-wide, the complete Level 101–301 Fluency Framework is deployed and configured, and faculty are certified to teach before the first student cohort begins. Your institution designates the Foundry space; we build the rest.",
+    title: "Programme Design & Implementation",
+    duration: "6–12 Months",
+    body: "Our expert team — a senior AI advisor, academic curriculum specialist, and practitioner — designs and delivers your program. Faculty are certified before the first cohort begins. The finance lead and grad analyst begin the OPEX modelling. The Foundry incubator structure is built around your existing space and employer network.",
   },
   {
     number: "03",
     title: "Consortium Integration",
     duration: "Ongoing",
-    body: "Your institution joins the Intercollegiate AI Exchange Network — gaining access to shared compute credits, federated model repositories, and cross-campus student project showcases.",
+    body: "Your institution joins The AI Exchange Network — a peer network of Sophrosyne institutions sharing anonymised benchmarks, curriculum frameworks, and student demos — gaining access to shared compute credits, federated model repositories, and cross-campus student project showcases.",
   },
 ] as const;
 
 export const SOLUTIONS = [
   {
-    id: "studio",
-    label: "01 — The Developer Component",
-    title: "Sophrosyne Studio",
-    tagline: "Campus-deployed AI development platform. Institutional governance built in.",
-    body: "Sophrosyne Studio is a secure, low-code AI orchestration and development environment designed specifically for campus deployment. Students and faculty gain access to a visual canvas IDE where they can model, test, and host multi-agent workflows that connect directly to existing academic systems (Banner, Canvas, Colleague) — all under complete FERPA compliance and institutional data sovereignty.",
-    bullets: [
-      "Visual pipeline builder with drag-and-drop agent orchestration",
-      "Native connectors for Banner, Canvas, Colleague, and Slate",
-      "Role-based access controls with institutional SSO integration",
-      "Private cloud deployment — data never leaves your perimeter",
-      "Built-in audit logging for every model inference and data query",
-    ],
-    image: "https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Warm, light-filled university library with curved shelves of books",
-  },
-  {
     id: "curriculum",
-    label: "02 — The Fluency Framework",
-    title: "AI Fluency Curriculum Matrix",
-    tagline: "Language-acquisition methodology applied to AI competency.",
-    body: "The AI Fluency Matrix is a fully-deployed curriculum programme — not a course bundle you configure yourself. Sophrosyne provisions all three levels across your departments, integrates live Studio lab environments into every module, and certifies your faculty before the first student cohort begins. You go from no AI curriculum to a running programme in 4–8 weeks.",
+    label: "01 — The Competency Framework",
+    title: "AI Fluency Programme",
+    tagline: "Genuine AI competency. One course per semester. Students who get hired.",
+    body: "The AI Fluency Programme is a structured 6–12 month engagement — not a workshop or a course bundle. A senior AI advisor, an academic curriculum specialist, and a practitioner work alongside your faculty to embed AI competency into your existing degree structures. Students take one focused AI course per semester alongside their traditional program, building applied skills rather than theoretical familiarity. Every student who completes the program has a documented portfolio of work — not a certificate.",
     bullets: [
-      "Level 101: AI Foundations — prompt engineering, model evaluation, ethical frameworks",
-      "Level 201: Applied AI — workflow automation, data analysis, API integration",
-      "Level 301: Production AI — multi-agent systems, model fine-tuning, deployment pipelines",
-      "Department-specific tracks: Engineering, Business, Health Sciences, Humanities",
-      "Continuous progression dashboards visible to students, faculty, and administration",
+      "Senior advisor with 10+ years in AI application and industry deployment",
+      "Academic curriculum specialist adapts each level to your departmental context",
+      "Practitioner delivery — applied AI on real problems, not case studies",
+      "One AI course per semester integrated into existing program structures",
+      "Faculty certified before the first student cohort begins",
+      "Accreditation-ready outcome tracking and evidence generation",
     ],
     image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Diverse group of university students together outdoors on campus",
   },
   {
-    id: "foundry",
-    label: "03 — The Physical Incubator",
-    title: "On-Campus AI Foundries",
-    tagline: "Where student ideas become production deployments.",
-    body: "The Foundry is Sophrosyne's physical on-campus incubator environment — a purpose-designed collaborative space where students form multi-disciplinary teams, iterate on real AI projects using Studio's infrastructure, and build production-grade portfolios that leading employers and graduate programs actively recruit from.",
+    id: "opex",
+    label: "02 — The Finance Advisory",
+    title: "Operational Efficiency",
+    tagline: "A senior finance lead inside your institution. Savings your board can act on.",
+    body: "Sophrosyne's OPEX engagement places a senior finance lead — with 10+ years in higher-education financial optimization — inside your institution for 6–12 months. A graduate analyst handles 80% of the data and modelling workload; the lead handles interpretation and stakeholder communication. Together they identify, model, and prioritize cost-saving opportunities across nine operational domains, then stay to support implementation of the highest-impact wins.",
     bullets: [
-      "Multi-disciplinary team formation facilitated by programme directors",
-      "Direct access to Sophrosyne Studio's full production environment",
-      "Mentorship pipeline from regional tech partners and alumni networks",
-      "Verified employability tracking linked to national consortium employers",
-      "Annual inter-campus demo day within the Exchange Network",
-    ],
-    image: "https://images.unsplash.com/photo-1576495199011-eb94736d05d6?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Students walking toward a modern campus innovation building",
-  },
-  {
-    id: "pulse",
-    label: "04 — The Analytics Engine",
-    title: "Sophrosyne Pulse",
-    tagline: "Track AI fluency across every department. Deliver accreditation-ready outcome data automatically.",
-    body: "Sophrosyne Pulse tracks AI fluency across every student, faculty member, and department — continuously. Administrators see exactly who is progressing, where competency gaps exist, and which data your accreditors will ask for next. Pulse generates verified learning outcome reports automatically, so your institutional research team never starts from scratch. Every Level 301 completion issues a tamper-proof AI Fluency Badge tied to the student's verifiable credential record.",
-    bullets: [
-      "Real-time AI tool adoption and workflow complexity dashboards",
-      "Department-by-department fluency index with trend analysis",
-      "Cryptographic 'AI Fluency Badge' issuance for student resumes",
-      "Accreditation-ready learning outcome reports for institutional leadership",
-      "Employer-verified placement tracking through the national consortium",
-      "API-level integration with Canvas, Banner, and Slate for live data pulls",
+      "Senior finance lead with 10+ years in higher-ed financial optimization",
+      "Graduate analyst covers 80% of data analysis, modelling, and reporting",
+      "9-domain OpEx model: compliance, procurement, HR, energy, IT, and more",
+      "Board-ready savings report with implementation priority ranking",
+      "Side-by-side: current-state cost vs. AI-assisted baseline per domain",
+      "No dependency on your internal IR or finance team capacity",
     ],
     image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Classic university hall overlooking a green campus quad",
+  },
+  {
+    id: "foundry",
+    label: "03 — The AI Incubator",
+    title: "AI Foundry",
+    tagline: "Students build real products. GitHub is the resume. Every industry is hiring AI builders.",
+    body: "The Foundry is Sophrosyne's on-campus incubator — a structured environment where students form multi-disciplinary teams and build real products: applications, automation tools, and deployable AI projects that go onto their GitHub portfolio. Every Foundry student graduates with a public record of what they can actually build — the credential that travels across banking, technology, insurance, and healthcare without needing a named recruiter.",
+    bullets: [
+      "Students build products, applications, and games — not case studies or coursework",
+      "GitHub portfolio replaces the CV: employers see working code, not credentials",
+      "Multi-disciplinary team formation facilitated by program directors",
+      "Practitioner mentorship from regional industry partners and alumni networks",
+      "Annual inter-campus Demo Day — students present real products to alumni, regional industry, and consortium partners",
+      "Cross-industry hireability: AI builders are in demand across every sector, not just tech",
+    ],
+    image: "https://images.unsplash.com/photo-1576495199011-eb94736d05d6?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Students walking toward a modern campus innovation building",
   },
 ] as const;
 
@@ -148,7 +134,7 @@ export const PRICING_TIERS = [
     savingsLabel: "Big-Three diagnostic — if they serve your size",
     duration: "4–6 Weeks",
     model: "Consulting Engagement",
-    description: "A campus-wide audit covering accreditation gap analysis, AI curriculum readiness, and operational savings opportunities across all 9 domains. Includes stakeholder interviews with leadership, IT, finance, and faculty — culminating in a board-ready findings deck and a prioritised roadmap. Audit fee credited toward any subsequent engagement within 90 days.",
+    description: "A campus-wide audit covering accreditation gap analysis, AI curriculum readiness, and operational savings opportunities across all 9 domains. Includes stakeholder interviews with leadership, IT, finance, and faculty — culminating in a board-ready findings deck and a prioritized roadmap. Audit fee credited toward any subsequent engagement within 90 days.",
     features: [
       "Accreditation gap analysis — HLC, SACSCOC, MSCHE, and others",
       "AI curriculum and technology readiness assessment",
@@ -171,14 +157,14 @@ export const PRICING_TIERS = [
     savingsLabel: "≈ 60% less",
     duration: "90 Days",
     model: "Fixed-Scope Pilot",
-    description: "The lowest-risk way to prove Sophrosyne on your campus. We deploy one pillar — Studio, the Curriculum Matrix, or Pulse — in a single department, against success metrics agreed up front. The full fee is credited toward a Platform Launch within six months.",
+    description: "The lowest-risk way to engage Sophrosyne. We activate one pillar — AI Fluency, OPEX, or Foundry — in a single department or function, against success metrics agreed up front. The full fee is credited toward a full engagement within six months.",
     features: [
-      "One pillar deployed in one department",
+      "One pillar activated in one department or function",
       "Fixed scope, fixed fee, 90-day timeline",
       "Success metrics defined and agreed up front",
-      "Faculty and staff enablement for the pilot team",
+      "Expert team embedded for the pilot period",
       "Board-ready results readout at completion",
-      "100% of fee credited toward Platform Launch",
+      "100% of fee credited toward full engagement",
     ],
     highlighted: false,
     badge: "Lowest-risk start",
@@ -194,13 +180,13 @@ export const PRICING_TIERS = [
     savingsLabel: "≈ 50–75% less",
     duration: "4–8 Weeks",
     model: "Capital Expenditure",
-    description: "Full deployment of the integrated stack: Studio, the Level 101–301 Curriculum Matrix, Pulse analytics, and physical Foundry incubator setup — with faculty certified and accreditation-ready outcome tracking live from day one. A Big-4 firm gives you a deck; this gives you running software and a live curriculum in your academic catalogue. Split payment: 50% at kickoff / 50% at go-live.",
+    description: "Full 6–12 month engagement: AI Fluency Programme, Operational Efficiency advisory, and physical Foundry incubator — all three pillars delivered by our expert team. A Big-4 firm gives you a deck; this gives you certified faculty, a running curriculum, a board-ready savings roadmap, and students building real products. Split payment: 50% at kickoff / 50% at go-live.",
     features: [
-      "Sophrosyne Studio provisioned campus-wide",
+      "AI Fluency Programme — senior advisor, curriculum specialist, practitioner",
+      "OPEX Advisory — senior finance lead + graduate analyst (6–12 months)",
       "Physical Foundry incubator space design and setup",
-      "Full Level 101–301 Curriculum Matrix deployment",
-      "Faculty onboarding and educator certification programme",
-      "Student cohort intake and initial team formation",
+      "Faculty certification before first student cohort begins",
+      "Student cohort intake, team formation, and first Demo Day",
       "90-day hypercare support period post-launch",
     ],
     highlighted: true,
@@ -217,13 +203,13 @@ export const PRICING_TIERS = [
     savingsLabel: "≈ 50% less",
     duration: "Ongoing",
     model: "Software License + Strategy",
-    description: "One predictable monthly investment that consolidates platform licensing, curriculum updates, AI fluency tracking, accreditation evidence generation, and consortium compute — replacing the fragmented vendor stack most universities currently run.",
+    description: "Ongoing strategic partnership: the expert team stays engaged, curriculum levels evolve with industry, the OPEX advisory continues as your cost base changes, and Foundry program directors remain active. One predictable monthly investment replacing fragmented vendors.",
     features: [
-      "Replaces LMS analytics add-ons, standalone AI tools, and separate training subscriptions",
-      "Monthly OpEx scorecard and domain-specific savings recommendations",
-      "Continuous curriculum updates and new level releases",
-      "AI Fluency Index Dashboard — live student progression data",
-      "Full Intercollegiate AI Exchange Network membership",
+      "Continuous curriculum updates as AI tools and industry expectations evolve",
+      "Monthly OPEX scorecard with domain-specific savings recommendations",
+      "AI Fluency Index Dashboard — live student progression data (in development)",
+      "Foundry program director engagement and Demo Day coordination",
+      "Full AI Exchange Network membership",
       "Dedicated strategic account team and quarterly reviews",
     ],
     highlighted: false,
@@ -254,21 +240,21 @@ export const GRANT_SOURCES = [
 export const COMPARISON_ROWS = [
   {
     dimension: "What you walk away with",
-    sophrosyne: { v: "Software, curriculum & a roadmap", tone: "good" },
+    sophrosyne: { v: "Running program, savings roadmap & student portfolios", tone: "good" },
     mbb: { v: "A slide deck", tone: "bad" },
     diy: { v: "Whatever you can staff", tone: "neutral" },
   },
   {
     dimension: "Accreditation evidence",
-    sophrosyne: { v: "Auto-generated, always current", tone: "good" },
+    sophrosyne: { v: "Structured, documented, and board-ready on delivery", tone: "good" },
     mbb: { v: "Manual — your team assembles it", tone: "bad" },
-    diy: { v: "None out of the box", tone: "bad" },
+    diy: { v: "Built from scratch — significant staff time", tone: "bad" },
   },
   {
-    dimension: "Ongoing platform",
-    sophrosyne: { v: "Studio & Pulse, live", tone: "good" },
-    mbb: { v: "None", tone: "bad" },
-    diy: { v: "You build and maintain it", tone: "bad" },
+    dimension: "Who does the work",
+    sophrosyne: { v: "Senior experts + analysts embedded in your institution", tone: "good" },
+    mbb: { v: "Junior consultants, senior partner on slide review", tone: "bad" },
+    diy: { v: "Your existing staff, stretched", tone: "neutral" },
   },
   {
     dimension: "Total cost",
@@ -277,10 +263,10 @@ export const COMPARISON_ROWS = [
     diy: { v: "Hidden headcount", tone: "neutral" },
   },
   {
-    dimension: "Time to value",
-    sophrosyne: { v: "4 – 8 weeks", tone: "good" },
-    mbb: { v: "6 – 12 months", tone: "bad" },
-    diy: { v: "12 – 24 months", tone: "bad" },
+    dimension: "Time to first deliverable",
+    sophrosyne: { v: "Audit report in 4–6 weeks", tone: "good" },
+    mbb: { v: "Strategy deck in 6–12 months", tone: "bad" },
+    diy: { v: "12–24 months to first outcome", tone: "bad" },
   },
   {
     dimension: "IP & data ownership",
@@ -308,7 +294,7 @@ export const FOUNDING_COHORT = {
     { title: "Founding pricing", body: "Locked-in rates for the life of the partnership — well below standard." },
     { title: "Co-developed case study", body: "We build the reference story together and you own how it's told." },
     { title: "Advisory seat", body: "Shape the product roadmap and the consortium charter from the inside." },
-    { title: "Priority access", body: "First to new pillars and to the Intercollegiate AI Exchange Network." },
+    { title: "Priority access", body: "First to new pillars and to The AI Exchange Network." },
   ],
 } as const;
 
@@ -316,61 +302,84 @@ export const ACCREDITORS = ["HLC", "SACSCOC", "MSCHE", "NWCCU", "WSCUC", "ABET",
 
 export const FAQ_ITEMS = [
   {
-    question: "Who owns the AI tools and models students build on Sophrosyne Studio?",
-    answer: "The institution and its students retain 100% intellectual property ownership of everything built on the platform. Sophrosyne holds no licence over student or faculty-generated models, datasets, or applications. Our platform is infrastructure — your institution owns everything built on top of it.",
+    question: "Who owns the work students build in the Foundry?",
+    answer: "Students and their institution retain 100% intellectual property ownership of everything built in the Foundry. Sophrosyne holds no equity stake in student ventures and no license over student-created applications, models, or code. If a team incorporates, we connect them with legal partners for reduced-rate services — but we take nothing.",
   },
   {
-    question: "How does Sophrosyne Studio handle FERPA compliance?",
-    answer: "FERPA compliance is hardwired into Sophrosyne Studio's architecture. The platform deploys entirely within your institution's existing cloud perimeter. No student data is transmitted to external servers. Every data query, model inference, and API call is audit-logged and accessible to your institutional data governance team.",
-  },
-  {
-    question: "What existing systems does Sophrosyne Studio integrate with?",
-    answer: "Sophrosyne Studio ships with native connectors for Banner, Colleague, PeopleSoft, Canvas, Blackboard, Moodle, D2L, Slate, and Salesforce Education Cloud. Custom integration adapters can be developed during the ecosystem audit phase for any bespoke or legacy systems.",
+    question: "Does faculty need a computer science background to participate?",
+    answer: "No. Our academic curriculum specialist and practitioner handle the technical delivery. Faculty certification is designed for instructors with zero prior AI experience — course materials, assessment rubrics, and facilitation guides are provided and ready. Most faculty complete certification in two days.",
   },
   {
     question: "Is the Foundry a physical space we need to build, or does Sophrosyne provide it?",
-    answer: "The Foundry uses existing campus space designated by your institution. Our team handles the entire design, fit-out specification, and technology provisioning. You provide the square footage; we transform it into a fully operational AI incubator environment.",
+    answer: "The Foundry uses existing campus space designated by your institution. Our team handles the entire design, fit-out specification, and technology provisioning. You provide the square footage — typically 800–3,000 sq ft of existing space — and we transform it into a fully operational AI incubator.",
   },
   {
-    question: "How does the Intercollegiate AI Exchange Network protect sensitive institutional data?",
-    answer: "The Exchange Network uses a federated architecture — data never aggregates in a central repository. Anonymisation protocols are applied at the institutional level before any dataset enters the shared exchange layer. A joint IP governance framework, agreed upon by all consortium members, governs all cross-campus deployments.",
+    question: "What does the OPEX engagement actually produce?",
+    answer: "A board-ready savings report covering nine operational domains, with each opportunity prioritized by impact and implementation effort. The senior finance lead and graduate analyst do the modelling — your finance team reviews and validates. We then support implementation of the highest-priority wins rather than handing over a report and leaving.",
+  },
+  {
+    question: "How does The AI Exchange Network work?",
+    answer: "Consortium institutions share anonymised performance benchmarks, curriculum resources, and cross-campus project showcases. Each institution controls its own data — nothing leaves your perimeter in identifiable form. A joint governance framework signed by all members sets the rules for what is shared and how it is used.",
   },
 ] as const;
 
-export const TEAM_MEMBERS = [
+export type TeamMember = {
+  name: string;
+  title: string;
+  bio: string;
+  photo: string;
+  imgSize: string;
+  imgPos: string;
+  solutions: string[];
+};
+
+export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Dr. Lauretta Conklin Frederking",
-    title: "Founder & Academic Lead",
-    bio: "Former President of Brescia University College and Senior Executive Advisor for Strategic Initiatives at Western University. Twenty-five years across comparative politics and political economy; PhD from Washington University in St. Louis.",
+    title: "Founder & CEO",
+    bio: "Former President of Brescia University College and Senior Advisor for Strategic Initiatives at Western University. MBA, Ivey; PhD in Political Economy, Washington University in St. Louis.",
     photo: "/team/lauretta.jpg",
     imgSize: "cover",
     imgPos: "center top",
+    solutions: ["curriculum", "opex", "foundry"],
+  },
+  {
+    name: "Melissa Jean",
+    title: "COO & Operational Efficiency Lead",
+    bio: "CPA/CMA and Associate Professor at Western's Ivey Business School with 20+ years in financial management and operations. HBA, MBA, CPA, CMA.",
+    photo: "/team/melissa.jpg",
+    imgSize: "cover",
+    imgPos: "center top",
+    solutions: ["opex"],
   },
   {
     name: "Ankit Mishra",
-    title: "Senior Advisor, AI Fluency & Foundries",
-    bio: "Venture capital and startup operator, 13+ years; Forbes contributor, 50+ articles. Advises on AI fluency and the Foundry ecosystem. MBA, Ivey; MSc International Economics, Sciences Po Paris; BSc Mathematics, York University.",
+    title: "Senior Advisor, AI Foundries",
+    bio: "VC and startup operator, 13+ years; Forbes contributor, 50+ articles. MBA, Ivey; MSc, Sciences Po Paris; BSc Mathematics, York University.",
     photo: "/team/ankit.jpg",
-    imgSize: "220%",
-    imgPos: "center 25%",
+    imgSize: "320%",
+    imgPos: "45% 3%",
+    solutions: ["curriculum", "foundry"],
   },
   {
     name: "Amelia Frederking",
     title: "Research & Strategy Lead",
-    bio: "PhD candidate in Political Science at MIT specialising in security studies, and former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics, Washington University in St. Louis.",
+    bio: "PhD candidate in Political Science at MIT and former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics, Washington University in St. Louis.",
     photo: "/team/amelia.jpg",
     imgSize: "cover",
     imgPos: "center top",
+    solutions: ["curriculum"],
   },
   {
     name: "Nathanael Frederking",
     title: "Growth & Analytics",
-    bio: "Business Analytics student at Boston College and an NCAA Division I baseball player. Applies a data-and-performance discipline to growth, institutional measurement, and the analytics behind Sophrosyne's partnerships and expansion.",
+    bio: "Business Analytics student at Boston College and NCAA Division I baseball player. Drives growth, institutional measurement, and Sophrosyne's expansion analytics.",
     photo: "/team/nathanael.webp",
     imgSize: "cover",
     imgPos: "center top",
+    solutions: ["foundry"],
   },
-] as const;
+];
 
 export type SolutionDetail = {
   slug: string;
@@ -385,222 +394,222 @@ export type SolutionDetail = {
 };
 
 export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
-  studio: {
-    slug: "studio",
-    heroDescription:
-      "Sophrosyne Studio deploys inside your existing infrastructure with a base environment live in 48 hours — pre-built connectors for Banner, Canvas, and Colleague configure within days — giving every student and faculty member a production-grade AI workspace that never leaves your data perimeter. No lengthy IT procurement. No third-party cloud risk. No FERPA exceptions needed.",
-    maturityStage: {
-      stage: "Deploy",
-      description: "Gets governed AI infrastructure inside your perimeter in 48 hours — the foundation every other capability is built on.",
-    },
-    personas: [
-      {
-        role: "CIO / VP Technology",
-        pain: "Shadow AI tools are proliferating across departments with no governance, no audit trail, and significant FERPA exposure.",
-        gain: "A single governed platform replaces the sprawl — every inference logged, every model versioned, full audit access from day one.",
-      },
-      {
-        role: "CFO / VP Finance",
-        pain: "Uncontrolled AI licence spend is scattered across 10–20 departmental subscriptions with no visibility into utilisation or ROI.",
-        gain: "One predictable infrastructure cost replaces the fragmented stack — institutions running multiple departmental AI tools typically see meaningful consolidation savings.",
-      },
-      {
-        role: "Provost / VP Academic Affairs",
-        pain: "Faculty and students are using external AI tools with student data, creating FERPA risk that existing policy cannot address.",
-        gain: "FERPA compliance is structural — data never leaves your perimeter, and accreditors see a documented governance framework.",
-      },
-    ],
-    howItWorks: [
-      {
-        number: "01",
-        title: "Connect Your Systems",
-        body: "We provision Studio within your existing cloud perimeter and wire up Banner, Canvas, and Colleague via pre-built connectors. No data leaves your network. IT sign-off typically completes in 2–3 business days.",
-      },
-      {
-        number: "02",
-        title: "Configure Your Workflows",
-        body: "Faculty and IT leads use Studio's visual canvas IDE to build the first 3–5 production pipelines — enrollment alerts, compliance reports, advising workflows. No code required for most configurations.",
-      },
-      {
-        number: "03",
-        title: "Graduate to Production",
-        body: "Student cohorts begin building in Studio. Every inference is logged, every model is versioned, and your governance team has full audit access from day one. Most campuses have student-built deployments live within 6 weeks.",
-      },
-    ],
-    outcomes: [
-      { value: "48 hrs", label: "average provisioning time" },
-      { value: "100%", label: "FERPA-compliant architecture" },
-      { value: "12+", label: "native system connectors" },
-    ],
-    features: [
-      {
-        icon: "Layers",
-        title: "Visual Pipeline Builder",
-        body: "Drag-and-drop agent orchestration that lets faculty and students model complex workflows without writing infrastructure code. Connects to any API in your ecosystem.",
-      },
-      {
-        icon: "Shield",
-        title: "Compliance-First Architecture",
-        body: "FERPA compliance is structural, not a setting. Studio deploys entirely within your institutional cloud perimeter with audit logging on every model inference, data query, and API call.",
-      },
-      {
-        icon: "Plug",
-        title: "Native System Connectors",
-        body: "Pre-built integrations for Banner, Canvas, Colleague, PeopleSoft, Slate, Blackboard, Moodle, D2L, and Salesforce Education Cloud. Custom adapters developed during the audit phase.",
-      },
-    ],
-    useCases: [
-      {
-        institution: "Regional Teaching University",
-        title: "Automating enrollment management workflows",
-        body: "Illustrative: A mid-sized university with 8,000 students built an AI-assisted early-alert system in Studio, reducing advising response time by over 50% in the first semester.",
-      },
-      {
-        institution: "Community College",
-        title: "Streamlining compliance reporting",
-        body: "Illustrative: A rural community college automated its accreditation reporting pipeline in Studio, cutting quarterly report preparation from 3 weeks to under 2 days.",
-      },
-      {
-        institution: "Finance Office — 6,500-Student University",
-        title: "Rationalising AI tool sprawl across departments",
-        body: "Illustrative: A CFO discovered 14 separate AI tool subscriptions running across departments with no central oversight. Studio replaced all of them with a single governed platform, cutting AI-related software spend by over 50% while giving IT complete audit visibility.",
-      },
-      {
-        institution: "Provost's Office — Regional Comprehensive University",
-        title: "Resolving a FERPA audit finding before reaffirmation",
-        body: "Illustrative: Following a FERPA inquiry into AI tool usage, the provost required documented audit trails on every AI interaction with student data. Studio's structural compliance architecture resolved the finding entirely — and became a positive evidence exhibit in the institution's accreditation self-study.",
-      },
-    ],
-    faq: [
-      {
-        question: "Does Studio work with our existing Banner environment?",
-        answer:
-          "Yes. Studio ships with a pre-built Banner connector that handles student records, enrollment data, financial aid, and HR data. Integration typically takes 1–2 days of IT configuration during the provisioning phase.",
-      },
-      {
-        question: "Where is student data stored?",
-        answer:
-          "All data stays within your institutional cloud perimeter. Studio is provisioned inside your existing infrastructure — AWS GovCloud, Azure Government, on-prem, or hybrid. No student data ever reaches Sophrosyne's servers.",
-      },
-      {
-        question: "What does SSO integration look like?",
-        answer:
-          "Studio integrates with any SAML 2.0 or OIDC-compliant identity provider, including Shibboleth, Okta, Microsoft Entra, and Google Workspace. Role-based access maps to your existing Active Directory or LDAP groups.",
-      },
-      {
-        question: "Can IT run Studio without dedicated DevOps resources?",
-        answer:
-          "Yes. Provisioning is fully automated via a deployment manifest your IT team reviews and approves. Post-launch, Studio is managed through a browser-based admin panel — no ongoing DevOps resources required beyond what you already have.",
-      },
-    ],
-  },
-
   curriculum: {
     slug: "curriculum",
     heroDescription:
-      "The AI Fluency Curriculum Matrix is a fully-deployed, turnkey programme — not a course bundle you configure yourself. Within 4–8 weeks your institution moves from zero AI curriculum to a running Level 101–301 programme, with faculty certified, Studio lab environments embedded in every module, and student progression tracked automatically.",
+      "The AI Fluency Programme deploys Sophrosyne's A1-to-C2 fluency standard — a six-stage framework covering everything from basic chat productivity to autonomous AI systems — across your existing degree programs. A senior AI advisor, curriculum specialist, and practitioner certify your faculty, adapt the framework to every department's context, and track every student's progression from A1 baseline to production-level competency. The measure of success is not completion rates. It's employment outcomes.",
     maturityStage: {
-      stage: "Reshape",
-      description: "Transforms how every student and faculty member engages with AI — across every department, not just Computer Science.",
+      stage: "Competency",
+      description: "Moves students from AI awareness to demonstrated applied competency — documented through a portfolio of real work, not a standardized test.",
     },
     personas: [
       {
         role: "Provost / VP Academic Affairs",
         pain: "Accreditors are asking for evidence of technology learning outcomes and the institution has no structured AI curriculum to point to.",
-        gain: "A running Level 101–301 programme with auto-generated outcome reports that satisfy accreditor evidence requirements in every review cycle.",
+        gain: "A running AI Fluency program with auto-generated outcome reports that satisfy accreditor evidence requirements — delivered by an expert team, not assembled from scratch.",
       },
       {
         role: "Department Chair",
         pain: "Faculty feel unqualified to teach AI and are resistant to adding it to syllabi — but the pressure from leadership and students is mounting.",
-        gain: "Every participating instructor completes a 2-day certification and receives 4 weeks of instructional support. Faculty with no prior AI background can teach Level 101 on day one — course materials, assessment rubrics, and facilitation guides are provided and ready.",
+        gain: "Our academic curriculum specialist and practitioner handle the technical delivery. Faculty certification takes two days; course materials, assessment rubrics, and facilitation guides are provided and ready from day one.",
       },
       {
         role: "VP of Student Affairs / Employer Relations",
-        pain: "Employers tell you graduates lack applied AI skills, but you have no verified credential to offer them.",
-        gain: "Every Level 301 completer receives a tamper-proof AI Fluency Badge that consortium employers actively recognise in hiring screening.",
+        pain: "Employers tell you graduates lack applied AI skills, but you have no verified credential or portfolio to offer them.",
+        gain: "Every program completer builds a documented portfolio of applied work — real projects, not coursework — that employers can evaluate directly alongside their GitHub profile.",
       },
     ],
     howItWorks: [
       {
         number: "01",
         title: "Faculty Certification First",
-        body: "Before any student cohort begins, Sophrosyne certifies all participating faculty in the Level 101–301 Fluency Framework. A 2-day intensive followed by 4 weeks of ongoing instructional support. Faculty with no prior AI background can teach Level 101 on day one — course materials, assessment rubrics, and facilitation guides are provided and ready.",
+        body: "Before any student cohort begins, our academic curriculum specialist certifies all participating faculty. A 2-day intensive followed by ongoing instructional support throughout the engagement. No prior AI background required — course materials, assessment rubrics, and facilitation guides are provided and ready.",
       },
       {
         number: "02",
-        title: "Cohort Activation",
-        body: "Level 101 launches across all departments simultaneously. Students access live Studio lab environments embedded in every module. Department tracks — Engineering, Business, Health Sciences, Humanities — run in parallel from week one.",
+        title: "One Course Per Semester",
+        body: "AI Fluency integrates into your existing degree structures — one AI course per semester alongside traditional program requirements. Foundations (Level 101), Applied AI (Level 201), and Production AI (Level 301) run across department-specific tracks: Engineering, Business, Health Sciences, Humanities.",
       },
       {
         number: "03",
-        title: "Progression & Badging",
-        body: "Students advance through 201 and 301 at their own pace. Every Level 301 completion triggers automatic issuance of a tamper-proof AI Fluency Badge. Accreditation-ready outcome reports generate quarterly with zero manual effort.",
+        title: "Portfolio Documentation",
+        body: "Students build applied work — not take exams — and document it throughout the program. By Level 301, each student has a portfolio of real AI projects demonstrating production competency. Accreditation-ready outcome reports generate automatically with zero manual assembly.",
       },
     ],
     outcomes: [
-      { value: "4–8 wks", label: "from zero to live programme" },
+      { value: "6–12 mo", label: "expert team engagement duration" },
       { value: "3 levels", label: "deployed across every department" },
       { value: "100%", label: "institution retains curriculum IP" },
     ],
     features: [
       {
         icon: "GraduationCap",
-        title: "3-Level Fluency Framework",
-        body: "Level 101 (Foundations), 201 (Applied AI), and 301 (Production AI) — structured like language acquisition, not traditional IT training. Each level builds directly on the last with live Studio lab practice.",
+        title: "Expert Delivery Team",
+        body: "A senior AI advisor, academic curriculum specialist, and practitioner work embedded in your institution — not remotely. They certify faculty, adapt curriculum to your departmental context, and stay through the full engagement.",
       },
       {
         icon: "BookOpen",
         title: "Department-Specific Tracks",
-        body: "Parallel tracks for Engineering, Business, Health Sciences, and Humanities. Each uses discipline-relevant datasets, case studies, and Studio projects so AI fluency lands in professional context.",
+        body: "Parallel tracks for Engineering, Business, Health Sciences, and Humanities. Each uses discipline-relevant applied problems so AI fluency lands in professional context, not a generic computer science elective.",
       },
       {
         icon: "Monitor",
-        title: "Live Studio Lab Integration",
-        body: "Every curriculum module connects to a live Studio lab environment via LTI 1.3 — embedded directly in Canvas, Blackboard, Moodle, or D2L. Students deploy real workflows, not toy examples.",
+        title: "Portfolio-First Assessment",
+        body: "Students are assessed on what they build, not what they can recall. Every module culminates in a documented applied project. By program completion, each student has a portfolio demonstrating real AI competency.",
       },
     ],
     useCases: [
       {
         institution: "Liberal Arts College",
         title: "Launching AI curriculum with no CS department",
-        body: "Illustrative: A 2,400-student liberal arts college with no computer science programme deployed the Curriculum Matrix across its Business, English, and Psychology departments in 6 weeks.",
+        body: "Illustrative: A 2,400-student liberal arts college with no computer science program deployed AI Fluency across its Business, English, and Psychology departments. The practitioner adapted each track to discipline-specific use cases — no technology faculty line added.",
       },
       {
         institution: "Polytechnic University",
         title: "Accelerated STEM AI track for engineering students",
-        body: "Illustrative: An engineering-focused institution used the Level 201 and 301 tracks to give third and fourth-year students production AI credentials before graduation, increasing employer placement rates.",
+        body: "Illustrative: An engineering-focused institution used the Level 201 and 301 tracks to give third and fourth-year students production AI portfolios before graduation, with employers citing portfolio quality in placement decisions.",
       },
       {
         institution: "Provost's Office — HLC Reaffirmation",
-        title: "Converting an accreditation weakness into a programme strength",
-        body: "Illustrative: A provost facing technology learning outcome questions in HLC reaffirmation deployed the Curriculum Matrix and submitted its auto-generated outcome reports as positive evidence. The review team cited the programme as a model for peer institutions — converting what had been a cited weakness into a documented strength.",
+        title: "Converting an accreditation weakness into a program strength",
+        body: "Illustrative: A provost facing technology learning outcome questions in HLC reaffirmation deployed AI Fluency and submitted auto-generated outcome reports as positive evidence. The review team cited the program as a model for peer institutions.",
       },
       {
-        institution: "Business School — Regional University",
+        institution: "Business School — Private University",
         title: "Launching AI instruction without adding a technology faculty line",
-        body: "Illustrative: A Business school dean deployed the Matrix across four departments without a single new technology hire. Sophrosyne's faculty certification upskilled existing instructors in 2 days. The dean presented the programme to the board as a curriculum innovation delivered within existing budget.",
+        body: "Illustrative: A Business school dean launched AI Fluency across four departments without a single new technology hire. The Sophrosyne curriculum specialist and practitioner handled delivery. The dean presented the program to the board as curriculum innovation delivered within existing budget.",
       },
     ],
     faq: [
       {
         question: "Does our faculty need a computer science background?",
         answer:
-          "No. Faculty certification covers everything from foundations up. The 2-day intensive is designed for instructors with zero prior AI experience. Faculty with no prior AI background can teach Level 101 on day one — course materials, assessment rubrics, and facilitation guides are provided and ready.",
+          "No. Our academic curriculum specialist and practitioner handle the technical delivery throughout the engagement. Faculty certification is designed for instructors with zero prior AI experience — course materials, assessment rubrics, and facilitation guides are provided and ready from day one.",
       },
       {
         question: "Who owns the curriculum content?",
         answer:
-          "Sophrosyne provides the framework, pedagogical structure, and Studio lab environments. Your institution owns the discipline-specific content your faculty develops on top of it. Curriculum ownership is written into every engagement agreement.",
+          "Sophrosyne provides the framework and pedagogical structure. Your institution owns the discipline-specific content your faculty develops on top of it. Curriculum ownership — 100% — is written into every engagement agreement.",
       },
       {
-        question: "How does this integrate with our existing LMS?",
+        question: "How does 'one course per semester' work with existing degree requirements?",
         answer:
-          "Studio lab modules embed directly into Canvas, Blackboard, Moodle, and D2L via LTI 1.3. Students access labs from inside their existing course shell — no separate login, no new system to learn.",
+          "Our academic curriculum specialist maps the AI Fluency levels to existing course slots, elective requirements, or general education technology requirements at your institution. Most partner institutions integrate without adding credit hours — the AI Fluency content replaces or augments existing module content rather than adding to the student load.",
       },
       {
         question: "Can students receive academic credit for AI Fluency completion?",
         answer:
-          "That is determined by your institution's academic governance. Many partner institutions have approved AI Fluency levels as elective credit or to satisfy general education technology requirements. We provide syllabi and learning outcome documentation to support your curriculum committee review.",
+          "That is determined by your institution's academic governance. We provide syllabi, learning outcome documentation, and curriculum committee support materials to help your faculty senate or curriculum committee approve credit recognition. Many private institutions have moved faster on this than public ones.",
+      },
+    ],
+  },
+
+  opex: {
+    slug: "opex",
+    heroDescription:
+      "The OPEX engagement places a senior finance lead — with 10+ years in higher-education financial optimization — inside your institution for 6–12 months. Together they build and validate the savings model across all nine domains — your finance team's role is review and access, not analytical capacity. They identify, model, and prioritize cost-saving opportunities, then stay to support implementation of the highest-impact wins. Finance office capacity is not a prerequisite — we bring the analytical resource.",
+    maturityStage: {
+      stage: "Efficiency",
+      description: "Converts your operational cost baseline into a board-ready savings roadmap — prioritized by impact and implementation effort.",
+    },
+    personas: [
+      {
+        role: "CFO / VP Finance",
+        pain: "The board asks for ROI evidence on transformation spend, but there is no clean data on where AI can actually reduce costs — only vendor claims.",
+        gain: "A board-ready savings report showing modeled savings potential across nine domains, prioritized by impact and implementation effort — built by a finance expert who knows higher-ed cost structures.",
+      },
+      {
+        role: "VP Operations / COO",
+        pain: "Cost pressures are mounting but existing staff don't have bandwidth to model AI-assisted savings opportunities across the full operating budget.",
+        gain: "The senior finance lead and graduate analyst do the work — your team reviews and validates. A prioritized implementation roadmap arrives, not a generic recommendation deck.",
+      },
+      {
+        role: "President / Chancellor",
+        pain: "The board and donors need to see fiscal stewardship and innovation simultaneously — two messages that are usually in tension.",
+        gain: "A documented savings reinvestment narrative: the OPEX engagement funds the AI Fluency and Foundry programs from operational savings, making innovation cost-neutral to the operating budget.",
+      },
+    ],
+    howItWorks: [
+      {
+        number: "01",
+        title: "Baseline Modelling",
+        body: "The senior finance lead and graduate analyst map your current-state costs across nine operational domains. They work with your finance office to validate the baseline — typically 4 weeks to a complete, auditable cost map.",
+      },
+      {
+        number: "02",
+        title: "Opportunity Prioritisation",
+        body: "Each domain is assessed for AI-assisted savings potential and ranked by impact, implementation effort, and grant eligibility. The output is a prioritized roadmap the CFO can present to the board with confidence.",
+      },
+      {
+        number: "03",
+        title: "Implementation Support",
+        body: "The team doesn't leave after the report. They stay through the first implementation cycles — supporting your operations leadership as the highest-priority opportunities move from plan to execution.",
+      },
+    ],
+    outcomes: [
+      { value: "$1M–$3M", label: "modeled savings potential (illustrative, $60M–$80M budget)" },
+      { value: "9 domains", label: "covered in the savings model" },
+      { value: "6–12 mo", label: "full engagement with implementation support" },
+    ],
+    features: [
+      {
+        icon: "BarChart2",
+        title: "Senior Finance Lead",
+        body: "10+ years in higher-education financial optimization. Handles stakeholder communication, board presentations, and interpretation of every domain finding. Accountable to your CFO throughout the engagement.",
+      },
+      {
+        icon: "Users",
+        title: "Dedicated Analytical Capacity",
+        body: "The engagement brings its own analytical resource — data analysis, cost modelling, and reporting are handled by the Sophrosyne team. Your finance staff review and validate; they do not provide the analytical capacity.",
+      },
+      {
+        icon: "FileCheck",
+        title: "9-Domain OpEx Model",
+        body: "Compliance reporting, HR processes, governance policies, board reporting, purchase coordination, food waste, academic program optimization, land use, and energy efficiency — modeled conservatively against your actual operating budget.",
+      },
+    ],
+    useCases: [
+      {
+        institution: "CFO Office — Annual Budget Review",
+        title: "Demonstrating AI program ROI to the board",
+        body: "Illustrative: A CFO facing a board challenge on transformation spend used the OPEX engagement to produce a savings model showing modeled savings potential across nine domains — presented alongside credential issuance and employer placement data from the AI Fluency program. The engagement was continued and expanded.",
+      },
+      {
+        institution: "Multi-Campus State System",
+        title: "Unified savings modelling across four campuses",
+        body: "Illustrative: A state system with four campuses used the OPEX engagement to create a unified cost map across 22,000 students — giving system-level leadership visibility into which campuses had the highest savings potential and where to prioritize implementation resources.",
+      },
+      {
+        institution: "VP Operations — Private University",
+        title: "Building the business case for AI investment",
+        body: "Illustrative: A VP Operations facing pressure to justify new program spend used the OPEX engagement to show that operational savings from compliance automation and procurement coordination alone exceeded the full cost of the AI Fluency and Foundry programs within two years.",
+      },
+      {
+        institution: "IR Office — SACSCOC Reaffirmation",
+        title: "Eliminating manual accreditation assembly",
+        body: "Illustrative: An IR Director entering SACSCOC reaffirmation used OPEX compliance domain findings to automate the technology learning outcomes section. Assembly time dropped from six weeks to a matter of days — and the evidence submitted was more current and granular than anything previously filed.",
+      },
+    ],
+    faq: [
+      {
+        question: "What does the finance lead actually do day-to-day?",
+        answer:
+          "The lead works inside your institution — attending finance team meetings, reviewing cost data with department heads, and building the board presentation. The team works in parallel on modelling, data assembly, and stakeholder communication, so your finance office receives a complete, board-ready report without adding headcount.",
+      },
+      {
+        question: "Do we need to provide data analysts or resources?",
+        answer:
+          "No. The graduate analyst brings the analytical capacity. Your finance team's role is to provide access to cost data and validate findings — typically a few hours per week of your existing staff's time, not new headcount.",
+      },
+      {
+        question: "How quickly can we see results?",
+        answer:
+          "The board-ready savings report — covering all nine domains with prioritized opportunities — is typically ready within 6–8 weeks of engagement start. Implementation support for the first priority domain typically begins in month 3.",
+      },
+      {
+        question: "Is the OPEX engagement eligible for grant funding?",
+        answer:
+          "Several Title III, Title V, and state workforce development grants cover operational improvement and AI adoption initiatives. We provide ready-to-submit grant language for eligible domains and can advise on which funding programs fit your institution's profile.",
       },
     ],
   },
@@ -608,10 +617,10 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
   foundry: {
     slug: "foundry",
     heroDescription:
-      "The AI Foundry is Sophrosyne's physical on-campus incubator environment — a purpose-designed collaborative space where students form multi-disciplinary teams, build production AI projects using Studio's infrastructure, and graduate into a regional employer network that actively recruits from the programme. Your institution designates the space; we build the rest.",
+      "The AI Foundry is Sophrosyne's on-campus incubator — a structured environment where students form multi-disciplinary teams and build real products: applications, automation tools, and deployable AI projects that go onto their GitHub portfolio. Every Foundry student graduates with a public record of what they can actually build — the credential that travels across banking, technology, insurance, and healthcare. The sector doesn't matter; proof of what you can build does. Your institution designates the space; we build the rest.",
     maturityStage: {
-      stage: "Invent / Innovate",
-      description: "The stage most institutions haven't reached yet — where students build what doesn't exist, and employers show up to recruit them.",
+      stage: "Innovation",
+      description: "Where students build what doesn't exist yet. The GitHub portfolio that follows them is the credential every industry now looks for — not the GPA.",
     },
     personas: [
       {
@@ -621,42 +630,42 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       },
       {
         role: "VP of Enrollment Management",
-        pain: "Prospective students are choosing flagship and for-profit competitors because they perceive the institution as lacking real-world opportunities.",
-        gain: "A concrete differentiator: 'build production AI projects by sophomore year.' Early adopters report measurable increases in engineering and business applications.",
+        pain: "Prospective students are choosing competitors because they perceive the institution as lacking real-world opportunities and industry relevance.",
+        gain: "A concrete differentiator: students build production AI projects and publish them to GitHub before their junior year — a live, verifiable record prospective students can see before they enroll.",
       },
       {
         role: "CFO / VP Finance",
-        pain: "The institution needs new revenue and grant sources, but entrepreneurship programmes have historically been cost centres without measurable ROI.",
-        gain: "The Foundry creates a documented pipeline for state economic development grants, employer sponsorship, and alumni giving — with Demo Day as the public proof point.",
+        pain: "The institution needs new revenue and grant sources, but innovation programs have historically been cost centres without measurable ROI.",
+        gain: "The Foundry creates a documented pipeline for state economic development grants, industry engagement, and alumni giving — with Demo Day as the public proof point and GitHub portfolios as the measurable output.",
       },
     ],
     howItWorks: [
       {
         number: "01",
         title: "Space Designation & Fit-Out",
-        body: "Your institution identifies 1,500–3,000 sq ft of existing campus space. Our team handles the full design and fit-out specification — collaboration zones, hardware stations, and display wall setup. Typical transformation: 3–4 weeks from approval to operational.",
+        body: "Your institution identifies 800–3,000 sq ft of existing campus space. Our team handles the full design and fit-out specification — collaboration zones, hardware stations, and display wall setup. Typical transformation: 3–4 weeks from approval to operational.",
       },
       {
         number: "02",
-        title: "Programme Activation",
-        body: "The inaugural cohort intake runs in Week 6–8 of your engagement. Multi-disciplinary team formation, project scoping, and mentor matching from our regional employer network all happen in the first 2-week sprint.",
+        title: "Cohort Activation & Team Formation",
+        body: "The inaugural cohort intake runs in Week 6–8. Multi-disciplinary team formation — pairing engineering, business, and humanities students — project scoping, and mentor matching from our regional industry network all happen in the first 2-week sprint.",
       },
       {
         number: "03",
-        title: "Demo Day & Consortium",
-        body: "At the end of each semester, student teams present at the Foundry Demo Day — open to consortium employers, alumni, and regional partners. Top projects enter the Intercollegiate AI Exchange Network for cross-campus development.",
+        title: "GitHub Portfolio & Demo Day",
+        body: "Teams build their projects publicly on GitHub throughout the semester. At semester's end, they present at the Foundry Demo Day — open to alumni, regional industry leaders, and consortium partners. The GitHub record is already public before anyone walks in. Top projects enter The AI Exchange Network.",
       },
     ],
     outcomes: [
       { value: "6–8 wks", label: "from approval to operational Foundry" },
-      { value: "40+", label: "target employer connections at programme launch" },
+      { value: "Every sector", label: "AI builders wanted across banking, tech, insurance, healthcare, and beyond" },
       { value: "2×/yr", label: "inter-campus Demo Day frequency" },
     ],
     features: [
       {
         icon: "Building2",
         title: "Physical Space Design",
-        body: "Sophrosyne architects the fit-out: open collaboration zones, hardware stations for prototyping, a display wall for live Studio demos, and private team rooms for focused sprints — all within your existing square footage.",
+        body: "Sophrosyne architects the fit-out: open collaboration zones, hardware stations for prototyping, a display wall for live project demos, and private team rooms for focused sprints — all within your existing square footage.",
       },
       {
         icon: "Users",
@@ -665,37 +674,37 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
       },
       {
         icon: "Network",
-        title: "Employer Mentor Network",
-        body: "Every Foundry launches with a curated mentor roster from regional tech employers, startups, and alumni. Mentors commit to bi-weekly engagement with assigned student teams throughout each semester.",
+        title: "Industry Mentor Network & GitHub Portfolio",
+        body: "Every Foundry launches with a curated mentor roster from regional industry — tech, finance, healthcare, and beyond. Mentors commit to bi-weekly engagement throughout each semester. Students build publicly on GitHub — so any sector can evaluate their work before they graduate, not just at Demo Day.",
       },
     ],
     useCases: [
       {
-        institution: "Regional Comprehensive University",
-        title: "Building an entrepreneurship pipeline from scratch",
-        body: "Illustrative: A 12,000-student university with no existing entrepreneurship programme launched its Foundry in Week 7. By semester's end, student teams had employer letters of intent for pilot deployments.",
+        institution: "Private Liberal Arts College",
+        title: "Building a real-world AI portfolio program from scratch",
+        body: "Illustrative: A 3,500-student private college with no existing entrepreneurship program launched its Foundry in Week 7. By semester's end, student teams had GitHub portfolios with five completed projects — and students were receiving interest from regional employers who found their work through GitHub before graduation.",
       },
       {
         institution: "Engineering College",
-        title: "Creating a direct industry recruitment pipeline",
-        body: "Illustrative: A STEM-focused college used the Foundry to formalise its industry partnership programme. Employers now recruit directly from Foundry Demo Days rather than traditional career fairs.",
+        title: "Replacing the CV with a GitHub portfolio",
+        body: "Illustrative: A STEM-focused college used the Foundry to formalise its industry partnership program. Industry contacts reached out to students directly based on their GitHub portfolios — citing the proof of shipped work as the primary screen, not the CV or GPA — rather than waiting for a career fair.",
       },
       {
-        institution: "President's Office — Tri-County AI Initiative",
-        title: "Anchoring regional economic development on campus",
-        body: "Illustrative: A president facing a state mandate for regional tech economic development used the Foundry as the physical anchor for a tri-county AI initiative. The Foundry's Demo Day served as the public launch event, and the institution secured over $1M in state economic development funding in the first grant cycle.",
+        institution: "President's Office — Regional Economic Development",
+        title: "Anchoring a state innovation initiative on campus",
+        body: "Illustrative: A president facing a state mandate for regional tech economic development used the Foundry as the physical anchor. The Demo Day served as the public launch event, and the institution secured over $1M in state economic development funding in the first grant cycle.",
       },
       {
-        institution: "VP Enrollment — Regional University",
-        title: "Winning admits from flagship competitors",
-        body: "Illustrative: A regional university positioned the Foundry as a core recruiting differentiator — students build production AI projects by their sophomore year. In the first full admissions cycle after launch, engineering-interested applications increased meaningfully, with several admits citing the Foundry specifically over a flagship offer.",
+        institution: "VP Enrollment — Private University",
+        title: "Winning admits from more prominent competitors",
+        body: "Illustrative: A private university positioned the Foundry as a core recruiting differentiator — students publish real AI projects to GitHub by their sophomore year. In the first full admissions cycle after launch, engineering and business applications increased meaningfully, with several admits citing the Foundry and GitHub portfolio program over a flagship offer.",
       },
     ],
     faq: [
       {
         question: "What if we don't have 1,500 sq ft of available space?",
         answer:
-          "Foundry configurations start at 800 sq ft for smaller institutions. We also offer a Foundry Lite model that shares space with an existing makerspace, library innovation lab, or business school commons. Space options are scoped during the audit phase.",
+          "Foundry configurations start at 800 sq ft. We also offer a Foundry Lite model that shares space with an existing makerspace, library innovation lab, or business school commons. Space options are scoped during the audit phase.",
       },
       {
         question: "What happens if a student project becomes a company?",
@@ -703,124 +712,14 @@ export const SOLUTION_DETAILS: Record<string, SolutionDetail> = {
           "The student team retains 100% of the IP. Sophrosyne has no equity stake in student ventures. If a team wants to incorporate, we connect them with the consortium's legal partners who offer reduced-rate incorporation and IP protection services.",
       },
       {
-        question: "How are employer mentors vetted?",
+        question: "How are industry mentors vetted?",
         answer:
-          "Sophrosyne's Consortium Ecosystem Lead personally recruits and vets employer mentors against criteria for regional relevance, technical depth, and mentor commitment. Employers are not charged to participate — access to student talent is the incentive.",
+          "Sophrosyne's Consortium Ecosystem Lead personally recruits and vets industry mentors against criteria for regional relevance, technical depth, and mentor commitment. Mentors are not charged to participate — access to early-career AI talent is the incentive.",
       },
       {
-        question: "Can an institution run the Foundry without Sophrosyne Studio?",
+        question: "Do students need prior coding experience to participate?",
         answer:
-          "No — Studio is the Foundry's production infrastructure. All student projects are built, hosted, and governed through Studio's environment. The Foundry without Studio is a room with tables; Studio is what makes it a real AI incubator.",
-      },
-    ],
-  },
-
-  pulse: {
-    slug: "pulse",
-    heroDescription:
-      "Sophrosyne Pulse gives your administrators, faculty, and IR team a live view of AI competency development across every department — from first-week enrollment through Level 301 completion. It generates accreditation-ready outcome reports automatically, issues tamper-proof AI Fluency Badges for every qualifying student, and integrates with Canvas, Banner, and Slate so your data is always current.",
-    maturityStage: {
-      stage: "Deploy + Reshape",
-      description: "Live data that tells you where AI adoption stands — and reshapes how leadership allocates resources and responds to accreditors.",
-    },
-    personas: [
-      {
-        role: "Director of Institutional Research",
-        pain: "Every accreditation cycle requires 60–120 hours of manual data assembly across spreadsheets, LMS exports, and system reports that are never quite current.",
-        gain: "Pulse generates the completed report automatically. Your IR team reviews and submits — zero assembly, current data, every format your accreditor requires.",
-      },
-      {
-        role: "CFO / VP Finance",
-        pain: "The board asks for ROI evidence on the Sophrosyne engagement at every budget review, and there is no clean way to quantify AI competency progress in dollar terms.",
-        gain: "The fluency index provides a measurable, board-presentable metric — competency gain per academic year, tied to employer placement and credential issuance data.",
-      },
-      {
-        role: "Provost / VP Academic Affairs",
-        pain: "Claims about AI adoption on campus are anecdotal. You can't tell the board, accreditors, or the public how many students are AI-fluent, or how fast the gap is closing.",
-        gain: "A live, data-backed AI fluency index across every department — with trend analysis, peer benchmarks, and a credential issuance trail your leadership can stand behind publicly.",
-      },
-    ],
-    howItWorks: [
-      {
-        number: "01",
-        title: "Data Integration in Days",
-        body: "Pulse connects to Canvas, Banner, and Slate via pre-built APIs. Student progress data begins flowing within days of provisioning. No manual imports, no spreadsheets, no IT tickets required.",
-      },
-      {
-        number: "02",
-        title: "Dashboard Activation",
-        body: "Administrators, department chairs, and faculty each receive role-scoped dashboard views. Admins see institution-wide fluency trends; faculty see their cohort; chairs see department benchmarks against anonymized consortium peers.",
-      },
-      {
-        number: "03",
-        title: "Automated Accreditation Reporting",
-        body: "When accreditation review approaches, Pulse generates the required learning outcome documentation automatically. Your IR team reviews a completed report — not a blank template. HLC, SACSCOC, and MSCHE formats are pre-built.",
-      },
-    ],
-    outcomes: [
-      { value: "48 hrs", label: "to live data integration" },
-      { value: "0 hrs", label: "manual report assembly time" },
-      { value: "100%", label: "cryptographic badge tamper-resistance" },
-    ],
-    features: [
-      {
-        icon: "BarChart2",
-        title: "Real-Time Fluency Index",
-        body: "A live dashboard showing AI competency scores across every student, faculty member, and department. Identify gaps before they become accreditation findings. Compare against anonymized consortium benchmarks.",
-      },
-      {
-        icon: "FileCheck",
-        title: "Automated Accreditation Reports",
-        body: "Pre-built report templates for HLC, SACSCOC, MSCHE, NWCCU, and WSCUC. Pulse populates them automatically from live data. Your IR team reviews and submits — zero assembly required.",
-      },
-      {
-        icon: "Award",
-        title: "Verified Badge Issuance",
-        body: "Every Level 301 completion triggers automatic issuance of a cryptographically-signed AI Fluency Badge tied to the student's verifiable credential record, recognized by consortium employers for hiring decisions.",
-      },
-    ],
-    useCases: [
-      {
-        institution: "University Preparing for HLC Reaffirmation",
-        title: "Delivering learning outcome evidence without manual assembly",
-        body: "Illustrative: An institution facing HLC reaffirmation used Pulse to generate its technology learning outcome report automatically, reducing IR team effort from 120 hours to under 5 hours.",
-      },
-      {
-        institution: "Multi-Campus State System",
-        title: "Unified analytics across four campuses",
-        body: "Illustrative: A state system with four campuses used Pulse to create a unified AI fluency dashboard across 22,000 students — giving system-level leadership visibility to allocate resources where competency gaps were forming fastest.",
-      },
-      {
-        institution: "CFO Office — Annual Budget Review",
-        title: "Demonstrating AI programme ROI to the board",
-        body: "Illustrative: A CFO facing a board challenge on the Sophrosyne engagement used Pulse's fluency index data to show a measurable competency gain across the student body in one academic year — alongside credential issuance and employer placement rates. The engagement was continued and expanded at the next budget cycle.",
-      },
-      {
-        institution: "IR Office — SACSCOC Reaffirmation",
-        title: "Eliminating six weeks of manual accreditation assembly",
-        body: "Illustrative: An IR Director entering SACSCOC reaffirmation used Pulse to generate the complete technology learning outcomes section automatically. Assembly time dropped from 6 weeks to a matter of days — and the submitted evidence was more current and more granular than anything previously filed.",
-      },
-    ],
-    faq: [
-      {
-        question: "Are Sophrosyne AI Fluency Badges recognized by employers?",
-        answer:
-          "Consortium employers — regional tech companies, healthcare systems, and government agencies that are active Foundry partners — have agreed to recognize Level 301 badges as meeting their AI competency screening criteria. Badge verification is instant via a public URL.",
-      },
-      {
-        question: "How does Pulse handle student data privacy?",
-        answer:
-          "Pulse operates within your institutional data perimeter. Individual student data is never shared with the consortium in identifiable form. Aggregate, anonymized benchmarks are shared across consortium institutions under the joint governance framework all members sign.",
-      },
-      {
-        question: "Which accreditors does Pulse support?",
-        answer:
-          "Pulse has pre-built report formats for HLC, SACSCOC, MSCHE, NWCCU, and WSCUC (all five US regional accreditors), plus ABET for engineering programmes and AACSB for business schools. Custom formats can be developed for specialized programme accreditors.",
-      },
-      {
-        question: "Can we integrate Pulse data into our existing data warehouse?",
-        answer:
-          "Yes. Pulse exposes a REST API and a webhook system that pushes learning outcome events in real time. We provide integration documentation for common institutional data warehouses including Ellucian Ethos, Microsoft Fabric, and Snowflake Education.",
+          "No. Team formation is intentionally multi-disciplinary — the engineering and technical students handle code, while business, health sciences, and humanities students contribute domain expertise, user research, and product thinking. The best Foundry projects come from teams where not everyone codes.",
       },
     ],
   },
@@ -830,20 +729,20 @@ export const PHILOSOPHY_BLOCKS = [
   {
     number: "01",
     icon: "BookOpen",
-    title: "Software-Driven Fluency",
-    body: "AI fluency is not a workshop — it is a structured linguistic acquisition process built on top of production infrastructure. Every concept in the curriculum is practised live inside Sophrosyne Studio, creating a direct feedback loop between learning and deployment.",
+    title: "Outcomes Over Credentials",
+    body: "The measure of an AI education program is not completion rates or certificates issued — it is whether graduates get hired and whether they can build things that matter. Every Sophrosyne engagement is designed around that outcome, not around the credential.",
   },
   {
     number: "02",
     icon: "Users",
-    title: "Augmenting Faculty Excellence",
-    body: "Sophrosyne never positions AI as a replacement for educators. Our platform amplifies faculty capacity — automating administrative overhead, surfacing student engagement signals early, and freeing instructors to focus on high-leverage intellectual mentorship.",
+    title: "Expert Teams, Not Platforms",
+    body: "We send people, not software. A senior AI advisor, an academic curriculum specialist, and a practitioner work alongside your faculty. A senior finance lead and a graduate analyst work inside your operations. Real experts with real accountability — not a self-serve dashboard.",
   },
   {
     number: "03",
     icon: "Globe",
-    title: "Scalable Regional Impact",
-    body: "Regional and teaching-focused universities anchor their communities economically and socially. The Sophrosyne ecosystem is designed to grow and compound the AI capabilities of these campuses — creating a network that rivals flagship institutions in innovation output.",
+    title: "Private Universities Ready to Move",
+    body: "The institutions that benefit most from Sophrosyne have the flexibility to restructure curriculum, designate incubator space, and act on financial insight without waiting for three committee cycles. Private universities that want to lead — not follow — are who we build for.",
   },
 ] as const;
 
@@ -942,8 +841,12 @@ type Role = {
   eyebrow: string;
   headline: string;
   sub: string;
+  heroImage: string;
+  stats: { value: string; label: string }[];
+  pressureContext: string;
   pains: string[];
   gains: string[];
+  pathway: { step: string; title: string; body: string }[];
   solutions: string[]; // SOLUTIONS ids
   ctaLabel: string;
 };
@@ -952,55 +855,100 @@ export const ROLES: Record<string, Role> = {
   provost: {
     label: "Provosts & Academic Affairs",
     eyebrow: "For Provosts",
-    headline: "Prove AI readiness to your accreditors — without standing up a new department.",
-    sub: "Give your faculty a structured way to teach AI, your students a credential employers recognize, and your accreditors the outcome evidence they're starting to ask for.",
+    headline: "Graduate students employers actually want — with accreditation evidence to show how.",
+    sub: "A senior AI advisor, curriculum specialist, and practitioner embed in your institution for 6–12 months to build genuine AI competency into every program. Students build portfolios that travel across every industry. Accreditors see documented outcomes.",
+    heroImage: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80",
+    stats: [
+      { value: "73%", label: "of regional accreditation reviews now cite technology-outcome gaps in CQI plans" },
+      { value: "2 days", label: "Faculty certification — no prior AI background required" },
+      { value: "$0", label: "Additional faculty headcount to run the AI Fluency Programme" },
+    ],
+    pressureContext: "Accreditation bodies are encoding AI competency language into their Continuous Quality Improvement criteria. At the same time, enrollment competition is forcing universities to differentiate on verifiable employment outcomes — not program names. The window to act before your next review cycle is measured in semesters, not years.",
     pains: [
-      "Accreditors are converging on technology-outcome expectations you have no structured way to evidence.",
-      "Faculty feel unqualified to teach AI, and external tools are being used with student data outside any policy.",
-      "AI-readiness claims to the board are anecdotal — you can't say how many students are fluent or how fast the gap is closing.",
+      "Our accreditation self-study is due within 18 months and we have no structured documentation of technology-outcome competencies.",
+      "Faculty are using AI tools informally but with no consistent framework — and I know accreditors will ask about institutional oversight.",
+      "We're competing for students against programs with 'AI' in their name, but we can't rename our entire curriculum.",
+      "Our best faculty are already stretched — adding AI curriculum design to their workload without support would cost us people we can't replace.",
     ],
     gains: [
-      "A running Level 101–301 curriculum with auto-generated, accreditor-ready outcome reports.",
-      "Faculty certified in a 2-day intensive — ready to teach from day one with full course materials, assessment rubrics, and instructional support.",
-      "A live, data-backed AI fluency index across every department you can stand behind publicly.",
+      "A documented AI Fluency Programme that maps directly to HLC/SACSCOC technology-outcome language — without restructuring existing degree frameworks.",
+      "Faculty certified in a 2-day intensive and supported by our delivery team throughout — no new faculty lines required.",
+      "Automatic outcome tracking generates accreditation-ready evidence reports at every semester end.",
+      "GitHub portfolios your graduates show to employers — a verifiable enrollment differentiator for the next recruitment cycle.",
     ],
-    solutions: ["curriculum", "pulse", "studio"],
+    pathway: [
+      { step: "01", title: "Curriculum Audit", body: "We map your existing program against HLC/SACSCOC technology-outcome criteria and identify the documented gaps." },
+      { step: "02", title: "Faculty Certification", body: "Department leads complete a 2-day AI fluency intensive before the first student cohort — no prior AI background required." },
+      { step: "03", title: "Programme Delivery", body: "One AI course per semester, delivered by our expert team alongside your faculty, integrated into existing degree structures." },
+      { step: "04", title: "Outcome Evidence", body: "Auto-generated accreditation portfolio at every semester milestone — GitHub portfolios, placement data, and CQI-ready reports." },
+    ],
+    solutions: ["curriculum", "foundry", "opex"],
     ctaLabel: "Book a Readiness Audit",
   },
   cfo: {
     label: "CFOs & Finance",
     eyebrow: "For CFOs",
-    headline: "Reduce costs, fund it with grants, and prove AI readiness before your next site visit.",
-    sub: "A fixed-fee audit surfaces accreditation gaps and operating savings across nine domains — most of it grant-fundable — and every number arrives board-ready.",
+    headline: "A senior finance lead models your savings. You present the board case.",
+    sub: "Sophrosyne's OPEX engagement places a senior finance expert and graduate analyst inside your institution to identify, model, and prioritize cost-saving opportunities across nine operational domains — no internal analytical capacity required.",
+    heroImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=80",
+    stats: [
+      { value: "$1.2M–$3.4M", label: "Modeled annual savings for a $40M–$80M operating budget institution" },
+      { value: "9 domains", label: "Operational areas analyzed: procurement, HR, IT, energy, compliance, and more" },
+      { value: "~18 months", label: "Typical payback on full program investment from OPEX savings alone" },
+    ],
+    pressureContext: "Regional universities are running structural deficits averaging 3–6% of operating budget while the enrollment cliff contracts tuition revenue further. Boards are demanding ROI evidence before releasing transformation funds — yet your finance team doesn't have the capacity to model AI-assisted savings across nine operational domains alongside its existing workload.",
     pains: [
-      "Uncontrolled AI tool spend is scattered across departments with no visibility into utilization or ROI.",
-      "Every budget review asks for ROI evidence on technology spend you have no clean way to quantify.",
-      "Transformation feels unaffordable out of operating reserves during a deficit.",
+      "The board has approved a strategic AI plan but wants a modeled savings figure before releasing funds — and I don't have one.",
+      "We're running a structural deficit and 'invest to save' arguments require board-ready evidence we cannot produce internally.",
+      "Title III and state AI workforce grants exist for this, but our grants office doesn't have bandwidth to write the narrative.",
+      "Every AI vendor we've evaluated comes with per-user licensing — an unpredictable line item I can't model forward for the CFO.",
     ],
     gains: [
-      "A modeled savings figure across nine operational domains — conservatively in the $1M–$3M range for institutions with $40M–$80M operating budgets, typically well above the engagement cost.",
-      "A grant-funding pathway (Title III, NSF, state workforce) with ready-to-submit language.",
-      "One predictable platform cost that replaces a fragmented vendor stack — IP and software owned outright.",
+      "A board-ready savings model built by a senior finance lead who specializes in higher-ed cost structures — delivered before you commit to the full program.",
+      "Grant narrative language for Title III, HECAP, and state AI workforce funds ready to submit in the next grant cycle.",
+      "Fixed-fee engagement structure: a $45K audit, then scoped program phases — no per-user fees, no renewal risk, no budget surprises.",
+      "A documented reinvestment narrative: OPEX savings fund the AI Fluency and Foundry programs, making the full engagement cost-neutral within two years.",
     ],
-    solutions: ["pulse", "studio"],
+    pathway: [
+      { step: "01", title: "OPEX Audit", body: "A senior finance lead spends 6 weeks inside your institution modelling savings across 9 operational domains." },
+      { step: "02", title: "Board Report", body: "You receive a board-ready findings deck with conservative estimates, implementation priority ranking, and grant pathway mapping." },
+      { step: "03", title: "Grant Language", body: "We write the narrative for Title III, HECAP, and state AI workforce grants mapped to your highest-impact domains." },
+      { step: "04", title: "Reinvestment Model", body: "OPEX savings fund the AI Fluency and Foundry programs — a documented cost-neutral narrative for your board." },
+    ],
+    solutions: ["opex", "curriculum"],
     ctaLabel: "Model Your Savings",
   },
   cio: {
     label: "CIOs & Technology",
     eyebrow: "For CIOs",
-    headline: "Govern the AI already on your campus — inside your own perimeter.",
-    sub: "Replace shadow AI tooling with a single governed platform that is live within days, logs every inference, and never moves student data off your infrastructure.",
+    headline: "AI across your campus — with documented governance and no new DevOps headcount.",
+    sub: "The AI Fluency Programme includes institutional data governance as a structural component. Student data stays in your perimeter. Faculty and student AI activity is documented. Accreditors see a governance framework, not scattered consumer tool usage.",
+    heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+    stats: [
+      { value: "100%", label: "Student data sovereignty — zero third-party AI training rights on any student work" },
+      { value: "0", label: "Additional DevOps or IT headcount required to run the program" },
+      { value: "FERPA-by-design", label: "Governance framework built before the first student cohort, not retrofitted after" },
+    ],
+    pressureContext: "Shadow AI is already on your campus. Faculty and students are routing student data through consumer tools — no governance framework, no audit trail, and real FERPA exposure on every assignment uploaded to ChatGPT. Every semester without a structured governance layer is another semester of uncontrolled institutional risk.",
     pains: [
-      "Shadow AI tools are proliferating with no governance, no audit trail, and real FERPA exposure.",
-      "Integrating AI with Banner, Canvas, and Colleague is a multi-quarter project you don't have staff for.",
-      "Every new tool is another data-processing risk and another procurement review.",
+      "I know student data is going into ChatGPT across campus — but I have no governance framework to address it without banning AI entirely.",
+      "The Provost wants to launch an AI program next semester, but nobody has scoped the data governance layer or integration requirements.",
+      "Banner, Canvas, and Colleague integrations take six-month projects when my team is at capacity — AI tool integration is no different.",
+      "Every AI vendor claims FERPA compliance in their ToS, but the actual data processing agreements don't hold up to review.",
     ],
     gains: [
-      "FERPA compliance that's structural — data never leaves your cloud perimeter, every inference audit-logged.",
-      "Pre-built connectors for Banner, Canvas, Colleague, Slate and more — configured within days of kickoff.",
-      "A browser-managed platform that needs no new DevOps headcount to run.",
+      "A full AI governance framework — documented policies, role-based access, audit trails — implemented before the first cohort, not retrofitted after.",
+      "Student data stays in your perimeter: zero-training, zero-retention API agreements with every AI provider in the stack.",
+      "Banner, Canvas, and Colleague integrations handled by the Sophrosyne team — not your IT staff — within the existing program timeline.",
+      "A governance stack your accreditors can audit: documented tool usage, data flow maps, and per-department policy registers.",
     ],
-    solutions: ["studio", "pulse"],
-    ctaLabel: "See Studio",
+    pathway: [
+      { step: "01", title: "Governance Scoping", body: "We audit your current AI tool landscape, active FERPA exposure points, and integration dependencies with Banner/Canvas/Colleague." },
+      { step: "02", title: "Framework Design", body: "A governance framework is built — policies, role-based access, audit infrastructure — before the program launches." },
+      { step: "03", title: "Integration", body: "Institutional system integrations completed by the Sophrosyne team within the program timeline — no additional IT headcount." },
+      { step: "04", title: "Ongoing Visibility", body: "Real-time audit trail maintained throughout; quarterly governance reports your accreditors can review at any time." },
+    ],
+    solutions: ["curriculum", "opex"],
+    ctaLabel: "See the AI Fluency Programme",
   },
 };

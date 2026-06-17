@@ -16,12 +16,12 @@ import {
 // ─── Static data ────────────────────────────────────────────────────────────
 
 const DEPARTMENTS = [
-  { name: "Computer Science & Engineering", score: 87, students: 342, delta: "+6.2%", colour: "#1E4D38" },
-  { name: "Business & Economics",           score: 74, students: 891, delta: "+9.1%", colour: "#2E6B50" },
-  { name: "Natural Sciences",               score: 71, students: 234, delta: "+4.9%", colour: "#3A7A5C" },
-  { name: "Social Sciences",                score: 68, students: 412, delta: "+7.8%", colour: "#C7A14A" },
-  { name: "Health Sciences",                score: 61, students: 527, delta: "+14.3%", colour: "#B5862E" },
-  { name: "Humanities & Arts",              score: 52, students: 298, delta: "+11.5%", colour: "#6E7B71" },
+  { name: "Computer Science & Engineering", score: 87, students: 342, delta: "+6.2%", color: "#1E4D38" },
+  { name: "Business & Economics",           score: 74, students: 891, delta: "+9.1%", color: "#2E6B50" },
+  { name: "Natural Sciences",               score: 71, students: 234, delta: "+4.9%", color: "#3A7A5C" },
+  { name: "Social Sciences",                score: 68, students: 412, delta: "+7.8%", color: "#C7A14A" },
+  { name: "Health Sciences",                score: 61, students: 527, delta: "+14.3%", color: "#B5862E" },
+  { name: "Humanities & Arts",              score: 52, students: 298, delta: "+11.5%", color: "#6E7B71" },
 ] as const;
 
 const LEVELS = [
@@ -79,21 +79,21 @@ function Sparkline({ data, width = 280, height = 64 }: { data: number[]; width?:
     <svg viewBox={`0 0 ${width} ${height}`} style={{ width: "100%", height, display: "block", overflow: "visible" }}>
       <defs>
         <linearGradient id="sparkg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stopColor="#10b981" stopOpacity="0.25" />
-          <stop offset="100%" stopColor="#10b981" stopOpacity="0"    />
+          <stop offset="0%"   stopColor="#9FBFAD" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#9FBFAD" stopOpacity="0"    />
         </linearGradient>
       </defs>
       <path d={areaPath} fill="url(#sparkg)" />
-      <path d={linePath} fill="none" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d={linePath} fill="none" stroke="#9FBFAD" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
       {/* Last-point dot */}
-      <circle cx={pts[pts.length - 1][0]} cy={pts[pts.length - 1][1]} r={3.5} fill="#10b981" />
+      <circle cx={pts[pts.length - 1][0]} cy={pts[pts.length - 1][1]} r={3.5} fill="#9FBFAD" />
     </svg>
   );
 }
 
 // ─── Animated bar ─────────────────────────────────────────────────────────────
 
-function Bar({ pct, colour, delay = 0 }: { pct: number; colour: string; delay?: number }) {
+function Bar({ pct, color, delay = 0 }: { pct: number; color: string; delay?: number }) {
   const [width, setWidth] = useState(0);
   useEffect(() => {
     const t = setTimeout(() => setWidth(pct), 120 + delay);
@@ -106,10 +106,10 @@ function Bar({ pct, colour, delay = 0 }: { pct: number; colour: string; delay?: 
         style={{
           height: "100%",
           width: `${width}%`,
-          background: colour,
+          background: color,
           borderRadius: 99,
           transition: "width 900ms cubic-bezier(0.22,1,0.36,1)",
-          boxShadow: `0 0 8px ${colour}55`,
+          boxShadow: `0 0 8px ${color}55`,
         }}
       />
     </div>
@@ -119,7 +119,7 @@ function Bar({ pct, colour, delay = 0 }: { pct: number; colour: string; delay?: 
 // ─── Score badge ──────────────────────────────────────────────────────────────
 
 function ScoreBadge({ score }: { score: number }) {
-  const colour = score >= 80 ? "#10b981" : score >= 65 ? "#34d399" : "#6b8c6e";
+  const color = score >= 80 ? "#9FBFAD" : score >= 65 ? "#C7A14A" : "#B5862E";
   return (
     <span
       style={{
@@ -131,9 +131,9 @@ function ScoreBadge({ score }: { score: number }) {
         borderRadius: "var(--radius-sm)",
         fontSize: 11,
         fontWeight: 700,
-        color: colour,
-        background: `${colour}14`,
-        border: `1px solid ${colour}30`,
+        color: color,
+        background: `${color}14`,
+        border: `1px solid ${color}30`,
         flexShrink: 0,
         fontFamily: "var(--font-geist-mono), monospace",
         fontVariantNumeric: "tabular-nums",
@@ -148,17 +148,17 @@ function ScoreBadge({ score }: { score: number }) {
 
 function OverviewTab() {
   const metrics = [
-    { Icon: Activity,   label: "Fluency Index",         value: "81 / 100",  sub: "+8.4 pts this semester",  colour: "#10b981" },
-    { Icon: Users,      label: "Active Learners",        value: "2,704",     sub: "across all departments",  colour: "#6ee7b7" },
-    { Icon: Award,      label: "Level 301 Completions",  value: "389",       sub: "+47 this month",          colour: "#34d399" },
-    { Icon: Zap,        label: "Employer Placements",    value: "127",       sub: "verified via consortium",  colour: "#4ade80" },
+    { Icon: Activity,   label: "Fluency Index",         value: "81 / 100",  sub: "+8.4 pts this semester",  color: "#9FBFAD" },
+    { Icon: Users,      label: "Active Learners",        value: "2,704",     sub: "across all departments",  color: "#9FBFAD" },
+    { Icon: Award,      label: "Level 301 Completions",  value: "389",       sub: "+47 this month",          color: "#C7A14A" },
+    { Icon: Zap,        label: "Employer Placements",    value: "127",       sub: "verified via consortium",  color: "#C7A14A" },
   ];
 
   return (
     <div style={{ padding: "24px 0 4px" }}>
       {/* KPI row */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 12, marginBottom: 28 }} className="kpi-row-4">
-        {metrics.map(({ Icon, label, value, sub, colour }, i) => (
+        {metrics.map(({ Icon, label, value, sub, color }, i) => (
           <motion.div
             key={i}
             initial={{ opacity: 0, y: 12 }}
@@ -172,13 +172,13 @@ function OverviewTab() {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 8 }}>
-              <Icon size={13} color={colour} strokeWidth={2} />
-              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(244,245,248,0.35)" }}>
+              <Icon size={13} color={color} strokeWidth={2} />
+              <span style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(244,245,248,0.65)" }}>
                 {label}
               </span>
             </div>
             <p style={{ fontSize: 20, fontWeight: 700, color: "#f4f5f8", margin: "0 0 3px", letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>{value}</p>
-            <p style={{ fontSize: 11, color: colour, margin: 0, fontWeight: 500 }}>{sub}</p>
+            <p style={{ fontSize: 11, color: color, margin: 0, fontWeight: 500 }}>{sub}</p>
           </motion.div>
         ))}
       </div>
@@ -197,23 +197,23 @@ function OverviewTab() {
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
           <div>
-            <p style={{ fontSize: 12, fontWeight: 600, color: "rgba(248,250,252,0.45)", margin: "0 0 2px", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+            <p style={{ fontSize: 12, fontWeight: 600, color: "rgba(248,250,252,0.72)", margin: "0 0 2px", letterSpacing: "0.06em", textTransform: "uppercase" }}>
               AI Fluency Index — 12-Month Trend (Illustrative)
             </p>
-            <p style={{ fontSize: 20, fontWeight: 700, color: "#10b981", margin: 0, letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
+            <p style={{ fontSize: 20, fontWeight: 700, color: "#9FBFAD", margin: 0, letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
               81{" "}
-              <span style={{ fontSize: 12, fontWeight: 400, color: "rgba(244,245,248,0.35)", fontFamily: "var(--font-geist-sans), sans-serif" }}>/ 100</span>
+              <span style={{ fontSize: 12, fontWeight: 400, color: "rgba(244,245,248,0.65)", fontFamily: "var(--font-geist-sans), sans-serif" }}>/ 100</span>
             </p>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 5, background: "rgba(16,185,129,0.1)", border: "1px solid rgba(16,185,129,0.2)", borderRadius: "var(--radius-sm)", padding: "4px 10px" }}>
-            <ChevronUp size={12} color="#10b981" strokeWidth={2.5} />
-            <span style={{ fontSize: 11, fontWeight: 700, color: "#10b981", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>+43 pts YoY</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 5, background: "rgba(199,161,74,0.1)", border: "1px solid rgba(199,161,74,0.25)", borderRadius: "var(--radius-sm)", padding: "4px 10px" }}>
+            <ChevronUp size={12} color="#C7A14A" strokeWidth={2.5} />
+            <span style={{ fontSize: 11, fontWeight: 600, color: "#C7A14A", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>+43 pts YoY</span>
           </div>
         </div>
         <Sparkline data={TREND_POINTS} height={64} />
         <div style={{ display: "flex", justifyContent: "space-between", marginTop: 6 }}>
           {["Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun"].map((m) => (
-            <span key={m} style={{ fontSize: 9, color: "rgba(244,245,248,0.25)", letterSpacing: "0.04em", fontFamily: "var(--font-geist-mono), monospace" }}>{m}</span>
+            <span key={m} style={{ fontSize: 9, color: "rgba(244,245,248,0.55)", letterSpacing: "0.04em", fontFamily: "var(--font-geist-mono), monospace" }}>{m}</span>
           ))}
         </div>
       </motion.div>
@@ -237,9 +237,9 @@ function DepartmentsTab() {
           onMouseEnter={() => setHovered(i)}
           onMouseLeave={() => setHovered(null)}
           style={{
-            background: hovered === i ? "rgba(16,185,129,0.04)" : "rgba(255,255,255,0.02)",
+            background: hovered === i ? "rgba(30,77,56,0.08)" : "rgba(255,255,255,0.02)",
             border: "1px solid",
-            borderColor: hovered === i ? "rgba(16,185,129,0.2)" : "rgba(255,255,255,0.08)",
+            borderColor: hovered === i ? "rgba(30,77,56,0.22)" : "rgba(255,255,255,0.08)",
             borderRadius: "var(--radius-card)",
             padding: "14px 16px",
             transition: "all 180ms",
@@ -254,11 +254,11 @@ function DepartmentsTab() {
               </p>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 12, flexShrink: 0 }}>
-              <span style={{ fontSize: 11, color: dept.colour, fontWeight: 600 }}>{dept.delta}</span>
-              <span style={{ fontSize: 11, color: "rgba(248,250,252,0.35)" }}>{dept.students.toLocaleString()} students</span>
+              <span style={{ fontSize: 11, color: dept.color, fontWeight: 600 }}>{dept.delta}</span>
+              <span style={{ fontSize: 11, color: "rgba(248,250,252,0.65)" }}>{dept.students.toLocaleString()} students</span>
             </div>
           </div>
-          <Bar pct={dept.score} colour={dept.colour} delay={i * 60} />
+          <Bar pct={dept.score} color={dept.color} delay={i * 60} />
         </motion.div>
       ))}
     </div>
@@ -300,8 +300,8 @@ function ProgressionTab() {
                     left: 0,
                     bottom: 0,
                     width: `${funnelWidth}%`,
-                    background: "rgba(16,185,129,0.04)",
-                    borderRight: "1px solid rgba(16,185,129,0.1)",
+                    background: "rgba(30,77,56,0.06)",
+                    borderRight: "1px solid rgba(30,77,56,0.12)",
                     transition: "width 800ms cubic-bezier(0.22,1,0.36,1)",
                   }}
                 />
@@ -314,9 +314,9 @@ function ProgressionTab() {
                             fontSize: 10,
                             fontWeight: 700,
                             letterSpacing: "0.12em",
-                            background: "rgba(16,185,129,0.12)",
-                            border: "1px solid rgba(16,185,129,0.25)",
-                            color: "#10b981",
+                            background: "rgba(199,161,74,0.12)",
+                            border: "1px solid rgba(199,161,74,0.25)",
+                            color: "#C7A14A",
                             padding: "2px 8px",
                             borderRadius: "var(--radius-sm)",
                             textTransform: "uppercase",
@@ -330,13 +330,13 @@ function ProgressionTab() {
                       <h4 style={{ fontSize: 15, fontWeight: 700, color: "#f8fafc", margin: "0 0 3px", letterSpacing: "-0.015em" }}>
                         {level.title}
                       </h4>
-                      <p style={{ fontSize: 12, color: "rgba(248,250,252,0.4)", margin: 0 }}>{level.desc}</p>
+                      <p style={{ fontSize: 12, color: "rgba(248,250,252,0.68)", margin: 0 }}>{level.desc}</p>
                     </div>
                     <div style={{ textAlign: "right", flexShrink: 0 }}>
-                      <p style={{ fontSize: 20, fontWeight: 700, color: "#10b981", margin: "0 0 1px", letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
+                      <p style={{ fontSize: 20, fontWeight: 700, color: "#9FBFAD", margin: "0 0 1px", letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
                         {parseFloat(rate).toFixed(0)}%
                       </p>
-                      <p style={{ fontSize: 10, color: "rgba(248,250,252,0.3)", margin: 0, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                      <p style={{ fontSize: 10, color: "rgba(248,250,252,0.62)", margin: 0, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.06em" }}>
                         completion
                       </p>
                     </div>
@@ -346,10 +346,10 @@ function ProgressionTab() {
                   <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
                     <div style={{ flex: 1 }}>
                       <div style={{ height: 6, background: "rgba(248,250,252,0.06)", borderRadius: 99, overflow: "hidden" }}>
-                        <Bar pct={parseFloat(rate)} colour="#10b981" delay={i * 100} />
+                        <Bar pct={parseFloat(rate)} color="#9FBFAD" delay={i * 100} />
                       </div>
                     </div>
-                    <span style={{ fontSize: 11, color: "rgba(244,245,248,0.35)", whiteSpace: "nowrap", flexShrink: 0, fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
+                    <span style={{ fontSize: 11, color: "rgba(244,245,248,0.65)", whiteSpace: "nowrap", flexShrink: 0, fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
                       {level.completed.toLocaleString()} / {level.enrolled.toLocaleString()}
                     </span>
                   </div>
@@ -360,7 +360,7 @@ function ProgressionTab() {
               {i < LEVELS.length - 1 && (
                 <div style={{ display: "flex", justifyContent: "center", padding: "4px 0" }}>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M8 2v10M4 9l4 4 4-4" stroke="rgba(16,185,129,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M8 2v10M4 9l4 4 4-4" stroke="rgba(159,191,173,0.3)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               )}
@@ -377,8 +377,8 @@ function ProgressionTab() {
         style={{
           marginTop: 20,
           padding: "16px 20px",
-          background: "rgba(16,185,129,0.04)",
-          border: "1px solid rgba(16,185,129,0.15)",
+          background: "rgba(30,77,56,0.08)",
+          border: "1px solid rgba(30,77,56,0.18)",
           borderRadius: 10,
           display: "flex",
           alignItems: "center",
@@ -386,7 +386,7 @@ function ProgressionTab() {
           flexWrap: "wrap",
         }}
       >
-        <TrendingUp size={16} color="#10b981" strokeWidth={2} style={{ flexShrink: 0 }} />
+        <TrendingUp size={16} color="#9FBFAD" strokeWidth={2} style={{ flexShrink: 0 }} />
         <p style={{ fontSize: 13, color: "rgba(248,250,252,0.65)", margin: 0, lineHeight: 1.5 }}>
           <span style={{ color: "#f8fafc", fontWeight: 600 }}>63.5%</span> of Level 201 completions advance to Level 301 within one semester.
         </p>
@@ -437,23 +437,23 @@ export default function FluencyTracker() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 5,
-                background: "rgba(30,77,56,0.07)",
-                border: "1px solid rgba(30,77,56,0.18)",
+                background: "rgba(181,134,46,0.08)",
+                border: "1px solid rgba(181,134,46,0.25)",
                 borderRadius: 20,
                 padding: "3px 10px",
               }}
             >
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#1E4D38", display: "inline-block" }} />
-              <span style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#1E4D38", letterSpacing: "0.06em", textTransform: "uppercase" }}>Dashboard Preview</span>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#B5862E", display: "inline-block" }} />
+              <span style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#B5862E", letterSpacing: "0.06em", textTransform: "uppercase" }}>In Development</span>
             </span>
           </div>
-          <h2 style={{ fontSize: "clamp(26px, 3.8vw, 48px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 14px", letterSpacing: "-0.012em", maxWidth: 680 }}>
+          <h2 style={{ fontSize: "clamp(22px, 2.8vw, 38px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 14px", letterSpacing: "-0.012em" }}>
             Track AI fluency across every department — in real time.
           </h2>
-          <p style={{ fontSize: 16, lineHeight: 1.65, color: "#4A584E", maxWidth: 560, margin: 0 }}>
+          <p style={{ fontSize: 16, lineHeight: 1.65, color: "#4A584E", margin: 0 }}>
             The Sophrosyne AI Fluency Index Dashboard gives administrators,
             faculty, and department leads a live view of how AI competency
-            is developing across every department — from first-week enrolment
+            is developing across every department — from first-week enrollment
             to Level 301 completion. See who is progressing, where gaps are
             forming, and what your accreditation report will look like next
             quarter. No manual data collection required.
@@ -501,14 +501,14 @@ export default function FluencyTracker() {
                 gap: 7,
               }}
             >
-              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#10b981", flexShrink: 0 }} />
-              <span style={{ fontSize: 11, color: "rgba(244,245,248,0.35)", fontFamily: "var(--font-geist-mono), monospace" }}>
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#9FBFAD", flexShrink: 0 }} />
+              <span style={{ fontSize: 11, color: "rgba(244,245,248,0.65)", fontFamily: "var(--font-geist-mono), monospace" }}>
                 index.sophrosynesystems.com/fluency
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
-              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#10b981", animation: "pulse 2s infinite", display: "inline-block" }} />
-              <span style={{ fontSize: 10, fontWeight: 600, color: "rgba(248,250,252,0.38)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#9FBFAD", animation: "pulse 2s infinite", display: "inline-block" }} />
+              <span style={{ fontSize: 10, fontWeight: 600, color: "rgba(248,250,252,0.65)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                 Live
               </span>
             </div>
@@ -519,7 +519,7 @@ export default function FluencyTracker() {
             {/* Left sidebar */}
             <div style={{ borderRight: "1px solid rgba(255,255,255,0.06)", padding: "20px 0", background: "#222326" }}>
               <div style={{ padding: "0 16px 14px" }}>
-                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.25)", margin: 0 }}>
+                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.55)", margin: 0 }}>
                   Analytics
                 </p>
               </div>
@@ -536,16 +536,16 @@ export default function FluencyTracker() {
                       alignItems: "center",
                       gap: 9,
                       padding: "10px 16px",
-                      background: active ? "rgba(16,185,129,0.08)" : "transparent",
-                      borderLeft: `2px solid ${active ? "#10b981" : "transparent"}`,
+                      background: active ? "rgba(30,77,56,0.1)" : "transparent",
+                      borderLeft: `2px solid ${active ? "#9FBFAD" : "transparent"}`,
                       border: "none",
                       cursor: "pointer",
                       textAlign: "left",
                       transition: "all 180ms",
                     }}
                   >
-                    <Icon size={14} color={active ? "#10b981" : "rgba(248,250,252,0.3)"} strokeWidth={active ? 2 : 1.6} />
-                    <span style={{ fontSize: 13, fontWeight: active ? 600 : 400, color: active ? "rgba(248,250,252,0.88)" : "rgba(248,250,252,0.38)", transition: "color 180ms" }}>
+                    <Icon size={14} color={active ? "#9FBFAD" : "rgba(248,250,252,0.62)"} strokeWidth={active ? 2 : 1.6} />
+                    <span style={{ fontSize: 13, fontWeight: active ? 600 : 400, color: active ? "rgba(248,250,252,0.88)" : "rgba(248,250,252,0.65)", transition: "color 180ms" }}>
                       {label}
                     </span>
                   </button>
@@ -554,17 +554,17 @@ export default function FluencyTracker() {
 
               <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "16px 0" }} />
               <div style={{ padding: "0 16px" }}>
-                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.25)", margin: "0 0 10px" }}>
+                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.55)", margin: "0 0 10px" }}>
                   Institution
                 </p>
-                {["Sample University", "Cohort 2025–26", "6 Departments"].map((s) => (
-                  <p key={s} style={{ fontSize: 12, color: "rgba(248,250,252,0.32)", margin: "0 0 5px", lineHeight: 1.5 }}>{s}</p>
+                {["Sample University", "Cohort 2026–27", "6 Departments"].map((s) => (
+                  <p key={s} style={{ fontSize: 12, color: "rgba(248,250,252,0.62)", margin: "0 0 5px", lineHeight: 1.5 }}>{s}</p>
                 ))}
               </div>
 
               <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "16px 0" }} />
               <div style={{ padding: "0 16px" }}>
-                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.25)", margin: "0 0 10px" }}>
+                <p style={{ fontSize: 9, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(248,250,252,0.55)", margin: "0 0 10px" }}>
                   Data Integrations
                 </p>
                 {[
@@ -578,12 +578,12 @@ export default function FluencyTracker() {
                         width: 6,
                         height: 6,
                         borderRadius: "50%",
-                        background: status === "connected" ? "#10b981" : "#febc2e",
+                        background: status === "connected" ? "#9FBFAD" : "#febc2e",
                         flexShrink: 0,
                         animation: status === "syncing" ? "pulse 1.5s infinite" : "none",
                       }}
                     />
-                    <span style={{ fontSize: 11, color: "rgba(248,250,252,0.35)" }}>{label}</span>
+                    <span style={{ fontSize: 11, color: "rgba(248,250,252,0.65)" }}>{label}</span>
                   </div>
                 ))}
               </div>
@@ -619,15 +619,15 @@ export default function FluencyTracker() {
                         borderRadius: 7,
                         border: "none",
                         cursor: "pointer",
-                        background: active ? "rgba(16,185,129,0.1)" : "transparent",
-                        color: active ? "#10b981" : "rgba(248,250,252,0.4)",
+                        background: active ? "rgba(30,77,56,0.1)" : "transparent",
+                        color: active ? "#9FBFAD" : "rgba(248,250,252,0.68)",
                         fontSize: 12,
                         fontWeight: active ? 600 : 400,
                         fontFamily: "inherit",
                         transition: "all 180ms",
                       }}
                     >
-                      <Icon size={12} strokeWidth={active ? 2 : 1.6} />
+                      <Icon size={12} strokeWidth={active ? 2 : 1.6} color="currentColor" />
                       {label}
                     </button>
                   );
@@ -662,9 +662,9 @@ export default function FluencyTracker() {
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{ textAlign: "center", marginTop: 40 }}
         >
-          <p style={{ fontSize: 14, color: "#5A6B60", margin: "0 0 16px" }}>
-            Your institution's Fluency Index Dashboard is provisioned as part of the{" "}
-            <span style={{ color: "#1B2A21", fontWeight: 600 }}>Foundry & Platform Launch</span> engagement.
+          <p style={{ fontSize: 14, color: "#4A584E", margin: "0 0 16px" }}>
+            The AI Fluency Index Dashboard is currently{" "}
+            <span style={{ color: "#1B2A21", fontWeight: 600 }}>in development</span> — available to Founding Cohort institutions.
           </p>
           <a
             href="/pricing"
@@ -677,7 +677,7 @@ export default function FluencyTracker() {
               background: "#1E4D38",
               color: "#F4F0E6",
               fontSize: 13,
-              fontWeight: 700,
+              fontWeight: 600,
               fontFamily: "var(--font-libre-franklin), sans-serif",
               textDecoration: "none",
               transition: "opacity 200ms",

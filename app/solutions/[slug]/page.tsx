@@ -6,6 +6,9 @@ import { SOLUTIONS, SOLUTION_DETAILS, type SolutionDetail } from "@/lib/data";
 import Card from "@/components/ui/Card";
 import Accordion from "@/components/ui/Accordion";
 import Button from "@/components/ui/Button";
+import CurriculumFramework from "@/components/sections/CurriculumFramework";
+import OpExSection from "@/components/sections/OpExSection";
+import FluencyTracker from "@/components/sections/FluencyTracker";
 
 // Lucide icons loaded dynamically by name
 import {
@@ -48,10 +51,18 @@ export default async function SolutionSlugPage({
 
   return (
     <>
-      <SlugHero sol={sol} detail={detail} />
+      {slug === "foundry" ? (
+        <FoundryHero sol={sol} detail={detail} />
+      ) : (
+        <SlugHero sol={sol} detail={detail} />
+      )}
       <HowItWorks detail={detail} />
+      {slug === "curriculum" && <CurriculumFramework />}
       <PersonaStrip detail={detail} />
       <OutcomesStrip detail={detail} />
+      {slug === "opex" && <OpExSection />}
+      {slug === "curriculum" && <FluencyTracker />}
+      {slug === "foundry" && <FoundryDemoDay />}
       <FeatureDetail detail={detail} />
       <UseCases detail={detail} />
       <ProductFaq detail={detail} />
@@ -119,7 +130,7 @@ function SlugHero({
           </p>
           <h1
             style={{
-              fontSize: "clamp(32px, 4.5vw, 60px)",
+              fontSize: "clamp(24px, 3.2vw, 46px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",
@@ -201,7 +212,7 @@ function SlugHero({
           </p>
           <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
             <Button variant="primary" size="lg" href={`/get-started?product=${sol.id}`}>
-              Get Started
+              Book an Audit
             </Button>
             <Button variant="secondary" size="lg" href="/pricing">
               See Pricing
@@ -212,7 +223,7 @@ function SlugHero({
               href="/solutions"
               style={{
                 fontSize: 13,
-                color: "#6E7B71",
+                color: "#4A584E",
                 textDecoration: "none",
                 letterSpacing: "0.02em",
                 fontFamily: "var(--font-libre-franklin), sans-serif",
@@ -284,6 +295,329 @@ function SlugHero({
   );
 }
 
+/* ─── Foundry Hero (dark variant) ───────────────────────────────────────── */
+function FoundryHero({
+  sol,
+  detail,
+}: {
+  sol: (typeof SOLUTIONS)[number];
+  detail: SolutionDetail;
+}) {
+  const commits = [
+    { msg: "feat: add streaming output for LLM responses", time: "2h ago", active: true },
+    { msg: "fix: async race condition in model router", time: "1d ago", active: true },
+    { msg: "refactor: abstract provider interface layer", time: "3d ago", active: true },
+    { msg: "docs: update README with deployment guide", time: "4d ago", active: false },
+  ];
+
+  return (
+    <section
+      style={{
+        padding: "140px var(--pad-h) 80px",
+        background: "linear-gradient(140deg, #0d1a12 0%, #182d22 45%, #21271F 100%)",
+        position: "relative",
+        overflow: "hidden",
+        borderBottom: "1px solid rgba(0,0,0,0.5)",
+      }}
+    >
+      {/* diagonal hatch */}
+      <div
+        style={{
+          position: "absolute", inset: 0,
+          backgroundImage: "repeating-linear-gradient(135deg, rgba(199,161,74,0.018) 0px, rgba(199,161,74,0.018) 1px, transparent 1px, transparent 16px)",
+          pointerEvents: "none",
+        }}
+      />
+      {/* gold radial glow top-right */}
+      <div
+        style={{
+          position: "absolute", top: 0, right: 0,
+          width: 560, height: 480,
+          background: "radial-gradient(ellipse at top right, rgba(199,161,74,0.10) 0%, transparent 65%)",
+          pointerEvents: "none",
+        }}
+      />
+      <div
+        style={{
+          maxWidth: "var(--max-w)", margin: "0 auto",
+          display: "grid", gridTemplateColumns: "1fr 1fr",
+          gap: 72, alignItems: "center",
+          position: "relative", zIndex: 1,
+        }}
+        className="slug-hero-grid"
+      >
+        {/* Left */}
+        <div>
+          <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#C7A14A", margin: "0 0 18px" }}>
+            {sol.label}
+          </p>
+          <h1 style={{ fontSize: "clamp(24px, 3.2vw, 46px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F4F0E6", margin: "0 0 14px", lineHeight: 1.06, letterSpacing: "-0.015em" }}>
+            {sol.title}
+          </h1>
+          <p style={{ fontSize: 16, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#9FBFAD", margin: "0 0 16px", fontStyle: "italic" }}>
+            {sol.tagline}
+          </p>
+
+          {/* Maturity badge */}
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(199,161,74,0.10)", border: "1px solid rgba(199,161,74,0.24)", borderRadius: 6, padding: "6px 12px", marginBottom: 20 }}>
+            <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#C7A14A", flexShrink: 0 }} />
+            <span style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#C7A14A", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              {detail.maturityStage.stage}
+            </span>
+            <span style={{ fontSize: 12, color: "#9FBFAD", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+              — Where students build what doesn&apos;t exist yet
+            </span>
+          </div>
+
+          <p style={{ fontSize: 16, lineHeight: 1.72, color: "rgba(159,191,173,0.85)", margin: "0 0 36px", maxWidth: 500 }}>
+            {detail.heroDescription}
+          </p>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <Button variant="primary" size="lg" href={`/get-started?product=${sol.id}`}>
+              Book an Audit
+            </Button>
+            <Button variant="ghost" size="lg" href="/pricing" style={{ color: "#9FBFAD", borderColor: "rgba(159,191,173,0.28)" }}>
+              See Pricing
+            </Button>
+          </div>
+          <div style={{ marginTop: 28 }}>
+            <Link href="/solutions" style={{ fontSize: 13, color: "rgba(159,191,173,0.5)", textDecoration: "none", letterSpacing: "0.02em", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+              ← All Solutions
+            </Link>
+          </div>
+        </div>
+
+        {/* Right — GitHub portfolio mock */}
+        <div>
+          <div
+            style={{
+              borderRadius: 14, overflow: "hidden",
+              border: "1px solid rgba(255,255,255,0.08)",
+              boxShadow: "0 4px 8px rgba(0,0,0,0.5), 0 32px 72px rgba(0,0,0,0.55)",
+            }}
+          >
+            {/* macOS chrome */}
+            <div style={{ background: "#1c2128", padding: "11px 16px", display: "flex", alignItems: "center", gap: 12, borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+              <div style={{ display: "flex", gap: 6 }}>
+                {(["#ff5f57", "#febc2e", "#28c840"] as const).map((c, i) => (
+                  <div key={i} style={{ width: 12, height: 12, borderRadius: "50%", background: c }} />
+                ))}
+              </div>
+              <div style={{ flex: 1, background: "#0d1117", borderRadius: 6, padding: "4px 12px", fontSize: 12, color: "#6e7681", fontFamily: "monospace", letterSpacing: "0.01em" }}>
+                github.com / foundry-ai-cohort-2026
+              </div>
+            </div>
+
+            {/* Repo header */}
+            <div style={{ background: "#0d1117", padding: "20px 22px 16px", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
+                <div>
+                  <p style={{ fontSize: 12, color: "#58a6ff", margin: "0 0 3px", fontFamily: "monospace" }}>
+                    foundry-ai-cohort-2026 /
+                  </p>
+                  <p style={{ fontSize: 16, fontWeight: 600, color: "#e6edf3", margin: "0 0 5px", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+                    schedulebot-ai
+                  </p>
+                  <p style={{ fontSize: 12, color: "#8b949e", margin: 0, fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+                    AI-powered scheduling for campus health services
+                  </p>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 6, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.10)", borderRadius: 6, padding: "5px 12px", fontSize: 12, color: "#e6edf3", fontFamily: "var(--font-libre-franklin), sans-serif", flexShrink: 0 }}>
+                  ★ 47
+                </div>
+              </div>
+              <div style={{ display: "flex", gap: 16, fontSize: 11, color: "#6e7681", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+                <span>4 contributors</span>
+                <span>·</span>
+                <span>24 commits</span>
+                <span>·</span>
+                <span>MIT License</span>
+              </div>
+            </div>
+
+            {/* Branch bar */}
+            <div style={{ background: "#161b22", padding: "8px 22px", borderBottom: "1px solid rgba(255,255,255,0.05)", display: "flex", alignItems: "center", gap: 8 }}>
+              <span style={{ fontSize: 11, color: "#8b949e", fontFamily: "var(--font-libre-franklin), sans-serif" }}>Branch:</span>
+              <span style={{ fontSize: 11, fontWeight: 600, color: "#e6edf3", fontFamily: "monospace", background: "rgba(255,255,255,0.06)", padding: "2px 8px", borderRadius: 4 }}>main</span>
+              <span style={{ fontSize: 11, color: "#6e7681", fontFamily: "var(--font-libre-franklin), sans-serif", marginLeft: "auto" }}>2 open PRs</span>
+            </div>
+
+            {/* Commit list */}
+            <div style={{ background: "#0d1117" }}>
+              {commits.map((commit, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: "flex", alignItems: "center", gap: 12,
+                    padding: "10px 22px",
+                    borderBottom: i < commits.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
+                  }}
+                >
+                  <div style={{ width: 8, height: 8, borderRadius: "50%", background: commit.active ? "#3fb950" : "#484f58", flexShrink: 0 }} />
+                  <p style={{ flex: 1, fontSize: 12, color: commit.active ? "#e6edf3" : "#8b949e", margin: 0, fontFamily: "monospace", lineHeight: 1.4 }}>
+                    {commit.msg}
+                  </p>
+                  <span style={{ fontSize: 11, color: "#6e7681", fontFamily: "var(--font-libre-franklin), sans-serif", flexShrink: 0 }}>
+                    {commit.time}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Demo Day live strip */}
+            <div style={{ background: "linear-gradient(90deg, rgba(30,77,56,0.55), rgba(30,77,56,0.30))", borderTop: "1px solid rgba(159,191,173,0.18)", padding: "13px 22px", display: "flex", alignItems: "center", gap: 12 }}>
+              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#9FBFAD", boxShadow: "0 0 8px rgba(159,191,173,0.7)", flexShrink: 0 }} />
+              <span style={{ fontSize: 12, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#9FBFAD", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                Demo Day — Sept 2026
+              </span>
+              <span style={{ marginLeft: "auto", fontSize: 11, color: "rgba(159,191,173,0.6)", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+                28 employers registered
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 900px) {
+          .slug-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+/* ─── Foundry Demo Day Section ───────────────────────────────────────────── */
+function FoundryDemoDay() {
+  const employers = [
+    {
+      company: "Meridian Tech",
+      role: "Junior ML Engineer",
+      note: "Sourced directly from Demo Day GitHub portfolio",
+      status: "Offer Extended",
+      statusColor: "#C7A14A",
+      statusBg: "rgba(199,161,74,0.12)",
+      statusBorder: "rgba(199,161,74,0.25)",
+    },
+    {
+      company: "Cascade Health AI",
+      role: "Product Analyst — AI Systems",
+      note: "First contact through inter-campus Demo Day presentation",
+      status: "Interviewing",
+      statusColor: "#9FBFAD",
+      statusBg: "rgba(159,191,173,0.10)",
+      statusBorder: "rgba(159,191,173,0.22)",
+    },
+    {
+      company: "Northgate Analytics",
+      role: "Data Engineer (New Grad)",
+      note: "Discovered via GitHub repo star before Demo Day",
+      status: "Offer Accepted",
+      statusColor: "#3fb950",
+      statusBg: "rgba(63,185,80,0.10)",
+      statusBorder: "rgba(63,185,80,0.22)",
+    },
+  ];
+
+  return (
+    <section
+      style={{
+        padding: "var(--section-py) var(--pad-h)",
+        background: "#21271F",
+        borderTop: "1px solid rgba(0,0,0,0.3)",
+        borderBottom: "1px solid rgba(0,0,0,0.3)",
+      }}
+    >
+      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
+        <div
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 72, alignItems: "start" }}
+          className="demoday-grid"
+        >
+          {/* Left */}
+          <div>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#C7A14A", margin: "0 0 16px", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+              The Recruitment Event
+            </p>
+            <h2 style={{ fontSize: "clamp(22px, 2.8vw, 40px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F4F0E6", margin: "0 0 20px", letterSpacing: "-0.015em", lineHeight: 1.08 }}>
+              Employers don&apos;t wait{" "}
+              <em style={{ fontStyle: "italic", color: "#9FBFAD" }}>for graduation.</em>
+            </h2>
+            <p style={{ fontSize: 15, lineHeight: 1.72, color: "rgba(159,191,173,0.80)", margin: "0 0 40px" }}>
+              Every Foundry semester ends with a public Demo Day — open to consortium employers, alumni, and regional partners. Employers review GitHub portfolios before they walk in the room. The best projects enter The AI Exchange Network. Traditional CVs don&apos;t survive the comparison.
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              {[
+                { n: "40+", l: "employer connections at program launch" },
+                { n: "2×/yr", l: "inter-campus Demo Days per academic year" },
+                { n: "100%", l: "IP retained by the student team" },
+              ].map((s, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "baseline", gap: 18, paddingBottom: 20, borderBottom: i < 2 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
+                  <span style={{ fontSize: 28, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#C7A14A", letterSpacing: "-0.02em", flexShrink: 0, lineHeight: 1 }}>
+                    {s.n}
+                  </span>
+                  <span style={{ fontSize: 13, color: "rgba(159,191,173,0.70)", fontFamily: "var(--font-libre-franklin), sans-serif", lineHeight: 1.4 }}>
+                    {s.l}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: employer pipeline cards */}
+          <div>
+            <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(159,191,173,0.50)", margin: "0 0 20px", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+              Illustrative — Foundry employer pipeline
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {employers.map((card, i) => (
+                <div
+                  key={i}
+                  style={{
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    borderRadius: 10, padding: "18px 20px",
+                  }}
+                >
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 8 }}>
+                    <div>
+                      <p style={{ fontSize: 13, fontWeight: 600, color: "#e6edf3", margin: "0 0 3px", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+                        {card.company}
+                      </p>
+                      <p style={{ fontSize: 12, color: "#9FBFAD", margin: 0, fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+                        {card.role}
+                      </p>
+                    </div>
+                    <span style={{
+                      fontSize: 9, fontWeight: 600,
+                      fontFamily: "var(--font-libre-franklin), sans-serif",
+                      color: card.statusColor, background: card.statusBg,
+                      border: `1px solid ${card.statusBorder}`,
+                      borderRadius: 4, padding: "3px 8px",
+                      letterSpacing: "0.07em", textTransform: "uppercase",
+                      flexShrink: 0,
+                    }}>
+                      {card.status}
+                    </span>
+                  </div>
+                  <p style={{ fontSize: 11, color: "rgba(139,148,158,0.80)", margin: 0, fontFamily: "var(--font-libre-franklin), sans-serif", fontStyle: "italic" }}>
+                    {card.note}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .demoday-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+        }
+      `}</style>
+    </section>
+  );
+}
+
 /* ─── How It Works ───────────────────────────────────────────────────────── */
 function HowItWorks({ detail }: { detail: SolutionDetail }) {
   return (
@@ -310,7 +644,7 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
         </p>
         <h2
           style={{
-            fontSize: "clamp(24px, 3.5vw, 44px)",
+            fontSize: "clamp(22px, 2.6vw, 36px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21",
@@ -491,7 +825,7 @@ function PersonaStrip({ detail }: { detail: SolutionDetail }) {
                     fontFamily: "var(--font-libre-franklin), sans-serif",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: "#6E7B71",
+                    color: "#4A584E",
                     margin: "0 0 6px",
                   }}
                 >
@@ -583,7 +917,7 @@ function OutcomesStrip({ detail }: { detail: SolutionDetail }) {
           >
             <p
               style={{
-                fontSize: "clamp(28px, 3.5vw, 44px)",
+                fontSize: "clamp(22px, 2.6vw, 36px)",
                 fontWeight: 500,
                 fontFamily: "var(--font-newsreader), serif",
                 color: "#C7A14A",
@@ -645,7 +979,7 @@ function FeatureDetail({ detail }: { detail: SolutionDetail }) {
         </p>
         <h2
           style={{
-            fontSize: "clamp(24px, 3.5vw, 44px)",
+            fontSize: "clamp(22px, 2.6vw, 36px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21",
@@ -746,7 +1080,7 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
         </p>
         <h2
           style={{
-            fontSize: "clamp(24px, 3.5vw, 44px)",
+            fontSize: "clamp(22px, 2.6vw, 36px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21",
@@ -761,7 +1095,7 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
             fontSize: 13,
             fontStyle: "italic",
             fontFamily: "var(--font-newsreader), serif",
-            color: "#6E7B71",
+            color: "#4A584E",
             margin: "0 0 40px",
           }}
         >
@@ -863,7 +1197,7 @@ function ProductFaq({ detail }: { detail: SolutionDetail }) {
         </p>
         <h2
           style={{
-            fontSize: "clamp(24px, 3.5vw, 40px)",
+            fontSize: "clamp(22px, 2.6vw, 36px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#1B2A21",

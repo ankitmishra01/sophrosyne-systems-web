@@ -155,7 +155,7 @@ export default function SolutionCards() {
                       fontWeight: 400,
                       fontStyle: "italic",
                       fontFamily: "var(--font-newsreader), serif",
-                      color: "#5A6B60",
+                      color: "#4A584E",
                       margin: "0 0 20px",
                     }}
                   >
