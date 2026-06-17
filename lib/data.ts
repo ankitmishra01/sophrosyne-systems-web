@@ -362,6 +362,15 @@ export const TEAM_MEMBERS: TeamMember[] = [
     solutions: ["curriculum", "foundry"],
   },
   {
+    name: "Christine Billinger",
+    title: "Head of Client Relations",
+    bio: "B2B SaaS marketing leader, 15+ years building demand generation and go-to-market engines. Director of Marketing, Edgecom Energy; MBA, Ivey.",
+    photo: "/team/christine.png",
+    imgSize: "cover",
+    imgPos: "center top",
+    solutions: ["curriculum", "opex", "foundry"],
+  },
+  {
     name: "Amelia Frederking",
     title: "Research & Strategy Lead",
     bio: "PhD candidate in Political Science at MIT; former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics.",

@@ -105,11 +105,6 @@ export default function TeamGrid() {
 
   const isAllView = activeFilter === "all";
 
-  // In "all" view: single 6-column grid, every card spans 2 cols.
-  // Leadership (first 2): offset to cols 2–3 and 4–5 → centered.
-  // Team (last 3): auto-placed at cols 1–2, 3–4, 5–6 (fills row naturally).
-  const leadershipColumns = ["2 / span 2", "4 / span 2"];
-
   return (
     <section
       style={{
@@ -213,21 +208,21 @@ export default function TeamGrid() {
               }}
               className="team-unified-grid"
             >
-              {/* Leadership — cols 2–3 and 4–5 (centered in 6-col grid) */}
-              {TEAM_MEMBERS.slice(0, 2).map((member, i) => (
+              {/* Row 1: Lauretta, Melissa, Ankit — each span 2 of 6 cols */}
+              {TEAM_MEMBERS.slice(0, 3).map((member, i) => (
                 <MemberCard
                   key={member.name}
                   member={member}
                   index={i}
-                  gridColumn={leadershipColumns[i]}
+                  gridColumn="span 2"
                 />
               ))}
-              {/* Team — auto-placed, each spans 2 of 6 cols = 3 per row */}
-              {TEAM_MEMBERS.slice(2).map((member, i) => (
+              {/* Row 2: Christine, Amelia, Nathanael */}
+              {TEAM_MEMBERS.slice(3).map((member, i) => (
                 <MemberCard
                   key={member.name}
                   member={member}
-                  index={i + 2}
+                  index={i + 3}
                   gridColumn="span 2"
                 />
               ))}
