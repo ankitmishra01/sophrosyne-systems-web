@@ -99,7 +99,7 @@ export default function EngagementStepper() {
           <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#B5862E", margin: "0 0 14px" }}>
             The Engagement Path
           </p>
-          <h2 style={{ fontSize: "clamp(22px, 2.8vw, 38px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 12px", letterSpacing: "-0.012em", lineHeight: 1.1 }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.2vw, 44px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 12px", letterSpacing: "-0.012em", lineHeight: 1.1 }}>
             Start with the audit.{" "}
             <em style={{ fontStyle: "italic", color: "#1E4D38" }}>Build from there.</em>
           </h2>

@@ -50,7 +50,7 @@ export default function CallToAction() {
       >
         <p
           style={{
-            fontSize: 11,
+            fontSize: 12,
             fontWeight: 600,
             fontFamily: "var(--font-libre-franklin), sans-serif",
             letterSpacing: "0.18em",
@@ -63,7 +63,7 @@ export default function CallToAction() {
         </p>
         <h2
           style={{
-            fontSize: "clamp(24px, 3.0vw, 42px)",
+            fontSize: "clamp(28px, 3.4vw, 48px)",
             fontWeight: 500,
             fontFamily: "var(--font-newsreader), serif",
             color: "#F1EEE2",

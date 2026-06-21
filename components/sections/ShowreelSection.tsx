@@ -309,7 +309,7 @@ export default function ShowreelSection() {
           </p>
           <h2
             style={{
-              fontSize: "clamp(22px, 2.8vw, 38px)",
+              fontSize: "clamp(26px, 3.2vw, 44px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#F1EEE2",

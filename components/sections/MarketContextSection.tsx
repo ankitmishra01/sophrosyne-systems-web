@@ -56,7 +56,7 @@ export default function MarketContextSection() {
           <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#B5862E", margin: "0 0 14px" }}>
             The Market
           </p>
-          <h2 style={{ fontSize: "clamp(22px, 2.8vw, 36px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 12px", letterSpacing: "-0.013em", lineHeight: 1.1 }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.2vw, 42px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 12px", letterSpacing: "-0.013em", lineHeight: 1.1 }}>
             Three types of firm. One decision.
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.7, color: "#4A584E", margin: 0 }}>

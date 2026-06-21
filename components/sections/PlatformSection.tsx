@@ -125,7 +125,7 @@ export default function PlatformSection() {
 
             <h2
               style={{
-                fontSize: "clamp(22px, 2.8vw, 40px)",
+                fontSize: "clamp(26px, 3.2vw, 46px)",
                 fontWeight: 500,
                 fontFamily: "var(--font-newsreader), serif",
                 color: "#F1EEE2",

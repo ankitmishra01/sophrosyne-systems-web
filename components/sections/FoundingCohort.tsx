@@ -101,7 +101,7 @@ export default function FoundingCohort() {
 
           <h2
             style={{
-              fontSize: "clamp(26px, 3.2vw, 44px)",
+              fontSize: "clamp(30px, 3.6vw, 50px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#F1EEE2",

@@ -131,7 +131,7 @@ export default function CurriculumPlatformShowcase() {
 
           <h2
             style={{
-              fontSize: "clamp(24px, 3.2vw, 44px)",
+              fontSize: "clamp(28px, 3.6vw, 50px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#F1EEE2",

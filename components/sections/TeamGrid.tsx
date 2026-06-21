@@ -123,7 +123,7 @@ export default function TeamGrid() {
         >
           <p
             style={{
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: 600,
               fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.16em",
@@ -136,7 +136,7 @@ export default function TeamGrid() {
           </p>
           <h2
             style={{
-              fontSize: "clamp(22px, 2.8vw, 38px)",
+              fontSize: "clamp(26px, 3.2vw, 44px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",

@@ -62,7 +62,7 @@ export default function Navbar() {
         }}
       >
         <Link href="/" style={{ textDecoration: "none" }}>
-          <Logo variant="full" size={28} />
+          <Logo variant="full" size={32} />
         </Link>
 
         {/* Desktop nav */}
@@ -74,7 +74,7 @@ export default function Navbar() {
                 key={l.href}
                 href={l.href}
                 style={{
-                  fontSize: 13,
+                  fontSize: 15,
                   fontWeight: 500,
                   fontFamily: "var(--font-libre-franklin), sans-serif",
                   letterSpacing: "0.01em",
@@ -143,7 +143,7 @@ export default function Navbar() {
             href="/"
             onClick={() => setOpen(false)}
             style={{
-              fontSize: 15,
+              fontSize: 17,
               fontWeight: 500,
               color: pathname === "/" ? "#1E4D38" : "#415146",
               textDecoration: "none",

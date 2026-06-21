@@ -101,7 +101,7 @@ export default function ComparisonTable() {
           </p>
           <h2
             style={{
-              fontSize: "clamp(24px, 3.5vw, 42px)",
+              fontSize: "clamp(28px, 3.8vw, 48px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",

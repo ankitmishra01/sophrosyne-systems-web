@@ -38,7 +38,7 @@ export default function JourneyTimeline() {
         >
           <p
             style={{
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: 600,
               fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.18em",
@@ -51,7 +51,7 @@ export default function JourneyTimeline() {
           </p>
           <h2
             style={{
-              fontSize: "clamp(26px, 3.6vw, 46px)",
+              fontSize: "clamp(30px, 4.0vw, 52px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",

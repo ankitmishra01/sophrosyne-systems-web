@@ -60,7 +60,7 @@ export default function BenefitsSection() {
         >
           <p
             style={{
-              fontSize: 11,
+              fontSize: 12,
               fontWeight: 600,
               fontFamily: "var(--font-libre-franklin), sans-serif",
               letterSpacing: "0.16em",
@@ -73,7 +73,7 @@ export default function BenefitsSection() {
           </p>
           <h2
             style={{
-              fontSize: "clamp(20px, 2.4vw, 34px)",
+              fontSize: "clamp(24px, 2.8vw, 40px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",

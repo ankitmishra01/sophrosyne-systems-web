@@ -17,8 +17,8 @@ interface ButtonProps {
 }
 
 const SIZES: Record<NonNullable<ButtonProps["size"]>, CSSProperties> = {
-  sm: { fontSize: 12, padding: "8px 16px", letterSpacing: "0.04em" },
-  md: { fontSize: 13, padding: "11px 22px", letterSpacing: "0.03em" },
+  sm: { fontSize: 14, padding: "8px 18px", letterSpacing: "0.03em" },
+  md: { fontSize: 15, padding: "11px 22px", letterSpacing: "0.03em" },
   lg: { fontSize: 14, padding: "14px 28px", letterSpacing: "0.02em" },
 };
 
