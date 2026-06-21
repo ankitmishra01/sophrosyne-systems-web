@@ -88,10 +88,7 @@ export default function AIMaturitySection() {
               lineHeight: 1.1,
             }}
           >
-            Most institutions are stuck at{" "}
-            <em style={{ fontStyle: "italic", color: "#B0726A" }}>Deploy</em>.{" "}
-            The leaders are already{" "}
-            <em style={{ fontStyle: "italic", color: "#1E4D38" }}>Reshaping</em>.
+            Where is your institution on the AI maturity arc?
           </h2>
           <p
             style={{
@@ -101,7 +98,7 @@ export default function AIMaturitySection() {
               margin: 0,
             }}
           >
-            The Sophrosyne suite is designed to move your institution along this arc — at the pace that works for your budget, your governance, and your people.
+            Employers — including Zapier, which now hires on a four-tier AI-fluency rubric — expect graduates at <em style={{ fontStyle: "italic" }}>Adoptive</em> (B1) or above. Most universities are producing graduates at <em style={{ fontStyle: "italic" }}>Explore</em>. The Sophrosyne suite is designed to move your institution up this arc, at the pace your governance allows.
           </p>
         </motion.div>
 

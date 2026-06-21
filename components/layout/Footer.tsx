@@ -147,7 +147,7 @@ export default function Footer() {
               Contact
             </p>
             <a
-              href="mailto:hello@sophrosynesystems.com"
+              href="mailto:lauretta@sophrosynesystems.org"
               style={{
                 fontSize: 13,
                 color: "#9FBFAD",
@@ -163,7 +163,7 @@ export default function Footer() {
                 ((e.currentTarget as HTMLAnchorElement).style.color = "#9FBFAD")
               }
             >
-              hello@sophrosynesystems.com
+              lauretta@sophrosynesystems.org
             </a>
             <p style={{ fontSize: 12, color: "rgba(241,238,226,0.62)", margin: 0 }}>
               Western Accelerator Partner

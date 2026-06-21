@@ -437,14 +437,14 @@ export default function FluencyTracker() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 5,
-                background: "rgba(181,134,46,0.08)",
-                border: "1px solid rgba(181,134,46,0.25)",
+                background: "rgba(63,185,80,0.08)",
+                border: "1px solid rgba(63,185,80,0.28)",
                 borderRadius: 20,
                 padding: "3px 10px",
               }}
             >
-              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#B5862E", display: "inline-block" }} />
-              <span style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#B5862E", letterSpacing: "0.06em", textTransform: "uppercase" }}>In Development</span>
+              <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#3fb950", display: "inline-block", boxShadow: "0 0 5px rgba(63,185,80,0.65)" }} />
+              <span style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#3fb950", letterSpacing: "0.06em", textTransform: "uppercase" }}>Live · Working Demo</span>
             </span>
           </div>
           <h2 style={{ fontSize: "clamp(22px, 2.8vw, 38px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 14px", letterSpacing: "-0.012em" }}>
@@ -663,31 +663,57 @@ export default function FluencyTracker() {
           style={{ textAlign: "center", marginTop: 40 }}
         >
           <p style={{ fontSize: 14, color: "#4A584E", margin: "0 0 16px" }}>
-            The AI Fluency Index Dashboard is currently{" "}
-            <span style={{ color: "#1B2A21", fontWeight: 600 }}>in development</span> — available to Founding Cohort institutions.
+            The AI Fluency Index Dashboard is{" "}
+            <span style={{ color: "#1B2A21", fontWeight: 600 }}>live and available now</span> — founding institutions can log in today.
           </p>
-          <a
-            href="/pricing"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              padding: "11px 22px",
-              borderRadius: "var(--radius-btn)",
-              background: "#1E4D38",
-              color: "#F4F0E6",
-              fontSize: 13,
-              fontWeight: 600,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              textDecoration: "none",
-              transition: "opacity 200ms",
-            }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.82")}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
-          >
-            <BarChart3 size={15} strokeWidth={2} />
-            Request a Live Demo
-          </a>
+          <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <a
+              href="https://sophrosyne-platform.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "11px 22px",
+                borderRadius: "var(--radius-btn)",
+                background: "#1E4D38",
+                color: "#F4F0E6",
+                fontSize: 13,
+                fontWeight: 600,
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                textDecoration: "none",
+                transition: "opacity 200ms",
+              }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.82")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
+            >
+              <BarChart3 size={15} strokeWidth={2} />
+              Log in to the platform
+            </a>
+            <a
+              href="/get-started"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                padding: "11px 22px",
+                borderRadius: "var(--radius-btn)",
+                background: "transparent",
+                color: "#1E4D38",
+                fontSize: 13,
+                fontWeight: 600,
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                textDecoration: "none",
+                border: "1px solid rgba(30,77,56,0.28)",
+                transition: "background 200ms",
+              }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "rgba(30,77,56,0.06)")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.background = "transparent")}
+            >
+              Request a walkthrough
+            </a>
+          </div>
         </motion.div>
       </div>
 

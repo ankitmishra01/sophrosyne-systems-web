@@ -40,53 +40,54 @@ function GetStartedHero() {
   return (
     <section
       style={{
-        padding: "140px var(--pad-h) 72px",
-        background:
-          "radial-gradient(ellipse 80% 60% at 20% 40%, #ECF1EC 0%, #F4F0E6 60%)",
-        borderBottom: "1px solid rgba(27,42,33,0.08)",
+        padding: "140px var(--pad-h) 80px",
+        background: "#1E4D38",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        <p
-          style={{
-            fontSize: 11,
-            fontWeight: 600,
-            fontFamily: "var(--font-libre-franklin), sans-serif",
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: "#B5862E",
-            margin: "0 0 18px",
-          }}
-        >
-          Start Your Transformation
-        </p>
-        <h1
-          style={{
-            fontSize: "clamp(26px, 3.6vw, 50px)",
-            fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
-            color: "#1B2A21",
-            margin: "0 0 20px",
-            letterSpacing: "-0.015em",
-            maxWidth: 720,
-            lineHeight: 1.1,
-          }}
-        >
-          Tell us about your institution.
-        </h1>
-        <p
-          style={{
-            fontSize: 17,
-            lineHeight: 1.72,
-            color: "#4A584E",
-            maxWidth: 520,
-            margin: 0,
-          }}
-        >
-          We respond within one business day. Every engagement begins with a
-          no-obligation 30-minute discovery call.
-        </p>
+      {/* Texture */}
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(45deg, rgba(241,238,226,0.022) 0px, rgba(241,238,226,0.022) 1px, transparent 1px, transparent 20px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 70% 60% at 15% 50%, rgba(199,161,74,0.08) 0%, transparent 55%)", pointerEvents: "none" }} />
+
+      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr auto", gap: 48, alignItems: "center" }} className="gs-hero-grid">
+        <div>
+          <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#C7A14A", margin: "0 0 20px" }}>
+            Start Your Transformation
+          </p>
+          <h1 style={{ fontSize: "clamp(28px, 3.8vw, 54px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: "0 0 22px", letterSpacing: "-0.018em", maxWidth: 680, lineHeight: 1.08 }}>
+            Tell us about your institution.
+          </h1>
+          <p style={{ fontSize: 17, lineHeight: 1.72, color: "rgba(201,217,206,0.80)", maxWidth: 480, margin: 0 }}>
+            We respond within one business day. Every engagement begins with a no-obligation 30-minute discovery call.
+          </p>
+        </div>
+
+        {/* Quick contact card */}
+        <div style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(199,161,74,0.22)", borderRadius: "var(--radius-card)", padding: "24px 28px", flexShrink: 0, minWidth: 220 }} className="gs-hero-card">
+          <p style={{ fontSize: 10, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(199,161,74,0.70)", margin: "0 0 12px" }}>
+            Prefer email?
+          </p>
+          <a href="mailto:lauretta@sophrosynesystems.org" style={{ fontSize: 13, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#E9C77B", textDecoration: "none", display: "block", marginBottom: 16, letterSpacing: "0.01em" }}>
+            lauretta@sophrosynesystems.org
+          </a>
+          <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
+            {["No obligation", "Reply within 1 business day", "Grant language on request"].map((t, i) => (
+              <div key={i} style={{ display: "flex", alignItems: "center", gap: 7, fontSize: 11.5, color: "rgba(201,217,206,0.75)", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+                <span style={{ width: 4, height: 4, borderRadius: "50%", background: "#9FBFAD", flexShrink: 0 }} />
+                {t}
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
+      <style>{`
+        @media (max-width: 860px) {
+          .gs-hero-grid { grid-template-columns: 1fr !important; }
+          .gs-hero-card { display: none !important; }
+        }
+      `}</style>
     </section>
   );
 }
@@ -96,138 +97,65 @@ function ProcessSteps() {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#ECF1EC",
+        background: "#F4F0E6",
         borderBottom: "1px solid rgba(27,42,33,0.07)",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        <p
-          style={{
-            fontSize: 11,
-            fontWeight: 600,
-            fontFamily: "var(--font-libre-franklin), sans-serif",
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            color: "#B5862E",
-            margin: "0 0 14px",
-          }}
-        >
-          What Happens Next
-        </p>
-        <h2
-          style={{
-            fontSize: "clamp(22px, 2.6vw, 36px)",
-            fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
-            color: "#1B2A21",
-            margin: "0 0 48px",
-            letterSpacing: "-0.012em",
-          }}
-        >
-          From first contact to go-live.
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
-            gap: 28,
-            position: "relative",
-          }}
-          className="process-grid"
-        >
-          {/* Connector line */}
-          <div
-            style={{
-              position: "absolute",
-              top: 22,
-              left: "calc(12.5% + 4px)",
-              right: "calc(12.5% + 4px)",
-              height: 1,
-              background:
-                "linear-gradient(90deg, rgba(30,77,56,0.25) 0%, rgba(199,161,74,0.40) 50%, rgba(30,77,56,0.25) 100%)",
-              pointerEvents: "none",
-            }}
-            className="process-connector"
-          />
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 50% 60% at 80% 30%, rgba(199,161,74,0.05) 0%, transparent 55%)", pointerEvents: "none" }} />
+
+      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <div style={{ marginBottom: 52 }}>
+          <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#B5862E", margin: "0 0 14px" }}>
+            What Happens Next
+          </p>
+          <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: 0, letterSpacing: "-0.014em", lineHeight: 1.1 }}>
+            From first contact to go-live.
+          </h2>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }} className="process-grid">
           {PROCESS_STEPS.map((step, i) => (
-            <div key={i}>
-              <div
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  background: "#FFFFFF",
-                  border: "1.5px solid rgba(27,42,33,0.14)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: 18,
-                  position: "relative",
-                  zIndex: 1,
-                  boxShadow: "var(--shadow-card)",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 400,
-                    fontFamily: "var(--font-newsreader), serif",
-                    color: "#1E4D38",
-                  }}
-                >
-                  {step.number}
-                </span>
+            <div
+              key={i}
+              style={{
+                position: "relative",
+                background: i === 1 ? "#1E4D38" : "#FFFFFF",
+                border: `1px solid ${i === 1 ? "rgba(199,161,74,0.22)" : "rgba(27,42,33,0.09)"}`,
+                borderTop: `3px solid ${i === 1 ? "#C7A14A" : "rgba(27,42,33,0.10)"}`,
+                borderRadius: "var(--radius-card)",
+                padding: "28px 22px 24px",
+                boxShadow: i === 1 ? "0 8px 32px rgba(30,77,56,0.16)" : "0 2px 8px rgba(27,42,33,0.05)",
+                overflow: "hidden",
+              }}
+            >
+              {/* Watermark */}
+              <div aria-hidden style={{ position: "absolute", bottom: -14, right: 8, fontSize: 100, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: i === 1 ? "#F1EEE2" : "#1B2A21", opacity: 0.05, lineHeight: 1, letterSpacing: "-0.04em", pointerEvents: "none", userSelect: "none" }}>
+                {step.number}
               </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, margin: "0 0 6px", flexWrap: "wrap" }}>
-                <p
-                  style={{
-                    fontSize: 9,
-                    fontWeight: 600,
-                    fontFamily: "var(--font-libre-franklin), sans-serif",
-                    letterSpacing: "0.10em",
-                    textTransform: "uppercase",
-                    color: "#4A584E",
-                    margin: 0,
-                  }}
-                >
+
+              {/* Step badge */}
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 6, background: i === 1 ? "rgba(199,161,74,0.18)" : "rgba(30,77,56,0.06)", border: `1px solid ${i === 1 ? "rgba(199,161,74,0.30)" : "rgba(30,77,56,0.14)"}`, borderRadius: 20, padding: "3px 10px", fontSize: 9, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.12em", textTransform: "uppercase", color: i === 1 ? "#E9C77B" : "#1E4D38", marginBottom: 18 }}>
+                Step {step.number}
+              </span>
+
+              <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 8, flexWrap: "wrap" }}>
+                <span style={{ fontSize: 9, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.10em", textTransform: "uppercase", color: i === 1 ? "rgba(201,217,206,0.70)" : "#6B7C72" }}>
                   {step.duration}
-                </p>
+                </span>
                 {"price" in step && (
-                  <p
-                    style={{
-                      fontSize: 9,
-                      fontWeight: 700,
-                      fontFamily: "var(--font-libre-franklin), sans-serif",
-                      letterSpacing: "0.08em",
-                      textTransform: "uppercase",
-                      color: "#B5862E",
-                      margin: 0,
-                    }}
-                  >
+                  <span style={{ fontSize: 9, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.08em", textTransform: "uppercase", color: i === 1 ? "#C7A14A" : "#B5862E" }}>
                     {(step as typeof step & { price: string }).price}
-                  </p>
+                  </span>
                 )}
               </div>
-              <h3
-                style={{
-                  fontSize: 15,
-                  fontWeight: 500,
-                  fontFamily: "var(--font-newsreader), serif",
-                  color: "#1B2A21",
-                  margin: "0 0 8px",
-                  letterSpacing: "-0.01em",
-                }}
-              >
+
+              <h3 style={{ fontSize: "clamp(14px, 1.4vw, 17px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: i === 1 ? "#F1EEE2" : "#1B2A21", margin: "0 0 10px", letterSpacing: "-0.01em", lineHeight: 1.2, position: "relative", zIndex: 1 }}>
                 {step.title}
               </h3>
-              <p
-                style={{
-                  fontSize: 13,
-                  lineHeight: 1.65,
-                  color: "#4A584E",
-                  margin: 0,
-                }}
-              >
+
+              <p style={{ fontSize: 12.5, lineHeight: 1.68, color: i === 1 ? "rgba(201,217,206,0.80)" : "#4A584E", margin: 0, position: "relative", zIndex: 1 }}>
                 {step.body}
               </p>
             </div>
@@ -237,8 +165,7 @@ function ProcessSteps() {
 
       <style>{`
         @media (max-width: 900px) {
-          .process-grid { grid-template-columns: 1fr 1fr !important; }
-          .process-connector { display: none; }
+          .process-grid { grid-template-columns: 1fr 1fr !important; gap: 14px !important; }
         }
         @media (max-width: 480px) {
           .process-grid { grid-template-columns: 1fr !important; }

@@ -59,7 +59,7 @@ export default function RoiCalculator() {
       `Platform investment: ${fmtUSD(launchPrice)} · Est. payback: ${paybackLabel}\n\n` +
       `I'd like to book an AI & Accreditation Readiness Audit to validate these numbers.`
     );
-    return `mailto:hello@sophrosynesystems.com?subject=${subject}&body=${body}`;
+    return `mailto:lauretta@sophrosynesystems.org?subject=${subject}&body=${body}`;
   };
 
   const sliderLabel: React.CSSProperties = {

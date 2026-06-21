@@ -265,8 +265,18 @@ function ViewPanel({ view }: { view: ViewId }) {
   );
 }
 
+const featureContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08 } },
+};
+
+const featureItem = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
+};
+
 export default function ShowreelSection() {
-  const [view, setView] = useState<ViewId>("canvas");
+  const [view, setView] = useState<ViewId>("agents");
 
   return (
     <section
@@ -495,10 +505,10 @@ export default function ShowreelSection() {
 
         {/* Feature-highlight strip */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={featureContainer}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.6, delay: 0.15 }}
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
@@ -514,8 +524,11 @@ export default function ShowreelSection() {
           {FEATURE_HIGHLIGHTS.map((item, i) => {
             const IconComp = item.icon;
             return (
-              <div
+              <motion.div
                 key={item.title}
+                variants={featureItem}
+                whileHover={{ y: -3 }}
+                transition={{ type: "spring", stiffness: 400, damping: 26 }}
                 style={{
                   padding: "20px 24px",
                   borderRight: i < FEATURE_HIGHLIGHTS.length - 1 ? "1px solid rgba(27,42,33,0.08)" : "none",
@@ -530,7 +543,7 @@ export default function ShowreelSection() {
                 <p style={{ fontSize: 12, lineHeight: 1.55, color: "#5A6B60", margin: 0 }}>
                   {item.body}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </motion.div>

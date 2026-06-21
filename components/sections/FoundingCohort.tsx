@@ -11,10 +11,10 @@ export default function FoundingCohort() {
       style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}
       className="cohort-split"
     >
-      {/* LEFT — deep pine */}
+      {/* LEFT — deep ink */}
       <div
         style={{
-          background: "#1E4D38",
+          background: "#1B2A21",
           display: "flex",
           justifyContent: "flex-end",
         }}
@@ -31,39 +31,72 @@ export default function FoundingCohort() {
           }}
         >
           {/* Badge */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              marginBottom: 24,
-              background: "rgba(199,161,74,0.14)",
-              border: "1px solid rgba(199,161,74,0.32)",
-              borderRadius: 20,
-              padding: "5px 14px",
-            }}
-          >
-            <span
+          <div style={{ marginBottom: 24 }}>
+            <div
               style={{
-                width: 7,
-                height: 7,
-                borderRadius: "50%",
-                background: "#C7A14A",
-                flexShrink: 0,
-              }}
-            />
-            <span
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                fontFamily: "var(--font-libre-franklin), sans-serif",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                color: "#C7A14A",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 8,
+                marginBottom: 10,
+                background: "rgba(199,161,74,0.14)",
+                border: "1px solid rgba(199,161,74,0.32)",
+                borderRadius: 20,
+                padding: "5px 14px",
               }}
             >
-              Now accepting {FOUNDING_COHORT.spots} institutions
-            </span>
+              <span
+                style={{
+                  width: 7,
+                  height: 7,
+                  borderRadius: "50%",
+                  background: "#C7A14A",
+                  flexShrink: 0,
+                }}
+              />
+              <span
+                style={{
+                  fontSize: 11,
+                  fontWeight: 600,
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  color: "#C7A14A",
+                }}
+              >
+                3 of 5 spots remaining
+              </span>
+            </div>
+
+            {/* Spots progress bar */}
+            <div
+              style={{
+                width: 180,
+                height: 3,
+                borderRadius: 99,
+                background: "rgba(199,161,74,0.18)",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  width: "40%",
+                  height: "100%",
+                  background: "#C7A14A",
+                  borderRadius: 99,
+                }}
+              />
+            </div>
+            <p
+              style={{
+                fontSize: 10,
+                color: "rgba(199,161,74,0.72)",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                margin: "5px 0 0",
+                letterSpacing: "0.04em",
+              }}
+            >
+              2 of 5 founding institutions confirmed
+            </p>
           </div>
 
           <h2
@@ -77,7 +110,7 @@ export default function FoundingCohort() {
               lineHeight: 1.1,
             }}
           >
-            Join the Founding Cohort.
+            Five institutions that will shape what higher education looks like in the age of AI.
           </h2>
 
           <p
@@ -88,10 +121,7 @@ export default function FoundingCohort() {
               margin: "0 0 36px",
             }}
           >
-            We are building Sophrosyne with our first five institutions, not
-            for them. Founding partners lock in pricing below standard rates,
-            co-author the reference case study, and hold an advisory seat on
-            the product roadmap and consortium charter.
+            We are building Sophrosyne with our first five institutions, not for them. Pricing locked. Charter institutions shape the roadmap — and arrive at their board table with a self-funded transformation plan.
           </p>
 
           <motion.div

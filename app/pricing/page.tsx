@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PricingHeroSection from "@/components/sections/PricingHeroSection";
+import MarketContextSection from "@/components/sections/MarketContextSection";
 import EngagementStepper from "@/components/sections/EngagementStepper";
 import ComparisonTable from "@/components/sections/ComparisonTable";
 import RoiCalculator from "@/components/sections/RoiCalculator";
@@ -15,6 +16,7 @@ export default function PricingPage() {
   return (
     <>
       <PricingHeroSection />
+      <MarketContextSection />
       <EngagementStepper />
       <ComparisonTable />
       <div id="roi"><RoiCalculator /></div>

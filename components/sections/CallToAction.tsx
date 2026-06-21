@@ -59,7 +59,7 @@ export default function CallToAction() {
             margin: "0 0 20px",
           }}
         >
-          Begin the Conversation
+          Phase 01 · 2 Weeks · $45K
         </p>
         <h2
           style={{
@@ -72,9 +72,9 @@ export default function CallToAction() {
             lineHeight: 1.08,
           }}
         >
-          Prove AI readiness to your accreditors.{" "}
+          Arrive at your board table with a{" "}
           <em style={{ fontStyle: "italic", color: "#E9C77B" }}>
-            Fund it with the savings.
+            self-funded transformation plan.
           </em>
         </h2>
         <p
@@ -86,10 +86,9 @@ export default function CallToAction() {
             maxWidth: 560,
           }}
         >
-          Every engagement begins with a fixed-fee AI &amp; Accreditation Readiness Audit.
-          You walk away with a board-ready accreditation gap analysis, fluency
-          roadmap, and savings estimate — credited in full toward any platform
-          engagement within 90 days.
+          The Ecosystem Audit maps your data silos, LMS integrations, and curriculum gaps.
+          You walk away with a plain-language board report and a dollar savings roadmap.
+          The $45K fee is credited in full toward any subsequent engagement within 90 days.
         </p>
 
         <div
@@ -170,8 +169,7 @@ export default function CallToAction() {
             fontFamily: "var(--font-libre-franklin), sans-serif",
           }}
         >
-          No obligation · Grant language available · Response within one business
-          day
+          The audit is the only commitment · Everything after is opt-in · Response within one business day
         </p>
 
         <p style={{ marginTop: 18, fontSize: 13 }}>

@@ -12,24 +12,43 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { institution, enrollment, role, challenge, product, email, message } = body;
 
-  const res = await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
-      access_key: key,
-      subject: `Sophrosyne enquiry — ${institution || "a university"}`,
-      from_name: institution || "Sophrosyne enquiry",
-      email,
-      Institution: institution || "—",
-      Enrollment: enrollment || "—",
-      Role: role || "—",
-      Challenge: challenge || "—",
-      "Product interest": product || "—",
-      Message: message || "(no message)",
-    }),
-  });
+  let res: Response;
+  try {
+    res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        access_key: key,
+        subject: `Sophrosyne enquiry — ${institution || "a university"}`,
+        from_name: institution || "Sophrosyne enquiry",
+        replyto: email,
+        email: "lauretta@sophrosynesystems.org",
+        Institution: institution || "—",
+        Enrollment: enrollment || "—",
+        Role: role || "—",
+        Challenge: challenge || "—",
+        "Product interest": product || "—",
+        Message: message || "(no message)",
+      }),
+    });
+  } catch (err) {
+    console.error("Web3Forms fetch failed:", err);
+    return NextResponse.json(
+      { ok: false, error: "Could not reach email service — please try again." },
+      { status: 502 }
+    );
+  }
 
-  const json = await res.json();
+  let json: { success?: boolean; message?: string } = {};
+  try {
+    json = await res.json();
+  } catch {
+    console.error("Web3Forms returned non-JSON, status:", res.status);
+    return NextResponse.json(
+      { ok: false, error: "Email service returned an unexpected response." },
+      { status: 502 }
+    );
+  }
 
   if (!json.success) {
     console.error("Web3Forms error:", json);

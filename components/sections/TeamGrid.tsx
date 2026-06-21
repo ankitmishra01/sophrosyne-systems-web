@@ -203,27 +203,24 @@ export default function TeamGrid() {
               transition={{ duration: 0.2 }}
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(6, 1fr)",
+                gridTemplateColumns:
+                  TEAM_MEMBERS.length <= 2
+                    ? "repeat(2, 1fr)"
+                    : TEAM_MEMBERS.length === 3
+                    ? "repeat(3, 1fr)"
+                    : "repeat(6, 1fr)",
                 gap: 24,
+                maxWidth: TEAM_MEMBERS.length <= 2 ? 720 : "100%",
+                margin: "0 auto",
               }}
               className="team-unified-grid"
             >
-              {/* Row 1: Lauretta, Melissa, Ankit — each span 2 of 6 cols */}
-              {TEAM_MEMBERS.slice(0, 3).map((member, i) => (
+              {TEAM_MEMBERS.map((member, i) => (
                 <MemberCard
                   key={member.name}
                   member={member}
                   index={i}
-                  gridColumn="span 2"
-                />
-              ))}
-              {/* Row 2: Christine, Amelia, Nathanael */}
-              {TEAM_MEMBERS.slice(3).map((member, i) => (
-                <MemberCard
-                  key={member.name}
-                  member={member}
-                  index={i + 3}
-                  gridColumn="span 2"
+                  gridColumn={TEAM_MEMBERS.length >= 4 ? "span 2" : undefined}
                 />
               ))}
             </motion.div>

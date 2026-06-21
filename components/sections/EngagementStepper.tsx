@@ -37,7 +37,7 @@ const STAGES: Stage[] = [
     price: "Scoped per engagement",
     duration: "3 months",
     tag: "Validate before you commit",
-    body: "One pillar — Fluency, OpEx, or Foundry — deployed at limited scope with a dedicated expert team. Designed to produce measurable outcomes and internal confidence before full program rollout.",
+    body: "One pillar — Fluency, OpEx, or Foundry — deployed at limited scope with a dedicated expert team. Delivers measurable outcomes in the time it would take a research subscription firm to complete two studies — and at a comparable annual cost.",
     includes: [
       "Expert team embedded on-site for the pilot period",
       "Pillar-specific delivery framework with defined milestones",
@@ -214,9 +214,14 @@ export default function EngagementStepper() {
 
                 {/* CTA footer */}
                 <div style={{ borderTop: "1px solid rgba(27,42,33,0.07)", padding: "20px 32px", background: "rgba(30,77,56,0.025)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 12 }}>
-                  <p style={{ fontSize: 13, color: "#4A584E", fontFamily: "var(--font-libre-franklin), sans-serif", fontStyle: "italic", margin: 0 }}>
-                    All IP transfers to your institution on delivery.
-                  </p>
+                  <div>
+                    <p style={{ fontSize: 13, color: "#4A584E", fontFamily: "var(--font-libre-franklin), sans-serif", fontStyle: "italic", margin: "0 0 4px" }}>
+                      All IP transfers to your institution on delivery.
+                    </p>
+                    <p style={{ fontSize: 11.5, color: "#4A584E", fontFamily: "var(--font-libre-franklin), sans-serif", margin: 0 }}>
+                      Pricing scales with enrollment — institutions under 2,000 students start at $28K.
+                    </p>
+                  </div>
                   <Button variant="primary" size="sm" href="/get-started">
                     Discuss this stage →
                   </Button>

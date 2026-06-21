@@ -10,15 +10,16 @@ const ICONS = { GraduationCap, TrendingDown, Rocket } as const;
 
 // Pillar order + per-pillar links (maps onto WHY_ITEMS by index)
 const PILLARS = [
-  { idx: 0, numeral: "I", tag: "AI Fluency", href: "/solutions/curriculum" },
-  {
-    idx: 1,
-    numeral: "II",
-    tag: "Student Innovation",
-    href: "/solutions/foundry",
-  },
-  { idx: 2, numeral: "III", tag: "Operational Efficiency", href: "/solutions/opex" },
+  { idx: 0, numeral: "I", tag: "Operational Efficiency", href: "/solutions/opex" },
+  { idx: 1, numeral: "II", tag: "AI Fluency Programme", href: "/solutions/curriculum" },
+  { idx: 2, numeral: "III", tag: "AI Foundry", href: "/solutions/foundry" },
 ] as const;
+
+const BENEFIT_LINES: Record<number, string> = {
+  0: "The dollars that fund Pillars II and III — self-funding, on paper, before the board votes",
+  1: "Students graduate with a documented portfolio employers can verify — not a certificate",
+  2: "Incubators get builders, not pitch decks — real products deployed to public GitHub",
+};
 
 const LEVEL_COLORS: Record<string, { fg: string; bg: string; border: string }> = {
   A1: { fg: "rgba(159,191,173,0.50)", bg: "rgba(159,191,173,0.06)", border: "rgba(159,191,173,0.14)" },
@@ -273,7 +274,7 @@ export default function WhySophrosyne() {
                 margin: 0,
               }}
             >
-              Sophrosyne is a three-pillar consulting program for private universities ready to move — each pillar delivered by an expert team, not handed off as a self-serve toolkit. Each pillar works independently and compounds together: AI competency that makes graduates employable, operational savings that fund the work, and an innovation culture that makes your institution worth choosing.
+              Three pillars delivered by expert teams — not handed off as a self-serve toolkit. Each pillar works independently and compounds together. Pillar I identifies the savings that fund Pillars II and III. The result: AI-fluent graduates, a leaner operation, and an innovation culture — delivered within one academic year. Expert teams, not platforms. The institution keeps 100% of all IP.
             </p>
           </motion.div>
 
@@ -358,14 +359,15 @@ export default function WhySophrosyne() {
                   <span
                     style={{
                       position: "absolute",
-                      top: 14,
-                      right: 22,
-                      fontSize: 60,
+                      top: 8,
+                      right: 18,
+                      fontSize: 140,
                       lineHeight: 1,
                       fontFamily: "var(--font-newsreader), serif",
                       fontStyle: "italic",
-                      color: "rgba(199,161,74,0.16)",
+                      color: "rgba(199,161,74,0.10)",
                       pointerEvents: "none",
+                      userSelect: "none",
                     }}
                   >
                     {p.numeral}
@@ -411,12 +413,27 @@ export default function WhySophrosyne() {
                       fontWeight: 500,
                       fontFamily: "var(--font-newsreader), serif",
                       color: "#1B2A21",
-                      margin: "0 0 12px",
+                      margin: "0 0 8px",
                       letterSpacing: "-0.01em",
                     }}
                   >
                     {item.title}
                   </h3>
+
+                  <p
+                    style={{
+                      fontSize: 13.5,
+                      fontWeight: 600,
+                      fontFamily: "var(--font-libre-franklin), sans-serif",
+                      color: "#1E4D38",
+                      margin: "0 0 14px",
+                      lineHeight: 1.45,
+                      letterSpacing: "-0.005em",
+                    }}
+                  >
+                    {BENEFIT_LINES[p.idx]}
+                  </p>
+
                   <p
                     style={{
                       fontSize: 14.5,

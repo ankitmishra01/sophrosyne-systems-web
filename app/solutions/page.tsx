@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 const HERO_PILLARS = [
   {
     number: "01",
-    name: "AI Fluency Programme",
-    tagline: "Students who graduate job-ready",
-    href: "/solutions/curriculum",
-  },
-  {
-    number: "02",
     name: "Operational Efficiency",
     tagline: "Savings that fund the work",
     href: "/solutions/opex",
+  },
+  {
+    number: "02",
+    name: "AI Fluency Programme",
+    tagline: "Students who graduate job-ready",
+    href: "/solutions/curriculum",
   },
   {
     number: "03",
@@ -333,20 +333,20 @@ function PhilosophyStrip() {
 
 const MATURITY_STAGES = [
   {
-    stage: "Competency",
+    stage: "Efficiency",
     number: "01",
+    description:
+      "Identify and implement savings across nine operational domains. A senior finance lead and graduate analyst model the opportunity, build the board case, and support implementation. Pillar I funds Pillars II and III.",
+    solutions: ["Operational Efficiency"],
+    status: "Funds the other two pillars",
+  },
+  {
+    stage: "Competency",
+    number: "02",
     description:
       "Move students from AI awareness to applied competency. One AI course per semester, delivered by a senior advisor, curriculum specialist, and practitioner — embedded in your existing degree structures.",
     solutions: ["AI Fluency Programme"],
     status: "The foundation — most institutions haven't started",
-  },
-  {
-    stage: "Efficiency",
-    number: "02",
-    description:
-      "Identify and implement savings across nine operational domains. A senior finance lead and graduate analyst model the opportunity, build the board case, and support implementation.",
-    solutions: ["Operational Efficiency"],
-    status: "Funds the other two pillars",
   },
   {
     stage: "Innovation",

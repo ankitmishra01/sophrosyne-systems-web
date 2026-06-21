@@ -23,7 +23,7 @@ export default function TrustBar() {
           <div
             key={i}
             style={{
-              padding: "28px 20px",
+              padding: "36px 24px",
               textAlign: "center",
               borderRight:
                 i < TRUST_METRICS.length - 1
@@ -33,25 +33,26 @@ export default function TrustBar() {
           >
             <p
               style={{
-                fontSize: "clamp(15px, 2.2vw, 20px)",
+                fontSize: "clamp(32px, 3.8vw, 52px)",
                 fontWeight: 500,
                 fontFamily: "var(--font-newsreader), serif",
                 color: "#F1EEE2",
-                margin: "0 0 5px",
-                letterSpacing: "-0.01em",
+                margin: "0 0 8px",
+                letterSpacing: "-0.025em",
+                lineHeight: 1,
               }}
             >
               {m.value}
             </p>
             <p
               style={{
-                fontSize: 11,
+                fontSize: 12,
                 color: "#9FBFAD",
                 margin: 0,
                 fontWeight: 500,
                 fontStyle: "italic",
                 fontFamily: "var(--font-newsreader), serif",
-                lineHeight: 1.4,
+                lineHeight: 1.45,
                 letterSpacing: "0.01em",
               }}
             >

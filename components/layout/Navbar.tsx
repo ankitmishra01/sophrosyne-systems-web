@@ -99,7 +99,7 @@ export default function Navbar() {
           <Button
             variant="secondary"
             size="sm"
-            href="https://sophrosyne-platform.vercel.app/login"
+            href="https://platform.sophrosynesystems.org/login"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -172,7 +172,7 @@ export default function Navbar() {
           <Button
             variant="secondary"
             size="sm"
-            href="https://sophrosyne-platform.vercel.app/login"
+            href="https://platform.sophrosynesystems.org/login"
             target="_blank"
             rel="noopener noreferrer"
             style={{

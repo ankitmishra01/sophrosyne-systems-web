@@ -109,15 +109,13 @@ export default function ComparisonTable() {
               letterSpacing: "-0.012em",
             }}
           >
-            The same rigour as the Big Three —{" "}
+            Where we fit —{" "}
             <em style={{ fontStyle: "italic", color: "#1E4D38" }}>
-              at a fraction of the cost, and without the slide deck they leave behind.
+              and why the alternatives leave a gap.
             </em>
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.68, color: "#4A584E", margin: 0 }}>
-            A Big-Three engagement leaves you a deck and an invoice. Building it
-            in-house takes years you don&apos;t have. Here is the honest
-            trade-off.
+            Enterprise consulting firms start at $500K. Research subscription firms start at $85K/year and leave you with reports, not results. Here is the honest trade-off.
           </p>
         </motion.div>
 
@@ -178,7 +176,7 @@ export default function ComparisonTable() {
                       color: "#4A584E",
                     }}
                   >
-                    McKinsey · Bain · BCG
+                    Enterprise Consulting
                   </span>
                 </th>
                 <th style={{ padding: "16px 20px", textAlign: "center" }}>
@@ -192,7 +190,7 @@ export default function ComparisonTable() {
                       color: "#4A584E",
                     }}
                   >
-                    DIY / In-house
+                    Research Subscription
                   </span>
                 </th>
               </tr>

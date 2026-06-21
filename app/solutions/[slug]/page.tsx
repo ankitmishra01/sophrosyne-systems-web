@@ -7,6 +7,7 @@ import Card from "@/components/ui/Card";
 import Accordion from "@/components/ui/Accordion";
 import Button from "@/components/ui/Button";
 import CurriculumFramework from "@/components/sections/CurriculumFramework";
+import CurriculumPlatformShowcase from "@/components/sections/CurriculumPlatformShowcase";
 import OpExSection from "@/components/sections/OpExSection";
 import FluencyTracker from "@/components/sections/FluencyTracker";
 
@@ -58,10 +59,11 @@ export default async function SolutionSlugPage({
       )}
       <HowItWorks detail={detail} />
       {slug === "curriculum" && <CurriculumFramework />}
+      {slug === "curriculum" && <CurriculumPlatformShowcase />}
+      {slug === "curriculum" && <FluencyTracker />}
       <PersonaStrip detail={detail} />
       <OutcomesStrip detail={detail} />
       {slug === "opex" && <OpExSection />}
-      {slug === "curriculum" && <FluencyTracker />}
       {slug === "foundry" && <FoundryDemoDay />}
       <FeatureDetail detail={detail} />
       <UseCases detail={detail} />
@@ -624,119 +626,71 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
-        background: "#ECF1EC",
-        borderTop: "1px solid rgba(27,42,33,0.06)",
+        background: "#1E4D38",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        <p
-          style={{
-            fontSize: 11,
-            fontWeight: 600,
-            fontFamily: "var(--font-libre-franklin), sans-serif",
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            color: "#B5862E",
-            margin: "0 0 14px",
-          }}
-        >
-          How It Works
-        </p>
-        <h2
-          style={{
-            fontSize: "clamp(22px, 2.6vw, 36px)",
-            fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
-            color: "#1B2A21",
-            margin: "0 0 56px",
-            letterSpacing: "-0.012em",
-          }}
-        >
-          Three steps to live.
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 32,
-            position: "relative",
-          }}
-          className="hiw-grid"
-        >
-          {/* Connector line */}
-          <div
-            style={{
-              position: "absolute",
-              top: 22,
-              left: "calc(16.5% + 4px)",
-              right: "calc(16.5% + 4px)",
-              height: 1,
-              background:
-                "linear-gradient(90deg, rgba(30,77,56,0.28) 0%, rgba(199,161,74,0.35) 50%, rgba(30,77,56,0.28) 100%)",
-              pointerEvents: "none",
-            }}
-            className="hiw-connector"
-          />
+      {/* Texture */}
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(45deg, rgba(241,238,226,0.022) 0px, rgba(241,238,226,0.022) 1px, transparent 1px, transparent 20px)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(199,161,74,0.09) 0%, transparent 60%)", pointerEvents: "none" }} />
+
+      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        {/* Header */}
+        <div style={{ marginBottom: 56 }}>
+          <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#C7A14A", margin: "0 0 16px" }}>
+            How It Works
+          </p>
+          <h2 style={{ fontSize: "clamp(24px, 3vw, 42px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: 0, letterSpacing: "-0.015em", lineHeight: 1.1 }}>
+            Three steps to live.
+          </h2>
+        </div>
+
+        {/* Step cards */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }} className="hiw-grid">
           {detail.howItWorks.map((step, i) => (
-            <div key={i}>
-              <div
-                style={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "50%",
-                  background: "#FFFFFF",
-                  border: "1.5px solid rgba(30,77,56,0.28)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  marginBottom: 20,
-                  position: "relative",
-                  zIndex: 1,
-                  boxShadow: "0 1px 4px rgba(27,42,33,0.08)",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 500,
-                    fontFamily: "var(--font-newsreader), serif",
-                    color: "#1E4D38",
-                  }}
-                >
-                  {step.number}
-                </span>
+            <div
+              key={i}
+              style={{
+                position: "relative",
+                background: "rgba(255,255,255,0.04)",
+                border: `1px solid ${i === 2 ? "rgba(199,161,74,0.30)" : "rgba(199,161,74,0.12)"}`,
+                borderTop: `3px solid ${i === 2 ? "#C7A14A" : "rgba(159,191,173,0.30)"}`,
+                borderRadius: "var(--radius-card)",
+                padding: "36px 28px 32px",
+                overflow: "hidden",
+              }}
+            >
+              {/* Watermark number */}
+              <div aria-hidden style={{ position: "absolute", bottom: -20, right: 12, fontSize: 130, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", opacity: 0.05, lineHeight: 1, userSelect: "none", pointerEvents: "none", letterSpacing: "-0.04em" }}>
+                {step.number}
               </div>
-              <h3
-                style={{
-                  fontSize: 16,
-                  fontWeight: 500,
-                  fontFamily: "var(--font-newsreader), serif",
-                  color: "#1B2A21",
-                  margin: "0 0 10px",
-                  letterSpacing: "-0.01em",
-                }}
-              >
+
+              {/* Step badge */}
+              <span style={{ display: "inline-flex", alignItems: "center", background: "rgba(199,161,74,0.16)", border: "1px solid rgba(199,161,74,0.28)", borderRadius: 20, padding: "4px 12px", fontSize: 10, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.12em", textTransform: "uppercase", color: "#E9C77B", marginBottom: 20 }}>
+                Step {step.number}
+              </span>
+
+              <h3 style={{ fontSize: "clamp(17px, 1.7vw, 21px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: "0 0 14px", letterSpacing: "-0.012em", lineHeight: 1.2, position: "relative", zIndex: 1 }}>
                 {step.title}
               </h3>
-              <p
-                style={{
-                  fontSize: 14,
-                  lineHeight: 1.7,
-                  color: "#4A584E",
-                  margin: 0,
-                }}
-              >
+
+              <p style={{ fontSize: 14, lineHeight: 1.74, color: "rgba(201,217,206,0.82)", margin: 0, position: "relative", zIndex: 1 }}>
                 {step.body}
               </p>
             </div>
           ))}
         </div>
+
+        {/* Bottom note */}
+        <p style={{ textAlign: "center", marginTop: 36, fontSize: 13, fontFamily: "var(--font-newsreader), serif", fontStyle: "italic", color: "rgba(199,161,74,0.60)", letterSpacing: "0.01em" }}>
+          Typical time from kickoff to first live cohort: 6–8 weeks.
+        </p>
       </div>
 
       <style>{`
         @media (max-width: 768px) {
-          .hiw-grid { grid-template-columns: 1fr !important; }
-          .hiw-connector { display: none; }
+          .hiw-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
         }
       `}</style>
     </section>
@@ -745,127 +699,80 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
 
 /* ─── Persona Strip ──────────────────────────────────────────────────────── */
 function PersonaStrip({ detail }: { detail: SolutionDetail }) {
+  const accentColors = ["#C7A14A", "#2E7D52", "#4A7C9E"];
   return (
     <section
       style={{
         padding: "var(--section-py) var(--pad-h)",
         background: "#F4F0E6",
         borderTop: "1px solid rgba(27,42,33,0.06)",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
-      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        <p
-          style={{
-            fontSize: 11,
-            fontWeight: 600,
-            fontFamily: "var(--font-libre-franklin), sans-serif",
-            letterSpacing: "0.16em",
-            textTransform: "uppercase",
-            color: "#B5862E",
-            margin: "0 0 14px",
-          }}
-        >
-          Who This Is For
-        </p>
-        <h2
-          style={{
-            fontSize: "clamp(22px, 3vw, 36px)",
-            fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
-            color: "#1B2A21",
-            margin: "0 0 40px",
-            letterSpacing: "-0.012em",
-          }}
-        >
-          Identify your situation.
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 20,
-          }}
-          className="persona-grid"
-        >
+      {/* Subtle texture */}
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 15% 50%, rgba(30,77,56,0.04) 0%, transparent 50%), radial-gradient(circle at 85% 20%, rgba(199,161,74,0.05) 0%, transparent 40%)", pointerEvents: "none" }} />
+
+      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto", position: "relative", zIndex: 1 }}>
+        {/* Header */}
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 48, flexWrap: "wrap", gap: 16 }}>
+          <div>
+            <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#B5862E", margin: "0 0 14px" }}>
+              Who This Is For
+            </p>
+            <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: 0, letterSpacing: "-0.015em", lineHeight: 1.1 }}>
+              Identify your situation.
+            </h2>
+          </div>
+          <p style={{ fontSize: 13, color: "#4A584E", maxWidth: 280, lineHeight: 1.6, fontFamily: "var(--font-libre-franklin), sans-serif", margin: 0, textAlign: "right" }} className="persona-subtitle">
+            Every solution is built around the people who sign off — and the people who push for change.
+          </p>
+        </div>
+
+        {/* Cards */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }} className="persona-grid">
           {detail.personas.map((p, i) => (
             <div
               key={i}
               style={{
                 background: "#FFFFFF",
-                border: "1px solid rgba(27,42,33,0.10)",
+                border: "1px solid rgba(27,42,33,0.09)",
+                borderTop: `3px solid ${accentColors[i % accentColors.length]}`,
                 borderRadius: "var(--radius-card)",
-                padding: "28px 24px",
-                boxShadow: "var(--shadow-card)",
+                padding: "32px 26px 28px",
+                boxShadow: "0 2px 12px rgba(27,42,33,0.05), 0 1px 3px rgba(27,42,33,0.06)",
+                display: "flex",
+                flexDirection: "column",
+                gap: 0,
               }}
             >
-              <p
-                style={{
-                  fontSize: 10,
-                  fontWeight: 600,
-                  fontFamily: "var(--font-libre-franklin), sans-serif",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color: "#B5862E",
-                  margin: "0 0 10px",
-                }}
-              >
-                {p.role}
-              </p>
-              <div
-                style={{
-                  marginBottom: 16,
-                  paddingBottom: 16,
-                  borderBottom: "1px solid rgba(27,42,33,0.07)",
-                }}
-              >
-                <p
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 600,
-                    fontFamily: "var(--font-libre-franklin), sans-serif",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "#4A584E",
-                    margin: "0 0 6px",
-                  }}
-                >
-                  The pain
+              {/* Role badge */}
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 6, marginBottom: 20 }}>
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: accentColors[i % accentColors.length], flexShrink: 0 }} />
+                <span style={{ fontSize: 10, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.14em", textTransform: "uppercase", color: "#4A584E" }}>
+                  {p.role}
+                </span>
+              </span>
+
+              {/* Pain block */}
+              <div style={{ borderLeft: `3px solid rgba(180,90,60,0.22)`, paddingLeft: 14, marginBottom: 22 }}>
+                <p style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.1em", textTransform: "uppercase", color: "#9B5A3D", margin: "0 0 8px" }}>
+                  The challenge
                 </p>
-                <p
-                  style={{
-                    fontSize: 13,
-                    lineHeight: 1.65,
-                    color: "#4A584E",
-                    margin: 0,
-                    fontStyle: "italic",
-                    fontFamily: "var(--font-newsreader), serif",
-                  }}
-                >
+                <p style={{ fontSize: "clamp(13px, 1.3vw, 15px)", lineHeight: 1.65, color: "#3D4F45", margin: 0, fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>
                   &ldquo;{p.pain}&rdquo;
                 </p>
               </div>
-              <div>
-                <p
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 600,
-                    fontFamily: "var(--font-libre-franklin), sans-serif",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    color: "#1E4D38",
-                    margin: "0 0 6px",
-                  }}
-                >
-                  What you gain
+
+              {/* Divider */}
+              <div style={{ height: 1, background: "rgba(27,42,33,0.07)", marginBottom: 22 }} />
+
+              {/* Gain block */}
+              <div style={{ borderLeft: `3px solid rgba(30,77,56,0.28)`, paddingLeft: 14, flex: 1 }}>
+                <p style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.1em", textTransform: "uppercase", color: "#1E4D38", margin: "0 0 8px" }}>
+                  What changes
                 </p>
-                <p
-                  style={{
-                    fontSize: 13,
-                    lineHeight: 1.65,
-                    color: "#1B2A21",
-                    margin: 0,
-                  }}
-                >
+                <p style={{ fontSize: "clamp(13px, 1.3vw, 14px)", lineHeight: 1.7, color: "#1B2A21", margin: 0 }}>
                   {p.gain}
                 </p>
               </div>
@@ -876,7 +783,8 @@ function PersonaStrip({ detail }: { detail: SolutionDetail }) {
 
       <style>{`
         @media (max-width: 768px) {
-          .persona-grid { grid-template-columns: 1fr !important; }
+          .persona-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+          .persona-subtitle { text-align: left !important; }
         }
       `}</style>
     </section>

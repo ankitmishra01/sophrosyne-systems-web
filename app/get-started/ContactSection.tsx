@@ -34,63 +34,8 @@ const labelStyle: React.CSSProperties = {
 export default function ContactSection() {
   const searchParams = useSearchParams();
   const initialProduct = searchParams.get("product") ?? "";
+  const isSuccess = searchParams.get("success") === "true";
   const [selectedProduct, setSelectedProduct] = useState(initialProduct);
-  const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
-  const [submittedEmail, setSubmittedEmail] = useState("");
-  const [submitError, setSubmitError] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const get = (k: string) => (data.get(k) as string) || "";
-    const email = get("email");
-    const productLabel =
-      SOLUTIONS.find((s) => s.id === selectedProduct)?.title ||
-      selectedProduct ||
-      "Not specified";
-
-    setSubmitting(true);
-    setSubmitError("");
-
-    const controller = new AbortController();
-    const tid = setTimeout(() => controller.abort(), 12000);
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        signal: controller.signal,
-        body: JSON.stringify({
-          institution: get("institution"),
-          enrollment: get("enrollment"),
-          role: get("role"),
-          challenge: get("challenge"),
-          product: productLabel,
-          email,
-          message: get("message"),
-        }),
-      });
-      clearTimeout(tid);
-
-      const json = await res.json();
-
-      if (!res.ok || !json.ok) {
-        throw new Error(json.error || "Something went wrong");
-      }
-
-      setSubmittedEmail(email);
-      setSubmitted(true);
-    } catch (err) {
-      clearTimeout(tid);
-      const msg = err instanceof Error && err.name === "AbortError"
-        ? "Request timed out — please try again."
-        : err instanceof Error ? err.message : "Something went wrong — please email us directly.";
-      setSubmitError(msg);
-    } finally {
-      setSubmitting(false);
-    }
-  };
 
   return (
     <section
@@ -281,7 +226,7 @@ export default function ContactSection() {
                 boxShadow: "var(--shadow-card)",
               }}
             >
-              {submitted ? (
+              {isSuccess ? (
                 <div style={{ textAlign: "center", padding: "24px 0" }}>
                   <div
                     style={{
@@ -312,7 +257,7 @@ export default function ContactSection() {
                   </h3>
                   <p style={{ fontSize: 14, lineHeight: 1.65, color: "#5A6B60", margin: "0 0 24px", maxWidth: 340, marginLeft: "auto", marginRight: "auto" }}>
                     Your message has been delivered.
-                    We&apos;ll reply to <strong style={{ color: "#1B2A21" }}>{submittedEmail}</strong> within one business day.
+                    We&apos;ll reply within one business day.
                   </p>
                   <div
                     style={{
@@ -331,15 +276,15 @@ export default function ContactSection() {
                     <span style={{ fontSize: 13, color: "#5A6B60" }}>
                       Or email us directly:{" "}
                       <a
-                        href="mailto:hello@sophrosynesystems.com"
+                        href="mailto:lauretta@sophrosynesystems.org"
                         style={{ color: "#1E4D38", fontWeight: 600, textDecoration: "none" }}
                       >
-                        hello@sophrosynesystems.com
+                        lauretta@sophrosynesystems.org
                       </a>
                     </span>
                   </div>
                   <button
-                    onClick={() => { setSubmitted(false); setSubmittedEmail(""); }}
+                    onClick={() => { window.location.href = "/get-started"; }}
                     style={{
                       background: "none",
                       border: "none",
@@ -378,14 +323,14 @@ export default function ContactSection() {
               </p>
 
               <form
-                onSubmit={handleSubmit}
+                action="https://api.web3forms.com/submit"
+                method="POST"
                 style={{ display: "flex", flexDirection: "column", gap: 20 }}
               >
-                <input
-                  type="hidden"
-                  name="product"
-                  value={selectedProduct}
-                />
+                <input type="hidden" name="access_key" value="42cfb46e-3def-4a0b-b379-5b0193a6fe2b" />
+                <input type="hidden" name="redirect" value="https://sophrosynesystems.org/get-started?success=true" />
+                <input type="hidden" name="subject" value="New Sophrosyne enquiry" />
+                <input type="hidden" name="product" value={selectedProduct} />
 
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="form-half">
                   <div>
@@ -538,19 +483,13 @@ export default function ContactSection() {
                   />
                 </div>
 
-                {submitError && (
-                  <p style={{ fontSize: 13, color: "#B04040", margin: 0, textAlign: "center" }}>
-                    {submitError}
-                  </p>
-                )}
-
                 <Button
                   variant="primary"
                   size="lg"
                   type="submit"
-                  style={{ width: "100%", justifyContent: "center", opacity: submitting ? 0.7 : 1 } as React.CSSProperties}
+                  style={{ width: "100%", justifyContent: "center" } as React.CSSProperties}
                 >
-                  {submitting ? "Sending…" : "Send Request →"}
+                  Send Request →
                 </Button>
 
                 <p

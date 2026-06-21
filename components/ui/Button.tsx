@@ -85,6 +85,22 @@ export default function Button({
   };
 
   if (href) {
+    const isExternal = href.startsWith("http://") || href.startsWith("https://");
+    if (isExternal) {
+      return (
+        <a
+          href={href}
+          style={style}
+          className={className}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          target={target}
+          rel={rel ?? "noopener noreferrer"}
+        >
+          {children}
+        </a>
+      );
+    }
     return (
       <Link
         href={href}

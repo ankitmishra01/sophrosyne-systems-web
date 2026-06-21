@@ -136,7 +136,7 @@ export default function InsightsPage() {
               </p>
             </div>
             <a
-              href="mailto:hello@sophrosynesystems.com?subject=Sophrosyne Insights — notify me"
+              href="mailto:lauretta@sophrosynesystems.org?subject=Sophrosyne Insights — notify me"
               className="insight-notify-btn"
               style={{
                 display: "inline-flex", alignItems: "center", gap: 6,

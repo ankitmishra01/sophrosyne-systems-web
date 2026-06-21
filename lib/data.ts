@@ -1,25 +1,25 @@
 export const TRUST_METRICS = [
-  { value: "7 Accreditors", label: "Supported — HLC, SACSCOC, MSCHE & more" },
-  { value: "100%", label: "Student & faculty IP ownership" },
-  { value: "FERPA", label: "Compliant by architecture, not policy" },
-  { value: "$45K", label: "Fixed-fee AI & Accreditation Readiness Audit" },
+  { value: "77%", label: "Of employers now require AI fluency at hire" },
+  { value: "58%", label: "Say universities aren't delivering it" },
+  { value: "3×", label: "AI-fluency job requirements tripled in one year — NACE 2025" },
+  { value: "$45K", label: "Fixed-fee Ecosystem Audit — credited in full if you proceed" },
 ] as const;
 
 export const WHY_ITEMS = [
   {
-    icon: "GraduationCap",
-    title: "AI Fluency Programme",
-    body: "A senior AI advisor, academic specialist, and practitioner work alongside your faculty for 6–12 months. One AI course per semester, integrated into existing degree structures. Students graduate with a documented portfolio of applied work — and employers notice.",
-  },
-  {
     icon: "TrendingDown",
     title: "Operational Efficiency",
-    body: "A senior finance lead and graduate analyst identify, model, and prioritize savings across nine operational domains. You receive a board-ready savings report with an implementation roadmap — no dependency on your internal finance or IR team capacity.",
+    body: "A senior finance lead and graduate analyst identify, model, and prioritize savings across nine operational domains. You receive a board-ready savings report — the dollars that fund Pillars II and III.",
+  },
+  {
+    icon: "GraduationCap",
+    title: "AI Fluency Programme",
+    body: "A senior AI advisor and academic specialist work alongside your faculty for 6–12 months. Students graduate with a documented portfolio employers can verify. CEFR-modeled — auditable by the same accreditors who already trust the framework.",
   },
   {
     icon: "Rocket",
     title: "AI Foundry",
-    body: "Students build real products — applications, tools, and games — that go onto their GitHub portfolio. Foundry graduates leave with a public record of what they can build, not just a credential that says they attended. Every industry is hiring AI builders — banking, tech, insurance, healthcare — and the GitHub portfolio travels to all of them.",
+    body: "Students build real AI products — deployed to GitHub — that feed directly into entrepreneurship incubators. Incubators get builders, not pitch decks. Every graduate leaves with a public record of what they can actually build.",
   },
 ] as const;
 
@@ -72,25 +72,8 @@ export const JOURNEY_STEPS = [
 
 export const SOLUTIONS = [
   {
-    id: "curriculum",
-    label: "01 — The Competency Framework",
-    title: "AI Fluency Programme",
-    tagline: "Genuine AI competency. One course per semester. Students who get hired.",
-    body: "The AI Fluency Programme is a structured 6–12 month engagement — not a workshop or a course bundle. A senior AI advisor, an academic curriculum specialist, and a practitioner work alongside your faculty to embed AI competency into your existing degree structures. Students take one focused AI course per semester alongside their traditional program, building applied skills rather than theoretical familiarity. Every student who completes the program has a documented portfolio of work — not a certificate.",
-    bullets: [
-      "Senior advisor with 10+ years in AI application and industry deployment",
-      "Academic curriculum specialist adapts each level to your departmental context",
-      "Practitioner delivery — applied AI on real problems, not case studies",
-      "One AI course per semester integrated into existing program structures",
-      "Faculty certified before the first student cohort begins",
-      "Accreditation-ready outcome tracking and evidence generation",
-    ],
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Diverse group of university students together outdoors on campus",
-  },
-  {
     id: "opex",
-    label: "02 — The Finance Advisory",
+    label: "01 — The Finance Advisory",
     title: "Operational Efficiency",
     tagline: "A senior finance lead inside your institution. Savings your board can act on.",
     body: "Sophrosyne's OPEX engagement places a senior finance lead — with 10+ years in higher-education financial optimization — inside your institution for 6–12 months. A graduate analyst handles 80% of the data and modelling workload; the lead handles interpretation and stakeholder communication. Together they identify, model, and prioritize cost-saving opportunities across nine operational domains, then stay to support implementation of the highest-impact wins.",
@@ -104,6 +87,23 @@ export const SOLUTIONS = [
     ],
     image: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Classic university hall overlooking a green campus quad",
+  },
+  {
+    id: "curriculum",
+    label: "02 — The Competency Framework",
+    title: "AI Fluency Programme",
+    tagline: "Genuine AI competency. One course per semester. Students who get hired.",
+    body: "The AI Fluency Programme is a structured 6–12 month engagement — not a workshop or a course bundle. A senior AI advisor, an academic curriculum specialist, and a practitioner work alongside your faculty to embed AI competency into your existing degree structures. Students take one focused AI course per semester alongside their traditional program, building applied skills rather than theoretical familiarity. Every student who completes the program has a documented portfolio of work — not a certificate.",
+    bullets: [
+      "Senior advisor with 10+ years in AI application and industry deployment",
+      "Academic curriculum specialist adapts each level to your departmental context",
+      "Practitioner delivery — applied AI on real problems, not case studies",
+      "One AI course per semester integrated into existing program structures",
+      "Faculty certified before the first student cohort begins",
+      "Student progress tracked live on the Sophrosyne Platform — portfolios, faculty reviews, and accreditor evidence in one place",
+    ],
+    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Diverse group of university students together outdoors on campus",
   },
   {
     id: "foundry",
@@ -241,60 +241,60 @@ export const COMPARISON_ROWS = [
   {
     dimension: "What you walk away with",
     sophrosyne: { v: "Running program, savings roadmap & student portfolios", tone: "good" },
-    mbb: { v: "A slide deck", tone: "bad" },
-    diy: { v: "Whatever you can staff", tone: "neutral" },
+    mbb: { v: "A strategy deck", tone: "bad" },
+    diy: { v: "Reports and benchmarks — no execution", tone: "neutral" },
   },
   {
     dimension: "Accreditation evidence",
     sophrosyne: { v: "Structured, documented, and board-ready on delivery", tone: "good" },
-    mbb: { v: "Manual — your team assembles it", tone: "bad" },
-    diy: { v: "Built from scratch — significant staff time", tone: "bad" },
+    mbb: { v: "Your team assembles it post-engagement", tone: "bad" },
+    diy: { v: "Not typically provided", tone: "bad" },
   },
   {
     dimension: "Who does the work",
     sophrosyne: { v: "Senior experts + analysts embedded in your institution", tone: "good" },
-    mbb: { v: "Junior consultants, senior partner on slide review", tone: "bad" },
-    diy: { v: "Your existing staff, stretched", tone: "neutral" },
+    mbb: { v: "Junior consultants; senior partner on slide review", tone: "bad" },
+    diy: { v: "Remote analysts on a shared queue", tone: "neutral" },
   },
   {
     dimension: "Total cost",
-    sophrosyne: { v: "$45K – $450K", tone: "good" },
-    mbb: { v: "$400K – $2M+", tone: "bad" },
-    diy: { v: "Hidden headcount", tone: "neutral" },
+    sophrosyne: { v: "$45K – $450K fixed fee", tone: "good" },
+    mbb: { v: "$500K – $3M+ minimum", tone: "bad" },
+    diy: { v: "$85K – $150K/year subscription", tone: "neutral" },
   },
   {
     dimension: "Time to first deliverable",
     sophrosyne: { v: "Audit report in 4–6 weeks", tone: "good" },
     mbb: { v: "Strategy deck in 6–12 months", tone: "bad" },
-    diy: { v: "12–24 months to first outcome", tone: "bad" },
+    diy: { v: "Reports within weeks — no implementation", tone: "neutral" },
   },
   {
     dimension: "IP & data ownership",
-    sophrosyne: { v: "100% yours", tone: "good" },
+    sophrosyne: { v: "100% yours on delivery", tone: "good" },
     mbb: { v: "Their licensed frameworks", tone: "bad" },
-    diy: { v: "Yours — if you finish", tone: "neutral" },
+    diy: { v: "Subscription-gated access", tone: "bad" },
   },
   {
     dimension: "Built for higher-ed",
     sophrosyne: { v: "Exclusively", tone: "good" },
-    mbb: { v: "Cross-industry", tone: "neutral" },
-    diy: { v: "In-house knowledge only", tone: "neutral" },
+    mbb: { v: "Cross-industry practice", tone: "neutral" },
+    diy: { v: "Higher-ed focused — advisory only", tone: "neutral" },
   },
   {
     dimension: "Grant-fundable",
     sophrosyne: { v: "Yes — language provided", tone: "good" },
     mbb: { v: "Rarely", tone: "bad" },
-    diy: { v: "Sometimes", tone: "neutral" },
+    diy: { v: "No", tone: "bad" },
   },
 ] as const;
 
 export const FOUNDING_COHORT = {
   spots: 5,
   benefits: [
-    { title: "Founding pricing", body: "Locked-in rates for the life of the partnership — well below standard." },
-    { title: "Co-developed case study", body: "We build the reference story together and you own how it's told." },
-    { title: "Advisory seat", body: "Shape the product roadmap and the consortium charter from the inside." },
-    { title: "Priority access", body: "First to new pillars and to The AI Exchange Network." },
+    { title: "Pricing locked below standard", body: "Founding rates locked in for the life of the partnership — well below what full engagements will cost at scale." },
+    { title: "Co-author the reference case study", body: "We build the reference story together. You own how it's told — what is published, and when." },
+    { title: "Advisory seat on the roadmap", body: "Shape the product roadmap and the consortium charter from the inside. Your institution's problems become the product's priorities." },
+    { title: "First access to The AI Exchange Network", body: "Anonymized benchmarks, shared curriculum frameworks, cross-campus recruiting, and shared compute credits — founding institutions set the rules." },
   ],
 } as const;
 
@@ -343,15 +343,15 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imgPos: "center top",
     solutions: ["curriculum", "opex", "foundry"],
   },
-  {
-    name: "Melissa Jean",
-    title: "COO & Operational Efficiency Lead",
-    bio: "CPA/CMA and Associate Professor at Western's Ivey Business School with 20+ years in financial management and operations. HBA, MBA, CPA, CMA.",
-    photo: "/team/melissa.jpg",
-    imgSize: "cover",
-    imgPos: "center top",
-    solutions: ["opex"],
-  },
+  // {
+  //   name: "Melissa Jean",
+  //   title: "COO & Operational Efficiency Lead",
+  //   bio: "CPA/CMA and Associate Professor at Western's Ivey Business School with 20+ years in financial management and operations. HBA, MBA, CPA, CMA.",
+  //   photo: "/team/melissa.jpg",
+  //   imgSize: "cover",
+  //   imgPos: "center top",
+  //   solutions: ["opex"],
+  // },
   {
     name: "Ankit Mishra",
     title: "Senior Advisor, AI Foundries",
@@ -361,33 +361,33 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imgPos: "45% 3%",
     solutions: ["curriculum", "foundry"],
   },
-  {
-    name: "Christine Billinger",
-    title: "Head of Client Relations",
-    bio: "B2B SaaS marketing leader, 15+ years building demand generation and go-to-market engines. Director of Marketing, Edgecom Energy; MBA, Ivey.",
-    photo: "/team/christine.png",
-    imgSize: "cover",
-    imgPos: "center top",
-    solutions: ["curriculum", "opex", "foundry"],
-  },
-  {
-    name: "Amelia Frederking",
-    title: "Research & Strategy Lead",
-    bio: "PhD candidate in Political Science at MIT; former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics.",
-    photo: "/team/amelia.jpg",
-    imgSize: "cover",
-    imgPos: "center top",
-    solutions: ["curriculum"],
-  },
-  {
-    name: "Nathanael Frederking",
-    title: "Growth & Analytics",
-    bio: "Business Analytics student at Boston College and NCAA Division I baseball player. Drives growth, institutional measurement, and Sophrosyne's expansion analytics.",
-    photo: "/team/nathanael.webp",
-    imgSize: "cover",
-    imgPos: "center top",
-    solutions: ["foundry"],
-  },
+  // {
+  //   name: "Christine Billinger",
+  //   title: "Head of Client Relations",
+  //   bio: "B2B SaaS marketing leader, 15+ years building demand generation and go-to-market engines. Director of Marketing, Edgecom Energy; MBA, Ivey.",
+  //   photo: "/team/christine.png",
+  //   imgSize: "cover",
+  //   imgPos: "center top",
+  //   solutions: ["curriculum", "opex", "foundry"],
+  // },
+  // {
+  //   name: "Amelia Frederking",
+  //   title: "Research & Strategy Lead",
+  //   bio: "PhD candidate in Political Science at MIT; former Operations Research Analyst with Army Futures Command. BA in Political Science and Mathematics.",
+  //   photo: "/team/amelia.jpg",
+  //   imgSize: "cover",
+  //   imgPos: "center top",
+  //   solutions: ["curriculum"],
+  // },
+  // {
+  //   name: "Nathanael Frederking",
+  //   title: "Growth & Analytics",
+  //   bio: "Business Analytics student at Boston College and NCAA Division I baseball player. Drives growth, institutional measurement, and Sophrosyne's expansion analytics.",
+  //   photo: "/team/nathanael.webp",
+  //   imgSize: "cover",
+  //   imgPos: "center top",
+  //   solutions: ["foundry"],
+  // },
 ];
 
 export type SolutionDetail = {
@@ -771,8 +771,7 @@ export const INSIGHTS = [
     dek: "Two pressures are colliding in 2026. The institutions that treat them as one problem will outlast the ones that treat them as two.",
     category: "Strategy",
     readTime: "6 min read",
-    status: "soon" as const,
-    comingDate: "Summer 2026",
+    status: "live" as const,
   },
   {
     slug: "ai-and-accreditation",
@@ -838,6 +837,45 @@ export const INSIGHT_ARTICLES: Record<string, InsightArticle> = {
         paragraphs: [
           "For a provost or CFO reading this, the path is narrower and cheaper than the flagship playbook suggests. Start with a diagnostic that quantifies operating savings across non-instructional domains; a credible audit will identify several multiples of its own fee. Use that number to unlock grant funding rather than operating dollars. Pilot one pillar in one department against metrics you agree up front. Only then commit to a platform — and when you do, make sure the institution, not a vendor, owns what gets built.",
           "The enrollment cliff will not reverse. But the institutions that treat AI readiness as an operating-efficiency and outcomes problem — rather than a prestige project — will convert a moment of pressure into a durable advantage. The window to do so on founding terms is open now, and it is not wide.",
+        ],
+      },
+    ],
+  },
+  "enrollment-cliff-and-ai": {
+    title: "The Enrollment Cliff Meets the AI Mandate",
+    dek: "Two pressures are colliding in 2026. The institutions that treat them as one problem will outlast the ones that treat them as two.",
+    category: "Strategy",
+    readTime: "6 min read",
+    pullquote:
+      "The enrollment cliff and the AI mandate are not two problems arriving at once. They are one problem with two symptoms — and the institutions that see that clearly will be the ones still standing in 2031.",
+    sections: [
+      {
+        heading: "Two clocks, one institution",
+        paragraphs: [
+          "Regional universities enter 2026 managing two countdowns simultaneously. The first is demographic: the graduating high school class of 2026 is the leading edge of the long-forecast enrollment cliff, the years-long decline in traditional college-age students that higher education demographers have been warning about since 2012. For institutions outside the flagship tier, the impact is no longer a projection — it is this year's operating budget, this year's faculty headcount, this year's board presentation.",
+          "The second countdown is competitive. Employers have begun distinguishing, loudly, between graduates who understand and can use AI and those who cannot. A 2025 survey of 1,200 hiring managers found that 74 percent now list AI proficiency as a preference in entry-level candidates; 31 percent call it a hard requirement. Students are tracking this signal. In a tight enrollment market, the curriculum narrative a campus projects increasingly determines which prospective students show up.",
+        ],
+      },
+      {
+        heading: "Why treating them as separate problems is a mistake",
+        paragraphs: [
+          "The standard institutional response is to handle these two pressures in parallel: a retention and recruitment task force on one side, a faculty AI committee on the other. The problem is that parallel tracks consume the same scarce resource — leadership attention, operating dollars, and time — without producing the compounding returns that come from integration.",
+          "The institutions making the most visible progress in 2026 have recognised that a credible AI curriculum answer is also an enrollment answer. When a regional university can tell a prospective student and their family that every graduate leaves with a documented, employer-verified AI competency portfolio, it is not making a technology argument. It is making a value argument in a market where that argument is scarce. Simultaneously, when operational AI efficiency reduces per-student administrative cost by $1,400 to $2,200, the institution has more room to hold tuition, offer aid, and survive a smaller incoming class without cutting academic programmes.",
+        ],
+      },
+      {
+        heading: "The sequencing that works",
+        paragraphs: [
+          "However, integration is not the same as simultaneous deployment. Trying to move on curriculum reform, operational efficiency, and student innovation at the same time produces the kind of sprawl that kills institutional initiatives. The campuses that have navigated this well follow a consistent sequence.",
+          "They begin with a diagnostic. A focused, fixed-scope AI and accreditation readiness audit — typically four to six weeks — produces three outputs: a board-ready operating savings model, a map of accreditation gaps, and a prioritised roadmap that sequences the remaining work. That document does two things at once: it gives the CFO a financial case and gives the provost a governance anchor for curriculum changes. Critically, it is self-funding. Every audit Sophrosyne has completed has identified savings opportunities worth a multiple of its own fee.",
+          "From there, the institutions that move fastest do not wait for a full platform build. They pilot one pillar — curriculum, operational efficiency, or student innovation — at limited scope, measure against agreed milestones, and use those results to unlock grant funding before committing the next year's operating budget. Title III, HEERF, and a growing list of state workforce AI funds all have mechanisms for exactly this kind of evidence-based expansion.",
+        ],
+      },
+      {
+        heading: "What the window looks like",
+        paragraphs: [
+          "The 2026–2028 window is unusually open for institutions willing to move with urgency. Grant programmes are capitalised but under-subscribed; most institutions still lack the implementation capacity to spend them. Accreditors are watching, but standards have not yet hardened into prescriptive requirements — meaning early movers get to shape what good looks like rather than scramble to meet benchmarks someone else defined. And the competitive differentiation a campus earns from a genuine AI curriculum narrative compounds over time, in the same way that a decade ago, a strong online learning infrastructure compounded into market position.",
+          "The enrollment cliff will not reverse. Demographic data through 2031 is already baked in. But the institutions that treat AI readiness as an integrated operating and outcomes problem — not two committees meeting in parallel — will convert a moment of structural pressure into durable advantage. The path is narrower and cheaper than the flagship playbook suggests. The question is whether leadership will treat it as one problem or two.",
         ],
       },
     ],
