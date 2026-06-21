@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 
 export default function Hero() {
@@ -67,12 +68,12 @@ export default function Hero() {
         <div>
           <h1
             style={{
-              fontSize: "clamp(24px, 2.6vw, 38px)",
+              fontSize: "clamp(28px, 3.2vw, 46px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",
-              margin: "0 0 24px",
-              lineHeight: 1.12,
+              margin: "0 0 16px",
+              lineHeight: 1.1,
               letterSpacing: "-0.015em",
               opacity: ready ? 1 : 0,
               transform: ready ? "none" : "translateY(24px)",
@@ -80,29 +81,71 @@ export default function Hero() {
                 "opacity 0.75s 0.1s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.1s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            The graduates employers actually want.{" "}
-            <em style={{ fontStyle: "italic", color: "#1E4D38" }}>
-              Build AI fluency, operational efficiency, and an innovation culture — in one academic year.
+            The graduates{" "}
+            <em className="gold-pulse-em" style={{ fontStyle: "italic", color: "#1E4D38" }}>
+              employers actually want.
             </em>
           </h1>
 
+          {/* Outcome trio */}
+          <div
+            style={{
+              display: "flex",
+              gap: 6,
+              flexWrap: "wrap",
+              marginBottom: 20,
+              opacity: ready ? 1 : 0,
+              transform: ready ? "none" : "translateY(14px)",
+              transition:
+                "opacity 0.75s 0.18s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.18s cubic-bezier(0.22,1,0.36,1)",
+            }}
+          >
+            {["AI fluency", "Operational savings", "Innovation culture"].map((tag) => (
+              <span
+                key={tag}
+                style={{
+                  fontSize: 12,
+                  fontWeight: 500,
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  color: "#4A584E",
+                  background: "rgba(30,77,56,0.07)",
+                  border: "1px solid rgba(30,77,56,0.14)",
+                  borderRadius: 4,
+                  padding: "3px 10px",
+                  letterSpacing: "0.01em",
+                }}
+              >
+                {tag}
+              </span>
+            ))}
+            <span
+              style={{
+                fontSize: 12,
+                fontWeight: 600,
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                color: "#B5862E",
+                padding: "3px 4px",
+                letterSpacing: "0.01em",
+              }}
+            >
+              · one academic year
+            </span>
+          </div>
+
           <p
             style={{
-              fontSize: 17,
-              lineHeight: 1.72,
+              fontSize: 16,
+              lineHeight: 1.68,
               color: "#4A584E",
-              margin: "0 0 36px",
-              maxWidth: 480,
+              margin: "0 0 32px",
+              maxWidth: 460,
               opacity: ready ? 1 : 0,
               transform: ready ? "none" : "translateY(20px)",
               transition:
-                "opacity 0.75s 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.2s cubic-bezier(0.22,1,0.36,1)",
+                "opacity 0.75s 0.25s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.25s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            We place expert teams inside your institution — not a platform. In
-            one academic year, your students build verifiable AI fluency, your
-            administration finds operational savings, and your campus launches
-            an innovation culture that makes you worth choosing.
+            Expert teams embedded inside your institution — not a platform. Students build verifiable AI portfolios, administration uncovers real savings, and your campus becomes worth choosing.
           </p>
 
           <div
@@ -124,19 +167,119 @@ export default function Hero() {
             </Button>
           </div>
 
+          {/* Platform login link */}
+          <div
+            style={{
+              marginTop: 14,
+              opacity: ready ? 1 : 0,
+              transition: "opacity 0.8s 0.38s",
+            }}
+          >
+            <a
+              href="https://sophrosyne-platform.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 7,
+                fontSize: 12,
+                fontWeight: 600,
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                color: "#4A584E",
+                textDecoration: "none",
+                letterSpacing: "0.01em",
+                transition: "color 180ms",
+              }}
+              className="platform-login-link"
+            >
+              <span
+                style={{
+                  width: 6,
+                  height: 6,
+                  borderRadius: "50%",
+                  background: "#3fb950",
+                  boxShadow: "0 0 5px rgba(63,185,80,0.65)",
+                  flexShrink: 0,
+                }}
+              />
+              Already a partner? Log in to the platform →
+            </a>
+          </div>
+
+          {/* Role pills */}
+          <div
+            style={{
+              display: "flex",
+              gap: 8,
+              flexWrap: "wrap",
+              marginTop: 20,
+              opacity: ready ? 1 : 0,
+              transform: ready ? "none" : "translateY(12px)",
+              transition:
+                "opacity 0.75s 0.42s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.42s cubic-bezier(0.22,1,0.36,1)",
+            }}
+          >
+            {[
+              { label: "For Provosts", href: "/for/provosts" },
+              { label: "For CFOs", href: "/for/cfos" },
+              { label: "For CIOs", href: "/for/cios" },
+              { label: "AI Fluency Standard™ — Proprietary", href: "/solutions/curriculum" },
+            ].map((pill) => (
+              <Link
+                key={pill.href}
+                href={pill.href}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 5,
+                  padding: "5px 14px",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  letterSpacing: "0.02em",
+                  color: "#1E4D38",
+                  background: "#F4F0E6",
+                  border: "1px solid rgba(30,77,56,0.22)",
+                  borderRadius: 20,
+                  textDecoration: "none",
+                }}
+                className="role-pill"
+              >
+                {pill.label}
+                <span style={{ fontSize: 10 }}>→</span>
+              </Link>
+            ))}
+          </div>
+
+          {/* Stat row */}
+          <p
+            style={{
+              fontSize: 12,
+              color: "#8A9B91",
+              fontFamily: "var(--font-libre-franklin), sans-serif",
+              margin: "20px 0 0",
+              letterSpacing: "0.01em",
+              opacity: ready ? 1 : 0,
+              transition: "opacity 0.8s 0.45s",
+            }}
+          >
+            47 students enrolled · 7 accreditors supported · 100% student IP ownership
+          </p>
+
           {/* Trust strip */}
           <div
             style={{
               display: "flex",
               alignItems: "center",
               gap: 20,
-              marginTop: 48,
+              marginTop: 24,
               opacity: ready ? 1 : 0,
               transition: "opacity 0.8s 0.55s",
               flexWrap: "wrap",
             }}
           >
-            {["Human-Centered Design", "Institution Keeps All IP", "Expert Teams — Not Platforms", "6–12 Month Engagements"].map(
+            {["Expert Teams — Not Platforms", "Human-Centred Design", "6–12 Month Engagements"].map(
               (label, i) => (
                 <span
                   key={i}
@@ -392,6 +535,21 @@ export default function Hero() {
           border-radius: 50%;
           background: #8A9B91;
           animation: scrollBounce 2s ease-in-out infinite;
+        }
+        @keyframes goldPulse {
+          0% { color: #1E4D38; }
+          38% { color: #C7A14A; text-shadow: 0 0 22px rgba(199,161,74,0.30); }
+          100% { color: #1E4D38; }
+        }
+        .gold-pulse-em {
+          animation: goldPulse 2.4s 0.8s ease-in-out 1;
+        }
+        .role-pill:hover {
+          background: #ECF1EC;
+          border-color: rgba(30,77,56,0.36);
+        }
+        .platform-login-link:hover {
+          color: #1E4D38;
         }
       `}</style>
     </section>
