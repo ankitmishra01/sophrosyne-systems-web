@@ -88,3 +88,56 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover { background: rgba(30,77,56,0.38); }
+
+/* ── Knowledge Centre portal shell ── */
+.portal-shell { display: flex; min-height: 100vh; background: #F4F0E6; }
+.portal-sidebar {
+  width: 250px; flex-shrink: 0; background: #173A2A;
+  position: sticky; top: 0; height: 100vh; align-self: flex-start;
+  display: flex; flex-direction: column;
+}
+.portal-main { flex: 1; min-width: 0; }
+.portal-mobilebar { display: none; }
+.portal-nav { display: flex; flex-direction: column; }
+
+@media (max-width: 860px) {
+  .portal-shell { flex-direction: column; }
+  .portal-sidebar {
+    width: 100%; height: auto; position: sticky; top: 0; z-index: 30;
+  }
+  .portal-sidebar.is-closed .portal-nav,
+  .portal-sidebar.is-closed .portal-foot { display: none; }
+  .portal-mobilebar { display: flex; }
+  .portal-brand-desktop { display: none; }
+}
+
+/* Roadmap "where we are now" two-column → stack on small screens */
+@media (max-width: 700px) {
+  .rm-now-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Roadmap one-pager (brief-style sheet) responsive padding ── */
+.rmp-wrap   { padding: 36px 36px 48px; }
+.rmp-header { padding: 20px 44px 22px; }
+.rmp-body   { padding: 32px 44px 36px; }
+.rmp-headspacer { width: 150px; }
+@media (max-width: 760px) {
+  .rmp-wrap   { padding: 20px 16px 32px; }
+  .rmp-header { padding: 18px 22px 20px; }
+  .rmp-body   { padding: 26px 20px 26px; }
+  .rmp-headspacer { display: none; }
+}
+@media (max-width: 560px) {
+  .rmp-wrap   { padding: 14px 10px 24px; }
+  .rmp-header { padding: 16px 16px 18px; }
+  .rmp-body   { padding: 22px 14px 22px; }
+}
+
+/* Roadmap "The path" — 3 per row, centred (→ 2 → 1 on small screens) */
+.rmp-path { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 760px) { .rmp-path { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .rmp-path { grid-template-columns: 1fr; } }
+
+/* Curriculum overview — two level cards per band, centred (stack on small screens) */
+.cur-levels { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+@media (max-width: 640px) { .cur-levels { grid-template-columns: 1fr; } }

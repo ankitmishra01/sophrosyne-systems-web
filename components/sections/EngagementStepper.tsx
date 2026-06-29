@@ -21,10 +21,10 @@ const STAGES: Stage[] = [
     price: "$45,000",
     duration: "4–6 weeks",
     tag: "Where most institutions begin",
-    body: "A line-item analysis of your AI readiness across faculty, operations, and accreditation risk — with a board-ready savings model your CFO can act on independently. The output stands alone as a deliverable regardless of what comes next.",
+    body: "A line-item analysis of your AI readiness across faculty, operations, and accreditation risk, with a board-ready savings model your CFO can act on independently. The output stands alone as a deliverable regardless of what comes next.",
     includes: [
       "AI readiness baseline across faculty, staff, and operations",
-      "Accreditation risk assessment — gaps mapped against your framework",
+      "Accreditation risk assessment, gaps mapped against your framework",
       "9-domain operational opportunity model with savings estimate",
       "Board-ready executive deck and CFO financial summary",
       "Pillar-specific implementation roadmap",
@@ -37,7 +37,7 @@ const STAGES: Stage[] = [
     price: "Scoped per engagement",
     duration: "3 months",
     tag: "Validate before you commit",
-    body: "One pillar — Fluency, OpEx, or Foundry — deployed at limited scope with a dedicated expert team. Delivers measurable outcomes in the time it would take a research subscription firm to complete two studies — and at a comparable annual cost.",
+    body: "One pillar (Fluency, OpEx, or Foundry) deployed at limited scope with a dedicated expert team. Delivers measurable outcomes in the time it would take a research subscription firm to complete two studies, and at a comparable annual cost.",
     includes: [
       "Expert team embedded on-site for the pilot period",
       "Pillar-specific delivery framework with defined milestones",
@@ -69,7 +69,7 @@ const STAGES: Stage[] = [
     price: "Ongoing",
     duration: "Rolling engagement",
     tag: "For institutions that have launched",
-    body: "Continued strategic support after Platform Launch — keeping your program current, connecting you to the Sophrosyne Consortium Network, and ensuring your accreditation narrative stays ahead of the curve.",
+    body: "Continued strategic support after Platform Launch: keeping your program current, connecting you to the Sophrosyne Consortium Network, and ensuring your accreditation narrative stays ahead of the curve.",
     includes: [
       "Quarterly board reporting and program performance review",
       "Annual curriculum and program refinement",
@@ -104,7 +104,7 @@ export default function EngagementStepper() {
             <em style={{ fontStyle: "italic", color: "#1E4D38" }}>Build from there.</em>
           </h2>
           <p style={{ fontSize: 15, lineHeight: 1.7, color: "#4A584E", maxWidth: 520, margin: 0 }}>
-            Most institutions begin with the Audit — a fixed-fee, standalone deliverable with no obligation to continue. Each subsequent stage builds on the last.
+            Most institutions begin with the Audit: a fixed-fee, standalone deliverable with no obligation to continue. Each subsequent stage builds on the last.
           </p>
         </div>
 
@@ -219,7 +219,7 @@ export default function EngagementStepper() {
                       All IP transfers to your institution on delivery.
                     </p>
                     <p style={{ fontSize: 11.5, color: "#4A584E", fontFamily: "var(--font-libre-franklin), sans-serif", margin: 0 }}>
-                      Pricing scales with enrollment — institutions under 2,000 students start at $28K.
+                      Pricing scales with enrollment. Institutions under 2,000 students start at $28K.
                     </p>
                   </div>
                   <Button variant="primary" size="sm" href="/get-started">

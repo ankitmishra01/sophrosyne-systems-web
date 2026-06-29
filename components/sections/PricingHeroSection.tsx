@@ -6,7 +6,7 @@ import { CheckCircle2 } from "lucide-react";
 
 const DELIVERABLES = [
   "Line-item savings model across 9 operational domains",
-  "Accreditation risk assessment — AI-specific gaps identified",
+  "Accreditation risk assessment, AI-specific gaps identified",
   "Board-ready executive deck + CFO summary",
   "Faculty & staff AI readiness baseline",
   "Full implementation roadmap with pillar recommendations",
@@ -17,7 +17,7 @@ const TRUST_PILLS = [
   "100% IP transfer to your institution",
   "Fixed scope · Fixed fee",
   "No software mandated",
-  "Expert team — not a platform",
+  "Expert team, not a platform",
 ];
 
 export default function PricingHeroSection() {
@@ -72,7 +72,7 @@ export default function PricingHeroSection() {
               transition: "opacity 0.7s 0.2s cubic-bezier(0.22,1,0.36,1), transform 0.7s 0.2s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            Every engagement is scoped to your institution — audit, pilot, or full program deployment. Transparent scope, fixed fees, and all IP transfers to you on delivery.
+            Every engagement is scoped to your institution: audit, pilot, or full program deployment. Transparent scope, fixed fees, and all IP transfers to you on delivery.
           </p>
 
           {/* Trust pills */}
@@ -145,7 +145,7 @@ export default function PricingHeroSection() {
             {/* Footer comparison note */}
             <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)", padding: "14px 24px", background: "rgba(199,161,74,0.04)" }}>
               <p style={{ fontSize: 11.5, fontStyle: "italic", fontFamily: "var(--font-newsreader), serif", color: "rgba(199,161,74,0.75)", margin: 0, lineHeight: 1.6 }}>
-                "The same analysis a Big-Three firm would charge $200K–$400K to produce — if they engage institutions your size."
+                "The same analysis a Big-Three firm would charge $200K to $400K to produce, if they engage institutions your size."
               </p>
             </div>
           </div>

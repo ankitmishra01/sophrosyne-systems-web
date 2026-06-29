@@ -197,7 +197,7 @@ function SlugHero({
                 fontFamily: "var(--font-libre-franklin), sans-serif",
               }}
             >
-              — {detail.maturityStage.description}
+              {detail.maturityStage.description}
             </span>
           </div>
 
@@ -367,7 +367,7 @@ function FoundryHero({
               {detail.maturityStage.stage}
             </span>
             <span style={{ fontSize: 12, color: "#9FBFAD", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
-              — Where students build what doesn&apos;t exist yet
+              Where students build what doesn&apos;t exist yet
             </span>
           </div>
 
@@ -470,7 +470,7 @@ function FoundryHero({
             <div style={{ background: "linear-gradient(90deg, rgba(30,77,56,0.55), rgba(30,77,56,0.30))", borderTop: "1px solid rgba(159,191,173,0.18)", padding: "13px 22px", display: "flex", alignItems: "center", gap: 12 }}>
               <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#9FBFAD", boxShadow: "0 0 8px rgba(159,191,173,0.7)", flexShrink: 0 }} />
               <span style={{ fontSize: 12, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#9FBFAD", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-                Demo Day — Sept 2026
+                Demo Day, Sept 2026
               </span>
               <span style={{ marginLeft: "auto", fontSize: 11, color: "rgba(159,191,173,0.6)", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
                 28 employers registered
@@ -503,7 +503,7 @@ function FoundryDemoDay() {
     },
     {
       company: "Cascade Health AI",
-      role: "Product Analyst — AI Systems",
+      role: "Product Analyst, AI Systems",
       note: "First contact through inter-campus Demo Day presentation",
       status: "Interviewing",
       statusColor: "#9FBFAD",
@@ -545,7 +545,7 @@ function FoundryDemoDay() {
               <em style={{ fontStyle: "italic", color: "#9FBFAD" }}>for graduation.</em>
             </h2>
             <p style={{ fontSize: 15, lineHeight: 1.72, color: "rgba(159,191,173,0.80)", margin: "0 0 40px" }}>
-              Every Foundry semester ends with a public Demo Day — open to consortium employers, alumni, and regional partners. Employers review GitHub portfolios before they walk in the room. The best projects enter The AI Exchange Network. Traditional CVs don&apos;t survive the comparison.
+              Every Foundry semester ends with a public Demo Day, open to consortium employers, alumni, and regional partners. Employers review GitHub portfolios before they walk in the room. The best projects enter The AI Exchange Network. Traditional CVs don&apos;t survive the comparison.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {[
@@ -568,7 +568,7 @@ function FoundryDemoDay() {
           {/* Right: employer pipeline cards */}
           <div>
             <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(159,191,173,0.50)", margin: "0 0 20px", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
-              Illustrative — Foundry employer pipeline
+              Illustrative: Foundry employer pipeline
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               {employers.map((card, i) => (
@@ -725,7 +725,7 @@ function PersonaStrip({ detail }: { detail: SolutionDetail }) {
             </h2>
           </div>
           <p style={{ fontSize: 13, color: "#4A584E", maxWidth: 280, lineHeight: 1.6, fontFamily: "var(--font-libre-franklin), sans-serif", margin: 0, textAlign: "right" }} className="persona-subtitle">
-            Every solution is built around the people who sign off — and the people who push for change.
+            Every solution is built around the people who sign off, and the people who push for change.
           </p>
         </div>
 

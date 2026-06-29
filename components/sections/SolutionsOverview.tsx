@@ -59,9 +59,7 @@ export default function SolutionsOverview() {
               margin: 0,
             }}
           >
-            Each pillar stands on its own and compounds with the others — from
-            the fluency program that certifies faculty, to the finance advisory
-            that funds it, to the incubator where students build what comes next.
+            Each pillar stands on its own and builds on the others: from the fluency program that certifies faculty, to the finance advisory that funds it, to the incubator where students build what comes next.
           </p>
         </motion.div>
 

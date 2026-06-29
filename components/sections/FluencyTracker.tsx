@@ -198,7 +198,7 @@ function OverviewTab() {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 16 }}>
           <div>
             <p style={{ fontSize: 12, fontWeight: 600, color: "rgba(248,250,252,0.72)", margin: "0 0 2px", letterSpacing: "0.06em", textTransform: "uppercase" }}>
-              AI Fluency Index — 12-Month Trend (Illustrative)
+              AI Fluency Index: 12-Month Trend (Illustrative)
             </p>
             <p style={{ fontSize: 20, fontWeight: 700, color: "#9FBFAD", margin: 0, letterSpacing: "-0.04em", fontFamily: "var(--font-geist-mono), monospace", fontVariantNumeric: "tabular-nums" }}>
               81{" "}
@@ -448,12 +448,12 @@ export default function FluencyTracker() {
             </span>
           </div>
           <h2 style={{ fontSize: "clamp(26px, 3.2vw, 44px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 14px", letterSpacing: "-0.012em" }}>
-            Track AI fluency across every department — in real time.
+            Track AI fluency across every department, in real time.
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "#4A584E", margin: 0 }}>
             The Sophrosyne AI Fluency Index Dashboard gives administrators,
             faculty, and department leads a live view of how AI competency
-            is developing across every department — from first-week enrollment
+            is developing across every department, from first-week enrollment
             to Level 301 completion. See who is progressing, where gaps are
             forming, and what your accreditation report will look like next
             quarter. No manual data collection required.
@@ -503,7 +503,7 @@ export default function FluencyTracker() {
             >
               <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#9FBFAD", flexShrink: 0 }} />
               <span style={{ fontSize: 11, color: "rgba(244,245,248,0.65)", fontFamily: "var(--font-geist-mono), monospace" }}>
-                index.sophrosynesystems.com/fluency
+                platform.sophrosynesystems.org/fluency
               </span>
             </div>
             <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
@@ -664,11 +664,11 @@ export default function FluencyTracker() {
         >
           <p style={{ fontSize: 14, color: "#4A584E", margin: "0 0 16px" }}>
             The AI Fluency Index Dashboard is{" "}
-            <span style={{ color: "#1B2A21", fontWeight: 600 }}>live and available now</span> — founding institutions can log in today.
+            <span style={{ color: "#1B2A21", fontWeight: 600 }}>live and available now</span>. Founding institutions can log in today.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <a
-              href="https://sophrosyne-platform.vercel.app"
+              href="https://platform.sophrosynesystems.org/login"
               target="_blank"
               rel="noopener noreferrer"
               style={{

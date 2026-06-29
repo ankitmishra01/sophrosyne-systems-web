@@ -31,19 +31,19 @@ const LEVELS: {
     stages: [
       {
         code: "A1",
-        name: "Breakthrough — Chat Interface Basics",
+        name: "Breakthrough: Chat Interface Basics",
         focus: "Personal Productivity & Contextual Knowledge",
         body: "Using AI chat tools for one-off academic tasks: drafting, brainstorming, quick research, content generation. Students build fluency with the interfaces they will use throughout their careers.",
         tools: ["Claude", "ChatGPT", "Moda", "Shortcut AI"],
-        artifact: "Department Q&A assistant — a chatbot trained on course data and syllabi that answers student and advisor queries from uploaded materials.",
+        artifact: "Department Q&A assistant: a chatbot trained on course data and syllabi that answers student and advisor queries from uploaded materials.",
       },
       {
         code: "A2",
-        name: "Waystage — Knowledge Hubs",
+        name: "Waystage: Knowledge Hubs",
         focus: "Proprietary Context & High-Output Research",
         body: "Building Claude Projects loaded with research papers, institution data, and departmental context to produce proprietary, high-context outputs unavailable from generic search.",
         tools: ["Claude Projects", "Custom GPTs"],
-        artifact: "Automated research digest — a Claude Project loaded with journal archives that returns cited, scoped answers on demand for any faculty query.",
+        artifact: "Automated research digest: a Claude Project loaded with journal archives that returns cited, scoped answers on demand for any faculty query.",
       },
     ],
   },
@@ -57,19 +57,19 @@ const LEVELS: {
     stages: [
       {
         code: "B1",
-        name: "Threshold — The Bridge",
+        name: "Threshold: The Bridge",
         focus: "Systems Thinking & Automated Workflows",
-        body: "Using Gumloop or Zapier to move data across platforms via APIs. Students connect tools to create reliable automated workflows that replace hours of manual process — and document them for others to reuse.",
+        body: "Using Gumloop or Zapier to move data across platforms via APIs. Students connect tools to create reliable automated workflows that replace hours of manual process and document them for others to reuse.",
         tools: ["Gumloop", "Zapier", "n8n"],
-        artifact: "Student feedback router — survey responses auto-triaged by topic and severity, then forwarded to the correct academic advisor with a summary.",
+        artifact: "Student feedback router: survey responses auto-triaged by topic and severity, then forwarded to the correct academic advisor with a summary.",
       },
       {
         code: "B2",
-        name: "Vantage — The Internal Builder",
+        name: "Vantage: The Internal Builder",
         focus: "Internal Data Products & Scripted Tooling",
         body: "Using Cursor and Claude Code to write scripts that sync institutional spreadsheets into Supabase or BigQuery for live dashboards. Students ship tooling that lives in the department's stack after the course ends.",
         tools: ["Cursor", "Claude Code", "Supabase", "BigQuery"],
-        artifact: "Department copilot — a retrieval-grounded assistant for academic advising with traceable answers and human escalation routing.",
+        artifact: "Department copilot: a retrieval-grounded assistant for academic advising with traceable answers and human escalation routing.",
       },
     ],
   },
@@ -83,19 +83,19 @@ const LEVELS: {
     stages: [
       {
         code: "C1",
-        name: "Advanced — AI-Native Features",
+        name: "Advanced: AI-Native Features",
         focus: "Product Integration & Observability",
-        body: "Shipping AI-powered features as real student projects. Managing the unit economics: token costs, latency, reliability at scale — the same skills employers hire for from day one.",
+        body: "Shipping AI-powered features as real student projects. Managing the unit economics: token costs, latency, reliability at scale. The same skills employers hire for from day one.",
         tools: ["Helicone", "Evals", "Token economics"],
-        artifact: "Campus services scheduler — AI-powered booking with LLM routing, latency tracking, fallback handling, and a live cost dashboard.",
+        artifact: "Campus services scheduler: AI-powered booking with LLM routing, latency tracking, fallback handling, and a live cost dashboard.",
       },
       {
         code: "C2",
-        name: "Mastery — Autonomous Systems",
+        name: "Mastery: Autonomous Systems",
         focus: "Multi-Agent Systems & Human Oversight",
-        body: "Deploying multi-agent systems that autonomously plan and execute complex workflows — with human-in-the-loop controls, kill switches, and observability infrastructure built in.",
+        body: "Deploying multi-agent systems that autonomously plan and execute complex workflows, with human-in-the-loop controls, kill switches, and observability infrastructure built in.",
         tools: ["LangGraph", "CrewAI", "Kill switches"],
-        artifact: "Autonomous research pipeline — multi-agent system that monitors preprint servers, clusters findings, and routes digests with human review gates.",
+        artifact: "Autonomous research pipeline: multi-agent system that monitors preprint servers, clusters findings, and routes digests with human review gates.",
       },
     ],
   },
@@ -390,7 +390,7 @@ export default function CurriculumFramework() {
             fontStyle: "italic",
           }}
         >
-          The Sophrosyne Fluency Standard is modeled on the CEFR language framework — six progressive stages, each assessed by portfolio evidence rather than standardized test.
+          The Sophrosyne Fluency Standard is modeled on the CEFR language framework. Six progressive stages, each assessed by portfolio evidence rather than standardized test.
         </p>
       </div>
 

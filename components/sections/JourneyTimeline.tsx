@@ -225,7 +225,7 @@ export default function JourneyTimeline() {
             }}
           >
             <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#1E4D38", flexShrink: 0 }} />
-            The audit is the only commitment — everything after is opt-in.
+            The audit is the only commitment. Everything after is opt-in.
           </span>
         </motion.div>
       </div>

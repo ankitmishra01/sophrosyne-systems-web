@@ -7,12 +7,12 @@ const PLATFORM_FEATURES = [
   {
     icon: BookOpen,
     title: "Student Portfolio",
-    body: "Every AI artefact a student submits — timestamped, faculty-reviewed, and visible to employers by permission. The portfolio travels with them after graduation.",
+    body: "Every AI artefact a student submits is timestamped, faculty-reviewed, and visible to employers by permission. The portfolio travels with them after graduation.",
   },
   {
     icon: ClipboardCheck,
     title: "Faculty Review",
-    body: "Structured competency assessments tied to the CEFR rubric. Faculty mark once — the platform generates the accreditor evidence trail automatically.",
+    body: "Structured competency assessments tied to the CEFR rubric. Faculty mark once and the platform generates the accreditor evidence trail automatically.",
   },
   {
     icon: LayoutDashboard,
@@ -22,7 +22,7 @@ const PLATFORM_FEATURES = [
   {
     icon: FileDown,
     title: "Accreditor Export",
-    body: "One-click export of cohort evidence for HLC, SACSCOC, and MSCHE audits. Board-ready PDF — built from live platform data, not spreadsheets.",
+    body: "One-click export of cohort evidence for HLC, SACSCOC, and MSCHE audits. Board-ready PDF built from live platform data, not spreadsheets.",
   },
 ];
 
@@ -107,7 +107,7 @@ export default function CurriculumPlatformShowcase() {
               </span>
             </div>
             <a
-              href="https://sophrosyne-platform.vercel.app"
+              href="https://platform.sophrosynesystems.org/login"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -124,7 +124,7 @@ export default function CurriculumPlatformShowcase() {
               onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#C7A14A")}
               onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(199,161,74,0.75)")}
             >
-              sophrosyne-platform.vercel.app
+              platform.sophrosynesystems.org
               <ExternalLink size={11} strokeWidth={2} />
             </a>
           </div>
@@ -227,7 +227,7 @@ export default function CurriculumPlatformShowcase() {
               style={{ display: "flex", gap: 12, marginTop: 28, flexWrap: "wrap" }}
             >
               <a
-                href="https://sophrosyne-platform.vercel.app"
+                href="https://platform.sophrosynesystems.org/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -327,7 +327,7 @@ export default function CurriculumPlatformShowcase() {
                 >
                   <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#3fb950", flexShrink: 0, boxShadow: "0 0 5px rgba(63,185,80,0.6)" }} />
                   <span style={{ fontSize: 11, color: "rgba(244,245,248,0.65)", fontFamily: "monospace" }}>
-                    sophrosyne-platform.vercel.app/portfolio
+                    platform.sophrosynesystems.org/portfolio
                   </span>
                 </div>
               </div>
@@ -496,7 +496,7 @@ export default function CurriculumPlatformShowcase() {
                 fontStyle: "italic", textAlign: "center",
               }}
             >
-              Illustrative — platform is live at sophrosyne-platform.vercel.app
+              Illustrative. Platform is live at platform.sophrosynesystems.org
             </p>
           </motion.div>
         </div>

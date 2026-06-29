@@ -7,17 +7,17 @@ const FEATURES = [
   {
     icon: BookOpen,
     title: "Student Portfolio Tracker",
-    body: "Every student's AI work — verified, timestamped, and portfolio-ready. Employers see the evidence; students own every artefact, contractually.",
+    body: "Every student's AI work is verified, timestamped, and portfolio-ready. Employers see the evidence; students own every artefact, contractually.",
   },
   {
     icon: CheckSquare,
     title: "Faculty Review Workflow",
-    body: "Faculty submit structured competency assessments against the CEFR-modelled rubric. Accreditors get the evidence trail they need — without extra work from your IR team.",
+    body: "Faculty submit structured competency assessments. Accreditors get the evidence trail they need, without extra work from your IR team.",
   },
   {
     icon: LayoutDashboard,
     title: "Admin Dashboard",
-    body: "Cohort progress at a glance. Enrollment, completion rates, and accreditation readiness — one view, no spreadsheets, updated in real time.",
+    body: "Cohort progress at a glance. Enrollment, completion rates, and accreditation readiness in one view. No spreadsheets. Updated in real time.",
   },
   {
     icon: Lock,
@@ -148,9 +148,7 @@ export default function PlatformSection() {
                 maxWidth: 560,
               }}
             >
-              The platform connects faculty reviews, student portfolios, and admin dashboards — all
-              in one place. Built for FERPA compliance from day one, and already live for founding
-              institutions.
+              The platform connects faculty reviews, student portfolios, and admin dashboards in one place. Built for FERPA compliance from day one, and already live for founding institutions.
             </p>
           </motion.div>
 
@@ -164,7 +162,7 @@ export default function PlatformSection() {
             className="platform-cta-col"
           >
             <a
-              href="https://sophrosyne-platform.vercel.app"
+              href="https://platform.sophrosynesystems.org/login"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -301,7 +299,7 @@ export default function PlatformSection() {
           }}
         >
           <a
-            href="https://sophrosyne-platform.vercel.app"
+            href="https://platform.sophrosynesystems.org/login"
             target="_blank"
             rel="noopener noreferrer"
             style={{

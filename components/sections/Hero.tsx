@@ -68,7 +68,7 @@ export default function Hero() {
         <div>
           <h1
             style={{
-              fontSize: "clamp(28px, 3.2vw, 46px)",
+              fontSize: "clamp(38px, 4.6vw, 60px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",
@@ -145,7 +145,7 @@ export default function Hero() {
                 "opacity 0.75s 0.25s cubic-bezier(0.22,1,0.36,1), transform 0.75s 0.25s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            Expert teams embedded inside your institution — not a platform. Students build verifiable AI portfolios, administration uncovers real savings, and your campus becomes worth choosing.
+            Expert teams embedded inside your institution, not a platform. Students build verifiable AI portfolios, administration uncovers real savings, and your campus becomes worth choosing.
           </p>
 
           <div
@@ -176,7 +176,7 @@ export default function Hero() {
             }}
           >
             <a
-              href="https://sophrosyne-platform.vercel.app"
+              href="https://platform.sophrosynesystems.org/login"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -221,10 +221,10 @@ export default function Hero() {
             }}
           >
             {[
-              { label: "For Provosts", href: "/for/provosts" },
-              { label: "For CFOs", href: "/for/cfos" },
-              { label: "For CIOs", href: "/for/cios" },
-              { label: "AI Fluency Standard™ — Proprietary", href: "/solutions/curriculum" },
+              { label: "For Provosts", href: "/for/provost" },
+              { label: "For CFOs", href: "/for/cfo" },
+              { label: "For CIOs", href: "/for/cio" },
+              { label: "AI Fluency Standard™ (Proprietary)", href: "/solutions/curriculum" },
             ].map((pill) => (
               <Link
                 key={pill.href}
@@ -279,7 +279,7 @@ export default function Hero() {
               flexWrap: "wrap",
             }}
           >
-            {["Expert Teams — Not Platforms", "Human-Centred Design", "6–12 Month Engagements"].map(
+            {["Expert Teams, Not Platforms", "Human-Centred Design", "6–12 Month Engagements"].map(
               (label, i) => (
                 <span
                   key={i}

@@ -145,7 +145,7 @@ export default function RoiCalculator() {
 
             <p style={{ fontSize: 12, lineHeight: 1.6, color: "#4A584E", margin: "26px 0 0" }}>
               Modeled on a conservative {(totalPct * 100).toFixed(1)}% of operating budget across nine
-              operational domains. Illustrative — your audit produces the validated, line-item figure.
+              operational domains. Illustrative: your audit produces the validated, line-item figure.
             </p>
           </div>
 
@@ -191,7 +191,7 @@ export default function RoiCalculator() {
                 midpoint {fmtUSD(annual)} / year
               </p>
               <p style={{ fontSize: 11, color: "rgba(159,191,173,0.7)", margin: "0 0 24px", lineHeight: 1.5 }}>
-                Savings accumulate as each domain is optimized — typically 2–3 years to full realization.
+                Savings accumulate as each domain is optimized. Typically 2 to 3 years to full realization.
               </p>
 
               <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
@@ -233,7 +233,7 @@ export default function RoiCalculator() {
           className="roi-mbb"
         >
           {[
-            { v: "~$200K–$400K", l: "Big-Three diagnostic — if they serve your size" },
+            { v: "~$200K–$400K", l: "Big-Three diagnostic, if they serve your size" },
             { v: fmtUSD(AUDIT_FEE), l: "Sophrosyne AI & Accreditation Readiness Audit" },
             { v: paybackLabel, l: "Full platform investment pays back" },
           ].map((s, i) => (

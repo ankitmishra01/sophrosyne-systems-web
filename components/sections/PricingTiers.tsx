@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 
 const CONSULTING_DETAILS = [
-  "AI & Accreditation Readiness Audit — $45K fixed fee",
+  "AI & Accreditation Readiness Audit, $45K fixed fee",
   "Pillar pilots with fixed scope and full IP transfer",
   "Full program and Foundry deployment",
   "Retainer advisory and ongoing strategic support",
@@ -159,9 +159,7 @@ export default function PricingTiers() {
               <Eyebrow>Consulting Engagement</Eyebrow>
               <TrackName>Fixed-Fee Engagements</TrackName>
               <Description>
-                Every engagement is scoped to your institution&apos;s specific
-                context — audit, pilot, or full program build. You keep 100%
-                of the IP.
+                Every engagement is scoped to your institution&apos;s specific context: audit, pilot, or full program build. You keep 100% of the IP.
               </Description>
 
               <AnchorBlock>
@@ -175,10 +173,7 @@ export default function PricingTiers() {
                     margin: "11px 0",
                   }}
                 >
-                  Starts at a $45,000 fixed-fee AI &amp; Accreditation
-                  Readiness Audit — the same analysis a Big-Three firm would
-                  charge $200K–$400K to produce, if they engage institutions
-                  your size.
+                  Starts at a $45,000 fixed-fee AI &amp; Accreditation Readiness Audit. The same analysis a Big-Three firm would charge $200K to $400K to produce, if they engage institutions your size.
                 </p>
               </AnchorBlock>
 

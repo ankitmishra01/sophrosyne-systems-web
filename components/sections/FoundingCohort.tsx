@@ -121,7 +121,7 @@ export default function FoundingCohort() {
               margin: "0 0 36px",
             }}
           >
-            We are building Sophrosyne with our first five institutions, not for them. Pricing locked. Charter institutions shape the roadmap — and arrive at their board table with a self-funded transformation plan.
+            We are building Sophrosyne with our first five institutions, not for them. Pricing locked. Charter institutions shape the roadmap and arrive at their board table with a self-funded transformation plan.
           </p>
 
           <motion.div

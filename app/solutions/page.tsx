@@ -7,7 +7,7 @@ import CallToAction from "@/components/sections/CallToAction";
 export const metadata: Metadata = {
   title: "Solutions — Sophrosyne Systems",
   description:
-    "Three pillars: AI Fluency Programme, Operational Efficiency advisory, and AI Foundry — delivered by expert teams to private universities ready to move.",
+    "Three pillars: AI Fluency Programme, Operational Efficiency advisory, and AI Foundry, delivered by expert teams to private universities ready to move.",
 };
 
 const HERO_PILLARS = [
@@ -89,12 +89,7 @@ function SolutionsHero() {
               margin: 0,
             }}
           >
-            Sophrosyne is a three-pillar consulting program for private
-            universities ready to move — each pillar delivered by an expert team,
-            not handed off as a self-serve toolkit. Each pillar works independently
-            and compounds together: AI competency that makes graduates employable,
-            operational savings that fund the work, and an innovation culture that
-            makes your institution worth choosing.
+            Sophrosyne is a three-part consulting programme for universities ready to move. Each part is delivered by an expert team, not handed off as a software tool. Each part stands alone and builds on the others: AI skills that make graduates employable, savings that fund the work, and a campus that students choose.
           </p>
         </div>
 
@@ -291,12 +286,7 @@ function PhilosophyStrip() {
             letterSpacing: "-0.008em",
           }}
         >
-          &ldquo;Sophrosyne is a Greek word meaning temperance, moderation, and
-          balance. At Sophrosyne Systems, we fervently commit to preserving the
-          power and passion of the human mind — equipping you with the skills,
-          systems, and knowledge to more effectively exercise your human
-          intellect while thoughtfully harnessing the utility of unprecedented
-          technological tools.&rdquo;
+          &ldquo;Sophrosyne is a Greek word for balance. We believe technology should sharpen the human mind, not replace it. Our programmes are built around that idea: give people the skills to use AI well, and step back.&rdquo;
         </p>
         <p
           style={{
@@ -308,10 +298,7 @@ function PhilosophyStrip() {
             margin: 0,
           }}
         >
-          Instead of becoming beholden to technology or, at the other extreme,
-          foregoing its benefits entirely, we advocate for an approach grounded
-          in sophrosyne: prudently moderating and calibrating powerful technology
-          to better serve the human being at the core of your institution.
+          We do not ask institutions to avoid AI or to hand decisions over to it. We help them find the right balance: use it where it helps, and stay in control.
         </p>
         <p
           style={{
@@ -324,7 +311,7 @@ function PhilosophyStrip() {
             color: "#C7A14A",
           }}
         >
-          — Founding Philosophy
+          Founding Philosophy
         </p>
       </div>
     </section>
@@ -344,15 +331,15 @@ const MATURITY_STAGES = [
     stage: "Competency",
     number: "02",
     description:
-      "Move students from AI awareness to applied competency. One AI course per semester, delivered by a senior advisor, curriculum specialist, and practitioner — embedded in your existing degree structures.",
+      "Move students from AI awareness to real competency. One AI course per semester, delivered by a senior advisor and practitioner, embedded in your existing degree structures.",
     solutions: ["AI Fluency Programme"],
-    status: "The foundation — most institutions haven't started",
+    status: "The foundation. Most institutions haven't started.",
   },
   {
     stage: "Innovation",
     number: "03",
     description:
-      "Students build real products and publish them to GitHub. Every sector is hiring AI builders — and a public portfolio proves capability across all of them. Your campus becomes a place where the best applicants want to be.",
+      "Students build real products and publish them to GitHub. Every sector is hiring AI builders, and a public portfolio proves capability across all of them. Your campus becomes a place where the best applicants want to be.",
     solutions: ["AI Foundry"],
     status: "Where the leaders are heading",
   },
@@ -404,9 +391,7 @@ function MaturityFramework() {
             maxWidth: 580,
           }}
         >
-          The Sophrosyne suite is designed to move your institution along this
-          arc — at the pace that works for your budget, your governance, and
-          your people.
+          The Sophrosyne programme moves your institution along this arc. At the pace that works for your budget, your governance, and your people.
         </p>
 
         <div
@@ -591,12 +576,12 @@ const PERSONAS = [
     role: "Vice-Chancellor / Provost",
     href: "/for/provost",
     Icon: GraduationCap,
-    heading: "Graduate outcomes that open doors — not just credentials that check boxes.",
-    body: "Your institution's reputation is built on what students do after they leave. Sophrosyne gives them verifiable, employer-legible AI competency — and a GitHub portfolio to prove it — before they graduate.",
+    heading: "Graduate outcomes that open doors, not just credentials that check boxes.",
+    body: "Your institution's reputation is built on what students do after they leave. Sophrosyne gives them verifiable AI skills and a GitHub portfolio to prove it, before they graduate.",
     wins: [
-      "AI Fluency portfolios every industry can evaluate — banking, tech, insurance, healthcare",
-      "Demo Day showcases what your students actually built — open to alumni and regional industry",
-      "Programme embedded in your existing degree structure — no new courses required",
+      "AI Fluency portfolios every industry can read: banking, tech, insurance, healthcare",
+      "Demo Day showcases what your students built, open to alumni and regional industry",
+      "Programme embedded in your existing degree structure, no new courses required",
     ],
     accent: "#1E4D38",
   },
@@ -607,7 +592,7 @@ const PERSONAS = [
     heading: "The savings model is built before you commit a budget line.",
     body: "Our Operational Efficiency advisory identifies savings across nine domains and builds the board case first. The program typically funds itself within the engagement year.",
     wins: [
-      "No upfront commitment — opportunity modeled before you decide",
+      "No upfront commitment. Opportunity modeled before you decide.",
       "Board-ready financial case and implementation roadmap included",
       "Engagements typically identify $200K–$400K in operational savings",
     ],
@@ -617,12 +602,12 @@ const PERSONAS = [
     role: "Chief Information Officer",
     href: "/for/cio",
     Icon: Shield,
-    heading: "AI governance and integration — without the tool sprawl.",
-    body: "We're not a software vendor. We build the frameworks, usage policies, and staff capability your institution needs to adopt AI responsibly and sustain it long after we leave.",
+    heading: "Canvas. Banner. Slate. One week to integrate. No lock-in.",
+    body: "We handle the integration scoping, FERPA exposure mapping, and data governance layer. Not your IT team. Your existing stack stays. No new software vendor to manage.",
     wins: [
-      "Governance and usage policy frameworks included as standard",
-      "No new software mandated — designed to work with your existing stack",
-      "Staff capability built in-house, not handed off to IT as a backlog",
+      "Canvas, Banner, and Slate integration scoped and executed by our team, not added to your IT backlog",
+      "FERPA exposure documented before any AI tool touches student or faculty data",
+      "All data stays in your own systems. Nothing trains on your records",
     ],
     accent: "#6E9B85",
   },
@@ -662,10 +647,10 @@ function WhoItsFor() {
               margin: "0 0 14px",
               letterSpacing: "-0.012em",
               lineHeight: 1.1,
-              maxWidth: 560,
+              maxWidth: 660,
             }}
           >
-            Different roles. One shared outcome.
+            Provosts, CFOs, and CIOs each get a measurable outcome in one engagement.
           </h2>
           <p
             style={{
@@ -676,15 +661,13 @@ function WhoItsFor() {
               margin: 0,
             }}
           >
-            The buying committee for a Sophrosyne engagement is typically three
-            people: the academic leader, the financial decision-maker, and the
-            technology steward. Here is what each one walks away with.
+            Three people typically make this decision: the academic leader, the finance lead, and the technology head. Here is what each one gets.
           </p>
         </div>
 
         {/* Cards */}
         <div
-          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}
+          style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, alignItems: "stretch" }}
           className="persona-grid"
         >
           {PERSONAS.map((p) => (
@@ -701,6 +684,7 @@ function WhoItsFor() {
                 borderRadius: "var(--radius-card)",
                 overflow: "hidden",
                 boxShadow: "var(--shadow-card)",
+                height: "100%",
               }}
             >
               {/* Accent top bar */}
@@ -834,6 +818,52 @@ function WhoItsFor() {
             </Link>
           ))}
         </div>
+
+        {/* Guarantee strip */}
+        <div
+          style={{
+            marginTop: 28,
+            padding: "22px 28px",
+            background: "#F4F0E6",
+            border: "1px solid rgba(27,42,33,0.10)",
+            borderRadius: "var(--radius-card)",
+            display: "flex",
+            alignItems: "center",
+            gap: 20,
+            flexWrap: "wrap",
+          }}
+        >
+          <div
+            style={{
+              width: 32,
+              height: 32,
+              borderRadius: "50%",
+              background: "rgba(30,77,56,0.08)",
+              border: "1px solid rgba(30,77,56,0.18)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+            }}
+          >
+            <Shield size={15} color="#1E4D38" strokeWidth={1.8} />
+          </div>
+          <p
+            style={{
+              fontSize: 13.5,
+              lineHeight: 1.65,
+              color: "#4A584E",
+              margin: 0,
+              fontFamily: "var(--font-newsreader), serif",
+            }}
+          >
+            No multi-year contracts. No platform lock-in. All data stays in your own systems.{" "}
+            <strong style={{ color: "#1B2A21", fontWeight: 500 }}>
+              After the two-week audit you leave with the full board report. The audit is the only commitment. Everything after is your choice.
+            </strong>
+          </p>
+        </div>
+
       </div>
 
       <style>{`

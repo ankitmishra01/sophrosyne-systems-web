@@ -7,13 +7,13 @@ const STAGES = [
   {
     id: "explore",
     label: "Explore",
-    desc: "Identifying which AI tools and workflows are relevant to your institution — workshops, vendor evaluations, departmental pilots with no institutional commitment.",
+    desc: "Identifying which AI tools and workflows are relevant to your institution: workshops, vendor evaluations, departmental pilots with no institutional commitment.",
     badge: null,
   },
   {
     id: "deploy",
     label: "Deploy",
-    desc: "Running AI tools in isolated pilots. One department, one use case, no integration. Most universities are stuck here — not because they lack ambition, but because no one built the internal capacity to go further.",
+    desc: "Running AI tools in isolated pilots. One department, one use case, no integration. Most universities are stuck here. Not because they lack ambition, but because no one built the internal capacity to go further.",
     badge: "Most institutions",
     badgeColor: "#B0726A",
     badgeBg: "rgba(176,114,106,0.10)",
@@ -22,7 +22,7 @@ const STAGES = [
   {
     id: "automate",
     label: "Automate",
-    desc: "AI moves from pilot to embedded — automating repeatable administrative tasks, reducing manual workflows, and freeing faculty and staff for higher-value work.",
+    desc: "AI moves from pilot to embedded. Automating repeatable administrative tasks, reducing manual workflows, and freeing faculty and staff for higher-value work.",
     badge: null,
   },
   {
@@ -34,7 +34,7 @@ const STAGES = [
   {
     id: "reshape",
     label: "Reshape",
-    desc: "The institution itself is reshaped: graduates carry verifiable AI credentials, operations run leaner, and the campus has become a destination for students who know it will prepare them — not just credential them.",
+    desc: "The institution itself is reshaped: graduates carry verifiable AI credentials, operations run leaner, and the campus has become a destination for students who know it will prepare them, not just credential them.",
     badge: "Where leaders are",
     badgeColor: "#1E4D38",
     badgeBg: "rgba(30,77,56,0.10)",
@@ -98,7 +98,7 @@ export default function AIMaturitySection() {
               margin: 0,
             }}
           >
-            Employers — including Zapier, which now hires on a four-tier AI-fluency rubric — expect graduates at <em style={{ fontStyle: "italic" }}>Adoptive</em> (B1) or above. Most universities are producing graduates at <em style={{ fontStyle: "italic" }}>Explore</em>. The Sophrosyne suite is designed to move your institution up this arc, at the pace your governance allows.
+            Employers (including Zapier, which now hires on a four-tier AI-fluency rubric) expect graduates at <em style={{ fontStyle: "italic" }}>Adoptive</em> (B1) or above. Most universities are producing graduates at <em style={{ fontStyle: "italic" }}>Explore</em>. The Sophrosyne programme is designed to move your institution up this arc, at the pace your governance allows.
           </p>
         </motion.div>
 

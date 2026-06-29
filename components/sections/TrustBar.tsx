@@ -46,14 +46,14 @@ export default function TrustBar() {
             </p>
             <p
               style={{
-                fontSize: 12,
-                color: "#9FBFAD",
+                fontSize: 14,
+                color: "#C9D9CE",
                 margin: 0,
                 fontWeight: 500,
-                fontStyle: "italic",
-                fontFamily: "var(--font-newsreader), serif",
-                lineHeight: 1.45,
-                letterSpacing: "0.01em",
+                fontStyle: "normal",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+                lineHeight: 1.5,
+                letterSpacing: "0em",
               }}
             >
               {m.label}

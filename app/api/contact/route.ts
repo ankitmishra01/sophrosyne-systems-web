@@ -1,6 +1,31 @@
 import { NextRequest, NextResponse } from "next/server";
 
+// 3 submissions per IP per 10 minutes. Resets on cold start — sufficient to
+// stop accidental double-submits and basic bots without needing external state.
+const rateMap = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateMap.get(ip);
+  if (!entry || now > entry.resetAt) {
+    rateMap.set(ip, { count: 1, resetAt: now + 10 * 60 * 1000 });
+    return false;
+  }
+  if (entry.count >= 3) return true;
+  entry.count++;
+  return false;
+}
+
 export async function POST(req: NextRequest) {
+  const ip =
+    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
+  if (isRateLimited(ip)) {
+    return NextResponse.json(
+      { ok: false, error: "Too many requests. Please wait a few minutes and try again." },
+      { status: 429 }
+    );
+  }
+
   const key = process.env.WEB3FORMS_KEY;
   if (!key) {
     return NextResponse.json(

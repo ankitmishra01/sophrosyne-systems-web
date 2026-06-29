@@ -30,10 +30,7 @@ export default function GrantFunding() {
             <em style={{ fontStyle: "italic", color: "#1E4D38" }}>and we write the language.</em>
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.68, color: "#4A584E", margin: 0 }}>
-            A financially-stressed institution rarely pays for transformation out
-            of operating funds — it funds it through grants. We provide
-            ready-to-submit narrative language mapped to the programs your grants
-            office already pursues.
+            A financially-stressed institution rarely pays for transformation out of operating funds. It funds it through grants. We provide ready-to-submit narrative language mapped to the programs your grants office already pursues.
           </p>
         </div>
 
@@ -75,7 +72,7 @@ export default function GrantFunding() {
         </div>
 
         <p style={{ fontSize: 13, color: "#4A584E", margin: "28px 0 0", fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>
-          Grant eligibility varies by institution type and cycle. We help you map the right program — not legal or financial advice.
+          Grant eligibility varies by institution type and cycle. We help you map the right program. Not legal or financial advice.
         </p>
       </div>
 

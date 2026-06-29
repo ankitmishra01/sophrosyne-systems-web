@@ -46,10 +46,10 @@ const DEPLOY_STAGES = [
 ];
 
 const AUDIT_ROWS = [
-  { time: "14:32", user: "system", action: "AI Fluency Index updated — Cohort A: 62 students at Level 201" },
+  { time: "14:32", user: "system", action: "AI Fluency Index updated: Cohort A, 62 students at Level 201" },
   { time: "14:18", user: "r.sharma", action: "Exported HLC outcome evidence · 3 programs (FERPA-scoped)" },
-  { time: "13:55", user: "system", action: "GitHub portfolio sync complete — 47 new commits logged" },
-  { time: "13:40", user: "l.nazari", action: "Faculty certification updated — 8 instructors at L3 status" },
+  { time: "13:55", user: "system", action: "GitHub portfolio sync complete, 47 new commits logged" },
+  { time: "13:40", user: "l.nazari", action: "Faculty certification updated, 8 instructors at L3 status" },
   { time: "13:02", user: "system", action: "Nightly accreditation evidence export → compliance vault" },
 ];
 
@@ -174,7 +174,7 @@ function ViewPanel({ view }: { view: ViewId }) {
         </div>
         <p style={{ fontSize: 11, color: "rgba(248,250,252,0.62)", margin: "18px 0 0", display: "flex", alignItems: "center", gap: 7 }}>
           <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#9FBFAD" }} />
-          All connectors operate inside your cloud perimeter — no data leaves the institution.
+          All connectors operate inside your cloud perimeter. No data leaves the institution.
         </p>
       </div>
     );
@@ -259,7 +259,7 @@ function ViewPanel({ view }: { view: ViewId }) {
       </div>
       <p style={{ fontSize: 11, color: "rgba(248,250,252,0.62)", margin: "18px 0 0", display: "flex", alignItems: "center", gap: 7 }}>
         <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#C7A14A" }} />
-        Immutable log — exportable for FERPA, HLC, and SACSCOC review.
+        Immutable log, exportable for FERPA, HLC, and SACSCOC review.
       </p>
     </div>
   );
@@ -328,7 +328,7 @@ export default function ShowreelSection() {
             }}
           >
             The AI Fluency Tracker gives faculty, administration, and accreditors
-            a live view of student progression — from baseline to portfolio-ready.
+            a live view of student progression from baseline to portfolio-ready.
             Available to Founding Cohort institutions.{" "}
             <span style={{ color: "#B5862E", fontWeight: 600 }}>
               Currently in development.
@@ -380,7 +380,7 @@ export default function ShowreelSection() {
             >
               <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#C7A14A", flexShrink: 0 }} />
               <span style={{ fontSize: 11, color: "rgba(244,245,248,0.68)", fontFamily: "monospace" }}>
-                tracker.sophrosynesystems.com · Secure
+                platform.sophrosynesystems.org · Secure
               </span>
             </div>
 

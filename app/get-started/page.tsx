@@ -20,7 +20,7 @@ const PROCESS_STEPS = [
     title: "AI & Accreditation Readiness Audit",
     duration: "4–6 weeks",
     price: "$45K · Fixed fee",
-    body: "We audit your accreditation gaps, AI curriculum readiness, and operational savings opportunities across all 9 domains — including stakeholder interviews across leadership, IT, and faculty. You receive a board-ready findings deck with a prioritized roadmap and grant-funding pathway. Not ready for the full program? Ask about our targeted 90-Day Pillar Pilot on your discovery call.",
+    body: "We audit your accreditation gaps, AI curriculum readiness, and operational savings opportunities across all 9 domains, including stakeholder interviews across leadership, IT, and faculty. You receive a board-ready findings deck with a prioritized roadmap and grant-funding pathway. Not ready for the full program? Ask about our targeted 90-Day Pillar Pilot on your discovery call.",
   },
   {
     number: "03",
@@ -32,7 +32,7 @@ const PROCESS_STEPS = [
     number: "04",
     title: "Ongoing Engagement",
     duration: "6–12 Months",
-    body: "Expert teams remain embedded — delivering each new AI course, advancing OPEX implementation, mentoring Foundry cohorts. Students leave with GitHub portfolios that travel across every industry. Employment outcomes are tracked and reported.",
+    body: "Expert teams remain embedded, delivering each new AI course, advancing operational efficiency work, and mentoring Foundry cohorts. Students leave with GitHub portfolios that travel across every industry. Employment outcomes are tracked and reported.",
   },
 ];
 

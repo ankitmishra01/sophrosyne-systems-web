@@ -1,8 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Newsreader, Libre_Franklin } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import Chrome from "@/components/layout/Chrome";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -57,9 +58,9 @@ export default function RootLayout({
       className={`${newsreader.variable} ${libreFranklin.variable}`}
     >
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <Chrome>{children}</Chrome>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

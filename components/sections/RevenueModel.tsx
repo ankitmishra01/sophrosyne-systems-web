@@ -7,7 +7,7 @@ const PILLARS = [
   {
     Icon: Code2,
     title: "Engineering Output, Not Licensing",
-    body: "You pay for the work we ship — infrastructure provisioning, curriculum deployment, and platform integration. There are no per-user fees, no renewal traps, and no vendor lock-in.",
+    body: "You pay for the work we ship: infrastructure provisioning, curriculum deployment, and platform integration. There are no per-user fees, no renewal traps, and no vendor lock-in.",
   },
   {
     Icon: Shield,
@@ -17,7 +17,7 @@ const PILLARS = [
   {
     Icon: TrendingUp,
     title: "Predictable, Venture-Ready Budgeting",
-    body: "Two engagement tracks — consulting-first or full-stack — each with clean line items for your CFO. Start with an accreditation readiness audit to identify gaps and savings, then decide how far to go. No lock-in at any stage.",
+    body: "Two engagement tracks (consulting-first or full-stack), each with clean line items for your CFO. Start with an accreditation readiness audit to identify gaps and savings, then decide how far to go. No lock-in at any stage.",
   },
 ];
 
@@ -116,7 +116,7 @@ export default function RevenueModel() {
                 >
                   100% of every product generated
                 </span>{" "}
-                — powered by a predictable software license and a dedicated
+                powered by a predictable software license and a dedicated
                 strategy retainer.
               </p>
             </div>

@@ -16,9 +16,9 @@ const PILLARS = [
 ] as const;
 
 const BENEFIT_LINES: Record<number, string> = {
-  0: "The dollars that fund Pillars II and III — self-funding, on paper, before the board votes",
-  1: "Students graduate with a documented portfolio employers can verify — not a certificate",
-  2: "Incubators get builders, not pitch decks — real products deployed to public GitHub",
+  0: "The dollars that fund Pillars II and III. Self-funding, on paper, before the board votes.",
+  1: "Students graduate with a documented portfolio employers can verify, not a certificate.",
+  2: "Incubators get builders, not pitch decks. Real products deployed to public GitHub.",
 };
 
 const LEVEL_COLORS: Record<string, { fg: string; bg: string; border: string }> = {
@@ -274,7 +274,7 @@ export default function WhySophrosyne() {
                 margin: 0,
               }}
             >
-              Three pillars delivered by expert teams — not handed off as a self-serve toolkit. Each pillar works independently and compounds together. Pillar I identifies the savings that fund Pillars II and III. The result: AI-fluent graduates, a leaner operation, and an innovation culture — delivered within one academic year. Expert teams, not platforms. The institution keeps 100% of all IP.
+              Three pillars delivered by expert teams, not handed off as a self-serve toolkit. Each pillar works independently and builds on the others. Pillar I identifies the savings that fund Pillars II and III. The result: AI-fluent graduates, a leaner operation, and an innovation culture delivered within one academic year. Expert teams, not platforms. The institution keeps 100% of all IP.
             </p>
           </motion.div>
 

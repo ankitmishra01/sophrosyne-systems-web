@@ -90,7 +90,7 @@ export default function OpExSection() {
             Sophrosyne builds an adaptive infrastructure that identifies savings
             across every operational domain. A real-time snapshot scorecard with
             predictive analytics shows your CFO exactly where costs can be
-            reduced — without cutting what makes your institution human.
+            reduced, without cutting what makes your institution human.
           </p>
         </motion.div>
 

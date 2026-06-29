@@ -12,7 +12,7 @@ const TYPES = [
   },
   {
     label: "Enterprise Consulting Groups",
-    signal: "Transformation — but not for you.",
+    signal: "Transformation, but not for you.",
     body: "Large management consultancies serve the top 100 research universities at $500K–$3M minimums, 12–24 month timelines, and staffing models built around junior analysts. For most institutions, they simply don't engage.",
     verdict: "Out of reach for most",
     verdictTone: "neutral" as const,
@@ -20,7 +20,7 @@ const TYPES = [
   {
     label: "Sophrosyne",
     signal: "Implementation at boutique speed.",
-    body: "Senior experts embedded inside your institution. Audit in 4–6 weeks. Pilot in 90 days. Fixed fees at every stage — starting at $45K — with all IP transferring to your institution on delivery.",
+    body: "Senior experts embedded inside your institution. Audit in 4 to 6 weeks. Pilot in 90 days. Fixed fees at every stage, starting at $45K, with all IP transferring to your institution on delivery.",
     verdict: "Built for this",
     verdictTone: "good" as const,
     highlight: true,

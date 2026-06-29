@@ -18,6 +18,11 @@ const ROLE_LINKS = [
   { label: "For CIOs",     href: "/for/cio"     },
 ];
 
+const TOOL_LINKS = [
+  { label: "US AI Readiness Index",         href: "/insights/ai-readiness-index"                 },
+  { label: "Canadian Universities Index",  href: "/insights/canadian-universities"              },
+];
+
 export default function Footer() {
   return (
     <footer
@@ -37,7 +42,7 @@ export default function Footer() {
           className="footer-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "1.5fr 1fr 1fr 1fr",
+            gridTemplateColumns: "1.5fr 1fr 1fr 1fr 1fr",
             gap: 40,
             marginBottom: 48,
           }}
@@ -56,9 +61,7 @@ export default function Footer() {
                 margin: 0,
               }}
             >
-              AI fluency, accreditation readiness, and enrollment
-              differentiation for regional universities — built on software,
-              not slide decks.
+              AI fluency, accreditation readiness, and enrollment differentiation for regional universities. Built on software, not slide decks.
             </p>
           </div>
 
@@ -118,6 +121,36 @@ export default function Footer() {
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
               {ROLE_LINKS.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  style={{ fontSize: 13, color: "#9FBFAD", textDecoration: "none", transition: "color 180ms" }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#C9D9CE")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#9FBFAD")}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Tools */}
+          <div>
+            <p
+              style={{
+                fontSize: 10,
+                fontWeight: 600,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "rgba(241,238,226,0.62)",
+                margin: "0 0 16px",
+                fontFamily: "var(--font-libre-franklin), sans-serif",
+              }}
+            >
+              Tools
+            </p>
+            <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+              {TOOL_LINKS.map((l) => (
                 <Link
                   key={l.href}
                   href={l.href}

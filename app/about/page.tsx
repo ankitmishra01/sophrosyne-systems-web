@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const HERO_STATS = [
-  { value: "5 Spots", label: "Founding Cohort — limited institutional intake" },
+  { value: "5 Spots", label: "Founding Cohort, limited institutional intake" },
   { value: "FERPA", label: "Compliance Architecture" },
   { value: "100%", label: "Institution IP Ownership" },
 ];
@@ -74,10 +74,7 @@ function AboutHero() {
               margin: 0,
             }}
           >
-            Sophrosyne Systems was founded on a single conviction: that regional
-            universities have more latent AI potential than any other institution
-            in the country — and that they've been consistently underserved by
-            enterprise software vendors who sell licenses, not outcomes.
+            Sophrosyne Systems was founded on one conviction: regional universities have more untapped AI potential than any other type of institution. And they have been consistently underserved by vendors who sell software licences, not outcomes.
           </p>
         </div>
 
@@ -161,10 +158,7 @@ function TeamIntro() {
           letterSpacing: "-0.01em",
         }}
       >
-        Every engagement draws on the same blend: a senior AI advisor who has
-        shipped production systems, an academic curriculum specialist who has
-        sat on accreditation committees, and an operator with a track record
-        in higher-ed finance. That combination is deliberate — and rare.
+        Every engagement draws on the same team: a senior AI advisor who has built production systems, a curriculum specialist with accreditation experience, and a finance operator who knows higher education. That combination is rare.
       </p>
     </section>
   );

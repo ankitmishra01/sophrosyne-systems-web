@@ -9,7 +9,7 @@ import CallToAction from "@/components/sections/CallToAction";
 export const metadata: Metadata = {
   title: "Pricing — Sophrosyne Systems",
   description:
-    "Fixed-fee consulting engagements with transparent pricing. Audit, advisory, and full program deployment — your institution keeps 100% of the IP.",
+    "Fixed-fee consulting engagements with transparent pricing. Audit, advisory, and full program deployment. Your institution keeps 100% of the IP.",
 };
 
 export default function PricingPage() {

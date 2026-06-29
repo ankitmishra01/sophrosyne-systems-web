@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { INSIGHT_ARTICLES } from "@/lib/data";
+import { renderText } from "@/lib/renderText";
 import CallToAction from "@/components/sections/CallToAction";
 
 export function generateStaticParams() {
@@ -79,6 +80,15 @@ export default async function InsightArticlePage({
           >
             {a.dek}
           </p>
+          {a.heroImage && (
+            <div style={{ margin: "32px 0 0", borderRadius: 10, overflow: "hidden", aspectRatio: "16/7" }}>
+              <img
+                src={a.heroImage.src}
+                alt={a.heroImage.alt}
+                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+              />
+            </div>
+          )}
         </div>
       </article>
 
@@ -96,7 +106,7 @@ export default async function InsightArticlePage({
               </h2>
               {s.paragraphs.map((p, j) => (
                 <p key={j} style={{ fontSize: 16.5, lineHeight: 1.78, color: "#33403A", margin: "0 0 18px" }}>
-                  {p}
+                  {renderText(p)}
                 </p>
               ))}
 

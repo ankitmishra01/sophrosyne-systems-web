@@ -7,12 +7,12 @@ const CARDS = [
   {
     number: "01",
     title: "What it is",
-    body: "A structured competency model mapping AI skills across knowledge domains — from prompt engineering and data literacy to AI governance and applied tool use. Designed for universities: preserves academic integrity while building real-world capability.",
+    body: "A structured competency model mapping AI skills across knowledge domains: from prompt engineering and data literacy to AI governance and applied tool use. Designed for universities: preserves academic integrity while building real-world capability.",
   },
   {
     number: "02",
     title: "How it's delivered",
-    body: "Subscription service. A senior AI advisor and curriculum specialist embed in your institution for the first academic year. Faculty are certified before the first student cohort begins. Modules integrate into existing degree structures — no new courses required.",
+    body: "Subscription service. A senior AI advisor and curriculum specialist embed in your institution for the first academic year. Faculty are certified before the first student cohort begins. Modules integrate into existing degree structures, no new courses required.",
   },
   {
     number: "03",
@@ -124,7 +124,7 @@ export default function AIFluencyFrameworkSection() {
               margin: 0,
             }}
           >
-            No competitor has an equivalent. The Framework ships as a subscription, integrates into existing programmes, and produces accreditor-ready evidence on day one of each cohort.
+            No competitor has an equivalent. The Standard ships as a subscription, integrates into existing programmes, and produces accreditor-ready evidence on day one of each cohort.
           </p>
         </motion.div>
 
@@ -259,7 +259,7 @@ export default function AIFluencyFrameworkSection() {
               maxWidth: 520,
             }}
           >
-            The Framework extends to the AI Foundry — where students apply fluency to build real products, validated by industry mentors.
+            The Standard extends to the AI Foundry, where students apply fluency to build real products, validated by industry mentors.
           </p>
           <Link
             href="/solutions/curriculum"
@@ -281,7 +281,7 @@ export default function AIFluencyFrameworkSection() {
               flexShrink: 0,
             }}
           >
-            Explore the Framework →
+            Explore the Standard →
           </Link>
         </motion.div>
       </div>

@@ -8,25 +8,31 @@ const AUDIENCES = [
   {
     role: "For Provosts",
     icon: GraduationCap,
-    href: "/for/provosts",
-    headline: "We don't rewrite curriculum. We certify faculty to rewrite it themselves.",
-    body: "Our specialist sits alongside your faculty for 6–12 months. The CEFR-modeled rubric is the artifact — faculty own the syllabi, assessments, and every student credential. Sophrosyne never appears on a transcript. 100% IP stays with your institution, contractually.",
+    href: "/for/provost",
+    metric: "6–12 mo",
+    metricLabel: "embedded on-site",
+    headline: "Faculty own everything. Sophrosyne never appears on a transcript.",
+    body: "Our specialist works alongside your faculty for 6 to 12 months. Faculty own everything: the syllabi, the assessments, and every student credential. IP stays with your institution, in writing. We train faculty to lead the curriculum themselves. We step back after that.",
     link: "See how the programme works →",
   },
   {
     role: "For CFOs",
     icon: TrendingDown,
-    href: "/for/cfos",
-    headline: "Pillar I funds Pillars II and III.",
-    body: "The OpEx audit identifies savings across nine operational domains in 2 weeks. The implementation pays for the entire AI Fluency rollout within 12 months — self-funding, on paper, before the board ever votes. $45K audit, credited in full if you proceed.",
+    href: "/for/cfo",
+    metric: "$45K",
+    metricLabel: "audit, credited in full",
+    headline: "The audit pays for itself. Before the board votes.",
+    body: "We identify savings across nine areas of your operations in two weeks. Those savings fund the full AI programme within 12 months. You have the business case before the board votes. The $45K audit fee applies in full to any engagement you choose.",
     link: "See the savings model →",
   },
   {
     role: "For CIOs",
     icon: Shield,
-    href: "/for/cios",
-    headline: "The audit is the only commitment. Everything after is opt-in.",
-    body: "No platform lock-in. No multi-year master contract. Canvas. Banner. Slate — one week to integrate. All data stays inside your institutional perimeter. Walk away after the 2-week diagnostic with the board report in hand.",
+    href: "/for/cio",
+    metric: "1 week",
+    metricLabel: "to integrate",
+    headline: "Canvas. Banner. Slate. One week to integrate. No lock-in.",
+    body: "No multi-year contracts. No platform lock-in. All data stays in your own systems. After the two-week audit you leave with the full board report. The audit is the only commitment. Everything after is your choice.",
     link: "See the integration architecture →",
   },
 ];
@@ -73,18 +79,18 @@ export default function BenefitsSection() {
           </p>
           <h2
             style={{
-              fontSize: "clamp(24px, 2.8vw, 40px)",
+              fontSize: "clamp(18px, 2vw, 30px)",
               fontWeight: 500,
               fontFamily: "var(--font-newsreader), serif",
               color: "#1B2A21",
-              margin: "0 0 14px",
+              margin: 0,
               letterSpacing: "-0.012em",
-              lineHeight: 1.1,
+              lineHeight: 1.2,
               whiteSpace: "nowrap",
             }}
             className="benefits-h2"
           >
-            Provosts, CFOs, and CIOs each get a measurable outcome — in one engagement.
+            Provosts, CFOs, and CIOs each get a measurable outcome in one engagement.
           </h2>
         </motion.div>
 
@@ -98,6 +104,7 @@ export default function BenefitsSection() {
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
             gap: 20,
+            alignItems: "stretch",
           }}
           className="benefits-grid"
         >
@@ -131,22 +138,60 @@ export default function BenefitsSection() {
                   }}
                 />
 
-                {/* Icon */}
+                {/* Icon + metric row */}
                 <div
                   style={{
-                    width: 46,
-                    height: 46,
-                    borderRadius: "var(--radius-card)",
-                    background: "rgba(30,77,56,0.07)",
-                    border: "1px solid rgba(30,77,56,0.16)",
                     display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
+                    alignItems: "flex-start",
+                    justifyContent: "space-between",
                     marginBottom: 20,
-                    flexShrink: 0,
                   }}
                 >
-                  <IconComp size={22} color="#1E4D38" strokeWidth={1.7} />
+                  <div
+                    style={{
+                      width: 46,
+                      height: 46,
+                      borderRadius: "var(--radius-card)",
+                      background: "rgba(30,77,56,0.07)",
+                      border: "1px solid rgba(30,77,56,0.16)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <IconComp size={22} color="#1E4D38" strokeWidth={1.7} />
+                  </div>
+
+                  {/* Key metric */}
+                  <div style={{ textAlign: "right" }}>
+                    <p
+                      style={{
+                        fontSize: 22,
+                        fontWeight: 500,
+                        fontFamily: "var(--font-newsreader), serif",
+                        color: "#1E4D38",
+                        margin: 0,
+                        lineHeight: 1,
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      {a.metric}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 600,
+                        fontFamily: "var(--font-libre-franklin), sans-serif",
+                        color: "#8A968C",
+                        margin: "3px 0 0",
+                        letterSpacing: "0.04em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {a.metricLabel}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Role label */}
@@ -167,13 +212,13 @@ export default function BenefitsSection() {
                 {/* Headline */}
                 <h3
                   style={{
-                    fontSize: 20,
+                    fontSize: 19,
                     fontWeight: 500,
                     fontFamily: "var(--font-newsreader), serif",
                     color: "#1B2A21",
                     margin: "0 0 14px",
                     letterSpacing: "-0.01em",
-                    lineHeight: 1.2,
+                    lineHeight: 1.25,
                   }}
                 >
                   {a.headline}
@@ -222,12 +267,8 @@ export default function BenefitsSection() {
           text-decoration: underline;
         }
         @media (max-width: 860px) {
-          .benefits-grid {
-            grid-template-columns: 1fr !important;
-          }
-          .benefits-h2 {
-            white-space: normal !important;
-          }
+          .benefits-grid { grid-template-columns: 1fr !important; }
+          .benefits-h2 { white-space: normal !important; font-size: 22px !important; }
         }
       `}</style>
     </section>

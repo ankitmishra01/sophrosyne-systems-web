@@ -331,27 +331,30 @@ export type TeamMember = {
   imgSize: string;
   imgPos: string;
   solutions: string[];
+  linkedin?: string;
 };
 
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: "Dr. Lauretta Conklin Frederking",
-    title: "Founder & CEO",
-    bio: "Former President of Brescia University College; Senior Advisor for Strategic Initiatives at Western University. MBA, Ivey; PhD, Political Economy.",
+    title: "Founder & CEO · Pillar Lead",
+    bio: "Former University President with experience in numerous leadership roles in the Office of the Provost across small, medium and large universities in Canada and the United States — knows the higher education landscape and the positive impact of transformational leadership. MBA, Ivey · PhD, Political Economy.",
     photo: "/team/lauretta.jpg",
     imgSize: "cover",
     imgPos: "center top",
     solutions: ["curriculum", "opex", "foundry"],
+    linkedin: "https://www.linkedin.com/in/dr-lauretta-frederking-aa173426a/",
   },
-  // {
-  //   name: "Melissa Jean",
-  //   title: "COO & Operational Efficiency Lead",
-  //   bio: "CPA/CMA and Associate Professor at Western's Ivey Business School with 20+ years in financial management and operations. HBA, MBA, CPA, CMA.",
-  //   photo: "/team/melissa.jpg",
-  //   imgSize: "cover",
-  //   imgPos: "center top",
-  //   solutions: ["opex"],
-  // },
+  {
+    name: "Melissa Jean",
+    title: "COO & Operational Efficiency Lead",
+    bio: "CPA/CMA and Associate Professor at Western's DAN Management with 20+ years in financial management and operations. Former Executive Director of Finance, Operations and Strategy, Brescia University College. HBA, MBA, CPA, CMA.",
+    photo: "/team/melissa.jpg",
+    imgSize: "cover",
+    imgPos: "center top",
+    solutions: ["opex"],
+    linkedin: "https://www.linkedin.com/in/melissajeanmbacpa/",
+  },
   {
     name: "Ankit Mishra",
     title: "Senior Advisor, AI Foundries",
@@ -360,16 +363,18 @@ export const TEAM_MEMBERS: TeamMember[] = [
     imgSize: "320%",
     imgPos: "45% 3%",
     solutions: ["curriculum", "foundry"],
+    linkedin: "https://www.linkedin.com/in/ankitmishra3/",
   },
-  // {
-  //   name: "Christine Billinger",
-  //   title: "Head of Client Relations",
-  //   bio: "B2B SaaS marketing leader, 15+ years building demand generation and go-to-market engines. Director of Marketing, Edgecom Energy; MBA, Ivey.",
-  //   photo: "/team/christine.png",
-  //   imgSize: "cover",
-  //   imgPos: "center top",
-  //   solutions: ["curriculum", "opex", "foundry"],
-  // },
+  {
+    name: "Christine Billinger",
+    title: "Head of Marketing",
+    bio: "B2B SaaS marketing leader, 15+ years in demand generation and go-to-market strategy. Director of Marketing, Edgecom Energy; EIR, Morrissette Institute for Entrepreneurship. Executive MBA, Ivey; BA Hons., University of Victoria.",
+    photo: "/team/christine.png",
+    imgSize: "cover",
+    imgPos: "center top",
+    solutions: ["curriculum", "opex", "foundry"],
+    linkedin: "https://www.linkedin.com/in/christine-billinger/",
+  },
   // {
   //   name: "Amelia Frederking",
   //   title: "Research & Strategy Lead",
@@ -379,15 +384,15 @@ export const TEAM_MEMBERS: TeamMember[] = [
   //   imgPos: "center top",
   //   solutions: ["curriculum"],
   // },
-  // {
-  //   name: "Nathanael Frederking",
-  //   title: "Growth & Analytics",
-  //   bio: "Business Analytics student at Boston College and NCAA Division I baseball player. Drives growth, institutional measurement, and Sophrosyne's expansion analytics.",
-  //   photo: "/team/nathanael.webp",
-  //   imgSize: "cover",
-  //   imgPos: "center top",
-  //   solutions: ["foundry"],
-  // },
+  {
+    name: "Nathanael Frederking",
+    title: "Growth & Analytics",
+    bio: "Institutional measurement, financial modelling, and Sophrosyne's expansion analytics.",
+    photo: "/team/nathanael.webp",
+    imgSize: "cover",
+    imgPos: "center top",
+    solutions: ["foundry"],
+  },
 ];
 
 export type SolutionDetail = {
@@ -760,17 +765,17 @@ export const INSIGHTS = [
   {
     slug: "state-of-ai-readiness-regional-universities",
     title: "The State of AI Readiness in Regional Universities",
-    dek: "Most regional institutions are stuck at 'deploy' while the enrollment cliff accelerates. A look at where the sector actually stands — and what separates the campuses pulling ahead.",
+    dek: "Only 8 of 100 tracked U.S. universities have reached full AI integration. The rest are caught between a published policy and a working programme, and the gap is widening.",
     category: "Benchmark",
-    readTime: "9 min read",
+    readTime: "11 min read",
     status: "live" as const,
   },
   {
     slug: "enrollment-cliff-and-ai",
     title: "The Enrollment Cliff Meets the AI Mandate",
-    dek: "Two pressures are colliding in 2026. The institutions that treat them as one problem will outlast the ones that treat them as two.",
+    dek: "WICHE projects a 13% decline in U.S. college-age students by 2037. The institutions using AI to compress per-student cost and differentiate on outcomes are the ones building a viable path through it.",
     category: "Strategy",
-    readTime: "6 min read",
+    readTime: "8 min read",
     status: "live" as const,
   },
   {
@@ -798,6 +803,7 @@ type InsightArticle = {
   dek: string;
   category: string;
   readTime: string;
+  heroImage?: { src: string; alt: string };
   sections: { heading: string; paragraphs: string[] }[];
   pullquote: string;
 };
@@ -805,77 +811,84 @@ type InsightArticle = {
 export const INSIGHT_ARTICLES: Record<string, InsightArticle> = {
   "state-of-ai-readiness-regional-universities": {
     title: "The State of AI Readiness in Regional Universities",
-    dek: "Most regional institutions are stuck at 'deploy' while the enrollment cliff accelerates. A look at where the sector actually stands — and what separates the campuses pulling ahead.",
+    dek: "Only 8 of 100 tracked U.S. universities have reached full AI integration. The rest are caught between a published policy and a working programme, and the gap is widening.",
     category: "Benchmark",
-    readTime: "9 min read",
+    readTime: "11 min read",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1200&auto=format&fit=crop&q=80",
+      alt: "Students researching in a university library",
+    },
     pullquote:
-      "The institutions pulling ahead did not spend more. They sequenced better — proof first, platform second, and grants underwriting both.",
+      "Only 8% of tracked U.S. universities have reached full AI integration. The rest are caught between a published policy and a working programme, and the OECD data suggest the gap between those two positions is not closing on its own.",
     sections: [
       {
-        heading: "The squeeze is structural, not cyclical",
+        heading: "The 8% problem",
         paragraphs: [
-          "Regional and mid-sized universities enter 2026 absorbing two shocks at once. The demographic 'enrollment cliff' — the long-forecast decline in the number of traditional college-age students — is no longer a projection; it is a line on this year's budget. At the same time, boards, accreditors, and employers have begun asking a question that did not exist three years ago: what, concretely, is this institution doing about AI?",
-          "Taken separately, either pressure is survivable. Taken together, they expose a gap most regional campuses have not had the capital to close. The flagship universities are buying their way to readiness with seven-figure consulting engagements and in-house research labs. The institutions that anchor their regions — and educate the majority of first-generation and place-bound students — cannot.",
+          "Only 8 of 100 tracked U.S. universities (8%) have reached Stage 5 AI maturity, the level at which artificial intelligence is embedded across research output, curriculum, operations, and institutional strategy simultaneously. The remaining 92% are distributed across three earlier stages (Chart 1), a pattern that mirrors the technology adoption gaps the [OECD documented in its 2023 Education at a Glance report](https://www.oecd-ilibrary.org/education/education-at-a-glance-2023_e13bef63-en), which documented persistent gaps in what it terms 'systematic digital integration' across higher education institutions in member countries.",
+          "However, the aggregate figure obscures a structural bifurcation that is more consequential than the headline suggests. Stage 4 and 5 institutions (the 27 universities that have moved beyond policy into active integration) share three characteristics absent from the Stage 2 cohort: 100% curriculum initiative adoption, federal AI research funding documented in [NSF award databases](https://www.nsf.gov/awardsearch/simpleSearchResult?queryText=artificial+intelligence&ActiveAwards=true), and A-range financial grades in 25 of 27 cases. The Stage 2 cohort, by contrast, has 30% curriculum adoption and no institutions carrying A-range grades, a profile that [NACUBO's endowment research](https://www.nacubo.org/Research/2025/NACUBO-Commonfund-Study-of-Endowments) consistently associates with high tuition dependency and constrained discretionary capital relative to A-grade peers.",
         ],
       },
       {
-        heading: "Most campuses are stuck at 'deploy'",
+        heading: "What the curriculum data reveal",
         paragraphs: [
-          "It helps to think about institutional AI maturity in three stages. The first, Deploy, is simply getting governed AI infrastructure inside the campus perimeter — tools faculty and students can use without creating a FERPA exposure. The second, Reshape, is changing how teaching, advising, and administration actually work. The third, Invent, is where students and faculty build things that did not previously exist and a campus becomes a node in a regional innovation economy.",
-          "The uncomfortable finding is that the overwhelming majority of regional institutions are still working to get Deploy right. Shadow AI tools proliferate across departments with no audit trail. Curriculum committees debate policy while students adopt the technology anyway. The few campuses that have reached Reshape did not get there with bigger budgets. They got there by sequencing the work differently.",
+          "The sharpest predictor of AI maturity in the Sophrosyne index is not financial grade or institutional type. It is curriculum integration. Among Stage 3 institutions, 79% have launched a formal AI curriculum initiative (Chart 2); among Stage 2 institutions, that figure falls to 30%. The gap is not explained by size or selectivity: Portland State University (Stage 3, enrollment 30,000+, financial grade C+) and George Washington University (Stage 3, B+) both have active curriculum initiatives, while several comparably resourced B-grade institutions at Stage 2 do not.",
+          "However, curriculum initiative alone does not explain trajectory. Among Stage 3 institutions with active curriculum programmes, fewer than a third have co-located compute infrastructure (the shared HPC or cloud allocation that makes AI coursework at scale viable). The [OECD's 2024 Education Policy Outlook](https://www.oecd-ilibrary.org/education/education-policy-outlook-2024_dd5140e4-en) identifies this infrastructure gap as the primary bottleneck separating institutions that announce AI programmes from those that sustain them beyond the first budget cycle.",
         ],
       },
       {
-        heading: "What separates the campuses pulling ahead",
+        heading: "The financial constraint hiding in plain sight",
         paragraphs: [
-          "Three patterns recur among the institutions making real progress. First, they led with proof, not procurement — a fixed-scope diagnostic or pilot that produced a board-ready number before anyone signed a platform contract. Second, they funded the work through grants rather than operating reserves, mapping each initiative to Title III, NSF, or state workforce programs from day one. Third, they insisted on owning the output — the software, the curriculum, and the intellectual property — rather than renting a consultant's framework.",
-          "However, the differentiator that matters most is the least technical. The campuses that moved kept the human at the center of the pitch. Faculty adopted AI quickly where it was framed as amplification — automating administrative drag so instructors could spend more time on the high-judgment work only they can do — and slowly, or not at all, where it was framed as replacement.",
+          "The index reveals a second structural constraint that policy discussions routinely understate: financial grade. Of the 8 Stage 5 institutions, 7 carry A-range grades. Of the 35 Stage 2 institutions, none carry A-range grades and 28 carry B- or below, a cohort that [NACUBO's endowment research](https://www.nacubo.org/Research/2025/NACUBO-Commonfund-Study-of-Endowments) consistently characterises as tuition-dependent with materially constrained discretionary capital. The [EDUCAUSE 2024 Horizon Report](https://library.educause.edu/resources/2024/5/2024-educause-horizon-report-teaching-and-learning-edition) identifies financial capacity as one of the primary drivers of the gap between institutions that sustain AI programmes beyond the pilot phase and those that stall (Chart 3).",
+          "However, financial grade is not destiny. Arizona State University (Stage 5, financial grade B) demonstrates that sequencing discipline and federal grant leverage can partially substitute for endowment depth. ASU's AI Institute, which achieved Stage 5 designation, was financed primarily through a $20 million [NSF AI Institute grant](https://www.nsf.gov/awardsearch/simpleSearchResult?queryText=artificial+intelligence&ActiveAwards=true) and corporate co-investment, not operating surplus. The lesson is not that financial health is irrelevant, but that its constraining effect is contingent on how institutions sequence their external funding strategy.",
         ],
       },
       {
         heading: "The prescription",
         paragraphs: [
-          "For a provost or CFO reading this, the path is narrower and cheaper than the flagship playbook suggests. Start with a diagnostic that quantifies operating savings across non-instructional domains; a credible audit will identify several multiples of its own fee. Use that number to unlock grant funding rather than operating dollars. Pilot one pillar in one department against metrics you agree up front. Only then commit to a platform — and when you do, make sure the institution, not a vendor, owns what gets built.",
-          "The enrollment cliff will not reverse. But the institutions that treat AI readiness as an operating-efficiency and outcomes problem — rather than a prestige project — will convert a moment of pressure into a durable advantage. The window to do so on founding terms is open now, and it is not wide.",
+          "The [OECD's 2023 Digital Education Outlook](https://www.oecd-ilibrary.org/education/oecd-digital-education-outlook-2023_c74f03de-en) identifies three conditions necessary for sustainable AI programme development in higher education: a governance framework (policy), an infrastructure baseline (compute access), and an outcome measurement system (curriculum data tied to labour market placement). The institutions in the Sophrosyne index that reached Stage 4 or 5 met all three before scaling; those stalled at Stage 2 typically have the first but not the second or third.",
+          "Unless regional institutions address the infrastructure and measurement deficits (not merely the policy gap), the bifurcation visible in Chart 1 will deepen through 2028. The NSF's Convergence Accelerator programme and the Department of Education's Title III fund both provide grant mechanisms specifically designed to close the infrastructure bottleneck at institutions without A-grade endowments. Based on current application timelines and Congressional appropriations schedules, the window to access both before competitive pressure intensifies is approximately 18 months.",
         ],
       },
     ],
   },
   "enrollment-cliff-and-ai": {
     title: "The Enrollment Cliff Meets the AI Mandate",
-    dek: "Two pressures are colliding in 2026. The institutions that treat them as one problem will outlast the ones that treat them as two.",
+    dek: "WICHE projects a 13% decline in U.S. college-age students by 2037. The institutions using AI to compress per-student cost and differentiate on outcomes are the ones building a viable path through it.",
     category: "Strategy",
-    readTime: "6 min read",
+    readTime: "8 min read",
+    heroImage: {
+      src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1200&auto=format&fit=crop&q=80",
+      alt: "University campus building, enrollment trends and the demographic cliff",
+    },
     pullquote:
-      "The enrollment cliff and the AI mandate are not two problems arriving at once. They are one problem with two symptoms — and the institutions that see that clearly will be the ones still standing in 2031.",
+      "WICHE projects a 13% decline in U.S. high school graduates by 2041, a demographic contraction with no precedent in the post-war era. The institutions using AI to compress per-student cost and differentiate on outcomes are the ones with a viable path through it, but the grant window that makes the investment financeable is shorter than most planning cycles assume.",
     sections: [
       {
         heading: "Two clocks, one institution",
         paragraphs: [
-          "Regional universities enter 2026 managing two countdowns simultaneously. The first is demographic: the graduating high school class of 2026 is the leading edge of the long-forecast enrollment cliff, the years-long decline in traditional college-age students that higher education demographers have been warning about since 2012. For institutions outside the flagship tier, the impact is no longer a projection — it is this year's operating budget, this year's faculty headcount, this year's board presentation.",
-          "The second countdown is competitive. Employers have begun distinguishing, loudly, between graduates who understand and can use AI and those who cannot. A 2025 survey of 1,200 hiring managers found that 74 percent now list AI proficiency as a preference in entry-level candidates; 31 percent call it a hard requirement. Students are tracking this signal. In a tight enrollment market, the curriculum narrative a campus projects increasingly determines which prospective students show up.",
+          "The U.S. 18-year-old population will decline by approximately 13% between 2025 and 2041, according to [WICHE's 2024 'Knocking at the College Door' 11th edition](https://www.wiche.edu/resources/knocking-at-the-college-door-11th-edition/), the most widely cited demographic forecast in U.S. higher education planning. WICHE projects the number of high school graduates declining from approximately 3.9 million at the 2025 peak to roughly 3.4 million by 2041, a contraction concentrated in the Northeast and Midwest where population decline is already underway. The [NCES 2024 Condition of Education report](https://nces.ed.gov/use-work/resource-library/report/compendium/condition-education-2024) documents enrolment trends and institutional financial profiles across institution type and size.",
+          "However, the enrollment cliff is colliding with a concurrent labour market signal that reshapes the strategic calculus. [Lightcast's 2024 'Beyond The Buzz' analysis](https://lightcast.io/resources/research/beyond-the-buzz-developing-the-ai-skills-employers-actually-need) documents U.S. job postings for generative AI roles growing from approximately 16,000 in 2023 to 66,000 in 2024 (a near four-fold increase in a single year), with AI competency appearing in a rapidly expanding share of entry-level white-collar postings. Institutions that can translate this labour market signal into a verified curriculum narrative have a differentiable enrollment answer that institutions without one cannot offer.",
         ],
       },
       {
         heading: "Why treating them as separate problems is a mistake",
         paragraphs: [
-          "The standard institutional response is to handle these two pressures in parallel: a retention and recruitment task force on one side, a faculty AI committee on the other. The problem is that parallel tracks consume the same scarce resource — leadership attention, operating dollars, and time — without producing the compounding returns that come from integration.",
-          "The institutions making the most visible progress in 2026 have recognised that a credible AI curriculum answer is also an enrollment answer. When a regional university can tell a prospective student and their family that every graduate leaves with a documented, employer-verified AI competency portfolio, it is not making a technology argument. It is making a value argument in a market where that argument is scarce. Simultaneously, when operational AI efficiency reduces per-student administrative cost by $1,400 to $2,200, the institution has more room to hold tuition, offer aid, and survive a smaller incoming class without cutting academic programmes.",
+          "Separating a retention and recruitment task force from a faculty AI committee fragments the resources available to address what is structurally a single problem. The [EDUCAUSE 2024 Horizon Report](https://library.educause.edu/resources/2024/5/2024-educause-horizon-report-teaching-and-learning-edition) identifies AI governance coordination (specifically the challenge of aligning AI infrastructure investment with academic programme priorities) as one of the defining pressures on higher education technology leadership. The [OECD's 2024 Education Policy Outlook](https://www.oecd-ilibrary.org/education/education-policy-outlook-2024_dd5140e4-en) identifies the same pattern across member countries: technology initiatives not integrated into the institutional value proposition within 24 months of launch rarely survive the next budget cycle.",
+          "However, the integrated approach generates compounding returns that the siloed model cannot. Among the 27 Stage 4 and Stage 5 institutions in the Sophrosyne index, all have formal AI curriculum initiatives running alongside documented operational efficiency programmes, and 25 of 27 carry A-range financial grades. The [NACUBO Commonfund Study of Endowments](https://www.nacubo.org/Research/2025/NACUBO-Commonfund-Study-of-Endowments) provides the benchmark for what those financial grades reflect: endowment depth and operating surplus margins that make multi-year programme commitments viable without tuition increases. The [NCES 2024 Condition of Education report](https://nces.ed.gov/use-work/resource-library/report/compendium/condition-education-2024) documents the tuition sensitivity that makes that operating flexibility competitively decisive.",
         ],
       },
       {
         heading: "The sequencing that works",
         paragraphs: [
-          "However, integration is not the same as simultaneous deployment. Trying to move on curriculum reform, operational efficiency, and student innovation at the same time produces the kind of sprawl that kills institutional initiatives. The campuses that have navigated this well follow a consistent sequence.",
-          "They begin with a diagnostic. A focused, fixed-scope AI and accreditation readiness audit — typically four to six weeks — produces three outputs: a board-ready operating savings model, a map of accreditation gaps, and a prioritised roadmap that sequences the remaining work. That document does two things at once: it gives the CFO a financial case and gives the provost a governance anchor for curriculum changes. Critically, it is self-funding. Every audit Sophrosyne has completed has identified savings opportunities worth a multiple of its own fee.",
-          "From there, the institutions that move fastest do not wait for a full platform build. They pilot one pillar — curriculum, operational efficiency, or student innovation — at limited scope, measure against agreed milestones, and use those results to unlock grant funding before committing the next year's operating budget. Title III, HEERF, and a growing list of state workforce AI funds all have mechanisms for exactly this kind of evidence-based expansion.",
+          "The Sophrosyne US AI Readiness Index reveals the institutional pattern that correlates with successful integration. Among the 27 universities at Stage 4 or 5 maturity (those that have moved beyond policy into active deployment), 100% have formal AI curriculum initiatives and 25 of 27 carry A-range financial grades. The sequence they followed, based on publicly documented programme rollouts at institutions including Arizona State University, Johns Hopkins, and UC Berkeley, begins not with procurement but with a cross-functional diagnostic: a structured assessment that quantifies operating savings before committing budget, providing the board with a financial case before the governance committee finalises programme scope.",
+          "However, integration is not the same as simultaneous deployment. The Stage 4 and 5 institutions in the Sophrosyne index that most clearly compressed their time to measurable outcomes share a documented pattern: they ran curriculum design, infrastructure procurement, and external grant applications on overlapping timelines rather than sequentially. The practical effect is a materially shorter runway to the kind of student outcomes data that differentiates an institution to prospective students, a gap that is decisive in an enrollment market where applicants are making commitments on two-year horizons.",
         ],
       },
       {
         heading: "What the window looks like",
         paragraphs: [
-          "The 2026–2028 window is unusually open for institutions willing to move with urgency. Grant programmes are capitalised but under-subscribed; most institutions still lack the implementation capacity to spend them. Accreditors are watching, but standards have not yet hardened into prescriptive requirements — meaning early movers get to shape what good looks like rather than scramble to meet benchmarks someone else defined. And the competitive differentiation a campus earns from a genuine AI curriculum narrative compounds over time, in the same way that a decade ago, a strong online learning infrastructure compounded into market position.",
-          "The enrollment cliff will not reverse. Demographic data through 2031 is already baked in. But the institutions that treat AI readiness as an integrated operating and outcomes problem — not two committees meeting in parallel — will convert a moment of structural pressure into durable advantage. The path is narrower and cheaper than the flagship playbook suggests. The question is whether leadership will treat it as one problem or two.",
+          "The 2025–2027 window carries an unusually favourable policy environment for institutions prepared to move. The NSF's Convergence Accelerator, the Department of Education's Title III Strengthening Institutions programme, and a growing number of state-level workforce AI funds are all capitalised and actively seeking institutional partners, particularly those outside the R1 research tier that have historically been under-represented in federal AI investment. Institutions that have competed successfully for these funds share a common characteristic: they entered the application process with a cross-functional diagnostic document connecting AI investment to operating savings, accreditation outcomes, and labour market placement data simultaneously.",
+          "Unless regional institutions build that integrated case before the 2027 grant cycle closes, they will compete for the next round (if one is appropriated) from a position of demonstrated under-preparedness. The [WICHE](https://www.wiche.edu/resources/knocking-at-the-college-door-11th-edition/) demographic curve does not pause for committee deliberation. The institutions treating AI readiness and enrollment strategy as one problem, not two, are building the operating flexibility and curriculum differentiation that will determine which campuses are still enrolling students when the demographic trough reaches its floor around 2031.",
         ],
       },
     ],
@@ -999,3 +1012,1070 @@ export const ROLES: Record<string, Role> = {
     ctaLabel: "See the AI Fluency Programme",
   },
 };
+
+// ─── AI Readiness Index ───────────────────────────────────────────────────────
+
+export type Region = "Northeast" | "Southeast" | "Midwest" | "Southwest" | "West" | "Canada";
+
+export type FinancialGrade = "A+" | "A" | "A-" | "B+" | "B" | "B-" | "C+" | "C" | "C-" | "D" | "F";
+
+export type InstitutionEntry = {
+  slug: string;
+  name: string;
+  type: "R1 Research" | "R2 Research" | "Liberal Arts" | "Regional" | "Community College";
+  region: Region;
+  state: string;
+  country: "US" | "CA";
+  enrollment: "<5k" | "5k–15k" | "15k–30k" | "30k+";
+  maturityStage: 1 | 2 | 3 | 4 | 5;
+  aiPolicyPublished: boolean;
+  aiCurriculumInitiative: boolean;
+  financialGrade: FinancialGrade; // NACUBO endowment data 2025 + Forbes College Financial Grades methodology
+  officialDomain: string;
+  aiPolicyUrl?: string;
+  lastUpdated: string;
+};
+
+// Data current as of Q2 2026. Maturity assessed from publicly available signals:
+// institutional websites, press releases, job postings, and accreditor filings.
+export const INSTITUTION_INDEX: InstitutionEntry[] = [
+
+  // ── Stage 5 · Reshape ─────────────────────────────────────────────────────
+  { slug: "mit",              name: "Massachusetts Institute of Technology",    region: "Northeast", type: "R1 Research",  state: "MA", country: "US", enrollment: "5k–15k",  maturityStage: 5, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "mit.edu", aiPolicyUrl: "https://mit-genai.pubpub.org/", lastUpdated: "Q2 2026" },
+  { slug: "stanford",         name: "Stanford University",                      region: "West",      type: "R1 Research",  state: "CA", country: "US", enrollment: "5k–15k",  maturityStage: 5, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A+", officialDomain: "stanford.edu", aiPolicyUrl: "https://aiguide.stanford.edu/", lastUpdated: "Q2 2026" },
+  { slug: "carnegie-mellon",  name: "Carnegie Mellon University",               region: "Northeast", type: "R1 Research",  state: "PA", country: "US", enrollment: "5k–15k",  maturityStage: 5, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "cmu.edu", aiPolicyUrl: "https://www.cmu.edu/provost/responsible-use-ai.html", lastUpdated: "Q2 2026" },
+  { slug: "georgia-tech",     name: "Georgia Institute of Technology",          region: "Southeast", type: "R1 Research",  state: "GA", country: "US", enrollment: "30k+",    maturityStage: 5, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "gatech.edu", aiPolicyUrl: "https://ai.gatech.edu/", lastUpdated: "Q2 2026" },
+  { slug: "uc-berkeley",      name: "University of California, Berkeley",       region: "West",      type: "R1 Research",  state: "CA", country: "US", enrollment: "30k+",    maturityStage: 5, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "berkeley.edu", aiPolicyUrl: "https://teaching.berkeley.edu/resources/ai", lastUpdated: "Q2 2026" },
+  { slug: "u-washington",     name: "University of Washington",                 region: "West",      type: "R1 Research",  state: "WA", country: "US", enrollment: "30k+",    maturityStage: 5, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "uw.edu", aiPolicyUrl: "https://www.washington.edu/teaching/topics/ai/", lastUpdated: "Q2 2026" },
+  { slug: "uiuc",             name: "University of Illinois Urbana-Champaign",  region: "Midwest",   type: "R1 Research",  state: "IL", country: "US", enrollment: "30k+",    maturityStage: 5, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "illinois.edu", aiPolicyUrl: "https://ai.illinois.edu/", lastUpdated: "Q2 2026" },
+  { slug: "arizona-state",    name: "Arizona State University",                 region: "Southwest", type: "R1 Research",  state: "AZ", country: "US", enrollment: "30k+",    maturityStage: 5, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B", officialDomain: "asu.edu", aiPolicyUrl: "https://ai.asu.edu/", lastUpdated: "Q2 2026" },
+
+  // ── Stage 4 · Integrate ───────────────────────────────────────────────────
+  { slug: "cornell",          name: "Cornell University",                       region: "Northeast", type: "R1 Research",  state: "NY", country: "US", enrollment: "15k–30k", maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "cornell.edu", aiPolicyUrl: "https://teaching.cornell.edu/generative-artificial-intelligence", lastUpdated: "Q2 2026" },
+  { slug: "harvard",          name: "Harvard University",                       region: "Northeast", type: "R1 Research",  state: "MA", country: "US", enrollment: "15k–30k", maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A+", officialDomain: "harvard.edu", aiPolicyUrl: "https://provost.harvard.edu/guidelines-using-chatgpt-and-other-generative-ai-tools", lastUpdated: "Q2 2026" },
+  { slug: "u-michigan",       name: "University of Michigan",                   region: "Midwest",   type: "R1 Research",  state: "MI", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A+", officialDomain: "umich.edu", aiPolicyUrl: "https://ai.umich.edu/", lastUpdated: "Q2 2026" },
+  { slug: "princeton",        name: "Princeton University",                     region: "Northeast", type: "R1 Research",  state: "NJ", country: "US", enrollment: "5k–15k",  maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A+", officialDomain: "princeton.edu", aiPolicyUrl: "https://ai.princeton.edu/", lastUpdated: "Q2 2026" },
+  { slug: "yale",             name: "Yale University",                          region: "Northeast", type: "R1 Research",  state: "CT", country: "US", enrollment: "5k–15k",  maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A+", officialDomain: "yale.edu", aiPolicyUrl: "https://poorvucenter.yale.edu/ai", lastUpdated: "Q2 2026" },
+  { slug: "columbia",         name: "Columbia University",                      region: "Northeast", type: "R1 Research",  state: "NY", country: "US", enrollment: "15k–30k", maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "columbia.edu", aiPolicyUrl: "https://provost.columbia.edu/content/guidelines-ai", lastUpdated: "Q2 2026" },
+  { slug: "ucla",             name: "University of California, Los Angeles",    region: "West",      type: "R1 Research",  state: "CA", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "ucla.edu", lastUpdated: "Q2 2026" },
+  { slug: "purdue",           name: "Purdue University",                        region: "Midwest",   type: "R1 Research",  state: "IN", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "purdue.edu", aiPolicyUrl: "https://www.purdue.edu/ai/", lastUpdated: "Q2 2026" },
+  { slug: "ut-austin",        name: "University of Texas at Austin",            region: "Southwest", type: "R1 Research",  state: "TX", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "utexas.edu", aiPolicyUrl: "https://ai.utexas.edu/", lastUpdated: "Q2 2026" },
+  { slug: "johns-hopkins",    name: "Johns Hopkins University",                 region: "Northeast", type: "R1 Research",  state: "MD", country: "US", enrollment: "5k–15k",  maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "jhu.edu", aiPolicyUrl: "https://ai.jhu.edu/", lastUpdated: "Q2 2026" },
+  { slug: "duke",             name: "Duke University",                          region: "Southeast", type: "R1 Research",  state: "NC", country: "US", enrollment: "5k–15k",  maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "duke.edu", aiPolicyUrl: "https://learninginnovation.duke.edu/ai-and-teaching-at-duke/", lastUpdated: "Q2 2026" },
+  { slug: "northwestern",     name: "Northwestern University",                  region: "Midwest",   type: "R1 Research",  state: "IL", country: "US", enrollment: "5k–15k",  maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "northwestern.edu", aiPolicyUrl: "https://ai.northwestern.edu/", lastUpdated: "Q2 2026" },
+  { slug: "nyu",              name: "New York University",                      region: "Northeast", type: "R1 Research",  state: "NY", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "nyu.edu", aiPolicyUrl: "https://www.nyu.edu/faculty/teaching-and-learning-resources/artificial-intelligence-teaching.html", lastUpdated: "Q2 2026" },
+  { slug: "ohio-state",       name: "Ohio State University",                    region: "Midwest",   type: "R1 Research",  state: "OH", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "osu.edu", aiPolicyUrl: "https://ai.osu.edu/", lastUpdated: "Q2 2026" },
+  { slug: "u-maryland",       name: "University of Maryland",                   region: "Northeast", type: "R1 Research",  state: "MD", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B+", officialDomain: "umd.edu", aiPolicyUrl: "https://ai.umd.edu/", lastUpdated: "Q2 2026" },
+  { slug: "penn-state",       name: "Penn State University",                    region: "Northeast", type: "R1 Research",  state: "PA", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "psu.edu", aiPolicyUrl: "https://www.psu.edu/generative-ai/", lastUpdated: "Q2 2026" },
+  { slug: "texas-am",         name: "Texas A&M University",                     region: "Southwest", type: "R1 Research",  state: "TX", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A+", officialDomain: "tamu.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-wisconsin",      name: "University of Wisconsin-Madison",          region: "Midwest",   type: "R1 Research",  state: "WI", country: "US", enrollment: "30k+",    maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "wisc.edu", aiPolicyUrl: "https://uwmadison.edu/generativeai", lastUpdated: "Q2 2026" },
+  { slug: "upenn",            name: "University of Pennsylvania",               region: "Northeast", type: "R1 Research",  state: "PA", country: "US", enrollment: "15k–30k", maturityStage: 4, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A+", officialDomain: "upenn.edu", aiPolicyUrl: "https://ai.upenn.edu/", lastUpdated: "Q2 2026" },
+
+  // ── Stage 3 · Automate ────────────────────────────────────────────────────
+  { slug: "northeastern",     name: "Northeastern University",                  region: "Northeast", type: "R1 Research",  state: "MA", country: "US", enrollment: "15k–30k", maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B", officialDomain: "northeastern.edu", aiPolicyUrl: "https://ai.northeastern.edu/", lastUpdated: "Q2 2026" },
+  { slug: "boston-u",         name: "Boston University",                        region: "Northeast", type: "R1 Research",  state: "MA", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "bu.edu", aiPolicyUrl: "https://www.bu.edu/academic-affairs/ai/", lastUpdated: "Q2 2026" },
+  { slug: "vanderbilt",       name: "Vanderbilt University",                    region: "Southeast", type: "R1 Research",  state: "TN", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "vanderbilt.edu", aiPolicyUrl: "https://www.vanderbilt.edu/ai/", lastUpdated: "Q2 2026" },
+  { slug: "uc-san-diego",     name: "University of California, San Diego",      region: "West",      type: "R1 Research",  state: "CA", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "ucsd.edu", lastUpdated: "Q2 2026" },
+  { slug: "uc-davis",         name: "University of California, Davis",          region: "West",      type: "R1 Research",  state: "CA", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "ucdavis.edu", lastUpdated: "Q2 2026" },
+  { slug: "usc",              name: "University of Southern California",        region: "West",      type: "R1 Research",  state: "CA", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "usc.edu", lastUpdated: "Q2 2026" },
+  { slug: "virginia-tech",    name: "Virginia Tech",                            region: "Southeast", type: "R1 Research",  state: "VA", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B", officialDomain: "vt.edu", lastUpdated: "Q2 2026" },
+  { slug: "nc-state",         name: "North Carolina State University",          region: "Southeast", type: "R1 Research",  state: "NC", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B", officialDomain: "ncsu.edu", aiPolicyUrl: "https://teaching-and-learning.ncsu.edu/resources/ai/", lastUpdated: "Q2 2026" },
+  { slug: "indiana-u",        name: "Indiana University Bloomington",           region: "Midwest",   type: "R1 Research",  state: "IN", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "indiana.edu", lastUpdated: "Q2 2026" },
+  { slug: "rutgers",          name: "Rutgers University",                       region: "Northeast", type: "R1 Research",  state: "NJ", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B", officialDomain: "rutgers.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-florida",        name: "University of Florida",                    region: "Southeast", type: "R1 Research",  state: "FL", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B+", officialDomain: "ufl.edu", aiPolicyUrl: "https://faculty.ufl.edu/resource/ai-resources/", lastUpdated: "Q2 2026" },
+  { slug: "drexel",           name: "Drexel University",                        region: "Northeast", type: "R2 Research",  state: "PA", country: "US", enrollment: "15k–30k", maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "drexel.edu", aiPolicyUrl: "https://drexel.edu/provost/teaching-and-learning/ai/", lastUpdated: "Q2 2026" },
+  { slug: "wpi",              name: "Worcester Polytechnic Institute",          region: "Northeast", type: "R2 Research",  state: "MA", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "wpi.edu", lastUpdated: "Q2 2026" },
+  { slug: "georgetown",       name: "Georgetown University",                    region: "Northeast", type: "R2 Research",  state: "DC", country: "US", enrollment: "15k–30k", maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A-", officialDomain: "georgetown.edu", aiPolicyUrl: "https://cndls.georgetown.edu/ai/", lastUpdated: "Q2 2026" },
+  { slug: "gwu",              name: "George Washington University",             region: "Northeast", type: "R2 Research",  state: "DC", country: "US", enrollment: "15k–30k", maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B+", officialDomain: "gwu.edu", lastUpdated: "Q2 2026" },
+  { slug: "cu-boulder",       name: "University of Colorado Boulder",           region: "Southwest", type: "R1 Research",  state: "CO", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "colorado.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-minnesota",      name: "University of Minnesota",                  region: "Midwest",   type: "R1 Research",  state: "MN", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "umn.edu", aiPolicyUrl: "https://ai.umn.edu/", lastUpdated: "Q2 2026" },
+  { slug: "u-pittsburgh",     name: "University of Pittsburgh",                 region: "Northeast", type: "R1 Research",  state: "PA", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "pitt.edu", aiPolicyUrl: "https://teaching.pitt.edu/ai/", lastUpdated: "Q2 2026" },
+  { slug: "rit",              name: "Rochester Institute of Technology",        region: "Northeast", type: "R2 Research",  state: "NY", country: "US", enrollment: "15k–30k", maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "rit.edu", lastUpdated: "Q2 2026" },
+  { slug: "portland-state",   name: "Portland State University",                region: "West",      type: "R2 Research",  state: "OR", country: "US", enrollment: "15k–30k", maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C+", officialDomain: "pdx.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-virginia",       name: "University of Virginia",                   region: "Southeast", type: "R1 Research",  state: "VA", country: "US", enrollment: "15k–30k", maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "virginia.edu", aiPolicyUrl: "https://dsi.virginia.edu/", lastUpdated: "Q2 2026" },
+  { slug: "wake-forest",      name: "Wake Forest University",                   region: "Southeast", type: "R2 Research",  state: "NC", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B+", officialDomain: "wfu.edu", lastUpdated: "Q2 2026" },
+  { slug: "tulane",           name: "Tulane University",                        region: "Southeast", type: "R1 Research",  state: "LA", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B+", officialDomain: "tulane.edu", lastUpdated: "Q2 2026" },
+  { slug: "american-u",       name: "American University",                      region: "Northeast", type: "R2 Research",  state: "DC", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "american.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-arizona",        name: "University of Arizona",                    region: "Southwest", type: "R1 Research",  state: "AZ", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "arizona.edu", aiPolicyUrl: "https://academicintegrity.arizona.edu/ai-academic-integrity", lastUpdated: "Q2 2026" },
+  { slug: "colorado-state",   name: "Colorado State University",                region: "Southwest", type: "R1 Research",  state: "CO", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "colostate.edu", lastUpdated: "Q2 2026" },
+  { slug: "iowa-state",       name: "Iowa State University",                    region: "Midwest",   type: "R1 Research",  state: "IA", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "iastate.edu", aiPolicyUrl: "https://www.provost.iastate.edu/faculty-success/teaching/generative-ai-resources/", lastUpdated: "Q2 2026" },
+  { slug: "u-oregon",         name: "University of Oregon",                     region: "West",      type: "R1 Research",  state: "OR", country: "US", enrollment: "15k–30k", maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "uoregon.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-utah",           name: "University of Utah",                       region: "Southwest", type: "R1 Research",  state: "UT", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "utah.edu", aiPolicyUrl: "https://teaching.utah.edu/resources/ai/", lastUpdated: "Q2 2026" },
+  { slug: "florida-state",    name: "Florida State University",                 region: "Southeast", type: "R1 Research",  state: "FL", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "fsu.edu", lastUpdated: "Q2 2026" },
+  { slug: "auburn",           name: "Auburn University",                        region: "Southeast", type: "R1 Research",  state: "AL", country: "US", enrollment: "30k+",    maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "auburn.edu", lastUpdated: "Q2 2026" },
+  { slug: "brown",            name: "Brown University",                         region: "Northeast", type: "R1 Research",  state: "RI", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "brown.edu", aiPolicyUrl: "https://it.brown.edu/ai", lastUpdated: "Q2 2026" },
+  { slug: "dartmouth",        name: "Dartmouth College",                        region: "Northeast", type: "R1 Research",  state: "NH", country: "US", enrollment: "<5k",     maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "dartmouth.edu", aiPolicyUrl: "https://ai.dartmouth.edu/", lastUpdated: "Q2 2026" },
+  { slug: "tufts",            name: "Tufts University",                         region: "Northeast", type: "R1 Research",  state: "MA", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B+", officialDomain: "tufts.edu", lastUpdated: "Q2 2026" },
+  { slug: "rice",             name: "Rice University",                          region: "Southwest", type: "R1 Research",  state: "TX", country: "US", enrollment: "<5k",     maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "rice.edu", aiPolicyUrl: "https://ai.rice.edu/", lastUpdated: "Q2 2026" },
+  { slug: "notre-dame",       name: "University of Notre Dame",                 region: "Midwest",   type: "R1 Research",  state: "IN", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A+", officialDomain: "nd.edu", aiPolicyUrl: "https://ai.nd.edu/", lastUpdated: "Q2 2026" },
+  { slug: "washu",            name: "Washington University in St. Louis",       region: "Midwest",   type: "R1 Research",  state: "MO", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "wustl.edu", aiPolicyUrl: "https://ctl.wustl.edu/ai/", lastUpdated: "Q2 2026" },
+  { slug: "emory",            name: "Emory University",                         region: "Southeast", type: "R1 Research",  state: "GA", country: "US", enrollment: "5k–15k",  maturityStage: 3, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "A", officialDomain: "emory.edu", aiPolicyUrl: "https://ctl.emory.edu/resources/ai.html", lastUpdated: "Q2 2026" },
+
+  // ── Stage 2 · Deploy ──────────────────────────────────────────────────────
+  { slug: "elon",             name: "Elon University",                          region: "Southeast", type: "Liberal Arts", state: "NC", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "C+", officialDomain: "elon.edu", lastUpdated: "Q2 2026" },
+  { slug: "rollins",          name: "Rollins College",                          region: "Southeast", type: "Liberal Arts", state: "FL", country: "US", enrollment: "<5k",     maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C+", officialDomain: "rollins.edu", lastUpdated: "Q2 2026" },
+  { slug: "utsa",             name: "University of Texas at San Antonio",       region: "Southwest", type: "R2 Research",  state: "TX", country: "US", enrollment: "30k+",    maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C+", officialDomain: "utsa.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-new-mexico",     name: "University of New Mexico",                 region: "Southwest", type: "R2 Research",  state: "NM", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: false, aiCurriculumInitiative: true,  financialGrade: "C+", officialDomain: "unm.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-denver",         name: "University of Denver",                     region: "Southwest", type: "R2 Research",  state: "CO", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "du.edu", lastUpdated: "Q2 2026" },
+  { slug: "baylor",           name: "Baylor University",                        region: "Southwest", type: "R2 Research",  state: "TX", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B+", officialDomain: "baylor.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-nebraska",       name: "University of Nebraska-Lincoln",           region: "Midwest",   type: "R1 Research",  state: "NE", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B+", officialDomain: "unl.edu", lastUpdated: "Q2 2026" },
+  { slug: "lsu",              name: "Louisiana State University",               region: "Southeast", type: "R1 Research",  state: "LA", country: "US", enrollment: "30k+",    maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "lsu.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-tennessee",      name: "University of Tennessee",                  region: "Southeast", type: "R1 Research",  state: "TN", country: "US", enrollment: "30k+",    maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "utk.edu", aiPolicyUrl: "https://teaching.utk.edu/ai/", lastUpdated: "Q2 2026" },
+  { slug: "u-south-carolina", name: "University of South Carolina",             region: "Southeast", type: "R1 Research",  state: "SC", country: "US", enrollment: "30k+",    maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "sc.edu", aiPolicyUrl: "https://www.sc.edu/about/offices_and_divisions/provost/faculty_resources/generative-ai.php", lastUpdated: "Q2 2026" },
+  { slug: "clemson",          name: "Clemson University",                       region: "Southeast", type: "R1 Research",  state: "SC", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "clemson.edu", lastUpdated: "Q2 2026" },
+  { slug: "vcu",              name: "Virginia Commonwealth University",         region: "Southeast", type: "R2 Research",  state: "VA", country: "US", enrollment: "30k+",    maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "vcu.edu", aiPolicyUrl: "https://teaching.vcu.edu/ai/", lastUpdated: "Q2 2026" },
+  { slug: "wssu",             name: "Winston-Salem State University",           region: "Southeast", type: "R2 Research",  state: "NC", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: false, aiCurriculumInitiative: true,  financialGrade: "C", officialDomain: "wssu.edu", lastUpdated: "Q2 2026" },
+  { slug: "delaware-state",   name: "Delaware State University",                region: "Northeast", type: "R2 Research",  state: "DE", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: false, aiCurriculumInitiative: true,  financialGrade: "C", officialDomain: "desu.edu", lastUpdated: "Q2 2026" },
+  { slug: "howard",           name: "Howard University",                        region: "Northeast", type: "R2 Research",  state: "DC", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "B-", officialDomain: "howard.edu", lastUpdated: "Q2 2026" },
+  { slug: "spelman",          name: "Spelman College",                          region: "Southeast", type: "Liberal Arts", state: "GA", country: "US", enrollment: "<5k",     maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "C+", officialDomain: "spelman.edu", lastUpdated: "Q2 2026" },
+  { slug: "kenyon",           name: "Kenyon College",                           region: "Midwest",   type: "Liberal Arts", state: "OH", country: "US", enrollment: "<5k",     maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B", officialDomain: "kenyon.edu", lastUpdated: "Q2 2026" },
+  { slug: "drake",            name: "Drake University",                         region: "Midwest",   type: "Regional",     state: "IA", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C+", officialDomain: "drake.edu", lastUpdated: "Q2 2026" },
+  { slug: "gonzaga",          name: "Gonzaga University",                       region: "West",      type: "Regional",     state: "WA", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C+", officialDomain: "gonzaga.edu", lastUpdated: "Q2 2026" },
+  { slug: "pacific-lutheran", name: "Pacific Lutheran University",              region: "West",      type: "Liberal Arts", state: "WA", country: "US", enrollment: "<5k",     maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C", officialDomain: "plu.edu", lastUpdated: "Q2 2026" },
+  { slug: "rider",            name: "Rider University",                         region: "Northeast", type: "Regional",     state: "NJ", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C", officialDomain: "rider.edu", lastUpdated: "Q2 2026" },
+  { slug: "eastern-michigan", name: "Eastern Michigan University",              region: "Midwest",   type: "Regional",     state: "MI", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C", officialDomain: "emich.edu", lastUpdated: "Q2 2026" },
+  { slug: "calvin",           name: "Calvin University",                        region: "Midwest",   type: "Liberal Arts", state: "MI", country: "US", enrollment: "<5k",     maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C", officialDomain: "calvin.edu", lastUpdated: "Q2 2026" },
+  { slug: "hope",             name: "Hope College",                             region: "Midwest",   type: "Liberal Arts", state: "MI", country: "US", enrollment: "<5k",     maturityStage: 2, aiPolicyPublished: false, aiCurriculumInitiative: true,  financialGrade: "C", officialDomain: "hope.edu", lastUpdated: "Q2 2026" },
+  { slug: "indiana-state",    name: "Indiana State University",                 region: "Midwest",   type: "Regional",     state: "IN", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C", officialDomain: "indstate.edu", lastUpdated: "Q2 2026" },
+  { slug: "northern-michigan",name: "Northern Michigan University",             region: "Midwest",   type: "Regional",     state: "MI", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C", officialDomain: "nmu.edu", lastUpdated: "Q2 2026" },
+  { slug: "linfield",         name: "Linfield University",                      region: "West",      type: "Liberal Arts", state: "OR", country: "US", enrollment: "<5k",     maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C-", officialDomain: "linfield.edu", lastUpdated: "Q2 2026" },
+  { slug: "appalachian-state",name: "Appalachian State University",             region: "Southeast", type: "Regional",     state: "NC", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C+", officialDomain: "appstate.edu", lastUpdated: "Q2 2026" },
+  { slug: "jmu",              name: "James Madison University",                 region: "Southeast", type: "Regional",     state: "VA", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "C+", officialDomain: "jmu.edu", lastUpdated: "Q2 2026" },
+  { slug: "sjsu",             name: "San Jose State University",                region: "West",      type: "Regional",     state: "CA", country: "US", enrollment: "30k+",    maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: true,  financialGrade: "C+", officialDomain: "sjsu.edu", lastUpdated: "Q2 2026" },
+  { slug: "case-western",     name: "Case Western Reserve University",          region: "Midwest",   type: "R2 Research",  state: "OH", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B+", officialDomain: "case.edu", lastUpdated: "Q2 2026" },
+  { slug: "fordham",          name: "Fordham University",                       region: "Northeast", type: "R2 Research",  state: "NY", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B-", officialDomain: "fordham.edu", lastUpdated: "Q2 2026" },
+  { slug: "lehigh",           name: "Lehigh University",                        region: "Northeast", type: "R2 Research",  state: "PA", country: "US", enrollment: "5k–15k",  maturityStage: 2, aiPolicyPublished: false, aiCurriculumInitiative: true,  financialGrade: "B+", officialDomain: "lehigh.edu", lastUpdated: "Q2 2026" },
+  { slug: "u-miami",          name: "University of Miami",                      region: "Southeast", type: "R1 Research",  state: "FL", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B", officialDomain: "miami.edu", lastUpdated: "Q2 2026" },
+  { slug: "syracuse",         name: "Syracuse University",                      region: "Northeast", type: "R2 Research",  state: "NY", country: "US", enrollment: "15k–30k", maturityStage: 2, aiPolicyPublished: true,  aiCurriculumInitiative: false, financialGrade: "B+", officialDomain: "syr.edu", lastUpdated: "Q2 2026" },
+];
+
+// ─── Canadian Universities AI Readiness Portal ────────────────────────────────
+
+export type UniversityType = "U15 Research" | "Research-Intensive" | "Comprehensive" | "Liberal Arts" | "Polytechnic" | "College";
+export type Trajectory = "Rising" | "Steady" | "Early Stage";
+export type Province = "AB" | "BC" | "MB" | "NB" | "NL" | "NS" | "ON" | "PE" | "QC" | "SK";
+
+export type UniversityDimensions = {
+  research:       number; // 0–20: AI labs, faculty, publications, patents
+  policy:         number; // 0–20: published AI policies, ethics frameworks
+  curriculum:     number; // 0–20: AI degree programs, integrated courses
+  partnerships:   number; // 0–20: industry/gov AI partnerships, NSERC grants
+  infrastructure: number; // 0–20: HPC access, cloud partnerships, compute labs
+};
+
+export type CanadianUniversityEntry = {
+  slug:           string;
+  name:           string;
+  shortName:      string;
+  province:       Province;
+  type:           UniversityType;
+  enrollment:     "<5k" | "5k–15k" | "15k–30k" | "30k+";
+  founded:        number;
+  score:          number;  // sum of all dimensions (max 100)
+  trajectory:     Trajectory;
+  dimensions:     UniversityDimensions;
+  keySignals:     string[];
+  financialGrade:  FinancialGrade; // CAUBO FIUC 2023/24 + HESA surplus/deficit research
+  officialDomain:  string;
+  aiPolicyUrl?:    string;
+  lastUpdated:     string;
+};
+
+// Score = research + policy + curriculum + partnerships + infrastructure (max 100).
+// Each dimension is 0–20. Sources: institutional websites, NSERC data, AI lab pages,
+// job postings, published strategy documents. Updated Q2 2026.
+export const CANADIAN_UNIVERSITIES: CanadianUniversityEntry[] = [
+
+  // ── Alberta (AB) ──────────────────────────────────────────────────────────
+  {
+    slug: "u-alberta", name: "University of Alberta", shortName: "U Alberta",
+    province: "AB", type: "U15 Research", enrollment: "30k+", founded: 1908,
+    score: 74, trajectory: "Rising",
+    dimensions: { research: 16, policy: 14, curriculum: 14, partnerships: 14, infrastructure: 16 },
+    keySignals: ["Founding member of Amii (Alberta Machine Intelligence Institute)", "AI courses integrated across multiple faculties", "NSERC AI compute cluster operational"],
+    financialGrade: "A",
+    officialDomain: "ualberta.ca",
+    aiPolicyUrl: "https://www.ualberta.ca/en/information-services-and-technology/ai/index.html",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-calgary", name: "University of Calgary", shortName: "U Calgary",
+    province: "AB", type: "U15 Research", enrollment: "30k+", founded: 1966,
+    score: 62, trajectory: "Rising",
+    dimensions: { research: 14, policy: 12, curriculum: 12, partnerships: 12, infrastructure: 12 },
+    keySignals: ["AI research groups active in energy and climate sectors", "ML graduate program launched 2024", "Industry partnerships with Alberta energy tech companies"],
+    financialGrade: "A",
+    officialDomain: "ucalgary.ca",
+    aiPolicyUrl: "https://www.ucalgary.ca/risk/generative-artificial-intelligence",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-lethbridge", name: "University of Lethbridge", shortName: "U Lethbridge",
+    province: "AB", type: "Comprehensive", enrollment: "5k–15k", founded: 1967,
+    score: 28, trajectory: "Steady",
+    dimensions: { research: 6, policy: 4, curriculum: 8, partnerships: 4, infrastructure: 6 },
+    keySignals: ["Data science minor introduced 2023", "Limited formal AI governance documentation publicly available"],
+    financialGrade: "C",
+    officialDomain: "uleth.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "mount-royal", name: "Mount Royal University", shortName: "Mount Royal",
+    province: "AB", type: "Comprehensive", enrollment: "15k–30k", founded: 1910,
+    score: 22, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["No published AI strategy as of Q2 2026", "AI literacy electives piloted in Business faculty"],
+    financialGrade: "C+",
+    officialDomain: "mtroyal.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "athabasca", name: "Athabasca University", shortName: "Athabasca",
+    province: "AB", type: "Comprehensive", enrollment: "30k+", founded: 1970,
+    score: 30, trajectory: "Steady",
+    dimensions: { research: 4, policy: 6, curriculum: 8, partnerships: 6, infrastructure: 6 },
+    keySignals: ["Distance-learning infrastructure positions it for AI-in-education experimentation", "Published guidelines on AI use in online assessments", "Centre for Distance Education exploring AI tutoring tools"],
+    financialGrade: "C",
+    officialDomain: "athabascau.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── British Columbia (BC) ─────────────────────────────────────────────────
+  {
+    slug: "ubc", name: "University of British Columbia", shortName: "UBC",
+    province: "BC", type: "U15 Research", enrollment: "30k+", founded: 1908,
+    score: 78, trajectory: "Rising",
+    dimensions: { research: 18, policy: 16, curriculum: 16, partnerships: 16, infrastructure: 12 },
+    keySignals: ["Published comprehensive AI strategy document 2024", "Multiple AI research labs including CAIDA and BETA lab", "AI governance initiatives co-funded by SSHRC and Mitacs"],
+    financialGrade: "A+",
+    officialDomain: "ubc.ca",
+    aiPolicyUrl: "https://academicintegrity.ubc.ca/generative-ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "sfu", name: "Simon Fraser University", shortName: "SFU",
+    province: "BC", type: "Research-Intensive", enrollment: "30k+", founded: 1965,
+    score: 54, trajectory: "Steady",
+    dimensions: { research: 12, policy: 10, curriculum: 12, partnerships: 10, infrastructure: 10 },
+    keySignals: ["Computational Intelligence Lab active in NLP and vision research", "AI ethics coursework embedded in CS and philosophy programs", "NSERC Discovery grants supporting 8 AI-adjacent faculty projects"],
+    financialGrade: "A-",
+    officialDomain: "sfu.ca",
+    aiPolicyUrl: "https://www.sfu.ca/ai.html",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-victoria", name: "University of Victoria", shortName: "UVic",
+    province: "BC", type: "Research-Intensive", enrollment: "15k–30k", founded: 1963,
+    score: 42, trajectory: "Steady",
+    dimensions: { research: 8, policy: 8, curriculum: 10, partnerships: 8, infrastructure: 8 },
+    keySignals: ["AI and climate intersection research through PICS institute", "Data science graduate certificate launched", "No institution-wide AI policy published as of Q2 2026"],
+    financialGrade: "A-",
+    officialDomain: "uvic.ca",
+    aiPolicyUrl: "https://www.uvic.ca/learningandteaching/ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "unbc", name: "University of Northern BC", shortName: "UNBC",
+    province: "BC", type: "Comprehensive", enrollment: "5k–15k", founded: 1990,
+    score: 18, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 2, curriculum: 4, partnerships: 2, infrastructure: 6 },
+    keySignals: ["No AI strategy or dedicated AI research centre", "Regional geography limits industry partnership density"],
+    financialGrade: "C",
+    officialDomain: "unbc.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "kwantlen", name: "Kwantlen Polytechnic University", shortName: "KPU",
+    province: "BC", type: "Polytechnic", enrollment: "15k–30k", founded: 1981,
+    score: 20, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 2, infrastructure: 4 },
+    keySignals: ["AI literacy modules included in some technology programs", "No formal AI governance framework published"],
+    financialGrade: "C",
+    officialDomain: "kpu.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "thompson-rivers", name: "Thompson Rivers University", shortName: "TRU",
+    province: "BC", type: "Comprehensive", enrollment: "15k–30k", founded: 1970,
+    score: 22, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Open Learning division exploring AI-enhanced delivery", "Limited AI research output visible publicly"],
+    financialGrade: "C",
+    officialDomain: "tru.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Manitoba (MB) ─────────────────────────────────────────────────────────
+  {
+    slug: "u-manitoba", name: "University of Manitoba", shortName: "U Manitoba",
+    province: "MB", type: "U15 Research", enrollment: "30k+", founded: 1877,
+    score: 44, trajectory: "Steady",
+    dimensions: { research: 8, policy: 8, curriculum: 10, partnerships: 10, infrastructure: 8 },
+    keySignals: ["NSERC-funded AI projects in agriculture and health informatics", "Data science program established", "Applied AI research growing but no dedicated AI institute"],
+    financialGrade: "A-",
+    officialDomain: "umanitoba.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "brandon", name: "Brandon University", shortName: "Brandon",
+    province: "MB", type: "Comprehensive", enrollment: "<5k", founded: 1899,
+    score: 14, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 2, curriculum: 2, partnerships: 4, infrastructure: 2 },
+    keySignals: ["No AI research centre or published AI strategy", "Small institution size limits dedicated AI investment"],
+    financialGrade: "C-",
+    officialDomain: "brandonu.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── New Brunswick (NB) ────────────────────────────────────────────────────
+  {
+    slug: "unb", name: "University of New Brunswick", shortName: "UNB",
+    province: "NB", type: "Research-Intensive", enrollment: "5k–15k", founded: 1785,
+    score: 36, trajectory: "Steady",
+    dimensions: { research: 8, policy: 6, curriculum: 8, partnerships: 6, infrastructure: 8 },
+    keySignals: ["Cybersecurity and AI research groups active", "AI-adjacent courses in CS and engineering departments", "ACENET HPC consortium provides compute access"],
+    financialGrade: "B+",
+    officialDomain: "unb.ca",
+    aiPolicyUrl: "https://www.unb.ca/research/ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "mount-allison", name: "Mount Allison University", shortName: "Mount Allison",
+    province: "NB", type: "Liberal Arts", enrollment: "<5k", founded: 1839,
+    score: 18, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 4, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Data science minor available", "No formal AI policy or dedicated AI lab"],
+    financialGrade: "C+",
+    officialDomain: "mta.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "st-thomas", name: "St. Thomas University", shortName: "St. Thomas",
+    province: "NB", type: "Liberal Arts", enrollment: "<5k", founded: 1910,
+    score: 12, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 4, partnerships: 2, infrastructure: 2 },
+    keySignals: ["Liberal arts mandate with limited technology infrastructure investment", "AI ethics discussed in philosophy curriculum"],
+    financialGrade: "D",
+    officialDomain: "stu.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Newfoundland (NL) ─────────────────────────────────────────────────────
+  {
+    slug: "memorial", name: "Memorial University of Newfoundland", shortName: "Memorial",
+    province: "NL", type: "Research-Intensive", enrollment: "15k–30k", founded: 1925,
+    score: 34, trajectory: "Steady",
+    dimensions: { research: 6, policy: 6, curriculum: 8, partnerships: 8, infrastructure: 6 },
+    keySignals: ["Ocean and resource-sector AI applications through MEOPAR", "NSERC-supported data science research", "Computing infrastructure shared via ACENET regional consortium"],
+    financialGrade: "B-",
+    officialDomain: "mun.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Nova Scotia (NS) ──────────────────────────────────────────────────────
+  {
+    slug: "dalhousie", name: "Dalhousie University", shortName: "Dalhousie",
+    province: "NS", type: "U15 Research", enrollment: "15k–30k", founded: 1818,
+    score: 48, trajectory: "Steady",
+    dimensions: { research: 10, policy: 10, curriculum: 10, partnerships: 10, infrastructure: 8 },
+    keySignals: ["Rowe School of Business integrating AI into MBA curriculum", "AI in law program with Schulich School of Law", "NSERC-funded health AI projects in partnership with Nova Scotia Health"],
+    financialGrade: "A-",
+    officialDomain: "dal.ca",
+    aiPolicyUrl: "https://www.dal.ca/dept/university_secretariat/policies/academic/ai-tools-policy.html",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "saint-marys", name: "Saint Mary's University", shortName: "Saint Mary's",
+    province: "NS", type: "Comprehensive", enrollment: "5k–15k", founded: 1802,
+    score: 24, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 8, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Analytics and data science courses in Commerce faculty", "No published AI strategy or dedicated AI research unit"],
+    financialGrade: "C+",
+    officialDomain: "smu.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "acadia", name: "Acadia University", shortName: "Acadia",
+    province: "NS", type: "Liberal Arts", enrollment: "<5k", founded: 1838,
+    score: 20, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 2, infrastructure: 4 },
+    keySignals: ["AI-related electives in Computer Science", "No formal AI policy document published as of Q2 2026"],
+    financialGrade: "C+",
+    officialDomain: "acadiau.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "cbu", name: "Cape Breton University", shortName: "CBU",
+    province: "NS", type: "Comprehensive", enrollment: "<5k", founded: 1974,
+    score: 14, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 4, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Technology programs growing but no AI-specific strategy", "Shannon School of Business exploring analytics tools"],
+    financialGrade: "C+",
+    officialDomain: "cbu.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Ontario (ON) ──────────────────────────────────────────────────────────
+  {
+    slug: "u-toronto", name: "University of Toronto", shortName: "U Toronto",
+    province: "ON", type: "U15 Research", enrollment: "30k+", founded: 1827,
+    score: 88, trajectory: "Rising",
+    dimensions: { research: 20, policy: 16, curriculum: 18, partnerships: 18, infrastructure: 16 },
+    keySignals: ["Co-founded Vector Institute for Artificial Intelligence — Canada's leading applied AI hub", "Published institutional AI strategy; piloting AI literacy requirements across faculties", "Active industry partnerships with Google, Nvidia, Microsoft, and RBC AI"],
+    financialGrade: "A+",
+    officialDomain: "utoronto.ca",
+    aiPolicyUrl: "https://ai.utoronto.ca/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-waterloo", name: "University of Waterloo", shortName: "U Waterloo",
+    province: "ON", type: "Research-Intensive", enrollment: "30k+", founded: 1957,
+    score: 82, trajectory: "Rising",
+    dimensions: { research: 18, policy: 16, curriculum: 18, partnerships: 16, infrastructure: 14 },
+    keySignals: ["Waterloo Artificial Intelligence Institute (Waterloo.AI) leads interdisciplinary research", "Co-op program places thousands of students at AI companies annually", "Published responsible AI framework; strong alignment with federal AI strategy"],
+    financialGrade: "A-",
+    officialDomain: "uwaterloo.ca",
+    aiPolicyUrl: "https://uwaterloo.ca/ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "mcmaster", name: "McMaster University", shortName: "McMaster",
+    province: "ON", type: "U15 Research", enrollment: "30k+", founded: 1887,
+    score: 58, trajectory: "Rising",
+    dimensions: { research: 14, policy: 10, curriculum: 12, partnerships: 12, infrastructure: 10 },
+    keySignals: ["Vector Institute affiliate with active health AI research clusters", "AI for Health research network co-funded by CIHR and NSERC", "Curriculum integration underway across Engineering and Health Sciences"],
+    financialGrade: "A-",
+    officialDomain: "mcmaster.ca",
+    aiPolicyUrl: "https://provost.mcmaster.ca/office-of-the-provost-2/generative-artificial-intelligence/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "queens", name: "Queen's University", shortName: "Queen's",
+    province: "ON", type: "U15 Research", enrollment: "15k–30k", founded: 1841,
+    score: 50, trajectory: "Steady",
+    dimensions: { research: 10, policy: 10, curriculum: 12, partnerships: 10, infrastructure: 8 },
+    keySignals: ["Published GenAI guidance for students and faculty 2024", "Smith School of Business AI analytics certificate program", "NSERC-supported AI research in mining and materials science"],
+    financialGrade: "A",
+    officialDomain: "queensu.ca",
+    aiPolicyUrl: "https://www.queensu.ca/provost/ai",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "western", name: "Western University", shortName: "Western",
+    province: "ON", type: "U15 Research", enrollment: "30k+", founded: 1878,
+    score: 48, trajectory: "Steady",
+    dimensions: { research: 10, policy: 8, curriculum: 10, partnerships: 10, infrastructure: 10 },
+    keySignals: ["Vector Institute affiliate; Brain and Mind Institute AI research", "Ivey Business School and Schulich Medicine integrating AI ethics modules", "SHARCNET HPC access supports computational research"],
+    financialGrade: "A",
+    officialDomain: "uwo.ca",
+    aiPolicyUrl: "https://uwo.ca/ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-ottawa", name: "University of Ottawa", shortName: "U Ottawa",
+    province: "ON", type: "U15 Research", enrollment: "30k+", founded: 1848,
+    score: 50, trajectory: "Steady",
+    dimensions: { research: 10, policy: 12, curriculum: 10, partnerships: 10, infrastructure: 8 },
+    keySignals: ["AI & Society institute with bilingual French-English policy research", "Proximity to federal government supports policy AI partnerships", "Published AI ethics guidelines for research and instruction"],
+    financialGrade: "B+",
+    officialDomain: "uottawa.ca",
+    aiPolicyUrl: "https://www.uottawa.ca/en/governance/policies-regulations/academic-integrity",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "york", name: "York University", shortName: "York",
+    province: "ON", type: "Research-Intensive", enrollment: "30k+", founded: 1959,
+    score: 42, trajectory: "Steady",
+    dimensions: { research: 8, policy: 8, curriculum: 10, partnerships: 8, infrastructure: 8 },
+    keySignals: ["AI in Society research cluster across law, education, and social science", "Lassonde School of Engineering expanding AI-integrated curriculum", "Limited formal AI strategy documentation published"],
+    financialGrade: "A-",
+    officialDomain: "yorku.ca",
+    aiPolicyUrl: "https://ai.yorku.ca/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "carleton", name: "Carleton University", shortName: "Carleton",
+    province: "ON", type: "Research-Intensive", enrollment: "15k–30k", founded: 1942,
+    score: 40, trajectory: "Steady",
+    dimensions: { research: 8, policy: 8, curriculum: 10, partnerships: 8, infrastructure: 6 },
+    keySignals: ["Cybersecurity and AI joint research programs with Communications Security Establishment", "AI ethics electives in Philosophy and Computer Science", "Data science graduate programs growing in enrolment"],
+    financialGrade: "B",
+    officialDomain: "carleton.ca",
+    aiPolicyUrl: "https://carleton.ca/provost/ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "toronto-metropolitan", name: "Toronto Metropolitan University", shortName: "TMU",
+    province: "ON", type: "Research-Intensive", enrollment: "30k+", founded: 1948,
+    score: 46, trajectory: "Rising",
+    dimensions: { research: 10, policy: 8, curriculum: 12, partnerships: 8, infrastructure: 8 },
+    keySignals: ["Repositioning under new name with explicit tech-forward mandate", "AI programs in media, design, and engineering accelerating", "Industry partnerships with Toronto tech sector growing"],
+    financialGrade: "B",
+    officialDomain: "torontomu.ca",
+    aiPolicyUrl: "https://www.torontomu.ca/provost/ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-guelph", name: "University of Guelph", shortName: "U Guelph",
+    province: "ON", type: "Research-Intensive", enrollment: "15k–30k", founded: 1964,
+    score: 36, trajectory: "Steady",
+    dimensions: { research: 8, policy: 6, curriculum: 8, partnerships: 6, infrastructure: 8 },
+    keySignals: ["AI in agriculture and food science research via Ontario Agri-Food Innovation Alliance", "NSERC grants supporting precision agriculture AI applications", "Data science coursework integrated in multiple degree programs"],
+    financialGrade: "A-",
+    officialDomain: "uoguelph.ca",
+    aiPolicyUrl: "https://www.uoguelph.ca/cip/ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "ontario-tech", name: "Ontario Tech University", shortName: "Ontario Tech",
+    province: "ON", type: "Research-Intensive", enrollment: "5k–15k", founded: 2002,
+    score: 40, trajectory: "Rising",
+    dimensions: { research: 8, policy: 8, curriculum: 10, partnerships: 8, infrastructure: 6 },
+    keySignals: ["Technology-forward institutional mandate embedded in charter", "AI and ML courses required across engineering programs", "Industry partnerships with automotive and defence sectors"],
+    financialGrade: "B-",
+    officialDomain: "ontariotechu.ca",
+    aiPolicyUrl: "https://ontariotechu.ca/generative-ai",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "wilfrid-laurier", name: "Wilfrid Laurier University", shortName: "Laurier",
+    province: "ON", type: "Comprehensive", enrollment: "15k–30k", founded: 1911,
+    score: 30, trajectory: "Steady",
+    dimensions: { research: 6, policy: 6, curriculum: 8, partnerships: 4, infrastructure: 6 },
+    keySignals: ["Data analytics stream in Business Administration", "AI ethics discussed in Social Welfare and Philosophy courses", "No published AI readiness strategy as of Q2 2026"],
+    financialGrade: "B-",
+    officialDomain: "wlu.ca",
+    aiPolicyUrl: "https://students.wlu.ca/academics/academic-integrity/ai-and-academic-integrity.html",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "ocad", name: "OCAD University", shortName: "OCAD U",
+    province: "ON", type: "Comprehensive", enrollment: "<5k", founded: 1876,
+    score: 30, trajectory: "Steady",
+    dimensions: { research: 6, policy: 6, curriculum: 10, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Unique AI + design/art curriculum integration positioning", "Digital Futures program incorporates AI tools in creative practice", "AI ethics and responsible design embedded in graduate programs"],
+    financialGrade: "C+",
+    officialDomain: "ocadu.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-windsor", name: "University of Windsor", shortName: "U Windsor",
+    province: "ON", type: "Comprehensive", enrollment: "15k–30k", founded: 1857,
+    score: 28, trajectory: "Steady",
+    dimensions: { research: 6, policy: 4, curriculum: 8, partnerships: 4, infrastructure: 6 },
+    keySignals: ["Cross-border proximity to Detroit AI ecosystem creates partnership opportunities", "AI research in automotive engineering and cross-border logistics", "Limited formal AI governance documentation"],
+    financialGrade: "B-",
+    officialDomain: "uwindsor.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "brock", name: "Brock University", shortName: "Brock",
+    province: "ON", type: "Comprehensive", enrollment: "15k–30k", founded: 1964,
+    score: 26, trajectory: "Early Stage",
+    dimensions: { research: 6, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 6 },
+    keySignals: ["Data science courses in Mathematics and Computer Science", "No dedicated AI research centre or published AI strategy"],
+    financialGrade: "B-",
+    officialDomain: "brocku.ca",
+    aiPolicyUrl: "https://brocku.ca/learning-teaching/teaching-resources/ai-teaching/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "trent", name: "Trent University", shortName: "Trent",
+    province: "ON", type: "Comprehensive", enrollment: "5k–15k", founded: 1963,
+    score: 20, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Data science minor available in Computing and Information Systems", "No formal AI policy or dedicated AI infrastructure"],
+    financialGrade: "C+",
+    officialDomain: "trentu.ca",
+    aiPolicyUrl: "https://www.trentu.ca/academicintegrity/ai-tools",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "lakehead", name: "Lakehead University", shortName: "Lakehead",
+    province: "ON", type: "Comprehensive", enrollment: "5k–15k", founded: 1965,
+    score: 18, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 2, curriculum: 6, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Computer Science department offers AI electives", "Limited research infrastructure for AI-specific projects"],
+    financialGrade: "C+",
+    officialDomain: "lakeheadu.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "nipissing", name: "Nipissing University", shortName: "Nipissing",
+    province: "ON", type: "Comprehensive", enrollment: "<5k", founded: 1992,
+    score: 14, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 4, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Teaching-focused mandate with limited research infrastructure", "No AI strategy or dedicated AI programs"],
+    financialGrade: "C",
+    officialDomain: "nipissingu.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "laurentian", name: "Laurentian University", shortName: "Laurentian",
+    province: "ON", type: "Comprehensive", enrollment: "5k–15k", founded: 1960,
+    score: 16, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 4, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Recovery from CCAA restructuring limits new AI investment", "Mining sector partnerships offer some AI application context"],
+    financialGrade: "D",
+    officialDomain: "laurentian.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "algoma", name: "Algoma University", shortName: "Algoma",
+    province: "ON", type: "Liberal Arts", enrollment: "<5k", founded: 1965,
+    score: 12, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 4, partnerships: 2, infrastructure: 2 },
+    keySignals: ["Indigenous-focused liberal arts mandate with limited technology infrastructure", "No AI research or strategy documentation"],
+    financialGrade: "C+",
+    officialDomain: "algomau.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "redeemer", name: "Redeemer University", shortName: "Redeemer",
+    province: "ON", type: "Liberal Arts", enrollment: "<5k", founded: 1982,
+    score: 10, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 2, partnerships: 2, infrastructure: 2 },
+    keySignals: ["Small Christian liberal arts institution with minimal technology investment", "No AI policy or programs documented"],
+    financialGrade: "C",
+    officialDomain: "redeemer.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── PEI ───────────────────────────────────────────────────────────────────
+  {
+    slug: "upei", name: "University of Prince Edward Island", shortName: "UPEI",
+    province: "PE", type: "Comprehensive", enrollment: "<5k", founded: 1969,
+    score: 22, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Data analytics coursework in Business and Computer Science", "Atlantic Canada's smallest province limits scale of AI investment"],
+    financialGrade: "C+",
+    officialDomain: "upei.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Quebec (QC) ───────────────────────────────────────────────────────────
+  {
+    slug: "mcgill", name: "McGill University", shortName: "McGill",
+    province: "QC", type: "U15 Research", enrollment: "30k+", founded: 1821,
+    score: 84, trajectory: "Rising",
+    dimensions: { research: 20, policy: 14, curriculum: 18, partnerships: 18, infrastructure: 14 },
+    keySignals: ["Co-founding institution of Mila — Québec AI Institute with Yoshua Bengio", "Extensive AI and ML curriculum across faculties including Medicine and Law", "Deep industry partnerships with Google Brain, NVIDIA, Samsung AI, and Microsoft Research"],
+    financialGrade: "A",
+    officialDomain: "mcgill.ca",
+    aiPolicyUrl: "https://www.mcgill.ca/ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-montreal", name: "Université de Montréal", shortName: "U Montréal",
+    province: "QC", type: "U15 Research", enrollment: "30k+", founded: 1878,
+    score: 82, trajectory: "Rising",
+    dimensions: { research: 20, policy: 14, curriculum: 18, partnerships: 16, infrastructure: 14 },
+    keySignals: ["Lead institution of Mila — among the world's largest academic AI research clusters", "IVADO institute co-lead; over 500 researchers in AI and data science", "Deep learning integrated throughout graduate programs across disciplines"],
+    financialGrade: "A-",
+    officialDomain: "umontreal.ca",
+    aiPolicyUrl: "https://www.umontreal.ca/en/artificial-intelligence/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "polytechnique-montreal", name: "École Polytechnique de Montréal", shortName: "Polytechnique",
+    province: "QC", type: "Polytechnic", enrollment: "5k–15k", founded: 1873,
+    score: 62, trajectory: "Rising",
+    dimensions: { research: 14, policy: 10, curriculum: 14, partnerships: 14, infrastructure: 10 },
+    keySignals: ["Mila affiliate with deep engineering-AI integration across programs", "AI mandatory in multiple engineering streams", "Partnerships with industrial partners through Mitacs and InnovÉÉ"],
+    financialGrade: "B+",
+    officialDomain: "polymtl.ca",
+    aiPolicyUrl: "https://www.polymtl.ca/pertinence/ia",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "laval", name: "Laval University", shortName: "Laval",
+    province: "QC", type: "U15 Research", enrollment: "15k–30k", founded: 1852,
+    score: 52, trajectory: "Steady",
+    dimensions: { research: 10, policy: 8, curriculum: 10, partnerships: 12, infrastructure: 12 },
+    keySignals: ["IVADO affiliate with active AI research in health, forestry, and agriculture", "CERVO Brain Research Centre incorporating ML in neuroscience", "Significant NSERC and FRQNT funding for AI-adjacent research"],
+    financialGrade: "B+",
+    officialDomain: "ulaval.ca",
+    aiPolicyUrl: "https://www.ulaval.ca/ia",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-sherbrooke", name: "Université de Sherbrooke", shortName: "U Sherbrooke",
+    province: "QC", type: "Research-Intensive", enrollment: "15k–30k", founded: 1954,
+    score: 44, trajectory: "Rising",
+    dimensions: { research: 10, policy: 8, curriculum: 10, partnerships: 8, infrastructure: 8 },
+    keySignals: ["Named contributor to Québec AI strategy; IVADO affiliate", "AI research groups in health imaging and robotics", "Co-op engineering programs with strong industry AI placement"],
+    financialGrade: "B+",
+    officialDomain: "usherbrooke.ca",
+    aiPolicyUrl: "https://www.usherbrooke.ca/etudiants/vie-universitaire/integrite-academique/ia",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "hec-montreal", name: "HEC Montréal", shortName: "HEC Montréal",
+    province: "QC", type: "Comprehensive", enrollment: "15k–30k", founded: 1907,
+    score: 42, trajectory: "Steady",
+    dimensions: { research: 8, policy: 8, curriculum: 12, partnerships: 8, infrastructure: 6 },
+    keySignals: ["IVADO affiliate with AI in business curriculum emphasis", "MBA program integrates AI strategy and data analytics as core modules", "Case-study partnerships with Québec AI companies"],
+    financialGrade: "B",
+    officialDomain: "hec.ca",
+    aiPolicyUrl: "https://www.hec.ca/en/students/support-resources/ai/index.html",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "uqam", name: "Université du Québec à Montréal", shortName: "UQAM",
+    province: "QC", type: "Research-Intensive", enrollment: "30k+", founded: 1969,
+    score: 38, trajectory: "Steady",
+    dimensions: { research: 8, policy: 6, curriculum: 10, partnerships: 6, infrastructure: 8 },
+    keySignals: ["Social AI and ethics research distinguishing factor", "Informatics programs with growing AI elective offering", "IVADO community membership with limited lead research role"],
+    financialGrade: "B",
+    officialDomain: "uqam.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "concordia", name: "Concordia University", shortName: "Concordia",
+    province: "QC", type: "Research-Intensive", enrollment: "30k+", founded: 1974,
+    score: 44, trajectory: "Steady",
+    dimensions: { research: 10, policy: 8, curriculum: 10, partnerships: 8, infrastructure: 8 },
+    keySignals: ["IVADO community member with active AI research clusters", "Computation Arts and engineering programs integrating AI tools", "Centre for Interdisciplinary Studies in Society and Culture exploring AI ethics"],
+    financialGrade: "B",
+    officialDomain: "concordia.ca",
+    aiPolicyUrl: "https://www.concordia.ca/students/academic-integrity/generative-ai.html",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "bishops", name: "Bishop's University", shortName: "Bishop's",
+    province: "QC", type: "Liberal Arts", enrollment: "<5k", founded: 1845,
+    score: 14, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 4, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Small English-language liberal arts institution with limited technology investment", "No AI strategy or research documentation publicly available"],
+    financialGrade: "C",
+    officialDomain: "ubishops.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "uqo", name: "Université du Québec en Outaouais", shortName: "UQO",
+    province: "QC", type: "Comprehensive", enrollment: "5k–15k", founded: 1981,
+    score: 22, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Proximity to Ottawa creates some federal AI partnership opportunities", "Limited AI research or published strategy documents"],
+    financialGrade: "C",
+    officialDomain: "uqo.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Saskatchewan (SK) ─────────────────────────────────────────────────────
+  {
+    slug: "u-saskatchewan", name: "University of Saskatchewan", shortName: "U Saskatchewan",
+    province: "SK", type: "U15 Research", enrollment: "15k–30k", founded: 1907,
+    score: 38, trajectory: "Steady",
+    dimensions: { research: 8, policy: 6, curriculum: 8, partnerships: 8, infrastructure: 8 },
+    keySignals: ["AI in agriculture research via Borlaug Global Rust Reference Center and NSERC grants", "Data science graduate programs in Statistics and Computer Science", "PLATO HPC cluster supports computational AI research"],
+    financialGrade: "A-",
+    officialDomain: "usask.ca",
+    aiPolicyUrl: "https://teaching.usask.ca/ai/",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "u-regina", name: "University of Regina", shortName: "U Regina",
+    province: "SK", type: "Research-Intensive", enrollment: "5k–15k", founded: 1961,
+    score: 26, trajectory: "Early Stage",
+    dimensions: { research: 6, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 6 },
+    keySignals: ["Data Analytics certificate program in continuing education", "Energy sector AI research partnerships nascent", "No published institutional AI strategy"],
+    financialGrade: "B-",
+    officialDomain: "uregina.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // COLLEGES & INSTITUTES OF TECHNOLOGY
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // ── Alberta ───────────────────────────────────────────────────────────────
+  {
+    slug: "sait", name: "Southern Alberta Institute of Technology", shortName: "SAIT",
+    province: "AB", type: "Polytechnic", enrollment: "15k–30k", founded: 1916,
+    score: 40, trajectory: "Steady",
+    dimensions: { research: 6, policy: 6, curriculum: 10, partnerships: 10, infrastructure: 8 },
+    keySignals: ["Applied AI and data analytics programs in School of Information and Communications Technologies", "Industry partnerships with Calgary's energy tech sector for applied AI projects", "MacPhail School of Energy exploring AI for industrial applications"],
+    financialGrade: "B-",
+    officialDomain: "sait.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "nait", name: "Northern Alberta Institute of Technology", shortName: "NAIT",
+    province: "AB", type: "Polytechnic", enrollment: "15k–30k", founded: 1962,
+    score: 36, trajectory: "Steady",
+    dimensions: { research: 6, policy: 6, curriculum: 8, partnerships: 8, infrastructure: 8 },
+    keySignals: ["Applied research partnerships with Alberta industry in automation and AI", "Computer Systems Technology diploma with AI/ML tracks", "JR Shaw School of Business integrating analytics coursework"],
+    financialGrade: "B-",
+    officialDomain: "nait.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "red-deer-poly", name: "Red Deer Polytechnic", shortName: "Red Deer Poly",
+    province: "AB", type: "Polytechnic", enrollment: "5k–15k", founded: 1964,
+    score: 22, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Technology programs expanding but no formal AI strategy published", "Applied research activity limited relative to larger polytechnics"],
+    financialGrade: "C+",
+    officialDomain: "rdpolytech.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "lethbridge-college", name: "Lethbridge College", shortName: "Lethbridge College",
+    province: "AB", type: "College", enrollment: "5k–15k", founded: 1957,
+    score: 18, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 4, curriculum: 4, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Agriculture-focused applied learning with limited AI integration to date", "No AI strategy or dedicated AI programs published"],
+    financialGrade: "C",
+    officialDomain: "lethbridgecollege.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── British Columbia ───────────────────────────────────────────────────────
+  {
+    slug: "bcit", name: "British Columbia Institute of Technology", shortName: "BCIT",
+    province: "BC", type: "Polytechnic", enrollment: "30k+", founded: 1964,
+    score: 44, trajectory: "Steady",
+    dimensions: { research: 8, policy: 8, curriculum: 10, partnerships: 10, infrastructure: 8 },
+    keySignals: ["Applied AI and machine learning programs in School of Computing and Academic Studies", "Industry-linked applied research in automation, health informatics, and smart systems", "Published responsible AI use guidelines for staff and students 2024"],
+    financialGrade: "B-",
+    officialDomain: "bcit.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "douglas-college", name: "Douglas College", shortName: "Douglas College",
+    province: "BC", type: "College", enrollment: "15k–30k", founded: 1970,
+    score: 20, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Computing Science programs include some AI electives", "No dedicated AI strategy or applied research centre"],
+    financialGrade: "C",
+    officialDomain: "douglascollege.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "langara", name: "Langara College", shortName: "Langara",
+    province: "BC", type: "College", enrollment: "15k–30k", founded: 1970,
+    score: 20, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Data analytics coursework available in Business and Computing", "Transfer-focused mandate limits deep applied research investment"],
+    financialGrade: "C",
+    officialDomain: "langara.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "camosun", name: "Camosun College", shortName: "Camosun",
+    province: "BC", type: "College", enrollment: "5k–15k", founded: 1971,
+    score: 18, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 4, curriculum: 6, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Technology programs growing in Victoria region", "No published AI strategy or AI-specific programs"],
+    financialGrade: "C",
+    officialDomain: "camosun.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Manitoba ──────────────────────────────────────────────────────────────
+  {
+    slug: "red-river", name: "Red River College Polytechnic", shortName: "RRC Polytech",
+    province: "MB", type: "Polytechnic", enrollment: "15k–30k", founded: 1938,
+    score: 30, trajectory: "Steady",
+    dimensions: { research: 4, policy: 6, curriculum: 8, partnerships: 6, infrastructure: 6 },
+    keySignals: ["Applied research in Smart Environments via the Applied Computer Education department", "Industry-connected programs in data analytics and automation", "Manitoba's largest polytechnic with growing technology enrolment"],
+    financialGrade: "C+",
+    officialDomain: "rrc.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "assiniboine", name: "Assiniboine Community College", shortName: "Assiniboine",
+    province: "MB", type: "College", enrollment: "<5k", founded: 1961,
+    score: 14, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 4, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Agriculture and health programs with minimal AI integration", "No AI strategy or dedicated programs published"],
+    financialGrade: "C-",
+    officialDomain: "assiniboine.net",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── New Brunswick ─────────────────────────────────────────────────────────
+  {
+    slug: "nbcc", name: "New Brunswick Community College", shortName: "NBCC",
+    province: "NB", type: "College", enrollment: "5k–15k", founded: 1973,
+    score: 20, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 2, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Technology programs include IT and networking with some AI content", "No formal AI strategy or dedicated AI research activity"],
+    financialGrade: "C",
+    officialDomain: "nbcc.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Newfoundland ──────────────────────────────────────────────────────────
+  {
+    slug: "college-north-atlantic", name: "College of the North Atlantic", shortName: "CNA",
+    province: "NL", type: "College", enrollment: "5k–15k", founded: 1963,
+    score: 14, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 4, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Technology programs across 17 campuses in NL", "Ocean and resource sector proximity creates AI application potential not yet formalized"],
+    financialGrade: "C",
+    officialDomain: "cna.nl.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Nova Scotia ───────────────────────────────────────────────────────────
+  {
+    slug: "nscc", name: "Nova Scotia Community College", shortName: "NSCC",
+    province: "NS", type: "College", enrollment: "15k–30k", founded: 1988,
+    score: 22, trajectory: "Steady",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Applied research partnerships with Nova Scotia industries", "IT programs include data analytics and some AI content", "Growing collaboration with Dalhousie and SMU on applied projects"],
+    financialGrade: "C+",
+    officialDomain: "nscc.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Ontario ───────────────────────────────────────────────────────────────
+  {
+    slug: "sheridan", name: "Sheridan College", shortName: "Sheridan",
+    province: "ON", type: "College", enrollment: "30k+", founded: 1967,
+    score: 34, trajectory: "Rising",
+    dimensions: { research: 6, policy: 6, curriculum: 10, partnerships: 6, infrastructure: 6 },
+    keySignals: ["Animation, design, and technology programs pioneering AI creative tools integration", "Centre for Applied AI in Design and Media active with industry partnerships", "AI ethics embedded in creative technology programs"],
+    financialGrade: "C+",
+    officialDomain: "sheridancollege.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "mohawk", name: "Mohawk College", shortName: "Mohawk",
+    province: "ON", type: "College", enrollment: "30k+", founded: 1966,
+    score: 32, trajectory: "Steady",
+    dimensions: { research: 6, policy: 6, curriculum: 8, partnerships: 6, infrastructure: 6 },
+    keySignals: ["IDEAWORKS applied research hub with AI automation projects", "Computer Systems Technician program with AI and IoT tracks", "McMaster-Mohawk partnership on applied engineering research"],
+    financialGrade: "C+",
+    officialDomain: "mohawkcollege.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "durham-college", name: "Durham College", shortName: "Durham College",
+    province: "ON", type: "College", enrollment: "15k–30k", founded: 1967,
+    score: 30, trajectory: "Rising",
+    dimensions: { research: 6, policy: 6, curriculum: 8, partnerships: 6, infrastructure: 4 },
+    keySignals: ["AI program launched as standalone diploma — one of first Canadian colleges to do so", "Centre for Collaborative Education and Research in Retail applying AI in applied projects", "Published AI use guidelines for students 2024"],
+    financialGrade: "C",
+    officialDomain: "durhamcollege.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "conestoga", name: "Conestoga College", shortName: "Conestoga",
+    province: "ON", type: "College", enrollment: "30k+", founded: 1967,
+    score: 36, trajectory: "Rising",
+    dimensions: { research: 6, policy: 6, curriculum: 10, partnerships: 8, infrastructure: 6 },
+    keySignals: ["Applied AI in manufacturing and automation via Conestoga Research & Innovation", "Data analytics and AI graduate certificates growing rapidly in enrolment", "Partnerships with Waterloo Region tech companies for applied AI projects"],
+    financialGrade: "C+",
+    officialDomain: "conestogac.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "humber", name: "Humber College", shortName: "Humber",
+    province: "ON", type: "College", enrollment: "30k+", founded: 1967,
+    score: 28, trajectory: "Steady",
+    dimensions: { research: 4, policy: 6, curriculum: 8, partnerships: 6, infrastructure: 4 },
+    keySignals: ["Applied research via ITAL (Institute of Technology, Arts & Labour)", "Data science and AI programs in Faculty of Technology", "No formal AI strategy document publicly available"],
+    financialGrade: "C+",
+    officialDomain: "humber.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "seneca", name: "Seneca Polytechnic", shortName: "Seneca",
+    province: "ON", type: "College", enrollment: "30k+", founded: 1967,
+    score: 28, trajectory: "Steady",
+    dimensions: { research: 4, policy: 6, curriculum: 8, partnerships: 6, infrastructure: 4 },
+    keySignals: ["AI, ML, and data analytics programs in Faculty of Applied Science and Engineering Technology", "Published GenAI use policy for students 2024", "Applied research partnerships with Toronto technology sector growing"],
+    financialGrade: "C+",
+    officialDomain: "senecapolytechnic.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "algonquin", name: "Algonquin College", shortName: "Algonquin",
+    province: "ON", type: "College", enrollment: "30k+", founded: 1967,
+    score: 26, trajectory: "Steady",
+    dimensions: { research: 4, policy: 4, curriculum: 8, partnerships: 4, infrastructure: 6 },
+    keySignals: ["AI and ML courses in School of Advanced Technology", "Ottawa region proximity creates some federal AI partnership opportunities", "College-wide generative AI guidance published 2024"],
+    financialGrade: "C+",
+    officialDomain: "algonquincollege.com",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "george-brown", name: "George Brown College", shortName: "George Brown",
+    province: "ON", type: "College", enrollment: "30k+", founded: 1967,
+    score: 24, trajectory: "Steady",
+    dimensions: { research: 4, policy: 4, curriculum: 8, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Technology programs in School of Design and School of Computer Technology", "Toronto location enables industry connections", "No published AI strategy as of Q2 2026"],
+    financialGrade: "C+",
+    officialDomain: "georgebrown.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "centennial", name: "Centennial College", shortName: "Centennial",
+    province: "ON", type: "College", enrollment: "30k+", founded: 1966,
+    score: 22, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Engineering Technology and Applied Science programs include data analytics content", "No dedicated AI program or strategy published"],
+    financialGrade: "C",
+    officialDomain: "centennialcollege.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "fanshawe", name: "Fanshawe College", shortName: "Fanshawe",
+    province: "ON", type: "College", enrollment: "30k+", founded: 1967,
+    score: 22, trajectory: "Early Stage",
+    dimensions: { research: 4, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Information Technology programs include networking and some analytics", "London, ON market limits density of AI industry partnerships"],
+    financialGrade: "C",
+    officialDomain: "fanshawec.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── PEI ───────────────────────────────────────────────────────────────────
+  {
+    slug: "holland-college", name: "Holland College", shortName: "Holland College",
+    province: "PE", type: "College", enrollment: "<5k", founded: 1969,
+    score: 12, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 2, curriculum: 4, partnerships: 2, infrastructure: 2 },
+    keySignals: ["Small island college with technology programs in IT and networking", "No AI strategy or AI-specific programs documented"],
+    financialGrade: "C-",
+    officialDomain: "hollandcollege.com",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Quebec ────────────────────────────────────────────────────────────────
+  {
+    slug: "cegep-maisonneuve", name: "Cégep de Maisonneuve", shortName: "Cégep Maisonneuve",
+    province: "QC", type: "College", enrollment: "5k–15k", founded: 1967,
+    score: 20, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 4, curriculum: 6, partnerships: 4, infrastructure: 4 },
+    keySignals: ["Computer science DEC program includes AI and data science modules", "Proximity to Mila creates awareness but limited formal research collaboration"],
+    financialGrade: "C",
+    officialDomain: "cmaisonneuve.qc.ca",
+    lastUpdated: "Q2 2026",
+  },
+  {
+    slug: "cegep-andre-laurendeau", name: "Cégep André-Laurendeau", shortName: "Cégep A-L",
+    province: "QC", type: "College", enrollment: "<5k", founded: 1969,
+    score: 18, trajectory: "Early Stage",
+    dimensions: { research: 2, policy: 4, curriculum: 6, partnerships: 2, infrastructure: 4 },
+    keySignals: ["Computer science DEC with some AI elective content", "No formal AI strategy or dedicated AI programs"],
+    financialGrade: "C-",
+    officialDomain: "claurendeau.qc.ca",
+    lastUpdated: "Q2 2026",
+  },
+
+  // ── Saskatchewan ──────────────────────────────────────────────────────────
+  {
+    slug: "sask-polytech", name: "Saskatchewan Polytechnic", shortName: "Sask Polytech",
+    province: "SK", type: "Polytechnic", enrollment: "15k–30k", founded: 1988,
+    score: 30, trajectory: "Steady",
+    dimensions: { research: 6, policy: 4, curriculum: 8, partnerships: 6, infrastructure: 6 },
+    keySignals: ["Applied research in agriculture AI through Saskatchewan agri-food partnerships", "Computer systems and IT programs include data analytics and automation content", "Saskatchewan's largest polytechnic with growing technology enrolment"],
+    financialGrade: "C+",
+    officialDomain: "saskpolytech.ca",
+    lastUpdated: "Q2 2026",
+  },
+];

@@ -90,7 +90,7 @@ export default function ContactSection() {
                 lineHeight: 1.6,
               }}
             >
-              Select one or leave blank — we'll cover everything on the
+              Select one or leave blank. We will cover everything on the
               discovery call.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
@@ -468,7 +468,7 @@ export default function ContactSection() {
                     id="message"
                     name="message"
                     rows={4}
-                    placeholder="Tell us a bit about your situation — what's driving this, what timeline you're working with, or any specific questions…"
+                    placeholder="Tell us a bit about your situation: what's driving this, what timeline you're working with, or any specific questions…"
                     style={{
                       ...inputStyle,
                       resize: "vertical" as const,
