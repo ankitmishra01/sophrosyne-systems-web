@@ -1,11 +1,12 @@
-"use client";
-
 import Link from "next/link";
-import { CSSProperties } from "react";
+import type { CSSProperties } from "react";
+
+type Variant = "primary" | "gold" | "secondary" | "ghost" | "on-dark";
+type Size = "sm" | "md" | "lg";
 
 interface ButtonProps {
-  variant?: "primary" | "secondary" | "ghost";
-  size?: "sm" | "md" | "lg";
+  variant?: Variant;
+  size?: Size;
   href?: string;
   children: React.ReactNode;
   className?: string;
@@ -16,115 +17,38 @@ interface ButtonProps {
   type?: "submit" | "button" | "reset";
 }
 
-const SIZES: Record<NonNullable<ButtonProps["size"]>, CSSProperties> = {
-  sm: { fontSize: 14, padding: "8px 18px", letterSpacing: "0.03em" },
-  md: { fontSize: 15, padding: "11px 22px", letterSpacing: "0.03em" },
-  lg: { fontSize: 14, padding: "14px 28px", letterSpacing: "0.02em" },
-};
-
-const BASE: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  fontFamily: "var(--font-libre-franklin), sans-serif",
-  fontWeight: 600,
-  borderRadius: "var(--radius-btn)",
-  textDecoration: "none",
-  border: "none",
-  cursor: "pointer",
-  transition: "opacity 200ms, background 200ms, border-color 200ms, transform 150ms",
-  whiteSpace: "nowrap",
-};
-
-const VARIANTS: Record<NonNullable<ButtonProps["variant"]>, { style: CSSProperties; hover: CSSProperties }> = {
-  primary: {
-    style: { background: "#1E4D38", color: "#F4F0E6" },
-    hover: { opacity: 0.85 },
-  },
-  secondary: {
-    style: {
-      background: "#FFFFFF",
-      color: "#1B2A21",
-      border: "1px solid rgba(27,42,33,0.16)",
-    },
-    hover: { background: "#ECF1EC" } as CSSProperties,
-  },
-  ghost: {
-    style: { background: "transparent", color: "#1E4D38" },
-    hover: { opacity: 0.75 },
-  },
-};
-
 export default function Button({
   variant = "primary",
   size = "md",
   href,
   children,
   className,
-  style: styleProp,
+  style,
   onClick,
   target,
   rel,
   type,
 }: ButtonProps) {
-  const v = VARIANTS[variant];
-  const s = SIZES[size];
-  const style: CSSProperties = { ...BASE, ...v.style, ...s, ...styleProp };
-
-  const handleMouseEnter = (e: React.MouseEvent<HTMLElement>) => {
-    const el = e.currentTarget as HTMLElement;
-    Object.assign(el.style, v.hover);
-  };
-  const handleMouseLeave = (e: React.MouseEvent<HTMLElement>) => {
-    const el = e.currentTarget as HTMLElement;
-    if (variant === "primary") el.style.opacity = "1";
-    if (variant === "ghost") el.style.opacity = "1";
-    if (variant === "secondary") {
-      el.style.background = "#FFFFFF";
-    }
-  };
+  const cls = `btn btn-${size} btn-${variant}${className ? ` ${className}` : ""}`;
 
   if (href) {
     const isExternal = href.startsWith("http://") || href.startsWith("https://");
     if (isExternal) {
       return (
-        <a
-          href={href}
-          style={style}
-          className={className}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          target={target}
-          rel={rel ?? "noopener noreferrer"}
-        >
+        <a href={href} className={cls} style={style} target={target} rel={rel ?? "noopener noreferrer"}>
           {children}
         </a>
       );
     }
     return (
-      <Link
-        href={href}
-        style={style}
-        className={className}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        target={target}
-        rel={rel}
-      >
+      <Link href={href} className={cls} style={style} target={target} rel={rel}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button
-      type={type}
-      style={style}
-      className={className}
-      onClick={onClick}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <button type={type} className={cls} style={style} onClick={onClick}>
       {children}
     </button>
   );

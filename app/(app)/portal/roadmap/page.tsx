@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { NORTH_STAR, PHASES, FUNDING_ROUNDS, FUNDING_TOTAL, SHIPPABLE_NOW } from "@/lib/roadmap";
 
 // Product Roadmap rendered as a one-pager document in the exact style of the AI Fluency
@@ -11,7 +12,10 @@ const BODY = "#4A584E";
 
 export default function RoadmapPage() {
   return (
-    <div className="rmp-wrap" style={{ background: "#E5E0D0", minHeight: "100vh", display: "flex", justifyContent: "center" }}>
+    <div className="rmp-wrap" style={{ background: "#E5E0D0", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ width: "100%", maxWidth: 860, marginBottom: 14 }}>
+        <Link href="/portal" style={{ fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, color: "#1E4D38" }}>← Knowledge Centre</Link>
+      </div>
       <div style={{ position: "relative", width: "100%", maxWidth: 860, background: "#FBF9F2", boxShadow: "0 8px 40px rgba(27,42,33,0.16)", overflow: "hidden" }}>
 
         {/* Watermark */}

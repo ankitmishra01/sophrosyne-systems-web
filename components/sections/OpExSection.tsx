@@ -61,7 +61,7 @@ export default function OpExSection() {
               margin: "0 0 16px",
             }}
           >
-            <em style={{ fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>
+            <em style={{ fontStyle: "italic", fontFamily: "var(--font-display)" }}>
               Pillar III
             </em>
             {" "}— Operational Efficiency
@@ -70,7 +70,7 @@ export default function OpExSection() {
             style={{
               fontSize: "clamp(22px, 2.8vw, 38px)",
               fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
+              fontFamily: "var(--font-display)",
               color: "#1B2A21",
               margin: "0 0 16px",
               letterSpacing: "-0.012em",
@@ -202,7 +202,7 @@ export default function OpExSection() {
                 style={{
                   fontSize: 20,
                   fontWeight: 500,
-                  fontFamily: "var(--font-newsreader), serif",
+                  fontFamily: "var(--font-display)",
                   color: "#1B2A21",
                   margin: "0 0 4px",
                   letterSpacing: "-0.012em",

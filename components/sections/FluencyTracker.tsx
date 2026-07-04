@@ -447,7 +447,7 @@ export default function FluencyTracker() {
               <span style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#3fb950", letterSpacing: "0.06em", textTransform: "uppercase" }}>Live · Working Demo</span>
             </span>
           </div>
-          <h2 style={{ fontSize: "clamp(26px, 3.2vw, 44px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 14px", letterSpacing: "-0.012em" }}>
+          <h2 style={{ fontSize: "clamp(26px, 3.2vw, 44px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#1B2A21", margin: "0 0 14px", letterSpacing: "-0.012em" }}>
             Track AI fluency across every department, in real time.
           </h2>
           <p style={{ fontSize: 16, lineHeight: 1.65, color: "#4A584E", margin: 0 }}>

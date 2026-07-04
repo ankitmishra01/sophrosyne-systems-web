@@ -3,6 +3,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { INSIGHTS } from "@/lib/data";
 import { getUSUniversities, getCanadianUniversities } from "@/lib/db";
+import SectionHeader from "@/components/ui/SectionHeader";
+import Eyebrow from "@/components/ui/Eyebrow";
+import Reveal from "@/components/ui/Reveal";
 import InsightGrid from "./InsightGrid";
 
 export const revalidate = 3600;
@@ -24,27 +27,15 @@ function InsightsHero() {
       }}
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        <p
-          style={{
-            fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif",
-            letterSpacing: "0.18em", textTransform: "uppercase", color: "#B5862E", margin: "0 0 18px",
-          }}
-        >
-          Insights
-        </p>
-        <h1
-          style={{
-            fontSize: "clamp(26px, 3.6vw, 50px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
-            color: "#1B2A21", margin: "0 0 20px", letterSpacing: "-0.015em", maxWidth: 740, lineHeight: 1.1,
-          }}
-        >
-          Analysis for the institutions doing the hard part of higher ed.
-        </h1>
-        <p style={{ fontSize: 17, lineHeight: 1.72, color: "#4A584E", maxWidth: 560, margin: 0 }}>
-          Data-anchored perspective on AI readiness, the enrollment cliff,
-          accreditation, and faculty adoption. Written for provosts, CFOs, and
-          presidents of regional universities.
-        </p>
+        <SectionHeader
+          align="left"
+          size="hero"
+          eyebrow="Insights"
+          title="Analysis for the institutions"
+          accent="doing the hard part of higher ed."
+          lead="Data-anchored perspective on AI readiness, the enrollment cliff, accreditation, and faculty adoption. Written for provosts, CFOs, and presidents of regional universities."
+          maxWidth={760}
+        />
       </div>
     </section>
   );
@@ -59,9 +50,9 @@ export default async function InsightsPage() {
       {/* Free Tools — two cards side by side */}
       <div style={{ padding: "32px var(--pad-h) 0", background: "#F4F0E6" }}>
         <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-          <p style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.14em", textTransform: "uppercase", color: "#4A584E", margin: "0 0 14px" }}>
-            Free tools
-          </p>
+          <div style={{ marginBottom: 18 }}>
+            <Eyebrow>Free tools</Eyebrow>
+          </div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }} className="tools-grid">
 
           {/* AI Readiness Index */}
@@ -103,7 +94,7 @@ export default async function InsightsPage() {
                   style={{
                     fontSize: "clamp(18px, 2.2vw, 28px)",
                     fontWeight: 500,
-                    fontFamily: "var(--font-newsreader), serif",
+                    fontFamily: "var(--font-display)",
                     color: "#F1EEE2",
                     margin: "0 0 10px",
                     letterSpacing: "-0.012em",
@@ -147,7 +138,7 @@ export default async function InsightsPage() {
                       style={{
                         fontSize: "clamp(28px, 2.8vw, 40px)",
                         fontWeight: 500,
-                        fontFamily: "var(--font-newsreader), serif",
+                        fontFamily: "var(--font-display)",
                         color: "#F1EEE2",
                         margin: "0 0 4px",
                         lineHeight: 1,
@@ -195,7 +186,7 @@ export default async function InsightsPage() {
                 <span style={{ fontSize: 10, fontWeight: 700, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.14em", textTransform: "uppercase", background: "rgba(199,161,74,0.18)", border: "1px solid rgba(199,161,74,0.38)", color: "#C7A14A", borderRadius: 4, padding: "3px 9px", display: "inline-block", marginBottom: 14 }}>
                   Free Tool · Canada
                 </span>
-                <h2 style={{ fontSize: "clamp(16px, 1.8vw, 24px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: "0 0 10px", letterSpacing: "-0.012em", lineHeight: 1.2 }}>
+                <h2 style={{ fontSize: "clamp(16px, 1.8vw, 24px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#F1EEE2", margin: "0 0 10px", letterSpacing: "-0.012em", lineHeight: 1.2 }}>
                   Canadian Universities AI Readiness Index
                 </h2>
                 <p style={{ fontSize: 13.5, lineHeight: 1.65, color: "rgba(201,217,206,0.84)", margin: "0 0 18px", maxWidth: 360 }}>
@@ -208,7 +199,7 @@ export default async function InsightsPage() {
               <div style={{ display: "flex", gap: 24, flexShrink: 0 }} className="ari-stats">
                 {([{ n: `${caUniversities.length}`, label: "universities\ntracked" }, { n: "5", label: "maturity\nstages" }, { n: "6", label: "dimensions\nscored" }] as { n: string; label: string }[]).map(({ n, label }) => (
                   <div key={label} style={{ textAlign: "center" }}>
-                    <p style={{ fontSize: "clamp(24px, 2.4vw, 36px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: "0 0 4px", lineHeight: 1 }}>{n}</p>
+                    <p style={{ fontSize: "clamp(24px, 2.4vw, 36px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#F1EEE2", margin: "0 0 4px", lineHeight: 1 }}>{n}</p>
                     <p style={{ fontSize: 11, fontFamily: "var(--font-libre-franklin), sans-serif", color: "rgba(201,217,206,0.72)", margin: 0, whiteSpace: "pre-line", letterSpacing: "0.02em" }}>{label}</p>
                   </div>
                 ))}

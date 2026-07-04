@@ -54,7 +54,7 @@ export default function Accordion({ items }: AccordionProps) {
                 style={{
                   fontSize: 15,
                   fontWeight: 500,
-                  fontFamily: "var(--font-newsreader), serif",
+                  fontFamily: "var(--font-display)",
                   color: isOpen ? "#1B2A21" : "#1B2A21",
                   lineHeight: 1.45,
                   letterSpacing: "-0.01em",

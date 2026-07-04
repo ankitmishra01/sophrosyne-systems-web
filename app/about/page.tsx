@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import Reveal from "@/components/ui/Reveal";
+import Eyebrow from "@/components/ui/Eyebrow";
+import DisplayHeading from "@/components/ui/DisplayHeading";
+import Section from "@/components/ui/Section";
 import TeamGrid from "@/components/sections/TeamGrid";
 import PhilosophyBlocks from "@/components/sections/PhilosophyBlocks";
 import FoundingCohort from "@/components/sections/FoundingCohort";
@@ -19,18 +23,19 @@ function AboutHero() {
   return (
     <section
       style={{
-        padding: "140px var(--pad-h) 72px",
+        padding: "180px var(--pad-h) 88px",
         background:
-          "radial-gradient(ellipse 80% 65% at 85% 30%, #ECF1EC 0%, #F4F0E6 60%)",
-        borderBottom: "1px solid rgba(27,42,33,0.08)",
+          "radial-gradient(120% 80% at 50% -10%, #ECF1EC 0%, #F4F0E6 60%)",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
       <div
         style={{
-          maxWidth: "var(--max-w)",
+          maxWidth: 1200,
           margin: "0 auto",
           display: "grid",
-          gridTemplateColumns: "1fr 340px",
+          gridTemplateColumns: "1fr 360px",
           gap: 64,
           alignItems: "center",
         }}
@@ -38,53 +43,47 @@ function AboutHero() {
       >
         {/* Left — headline + description */}
         <div>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "#B5862E",
-              margin: "0 0 18px",
-            }}
-          >
-            About Sophrosyne Systems
-          </p>
-          <h1
-            style={{
-              fontSize: "clamp(26px, 3.6vw, 50px)",
-              fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21",
-              margin: "0 0 20px",
-              letterSpacing: "-0.015em",
-              lineHeight: 1.1,
-            }}
-          >
-            Academic Leaders, Researchers, and Operators. Built from inside
-            the university, not around it.
-          </h1>
-          <p
-            style={{
-              fontSize: 17,
-              lineHeight: 1.72,
-              color: "#4A584E",
-              maxWidth: 520,
-              margin: 0,
-            }}
-          >
-            Sophrosyne Systems was founded on one conviction: regional universities have more untapped AI potential than any other type of institution. And they have been consistently underserved by vendors who sell software licences, not outcomes.
-          </p>
+          <Reveal>
+            <Eyebrow>About Sophrosyne Systems</Eyebrow>
+          </Reveal>
+          <Reveal delay={60}>
+            <DisplayHeading
+              as="h1"
+              size="display"
+              accent="not around it."
+              style={{ margin: "22px 0 0" }}
+            >
+              Academic Leaders, Researchers, and Operators. Built from inside
+              the university,
+            </DisplayHeading>
+          </Reveal>
+          <Reveal delay={120}>
+            <p
+              style={{
+                fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+                lineHeight: 1.6,
+                color: "#4A584E",
+                maxWidth: 560,
+                margin: "24px 0 0",
+              }}
+            >
+              Sophrosyne Systems was founded on one conviction: regional
+              universities have more untapped AI potential than any other type
+              of institution. And they have been consistently underserved by
+              vendors who sell software licences, not outcomes.
+            </p>
+          </Reveal>
         </div>
 
         {/* Right — stats card */}
-        <div
+        <Reveal
+          delay={100}
           style={{
             background: "#FFFFFF",
             border: "1px solid rgba(27,42,33,0.10)",
-            borderRadius: "var(--radius-card)",
-            boxShadow: "var(--shadow-card)",
+            borderRadius: 18,
+            boxShadow:
+              "0 1px 2px rgba(27,42,33,0.04), 0 24px 48px -32px rgba(27,42,33,0.16)",
             overflow: "hidden",
           }}
         >
@@ -92,40 +91,39 @@ function AboutHero() {
             <div
               key={i}
               style={{
-                padding: "22px 28px",
+                padding: "24px 28px",
                 borderBottom:
                   i < HERO_STATS.length - 1
                     ? "1px solid rgba(27,42,33,0.08)"
                     : "none",
-                borderLeft: "3px solid #1E4D38",
               }}
             >
               <p
                 style={{
-                  fontSize: 20,
-                  fontWeight: 500,
-                  fontFamily: "var(--font-newsreader), serif",
+                  fontFamily: "var(--font-display)",
+                  fontSize: "1.7rem",
+                  fontWeight: 600,
                   color: "#1E4D38",
-                  margin: "0 0 4px",
-                  letterSpacing: "-0.012em",
+                  margin: "0 0 5px",
+                  letterSpacing: "-0.025em",
+                  lineHeight: 1,
                 }}
               >
                 {stat.value}
               </p>
               <p
                 style={{
-                  fontSize: 12,
+                  fontSize: 12.5,
                   color: "#4A584E",
                   margin: 0,
-                  fontWeight: 500,
-                  fontFamily: "var(--font-libre-franklin), sans-serif",
+                  lineHeight: 1.5,
                 }}
               >
                 {stat.label}
               </p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </div>
 
       <style>{`
@@ -139,28 +137,27 @@ function AboutHero() {
 
 function TeamIntro() {
   return (
-    <section
-      style={{
-        padding: "72px var(--pad-h)",
-        background: "#1E4D38",
-      }}
-    >
-      <p
-        style={{
-          fontSize: "clamp(18px, 2vw, 24px)",
-          lineHeight: 1.7,
-          color: "#F1EEE2",
-          maxWidth: 760,
-          margin: "0 auto",
-          fontFamily: "var(--font-newsreader), serif",
-          fontStyle: "italic",
-          textAlign: "center",
-          letterSpacing: "-0.01em",
-        }}
-      >
-        Every engagement draws on the same team: a senior AI advisor who has built production systems, a curriculum specialist with accreditation experience, and a finance operator who knows higher education. That combination is rare.
-      </p>
-    </section>
+    <Section bg="pine" py="clamp(72px, 8vw, 104px)">
+      <Reveal style={{ maxWidth: 860, margin: "0 auto", textAlign: "center" }}>
+        <p
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(1.4rem, 2.4vw, 2.1rem)",
+            fontWeight: 600,
+            lineHeight: 1.32,
+            letterSpacing: "-0.02em",
+            color: "#F1EEE2",
+            margin: 0,
+            textWrap: "balance",
+          }}
+        >
+          Every engagement draws on the same team: a senior AI advisor who has
+          built production systems, a curriculum specialist with accreditation
+          experience, and a finance operator who knows higher education.{" "}
+          <span style={{ color: "#C7A14A" }}>That combination is rare.</span>
+        </p>
+      </Reveal>
+    </Section>
   );
 }
 

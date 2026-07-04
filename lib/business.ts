@@ -17,7 +17,7 @@ export type Gap = { n: number; title: string; why: string };
 export const GAPS: Gap[] = [
   { n: 1, title: "Key-person concentration", why: "Lauretta's relationships are the moat and the bottleneck — “she opens every door.” The company runs on her calendar until the Senior #2 hire (Year 2). De-risk that earlier, not later." },
   { n: 2, title: "Consulting doesn't scale like software", why: "Pillars I–III are senior-labour-heavy (a finance lead per audit, a specialist per faculty cohort). 35 institutions by Y3 implies many senior delivery hires; margin and quality control are the real constraint." },
-  { n: 3, title: "Recurring revenue is the leap of faith", why: "The Year-3 model flips to ~69% recurring (Tracker $25K ARR + $30K/mo retainers), but the platform is still in development and retention is unproven. If the Tracker isn't sticky, the compounding story doesn't hold." },
+  { n: 3, title: "Recurring revenue is the leap of faith", why: "The Year-3 model flips to ~71% recurring (Tracker $25K ARR + $35K/mo retainers), but the platform is still in development and retention is unproven. If the Tracker isn't sticky, the compounding story doesn't hold." },
   { n: 4, title: "Audit conversion is assumed, not proven", why: "The whole model hinges on ~50% audit→engagement conversion — but no audit has been sold yet (Month 5). This is the single number to validate first." },
   { n: 5, title: "No signed revenue yet", why: "“5 LOIs” and cohort conversations are pipeline, not contracts. One paid $45K audit before launch de-risks everything that follows." },
   { n: 6, title: "The Tracker must beat the faculty bottleneck", why: "For the platform to scale and retain, assessment can't stay fully faculty-reviewed — most faculty aren't AI-fluent enough. AI-assisted grading (faculty-confirmed) is the platform's moat and its scale unlock." },
@@ -56,17 +56,8 @@ export const TRADEMARK = {
   ],
 };
 
-// ── Non-dilutive funding (grants) ──
-export type Grant = { name: string; what: string; fit: string };
-export const GRANTS: Grant[] = [
-  { name: "Mitacs Accelerate", what: "~$15K per 4-month grad-student intern (you match ~half).", fit: "Ideal — academic founders + university partners; build the Tracker / AI-assessment with interns." },
-  { name: "NRC IRAP", what: "Up to 80% of internal technical labour, ≤ $500K / 24 mo.", fit: "Funds the platform R&D; fast once an ITA is assigned." },
-  { name: "SR&ED", what: "Refundable R&D tax credits (enhanced CCPC limit now $6M → up to ~$2.1M/yr).", fit: "The AI-assessment engine qualifies; stack on top of IRAP/Mitacs." },
-  { name: "FedDev Ontario — RAII", what: "~$60M southern-Ontario AI productization & commercialization.", fit: "Regional fit for the platform's go-to-market." },
-  { name: "OCI vouchers / Market Readiness", what: "Ontario provincial co-investment & vouchers.", fit: "Smaller top-ups; pairs with the federal programs." },
-];
-export const GRANTS_NOTE =
-  "Stack IRAP + Mitacs + SR&ED to recover ~90% of R&D and fund the platform with no equity. Prerequisite: incorporate as a Canadian CCPC (this also settles the Canada–US legal-structure question). Most programs accept pre-revenue applicants.";
+// Non-dilutive funding (grants) now lives in lib/grants.ts + /portal/grants — kept out of
+// Business Operations so it reads as its own reference doc, not buried in the strategy memo.
 
 // ── Capital & catalysts ──
 export type Catalyst = { name: string; verdict: string; detail: string };

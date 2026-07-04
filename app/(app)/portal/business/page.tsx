@@ -1,4 +1,5 @@
-import { STATE, VERDICT, GAPS, FOCUS, REVENUE_NOW, TRADEMARK, GRANTS, GRANTS_NOTE, CATALYSTS, RAISE_TRIGGER, NEXT_STEPS } from "@/lib/business";
+import Link from "next/link";
+import { STATE, VERDICT, GAPS, FOCUS, REVENUE_NOW, TRADEMARK, CATALYSTS, RAISE_TRIGGER, NEXT_STEPS } from "@/lib/business";
 
 const GOLD = "#C7A14A";
 const INK = "#1B2A21";
@@ -6,7 +7,10 @@ const BODY = "#4A584E";
 
 export default function BusinessPage() {
   return (
-    <div className="rmp-wrap" style={{ background: "#E5E0D0", minHeight: "100vh", display: "flex", justifyContent: "center" }}>
+    <div className="rmp-wrap" style={{ background: "#E5E0D0", minHeight: "100vh", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ width: "100%", maxWidth: 860, marginBottom: 14 }}>
+        <Link href="/portal" style={{ fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, color: "#1E4D38" }}>← Knowledge Centre</Link>
+      </div>
       <div style={{ position: "relative", width: "100%", maxWidth: 860, background: "#FBF9F2", boxShadow: "0 8px 40px rgba(27,42,33,0.16)", overflow: "hidden" }}>
 
         {/* Header band */}
@@ -76,18 +80,16 @@ export default function BusinessPage() {
             ))}
           </div>
 
-          {/* Non-dilutive funding (grants) */}
-          <SectionBar label="Non-dilutive funding — grants" />
-          <div className="rm-now-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginBottom: 12 }}>
-            {GRANTS.map((g) => (
-              <div key={g.name} style={{ background: "#fff", border: "1px solid rgba(27,42,33,0.12)", borderTop: "3px solid #2C7350", borderRadius: 12, padding: "14px 16px", boxShadow: "0 1px 3px rgba(27,42,33,0.05)" }}>
-                <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, fontWeight: 700, color: INK, margin: "0 0 4px" }}>{g.name}</p>
-                <p style={{ fontFamily: "var(--font-sans)", fontSize: 12.5, color: BODY, lineHeight: 1.45, margin: "0 0 6px" }}>{g.what}</p>
-                <p style={{ fontFamily: "var(--font-sans)", fontSize: 12, color: "#2C7350", lineHeight: 1.45, margin: 0 }}>{g.fit}</p>
+          {/* Non-dilutive funding (grants) — now its own one-pager */}
+          <Link href="/portal/grants" style={{ textDecoration: "none" }}>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 16, background: "#173A2A", borderRadius: 12, padding: "18px 22px", marginBottom: 26 }}>
+              <div>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: GOLD, margin: "0 0 4px" }}>Reference</p>
+                <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 17, color: "#EAF0EA", margin: 0 }}>Non-dilutive funding — grants</p>
               </div>
-            ))}
-          </div>
-          <p style={{ fontFamily: "var(--font-sans)", fontSize: 12.5, color: INK, lineHeight: 1.55, margin: "0 0 26px", background: "rgba(199,161,74,0.08)", border: "1px solid rgba(199,161,74,0.28)", borderRadius: 8, padding: "12px 14px" }}>{GRANTS_NOTE}</p>
+              <span style={{ flexShrink: 0, fontFamily: "var(--font-sans)", fontSize: 13, fontWeight: 600, color: GOLD }}>Open →</span>
+            </div>
+          </Link>
 
           {/* Trademark the Standard */}
           <SectionBar label="Trademark the Standard?" />

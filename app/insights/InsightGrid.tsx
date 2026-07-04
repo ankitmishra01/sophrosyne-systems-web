@@ -97,12 +97,12 @@ export default function InsightGrid({ articles }: { articles: Article[] }) {
                 </div>
                 <h2
                   style={{
-                    fontSize: 22,
-                    fontWeight: 500,
-                    fontFamily: "var(--font-newsreader), serif",
-                    color: "#1B2A21",
+                    fontSize: "1.4rem",
+                    fontWeight: 600,
+                    fontFamily: "var(--font-display)",
+                    color: "#16241B",
                     margin: "0 0 12px",
-                    letterSpacing: "-0.012em",
+                    letterSpacing: "-0.02em",
                     lineHeight: 1.2,
                   }}
                 >

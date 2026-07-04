@@ -17,7 +17,14 @@
   --color-on-dark-bright:#F1EEE2;
   --color-ink-olive:   #21271F;
 
+  /* ── Dark surface shades (were ad-hoc hex across components) ── */
+  --color-pine-black:  #141F17;   /* deepest full-bleed pine band */
+  --color-ink-panel:   #111318;   /* neutral dark panel / mockups */
+  --color-code-bg:     #0d1117;   /* github-style code/repo mockups */
+  --color-pine-panel:  #0F1A14;   /* dark pine panel */
+
   /* ── Fonts ── */
+  --font-display: var(--font-space-grotesk), "Libre Franklin", -apple-system, sans-serif;
   --font-serif: var(--font-newsreader), "Georgia", serif;
   --font-sans:  var(--font-libre-franklin), -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -25,11 +32,20 @@
 :root {
   --pad-h: 80px;
   --max-w: 1200px;
-  --section-py: 96px;
+  --section-py: 120px;
 
   --radius-card: 14px;
-  --radius-btn:  6px;
+  --radius-btn:  999px;   /* pill buttons, anyteam-style */
   --radius-sm:   4px;
+
+  /* Shared motion easing (was re-declared inline everywhere) */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Display type scale */
+  --fs-hero:    clamp(2.75rem, 6.2vw, 5.25rem);
+  --fs-display: clamp(2.25rem, 4.4vw, 3.65rem);
+  --fs-h2:      clamp(1.9rem, 3vw, 2.7rem);
+  --fs-h3:      clamp(1.25rem, 1.6vw, 1.6rem);
 
   --border-subtle:  rgba(27, 42, 33, 0.10);
   --border-strong:  rgba(27, 42, 33, 0.20);
@@ -61,9 +77,9 @@ body {
   overflow-x: hidden;
 }
 
-h1 { letter-spacing: -0.015em; line-height: 1.06; font-family: var(--font-newsreader), serif; }
-h2 { letter-spacing: -0.012em; line-height: 1.1;  font-family: var(--font-newsreader), serif; }
-h3 { letter-spacing: -0.01em;  font-family: var(--font-newsreader), serif; }
+h1 { letter-spacing: -0.03em;  line-height: 1.02; font-family: var(--font-display); font-weight: 600; }
+h2 { letter-spacing: -0.025em; line-height: 1.05; font-family: var(--font-display); font-weight: 600; }
+h3 { letter-spacing: -0.02em;  line-height: 1.1;  font-family: var(--font-display); font-weight: 600; }
 
 ::selection {
   background: #C7A14A;
@@ -79,6 +95,52 @@ h3 { letter-spacing: -0.01em;  font-family: var(--font-newsreader), serif; }
 img { max-width: 100%; display: block; }
 a  { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; }
+
+/* ── Design-system helpers (shared across the redesigned sections) ── */
+.font-display { font-family: var(--font-display); }
+.font-serif   { font-family: var(--font-serif); }
+
+/* Standard scroll-reveal (replaces per-section framer duplication for simple cases) */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* Hairline divider between sections, anyteam-style */
+.hairline { height: 1px; background: var(--border-subtle); border: 0; }
+
+/* ── Buttons (pill, CSS hover) ── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-libre-franklin), sans-serif; font-weight: 600;
+  border-radius: var(--radius-btn); border: 1px solid transparent;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+  transition: background 200ms var(--ease), color 200ms var(--ease),
+              border-color 200ms var(--ease), transform 150ms var(--ease);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-sm { font-size: 14px; padding: 9px 18px; }
+.btn-md { font-size: 15px; padding: 12px 24px; }
+.btn-lg { font-size: 16px; padding: 15px 30px; }
+.btn-primary   { background: #1E4D38; color: #F4F0E6; }
+.btn-primary:hover   { background: #173A2A; }
+.btn-gold      { background: #C7A14A; color: #1B2A21; }
+.btn-gold:hover      { background: #B5862E; }
+.btn-secondary { background: #FFFFFF; color: #1B2A21; border-color: rgba(27,42,33,0.16); }
+.btn-secondary:hover { background: #ECF1EC; border-color: rgba(27,42,33,0.28); }
+.btn-ghost     { background: transparent; color: #1E4D38; }
+.btn-ghost:hover     { color: #173A2A; }
+/* On dark bands */
+.btn-on-dark   { background: rgba(255,255,255,0.10); color: #F1EEE2; border-color: rgba(255,255,255,0.20); }
+.btn-on-dark:hover   { background: rgba(255,255,255,0.16); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+  * { animation-duration: 0.001ms !important; }
+}
 
 /* ── Scrollbar (light academic) ── */
 ::-webkit-scrollbar       { width: 6px; }

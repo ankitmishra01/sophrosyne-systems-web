@@ -74,7 +74,7 @@ export default function ContactSection() {
               style={{
                 fontSize: "clamp(22px, 3vw, 32px)",
                 fontWeight: 500,
-                fontFamily: "var(--font-newsreader), serif",
+                fontFamily: "var(--font-display)",
                 color: "#1B2A21",
                 margin: "0 0 8px",
                 letterSpacing: "-0.01em",
@@ -167,7 +167,7 @@ export default function ContactSection() {
                         style={{
                           fontSize: 14,
                           fontWeight: 500,
-                          fontFamily: "var(--font-newsreader), serif",
+                          fontFamily: "var(--font-display)",
                           color: "#1B2A21",
                           margin: "0 0 4px",
                           letterSpacing: "-0.01em",
@@ -247,7 +247,7 @@ export default function ContactSection() {
                     style={{
                       fontSize: 22,
                       fontWeight: 500,
-                      fontFamily: "var(--font-newsreader), serif",
+                      fontFamily: "var(--font-display)",
                       color: "#1B2A21",
                       margin: "0 0 10px",
                       letterSpacing: "-0.01em",
@@ -304,7 +304,7 @@ export default function ContactSection() {
                 style={{
                   fontSize: 20,
                   fontWeight: 500,
-                  fontFamily: "var(--font-newsreader), serif",
+                  fontFamily: "var(--font-display)",
                   color: "#1B2A21",
                   margin: "0 0 6px",
                   letterSpacing: "-0.01em",

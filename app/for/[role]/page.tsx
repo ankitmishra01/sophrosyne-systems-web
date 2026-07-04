@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Check, ArrowRight } from "lucide-react";
+import { Check } from "lucide-react";
 import { ROLES, SOLUTIONS } from "@/lib/data";
 import Button from "@/components/ui/Button";
+import Section from "@/components/ui/Section";
+import SectionHeader from "@/components/ui/SectionHeader";
+import Eyebrow from "@/components/ui/Eyebrow";
+import Reveal from "@/components/ui/Reveal";
 import CallToAction from "@/components/sections/CallToAction";
 
 const CTA_HREF: Record<string, string> = {
@@ -16,22 +20,14 @@ export function generateStaticParams() {
   return Object.keys(ROLES).map((role) => ({ role }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ role: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ role: string }> }): Promise<Metadata> {
   const { role } = await params;
   const r = ROLES[role];
   if (!r) return {};
   return { title: `${r.label} — Sophrosyne Systems`, description: r.sub };
 }
 
-export default async function RolePage({
-  params,
-}: {
-  params: Promise<{ role: string }>;
-}) {
+export default async function RolePage({ params }: { params: Promise<{ role: string }> }) {
   const { role } = await params;
   const r = ROLES[role];
   if (!r) notFound();
@@ -42,546 +38,135 @@ export default async function RolePage({
 
   return (
     <>
-      {/* ── Hero — two-column with photo ── */}
+      {/* Hero */}
       <section
         style={{
-          padding: "120px var(--pad-h) 72px",
-          background:
-            "radial-gradient(ellipse 90% 70% at 75% 20%, #ECF1EC 0%, #F4F0E6 65%)",
+          padding: "180px var(--pad-h) 80px",
+          background: "radial-gradient(110% 80% at 78% 0%, #ECF1EC 0%, #F4F0E6 62%)",
           borderBottom: "1px solid rgba(27,42,33,0.08)",
-          overflow: "hidden",
         }}
       >
-        <div
-          style={{
-            maxWidth: "var(--max-w)",
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "1fr 420px",
-            gap: 64,
-            alignItems: "center",
-          }}
-          className="role-hero-grid"
-        >
-          {/* Left — text */}
-          <div>
-            <p
-              style={{
-                fontSize: 11,
-                fontWeight: 600,
-                fontFamily: "var(--font-libre-franklin), sans-serif",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "#B5862E",
-                margin: "0 0 18px",
-              }}
-            >
-              {r.eyebrow}
-            </p>
-            <h1
-              style={{
-                fontSize: "clamp(26px, 3.2vw, 48px)",
-                fontWeight: 500,
-                fontFamily: "var(--font-newsreader), serif",
-                color: "#1B2A21",
-                margin: "0 0 22px",
-                letterSpacing: "-0.015em",
-                lineHeight: 1.08,
-                maxWidth: 680,
-              }}
-            >
+        <div className="role-hero-grid" style={{ maxWidth: "var(--max-w)", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 420px", gap: 64, alignItems: "center" }}>
+          <Reveal>
+            <Eyebrow>{r.eyebrow}</Eyebrow>
+            <h1 style={{ fontFamily: "var(--font-display)", fontSize: "var(--fs-display)", fontWeight: 600, color: "#16241B", margin: "18px 0 22px", letterSpacing: "-0.03em", lineHeight: 1.03, maxWidth: 680 }}>
               {r.headline}
             </h1>
-            <p
-              style={{
-                fontSize: 17,
-                lineHeight: 1.72,
-                color: "#4A584E",
-                maxWidth: 560,
-                margin: "0 0 36px",
-              }}
-            >
-              {r.sub}
-            </p>
+            <p style={{ fontSize: "1.15rem", lineHeight: 1.65, color: "#4A584E", maxWidth: 560, margin: "0 0 34px" }}>{r.sub}</p>
             <Button variant="primary" size="lg" href={CTA_HREF[role] ?? "/get-started"}>
               {r.ctaLabel} →
             </Button>
-          </div>
-
-          {/* Right — hero image */}
-          <div
-            style={{
-              position: "relative",
-              borderRadius: 20,
-              overflow: "hidden",
-              boxShadow: "0 32px 80px rgba(27,42,33,0.16), 0 4px 16px rgba(27,42,33,0.08)",
-              border: "1px solid rgba(27,42,33,0.10)",
-              aspectRatio: "4 / 3",
-            }}
-            className="role-hero-img"
-          >
+          </Reveal>
+          <Reveal delay={120} className="role-hero-img" style={{ borderRadius: 20, overflow: "hidden", boxShadow: "0 32px 80px -32px rgba(27,42,33,0.3)", border: "1px solid rgba(27,42,33,0.10)", aspectRatio: "4 / 3" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={r.heroImage}
-              alt={r.label}
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
-            />
-            {/* Subtle green overlay tint */}
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "linear-gradient(135deg, rgba(30,77,56,0.08) 0%, transparent 60%)",
-                pointerEvents: "none",
-              }}
-            />
-          </div>
+            <img src={r.heroImage} alt={r.label} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+          </Reveal>
         </div>
       </section>
 
-      {/* ── Stats strip — dark ── */}
-      <section style={{ background: "#21271F", padding: "48px var(--pad-h)" }}>
-        <div
-          style={{
-            maxWidth: "var(--max-w)",
-            margin: "0 auto",
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 0,
-          }}
-          className="role-stats-grid"
-        >
+      {/* Stats strip */}
+      <section style={{ background: "#141F17", padding: "56px var(--pad-h)" }}>
+        <div className="role-stats-grid" style={{ maxWidth: "var(--max-w)", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
           {r.stats.map((stat, i) => (
-            <div
-              key={i}
-              style={{
-                padding: "0 40px",
-                borderLeft: i > 0 ? "1px solid rgba(241,238,226,0.10)" : "none",
-                display: "flex",
-                flexDirection: "column",
-                gap: 8,
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "clamp(24px, 2.8vw, 38px)",
-                  fontWeight: 500,
-                  fontFamily: "var(--font-newsreader), serif",
-                  color: "#C7A14A",
-                  margin: 0,
-                  letterSpacing: "-0.015em",
-                  lineHeight: 1,
-                }}
-              >
+            <div key={i} style={{ padding: "0 40px", borderLeft: i > 0 ? "1px solid rgba(241,238,226,0.12)" : "none", display: "flex", flexDirection: "column", gap: 10 }}>
+              <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.9rem, 2.8vw, 2.8rem)", fontWeight: 600, color: "#C7A14A", margin: 0, letterSpacing: "-0.03em", lineHeight: 1 }}>
                 {stat.value}
               </p>
-              <p
-                style={{
-                  fontSize: 13,
-                  lineHeight: 1.55,
-                  color: "rgba(241,238,226,0.65)",
-                  margin: 0,
-                  fontFamily: "var(--font-libre-franklin), sans-serif",
-                  maxWidth: 240,
-                }}
-              >
-                {stat.label}
-              </p>
+              <p style={{ fontSize: 13.5, lineHeight: 1.55, color: "rgba(241,238,226,0.7)", margin: 0, maxWidth: 240 }}>{stat.label}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── Pressure context ── */}
-      <section
-        style={{
-          padding: "64px var(--pad-h)",
-          background: "#F4F0E6",
-          borderBottom: "1px solid rgba(27,42,33,0.07)",
-        }}
-      >
-        <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-          <blockquote
-            style={{
-              margin: 0,
-              padding: "0 0 0 28px",
-              borderLeft: "3px solid #C7A14A",
-              maxWidth: 780,
-            }}
-          >
-            <p
-              style={{
-                fontSize: "clamp(17px, 1.8vw, 21px)",
-                lineHeight: 1.72,
-                fontFamily: "var(--font-newsreader), serif",
-                fontStyle: "italic",
-                color: "#1B2A21",
-                margin: 0,
-              }}
-            >
+      {/* Pressure context */}
+      <Section bg="parchment" py={72}>
+        <Reveal>
+          <blockquote style={{ margin: 0, padding: "0 0 0 28px", borderLeft: "3px solid #C7A14A", maxWidth: 820 }}>
+            <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.35rem, 2vw, 1.9rem)", lineHeight: 1.35, fontWeight: 500, color: "#16241B", margin: 0, letterSpacing: "-0.02em" }}>
               {r.pressureContext}
             </p>
           </blockquote>
-        </div>
-      </section>
+        </Reveal>
+      </Section>
 
-      {/* ── Pains vs Gains ── */}
-      <section style={{ padding: "var(--section-py) var(--pad-h)", background: "#FFFFFF" }}>
-        <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-          <div
-            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}
-            className="role-pg-grid"
-          >
-            {/* Pains */}
-            <div>
-              <p
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  fontFamily: "var(--font-libre-franklin), sans-serif",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "#4A584E",
-                  margin: "0 0 18px",
-                }}
-              >
-                The reality today
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {r.pains.map((p, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      background: "#F9F7F2",
-                      border: "1px solid rgba(27,42,33,0.10)",
-                      borderRadius: "var(--radius-card)",
-                      padding: "20px 22px",
-                      boxShadow: "var(--shadow-card)",
-                      fontSize: 14.5,
-                      lineHeight: 1.65,
-                      color: "#4A584E",
-                      fontStyle: "italic",
-                      fontFamily: "var(--font-newsreader), serif",
-                    }}
-                  >
-                    &ldquo;{p}&rdquo;
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Gains */}
-            <div>
-              <p
-                style={{
-                  fontSize: 11,
-                  fontWeight: 600,
-                  fontFamily: "var(--font-libre-franklin), sans-serif",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "#1E4D38",
-                  margin: "0 0 18px",
-                }}
-              >
-                With Sophrosyne
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {r.gains.map((g, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      display: "flex",
-                      gap: 14,
-                      alignItems: "flex-start",
-                      background: "rgba(30,77,56,0.05)",
-                      border: "1px solid rgba(30,77,56,0.16)",
-                      borderRadius: "var(--radius-card)",
-                      padding: "20px 22px",
-                    }}
-                  >
-                    <div
-                      style={{
-                        flexShrink: 0,
-                        width: 26,
-                        height: 26,
-                        borderRadius: "50%",
-                        background: "#1E4D38",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        marginTop: 1,
-                      }}
-                    >
-                      <Check size={14} color="#F1EEE2" strokeWidth={2.6} />
-                    </div>
-                    <span style={{ fontSize: 14.5, lineHeight: 1.65, color: "#1B2A21" }}>
-                      {g}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Pathway ── */}
-      <section
-        style={{
-          padding: "var(--section-py) var(--pad-h)",
-          background: "#ECF1EC",
-          borderTop: "1px solid rgba(27,42,33,0.07)",
-        }}
-      >
-        <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "#B5862E",
-              margin: "0 0 12px",
-            }}
-          >
-            The Engagement
-          </p>
-          <h2
-            style={{
-              fontSize: "clamp(22px, 2.6vw, 34px)",
-              fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21",
-              margin: "0 0 48px",
-              letterSpacing: "-0.012em",
-            }}
-          >
-            How it works for {r.label.split(" &")[0].toLowerCase()}s.
-          </h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: 24,
-              position: "relative",
-            }}
-            className="role-pathway-grid"
-          >
-            {/* Connector line */}
-            <div
-              style={{
-                position: "absolute",
-                top: 22,
-                left: "calc(12.5% + 4px)",
-                right: "calc(12.5% + 4px)",
-                height: 1,
-                background:
-                  "linear-gradient(90deg, rgba(30,77,56,0.25) 0%, rgba(199,161,74,0.40) 50%, rgba(30,77,56,0.25) 100%)",
-                pointerEvents: "none",
-              }}
-              className="role-pathway-connector"
-            />
-            {r.pathway.map((step, i) => (
-              <div key={i} style={{ position: "relative", zIndex: 1 }}>
-                <div
-                  style={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    background: "#FFFFFF",
-                    border: "1.5px solid rgba(27,42,33,0.14)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: 18,
-                    boxShadow: "var(--shadow-card)",
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: 14,
-                      fontWeight: 400,
-                      fontFamily: "var(--font-newsreader), serif",
-                      color: "#1E4D38",
-                    }}
-                  >
-                    {step.step}
-                  </span>
+      {/* Pains vs Gains */}
+      <Section bg="transparent" style={{ background: "#FFFFFF" }}>
+        <div className="role-pg-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
+          <Reveal>
+            <div style={{ marginBottom: 18 }}><Eyebrow>The reality today</Eyebrow></div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {r.pains.map((p, i) => (
+                <div key={i} style={{ background: "#F9F7F2", border: "1px solid rgba(27,42,33,0.10)", borderRadius: 14, padding: "20px 22px", fontSize: 15, lineHeight: 1.6, color: "#4A584E" }}>
+                  &ldquo;{p}&rdquo;
                 </div>
-                <h3
-                  style={{
-                    fontSize: 15,
-                    fontWeight: 500,
-                    fontFamily: "var(--font-newsreader), serif",
-                    color: "#1B2A21",
-                    margin: "0 0 8px",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: 13,
-                    lineHeight: 1.68,
-                    color: "#4A584E",
-                    margin: 0,
-                  }}
-                >
-                  {step.body}
-                </p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <div style={{ marginBottom: 18, color: "#1E4D38" }}>
+              <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#1E4D38" }}>With Sophrosyne</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {r.gains.map((g, i) => (
+                <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start", background: "rgba(30,77,56,0.05)", border: "1px solid rgba(30,77,56,0.16)", borderRadius: 14, padding: "20px 22px" }}>
+                  <div style={{ flexShrink: 0, width: 26, height: 26, borderRadius: "50%", background: "#1E4D38", display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>
+                    <Check size={14} color="#F1EEE2" strokeWidth={2.6} />
+                  </div>
+                  <span style={{ fontSize: 15, lineHeight: 1.6, color: "#16241B" }}>{g}</span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </Section>
+
+      {/* Pathway */}
+      <Section bg="sage">
+        <SectionHeader eyebrow="The engagement" align="left" title="How it works for" accent={`${r.label.split(" &")[0].toLowerCase()}.`} size="h2" />
+        <div className="role-pathway-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 24, marginTop: 48, position: "relative" }}>
+          {r.pathway.map((step, i) => (
+            <Reveal key={i} delay={i * 80}>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: 15, fontWeight: 700, color: "#C7A14A", marginBottom: 14 }}>{step.step}</div>
+              <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", fontWeight: 600, color: "#16241B", margin: "0 0 8px", letterSpacing: "-0.015em" }}>{step.title}</h3>
+              <p style={{ fontSize: 13.5, lineHeight: 1.65, color: "#4A584E", margin: 0 }}>{step.body}</p>
+            </Reveal>
+          ))}
         </div>
         <style>{`
-          @media (max-width: 900px) {
-            .role-pathway-grid { grid-template-columns: 1fr 1fr !important; }
-            .role-pathway-connector { display: none; }
-          }
-          @media (max-width: 480px) {
-            .role-pathway-grid { grid-template-columns: 1fr !important; }
-          }
+          @media (max-width: 900px) { .role-pathway-grid { grid-template-columns: 1fr 1fr !important; } }
+          @media (max-width: 480px) { .role-pathway-grid { grid-template-columns: 1fr !important; } }
         `}</style>
-      </section>
+      </Section>
 
-      {/* ── Relevant solutions ── */}
-      <section
-        style={{
-          padding: "var(--section-py) var(--pad-h)",
-          background: "#F4F0E6",
-          borderTop: "1px solid rgba(27,42,33,0.07)",
-        }}
-      >
-        <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-          <p
-            style={{
-              fontSize: 11,
-              fontWeight: 600,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "#B5862E",
-              margin: "0 0 12px",
-            }}
-          >
-            Where to Start
-          </p>
-          <h2
-            style={{
-              fontSize: "clamp(22px, 3vw, 36px)",
-              fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21",
-              margin: "0 0 32px",
-              letterSpacing: "-0.012em",
-            }}
-          >
-            The programs built for your priorities.
-          </h2>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: `repeat(${Math.min(solutions.length, 3)}, 1fr)`,
-              gap: 20,
-            }}
-            className="role-sol-grid"
-          >
-            {solutions.map((sol) => (
-              <Link
-                key={sol.id}
-                href={`/solutions/${sol.id}`}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  textDecoration: "none",
-                  background: "#FFFFFF",
-                  border: "1px solid rgba(27,42,33,0.10)",
-                  borderRadius: "var(--radius-card)",
-                  padding: "28px 26px",
-                  boxShadow: "var(--shadow-card)",
-                  transition: "border-color 180ms, box-shadow 180ms",
-                }}
-                className="role-sol-card"
-              >
-                <p
-                  style={{
-                    fontSize: 12,
-                    fontStyle: "italic",
-                    fontFamily: "var(--font-newsreader), serif",
-                    color: "#B5862E",
-                    margin: "0 0 10px",
-                  }}
-                >
-                  {sol.label}
-                </p>
-                <h3
-                  style={{
-                    fontSize: 20,
-                    fontWeight: 500,
-                    fontFamily: "var(--font-newsreader), serif",
-                    color: "#1B2A21",
-                    margin: "0 0 10px",
-                    letterSpacing: "-0.01em",
-                  }}
-                >
-                  {sol.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: 14,
-                    lineHeight: 1.6,
-                    color: "#4A584E",
-                    margin: "0 0 20px",
-                    flex: 1,
-                  }}
-                >
-                  {sol.tagline}
-                </p>
-                <span
-                  style={{
-                    marginTop: "auto",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: 6,
-                    fontSize: 13,
-                    fontWeight: 600,
-                    fontFamily: "var(--font-libre-franklin), sans-serif",
-                    color: "#1E4D38",
-                  }}
-                >
-                  Learn more <ArrowRight size={14} strokeWidth={2.2} />
-                </span>
+      {/* Relevant solutions */}
+      <Section bg="parchment">
+        <SectionHeader eyebrow="Where to start" align="left" title="The programs built for" accent="your priorities." size="h2" />
+        <div className="role-sol-grid" style={{ display: "grid", gridTemplateColumns: `repeat(${Math.min(solutions.length, 3)}, 1fr)`, gap: 20, marginTop: 40 }}>
+          {solutions.map((sol, i) => (
+            <Reveal key={sol.id} delay={i * 80}>
+              <Link href={`/solutions/${sol.id}`} className="role-sol-card" style={{ display: "flex", flexDirection: "column", height: "100%", textDecoration: "none", background: "#FFFFFF", border: "1px solid rgba(27,42,33,0.10)", borderRadius: 18, padding: "28px 26px", boxShadow: "0 1px 2px rgba(27,42,33,0.04), 0 24px 48px -32px rgba(27,42,33,0.16)", transition: "transform 200ms var(--ease), box-shadow 200ms var(--ease)" }}>
+                <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#B5862E", marginBottom: 10 }}>{sol.label}</span>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.35rem", fontWeight: 600, color: "#16241B", margin: "0 0 10px", letterSpacing: "-0.02em" }}>{sol.title}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.6, color: "#4A584E", margin: "0 0 20px", flex: 1 }}>{sol.tagline}</p>
+                <span style={{ marginTop: "auto", fontSize: 13, fontWeight: 600, color: "#1E4D38" }}>Learn more →</span>
               </Link>
-            ))}
-          </div>
+            </Reveal>
+          ))}
         </div>
-      </section>
+      </Section>
 
       <CallToAction />
 
       <style>{`
-        @media (max-width: 960px) {
-          .role-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
-          .role-hero-img { display: none; }
-        }
+        @media (max-width: 960px) { .role-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; } .role-hero-img { display: none; } }
         @media (max-width: 820px) {
           .role-pg-grid { grid-template-columns: 1fr !important; }
           .role-sol-grid { grid-template-columns: 1fr !important; }
-          .role-stats-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
-          .role-stats-grid > div { border-left: none !important; padding: 0 !important; border-top: 1px solid rgba(241,238,226,0.10); padding-top: 28px !important; }
+          .role-stats-grid { grid-template-columns: 1fr !important; }
+          .role-stats-grid > div { border-left: none !important; padding: 0 !important; border-top: 1px solid rgba(241,238,226,0.12); padding-top: 24px !important; }
           .role-stats-grid > div:first-child { border-top: none; padding-top: 0 !important; }
         }
-        .role-sol-card:hover {
-          border-color: rgba(30,77,56,0.24) !important;
-          box-shadow: var(--shadow-card-lg) !important;
-        }
+        .role-sol-card:hover { transform: translateY(-3px); box-shadow: 0 1px 2px rgba(27,42,33,0.06), 0 32px 60px -30px rgba(27,42,33,0.24) !important; }
       `}</style>
     </>
   );

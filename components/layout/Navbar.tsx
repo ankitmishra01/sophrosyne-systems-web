@@ -9,30 +9,24 @@ import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
   { label: "Solutions", href: "/solutions" },
-  { label: "Pricing",   href: "/pricing"   },
-  { label: "Insights",  href: "/insights"  },
-  { label: "About",     href: "/about"     },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Insights", href: "/insights" },
+  { label: "About", href: "/about" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
-  const [scrolled, setScrolled] = useState(!isHome);
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (!isHome) { setScrolled(true); return; }
-    const fn = () => setScrolled(window.scrollY > 80);
+    const fn = () => setScrolled(window.scrollY > 24);
     fn();
     window.addEventListener("scroll", fn, { passive: true });
     return () => window.removeEventListener("scroll", fn);
-  }, [isHome]);
+  }, []);
 
-  useEffect(() => { setOpen(false); }, [pathname]);
-
-  const bg = scrolled
-    ? "rgba(244,240,230,0.92)"
-    : "linear-gradient(180deg, rgba(244,240,230,0.80) 0%, rgba(244,240,230,0) 100%)";
+  useEffect(() => setOpen(false), [pathname]);
 
   return (
     <nav
@@ -42,75 +36,77 @@ export default function Navbar() {
         left: 0,
         right: 0,
         zIndex: 200,
-        background: bg,
-        backdropFilter: scrolled ? "blur(14px) saturate(160%)" : "none",
-        borderBottom: scrolled
-          ? "1px solid rgba(27,42,33,0.10)"
-          : "1px solid transparent",
-        transition: "all 350ms cubic-bezier(0.22,1,0.36,1)",
+        display: "flex",
+        justifyContent: "center",
+        padding: "18px var(--pad-h)",
+        pointerEvents: "none",
       }}
     >
       <div
         style={{
-          maxWidth: "var(--max-w)",
-          margin: "0 auto",
-          padding: "0 var(--pad-h)",
+          pointerEvents: "auto",
+          width: "100%",
+          maxWidth: 1080,
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          height: 64,
+          gap: 20,
+          height: 60,
+          padding: "0 12px 0 22px",
+          borderRadius: 999,
+          background: "rgba(248,245,238,0.82)",
+          backdropFilter: "blur(16px) saturate(160%)",
+          WebkitBackdropFilter: "blur(16px) saturate(160%)",
+          border: "1px solid rgba(27,42,33,0.08)",
+          boxShadow: scrolled
+            ? "0 1px 2px rgba(27,42,33,0.06), 0 20px 44px -20px rgba(27,42,33,0.28)"
+            : "0 1px 2px rgba(27,42,33,0.04), 0 10px 30px -18px rgba(27,42,33,0.18)",
+          transition: "box-shadow 300ms var(--ease)",
         }}
       >
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <Logo variant="full" size={32} />
+        <Link href="/" style={{ display: "flex", flexShrink: 0 }} aria-label="Sophrosyne Systems home">
+          <Logo variant="full" size={28} />
         </Link>
 
-        {/* Desktop nav */}
-        <div className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: 32 }}>
+        {/* Desktop links */}
+        <div className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: 30 }}>
           {NAV_LINKS.map((l) => {
             const active = pathname === l.href || pathname.startsWith(l.href + "/");
             return (
               <Link
                 key={l.href}
                 href={l.href}
+                className="nav-link"
                 style={{
-                  fontSize: 15,
+                  fontSize: 14.5,
                   fontWeight: 500,
                   fontFamily: "var(--font-libre-franklin), sans-serif",
-                  letterSpacing: "0.01em",
-                  color: active ? "#1E4D38" : "#415146",
-                  textDecoration: active ? "underline" : "none",
-                  textUnderlineOffset: "4px",
-                  transition: "color 180ms",
-                  padding: "12px 0",
+                  color: active ? "#1E4D38" : "#3C4A40",
                 }}
-                onMouseEnter={(e) =>
-                  !active && ((e.currentTarget as HTMLAnchorElement).style.color = "#1E4D38")
-                }
-                onMouseLeave={(e) =>
-                  !active && ((e.currentTarget as HTMLAnchorElement).style.color = "#415146")
-                }
               >
                 {l.label}
               </Link>
             );
           })}
+        </div>
 
-          <Button
-            variant="secondary"
-            size="sm"
+        <div className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+          <a
             href="https://platform.sophrosynesystems.org/login"
             target="_blank"
             rel="noopener noreferrer"
+            className="nav-link"
             style={{
-              background: "rgba(30,77,56,0.08)",
-              border: "1px solid rgba(30,77,56,0.28)",
-              color: "#1E4D38",
+              fontSize: 14,
+              fontWeight: 500,
+              fontFamily: "var(--font-libre-franklin), sans-serif",
+              color: "#3C4A40",
+              padding: "0 6px",
             }}
           >
             Platform login →
-          </Button>
-          <Button variant="primary" size="sm" href="/get-started">
+          </a>
+          <Button variant="gold" size="sm" href="/get-started">
             Talk to Us
           </Button>
         </div>
@@ -126,30 +122,27 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile sheet */}
       {open && (
         <div
           style={{
-            background: "rgba(244,240,230,0.98)",
-            borderTop: "1px solid rgba(27,42,33,0.10)",
-            padding: "20px var(--pad-h) 28px",
+            pointerEvents: "auto",
+            position: "absolute",
+            top: 84,
+            left: "var(--pad-h)",
+            right: "var(--pad-h)",
+            background: "rgba(248,245,238,0.98)",
+            border: "1px solid rgba(27,42,33,0.10)",
+            borderRadius: 20,
+            padding: "16px 20px 22px",
             display: "flex",
             flexDirection: "column",
-            gap: 4,
-            backdropFilter: "blur(14px)",
+            gap: 2,
+            backdropFilter: "blur(16px)",
+            boxShadow: "0 30px 60px -24px rgba(27,42,33,0.35)",
           }}
         >
-          <Link
-            href="/"
-            onClick={() => setOpen(false)}
-            style={{
-              fontSize: 17,
-              fontWeight: 500,
-              color: pathname === "/" ? "#1E4D38" : "#415146",
-              textDecoration: "none",
-              padding: "10px 0",
-            }}
-          >
+          <Link href="/" onClick={() => setOpen(false)} style={{ fontSize: 16, fontWeight: 500, color: "#3C4A40", padding: "11px 0" }}>
             Home
           </Link>
           {NAV_LINKS.map((l) => (
@@ -157,41 +150,29 @@ export default function Navbar() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              style={{
-                fontSize: 15,
-                fontWeight: 500,
-                color: pathname === l.href ? "#1E4D38" : "#415146",
-                textDecoration: "none",
-                padding: "12px 0",
-              }}
+              style={{ fontSize: 16, fontWeight: 500, color: pathname === l.href ? "#1E4D38" : "#3C4A40", padding: "11px 0" }}
             >
               {l.label}
             </Link>
           ))}
-          <div style={{ height: 1, background: "rgba(27,42,33,0.10)", margin: "12px 0" }} />
-          <Button
-            variant="secondary"
-            size="sm"
+          <div className="hairline" style={{ margin: "12px 0" }} />
+          <a
             href="https://platform.sophrosynesystems.org/login"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              marginBottom: 8,
-              display: "flex",
-              background: "rgba(30,77,56,0.08)",
-              border: "1px solid rgba(30,77,56,0.28)",
-              color: "#1E4D38",
-            }}
+            style={{ fontSize: 15, fontWeight: 500, color: "#3C4A40", padding: "11px 0" }}
           >
             Platform login →
-          </Button>
-          <Button variant="primary" size="sm" href="/get-started" style={{ marginTop: 4, display: "flex" }}>
+          </a>
+          <Button variant="gold" size="md" href="/get-started" style={{ marginTop: 10, display: "flex" }}>
             Talk to Us
           </Button>
         </div>
       )}
 
       <style>{`
+        .nav-link { transition: color 180ms var(--ease); }
+        .nav-link:hover { color: #1E4D38 !important; }
         @media (max-width: 900px) {
           .nav-desktop { display: none !important; }
           .nav-mob { display: block !important; }

@@ -73,7 +73,7 @@ export default function RoiCalculator() {
   const sliderValue: React.CSSProperties = {
     fontSize: 24,
     fontWeight: 500,
-    fontFamily: "var(--font-newsreader), serif",
+    fontFamily: "var(--font-display)",
     color: "#1B2A21",
     letterSpacing: "-0.012em",
   };
@@ -181,7 +181,7 @@ export default function RoiCalculator() {
               </p>
               <p
                 style={{
-                  fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
+                  fontSize: "clamp(28px, 3.5vw, 48px)", fontWeight: 500, fontFamily: "var(--font-display)",
                   color: "#F1EEE2", margin: "0 0 4px", letterSpacing: "-0.02em", lineHeight: 1,
                 }}
               >
@@ -202,7 +202,7 @@ export default function RoiCalculator() {
                   <div key={i}>
                     <p
                       style={{
-                        fontSize: 22, fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
+                        fontSize: 22, fontWeight: 500, fontFamily: "var(--font-display)",
                         color: "#F1EEE2", margin: "0 0 3px", letterSpacing: "-0.01em",
                       }}
                     >
@@ -240,7 +240,7 @@ export default function RoiCalculator() {
             <div key={i} style={{ background: "#FFFFFF", padding: "22px 24px", textAlign: "center" }}>
               <p
                 style={{
-                  fontSize: 26, fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
+                  fontSize: 26, fontWeight: 500, fontFamily: "var(--font-display)",
                   color: i === 0 ? "#4A584E" : "#1E4D38", margin: "0 0 5px", letterSpacing: "-0.015em",
                   textDecoration: i === 0 ? "line-through" : "none",
                   textDecorationColor: "rgba(181,134,46,0.6)",
@@ -289,7 +289,7 @@ export default function RoiCalculator() {
                   <span
                     style={{
                       width: 84, textAlign: "right", flexShrink: 0, fontSize: 13, fontWeight: 500,
-                      fontFamily: "var(--font-newsreader), serif", color: "#1E4D38",
+                      fontFamily: "var(--font-display)", color: "#1E4D38",
                     }}
                   >
                     {fmtCompact(dollars)}

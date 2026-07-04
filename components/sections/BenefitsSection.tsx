@@ -1,13 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { GraduationCap, TrendingDown, Shield } from "lucide-react";
+import Section from "@/components/ui/Section";
+import SectionHeader from "@/components/ui/SectionHeader";
+import Reveal from "@/components/ui/Reveal";
 
 const AUDIENCES = [
   {
     role: "For Provosts",
-    icon: GraduationCap,
     href: "/for/provost",
     metric: "6–12 mo",
     metricLabel: "embedded on-site",
@@ -17,7 +15,6 @@ const AUDIENCES = [
   },
   {
     role: "For CFOs",
-    icon: TrendingDown,
     href: "/for/cfo",
     metric: "$45K",
     metricLabel: "audit, credited in full",
@@ -27,7 +24,6 @@ const AUDIENCES = [
   },
   {
     role: "For CIOs",
-    icon: Shield,
     href: "/for/cio",
     metric: "1 week",
     metricLabel: "to integrate",
@@ -37,240 +33,60 @@ const AUDIENCES = [
   },
 ];
 
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-
-const card = {
-  hidden: { opacity: 0, y: 28 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
-};
-
 export default function BenefitsSection() {
   return (
-    <section
-      style={{
-        padding: "var(--section-py) var(--pad-h)",
-        background: "#F4F0E6",
-      }}
-    >
-      <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6 }}
-          style={{ marginBottom: 48, textAlign: "center" }}
-        >
-          <p
-            style={{
-              fontSize: 12,
-              fontWeight: 600,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "#B5862E",
-              margin: "0 0 14px",
-            }}
-          >
-            Who Benefits
-          </p>
-          <h2
-            style={{
-              fontSize: "clamp(18px, 2vw, 30px)",
-              fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21",
-              margin: 0,
-              letterSpacing: "-0.012em",
-              lineHeight: 1.2,
-              whiteSpace: "nowrap",
-            }}
-            className="benefits-h2"
-          >
-            Provosts, CFOs, and CIOs each get a measurable outcome in one engagement.
-          </h2>
-        </motion.div>
+    <Section bg="parchment">
+      <SectionHeader
+        eyebrow="Who benefits"
+        title="Provosts, CFOs, and CIOs each get a"
+        accent="measurable outcome in one engagement."
+        size="h2"
+        maxWidth={860}
+      />
 
-        {/* Cards */}
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-60px" }}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 20,
-            alignItems: "stretch",
-          }}
-          className="benefits-grid"
-        >
-          {AUDIENCES.map((a) => {
-            const IconComp = a.icon;
-            return (
-              <motion.div
-                key={a.role}
-                variants={card}
-                style={{
-                  position: "relative",
-                  background: "#FFFFFF",
-                  border: "1px solid rgba(27,42,33,0.10)",
-                  borderRadius: "var(--radius-card)",
-                  padding: "32px 28px 26px",
-                  boxShadow: "var(--shadow-card)",
-                  display: "flex",
-                  flexDirection: "column",
-                  overflow: "hidden",
-                }}
-              >
-                {/* Gold-to-pine top accent */}
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: 2,
-                    background: "linear-gradient(90deg, #1E4D38 0%, #C7A14A 100%)",
-                  }}
-                />
-
-                {/* Icon + metric row */}
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "space-between",
-                    marginBottom: 20,
-                  }}
-                >
-                  <div
-                    style={{
-                      width: 46,
-                      height: 46,
-                      borderRadius: "var(--radius-card)",
-                      background: "rgba(30,77,56,0.07)",
-                      border: "1px solid rgba(30,77,56,0.16)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <IconComp size={22} color="#1E4D38" strokeWidth={1.7} />
-                  </div>
-
-                  {/* Key metric */}
-                  <div style={{ textAlign: "right" }}>
-                    <p
-                      style={{
-                        fontSize: 22,
-                        fontWeight: 500,
-                        fontFamily: "var(--font-newsreader), serif",
-                        color: "#1E4D38",
-                        margin: 0,
-                        lineHeight: 1,
-                        letterSpacing: "-0.02em",
-                      }}
-                    >
-                      {a.metric}
-                    </p>
-                    <p
-                      style={{
-                        fontSize: 10,
-                        fontWeight: 600,
-                        fontFamily: "var(--font-libre-franklin), sans-serif",
-                        color: "#8A968C",
-                        margin: "3px 0 0",
-                        letterSpacing: "0.04em",
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      {a.metricLabel}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Role label */}
-                <p
-                  style={{
-                    fontSize: 10,
-                    fontWeight: 600,
-                    fontFamily: "var(--font-libre-franklin), sans-serif",
-                    letterSpacing: "0.16em",
-                    textTransform: "uppercase",
-                    color: "#B5862E",
-                    margin: "0 0 10px",
-                  }}
-                >
+      <div className="benefits-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, marginTop: 56, alignItems: "stretch" }}>
+        {AUDIENCES.map((a, i) => (
+          <Reveal key={a.role} delay={i * 90}>
+            <div
+              style={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                background: "#FFFFFF",
+                border: "1px solid rgba(27,42,33,0.10)",
+                borderRadius: 18,
+                padding: "30px 28px 26px",
+                boxShadow: "0 1px 2px rgba(27,42,33,0.04), 0 24px 48px -32px rgba(27,42,33,0.16)",
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 12, marginBottom: 20 }}>
+                <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "#B5862E" }}>
                   {a.role}
-                </p>
-
-                {/* Headline */}
-                <h3
-                  style={{
-                    fontSize: 19,
-                    fontWeight: 500,
-                    fontFamily: "var(--font-newsreader), serif",
-                    color: "#1B2A21",
-                    margin: "0 0 14px",
-                    letterSpacing: "-0.01em",
-                    lineHeight: 1.25,
-                  }}
-                >
-                  {a.headline}
-                </h3>
-
-                {/* Body */}
-                <p
-                  style={{
-                    fontSize: 14,
-                    lineHeight: 1.68,
-                    color: "#4A584E",
-                    margin: "0 0 24px",
-                    flex: 1,
-                  }}
-                >
-                  {a.body}
-                </p>
-
-                {/* Link */}
-                <Link
-                  href={a.href}
-                  style={{
-                    fontSize: 12,
-                    fontWeight: 600,
-                    fontFamily: "var(--font-libre-franklin), sans-serif",
-                    color: "#1E4D38",
-                    textDecoration: "none",
-                    letterSpacing: "0.01em",
-                    marginTop: "auto",
-                  }}
-                  className="benefit-link"
-                >
-                  {a.link}
-                </Link>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+                </span>
+                <span style={{ fontSize: 10, fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", color: "#8A968C", textAlign: "right" }}>
+                  {a.metricLabel}
+                </span>
+              </div>
+              <div style={{ fontFamily: "var(--font-display)", fontSize: "2.6rem", fontWeight: 600, color: "#1E4D38", letterSpacing: "-0.03em", lineHeight: 1, marginBottom: 18 }}>
+                {a.metric}
+              </div>
+              <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 600, color: "#16241B", letterSpacing: "-0.015em", lineHeight: 1.25, margin: "0 0 12px" }}>
+                {a.headline}
+              </h3>
+              <p style={{ fontSize: 14.5, lineHeight: 1.65, color: "#4A584E", margin: "0 0 22px", flex: 1 }}>{a.body}</p>
+              <Link href={a.href} className="card-link" style={{ marginTop: "auto", fontSize: 13, fontWeight: 600, color: "#1E4D38" }}>
+                {a.link}
+              </Link>
+            </div>
+          </Reveal>
+        ))}
       </div>
 
       <style>{`
-        .benefits-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-        .benefit-link:hover {
-          text-decoration: underline;
-        }
-        @media (max-width: 860px) {
-          .benefits-grid { grid-template-columns: 1fr !important; }
-          .benefits-h2 { white-space: normal !important; font-size: 22px !important; }
-        }
+        .card-link { transition: opacity 160ms var(--ease); }
+        .card-link:hover { opacity: 0.7; }
+        @media (max-width: 860px) { .benefits-grid { grid-template-columns: 1fr !important; } }
       `}</style>
-    </section>
+    </Section>
   );
 }

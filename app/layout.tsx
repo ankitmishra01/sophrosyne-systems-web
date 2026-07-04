@@ -1,10 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Newsreader, Libre_Franklin } from "next/font/google";
+import { Newsreader, Libre_Franklin, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Chrome from "@/components/layout/Chrome";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+// Display face — tight, confident grotesk for big headline moments.
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
+
+// Kept for editorial/serif accents where still wanted (e.g. Logo wordmark).
 const newsreader = Newsreader({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
@@ -55,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${newsreader.variable} ${libreFranklin.variable}`}
+      className={`${spaceGrotesk.variable} ${newsreader.variable} ${libreFranklin.variable}`}
     >
       <body>
         <Chrome>{children}</Chrome>

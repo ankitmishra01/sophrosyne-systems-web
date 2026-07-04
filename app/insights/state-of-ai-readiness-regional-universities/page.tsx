@@ -111,10 +111,10 @@ export default async function StateOfAIReadinessPage() {
             </span>
             <span style={{ fontSize: 12, color: "#4A584E" }}>{a.readTime}</span>
           </div>
-          <h1 style={{ fontSize: "clamp(24px, 3.2vw, 46px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: INK, margin: "0 0 20px", letterSpacing: "-0.015em", lineHeight: 1.1 }}>
+          <h1 style={{ fontSize: "clamp(24px, 3.2vw, 46px)", fontWeight: 500, fontFamily: "var(--font-display)", color: INK, margin: "0 0 20px", letterSpacing: "-0.015em", lineHeight: 1.1 }}>
             {a.title}
           </h1>
-          <p style={{ fontSize: 19, lineHeight: 1.6, color: "#4A584E", margin: "0 0 12px", fontFamily: "var(--font-newsreader), serif", fontStyle: "italic" }}>
+          <p style={{ fontSize: 19, lineHeight: 1.6, color: "#4A584E", margin: "0 0 12px", fontFamily: "var(--font-display)", fontStyle: "italic" }}>
             {a.dek}
           </p>
           {a.heroImage && (
@@ -134,7 +134,7 @@ export default async function StateOfAIReadinessPage() {
 
           {/* Section 1 */}
           <section style={{ marginBottom: 36 }}>
-            <h2 style={{ fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: INK, margin: "0 0 16px", letterSpacing: "-0.012em" }}>
+            <h2 style={{ fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-display)", color: INK, margin: "0 0 16px", letterSpacing: "-0.012em" }}>
               {sections[0].heading}
             </h2>
             {sections[0].paragraphs.map((p, j) => (
@@ -174,7 +174,7 @@ export default async function StateOfAIReadinessPage() {
 
           {/* Section 2 */}
           <section style={{ marginBottom: 36 }}>
-            <h2 style={{ fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: INK, margin: "0 0 16px", letterSpacing: "-0.012em" }}>
+            <h2 style={{ fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-display)", color: INK, margin: "0 0 16px", letterSpacing: "-0.012em" }}>
               {sections[1].heading}
             </h2>
             {sections[1].paragraphs.map((p, j) => (
@@ -183,7 +183,7 @@ export default async function StateOfAIReadinessPage() {
           </section>
 
           {/* Pullquote after section 2 */}
-          <blockquote style={{ margin: "36px 0", padding: "4px 0 4px 24px", borderLeft: `3px solid ${GOLD}`, fontSize: "clamp(20px, 2.6vw, 26px)", lineHeight: 1.5, fontStyle: "italic", fontFamily: "var(--font-newsreader), serif", color: PINE }}>
+          <blockquote style={{ margin: "36px 0", padding: "4px 0 4px 24px", borderLeft: `3px solid ${GOLD}`, fontSize: "clamp(20px, 2.6vw, 26px)", lineHeight: 1.5, fontStyle: "italic", fontFamily: "var(--font-display)", color: PINE }}>
             {a.pullquote}
           </blockquote>
 
@@ -207,7 +207,7 @@ export default async function StateOfAIReadinessPage() {
 
           {/* Section 3 */}
           <section style={{ marginBottom: 36 }}>
-            <h2 style={{ fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: INK, margin: "0 0 16px", letterSpacing: "-0.012em" }}>
+            <h2 style={{ fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-display)", color: INK, margin: "0 0 16px", letterSpacing: "-0.012em" }}>
               {sections[2].heading}
             </h2>
             {sections[2].paragraphs.map((p, j) => (
@@ -230,7 +230,7 @@ export default async function StateOfAIReadinessPage() {
 
           {/* Section 4 */}
           <section style={{ marginBottom: 36 }}>
-            <h2 style={{ fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: INK, margin: "0 0 16px", letterSpacing: "-0.012em" }}>
+            <h2 style={{ fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-display)", color: INK, margin: "0 0 16px", letterSpacing: "-0.012em" }}>
               {sections[3].heading}
             </h2>
             {sections[3].paragraphs.map((p, j) => (

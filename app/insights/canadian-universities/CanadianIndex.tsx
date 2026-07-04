@@ -141,7 +141,7 @@ function MobileCard({ u }: { u: CanadianUniversityEntry }) {
             <p
               style={{
                 fontSize: 14, fontWeight: 500, color: "#1B2A21", margin: "0 0 3px",
-                fontFamily: "var(--font-newsreader), serif", lineHeight: 1.2,
+                fontFamily: "var(--font-display)", lineHeight: 1.2,
               }}
             >
               {u.name}
@@ -236,7 +236,7 @@ export default function CanadianIndex({ universities }: { universities: Canadian
           <h1
             style={{
               fontSize: "clamp(28px, 3.8vw, 52px)", fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
+              fontFamily: "var(--font-display)",
               color: "#1B2A21", margin: "0 0 18px",
               letterSpacing: "-0.016em", lineHeight: 1.1, maxWidth: 700,
             }}
@@ -254,7 +254,7 @@ export default function CanadianIndex({ universities }: { universities: Canadian
               { n: "5", label: "dimensions per university" },
             ].map(({ n, label }) => (
               <div key={label}>
-                <p style={{ fontSize: "clamp(22px, 2.2vw, 30px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1E4D38", margin: "0 0 2px", lineHeight: 1 }}>{n}</p>
+                <p style={{ fontSize: "clamp(22px, 2.2vw, 30px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#1E4D38", margin: "0 0 2px", lineHeight: 1 }}>{n}</p>
                 <p style={{ fontSize: 12, fontFamily: "var(--font-libre-franklin), sans-serif", color: "#4A584E", margin: 0 }}>{label}</p>
               </div>
             ))}
@@ -389,7 +389,7 @@ export default function CanadianIndex({ universities }: { universities: Canadian
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <SmallLogo domain={u.officialDomain} name={u.name} />
                       <div>
-                        <p style={{ fontSize: 14, fontWeight: 500, color: "#1B2A21", margin: "0 0 1px", fontFamily: "var(--font-newsreader), serif", lineHeight: 1.2 }}>{u.name}</p>
+                        <p style={{ fontSize: 14, fontWeight: 500, color: "#1B2A21", margin: "0 0 1px", fontFamily: "var(--font-display)", lineHeight: 1.2 }}>{u.name}</p>
                         <p style={{ fontSize: 11.5, color: "#4A584E", margin: 0, fontFamily: "var(--font-libre-franklin), sans-serif" }}>
                           {u.enrollment} enrolment · est. {u.founded}
                         </p>
@@ -463,7 +463,7 @@ export default function CanadianIndex({ universities }: { universities: Canadian
           {/* Footer CTA */}
           <div style={{ marginTop: 32, padding: "32px 36px", background: "#1E4D38", borderRadius: "var(--radius-card)", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 20 }}>
             <div>
-              <p style={{ fontSize: 18, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: "0 0 6px", lineHeight: 1.2 }}>
+              <p style={{ fontSize: 18, fontWeight: 500, fontFamily: "var(--font-display)", color: "#F1EEE2", margin: "0 0 6px", lineHeight: 1.2 }}>
                 See where your institution lands on the maturity scale.
               </p>
               <p style={{ fontSize: 13.5, color: "rgba(201,217,206,0.82)", margin: 0 }}>

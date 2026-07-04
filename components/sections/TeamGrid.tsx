@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TEAM_MEMBERS, TeamMember } from "@/lib/data";
 import Card from "@/components/ui/Card";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const FILTERS = [
   { id: "all", label: "All" },
@@ -55,11 +56,11 @@ function MemberCard({ member, index, gridColumn }: { member: TeamMember; index: 
           <h3
             style={{
               fontSize: 17,
-              fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21",
+              fontWeight: 600,
+              fontFamily: "var(--font-display)",
+              color: "#16241B",
               margin: 0,
-              letterSpacing: "-0.01em",
+              letterSpacing: "-0.015em",
               textAlign: "center",
             }}
           >
@@ -131,53 +132,15 @@ export default function TeamGrid() {
     >
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6 }}
-          style={{ marginBottom: 40, textAlign: "center" }}
-        >
-          <p
-            style={{
-              fontSize: 12,
-              fontWeight: 600,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "#B5862E",
-              margin: "0 0 14px",
-            }}
-          >
-            The Team
-          </p>
-          <h2
-            style={{
-              fontSize: "clamp(26px, 3.2vw, 44px)",
-              fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21",
-              margin: "0 0 16px",
-              letterSpacing: "-0.012em",
-              maxWidth: 680,
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
-            Higher-ed leaders, researchers, and operators.
-          </h2>
-          <p
-            style={{
-              fontSize: 16,
-              color: "#4A584E",
-              maxWidth: 540,
-              margin: "0 auto",
-              lineHeight: 1.6,
-            }}
-          >
-            A team that spans university leadership, higher-ed finance, AI advisory and venture, and research. The disciplines a real campus transformation actually requires.
-          </p>
-        </motion.div>
+        <div style={{ marginBottom: 40 }}>
+          <SectionHeader
+            eyebrow="The team"
+            title="Higher-ed leaders, researchers,"
+            accent="and operators."
+            size="h2"
+            lead="A team that spans university leadership, higher-ed finance, AI advisory and venture, and research. The disciplines a real campus transformation actually requires."
+          />
+        </div>
 
         {/* Filter tabs */}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 40, justifyContent: "center" }}>

@@ -26,6 +26,20 @@ const SECTIONS = [
     color: "#1A5638",
   },
   {
+    href: "/portal/finance",
+    eyebrow: "Finance",
+    title: "Financial Scenarios",
+    body: "Bear, base, and bull — revenue scenarios, cost structure, and prioritised next steps for the inner circle.",
+    color: GOLD,
+  },
+  {
+    href: "/portal/grants",
+    eyebrow: "Reference",
+    title: "Grants",
+    body: "Non-dilutive funding, split by what it pays for — Platform/Tracker product dev vs. AI Fluency Standard curriculum & credential work.",
+    color: "#2C7350",
+  },
+  {
     href: "/portal/curriculum",
     eyebrow: "Programme",
     title: "Curriculum",

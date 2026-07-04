@@ -126,7 +126,7 @@ function MobileCard({ inst }: { inst: InstitutionEntry }) {
           style={{
             fontSize: 15,
             fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
+            fontFamily: "var(--font-display)",
             color: "#1B2A21",
             margin: 0,
             lineHeight: 1.3,
@@ -296,7 +296,7 @@ export default function AIReadinessIndex({ institutions }: { institutions: Insti
             style={{
               fontSize: "clamp(28px, 3.8vw, 52px)",
               fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
+              fontFamily: "var(--font-display)",
               color: "#1B2A21",
               margin: "0 0 16px",
               letterSpacing: "-0.015em",
@@ -543,7 +543,7 @@ export default function AIReadinessIndex({ institutions }: { institutions: Insti
                   <tbody>
                     {filtered.map((inst) => (
                       <tr key={inst.name} className="ari-row" style={{ cursor: "pointer" }} onClick={() => window.location.href = `/insights/ai-readiness-index/${inst.slug}`}>
-                        <td style={{ ...tdStyle, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", fontSize: 14 }}>
+                        <td style={{ ...tdStyle, fontWeight: 500, fontFamily: "var(--font-display)", fontSize: 14 }}>
                           <Link href={`/insights/ai-readiness-index/${inst.slug}`} style={{ color: "#1B2A21", textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }} className="inst-name-link">
                             <SmallLogo domain={inst.officialDomain} name={inst.name} />
                             {inst.name}
@@ -584,7 +584,7 @@ export default function AIReadinessIndex({ institutions }: { institutions: Insti
                 marginBottom: 16,
               }}
             >
-              <p style={{ fontSize: 16, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: "0 0 8px" }}>
+              <p style={{ fontSize: 16, fontWeight: 500, fontFamily: "var(--font-display)", color: "#1B2A21", margin: "0 0 8px" }}>
                 No institutions match your filters.
               </p>
               <p style={{ fontSize: 13, color: "#8A968C", margin: "0 0 20px" }}>
@@ -751,7 +751,7 @@ export default function AIReadinessIndex({ institutions }: { institutions: Insti
                   style={{
                     fontSize: "clamp(18px, 2vw, 24px)",
                     fontWeight: 500,
-                    fontFamily: "var(--font-newsreader), serif",
+                    fontFamily: "var(--font-display)",
                     color: "#1B2A21",
                     margin: "0 0 10px",
                     letterSpacing: "-0.012em",

@@ -13,7 +13,7 @@ function InstitutionLogo({ domain, name, size = 52 }: { domain: string; name: st
   if (stage >= 2 || !domain) {
     return (
       <div style={{ width: size, height: size, borderRadius: size / 5, background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-        <span style={{ color: "#F4F0E6", fontSize: size * 0.44, fontWeight: 700, fontFamily: "var(--font-newsreader), serif" }}>{letter}</span>
+        <span style={{ color: "#F4F0E6", fontSize: size * 0.44, fontWeight: 700, fontFamily: "var(--font-display)" }}>{letter}</span>
       </div>
     );
   }
@@ -165,7 +165,7 @@ function PeerCard({ u }: { u: CanadianUniversityEntry }) {
         }}
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8, marginBottom: 6 }}>
-          <p style={{ fontSize: 13.5, fontWeight: 500, color: "#1B2A21", margin: 0, fontFamily: "var(--font-newsreader), serif", lineHeight: 1.2 }}>
+          <p style={{ fontSize: 13.5, fontWeight: 500, color: "#1B2A21", margin: 0, fontFamily: "var(--font-display)", lineHeight: 1.2 }}>
             {u.shortName}
           </p>
           <span
@@ -276,7 +276,7 @@ export default function UniversityProfile({ university: u, peers, rank, total }:
                 </span>
                 </div>
               </div>
-              <h1 style={{ fontSize: "clamp(24px, 3.2vw, 44px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: "0 0 10px", letterSpacing: "-0.016em", lineHeight: 1.1 }}>
+              <h1 style={{ fontSize: "clamp(24px, 3.2vw, 44px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#F1EEE2", margin: "0 0 10px", letterSpacing: "-0.016em", lineHeight: 1.1 }}>
                 {u.name}
               </h1>
               <p style={{ fontSize: 14, color: "rgba(201,217,206,0.78)", margin: 0, fontFamily: "var(--font-libre-franklin), sans-serif" }}>
@@ -294,7 +294,7 @@ export default function UniversityProfile({ university: u, peers, rank, total }:
               <p style={{ fontSize: 10, fontFamily: "var(--font-libre-franklin), sans-serif", color: "rgba(201,217,206,0.55)", margin: "0 0 2px", letterSpacing: "0.1em", textTransform: "uppercase" }}>
                 Stage
               </p>
-              <p style={{ fontSize: "clamp(40px, 5vw, 64px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: "0 0 2px", lineHeight: 1 }}>
+              <p style={{ fontSize: "clamp(40px, 5vw, 64px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#F1EEE2", margin: "0 0 2px", lineHeight: 1 }}>
                 {maturityStage}
               </p>
               <p style={{ fontSize: 13, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", color: "rgba(201,217,206,0.85)", margin: "0 0 8px" }}>
@@ -408,7 +408,7 @@ export default function UniversityProfile({ university: u, peers, rank, total }:
                   {/* Grade + bar */}
                   <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 16 }}>
                     <div style={{ background: fg.bg, border: `1px solid ${fg.border}`, borderRadius: 8, padding: "10px 18px", flexShrink: 0, textAlign: "center", minWidth: 56 }}>
-                      <p style={{ fontSize: 26, fontWeight: 700, fontFamily: "var(--font-newsreader), serif", color: fg.color, margin: 0, lineHeight: 1 }}>{fg.label}</p>
+                      <p style={{ fontSize: 26, fontWeight: 700, fontFamily: "var(--font-display)", color: fg.color, margin: 0, lineHeight: 1 }}>{fg.label}</p>
                     </div>
                     <div style={{ flex: 1 }}>
                       <p style={{ fontSize: 13.5, fontWeight: 600, color: "#1B2A21", margin: "0 0 6px", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
@@ -546,7 +546,7 @@ export default function UniversityProfile({ university: u, peers, rank, total }:
             )}
 
             <div style={{ background: "#1E4D38", borderRadius: "var(--radius-card)", padding: "24px 24px" }}>
-              <p style={{ fontSize: 16, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: "0 0 8px", lineHeight: 1.2 }}>
+              <p style={{ fontSize: 16, fontWeight: 500, fontFamily: "var(--font-display)", color: "#F1EEE2", margin: "0 0 8px", lineHeight: 1.2 }}>
                 Get your institution&apos;s full assessment.
               </p>
               <p style={{ fontSize: 13, color: "rgba(201,217,206,0.82)", margin: "0 0 18px", lineHeight: 1.6 }}>

@@ -16,6 +16,8 @@ const NAV: NavItem[] = [
   { label: "One-Pager", href: "/portal/one-pager", icon: <IconDoc /> },
   { label: "Product Roadmap", href: "/portal/roadmap", icon: <IconMap /> },
   { label: "Business Ops", href: "/portal/business", icon: <IconChart /> },
+  { label: "Finance", href: "/portal/finance", icon: <IconFinance /> },
+  { label: "Grants", href: "/portal/grants", icon: <IconGrant /> },
   { label: "Curriculum", href: "/portal/curriculum", icon: <IconBook /> },
 ];
 
@@ -127,4 +129,10 @@ function IconBook() {
 }
 function IconChart() {
   return <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 20V4" /><path d="M4 20h16" /><rect x="8" y="11" width="3" height="6" /><rect x="14" y="7" width="3" height="10" /></svg>;
+}
+function IconFinance() {
+  return <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="20" x2="12" y2="10" /><line x1="6" y1="20" x2="6" y2="16" /><line x1="18" y1="20" x2="18" y2="4" /><path d="M2 20h20" /></svg>;
+}
+function IconGrant() {
+  return <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="8" width="18" height="13" rx="1.5" /><path d="M3 13h18" /><path d="M12 8v13" /><path d="M12 8c-1.5-3-5-4-5-1.5C7 8 9 8 12 8c3 0 5 0 5-1.5C17 4 13.5 5 12 8Z" /></svg>;
 }

@@ -132,7 +132,7 @@ export default function CurriculumFramework() {
           style={{
             fontSize: "clamp(22px, 2.8vw, 38px)",
             fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
+            fontFamily: "var(--font-display)",
             color: "#1B2A21",
             margin: "0 0 14px",
             letterSpacing: "-0.012em",
@@ -274,7 +274,7 @@ export default function CurriculumFramework() {
                     style={{
                       fontSize: 16,
                       fontWeight: 500,
-                      fontFamily: "var(--font-newsreader), serif",
+                      fontFamily: "var(--font-display)",
                       color: "#1B2A21",
                       margin: "0 0 6px",
                       letterSpacing: "-0.01em",
@@ -365,7 +365,7 @@ export default function CurriculumFramework() {
                       style={{
                         fontSize: 13,
                         fontStyle: "italic",
-                        fontFamily: "var(--font-newsreader), serif",
+                        fontFamily: "var(--font-display)",
                         color: "#5A6B60",
                         margin: 0,
                         lineHeight: 1.55,

@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const STAGES = [
   {
@@ -48,59 +50,23 @@ export default function AIMaturitySection() {
   const activeIdx = STAGES.findIndex((s) => s.id === active);
 
   return (
-    <section
-      style={{
-        padding: "var(--section-py) var(--pad-h)",
-        background: "#ECF1EC",
-        borderTop: "2px solid rgba(199,161,74,0.18)",
-      }}
-    >
+    <section style={{ padding: "var(--section-py) var(--pad-h)", background: "#ECF1EC" }}>
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto" }}>
-        {/* Header — centered */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6 }}
-          style={{ textAlign: "center", maxWidth: 680, margin: "0 auto 56px" }}
-        >
-          <p
-            style={{
-              fontSize: 12,
-              fontWeight: 600,
-              fontFamily: "var(--font-libre-franklin), sans-serif",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "#B5862E",
-              margin: "0 0 14px",
-            }}
-          >
-            AI Integration Maturity
-          </p>
-          <h2
-            style={{
-              fontSize: "clamp(26px, 3.2vw, 44px)",
-              fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
-              color: "#1B2A21",
-              margin: "0 0 16px",
-              letterSpacing: "-0.012em",
-              lineHeight: 1.1,
-            }}
-          >
-            Where is your institution on the AI maturity arc?
-          </h2>
-          <p
-            style={{
-              fontSize: 16,
-              lineHeight: 1.68,
-              color: "#4A584E",
-              margin: 0,
-            }}
-          >
-            Employers (including Zapier, which now hires on a four-tier AI-fluency rubric) expect graduates at <em style={{ fontStyle: "italic" }}>Adoptive</em> (B1) or above. Most universities are producing graduates at <em style={{ fontStyle: "italic" }}>Explore</em>. The Sophrosyne programme is designed to move your institution up this arc, at the pace your governance allows.
-          </p>
-        </motion.div>
+        <div style={{ marginBottom: 56 }}>
+          <SectionHeader
+            eyebrow="AI Integration Maturity"
+            title="Where is your institution on the"
+            accent="AI maturity arc?"
+            lead={
+              <>
+                Employers (including Zapier, which now hires on a four-tier AI-fluency rubric) expect graduates at{" "}
+                <em>Adoptive</em> (B1) or above. Most universities are producing graduates at <em>Explore</em>. The
+                Sophrosyne programme is designed to move your institution up this arc, at the pace your governance
+                allows.
+              </>
+            }
+          />
+        </div>
 
         {/* Maturity arc stepper */}
         <motion.div
@@ -263,6 +229,12 @@ export default function AIMaturitySection() {
               </p>
             </motion.div>
           </AnimatePresence>
+
+          <div style={{ textAlign: "center", marginTop: 36 }}>
+            <Link href="/solutions" className="maturity-cta" style={{ fontSize: 14, fontWeight: 600, color: "#1E4D38", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
+              See how the programme moves you up the arc →
+            </Link>
+          </div>
         </motion.div>
       </div>
 

@@ -66,7 +66,7 @@ export default async function InsightArticlePage({
 
           <h1
             style={{
-              fontSize: "clamp(24px, 3.2vw, 46px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
+              fontSize: "clamp(24px, 3.2vw, 46px)", fontWeight: 500, fontFamily: "var(--font-display)",
               color: "#1B2A21", margin: "0 0 20px", letterSpacing: "-0.015em", lineHeight: 1.1,
             }}
           >
@@ -75,7 +75,7 @@ export default async function InsightArticlePage({
           <p
             style={{
               fontSize: 19, lineHeight: 1.6, color: "#4A584E", margin: "0 0 12px",
-              fontFamily: "var(--font-newsreader), serif", fontStyle: "italic",
+              fontFamily: "var(--font-display)", fontStyle: "italic",
             }}
           >
             {a.dek}
@@ -98,7 +98,7 @@ export default async function InsightArticlePage({
             <section key={i} style={{ marginBottom: 36 }}>
               <h2
                 style={{
-                  fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif",
+                  fontSize: "clamp(20px, 2.6vw, 28px)", fontWeight: 500, fontFamily: "var(--font-display)",
                   color: "#1B2A21", margin: "0 0 16px", letterSpacing: "-0.012em",
                 }}
               >
@@ -116,7 +116,7 @@ export default async function InsightArticlePage({
                   style={{
                     margin: "36px 0", padding: "4px 0 4px 24px", borderLeft: "3px solid #C7A14A",
                     fontSize: "clamp(20px, 2.6vw, 26px)", lineHeight: 1.5, fontStyle: "italic",
-                    fontFamily: "var(--font-newsreader), serif", color: "#1E4D38",
+                    fontFamily: "var(--font-display)", color: "#1E4D38",
                   }}
                 >
                   {a.pullquote}

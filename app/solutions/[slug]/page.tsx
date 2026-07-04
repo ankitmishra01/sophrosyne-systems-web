@@ -98,7 +98,7 @@ function SlugHero({
           position: "absolute",
           inset: 0,
           backgroundImage:
-            "repeating-linear-gradient(135deg, rgba(30,77,56,0.025) 0px, rgba(30,77,56,0.025) 1px, transparent 1px, transparent 12px)",
+            "none",
           pointerEvents: "none",
         }}
       />
@@ -134,7 +134,7 @@ function SlugHero({
             style={{
               fontSize: "clamp(24px, 3.2vw, 46px)",
               fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
+              fontFamily: "var(--font-display)",
               color: "#1B2A21",
               margin: "0 0 14px",
               lineHeight: 1.06,
@@ -147,7 +147,7 @@ function SlugHero({
             style={{
               fontSize: 16,
               fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
+              fontFamily: "var(--font-display)",
               color: "#4A584E",
               margin: "0 0 16px",
               fontStyle: "italic",
@@ -326,7 +326,7 @@ function FoundryHero({
       <div
         style={{
           position: "absolute", inset: 0,
-          backgroundImage: "repeating-linear-gradient(135deg, rgba(199,161,74,0.018) 0px, rgba(199,161,74,0.018) 1px, transparent 1px, transparent 16px)",
+          backgroundImage: "none",
           pointerEvents: "none",
         }}
       />
@@ -335,7 +335,7 @@ function FoundryHero({
         style={{
           position: "absolute", top: 0, right: 0,
           width: 560, height: 480,
-          background: "radial-gradient(ellipse at top right, rgba(199,161,74,0.10) 0%, transparent 65%)",
+          background: "none",
           pointerEvents: "none",
         }}
       />
@@ -353,10 +353,10 @@ function FoundryHero({
           <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#C7A14A", margin: "0 0 18px" }}>
             {sol.label}
           </p>
-          <h1 style={{ fontSize: "clamp(24px, 3.2vw, 46px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F4F0E6", margin: "0 0 14px", lineHeight: 1.06, letterSpacing: "-0.015em" }}>
+          <h1 style={{ fontSize: "clamp(24px, 3.2vw, 46px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#F4F0E6", margin: "0 0 14px", lineHeight: 1.06, letterSpacing: "-0.015em" }}>
             {sol.title}
           </h1>
-          <p style={{ fontSize: 16, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#9FBFAD", margin: "0 0 16px", fontStyle: "italic" }}>
+          <p style={{ fontSize: 16, fontWeight: 500, fontFamily: "var(--font-display)", color: "#9FBFAD", margin: "0 0 16px", fontStyle: "italic" }}>
             {sol.tagline}
           </p>
 
@@ -540,7 +540,7 @@ function FoundryDemoDay() {
             <p style={{ fontSize: 11, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#C7A14A", margin: "0 0 16px", fontFamily: "var(--font-libre-franklin), sans-serif" }}>
               The Recruitment Event
             </p>
-            <h2 style={{ fontSize: "clamp(22px, 2.8vw, 40px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F4F0E6", margin: "0 0 20px", letterSpacing: "-0.015em", lineHeight: 1.08 }}>
+            <h2 style={{ fontSize: "clamp(22px, 2.8vw, 40px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#F4F0E6", margin: "0 0 20px", letterSpacing: "-0.015em", lineHeight: 1.08 }}>
               Employers don&apos;t wait{" "}
               <em style={{ fontStyle: "italic", color: "#9FBFAD" }}>for graduation.</em>
             </h2>
@@ -554,7 +554,7 @@ function FoundryDemoDay() {
                 { n: "100%", l: "IP retained by the student team" },
               ].map((s, i) => (
                 <div key={i} style={{ display: "flex", alignItems: "baseline", gap: 18, paddingBottom: 20, borderBottom: i < 2 ? "1px solid rgba(255,255,255,0.06)" : "none" }}>
-                  <span style={{ fontSize: 28, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#C7A14A", letterSpacing: "-0.02em", flexShrink: 0, lineHeight: 1 }}>
+                  <span style={{ fontSize: 28, fontWeight: 500, fontFamily: "var(--font-display)", color: "#C7A14A", letterSpacing: "-0.02em", flexShrink: 0, lineHeight: 1 }}>
                     {s.n}
                   </span>
                   <span style={{ fontSize: 13, color: "rgba(159,191,173,0.70)", fontFamily: "var(--font-libre-franklin), sans-serif", lineHeight: 1.4 }}>
@@ -632,8 +632,8 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
       }}
     >
       {/* Texture */}
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "repeating-linear-gradient(45deg, rgba(241,238,226,0.022) 0px, rgba(241,238,226,0.022) 1px, transparent 1px, transparent 20px)", pointerEvents: "none" }} />
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 0%, rgba(199,161,74,0.09) 0%, transparent 60%)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "none", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", inset: 0, background: "none", pointerEvents: "none" }} />
 
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto", position: "relative", zIndex: 1 }}>
         {/* Header */}
@@ -641,7 +641,7 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
           <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#C7A14A", margin: "0 0 16px" }}>
             How It Works
           </p>
-          <h2 style={{ fontSize: "clamp(24px, 3vw, 42px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: 0, letterSpacing: "-0.015em", lineHeight: 1.1 }}>
+          <h2 style={{ fontSize: "clamp(24px, 3vw, 42px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#F1EEE2", margin: 0, letterSpacing: "-0.015em", lineHeight: 1.1 }}>
             Three steps to live.
           </h2>
         </div>
@@ -662,7 +662,7 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
               }}
             >
               {/* Watermark number */}
-              <div aria-hidden style={{ position: "absolute", bottom: -20, right: 12, fontSize: 130, fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", opacity: 0.05, lineHeight: 1, userSelect: "none", pointerEvents: "none", letterSpacing: "-0.04em" }}>
+              <div aria-hidden style={{ position: "absolute", bottom: -20, right: 12, fontSize: 130, fontWeight: 500, fontFamily: "var(--font-display)", color: "#F1EEE2", opacity: 0, lineHeight: 1, userSelect: "none", pointerEvents: "none", letterSpacing: "-0.04em" }}>
                 {step.number}
               </div>
 
@@ -671,7 +671,7 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
                 Step {step.number}
               </span>
 
-              <h3 style={{ fontSize: "clamp(17px, 1.7vw, 21px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#F1EEE2", margin: "0 0 14px", letterSpacing: "-0.012em", lineHeight: 1.2, position: "relative", zIndex: 1 }}>
+              <h3 style={{ fontSize: "clamp(17px, 1.7vw, 21px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#F1EEE2", margin: "0 0 14px", letterSpacing: "-0.012em", lineHeight: 1.2, position: "relative", zIndex: 1 }}>
                 {step.title}
               </h3>
 
@@ -683,7 +683,7 @@ function HowItWorks({ detail }: { detail: SolutionDetail }) {
         </div>
 
         {/* Bottom note */}
-        <p style={{ textAlign: "center", marginTop: 36, fontSize: 13, fontFamily: "var(--font-newsreader), serif", fontStyle: "italic", color: "rgba(199,161,74,0.60)", letterSpacing: "0.01em" }}>
+        <p style={{ textAlign: "center", marginTop: 36, fontSize: 13, fontFamily: "var(--font-display)", fontStyle: "italic", color: "rgba(199,161,74,0.60)", letterSpacing: "0.01em" }}>
           Typical time from kickoff to first live cohort: 6–8 weeks.
         </p>
       </div>
@@ -711,7 +711,7 @@ function PersonaStrip({ detail }: { detail: SolutionDetail }) {
       }}
     >
       {/* Subtle texture */}
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle at 15% 50%, rgba(30,77,56,0.04) 0%, transparent 50%), radial-gradient(circle at 85% 20%, rgba(199,161,74,0.05) 0%, transparent 40%)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", inset: 0, backgroundImage: "none", pointerEvents: "none" }} />
 
       <div style={{ maxWidth: "var(--max-w)", margin: "0 auto", position: "relative", zIndex: 1 }}>
         {/* Header */}
@@ -720,7 +720,7 @@ function PersonaStrip({ detail }: { detail: SolutionDetail }) {
             <p style={{ fontSize: 11, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.18em", textTransform: "uppercase", color: "#B5862E", margin: "0 0 14px" }}>
               Who This Is For
             </p>
-            <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 500, fontFamily: "var(--font-newsreader), serif", color: "#1B2A21", margin: 0, letterSpacing: "-0.015em", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 500, fontFamily: "var(--font-display)", color: "#1B2A21", margin: 0, letterSpacing: "-0.015em", lineHeight: 1.1 }}>
               Identify your situation.
             </h2>
           </div>
@@ -759,7 +759,7 @@ function PersonaStrip({ detail }: { detail: SolutionDetail }) {
                 <p style={{ fontSize: 10, fontWeight: 600, fontFamily: "var(--font-libre-franklin), sans-serif", letterSpacing: "0.1em", textTransform: "uppercase", color: "#9B5A3D", margin: "0 0 8px" }}>
                   The challenge
                 </p>
-                <p style={{ fontSize: "clamp(13px, 1.3vw, 15px)", lineHeight: 1.65, color: "#3D4F45", margin: 0, fontStyle: "italic", fontFamily: "var(--font-newsreader), serif" }}>
+                <p style={{ fontSize: "clamp(13px, 1.3vw, 15px)", lineHeight: 1.65, color: "#3D4F45", margin: 0, fontStyle: "italic", fontFamily: "var(--font-display)" }}>
                   &ldquo;{p.pain}&rdquo;
                 </p>
               </div>
@@ -827,7 +827,7 @@ function OutcomesStrip({ detail }: { detail: SolutionDetail }) {
               style={{
                 fontSize: "clamp(22px, 2.6vw, 36px)",
                 fontWeight: 500,
-                fontFamily: "var(--font-newsreader), serif",
+                fontFamily: "var(--font-display)",
                 color: "#C7A14A",
                 margin: "0 0 6px",
                 letterSpacing: "-0.04em",
@@ -889,7 +889,7 @@ function FeatureDetail({ detail }: { detail: SolutionDetail }) {
           style={{
             fontSize: "clamp(22px, 2.6vw, 36px)",
             fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
+            fontFamily: "var(--font-display)",
             color: "#1B2A21",
             margin: "0 0 48px",
             letterSpacing: "-0.012em",
@@ -930,7 +930,7 @@ function FeatureDetail({ detail }: { detail: SolutionDetail }) {
                   style={{
                     fontSize: 15,
                     fontWeight: 500,
-                    fontFamily: "var(--font-newsreader), serif",
+                    fontFamily: "var(--font-display)",
                     color: "#1B2A21",
                     margin: "0 0 10px",
                     letterSpacing: "-0.01em",
@@ -990,7 +990,7 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
           style={{
             fontSize: "clamp(22px, 2.6vw, 36px)",
             fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
+            fontFamily: "var(--font-display)",
             color: "#1B2A21",
             margin: "0 0 12px",
             letterSpacing: "-0.012em",
@@ -1002,7 +1002,7 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
           style={{
             fontSize: 13,
             fontStyle: "italic",
-            fontFamily: "var(--font-newsreader), serif",
+            fontFamily: "var(--font-display)",
             color: "#4A584E",
             margin: "0 0 40px",
           }}
@@ -1047,7 +1047,7 @@ function UseCases({ detail }: { detail: SolutionDetail }) {
                 style={{
                   fontSize: 17,
                   fontWeight: 500,
-                  fontFamily: "var(--font-newsreader), serif",
+                  fontFamily: "var(--font-display)",
                   color: "#1B2A21",
                   margin: "0 0 12px",
                   letterSpacing: "-0.01em",
@@ -1107,7 +1107,7 @@ function ProductFaq({ detail }: { detail: SolutionDetail }) {
           style={{
             fontSize: "clamp(22px, 2.6vw, 36px)",
             fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
+            fontFamily: "var(--font-display)",
             color: "#1B2A21",
             margin: "0 0 40px",
             letterSpacing: "-0.012em",
@@ -1138,7 +1138,7 @@ function ProductCTA({ sol }: { sol: (typeof SOLUTIONS)[number] }) {
           style={{
             fontSize: "clamp(26px, 4vw, 48px)",
             fontWeight: 500,
-            fontFamily: "var(--font-newsreader), serif",
+            fontFamily: "var(--font-display)",
             color: "#1B2A21",
             margin: "0 0 16px",
             letterSpacing: "-0.015em",

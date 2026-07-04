@@ -59,7 +59,7 @@ export default function CurriculumPlatformShowcase() {
           position: "absolute",
           top: 0, right: 0,
           width: 600, height: 400,
-          background: "radial-gradient(ellipse at top right, rgba(199,161,74,0.09) 0%, transparent 65%)",
+          background: "none",
           pointerEvents: "none",
         }}
       />
@@ -133,7 +133,7 @@ export default function CurriculumPlatformShowcase() {
             style={{
               fontSize: "clamp(28px, 3.6vw, 50px)",
               fontWeight: 500,
-              fontFamily: "var(--font-newsreader), serif",
+              fontFamily: "var(--font-display)",
               color: "#F1EEE2",
               margin: "0 0 16px",
               letterSpacing: "-0.015em",
